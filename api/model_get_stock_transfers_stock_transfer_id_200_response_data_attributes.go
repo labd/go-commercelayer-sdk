@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,20 @@ var _ MappedNullable = &GETStockTransfersStockTransferId200ResponseDataAttribute
 
 // GETStockTransfersStockTransferId200ResponseDataAttributes struct for GETStockTransfersStockTransferId200ResponseDataAttributes
 type GETStockTransfersStockTransferId200ResponseDataAttributes struct {
+	// Unique identifier for the stock transfer (numeric).
+	Number interface{} `json:"number,omitempty"`
 	// The code of the associated SKU.
 	SkuCode interface{} `json:"sku_code,omitempty"`
-	// The stock transfer status, one of 'draft', 'upcoming', 'picking', 'in_transit', 'completed', or 'cancelled'
+	// The stock transfer status. One of 'draft' (default), 'upcoming', 'on_hold', 'picking', 'in_transit', 'completed', or 'cancelled'.
 	Status interface{} `json:"status,omitempty"`
-	// The stock quantity to be transferred from the origin stock location to destination one
+	// The stock quantity to be transferred from the origin stock location to destination one.
 	Quantity interface{} `json:"quantity,omitempty"`
+	// Time at which the stock transfer was put on hold.
+	OnHoldAt interface{} `json:"on_hold_at,omitempty"`
+	// Time at which the stock transfer was picking.
+	PickingAt interface{} `json:"picking_at,omitempty"`
+	// Time at which the stock transfer was in transit.
+	InTransitAt interface{} `json:"in_transit_at,omitempty"`
 	// Time at which the stock transfer was completed.
 	CompletedAt interface{} `json:"completed_at,omitempty"`
 	// Time at which the stock transfer was cancelled.
@@ -36,7 +44,7 @@ type GETStockTransfersStockTransferId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -57,6 +65,39 @@ func NewGETStockTransfersStockTransferId200ResponseDataAttributes() *GETStockTra
 func NewGETStockTransfersStockTransferId200ResponseDataAttributesWithDefaults() *GETStockTransfersStockTransferId200ResponseDataAttributes {
 	this := GETStockTransfersStockTransferId200ResponseDataAttributes{}
 	return &this
+}
+
+// GetNumber returns the Number field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetNumber() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Number
+}
+
+// GetNumberOk returns a tuple with the Number field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetNumberOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Number) {
+		return nil, false
+	}
+	return &o.Number, true
+}
+
+// HasNumber returns a boolean if a field has been set.
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) HasNumber() bool {
+	if o != nil && IsNil(o.Number) {
+		return true
+	}
+
+	return false
+}
+
+// SetNumber gets a reference to the given interface{} and assigns it to the Number field.
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetNumber(v interface{}) {
+	o.Number = v
 }
 
 // GetSkuCode returns the SkuCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -156,6 +197,105 @@ func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) HasQuantity(
 // SetQuantity gets a reference to the given interface{} and assigns it to the Quantity field.
 func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetQuantity(v interface{}) {
 	o.Quantity = v
+}
+
+// GetOnHoldAt returns the OnHoldAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetOnHoldAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.OnHoldAt
+}
+
+// GetOnHoldAtOk returns a tuple with the OnHoldAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetOnHoldAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.OnHoldAt) {
+		return nil, false
+	}
+	return &o.OnHoldAt, true
+}
+
+// HasOnHoldAt returns a boolean if a field has been set.
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) HasOnHoldAt() bool {
+	if o != nil && IsNil(o.OnHoldAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnHoldAt gets a reference to the given interface{} and assigns it to the OnHoldAt field.
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetOnHoldAt(v interface{}) {
+	o.OnHoldAt = v
+}
+
+// GetPickingAt returns the PickingAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetPickingAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PickingAt
+}
+
+// GetPickingAtOk returns a tuple with the PickingAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetPickingAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PickingAt) {
+		return nil, false
+	}
+	return &o.PickingAt, true
+}
+
+// HasPickingAt returns a boolean if a field has been set.
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) HasPickingAt() bool {
+	if o != nil && IsNil(o.PickingAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetPickingAt gets a reference to the given interface{} and assigns it to the PickingAt field.
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetPickingAt(v interface{}) {
+	o.PickingAt = v
+}
+
+// GetInTransitAt returns the InTransitAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetInTransitAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.InTransitAt
+}
+
+// GetInTransitAtOk returns a tuple with the InTransitAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetInTransitAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.InTransitAt) {
+		return nil, false
+	}
+	return &o.InTransitAt, true
+}
+
+// HasInTransitAt returns a boolean if a field has been set.
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) HasInTransitAt() bool {
+	if o != nil && IsNil(o.InTransitAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetInTransitAt gets a reference to the given interface{} and assigns it to the InTransitAt field.
+func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetInTransitAt(v interface{}) {
+	o.InTransitAt = v
 }
 
 // GetCompletedAt returns the CompletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -399,6 +539,9 @@ func (o GETStockTransfersStockTransferId200ResponseDataAttributes) MarshalJSON()
 
 func (o GETStockTransfersStockTransferId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Number != nil {
+		toSerialize["number"] = o.Number
+	}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
 	}
@@ -407,6 +550,15 @@ func (o GETStockTransfersStockTransferId200ResponseDataAttributes) ToMap() (map[
 	}
 	if o.Quantity != nil {
 		toSerialize["quantity"] = o.Quantity
+	}
+	if o.OnHoldAt != nil {
+		toSerialize["on_hold_at"] = o.OnHoldAt
+	}
+	if o.PickingAt != nil {
+		toSerialize["picking_at"] = o.PickingAt
+	}
+	if o.InTransitAt != nil {
+		toSerialize["in_transit_at"] = o.InTransitAt
 	}
 	if o.CompletedAt != nil {
 		toSerialize["completed_at"] = o.CompletedAt

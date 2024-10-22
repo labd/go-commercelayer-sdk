@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,11 +20,13 @@ var _ MappedNullable = &SkuListDataRelationships{}
 
 // SkuListDataRelationships struct for SkuListDataRelationships
 type SkuListDataRelationships struct {
-	Customer     *CouponRecipientDataRelationshipsCustomer   `json:"customer,omitempty"`
-	Skus         *BundleDataRelationshipsSkus                `json:"skus,omitempty"`
-	SkuListItems *SkuListDataRelationshipsSkuListItems       `json:"sku_list_items,omitempty"`
-	Bundles      *OrderDataRelationshipsAvailableFreeBundles `json:"bundles,omitempty"`
-	Attachments  *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Customer     *CouponRecipientDataRelationshipsCustomer  `json:"customer,omitempty"`
+	Skus         *BundleDataRelationshipsSkus               `json:"skus,omitempty"`
+	SkuListItems *SkuListDataRelationshipsSkuListItems      `json:"sku_list_items,omitempty"`
+	Bundles      *LineItemDataRelationshipsBundle           `json:"bundles,omitempty"`
+	Attachments  *AuthorizationDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Links        *OrderDataRelationshipsLinks               `json:"links,omitempty"`
+	Versions     *AddressDataRelationshipsVersions          `json:"versions,omitempty"`
 }
 
 // NewSkuListDataRelationships instantiates a new SkuListDataRelationships object
@@ -141,9 +143,9 @@ func (o *SkuListDataRelationships) SetSkuListItems(v SkuListDataRelationshipsSku
 }
 
 // GetBundles returns the Bundles field value if set, zero value otherwise.
-func (o *SkuListDataRelationships) GetBundles() OrderDataRelationshipsAvailableFreeBundles {
+func (o *SkuListDataRelationships) GetBundles() LineItemDataRelationshipsBundle {
 	if o == nil || IsNil(o.Bundles) {
-		var ret OrderDataRelationshipsAvailableFreeBundles
+		var ret LineItemDataRelationshipsBundle
 		return ret
 	}
 	return *o.Bundles
@@ -151,7 +153,7 @@ func (o *SkuListDataRelationships) GetBundles() OrderDataRelationshipsAvailableF
 
 // GetBundlesOk returns a tuple with the Bundles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuListDataRelationships) GetBundlesOk() (*OrderDataRelationshipsAvailableFreeBundles, bool) {
+func (o *SkuListDataRelationships) GetBundlesOk() (*LineItemDataRelationshipsBundle, bool) {
 	if o == nil || IsNil(o.Bundles) {
 		return nil, false
 	}
@@ -167,15 +169,15 @@ func (o *SkuListDataRelationships) HasBundles() bool {
 	return false
 }
 
-// SetBundles gets a reference to the given OrderDataRelationshipsAvailableFreeBundles and assigns it to the Bundles field.
-func (o *SkuListDataRelationships) SetBundles(v OrderDataRelationshipsAvailableFreeBundles) {
+// SetBundles gets a reference to the given LineItemDataRelationshipsBundle and assigns it to the Bundles field.
+func (o *SkuListDataRelationships) SetBundles(v LineItemDataRelationshipsBundle) {
 	o.Bundles = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *SkuListDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *SkuListDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -183,7 +185,7 @@ func (o *SkuListDataRelationships) GetAttachments() AvalaraAccountDataRelationsh
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuListDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *SkuListDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -199,9 +201,73 @@ func (o *SkuListDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *SkuListDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *SkuListDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetLinks returns the Links field value if set, zero value otherwise.
+func (o *SkuListDataRelationships) GetLinks() OrderDataRelationshipsLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret OrderDataRelationshipsLinks
+		return ret
+	}
+	return *o.Links
+}
+
+// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuListDataRelationships) GetLinksOk() (*OrderDataRelationshipsLinks, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
+	}
+	return o.Links, true
+}
+
+// HasLinks returns a boolean if a field has been set.
+func (o *SkuListDataRelationships) HasLinks() bool {
+	if o != nil && !IsNil(o.Links) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinks gets a reference to the given OrderDataRelationshipsLinks and assigns it to the Links field.
+func (o *SkuListDataRelationships) SetLinks(v OrderDataRelationshipsLinks) {
+	o.Links = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *SkuListDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuListDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *SkuListDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *SkuListDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o SkuListDataRelationships) MarshalJSON() ([]byte, error) {
@@ -228,6 +294,12 @@ func (o SkuListDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Links) {
+		toSerialize["links"] = o.Links
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

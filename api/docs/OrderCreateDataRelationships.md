@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **Customer** | Pointer to [**CouponRecipientCreateDataRelationshipsCustomer**](CouponRecipientCreateDataRelationshipsCustomer.md) |  | [optional] 
 **ShippingAddress** | Pointer to [**CustomerAddressCreateDataRelationshipsAddress**](CustomerAddressCreateDataRelationshipsAddress.md) |  | [optional] 
 **BillingAddress** | Pointer to [**CustomerAddressCreateDataRelationshipsAddress**](CustomerAddressCreateDataRelationshipsAddress.md) |  | [optional] 
-**PaymentMethod** | Pointer to [**OrderCreateDataRelationshipsPaymentMethod**](OrderCreateDataRelationshipsPaymentMethod.md) |  | [optional] 
+**PaymentMethod** | Pointer to [**CustomerPaymentSourceCreateDataRelationshipsPaymentMethod**](CustomerPaymentSourceCreateDataRelationshipsPaymentMethod.md) |  | [optional] 
 **PaymentSource** | Pointer to [**CustomerPaymentSourceCreateDataRelationshipsPaymentSource**](CustomerPaymentSourceCreateDataRelationshipsPaymentSource.md) |  | [optional] 
+**Tags** | Pointer to [**AddressCreateDataRelationshipsTags**](AddressCreateDataRelationshipsTags.md) |  | [optional] 
 
 ## Methods
 
@@ -132,20 +133,20 @@ HasBillingAddress returns a boolean if a field has been set.
 
 ### GetPaymentMethod
 
-`func (o *OrderCreateDataRelationships) GetPaymentMethod() OrderCreateDataRelationshipsPaymentMethod`
+`func (o *OrderCreateDataRelationships) GetPaymentMethod() CustomerPaymentSourceCreateDataRelationshipsPaymentMethod`
 
 GetPaymentMethod returns the PaymentMethod field if non-nil, zero value otherwise.
 
 ### GetPaymentMethodOk
 
-`func (o *OrderCreateDataRelationships) GetPaymentMethodOk() (*OrderCreateDataRelationshipsPaymentMethod, bool)`
+`func (o *OrderCreateDataRelationships) GetPaymentMethodOk() (*CustomerPaymentSourceCreateDataRelationshipsPaymentMethod, bool)`
 
 GetPaymentMethodOk returns a tuple with the PaymentMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentMethod
 
-`func (o *OrderCreateDataRelationships) SetPaymentMethod(v OrderCreateDataRelationshipsPaymentMethod)`
+`func (o *OrderCreateDataRelationships) SetPaymentMethod(v CustomerPaymentSourceCreateDataRelationshipsPaymentMethod)`
 
 SetPaymentMethod sets PaymentMethod field to given value.
 
@@ -179,6 +180,31 @@ SetPaymentSource sets PaymentSource field to given value.
 `func (o *OrderCreateDataRelationships) HasPaymentSource() bool`
 
 HasPaymentSource returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *OrderCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *OrderCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *OrderCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *OrderCreateDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,8 @@ var _ MappedNullable = &GETImportsImportId200ResponseDataAttributes{}
 type GETImportsImportId200ResponseDataAttributes struct {
 	// The type of resource being imported.
 	ResourceType interface{} `json:"resource_type,omitempty"`
+	// The format of the import inputs one of 'json' (default) or 'csv'.
+	Format interface{} `json:"format,omitempty"`
 	// The ID of the parent resource to be associated with imported data.
 	ParentResourceId interface{} `json:"parent_resource_id,omitempty"`
 	// The import job status. One of 'pending' (default), 'in_progress', 'interrupted', or 'completed'.
@@ -40,16 +42,12 @@ type GETImportsImportId200ResponseDataAttributes struct {
 	ErrorsCount interface{} `json:"errors_count,omitempty"`
 	// Indicates the number of import warnings, if any.
 	WarningsCount interface{} `json:"warnings_count,omitempty"`
-	// Indicates the number of records that have been destroyed, if any.
-	DestroyedCount interface{} `json:"destroyed_count,omitempty"`
 	// Indicates the number of records that have been processed (created or updated).
 	ProcessedCount interface{} `json:"processed_count,omitempty"`
 	// Contains the import errors, if any.
 	ErrorsLog interface{} `json:"errors_log,omitempty"`
 	// Contains the import warnings, if any.
 	WarningsLog interface{} `json:"warnings_log,omitempty"`
-	// Indicates if the import should cleanup records that are not included in the inputs array.
-	CleanupRecords interface{} `json:"cleanup_records,omitempty"`
 	// The URL the the raw inputs file, which will be generated at import start.
 	AttachmentUrl interface{} `json:"attachment_url,omitempty"`
 	// Time at which the resource was created.
@@ -58,7 +56,7 @@ type GETImportsImportId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -112,6 +110,39 @@ func (o *GETImportsImportId200ResponseDataAttributes) HasResourceType() bool {
 // SetResourceType gets a reference to the given interface{} and assigns it to the ResourceType field.
 func (o *GETImportsImportId200ResponseDataAttributes) SetResourceType(v interface{}) {
 	o.ResourceType = v
+}
+
+// GetFormat returns the Format field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETImportsImportId200ResponseDataAttributes) GetFormat() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETImportsImportId200ResponseDataAttributes) GetFormatOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return &o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *GETImportsImportId200ResponseDataAttributes) HasFormat() bool {
+	if o != nil && IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given interface{} and assigns it to the Format field.
+func (o *GETImportsImportId200ResponseDataAttributes) SetFormat(v interface{}) {
+	o.Format = v
 }
 
 // GetParentResourceId returns the ParentResourceId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -411,39 +442,6 @@ func (o *GETImportsImportId200ResponseDataAttributes) SetWarningsCount(v interfa
 	o.WarningsCount = v
 }
 
-// GetDestroyedCount returns the DestroyedCount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETImportsImportId200ResponseDataAttributes) GetDestroyedCount() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.DestroyedCount
-}
-
-// GetDestroyedCountOk returns a tuple with the DestroyedCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETImportsImportId200ResponseDataAttributes) GetDestroyedCountOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.DestroyedCount) {
-		return nil, false
-	}
-	return &o.DestroyedCount, true
-}
-
-// HasDestroyedCount returns a boolean if a field has been set.
-func (o *GETImportsImportId200ResponseDataAttributes) HasDestroyedCount() bool {
-	if o != nil && IsNil(o.DestroyedCount) {
-		return true
-	}
-
-	return false
-}
-
-// SetDestroyedCount gets a reference to the given interface{} and assigns it to the DestroyedCount field.
-func (o *GETImportsImportId200ResponseDataAttributes) SetDestroyedCount(v interface{}) {
-	o.DestroyedCount = v
-}
-
 // GetProcessedCount returns the ProcessedCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETImportsImportId200ResponseDataAttributes) GetProcessedCount() interface{} {
 	if o == nil {
@@ -541,39 +539,6 @@ func (o *GETImportsImportId200ResponseDataAttributes) HasWarningsLog() bool {
 // SetWarningsLog gets a reference to the given interface{} and assigns it to the WarningsLog field.
 func (o *GETImportsImportId200ResponseDataAttributes) SetWarningsLog(v interface{}) {
 	o.WarningsLog = v
-}
-
-// GetCleanupRecords returns the CleanupRecords field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETImportsImportId200ResponseDataAttributes) GetCleanupRecords() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.CleanupRecords
-}
-
-// GetCleanupRecordsOk returns a tuple with the CleanupRecords field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETImportsImportId200ResponseDataAttributes) GetCleanupRecordsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.CleanupRecords) {
-		return nil, false
-	}
-	return &o.CleanupRecords, true
-}
-
-// HasCleanupRecords returns a boolean if a field has been set.
-func (o *GETImportsImportId200ResponseDataAttributes) HasCleanupRecords() bool {
-	if o != nil && IsNil(o.CleanupRecords) {
-		return true
-	}
-
-	return false
-}
-
-// SetCleanupRecords gets a reference to the given interface{} and assigns it to the CleanupRecords field.
-func (o *GETImportsImportId200ResponseDataAttributes) SetCleanupRecords(v interface{}) {
-	o.CleanupRecords = v
 }
 
 // GetAttachmentUrl returns the AttachmentUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -787,6 +752,9 @@ func (o GETImportsImportId200ResponseDataAttributes) ToMap() (map[string]interfa
 	if o.ResourceType != nil {
 		toSerialize["resource_type"] = o.ResourceType
 	}
+	if o.Format != nil {
+		toSerialize["format"] = o.Format
+	}
 	if o.ParentResourceId != nil {
 		toSerialize["parent_resource_id"] = o.ParentResourceId
 	}
@@ -814,9 +782,6 @@ func (o GETImportsImportId200ResponseDataAttributes) ToMap() (map[string]interfa
 	if o.WarningsCount != nil {
 		toSerialize["warnings_count"] = o.WarningsCount
 	}
-	if o.DestroyedCount != nil {
-		toSerialize["destroyed_count"] = o.DestroyedCount
-	}
 	if o.ProcessedCount != nil {
 		toSerialize["processed_count"] = o.ProcessedCount
 	}
@@ -825,9 +790,6 @@ func (o GETImportsImportId200ResponseDataAttributes) ToMap() (map[string]interfa
 	}
 	if o.WarningsLog != nil {
 		toSerialize["warnings_log"] = o.WarningsLog
-	}
-	if o.CleanupRecords != nil {
-		toSerialize["cleanup_records"] = o.CleanupRecords
 	}
 	if o.AttachmentUrl != nil {
 		toSerialize["attachment_url"] = o.AttachmentUrl

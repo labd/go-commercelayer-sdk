@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -25,11 +25,13 @@ type POSTPrices201ResponseDataAttributes struct {
 	// The SKU price amount for the associated price list, in cents.
 	AmountCents interface{} `json:"amount_cents"`
 	// The compared price amount, in cents. Useful to display a percentage discount.
-	CompareAtAmountCents interface{} `json:"compare_at_amount_cents"`
+	CompareAtAmountCents interface{} `json:"compare_at_amount_cents,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
+	// The rules (using Rules Engine) to be applied.
+	Rules interface{} `json:"rules,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
 }
@@ -38,10 +40,9 @@ type POSTPrices201ResponseDataAttributes struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTPrices201ResponseDataAttributes(amountCents interface{}, compareAtAmountCents interface{}) *POSTPrices201ResponseDataAttributes {
+func NewPOSTPrices201ResponseDataAttributes(amountCents interface{}) *POSTPrices201ResponseDataAttributes {
 	this := POSTPrices201ResponseDataAttributes{}
 	this.AmountCents = amountCents
-	this.CompareAtAmountCents = compareAtAmountCents
 	return &this
 }
 
@@ -112,18 +113,16 @@ func (o *POSTPrices201ResponseDataAttributes) SetAmountCents(v interface{}) {
 	o.AmountCents = v
 }
 
-// GetCompareAtAmountCents returns the CompareAtAmountCents field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetCompareAtAmountCents returns the CompareAtAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTPrices201ResponseDataAttributes) GetCompareAtAmountCents() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.CompareAtAmountCents
 }
 
-// GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field value
+// GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPrices201ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool) {
@@ -133,7 +132,16 @@ func (o *POSTPrices201ResponseDataAttributes) GetCompareAtAmountCentsOk() (*inte
 	return &o.CompareAtAmountCents, true
 }
 
-// SetCompareAtAmountCents sets field value
+// HasCompareAtAmountCents returns a boolean if a field has been set.
+func (o *POSTPrices201ResponseDataAttributes) HasCompareAtAmountCents() bool {
+	if o != nil && IsNil(o.CompareAtAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetCompareAtAmountCents gets a reference to the given interface{} and assigns it to the CompareAtAmountCents field.
 func (o *POSTPrices201ResponseDataAttributes) SetCompareAtAmountCents(v interface{}) {
 	o.CompareAtAmountCents = v
 }
@@ -204,6 +212,39 @@ func (o *POSTPrices201ResponseDataAttributes) SetReferenceOrigin(v interface{}) 
 	o.ReferenceOrigin = v
 }
 
+// GetRules returns the Rules field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPrices201ResponseDataAttributes) GetRules() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Rules
+}
+
+// GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPrices201ResponseDataAttributes) GetRulesOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Rules) {
+		return nil, false
+	}
+	return &o.Rules, true
+}
+
+// HasRules returns a boolean if a field has been set.
+func (o *POSTPrices201ResponseDataAttributes) HasRules() bool {
+	if o != nil && IsNil(o.Rules) {
+		return true
+	}
+
+	return false
+}
+
+// SetRules gets a reference to the given interface{} and assigns it to the Rules field.
+func (o *POSTPrices201ResponseDataAttributes) SetRules(v interface{}) {
+	o.Rules = v
+}
+
 // GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTPrices201ResponseDataAttributes) GetMetadata() interface{} {
 	if o == nil {
@@ -261,6 +302,9 @@ func (o POSTPrices201ResponseDataAttributes) ToMap() (map[string]interface{}, er
 	}
 	if o.ReferenceOrigin != nil {
 		toSerialize["reference_origin"] = o.ReferenceOrigin
+	}
+	if o.Rules != nil {
+		toSerialize["rules"] = o.Rules
 	}
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata

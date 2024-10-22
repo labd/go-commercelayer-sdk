@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -249,6 +249,98 @@ func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscriptionExecute(r 
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/order_subscription"
 	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type OrderSubscriptionsApiGETOrderIdOrderSubscriptionRequest struct {
+	ctx        context.Context
+	ApiService *OrderSubscriptionsApiService
+	orderId    interface{}
+}
+
+func (r OrderSubscriptionsApiGETOrderIdOrderSubscriptionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdOrderSubscriptionExecute(r)
+}
+
+/*
+GETOrderIdOrderSubscription Retrieve the order subscription associated to the order
+
+Retrieve the order subscription associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return OrderSubscriptionsApiGETOrderIdOrderSubscriptionRequest
+*/
+func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscription(ctx context.Context, orderId interface{}) OrderSubscriptionsApiGETOrderIdOrderSubscriptionRequest {
+	return OrderSubscriptionsApiGETOrderIdOrderSubscriptionRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptionExecute(r OrderSubscriptionsApiGETOrderIdOrderSubscriptionRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.GETOrderIdOrderSubscription")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/order_subscription"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

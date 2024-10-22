@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,11 @@ var _ MappedNullable = &ShipmentUpdateDataRelationships{}
 
 // ShipmentUpdateDataRelationships struct for ShipmentUpdateDataRelationships
 type ShipmentUpdateDataRelationships struct {
-	ShippingMethod *DeliveryLeadTimeCreateDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
+	ShippingCategory       *ShipmentCreateDataRelationshipsShippingCategory       `json:"shipping_category,omitempty"`
+	InventoryStockLocation *ShipmentCreateDataRelationshipsInventoryStockLocation `json:"inventory_stock_location,omitempty"`
+	ShippingAddress        *CustomerAddressCreateDataRelationshipsAddress         `json:"shipping_address,omitempty"`
+	ShippingMethod         *DeliveryLeadTimeCreateDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
+	Tags                   *AddressCreateDataRelationshipsTags                    `json:"tags,omitempty"`
 }
 
 // NewShipmentUpdateDataRelationships instantiates a new ShipmentUpdateDataRelationships object
@@ -38,6 +42,102 @@ func NewShipmentUpdateDataRelationships() *ShipmentUpdateDataRelationships {
 func NewShipmentUpdateDataRelationshipsWithDefaults() *ShipmentUpdateDataRelationships {
 	this := ShipmentUpdateDataRelationships{}
 	return &this
+}
+
+// GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
+func (o *ShipmentUpdateDataRelationships) GetShippingCategory() ShipmentCreateDataRelationshipsShippingCategory {
+	if o == nil || IsNil(o.ShippingCategory) {
+		var ret ShipmentCreateDataRelationshipsShippingCategory
+		return ret
+	}
+	return *o.ShippingCategory
+}
+
+// GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShipmentUpdateDataRelationships) GetShippingCategoryOk() (*ShipmentCreateDataRelationshipsShippingCategory, bool) {
+	if o == nil || IsNil(o.ShippingCategory) {
+		return nil, false
+	}
+	return o.ShippingCategory, true
+}
+
+// HasShippingCategory returns a boolean if a field has been set.
+func (o *ShipmentUpdateDataRelationships) HasShippingCategory() bool {
+	if o != nil && !IsNil(o.ShippingCategory) {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingCategory gets a reference to the given ShipmentCreateDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
+func (o *ShipmentUpdateDataRelationships) SetShippingCategory(v ShipmentCreateDataRelationshipsShippingCategory) {
+	o.ShippingCategory = &v
+}
+
+// GetInventoryStockLocation returns the InventoryStockLocation field value if set, zero value otherwise.
+func (o *ShipmentUpdateDataRelationships) GetInventoryStockLocation() ShipmentCreateDataRelationshipsInventoryStockLocation {
+	if o == nil || IsNil(o.InventoryStockLocation) {
+		var ret ShipmentCreateDataRelationshipsInventoryStockLocation
+		return ret
+	}
+	return *o.InventoryStockLocation
+}
+
+// GetInventoryStockLocationOk returns a tuple with the InventoryStockLocation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShipmentUpdateDataRelationships) GetInventoryStockLocationOk() (*ShipmentCreateDataRelationshipsInventoryStockLocation, bool) {
+	if o == nil || IsNil(o.InventoryStockLocation) {
+		return nil, false
+	}
+	return o.InventoryStockLocation, true
+}
+
+// HasInventoryStockLocation returns a boolean if a field has been set.
+func (o *ShipmentUpdateDataRelationships) HasInventoryStockLocation() bool {
+	if o != nil && !IsNil(o.InventoryStockLocation) {
+		return true
+	}
+
+	return false
+}
+
+// SetInventoryStockLocation gets a reference to the given ShipmentCreateDataRelationshipsInventoryStockLocation and assigns it to the InventoryStockLocation field.
+func (o *ShipmentUpdateDataRelationships) SetInventoryStockLocation(v ShipmentCreateDataRelationshipsInventoryStockLocation) {
+	o.InventoryStockLocation = &v
+}
+
+// GetShippingAddress returns the ShippingAddress field value if set, zero value otherwise.
+func (o *ShipmentUpdateDataRelationships) GetShippingAddress() CustomerAddressCreateDataRelationshipsAddress {
+	if o == nil || IsNil(o.ShippingAddress) {
+		var ret CustomerAddressCreateDataRelationshipsAddress
+		return ret
+	}
+	return *o.ShippingAddress
+}
+
+// GetShippingAddressOk returns a tuple with the ShippingAddress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShipmentUpdateDataRelationships) GetShippingAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool) {
+	if o == nil || IsNil(o.ShippingAddress) {
+		return nil, false
+	}
+	return o.ShippingAddress, true
+}
+
+// HasShippingAddress returns a boolean if a field has been set.
+func (o *ShipmentUpdateDataRelationships) HasShippingAddress() bool {
+	if o != nil && !IsNil(o.ShippingAddress) {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingAddress gets a reference to the given CustomerAddressCreateDataRelationshipsAddress and assigns it to the ShippingAddress field.
+func (o *ShipmentUpdateDataRelationships) SetShippingAddress(v CustomerAddressCreateDataRelationshipsAddress) {
+	o.ShippingAddress = &v
 }
 
 // GetShippingMethod returns the ShippingMethod field value if set, zero value otherwise.
@@ -72,6 +172,38 @@ func (o *ShipmentUpdateDataRelationships) SetShippingMethod(v DeliveryLeadTimeCr
 	o.ShippingMethod = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *ShipmentUpdateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShipmentUpdateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *ShipmentUpdateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *ShipmentUpdateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o ShipmentUpdateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -82,8 +214,20 @@ func (o ShipmentUpdateDataRelationships) MarshalJSON() ([]byte, error) {
 
 func (o ShipmentUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ShippingCategory) {
+		toSerialize["shipping_category"] = o.ShippingCategory
+	}
+	if !IsNil(o.InventoryStockLocation) {
+		toSerialize["inventory_stock_location"] = o.InventoryStockLocation
+	}
+	if !IsNil(o.ShippingAddress) {
+		toSerialize["shipping_address"] = o.ShippingAddress
+	}
 	if !IsNil(o.ShippingMethod) {
 		toSerialize["shipping_method"] = o.ShippingMethod
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

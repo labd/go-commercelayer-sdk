@@ -6,9 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **interface{}** | The tax calculator&#39;s internal name. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **TaxCalculatorUrl** | Pointer to **interface{}** | The URL to the service that will compute the taxes. | [optional] 
+**ResetCircuit** | Pointer to **interface{}** | Send this attribute if you want to reset the circuit breaker associated to this resource to &#39;closed&#39; state and zero failures count. Cannot be passed by sales channels. | [optional] 
 
 ## Methods
 
@@ -204,6 +205,41 @@ HasTaxCalculatorUrl returns a boolean if a field has been set.
 `func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) UnsetTaxCalculatorUrl()`
 
 UnsetTaxCalculatorUrl ensures that no value is present for TaxCalculatorUrl, not even an explicit nil
+### GetResetCircuit
+
+`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetResetCircuit() interface{}`
+
+GetResetCircuit returns the ResetCircuit field if non-nil, zero value otherwise.
+
+### GetResetCircuitOk
+
+`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetResetCircuitOk() (*interface{}, bool)`
+
+GetResetCircuitOk returns a tuple with the ResetCircuit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResetCircuit
+
+`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetResetCircuit(v interface{})`
+
+SetResetCircuit sets ResetCircuit field to given value.
+
+### HasResetCircuit
+
+`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasResetCircuit() bool`
+
+HasResetCircuit returns a boolean if a field has been set.
+
+### SetResetCircuitNil
+
+`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetResetCircuitNil(b bool)`
+
+ SetResetCircuitNil sets the value for ResetCircuit to be an explicit nil
+
+### UnsetResetCircuit
+`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) UnsetResetCircuit()`
+
+UnsetResetCircuit ensures that no value is present for ResetCircuit, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

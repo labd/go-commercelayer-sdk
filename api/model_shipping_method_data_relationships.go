@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -27,7 +27,8 @@ type ShippingMethodDataRelationships struct {
 	DeliveryLeadTimeForShipment *ShipmentDataRelationshipsDeliveryLeadTime          `json:"delivery_lead_time_for_shipment,omitempty"`
 	ShippingMethodTiers         *ShippingMethodDataRelationshipsShippingMethodTiers `json:"shipping_method_tiers,omitempty"`
 	ShippingWeightTiers         *ShippingMethodDataRelationshipsShippingWeightTiers `json:"shipping_weight_tiers,omitempty"`
-	Attachments                 *AvalaraAccountDataRelationshipsAttachments         `json:"attachments,omitempty"`
+	Attachments                 *AuthorizationDataRelationshipsAttachments          `json:"attachments,omitempty"`
+	Versions                    *AddressDataRelationshipsVersions                   `json:"versions,omitempty"`
 }
 
 // NewShippingMethodDataRelationships instantiates a new ShippingMethodDataRelationships object
@@ -272,9 +273,9 @@ func (o *ShippingMethodDataRelationships) SetShippingWeightTiers(v ShippingMetho
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *ShippingMethodDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *ShippingMethodDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -282,7 +283,7 @@ func (o *ShippingMethodDataRelationships) GetAttachments() AvalaraAccountDataRel
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *ShippingMethodDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -298,9 +299,41 @@ func (o *ShippingMethodDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *ShippingMethodDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *ShippingMethodDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *ShippingMethodDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *ShippingMethodDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *ShippingMethodDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o ShippingMethodDataRelationships) MarshalJSON() ([]byte, error) {
@@ -336,6 +369,9 @@ func (o ShippingMethodDataRelationships) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

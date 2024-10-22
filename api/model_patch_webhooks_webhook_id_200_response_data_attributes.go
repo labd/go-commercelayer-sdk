@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -28,11 +28,15 @@ type PATCHWebhooksWebhookId200ResponseDataAttributes struct {
 	CallbackUrl interface{} `json:"callback_url,omitempty"`
 	// List of related resources that should be included in the webhook body.
 	IncludeResources interface{} `json:"include_resources,omitempty"`
-	// Send this attribute if you want to reset the circuit breaker associated to this webhook to 'closed' state and zero failures count.
+	// Send this attribute if you want to mark this resource as disabled.
+	Disable interface{} `json:"_disable,omitempty"`
+	// Send this attribute if you want to mark this resource as enabled.
+	Enable interface{} `json:"_enable,omitempty"`
+	// Send this attribute if you want to reset the circuit breaker associated to this resource to 'closed' state and zero failures count. Cannot be passed by sales channels.
 	ResetCircuit interface{} `json:"_reset_circuit,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -185,6 +189,72 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasIncludeResources() 
 // SetIncludeResources gets a reference to the given interface{} and assigns it to the IncludeResources field.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetIncludeResources(v interface{}) {
 	o.IncludeResources = v
+}
+
+// GetDisable returns the Disable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetDisable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Disable
+}
+
+// GetDisableOk returns a tuple with the Disable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetDisableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Disable) {
+		return nil, false
+	}
+	return &o.Disable, true
+}
+
+// HasDisable returns a boolean if a field has been set.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasDisable() bool {
+	if o != nil && IsNil(o.Disable) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisable gets a reference to the given interface{} and assigns it to the Disable field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetDisable(v interface{}) {
+	o.Disable = v
+}
+
+// GetEnable returns the Enable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetEnable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Enable
+}
+
+// GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetEnableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Enable) {
+		return nil, false
+	}
+	return &o.Enable, true
+}
+
+// HasEnable returns a boolean if a field has been set.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasEnable() bool {
+	if o != nil && IsNil(o.Enable) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnable gets a reference to the given interface{} and assigns it to the Enable field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetEnable(v interface{}) {
+	o.Enable = v
 }
 
 // GetResetCircuit returns the ResetCircuit field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -340,6 +410,12 @@ func (o PATCHWebhooksWebhookId200ResponseDataAttributes) ToMap() (map[string]int
 	}
 	if o.IncludeResources != nil {
 		toSerialize["include_resources"] = o.IncludeResources
+	}
+	if o.Disable != nil {
+		toSerialize["_disable"] = o.Disable
+	}
+	if o.Enable != nil {
+		toSerialize["_enable"] = o.Enable
 	}
 	if o.ResetCircuit != nil {
 		toSerialize["_reset_circuit"] = o.ResetCircuit

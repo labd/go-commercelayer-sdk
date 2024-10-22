@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -24,9 +24,11 @@ type PATCHStockItemsStockItemId200ResponseDataAttributes struct {
 	SkuCode interface{} `json:"sku_code,omitempty"`
 	// The stock item quantity.
 	Quantity interface{} `json:"quantity,omitempty"`
+	// Send this attribute if you want to validate the stock item quantity against the existing reserved stock one, returns an error in case the former is smaller. Cannot be passed by sales channels.
+	Validate interface{} `json:"_validate,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -113,6 +115,39 @@ func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) HasQuantity() bool
 // SetQuantity gets a reference to the given interface{} and assigns it to the Quantity field.
 func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) SetQuantity(v interface{}) {
 	o.Quantity = v
+}
+
+// GetValidate returns the Validate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) GetValidate() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Validate
+}
+
+// GetValidateOk returns a tuple with the Validate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) GetValidateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Validate) {
+		return nil, false
+	}
+	return &o.Validate, true
+}
+
+// HasValidate returns a boolean if a field has been set.
+func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) HasValidate() bool {
+	if o != nil && IsNil(o.Validate) {
+		return true
+	}
+
+	return false
+}
+
+// SetValidate gets a reference to the given interface{} and assigns it to the Validate field.
+func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) SetValidate(v interface{}) {
+	o.Validate = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -229,6 +264,9 @@ func (o PATCHStockItemsStockItemId200ResponseDataAttributes) ToMap() (map[string
 	}
 	if o.Quantity != nil {
 		toSerialize["quantity"] = o.Quantity
+	}
+	if o.Validate != nil {
+		toSerialize["_validate"] = o.Validate
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

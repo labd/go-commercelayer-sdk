@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &ReturnLineItemDataRelationships{}
 
 // ReturnLineItemDataRelationships struct for ReturnLineItemDataRelationships
 type ReturnLineItemDataRelationships struct {
-	Return   *CustomerDataRelationshipsReturns        `json:"return,omitempty"`
+	Return   *CaptureDataRelationshipsReturn          `json:"return,omitempty"`
 	LineItem *LineItemOptionDataRelationshipsLineItem `json:"line_item,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewReturnLineItemDataRelationshipsWithDefaults() *ReturnLineItemDataRelatio
 }
 
 // GetReturn returns the Return field value if set, zero value otherwise.
-func (o *ReturnLineItemDataRelationships) GetReturn() CustomerDataRelationshipsReturns {
+func (o *ReturnLineItemDataRelationships) GetReturn() CaptureDataRelationshipsReturn {
 	if o == nil || IsNil(o.Return) {
-		var ret CustomerDataRelationshipsReturns
+		var ret CaptureDataRelationshipsReturn
 		return ret
 	}
 	return *o.Return
@@ -52,7 +52,7 @@ func (o *ReturnLineItemDataRelationships) GetReturn() CustomerDataRelationshipsR
 
 // GetReturnOk returns a tuple with the Return field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemDataRelationships) GetReturnOk() (*CustomerDataRelationshipsReturns, bool) {
+func (o *ReturnLineItemDataRelationships) GetReturnOk() (*CaptureDataRelationshipsReturn, bool) {
 	if o == nil || IsNil(o.Return) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *ReturnLineItemDataRelationships) HasReturn() bool {
 	return false
 }
 
-// SetReturn gets a reference to the given CustomerDataRelationshipsReturns and assigns it to the Return field.
-func (o *ReturnLineItemDataRelationships) SetReturn(v CustomerDataRelationshipsReturns) {
+// SetReturn gets a reference to the given CaptureDataRelationshipsReturn and assigns it to the Return field.
+func (o *ReturnLineItemDataRelationships) SetReturn(v CaptureDataRelationshipsReturn) {
 	o.Return = &v
 }
 

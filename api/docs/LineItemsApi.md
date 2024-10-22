@@ -9,8 +9,11 @@ Method | HTTP request | Description
 [**GETLineItems**](LineItemsApi.md#GETLineItems) | **Get** /line_items | List all line items
 [**GETLineItemsLineItemId**](LineItemsApi.md#GETLineItemsLineItemId) | **Get** /line_items/{lineItemId} | Retrieve a line item
 [**GETOrderIdLineItems**](LineItemsApi.md#GETOrderIdLineItems) | **Get** /orders/{orderId}/line_items | Retrieve the line items associated to the order
+[**GETOrderSubscriptionItemIdSourceLineItem**](LineItemsApi.md#GETOrderSubscriptionItemIdSourceLineItem) | **Get** /order_subscription_items/{orderSubscriptionItemId}/source_line_item | Retrieve the source line item associated to the order subscription item
 [**GETReturnLineItemIdLineItem**](LineItemsApi.md#GETReturnLineItemIdLineItem) | **Get** /return_line_items/{returnLineItemId}/line_item | Retrieve the line item associated to the return line item
+[**GETShipmentIdLineItems**](LineItemsApi.md#GETShipmentIdLineItems) | **Get** /shipments/{shipmentId}/line_items | Retrieve the line items associated to the shipment
 [**GETStockLineItemIdLineItem**](LineItemsApi.md#GETStockLineItemIdLineItem) | **Get** /stock_line_items/{stockLineItemId}/line_item | Retrieve the line item associated to the stock line item
+[**GETStockReservationIdLineItem**](LineItemsApi.md#GETStockReservationIdLineItem) | **Get** /stock_reservations/{stockReservationId}/line_item | Retrieve the line item associated to the stock reservation
 [**GETStockTransferIdLineItem**](LineItemsApi.md#GETStockTransferIdLineItem) | **Get** /stock_transfers/{stockTransferId}/line_item | Retrieve the line item associated to the stock transfer
 [**PATCHLineItemsLineItemId**](LineItemsApi.md#PATCHLineItemsLineItemId) | **Patch** /line_items/{lineItemId} | Update a line item
 [**POSTLineItems**](LineItemsApi.md#POSTLineItems) | **Post** /line_items | Create a line item
@@ -352,6 +355,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETOrderSubscriptionItemIdSourceLineItem
+
+> GETOrderSubscriptionItemIdSourceLineItem(ctx, orderSubscriptionItemId).Execute()
+
+Retrieve the source line item associated to the order subscription item
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    orderSubscriptionItemId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.LineItemsApi.GETOrderSubscriptionItemIdSourceLineItem(context.Background(), orderSubscriptionItemId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.GETOrderSubscriptionItemIdSourceLineItem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderSubscriptionItemId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderSubscriptionItemIdSourceLineItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETReturnLineItemIdLineItem
 
 > GETReturnLineItemIdLineItem(ctx, returnLineItemId).Execute()
@@ -420,6 +491,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETShipmentIdLineItems
+
+> GETShipmentIdLineItems(ctx, shipmentId).Execute()
+
+Retrieve the line items associated to the shipment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    shipmentId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.LineItemsApi.GETShipmentIdLineItems(context.Background(), shipmentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.GETShipmentIdLineItems``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShipmentIdLineItemsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETStockLineItemIdLineItem
 
 > GETStockLineItemIdLineItem(ctx, stockLineItemId).Execute()
@@ -464,6 +603,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockLineItemIdLineItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdLineItem
+
+> GETStockReservationIdLineItem(ctx, stockReservationId).Execute()
+
+Retrieve the line item associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.LineItemsApi.GETStockReservationIdLineItem(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.GETStockReservationIdLineItem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdLineItemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

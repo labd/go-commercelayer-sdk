@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **interface{}** | Unique name for the package | [optional] 
-**Code** | Pointer to **interface{}** | The package identifying code | [optional] 
+**Name** | Pointer to **interface{}** | Unique name for the package. | [optional] 
+**Code** | Pointer to **interface{}** | The package identifying code. | [optional] 
 **Length** | Pointer to **interface{}** | The package length, used to automatically calculate the tax rates from the available carrier accounts. | [optional] 
 **Width** | Pointer to **interface{}** | The package width, used to automatically calculate the tax rates from the available carrier accounts. | [optional] 
 **Height** | Pointer to **interface{}** | The package height, used to automatically calculate the tax rates from the available carrier accounts. | [optional] 
 **UnitOfLength** | Pointer to **interface{}** | The unit of length. Can be one of &#39;cm&#39;, or &#39;in&#39;. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods

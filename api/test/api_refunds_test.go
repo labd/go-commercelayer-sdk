@@ -74,4 +74,31 @@ func Test_api_RefundsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test RefundsApiService GETReturnIdReferenceRefund", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var returnId interface{}
+
+		httpRes, err := apiClient.RefundsApi.GETReturnIdReferenceRefund(context.Background(), returnId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RefundsApiService PATCHRefundsRefundId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var refundId interface{}
+
+		resp, httpRes, err := apiClient.RefundsApi.PATCHRefundsRefundId(context.Background(), refundId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 }

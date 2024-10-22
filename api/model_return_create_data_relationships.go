@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,10 @@ var _ MappedNullable = &ReturnCreateDataRelationships{}
 
 // ReturnCreateDataRelationships struct for ReturnCreateDataRelationships
 type ReturnCreateDataRelationships struct {
-	Order         AdyenPaymentCreateDataRelationshipsOrder              `json:"order"`
-	StockLocation *DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"stock_location,omitempty"`
+	Order            AdyenPaymentCreateDataRelationshipsOrder              `json:"order"`
+	StockLocation    *DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"stock_location,omitempty"`
+	ReferenceCapture *ReturnCreateDataRelationshipsReferenceCapture        `json:"reference_capture,omitempty"`
+	Tags             *AddressCreateDataRelationshipsTags                   `json:"tags,omitempty"`
 }
 
 // NewReturnCreateDataRelationships instantiates a new ReturnCreateDataRelationships object
@@ -98,6 +100,70 @@ func (o *ReturnCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreat
 	o.StockLocation = &v
 }
 
+// GetReferenceCapture returns the ReferenceCapture field value if set, zero value otherwise.
+func (o *ReturnCreateDataRelationships) GetReferenceCapture() ReturnCreateDataRelationshipsReferenceCapture {
+	if o == nil || IsNil(o.ReferenceCapture) {
+		var ret ReturnCreateDataRelationshipsReferenceCapture
+		return ret
+	}
+	return *o.ReferenceCapture
+}
+
+// GetReferenceCaptureOk returns a tuple with the ReferenceCapture field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReturnCreateDataRelationships) GetReferenceCaptureOk() (*ReturnCreateDataRelationshipsReferenceCapture, bool) {
+	if o == nil || IsNil(o.ReferenceCapture) {
+		return nil, false
+	}
+	return o.ReferenceCapture, true
+}
+
+// HasReferenceCapture returns a boolean if a field has been set.
+func (o *ReturnCreateDataRelationships) HasReferenceCapture() bool {
+	if o != nil && !IsNil(o.ReferenceCapture) {
+		return true
+	}
+
+	return false
+}
+
+// SetReferenceCapture gets a reference to the given ReturnCreateDataRelationshipsReferenceCapture and assigns it to the ReferenceCapture field.
+func (o *ReturnCreateDataRelationships) SetReferenceCapture(v ReturnCreateDataRelationshipsReferenceCapture) {
+	o.ReferenceCapture = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *ReturnCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReturnCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *ReturnCreateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *ReturnCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o ReturnCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -111,6 +177,12 @@ func (o ReturnCreateDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize["order"] = o.Order
 	if !IsNil(o.StockLocation) {
 		toSerialize["stock_location"] = o.StockLocation
+	}
+	if !IsNil(o.ReferenceCapture) {
+		toSerialize["reference_capture"] = o.ReferenceCapture
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

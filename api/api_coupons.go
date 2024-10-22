@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -65,6 +65,98 @@ func (a *CouponsApiService) DELETECouponsCouponIdExecute(r CouponsApiDELETECoupo
 
 	localVarPath := localBasePath + "/coupons/{couponId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CouponsApiGETBuyXPayYPromotionIdCouponsRequest struct {
+	ctx                 context.Context
+	ApiService          *CouponsApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r CouponsApiGETBuyXPayYPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdCouponsExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdCoupons Retrieve the coupons associated to the buy x pay y promotion
+
+Retrieve the coupons associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return CouponsApiGETBuyXPayYPromotionIdCouponsRequest
+*/
+func (a *CouponsApiService) GETBuyXPayYPromotionIdCoupons(ctx context.Context, buyXPayYPromotionId interface{}) CouponsApiGETBuyXPayYPromotionIdCouponsRequest {
+	return CouponsApiGETBuyXPayYPromotionIdCouponsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponsApiService) GETBuyXPayYPromotionIdCouponsExecute(r CouponsApiGETBuyXPayYPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETBuyXPayYPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -409,6 +501,742 @@ func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCoup
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type CouponsApiGETExternalPromotionIdCouponsRequest struct {
+	ctx                 context.Context
+	ApiService          *CouponsApiService
+	externalPromotionId interface{}
+}
+
+func (r CouponsApiGETExternalPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExternalPromotionIdCouponsExecute(r)
+}
+
+/*
+GETExternalPromotionIdCoupons Retrieve the coupons associated to the external promotion
+
+Retrieve the coupons associated to the external promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return CouponsApiGETExternalPromotionIdCouponsRequest
+*/
+func (a *CouponsApiService) GETExternalPromotionIdCoupons(ctx context.Context, externalPromotionId interface{}) CouponsApiGETExternalPromotionIdCouponsRequest {
+	return CouponsApiGETExternalPromotionIdCouponsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		externalPromotionId: externalPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponsApiService) GETExternalPromotionIdCouponsExecute(r CouponsApiGETExternalPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETExternalPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CouponsApiGETFixedAmountPromotionIdCouponsRequest struct {
+	ctx                    context.Context
+	ApiService             *CouponsApiService
+	fixedAmountPromotionId interface{}
+}
+
+func (r CouponsApiGETFixedAmountPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedAmountPromotionIdCouponsExecute(r)
+}
+
+/*
+GETFixedAmountPromotionIdCoupons Retrieve the coupons associated to the fixed amount promotion
+
+Retrieve the coupons associated to the fixed amount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return CouponsApiGETFixedAmountPromotionIdCouponsRequest
+*/
+func (a *CouponsApiService) GETFixedAmountPromotionIdCoupons(ctx context.Context, fixedAmountPromotionId interface{}) CouponsApiGETFixedAmountPromotionIdCouponsRequest {
+	return CouponsApiGETFixedAmountPromotionIdCouponsRequest{
+		ApiService:             a,
+		ctx:                    ctx,
+		fixedAmountPromotionId: fixedAmountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponsApiService) GETFixedAmountPromotionIdCouponsExecute(r CouponsApiGETFixedAmountPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETFixedAmountPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CouponsApiGETFixedPricePromotionIdCouponsRequest struct {
+	ctx                   context.Context
+	ApiService            *CouponsApiService
+	fixedPricePromotionId interface{}
+}
+
+func (r CouponsApiGETFixedPricePromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedPricePromotionIdCouponsExecute(r)
+}
+
+/*
+GETFixedPricePromotionIdCoupons Retrieve the coupons associated to the fixed price promotion
+
+Retrieve the coupons associated to the fixed price promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return CouponsApiGETFixedPricePromotionIdCouponsRequest
+*/
+func (a *CouponsApiService) GETFixedPricePromotionIdCoupons(ctx context.Context, fixedPricePromotionId interface{}) CouponsApiGETFixedPricePromotionIdCouponsRequest {
+	return CouponsApiGETFixedPricePromotionIdCouponsRequest{
+		ApiService:            a,
+		ctx:                   ctx,
+		fixedPricePromotionId: fixedPricePromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponsApiService) GETFixedPricePromotionIdCouponsExecute(r CouponsApiGETFixedPricePromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETFixedPricePromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CouponsApiGETFlexPromotionIdCouponsRequest struct {
+	ctx             context.Context
+	ApiService      *CouponsApiService
+	flexPromotionId interface{}
+}
+
+func (r CouponsApiGETFlexPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFlexPromotionIdCouponsExecute(r)
+}
+
+/*
+GETFlexPromotionIdCoupons Retrieve the coupons associated to the flex promotion
+
+Retrieve the coupons associated to the flex promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param flexPromotionId The resource's id
+	@return CouponsApiGETFlexPromotionIdCouponsRequest
+*/
+func (a *CouponsApiService) GETFlexPromotionIdCoupons(ctx context.Context, flexPromotionId interface{}) CouponsApiGETFlexPromotionIdCouponsRequest {
+	return CouponsApiGETFlexPromotionIdCouponsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		flexPromotionId: flexPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponsApiService) GETFlexPromotionIdCouponsExecute(r CouponsApiGETFlexPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETFlexPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/flex_promotions/{flexPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"flexPromotionId"+"}", url.PathEscape(parameterValueToString(r.flexPromotionId, "flexPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CouponsApiGETFreeGiftPromotionIdCouponsRequest struct {
+	ctx                 context.Context
+	ApiService          *CouponsApiService
+	freeGiftPromotionId interface{}
+}
+
+func (r CouponsApiGETFreeGiftPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeGiftPromotionIdCouponsExecute(r)
+}
+
+/*
+GETFreeGiftPromotionIdCoupons Retrieve the coupons associated to the free gift promotion
+
+Retrieve the coupons associated to the free gift promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return CouponsApiGETFreeGiftPromotionIdCouponsRequest
+*/
+func (a *CouponsApiService) GETFreeGiftPromotionIdCoupons(ctx context.Context, freeGiftPromotionId interface{}) CouponsApiGETFreeGiftPromotionIdCouponsRequest {
+	return CouponsApiGETFreeGiftPromotionIdCouponsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		freeGiftPromotionId: freeGiftPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponsApiService) GETFreeGiftPromotionIdCouponsExecute(r CouponsApiGETFreeGiftPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETFreeGiftPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CouponsApiGETFreeShippingPromotionIdCouponsRequest struct {
+	ctx                     context.Context
+	ApiService              *CouponsApiService
+	freeShippingPromotionId interface{}
+}
+
+func (r CouponsApiGETFreeShippingPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeShippingPromotionIdCouponsExecute(r)
+}
+
+/*
+GETFreeShippingPromotionIdCoupons Retrieve the coupons associated to the free shipping promotion
+
+Retrieve the coupons associated to the free shipping promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return CouponsApiGETFreeShippingPromotionIdCouponsRequest
+*/
+func (a *CouponsApiService) GETFreeShippingPromotionIdCoupons(ctx context.Context, freeShippingPromotionId interface{}) CouponsApiGETFreeShippingPromotionIdCouponsRequest {
+	return CouponsApiGETFreeShippingPromotionIdCouponsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		freeShippingPromotionId: freeShippingPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponsApiService) GETFreeShippingPromotionIdCouponsExecute(r CouponsApiGETFreeShippingPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETFreeShippingPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CouponsApiGETPercentageDiscountPromotionIdCouponsRequest struct {
+	ctx                           context.Context
+	ApiService                    *CouponsApiService
+	percentageDiscountPromotionId interface{}
+}
+
+func (r CouponsApiGETPercentageDiscountPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPercentageDiscountPromotionIdCouponsExecute(r)
+}
+
+/*
+GETPercentageDiscountPromotionIdCoupons Retrieve the coupons associated to the percentage discount promotion
+
+Retrieve the coupons associated to the percentage discount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return CouponsApiGETPercentageDiscountPromotionIdCouponsRequest
+*/
+func (a *CouponsApiService) GETPercentageDiscountPromotionIdCoupons(ctx context.Context, percentageDiscountPromotionId interface{}) CouponsApiGETPercentageDiscountPromotionIdCouponsRequest {
+	return CouponsApiGETPercentageDiscountPromotionIdCouponsRequest{
+		ApiService:                    a,
+		ctx:                           ctx,
+		percentageDiscountPromotionId: percentageDiscountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponsApiService) GETPercentageDiscountPromotionIdCouponsExecute(r CouponsApiGETPercentageDiscountPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETPercentageDiscountPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CouponsApiGETPromotionIdCouponsRequest struct {
+	ctx         context.Context
+	ApiService  *CouponsApiService
+	promotionId interface{}
+}
+
+func (r CouponsApiGETPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPromotionIdCouponsExecute(r)
+}
+
+/*
+GETPromotionIdCoupons Retrieve the coupons associated to the promotion
+
+Retrieve the coupons associated to the promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return CouponsApiGETPromotionIdCouponsRequest
+*/
+func (a *CouponsApiService) GETPromotionIdCoupons(ctx context.Context, promotionId interface{}) CouponsApiGETPromotionIdCouponsRequest {
+	return CouponsApiGETPromotionIdCouponsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		promotionId: promotionId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponsApiService) GETPromotionIdCouponsExecute(r CouponsApiGETPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/promotions/{promotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 type CouponsApiPATCHCouponsCouponIdRequest struct {

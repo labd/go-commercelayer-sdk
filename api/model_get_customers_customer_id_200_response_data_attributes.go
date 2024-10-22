@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,19 +20,23 @@ var _ MappedNullable = &GETCustomersCustomerId200ResponseDataAttributes{}
 
 // GETCustomersCustomerId200ResponseDataAttributes struct for GETCustomersCustomerId200ResponseDataAttributes
 type GETCustomersCustomerId200ResponseDataAttributes struct {
-	// The customer's email address
+	// The customer's email address.
 	Email interface{} `json:"email,omitempty"`
-	// The customer's status, one of 'prospect', 'acquired', or 'repeat'.
+	// The customer's status. One of 'prospect' (default), 'acquired', or 'repeat'.
 	Status interface{} `json:"status,omitempty"`
 	// Indicates if the customer has a password.
 	HasPassword interface{} `json:"has_password,omitempty"`
+	// The total number of orders for the customer.
+	TotalOrdersCount interface{} `json:"total_orders_count,omitempty"`
+	// A reference to uniquely identify the shopper during payment sessions.
+	ShopperReference interface{} `json:"shopper_reference,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -152,6 +156,72 @@ func (o *GETCustomersCustomerId200ResponseDataAttributes) HasHasPassword() bool 
 // SetHasPassword gets a reference to the given interface{} and assigns it to the HasPassword field.
 func (o *GETCustomersCustomerId200ResponseDataAttributes) SetHasPassword(v interface{}) {
 	o.HasPassword = v
+}
+
+// GetTotalOrdersCount returns the TotalOrdersCount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETCustomersCustomerId200ResponseDataAttributes) GetTotalOrdersCount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.TotalOrdersCount
+}
+
+// GetTotalOrdersCountOk returns a tuple with the TotalOrdersCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETCustomersCustomerId200ResponseDataAttributes) GetTotalOrdersCountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TotalOrdersCount) {
+		return nil, false
+	}
+	return &o.TotalOrdersCount, true
+}
+
+// HasTotalOrdersCount returns a boolean if a field has been set.
+func (o *GETCustomersCustomerId200ResponseDataAttributes) HasTotalOrdersCount() bool {
+	if o != nil && IsNil(o.TotalOrdersCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalOrdersCount gets a reference to the given interface{} and assigns it to the TotalOrdersCount field.
+func (o *GETCustomersCustomerId200ResponseDataAttributes) SetTotalOrdersCount(v interface{}) {
+	o.TotalOrdersCount = v
+}
+
+// GetShopperReference returns the ShopperReference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETCustomersCustomerId200ResponseDataAttributes) GetShopperReference() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ShopperReference
+}
+
+// GetShopperReferenceOk returns a tuple with the ShopperReference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETCustomersCustomerId200ResponseDataAttributes) GetShopperReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShopperReference) {
+		return nil, false
+	}
+	return &o.ShopperReference, true
+}
+
+// HasShopperReference returns a boolean if a field has been set.
+func (o *GETCustomersCustomerId200ResponseDataAttributes) HasShopperReference() bool {
+	if o != nil && IsNil(o.ShopperReference) {
+		return true
+	}
+
+	return false
+}
+
+// SetShopperReference gets a reference to the given interface{} and assigns it to the ShopperReference field.
+func (o *GETCustomersCustomerId200ResponseDataAttributes) SetShopperReference(v interface{}) {
+	o.ShopperReference = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -337,6 +407,12 @@ func (o GETCustomersCustomerId200ResponseDataAttributes) ToMap() (map[string]int
 	}
 	if o.HasPassword != nil {
 		toSerialize["has_password"] = o.HasPassword
+	}
+	if o.TotalOrdersCount != nil {
+		toSerialize["total_orders_count"] = o.TotalOrdersCount
+	}
+	if o.ShopperReference != nil {
+		toSerialize["shopper_reference"] = o.ShopperReference
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

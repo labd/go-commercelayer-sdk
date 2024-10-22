@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,15 +20,19 @@ var _ MappedNullable = &PATCHAuthorizationsAuthorizationId200ResponseDataAttribu
 
 // PATCHAuthorizationsAuthorizationId200ResponseDataAttributes struct for PATCHAuthorizationsAuthorizationId200ResponseDataAttributes
 type PATCHAuthorizationsAuthorizationId200ResponseDataAttributes struct {
+	// Indicates if the transaction is successful.
+	Succeeded interface{} `json:"succeeded,omitempty"`
+	// Send this attribute if you want to forward a stuck transaction to succeeded and update associated order states accordingly.
+	Forward interface{} `json:"_forward,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
 	// Send this attribute if you want to create a capture for this authorization.
 	Capture interface{} `json:"_capture,omitempty"`
-	// The associated capture amount, in cents.
+	// Send this attribute as a value in cents if you want to overwrite the amount to be captured.
 	CaptureAmountCents interface{} `json:"_capture_amount_cents,omitempty"`
 	// Send this attribute if you want to create a void for this authorization.
 	Void interface{} `json:"_void,omitempty"`
@@ -49,6 +53,72 @@ func NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributes() *PATCHAuth
 func NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributesWithDefaults() *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes {
 	this := PATCHAuthorizationsAuthorizationId200ResponseDataAttributes{}
 	return &this
+}
+
+// GetSucceeded returns the Succeeded field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetSucceeded() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Succeeded
+}
+
+// GetSucceededOk returns a tuple with the Succeeded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetSucceededOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Succeeded) {
+		return nil, false
+	}
+	return &o.Succeeded, true
+}
+
+// HasSucceeded returns a boolean if a field has been set.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasSucceeded() bool {
+	if o != nil && IsNil(o.Succeeded) {
+		return true
+	}
+
+	return false
+}
+
+// SetSucceeded gets a reference to the given interface{} and assigns it to the Succeeded field.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetSucceeded(v interface{}) {
+	o.Succeeded = v
+}
+
+// GetForward returns the Forward field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetForward() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Forward
+}
+
+// GetForwardOk returns a tuple with the Forward field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetForwardOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Forward) {
+		return nil, false
+	}
+	return &o.Forward, true
+}
+
+// HasForward returns a boolean if a field has been set.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasForward() bool {
+	if o != nil && IsNil(o.Forward) {
+		return true
+	}
+
+	return false
+}
+
+// SetForward gets a reference to the given interface{} and assigns it to the Forward field.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetForward(v interface{}) {
+	o.Forward = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -259,6 +329,12 @@ func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) MarshalJSON
 
 func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Succeeded != nil {
+		toSerialize["succeeded"] = o.Succeeded
+	}
+	if o.Forward != nil {
+		toSerialize["_forward"] = o.Forward
+	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
 	}

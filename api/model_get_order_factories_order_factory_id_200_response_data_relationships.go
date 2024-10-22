@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &GETOrderFactoriesOrderFactoryId200ResponseDataRelationsh
 
 // GETOrderFactoriesOrderFactoryId200ResponseDataRelationships struct for GETOrderFactoriesOrderFactoryId200ResponseDataRelationships
 type GETOrderFactoriesOrderFactoryId200ResponseDataRelationships struct {
-	SourceOrder *POSTOrderCopies201ResponseDataRelationshipsSourceOrder             `json:"source_order,omitempty"`
-	TargetOrder *POSTOrderCopies201ResponseDataRelationshipsTargetOrder             `json:"target_order,omitempty"`
-	Events      *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents `json:"events,omitempty"`
+	SourceOrder *POSTOrderCopies201ResponseDataRelationshipsSourceOrder `json:"source_order,omitempty"`
+	TargetOrder *POSTOrderCopies201ResponseDataRelationshipsTargetOrder `json:"target_order,omitempty"`
+	Events      *POSTAddresses201ResponseDataRelationshipsEvents        `json:"events,omitempty"`
 }
 
 // NewGETOrderFactoriesOrderFactoryId200ResponseDataRelationships instantiates a new GETOrderFactoriesOrderFactoryId200ResponseDataRelationships object
@@ -107,9 +107,9 @@ func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) SetTargetO
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents {
+func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -117,7 +117,7 @@ func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) GetEvents(
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool) {
+func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) HasEvents(
 	return false
 }
 
-// SetEvents gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents and assigns it to the Events field.
-func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents) {
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
 	o.Events = &v
 }
 

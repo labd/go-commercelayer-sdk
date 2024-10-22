@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -26,6 +26,7 @@ type MarketUpdateDataRelationships struct {
 	SubscriptionModel *MarketCreateDataRelationshipsSubscriptionModel               `json:"subscription_model,omitempty"`
 	TaxCalculator     *MarketCreateDataRelationshipsTaxCalculator                   `json:"tax_calculator,omitempty"`
 	CustomerGroup     *CustomerCreateDataRelationshipsCustomerGroup                 `json:"customer_group,omitempty"`
+	Geocoder          *AddressCreateDataRelationshipsGeocoder                       `json:"geocoder,omitempty"`
 }
 
 // NewMarketUpdateDataRelationships instantiates a new MarketUpdateDataRelationships object
@@ -237,6 +238,38 @@ func (o *MarketUpdateDataRelationships) SetCustomerGroup(v CustomerCreateDataRel
 	o.CustomerGroup = &v
 }
 
+// GetGeocoder returns the Geocoder field value if set, zero value otherwise.
+func (o *MarketUpdateDataRelationships) GetGeocoder() AddressCreateDataRelationshipsGeocoder {
+	if o == nil || IsNil(o.Geocoder) {
+		var ret AddressCreateDataRelationshipsGeocoder
+		return ret
+	}
+	return *o.Geocoder
+}
+
+// GetGeocoderOk returns a tuple with the Geocoder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MarketUpdateDataRelationships) GetGeocoderOk() (*AddressCreateDataRelationshipsGeocoder, bool) {
+	if o == nil || IsNil(o.Geocoder) {
+		return nil, false
+	}
+	return o.Geocoder, true
+}
+
+// HasGeocoder returns a boolean if a field has been set.
+func (o *MarketUpdateDataRelationships) HasGeocoder() bool {
+	if o != nil && !IsNil(o.Geocoder) {
+		return true
+	}
+
+	return false
+}
+
+// SetGeocoder gets a reference to the given AddressCreateDataRelationshipsGeocoder and assigns it to the Geocoder field.
+func (o *MarketUpdateDataRelationships) SetGeocoder(v AddressCreateDataRelationshipsGeocoder) {
+	o.Geocoder = &v
+}
+
 func (o MarketUpdateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -264,6 +297,9 @@ func (o MarketUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CustomerGroup) {
 		toSerialize["customer_group"] = o.CustomerGroup
+	}
+	if !IsNil(o.Geocoder) {
+		toSerialize["geocoder"] = o.Geocoder
 	}
 	return toSerialize, nil
 }

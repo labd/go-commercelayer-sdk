@@ -87,6 +87,19 @@ func Test_api_LineItemsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test LineItemsApiService GETOrderSubscriptionItemIdSourceLineItem", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var orderSubscriptionItemId interface{}
+
+		httpRes, err := apiClient.LineItemsApi.GETOrderSubscriptionItemIdSourceLineItem(context.Background(), orderSubscriptionItemId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test LineItemsApiService GETReturnLineItemIdLineItem", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -100,6 +113,19 @@ func Test_api_LineItemsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test LineItemsApiService GETShipmentIdLineItems", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var shipmentId interface{}
+
+		httpRes, err := apiClient.LineItemsApi.GETShipmentIdLineItems(context.Background(), shipmentId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test LineItemsApiService GETStockLineItemIdLineItem", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -107,6 +133,19 @@ func Test_api_LineItemsApiService(t *testing.T) {
 		var stockLineItemId interface{}
 
 		httpRes, err := apiClient.LineItemsApi.GETStockLineItemIdLineItem(context.Background(), stockLineItemId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test LineItemsApiService GETStockReservationIdLineItem", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var stockReservationId interface{}
+
+		httpRes, err := apiClient.LineItemsApi.GETStockReservationIdLineItem(context.Background(), stockReservationId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

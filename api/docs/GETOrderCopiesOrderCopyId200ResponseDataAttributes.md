@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | Pointer to **interface{}** | The order factory&#39;s type. | [optional] 
 **Status** | Pointer to **interface{}** | The order factory status. One of &#39;pending&#39; (default), &#39;in_progress&#39;, &#39;failed&#39;, or &#39;completed&#39;. | [optional] 
 **StartedAt** | Pointer to **interface{}** | Time at which the order copy was started. | [optional] 
 **CompletedAt** | Pointer to **interface{}** | Time at which the order copy was completed. | [optional] 
@@ -15,9 +16,11 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **CancelSourceOrder** | Pointer to **interface{}** | Indicates if the source order must be cancelled upon copy. | [optional] 
+**ApplyPromotions** | Pointer to **interface{}** | Indicates if promotions got applied upon copy. | [optional] 
+**IgnoreInvalidCoupon** | Pointer to **interface{}** | Indicates to ignore invalid coupon code during copy. | [optional] 
 
 ## Methods
 
@@ -38,6 +41,41 @@ NewGETOrderCopiesOrderCopyId200ResponseDataAttributesWithDefaults instantiates a
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetType
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetType() interface{}`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetType(v interface{})`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### SetTypeNil
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetStatus
 
 `func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetStatus() interface{}`
@@ -528,6 +566,76 @@ HasCancelSourceOrder returns a boolean if a field has been set.
 `func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) UnsetCancelSourceOrder()`
 
 UnsetCancelSourceOrder ensures that no value is present for CancelSourceOrder, not even an explicit nil
+### GetApplyPromotions
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetApplyPromotions() interface{}`
+
+GetApplyPromotions returns the ApplyPromotions field if non-nil, zero value otherwise.
+
+### GetApplyPromotionsOk
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetApplyPromotionsOk() (*interface{}, bool)`
+
+GetApplyPromotionsOk returns a tuple with the ApplyPromotions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromotions
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetApplyPromotions(v interface{})`
+
+SetApplyPromotions sets ApplyPromotions field to given value.
+
+### HasApplyPromotions
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) HasApplyPromotions() bool`
+
+HasApplyPromotions returns a boolean if a field has been set.
+
+### SetApplyPromotionsNil
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetApplyPromotionsNil(b bool)`
+
+ SetApplyPromotionsNil sets the value for ApplyPromotions to be an explicit nil
+
+### UnsetApplyPromotions
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) UnsetApplyPromotions()`
+
+UnsetApplyPromotions ensures that no value is present for ApplyPromotions, not even an explicit nil
+### GetIgnoreInvalidCoupon
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetIgnoreInvalidCoupon() interface{}`
+
+GetIgnoreInvalidCoupon returns the IgnoreInvalidCoupon field if non-nil, zero value otherwise.
+
+### GetIgnoreInvalidCouponOk
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetIgnoreInvalidCouponOk() (*interface{}, bool)`
+
+GetIgnoreInvalidCouponOk returns a tuple with the IgnoreInvalidCoupon field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIgnoreInvalidCoupon
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetIgnoreInvalidCoupon(v interface{})`
+
+SetIgnoreInvalidCoupon sets IgnoreInvalidCoupon field to given value.
+
+### HasIgnoreInvalidCoupon
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) HasIgnoreInvalidCoupon() bool`
+
+HasIgnoreInvalidCoupon returns a boolean if a field has been set.
+
+### SetIgnoreInvalidCouponNil
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetIgnoreInvalidCouponNil(b bool)`
+
+ SetIgnoreInvalidCouponNil sets the value for IgnoreInvalidCoupon to be an explicit nil
+
+### UnsetIgnoreInvalidCoupon
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) UnsetIgnoreInvalidCoupon()`
+
+UnsetIgnoreInvalidCoupon ensures that no value is present for IgnoreInvalidCoupon, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

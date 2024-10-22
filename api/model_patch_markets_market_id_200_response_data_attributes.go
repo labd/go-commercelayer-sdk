@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,23 +20,27 @@ var _ MappedNullable = &PATCHMarketsMarketId200ResponseDataAttributes{}
 
 // PATCHMarketsMarketId200ResponseDataAttributes struct for PATCHMarketsMarketId200ResponseDataAttributes
 type PATCHMarketsMarketId200ResponseDataAttributes struct {
-	// The market's internal name
+	// The market's internal name.
 	Name interface{} `json:"name,omitempty"`
-	// The Facebook Pixed ID
+	// A string that you can use to identify the market (must be unique within the environment).
+	Code interface{} `json:"code,omitempty"`
+	// The Facebook Pixed ID.
 	FacebookPixelId interface{} `json:"facebook_pixel_id,omitempty"`
-	// The checkout URL for this market
+	// The checkout URL for this market.
 	CheckoutUrl interface{} `json:"checkout_url,omitempty"`
 	// The URL used to overwrite prices by an external source.
 	ExternalPricesUrl interface{} `json:"external_prices_url,omitempty"`
 	// The URL used to validate orders by an external source.
 	ExternalOrderValidationUrl interface{} `json:"external_order_validation_url,omitempty"`
-	// Send this attribute if you want to mark the market as disabled.
+	// When specified indicates the maximum number of shipping line items with cost that will be added to an order.
+	ShippingCostCutoff interface{} `json:"shipping_cost_cutoff,omitempty"`
+	// Send this attribute if you want to mark this resource as disabled.
 	Disable interface{} `json:"_disable,omitempty"`
-	// Send this attribute if you want to mark the market as enabled.
+	// Send this attribute if you want to mark this resource as enabled.
 	Enable interface{} `json:"_enable,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -90,6 +94,39 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasName() bool {
 // SetName gets a reference to the given interface{} and assigns it to the Name field.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Code
+}
+
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
+	}
+	return &o.Code, true
+}
+
+// HasCode returns a boolean if a field has been set.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasCode() bool {
+	if o != nil && IsNil(o.Code) {
+		return true
+	}
+
+	return false
+}
+
+// SetCode gets a reference to the given interface{} and assigns it to the Code field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetCode(v interface{}) {
+	o.Code = v
 }
 
 // GetFacebookPixelId returns the FacebookPixelId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -222,6 +259,39 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalOrderValidati
 // SetExternalOrderValidationUrl gets a reference to the given interface{} and assigns it to the ExternalOrderValidationUrl field.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetExternalOrderValidationUrl(v interface{}) {
 	o.ExternalOrderValidationUrl = v
+}
+
+// GetShippingCostCutoff returns the ShippingCostCutoff field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetShippingCostCutoff() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ShippingCostCutoff
+}
+
+// GetShippingCostCutoffOk returns a tuple with the ShippingCostCutoff field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetShippingCostCutoffOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingCostCutoff) {
+		return nil, false
+	}
+	return &o.ShippingCostCutoff, true
+}
+
+// HasShippingCostCutoff returns a boolean if a field has been set.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasShippingCostCutoff() bool {
+	if o != nil && IsNil(o.ShippingCostCutoff) {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingCostCutoff gets a reference to the given interface{} and assigns it to the ShippingCostCutoff field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetShippingCostCutoff(v interface{}) {
+	o.ShippingCostCutoff = v
 }
 
 // GetDisable returns the Disable field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -402,6 +472,9 @@ func (o PATCHMarketsMarketId200ResponseDataAttributes) ToMap() (map[string]inter
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.Code != nil {
+		toSerialize["code"] = o.Code
+	}
 	if o.FacebookPixelId != nil {
 		toSerialize["facebook_pixel_id"] = o.FacebookPixelId
 	}
@@ -413,6 +486,9 @@ func (o PATCHMarketsMarketId200ResponseDataAttributes) ToMap() (map[string]inter
 	}
 	if o.ExternalOrderValidationUrl != nil {
 		toSerialize["external_order_validation_url"] = o.ExternalOrderValidationUrl
+	}
+	if o.ShippingCostCutoff != nil {
+		toSerialize["shipping_cost_cutoff"] = o.ShippingCostCutoff
 	}
 	if o.Disable != nil {
 		toSerialize["_disable"] = o.Disable

@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Customer** | Pointer to [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | [optional] 
 **Address** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +80,20 @@ HasAddress returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *CustomerAddressDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *CustomerAddressDataRelationships) GetEvents() AddressDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *CustomerAddressDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *CustomerAddressDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *CustomerAddressDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *CustomerAddressDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 
@@ -101,6 +102,31 @@ SetEvents sets Events field to given value.
 `func (o *CustomerAddressDataRelationships) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *CustomerAddressDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *CustomerAddressDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *CustomerAddressDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *CustomerAddressDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

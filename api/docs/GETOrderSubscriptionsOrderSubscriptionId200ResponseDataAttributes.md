@@ -4,22 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Number** | Pointer to **interface{}** | Unique identifier for the subscription (numeric) | [optional] 
+**Number** | Pointer to **interface{}** | Unique identifier for the subscription (numeric). | [optional] 
 **Status** | Pointer to **interface{}** | The subscription status. One of &#39;draft&#39; (default), &#39;inactive&#39;, &#39;active&#39;, or &#39;cancelled&#39;. | [optional] 
 **Frequency** | Pointer to **interface{}** | The frequency of the subscription. Use one of the supported within &#39;hourly&#39;, &#39;daily&#39;, &#39;weekly&#39;, &#39;monthly&#39;, &#39;two-month&#39;, &#39;three-month&#39;, &#39;four-month&#39;, &#39;six-month&#39;, &#39;yearly&#39;, or provide your custom crontab expression (min unit is hour). Must be supported by existing associated subscription_model. | [optional] 
 **ActivateBySourceOrder** | Pointer to **interface{}** | Indicates if the subscription will be activated considering the placed source order as its first run. | [optional] 
+**PlaceTargetOrder** | Pointer to **interface{}** | Indicates if the subscription created orders are automatically placed at the end of the copy. | [optional] 
+**RenewalAlertPeriod** | Pointer to **interface{}** | Indicates the number of hours the renewal alert will be triggered before the subscription next run. Must be included between 1 and 720 hours. | [optional] 
 **CustomerEmail** | Pointer to **interface{}** | The email address of the customer, if any, associated to the source order. | [optional] 
 **StartsAt** | Pointer to **interface{}** | The activation date/time of this subscription. | [optional] 
 **ExpiresAt** | Pointer to **interface{}** | The expiration date/time of this subscription (must be after starts_at). | [optional] 
+**LastRunAt** | Pointer to **interface{}** | The date/time of the subscription last run. | [optional] 
 **NextRunAt** | Pointer to **interface{}** | The date/time of the subscription next run. Can be updated but only in the future, to copy with frequency changes. | [optional] 
 **Occurrencies** | Pointer to **interface{}** | The number of times this subscription has run. | [optional] 
 **ErrorsCount** | Pointer to **interface{}** | Indicates the number of subscription errors, if any. | [optional] 
 **SucceededOnLastRun** | Pointer to **interface{}** | Indicates if the subscription has succeeded on its last run. | [optional] 
-**Options** | Pointer to **interface{}** | The subscription options used to create the order (check order_factories for more information). For subscriptions the &#x60;place_target_order&#x60; is enabled by default, specify custom options to overwrite it. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -181,6 +183,76 @@ HasActivateBySourceOrder returns a boolean if a field has been set.
 `func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetActivateBySourceOrder()`
 
 UnsetActivateBySourceOrder ensures that no value is present for ActivateBySourceOrder, not even an explicit nil
+### GetPlaceTargetOrder
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetPlaceTargetOrder() interface{}`
+
+GetPlaceTargetOrder returns the PlaceTargetOrder field if non-nil, zero value otherwise.
+
+### GetPlaceTargetOrderOk
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetPlaceTargetOrderOk() (*interface{}, bool)`
+
+GetPlaceTargetOrderOk returns a tuple with the PlaceTargetOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlaceTargetOrder
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetPlaceTargetOrder(v interface{})`
+
+SetPlaceTargetOrder sets PlaceTargetOrder field to given value.
+
+### HasPlaceTargetOrder
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasPlaceTargetOrder() bool`
+
+HasPlaceTargetOrder returns a boolean if a field has been set.
+
+### SetPlaceTargetOrderNil
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetPlaceTargetOrderNil(b bool)`
+
+ SetPlaceTargetOrderNil sets the value for PlaceTargetOrder to be an explicit nil
+
+### UnsetPlaceTargetOrder
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetPlaceTargetOrder()`
+
+UnsetPlaceTargetOrder ensures that no value is present for PlaceTargetOrder, not even an explicit nil
+### GetRenewalAlertPeriod
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetRenewalAlertPeriod() interface{}`
+
+GetRenewalAlertPeriod returns the RenewalAlertPeriod field if non-nil, zero value otherwise.
+
+### GetRenewalAlertPeriodOk
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetRenewalAlertPeriodOk() (*interface{}, bool)`
+
+GetRenewalAlertPeriodOk returns a tuple with the RenewalAlertPeriod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRenewalAlertPeriod
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetRenewalAlertPeriod(v interface{})`
+
+SetRenewalAlertPeriod sets RenewalAlertPeriod field to given value.
+
+### HasRenewalAlertPeriod
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasRenewalAlertPeriod() bool`
+
+HasRenewalAlertPeriod returns a boolean if a field has been set.
+
+### SetRenewalAlertPeriodNil
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetRenewalAlertPeriodNil(b bool)`
+
+ SetRenewalAlertPeriodNil sets the value for RenewalAlertPeriod to be an explicit nil
+
+### UnsetRenewalAlertPeriod
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetRenewalAlertPeriod()`
+
+UnsetRenewalAlertPeriod ensures that no value is present for RenewalAlertPeriod, not even an explicit nil
 ### GetCustomerEmail
 
 `func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetCustomerEmail() interface{}`
@@ -286,6 +358,41 @@ HasExpiresAt returns a boolean if a field has been set.
 `func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetExpiresAt()`
 
 UnsetExpiresAt ensures that no value is present for ExpiresAt, not even an explicit nil
+### GetLastRunAt
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetLastRunAt() interface{}`
+
+GetLastRunAt returns the LastRunAt field if non-nil, zero value otherwise.
+
+### GetLastRunAtOk
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetLastRunAtOk() (*interface{}, bool)`
+
+GetLastRunAtOk returns a tuple with the LastRunAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastRunAt
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetLastRunAt(v interface{})`
+
+SetLastRunAt sets LastRunAt field to given value.
+
+### HasLastRunAt
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasLastRunAt() bool`
+
+HasLastRunAt returns a boolean if a field has been set.
+
+### SetLastRunAtNil
+
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetLastRunAtNil(b bool)`
+
+ SetLastRunAtNil sets the value for LastRunAt to be an explicit nil
+
+### UnsetLastRunAt
+`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetLastRunAt()`
+
+UnsetLastRunAt ensures that no value is present for LastRunAt, not even an explicit nil
 ### GetNextRunAt
 
 `func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetNextRunAt() interface{}`
@@ -426,41 +533,6 @@ HasSucceededOnLastRun returns a boolean if a field has been set.
 `func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetSucceededOnLastRun()`
 
 UnsetSucceededOnLastRun ensures that no value is present for SucceededOnLastRun, not even an explicit nil
-### GetOptions
-
-`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetOptions() interface{}`
-
-GetOptions returns the Options field if non-nil, zero value otherwise.
-
-### GetOptionsOk
-
-`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetOptionsOk() (*interface{}, bool)`
-
-GetOptionsOk returns a tuple with the Options field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOptions
-
-`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetOptions(v interface{})`
-
-SetOptions sets Options field to given value.
-
-### HasOptions
-
-`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasOptions() bool`
-
-HasOptions returns a boolean if a field has been set.
-
-### SetOptionsNil
-
-`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetOptionsNil(b bool)`
-
- SetOptionsNil sets the value for Options to be an explicit nil
-
-### UnsetOptions
-`func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetOptions()`
-
-UnsetOptions ensures that no value is present for Options, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetCreatedAt() interface{}`

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GETEventsEventId200ResponseDataRelationships{}
 
 // GETEventsEventId200ResponseDataRelationships struct for GETEventsEventId200ResponseDataRelationships
 type GETEventsEventId200ResponseDataRelationships struct {
-	LastEventCallbacks *GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
 	Webhooks           *GETEventsEventId200ResponseDataRelationshipsWebhooks           `json:"webhooks,omitempty"`
+	LastEventCallbacks *GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
 }
 
 // NewGETEventsEventId200ResponseDataRelationships instantiates a new GETEventsEventId200ResponseDataRelationships object
@@ -39,38 +39,6 @@ func NewGETEventsEventId200ResponseDataRelationships() *GETEventsEventId200Respo
 func NewGETEventsEventId200ResponseDataRelationshipsWithDefaults() *GETEventsEventId200ResponseDataRelationships {
 	this := GETEventsEventId200ResponseDataRelationships{}
 	return &this
-}
-
-// GetLastEventCallbacks returns the LastEventCallbacks field value if set, zero value otherwise.
-func (o *GETEventsEventId200ResponseDataRelationships) GetLastEventCallbacks() GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks {
-	if o == nil || IsNil(o.LastEventCallbacks) {
-		var ret GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks
-		return ret
-	}
-	return *o.LastEventCallbacks
-}
-
-// GetLastEventCallbacksOk returns a tuple with the LastEventCallbacks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GETEventsEventId200ResponseDataRelationships) GetLastEventCallbacksOk() (*GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks, bool) {
-	if o == nil || IsNil(o.LastEventCallbacks) {
-		return nil, false
-	}
-	return o.LastEventCallbacks, true
-}
-
-// HasLastEventCallbacks returns a boolean if a field has been set.
-func (o *GETEventsEventId200ResponseDataRelationships) HasLastEventCallbacks() bool {
-	if o != nil && !IsNil(o.LastEventCallbacks) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastEventCallbacks gets a reference to the given GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks and assigns it to the LastEventCallbacks field.
-func (o *GETEventsEventId200ResponseDataRelationships) SetLastEventCallbacks(v GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks) {
-	o.LastEventCallbacks = &v
 }
 
 // GetWebhooks returns the Webhooks field value if set, zero value otherwise.
@@ -105,6 +73,38 @@ func (o *GETEventsEventId200ResponseDataRelationships) SetWebhooks(v GETEventsEv
 	o.Webhooks = &v
 }
 
+// GetLastEventCallbacks returns the LastEventCallbacks field value if set, zero value otherwise.
+func (o *GETEventsEventId200ResponseDataRelationships) GetLastEventCallbacks() GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks {
+	if o == nil || IsNil(o.LastEventCallbacks) {
+		var ret GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks
+		return ret
+	}
+	return *o.LastEventCallbacks
+}
+
+// GetLastEventCallbacksOk returns a tuple with the LastEventCallbacks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETEventsEventId200ResponseDataRelationships) GetLastEventCallbacksOk() (*GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks, bool) {
+	if o == nil || IsNil(o.LastEventCallbacks) {
+		return nil, false
+	}
+	return o.LastEventCallbacks, true
+}
+
+// HasLastEventCallbacks returns a boolean if a field has been set.
+func (o *GETEventsEventId200ResponseDataRelationships) HasLastEventCallbacks() bool {
+	if o != nil && !IsNil(o.LastEventCallbacks) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastEventCallbacks gets a reference to the given GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks and assigns it to the LastEventCallbacks field.
+func (o *GETEventsEventId200ResponseDataRelationships) SetLastEventCallbacks(v GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks) {
+	o.LastEventCallbacks = &v
+}
+
 func (o GETEventsEventId200ResponseDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -115,11 +115,11 @@ func (o GETEventsEventId200ResponseDataRelationships) MarshalJSON() ([]byte, err
 
 func (o GETEventsEventId200ResponseDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LastEventCallbacks) {
-		toSerialize["last_event_callbacks"] = o.LastEventCallbacks
-	}
 	if !IsNil(o.Webhooks) {
 		toSerialize["webhooks"] = o.Webhooks
+	}
+	if !IsNil(o.LastEventCallbacks) {
+		toSerialize["last_event_callbacks"] = o.LastEventCallbacks
 	}
 	return toSerialize, nil
 }

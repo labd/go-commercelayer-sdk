@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**GETInventoryModelIdInventoryStockLocations**](InventoryStockLocationsApi.md#GETInventoryModelIdInventoryStockLocations) | **Get** /inventory_models/{inventoryModelId}/inventory_stock_locations | Retrieve the inventory stock locations associated to the inventory model
 [**GETInventoryStockLocations**](InventoryStockLocationsApi.md#GETInventoryStockLocations) | **Get** /inventory_stock_locations | List all inventory stock locations
 [**GETInventoryStockLocationsInventoryStockLocationId**](InventoryStockLocationsApi.md#GETInventoryStockLocationsInventoryStockLocationId) | **Get** /inventory_stock_locations/{inventoryStockLocationId} | Retrieve an inventory stock location
+[**GETShipmentIdInventoryStockLocation**](InventoryStockLocationsApi.md#GETShipmentIdInventoryStockLocation) | **Get** /shipments/{shipmentId}/inventory_stock_location | Retrieve the inventory stock location associated to the shipment
 [**GETStockLocationIdInventoryStockLocations**](InventoryStockLocationsApi.md#GETStockLocationIdInventoryStockLocations) | **Get** /stock_locations/{stockLocationId}/inventory_stock_locations | Retrieve the inventory stock locations associated to the stock location
 [**PATCHInventoryStockLocationsInventoryStockLocationId**](InventoryStockLocationsApi.md#PATCHInventoryStockLocationsInventoryStockLocationId) | **Patch** /inventory_stock_locations/{inventoryStockLocationId} | Update an inventory stock location
 [**POSTInventoryStockLocations**](InventoryStockLocationsApi.md#POSTInventoryStockLocations) | **Post** /inventory_stock_locations | Create an inventory stock location
@@ -275,6 +276,74 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/vnd.api+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShipmentIdInventoryStockLocation
+
+> GETShipmentIdInventoryStockLocation(ctx, shipmentId).Execute()
+
+Retrieve the inventory stock location associated to the shipment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    shipmentId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.InventoryStockLocationsApi.GETShipmentIdInventoryStockLocation(context.Background(), shipmentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.GETShipmentIdInventoryStockLocation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShipmentIdInventoryStockLocationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

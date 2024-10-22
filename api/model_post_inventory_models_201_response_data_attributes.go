@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -24,11 +24,17 @@ type POSTInventoryModels201ResponseDataAttributes struct {
 	Name interface{} `json:"name"`
 	// The inventory model's shipping strategy: one between 'no_split' (default), 'split_shipments', 'ship_from_primary' and 'ship_from_first_available_or_primary'.
 	Strategy interface{} `json:"strategy,omitempty"`
-	// The maximum number of stock locations used for inventory computation
+	// The maximum number of stock locations used for inventory computation.
 	StockLocationsCutoff interface{} `json:"stock_locations_cutoff,omitempty"`
+	// The duration in seconds of the generated stock reservations.
+	StockReservationCutoff interface{} `json:"stock_reservation_cutoff,omitempty"`
+	// Indicates if the the stock transfers must be put on hold automatically with the associated shipment.
+	PutStockTransfersOnHold interface{} `json:"put_stock_transfers_on_hold,omitempty"`
+	// Indicates if the the stock will be decremented manually after the order approval.
+	ManualStockDecrement interface{} `json:"manual_stock_decrement,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -142,6 +148,105 @@ func (o *POSTInventoryModels201ResponseDataAttributes) HasStockLocationsCutoff()
 // SetStockLocationsCutoff gets a reference to the given interface{} and assigns it to the StockLocationsCutoff field.
 func (o *POSTInventoryModels201ResponseDataAttributes) SetStockLocationsCutoff(v interface{}) {
 	o.StockLocationsCutoff = v
+}
+
+// GetStockReservationCutoff returns the StockReservationCutoff field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTInventoryModels201ResponseDataAttributes) GetStockReservationCutoff() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.StockReservationCutoff
+}
+
+// GetStockReservationCutoffOk returns a tuple with the StockReservationCutoff field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTInventoryModels201ResponseDataAttributes) GetStockReservationCutoffOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.StockReservationCutoff) {
+		return nil, false
+	}
+	return &o.StockReservationCutoff, true
+}
+
+// HasStockReservationCutoff returns a boolean if a field has been set.
+func (o *POSTInventoryModels201ResponseDataAttributes) HasStockReservationCutoff() bool {
+	if o != nil && IsNil(o.StockReservationCutoff) {
+		return true
+	}
+
+	return false
+}
+
+// SetStockReservationCutoff gets a reference to the given interface{} and assigns it to the StockReservationCutoff field.
+func (o *POSTInventoryModels201ResponseDataAttributes) SetStockReservationCutoff(v interface{}) {
+	o.StockReservationCutoff = v
+}
+
+// GetPutStockTransfersOnHold returns the PutStockTransfersOnHold field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTInventoryModels201ResponseDataAttributes) GetPutStockTransfersOnHold() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PutStockTransfersOnHold
+}
+
+// GetPutStockTransfersOnHoldOk returns a tuple with the PutStockTransfersOnHold field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTInventoryModels201ResponseDataAttributes) GetPutStockTransfersOnHoldOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PutStockTransfersOnHold) {
+		return nil, false
+	}
+	return &o.PutStockTransfersOnHold, true
+}
+
+// HasPutStockTransfersOnHold returns a boolean if a field has been set.
+func (o *POSTInventoryModels201ResponseDataAttributes) HasPutStockTransfersOnHold() bool {
+	if o != nil && IsNil(o.PutStockTransfersOnHold) {
+		return true
+	}
+
+	return false
+}
+
+// SetPutStockTransfersOnHold gets a reference to the given interface{} and assigns it to the PutStockTransfersOnHold field.
+func (o *POSTInventoryModels201ResponseDataAttributes) SetPutStockTransfersOnHold(v interface{}) {
+	o.PutStockTransfersOnHold = v
+}
+
+// GetManualStockDecrement returns the ManualStockDecrement field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTInventoryModels201ResponseDataAttributes) GetManualStockDecrement() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ManualStockDecrement
+}
+
+// GetManualStockDecrementOk returns a tuple with the ManualStockDecrement field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTInventoryModels201ResponseDataAttributes) GetManualStockDecrementOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ManualStockDecrement) {
+		return nil, false
+	}
+	return &o.ManualStockDecrement, true
+}
+
+// HasManualStockDecrement returns a boolean if a field has been set.
+func (o *POSTInventoryModels201ResponseDataAttributes) HasManualStockDecrement() bool {
+	if o != nil && IsNil(o.ManualStockDecrement) {
+		return true
+	}
+
+	return false
+}
+
+// SetManualStockDecrement gets a reference to the given interface{} and assigns it to the ManualStockDecrement field.
+func (o *POSTInventoryModels201ResponseDataAttributes) SetManualStockDecrement(v interface{}) {
+	o.ManualStockDecrement = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -261,6 +366,15 @@ func (o POSTInventoryModels201ResponseDataAttributes) ToMap() (map[string]interf
 	}
 	if o.StockLocationsCutoff != nil {
 		toSerialize["stock_locations_cutoff"] = o.StockLocationsCutoff
+	}
+	if o.StockReservationCutoff != nil {
+		toSerialize["stock_reservation_cutoff"] = o.StockReservationCutoff
+	}
+	if o.PutStockTransfersOnHold != nil {
+		toSerialize["put_stock_transfers_on_hold"] = o.PutStockTransfersOnHold
+	}
+	if o.ManualStockDecrement != nil {
+		toSerialize["manual_stock_decrement"] = o.ManualStockDecrement
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

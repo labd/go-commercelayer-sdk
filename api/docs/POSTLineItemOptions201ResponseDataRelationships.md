@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LineItem** | Pointer to [**POSTLineItemOptions201ResponseDataRelationshipsLineItem**](POSTLineItemOptions201ResponseDataRelationshipsLineItem.md) |  | [optional] 
 **SkuOption** | Pointer to [**POSTLineItemOptions201ResponseDataRelationshipsSkuOption**](POSTLineItemOptions201ResponseDataRelationshipsSkuOption.md) |  | [optional] 
+**Events** | Pointer to [**POSTAddresses201ResponseDataRelationshipsEvents**](POSTAddresses201ResponseDataRelationshipsEvents.md) |  | [optional] 
+**Tags** | Pointer to [**POSTAddresses201ResponseDataRelationshipsTags**](POSTAddresses201ResponseDataRelationshipsTags.md) |  | [optional] 
 
 ## Methods
 
@@ -75,6 +77,56 @@ SetSkuOption sets SkuOption field to given value.
 `func (o *POSTLineItemOptions201ResponseDataRelationships) HasSkuOption() bool`
 
 HasSkuOption returns a boolean if a field has been set.
+
+### GetEvents
+
+`func (o *POSTLineItemOptions201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents`
+
+GetEvents returns the Events field if non-nil, zero value otherwise.
+
+### GetEventsOk
+
+`func (o *POSTLineItemOptions201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool)`
+
+GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEvents
+
+`func (o *POSTLineItemOptions201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents)`
+
+SetEvents sets Events field to given value.
+
+### HasEvents
+
+`func (o *POSTLineItemOptions201ResponseDataRelationships) HasEvents() bool`
+
+HasEvents returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *POSTLineItemOptions201ResponseDataRelationships) GetTags() POSTAddresses201ResponseDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *POSTLineItemOptions201ResponseDataRelationships) GetTagsOk() (*POSTAddresses201ResponseDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *POSTLineItemOptions201ResponseDataRelationships) SetTags(v POSTAddresses201ResponseDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *POSTLineItemOptions201ResponseDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

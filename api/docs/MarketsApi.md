@@ -7,7 +7,9 @@ Method | HTTP request | Description
 [**DELETEMarketsMarketId**](MarketsApi.md#DELETEMarketsMarketId) | **Delete** /markets/{marketId} | Delete a market
 [**GETAvalaraAccountIdMarkets**](MarketsApi.md#GETAvalaraAccountIdMarkets) | **Get** /avalara_accounts/{avalaraAccountId}/markets | Retrieve the markets associated to the avalara account
 [**GETBillingInfoValidationRuleIdMarket**](MarketsApi.md#GETBillingInfoValidationRuleIdMarket) | **Get** /billing_info_validation_rules/{billingInfoValidationRuleId}/market | Retrieve the market associated to the billing info validation rule
+[**GETBingGeocoderIdMarkets**](MarketsApi.md#GETBingGeocoderIdMarkets) | **Get** /bing_geocoders/{bingGeocoderId}/markets | Retrieve the markets associated to the bing geocoder
 [**GETBundleIdMarket**](MarketsApi.md#GETBundleIdMarket) | **Get** /bundles/{bundleId}/market | Retrieve the market associated to the bundle
+[**GETBuyXPayYPromotionIdMarket**](MarketsApi.md#GETBuyXPayYPromotionIdMarket) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/market | Retrieve the market associated to the buy x pay y promotion
 [**GETCarrierAccountIdMarket**](MarketsApi.md#GETCarrierAccountIdMarket) | **Get** /carrier_accounts/{carrierAccountId}/market | Retrieve the market associated to the carrier account
 [**GETCustomerGroupIdMarkets**](MarketsApi.md#GETCustomerGroupIdMarkets) | **Get** /customer_groups/{customerGroupId}/markets | Retrieve the markets associated to the customer group
 [**GETExternalPromotionIdMarket**](MarketsApi.md#GETExternalPromotionIdMarket) | **Get** /external_promotions/{externalPromotionId}/market | Retrieve the market associated to the external promotion
@@ -16,18 +18,22 @@ Method | HTTP request | Description
 [**GETFixedPricePromotionIdMarket**](MarketsApi.md#GETFixedPricePromotionIdMarket) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/market | Retrieve the market associated to the fixed price promotion
 [**GETFreeGiftPromotionIdMarket**](MarketsApi.md#GETFreeGiftPromotionIdMarket) | **Get** /free_gift_promotions/{freeGiftPromotionId}/market | Retrieve the market associated to the free gift promotion
 [**GETFreeShippingPromotionIdMarket**](MarketsApi.md#GETFreeShippingPromotionIdMarket) | **Get** /free_shipping_promotions/{freeShippingPromotionId}/market | Retrieve the market associated to the free shipping promotion
+[**GETGeocoderIdMarkets**](MarketsApi.md#GETGeocoderIdMarkets) | **Get** /geocoders/{geocoderId}/markets | Retrieve the markets associated to the geocoder
 [**GETGiftCardIdMarket**](MarketsApi.md#GETGiftCardIdMarket) | **Get** /gift_cards/{giftCardId}/market | Retrieve the market associated to the gift card
+[**GETGoogleGeocoderIdMarkets**](MarketsApi.md#GETGoogleGeocoderIdMarkets) | **Get** /google_geocoders/{googleGeocoderId}/markets | Retrieve the markets associated to the google geocoder
 [**GETInStockSubscriptionIdMarket**](MarketsApi.md#GETInStockSubscriptionIdMarket) | **Get** /in_stock_subscriptions/{inStockSubscriptionId}/market | Retrieve the market associated to the in stock subscription
 [**GETManualTaxCalculatorIdMarkets**](MarketsApi.md#GETManualTaxCalculatorIdMarkets) | **Get** /manual_tax_calculators/{manualTaxCalculatorId}/markets | Retrieve the markets associated to the manual tax calculator
 [**GETMarkets**](MarketsApi.md#GETMarkets) | **Get** /markets | List all markets
 [**GETMarketsMarketId**](MarketsApi.md#GETMarketsMarketId) | **Get** /markets/{marketId} | Retrieve a market
 [**GETOrderIdMarket**](MarketsApi.md#GETOrderIdMarket) | **Get** /orders/{orderId}/market | Retrieve the market associated to the order
 [**GETOrderSubscriptionIdMarket**](MarketsApi.md#GETOrderSubscriptionIdMarket) | **Get** /order_subscriptions/{orderSubscriptionId}/market | Retrieve the market associated to the order subscription
-[**GETOrderValidationRuleIdMarket**](MarketsApi.md#GETOrderValidationRuleIdMarket) | **Get** /order_validation_rules/{orderValidationRuleId}/market | Retrieve the market associated to the order validation rule
 [**GETPaymentMethodIdMarket**](MarketsApi.md#GETPaymentMethodIdMarket) | **Get** /payment_methods/{paymentMethodId}/market | Retrieve the market associated to the payment method
 [**GETPercentageDiscountPromotionIdMarket**](MarketsApi.md#GETPercentageDiscountPromotionIdMarket) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/market | Retrieve the market associated to the percentage discount promotion
+[**GETPriceIdJwtMarkets**](MarketsApi.md#GETPriceIdJwtMarkets) | **Get** /prices/{priceId}/jwt_markets | Retrieve the jwt markets associated to the price
+[**GETPriceListSchedulerIdMarket**](MarketsApi.md#GETPriceListSchedulerIdMarket) | **Get** /price_list_schedulers/{priceListSchedulerId}/market | Retrieve the market associated to the price list scheduler
 [**GETPromotionIdMarket**](MarketsApi.md#GETPromotionIdMarket) | **Get** /promotions/{promotionId}/market | Retrieve the market associated to the promotion
 [**GETShippingMethodIdMarket**](MarketsApi.md#GETShippingMethodIdMarket) | **Get** /shipping_methods/{shippingMethodId}/market | Retrieve the market associated to the shipping method
+[**GETSkuIdJwtMarkets**](MarketsApi.md#GETSkuIdJwtMarkets) | **Get** /skus/{skuId}/jwt_markets | Retrieve the jwt markets associated to the SKU
 [**GETSkuOptionIdMarket**](MarketsApi.md#GETSkuOptionIdMarket) | **Get** /sku_options/{skuOptionId}/market | Retrieve the market associated to the SKU option
 [**GETSubscriptionModelIdMarkets**](MarketsApi.md#GETSubscriptionModelIdMarkets) | **Get** /subscription_models/{subscriptionModelId}/markets | Retrieve the markets associated to the subscription model
 [**GETTaxCalculatorIdMarkets**](MarketsApi.md#GETTaxCalculatorIdMarkets) | **Get** /tax_calculators/{taxCalculatorId}/markets | Retrieve the markets associated to the tax calculator
@@ -241,6 +247,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETBingGeocoderIdMarkets
+
+> GETBingGeocoderIdMarkets(ctx, bingGeocoderId).Execute()
+
+Retrieve the markets associated to the bing geocoder
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    bingGeocoderId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.MarketsApi.GETBingGeocoderIdMarkets(context.Background(), bingGeocoderId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETBingGeocoderIdMarkets``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bingGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBingGeocoderIdMarketsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETBundleIdMarket
 
 > GETBundleIdMarket(ctx, bundleId).Execute()
@@ -285,6 +359,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETBundleIdMarketRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdMarket
+
+> GETBuyXPayYPromotionIdMarket(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the market associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.MarketsApi.GETBuyXPayYPromotionIdMarket(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETBuyXPayYPromotionIdMarket``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdMarketRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -853,6 +995,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETGeocoderIdMarkets
+
+> GETGeocoderIdMarkets(ctx, geocoderId).Execute()
+
+Retrieve the markets associated to the geocoder
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    geocoderId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.MarketsApi.GETGeocoderIdMarkets(context.Background(), geocoderId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETGeocoderIdMarkets``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**geocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETGeocoderIdMarketsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETGiftCardIdMarket
 
 > GETGiftCardIdMarket(ctx, giftCardId).Execute()
@@ -897,6 +1107,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETGiftCardIdMarketRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETGoogleGeocoderIdMarkets
+
+> GETGoogleGeocoderIdMarkets(ctx, googleGeocoderId).Execute()
+
+Retrieve the markets associated to the google geocoder
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    googleGeocoderId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.MarketsApi.GETGoogleGeocoderIdMarkets(context.Background(), googleGeocoderId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETGoogleGeocoderIdMarkets``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**googleGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETGoogleGeocoderIdMarketsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1324,74 +1602,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GETOrderValidationRuleIdMarket
-
-> GETOrderValidationRuleIdMarket(ctx, orderValidationRuleId).Execute()
-
-Retrieve the market associated to the order validation rule
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
-)
-
-func main() {
-    orderValidationRuleId := TODO // interface{} | The resource's id
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.MarketsApi.GETOrderValidationRuleIdMarket(context.Background(), orderValidationRuleId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETOrderValidationRuleIdMarket``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderValidationRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGETOrderValidationRuleIdMarketRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GETPaymentMethodIdMarket
 
 > GETPaymentMethodIdMarket(ctx, paymentMethodId).Execute()
@@ -1528,6 +1738,142 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPriceIdJwtMarkets
+
+> GETPriceIdJwtMarkets(ctx, priceId).Execute()
+
+Retrieve the jwt markets associated to the price
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    priceId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.MarketsApi.GETPriceIdJwtMarkets(context.Background(), priceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETPriceIdJwtMarkets``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceIdJwtMarketsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceListSchedulerIdMarket
+
+> GETPriceListSchedulerIdMarket(ctx, priceListSchedulerId).Execute()
+
+Retrieve the market associated to the price list scheduler
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    priceListSchedulerId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.MarketsApi.GETPriceListSchedulerIdMarket(context.Background(), priceListSchedulerId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETPriceListSchedulerIdMarket``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceListSchedulerId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceListSchedulerIdMarketRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPromotionIdMarket
 
 > GETPromotionIdMarket(ctx, promotionId).Execute()
@@ -1640,6 +1986,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETShippingMethodIdMarketRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSkuIdJwtMarkets
+
+> GETSkuIdJwtMarkets(ctx, skuId).Execute()
+
+Retrieve the jwt markets associated to the SKU
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    skuId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.MarketsApi.GETSkuIdJwtMarkets(context.Background(), skuId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETSkuIdJwtMarkets``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**skuId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSkuIdJwtMarketsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

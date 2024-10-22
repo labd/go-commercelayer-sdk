@@ -4,24 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Business** | Pointer to **interface{}** | Indicates if it&#39;s a business or a personal address | [optional] 
-**FirstName** | Pointer to **interface{}** | Address first name (personal) | [optional] 
-**LastName** | Pointer to **interface{}** | Address last name (personal) | [optional] 
-**Company** | Pointer to **interface{}** | Address company name (business) | [optional] 
-**Line1** | **interface{}** | Address line 1, i.e. Street address, PO Box | 
-**Line2** | Pointer to **interface{}** | Address line 2, i.e. Apartment, Suite, Building | [optional] 
-**City** | **interface{}** | Address city | 
-**ZipCode** | Pointer to **interface{}** | ZIP or postal code | [optional] 
+**Business** | Pointer to **interface{}** | Indicates if it&#39;s a business or a personal address. | [optional] 
+**FirstName** | Pointer to **interface{}** | Address first name (personal). | [optional] 
+**LastName** | Pointer to **interface{}** | Address last name (personal). | [optional] 
+**Company** | Pointer to **interface{}** | Address company name (business). | [optional] 
+**Line1** | **interface{}** | Address line 1, i.e. Street address, PO Box. | 
+**Line2** | Pointer to **interface{}** | Address line 2, i.e. Apartment, Suite, Building. | [optional] 
+**City** | **interface{}** | Address city. | 
+**ZipCode** | Pointer to **interface{}** | ZIP or postal code. | [optional] 
 **StateCode** | **interface{}** | State, province or region code. | 
-**CountryCode** | **interface{}** | The international 2-letter country code as defined by the ISO 3166-1 standard | 
+**CountryCode** | **interface{}** | The international 2-letter country code as defined by the ISO 3166-1 standard. | 
 **Phone** | **interface{}** | Phone number (including extension). | 
 **Email** | Pointer to **interface{}** | Email address. | [optional] 
 **Notes** | Pointer to **interface{}** | A free notes attached to the address. When used as a shipping address, this can be useful to let the customers add specific delivery instructions. | [optional] 
 **Lat** | Pointer to **interface{}** | The address geocoded latitude. This is automatically generated when creating a shipping/billing address for an order and a valid geocoder is attached to the order&#39;s market. | [optional] 
 **Lng** | Pointer to **interface{}** | The address geocoded longitude. This is automatically generated when creating a shipping/billing address for an order and a valid geocoder is attached to the order&#39;s market. | [optional] 
-**BillingInfo** | Pointer to **interface{}** | Customer&#39;s billing information (i.e. VAT number, codice fiscale) | [optional] 
+**BillingInfo** | Pointer to **interface{}** | Customer&#39;s billing information (i.e. VAT number, codice fiscale). | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods

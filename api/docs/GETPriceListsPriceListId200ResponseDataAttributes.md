@@ -4,13 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **interface{}** | The price list&#39;s internal name | [optional] 
+**Name** | Pointer to **interface{}** | The price list&#39;s internal name. | [optional] 
+**Code** | Pointer to **interface{}** | A string that you can use to identify the price list (must be unique within the environment). | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
 **TaxIncluded** | Pointer to **interface{}** | Indicates if the associated prices include taxes. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
+**Rules** | Pointer to **interface{}** | The rules (using Rules Engine) to be applied. | [optional] 
+**RuleOutcomes** | Pointer to **interface{}** | The rule outcomes. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -67,6 +70,41 @@ HasName returns a boolean if a field has been set.
 `func (o *GETPriceListsPriceListId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetCode
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetCode() interface{}`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) SetCode(v interface{})`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
+
+### SetCodeNil
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetCurrencyCode
 
 `func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetCurrencyCode() interface{}`
@@ -277,6 +315,76 @@ HasReferenceOrigin returns a boolean if a field has been set.
 `func (o *GETPriceListsPriceListId200ResponseDataAttributes) UnsetReferenceOrigin()`
 
 UnsetReferenceOrigin ensures that no value is present for ReferenceOrigin, not even an explicit nil
+### GetRules
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetRules() interface{}`
+
+GetRules returns the Rules field if non-nil, zero value otherwise.
+
+### GetRulesOk
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetRulesOk() (*interface{}, bool)`
+
+GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRules
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) SetRules(v interface{})`
+
+SetRules sets Rules field to given value.
+
+### HasRules
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) HasRules() bool`
+
+HasRules returns a boolean if a field has been set.
+
+### SetRulesNil
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) SetRulesNil(b bool)`
+
+ SetRulesNil sets the value for Rules to be an explicit nil
+
+### UnsetRules
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) UnsetRules()`
+
+UnsetRules ensures that no value is present for Rules, not even an explicit nil
+### GetRuleOutcomes
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetRuleOutcomes() interface{}`
+
+GetRuleOutcomes returns the RuleOutcomes field if non-nil, zero value otherwise.
+
+### GetRuleOutcomesOk
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetRuleOutcomesOk() (*interface{}, bool)`
+
+GetRuleOutcomesOk returns a tuple with the RuleOutcomes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRuleOutcomes
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) SetRuleOutcomes(v interface{})`
+
+SetRuleOutcomes sets RuleOutcomes field to given value.
+
+### HasRuleOutcomes
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) HasRuleOutcomes() bool`
+
+HasRuleOutcomes returns a boolean if a field has been set.
+
+### SetRuleOutcomesNil
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) SetRuleOutcomesNil(b bool)`
+
+ SetRuleOutcomesNil sets the value for RuleOutcomes to be an explicit nil
+
+### UnsetRuleOutcomes
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) UnsetRuleOutcomes()`
+
+UnsetRuleOutcomes ensures that no value is present for RuleOutcomes, not even an explicit nil
 ### GetMetadata
 
 `func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetMetadata() interface{}`

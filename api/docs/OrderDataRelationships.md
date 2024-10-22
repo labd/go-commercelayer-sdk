@@ -11,23 +11,33 @@ Name | Type | Description | Notes
 **AvailablePaymentMethods** | Pointer to [**AdyenGatewayDataRelationshipsPaymentMethods**](AdyenGatewayDataRelationshipsPaymentMethods.md) |  | [optional] 
 **AvailableCustomerPaymentSources** | Pointer to [**CustomerDataRelationshipsCustomerPaymentSources**](CustomerDataRelationshipsCustomerPaymentSources.md) |  | [optional] 
 **AvailableFreeSkus** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
-**AvailableFreeBundles** | Pointer to [**OrderDataRelationshipsAvailableFreeBundles**](OrderDataRelationshipsAvailableFreeBundles.md) |  | [optional] 
+**AvailableFreeBundles** | Pointer to [**LineItemDataRelationshipsBundle**](LineItemDataRelationshipsBundle.md) |  | [optional] 
 **PaymentMethod** | Pointer to [**AdyenGatewayDataRelationshipsPaymentMethods**](AdyenGatewayDataRelationshipsPaymentMethods.md) |  | [optional] 
 **PaymentSource** | Pointer to [**CustomerPaymentSourceDataRelationshipsPaymentSource**](CustomerPaymentSourceDataRelationshipsPaymentSource.md) |  | [optional] 
 **LineItems** | Pointer to [**LineItemOptionDataRelationshipsLineItem**](LineItemOptionDataRelationshipsLineItem.md) |  | [optional] 
-**Shipments** | Pointer to [**OrderDataRelationshipsShipments**](OrderDataRelationshipsShipments.md) |  | [optional] 
+**LineItemOptions** | Pointer to [**LineItemDataRelationshipsLineItemOptions**](LineItemDataRelationshipsLineItemOptions.md) |  | [optional] 
+**StockReservations** | Pointer to [**LineItemDataRelationshipsStockReservations**](LineItemDataRelationshipsStockReservations.md) |  | [optional] 
+**StockLineItems** | Pointer to [**LineItemDataRelationshipsStockLineItems**](LineItemDataRelationshipsStockLineItems.md) |  | [optional] 
+**StockTransfers** | Pointer to [**LineItemDataRelationshipsStockTransfers**](LineItemDataRelationshipsStockTransfers.md) |  | [optional] 
+**Shipments** | Pointer to [**LineItemDataRelationshipsShipment**](LineItemDataRelationshipsShipment.md) |  | [optional] 
+**PaymentOptions** | Pointer to [**OrderDataRelationshipsPaymentOptions**](OrderDataRelationshipsPaymentOptions.md) |  | [optional] 
 **Transactions** | Pointer to [**OrderDataRelationshipsTransactions**](OrderDataRelationshipsTransactions.md) |  | [optional] 
 **Authorizations** | Pointer to [**CaptureDataRelationshipsReferenceAuthorization**](CaptureDataRelationshipsReferenceAuthorization.md) |  | [optional] 
 **Captures** | Pointer to [**AuthorizationDataRelationshipsCaptures**](AuthorizationDataRelationshipsCaptures.md) |  | [optional] 
 **Voids** | Pointer to [**AuthorizationDataRelationshipsVoids**](AuthorizationDataRelationshipsVoids.md) |  | [optional] 
 **Refunds** | Pointer to [**CaptureDataRelationshipsRefunds**](CaptureDataRelationshipsRefunds.md) |  | [optional] 
-**Returns** | Pointer to [**CustomerDataRelationshipsReturns**](CustomerDataRelationshipsReturns.md) |  | [optional] 
+**Returns** | Pointer to [**CaptureDataRelationshipsReturn**](CaptureDataRelationshipsReturn.md) |  | [optional] 
+**OrderSubscription** | Pointer to [**CustomerDataRelationshipsOrderSubscriptions**](CustomerDataRelationshipsOrderSubscriptions.md) |  | [optional] 
 **OrderSubscriptions** | Pointer to [**CustomerDataRelationshipsOrderSubscriptions**](CustomerDataRelationshipsOrderSubscriptions.md) |  | [optional] 
 **OrderFactories** | Pointer to [**OrderSubscriptionDataRelationshipsOrderFactories**](OrderSubscriptionDataRelationshipsOrderFactories.md) |  | [optional] 
 **OrderCopies** | Pointer to [**OrderDataRelationshipsOrderCopies**](OrderDataRelationshipsOrderCopies.md) |  | [optional] 
 **RecurringOrderCopies** | Pointer to [**OrderSubscriptionDataRelationshipsRecurringOrderCopies**](OrderSubscriptionDataRelationshipsRecurringOrderCopies.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Links** | Pointer to [**OrderDataRelationshipsLinks**](OrderDataRelationshipsLinks.md) |  | [optional] 
+**ResourceErrors** | Pointer to [**OrderDataRelationshipsResourceErrors**](OrderDataRelationshipsResourceErrors.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
+**Tags** | Pointer to [**AddressDataRelationshipsTags**](AddressDataRelationshipsTags.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -225,20 +235,20 @@ HasAvailableFreeSkus returns a boolean if a field has been set.
 
 ### GetAvailableFreeBundles
 
-`func (o *OrderDataRelationships) GetAvailableFreeBundles() OrderDataRelationshipsAvailableFreeBundles`
+`func (o *OrderDataRelationships) GetAvailableFreeBundles() LineItemDataRelationshipsBundle`
 
 GetAvailableFreeBundles returns the AvailableFreeBundles field if non-nil, zero value otherwise.
 
 ### GetAvailableFreeBundlesOk
 
-`func (o *OrderDataRelationships) GetAvailableFreeBundlesOk() (*OrderDataRelationshipsAvailableFreeBundles, bool)`
+`func (o *OrderDataRelationships) GetAvailableFreeBundlesOk() (*LineItemDataRelationshipsBundle, bool)`
 
 GetAvailableFreeBundlesOk returns a tuple with the AvailableFreeBundles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailableFreeBundles
 
-`func (o *OrderDataRelationships) SetAvailableFreeBundles(v OrderDataRelationshipsAvailableFreeBundles)`
+`func (o *OrderDataRelationships) SetAvailableFreeBundles(v LineItemDataRelationshipsBundle)`
 
 SetAvailableFreeBundles sets AvailableFreeBundles field to given value.
 
@@ -323,22 +333,122 @@ SetLineItems sets LineItems field to given value.
 
 HasLineItems returns a boolean if a field has been set.
 
+### GetLineItemOptions
+
+`func (o *OrderDataRelationships) GetLineItemOptions() LineItemDataRelationshipsLineItemOptions`
+
+GetLineItemOptions returns the LineItemOptions field if non-nil, zero value otherwise.
+
+### GetLineItemOptionsOk
+
+`func (o *OrderDataRelationships) GetLineItemOptionsOk() (*LineItemDataRelationshipsLineItemOptions, bool)`
+
+GetLineItemOptionsOk returns a tuple with the LineItemOptions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLineItemOptions
+
+`func (o *OrderDataRelationships) SetLineItemOptions(v LineItemDataRelationshipsLineItemOptions)`
+
+SetLineItemOptions sets LineItemOptions field to given value.
+
+### HasLineItemOptions
+
+`func (o *OrderDataRelationships) HasLineItemOptions() bool`
+
+HasLineItemOptions returns a boolean if a field has been set.
+
+### GetStockReservations
+
+`func (o *OrderDataRelationships) GetStockReservations() LineItemDataRelationshipsStockReservations`
+
+GetStockReservations returns the StockReservations field if non-nil, zero value otherwise.
+
+### GetStockReservationsOk
+
+`func (o *OrderDataRelationships) GetStockReservationsOk() (*LineItemDataRelationshipsStockReservations, bool)`
+
+GetStockReservationsOk returns a tuple with the StockReservations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStockReservations
+
+`func (o *OrderDataRelationships) SetStockReservations(v LineItemDataRelationshipsStockReservations)`
+
+SetStockReservations sets StockReservations field to given value.
+
+### HasStockReservations
+
+`func (o *OrderDataRelationships) HasStockReservations() bool`
+
+HasStockReservations returns a boolean if a field has been set.
+
+### GetStockLineItems
+
+`func (o *OrderDataRelationships) GetStockLineItems() LineItemDataRelationshipsStockLineItems`
+
+GetStockLineItems returns the StockLineItems field if non-nil, zero value otherwise.
+
+### GetStockLineItemsOk
+
+`func (o *OrderDataRelationships) GetStockLineItemsOk() (*LineItemDataRelationshipsStockLineItems, bool)`
+
+GetStockLineItemsOk returns a tuple with the StockLineItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStockLineItems
+
+`func (o *OrderDataRelationships) SetStockLineItems(v LineItemDataRelationshipsStockLineItems)`
+
+SetStockLineItems sets StockLineItems field to given value.
+
+### HasStockLineItems
+
+`func (o *OrderDataRelationships) HasStockLineItems() bool`
+
+HasStockLineItems returns a boolean if a field has been set.
+
+### GetStockTransfers
+
+`func (o *OrderDataRelationships) GetStockTransfers() LineItemDataRelationshipsStockTransfers`
+
+GetStockTransfers returns the StockTransfers field if non-nil, zero value otherwise.
+
+### GetStockTransfersOk
+
+`func (o *OrderDataRelationships) GetStockTransfersOk() (*LineItemDataRelationshipsStockTransfers, bool)`
+
+GetStockTransfersOk returns a tuple with the StockTransfers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStockTransfers
+
+`func (o *OrderDataRelationships) SetStockTransfers(v LineItemDataRelationshipsStockTransfers)`
+
+SetStockTransfers sets StockTransfers field to given value.
+
+### HasStockTransfers
+
+`func (o *OrderDataRelationships) HasStockTransfers() bool`
+
+HasStockTransfers returns a boolean if a field has been set.
+
 ### GetShipments
 
-`func (o *OrderDataRelationships) GetShipments() OrderDataRelationshipsShipments`
+`func (o *OrderDataRelationships) GetShipments() LineItemDataRelationshipsShipment`
 
 GetShipments returns the Shipments field if non-nil, zero value otherwise.
 
 ### GetShipmentsOk
 
-`func (o *OrderDataRelationships) GetShipmentsOk() (*OrderDataRelationshipsShipments, bool)`
+`func (o *OrderDataRelationships) GetShipmentsOk() (*LineItemDataRelationshipsShipment, bool)`
 
 GetShipmentsOk returns a tuple with the Shipments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShipments
 
-`func (o *OrderDataRelationships) SetShipments(v OrderDataRelationshipsShipments)`
+`func (o *OrderDataRelationships) SetShipments(v LineItemDataRelationshipsShipment)`
 
 SetShipments sets Shipments field to given value.
 
@@ -347,6 +457,31 @@ SetShipments sets Shipments field to given value.
 `func (o *OrderDataRelationships) HasShipments() bool`
 
 HasShipments returns a boolean if a field has been set.
+
+### GetPaymentOptions
+
+`func (o *OrderDataRelationships) GetPaymentOptions() OrderDataRelationshipsPaymentOptions`
+
+GetPaymentOptions returns the PaymentOptions field if non-nil, zero value otherwise.
+
+### GetPaymentOptionsOk
+
+`func (o *OrderDataRelationships) GetPaymentOptionsOk() (*OrderDataRelationshipsPaymentOptions, bool)`
+
+GetPaymentOptionsOk returns a tuple with the PaymentOptions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentOptions
+
+`func (o *OrderDataRelationships) SetPaymentOptions(v OrderDataRelationshipsPaymentOptions)`
+
+SetPaymentOptions sets PaymentOptions field to given value.
+
+### HasPaymentOptions
+
+`func (o *OrderDataRelationships) HasPaymentOptions() bool`
+
+HasPaymentOptions returns a boolean if a field has been set.
 
 ### GetTransactions
 
@@ -475,20 +610,20 @@ HasRefunds returns a boolean if a field has been set.
 
 ### GetReturns
 
-`func (o *OrderDataRelationships) GetReturns() CustomerDataRelationshipsReturns`
+`func (o *OrderDataRelationships) GetReturns() CaptureDataRelationshipsReturn`
 
 GetReturns returns the Returns field if non-nil, zero value otherwise.
 
 ### GetReturnsOk
 
-`func (o *OrderDataRelationships) GetReturnsOk() (*CustomerDataRelationshipsReturns, bool)`
+`func (o *OrderDataRelationships) GetReturnsOk() (*CaptureDataRelationshipsReturn, bool)`
 
 GetReturnsOk returns a tuple with the Returns field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReturns
 
-`func (o *OrderDataRelationships) SetReturns(v CustomerDataRelationshipsReturns)`
+`func (o *OrderDataRelationships) SetReturns(v CaptureDataRelationshipsReturn)`
 
 SetReturns sets Returns field to given value.
 
@@ -497,6 +632,31 @@ SetReturns sets Returns field to given value.
 `func (o *OrderDataRelationships) HasReturns() bool`
 
 HasReturns returns a boolean if a field has been set.
+
+### GetOrderSubscription
+
+`func (o *OrderDataRelationships) GetOrderSubscription() CustomerDataRelationshipsOrderSubscriptions`
+
+GetOrderSubscription returns the OrderSubscription field if non-nil, zero value otherwise.
+
+### GetOrderSubscriptionOk
+
+`func (o *OrderDataRelationships) GetOrderSubscriptionOk() (*CustomerDataRelationshipsOrderSubscriptions, bool)`
+
+GetOrderSubscriptionOk returns a tuple with the OrderSubscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrderSubscription
+
+`func (o *OrderDataRelationships) SetOrderSubscription(v CustomerDataRelationshipsOrderSubscriptions)`
+
+SetOrderSubscription sets OrderSubscription field to given value.
+
+### HasOrderSubscription
+
+`func (o *OrderDataRelationships) HasOrderSubscription() bool`
+
+HasOrderSubscription returns a boolean if a field has been set.
 
 ### GetOrderSubscriptions
 
@@ -600,20 +760,20 @@ HasRecurringOrderCopies returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *OrderDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *OrderDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *OrderDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *OrderDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *OrderDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *OrderDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -623,22 +783,72 @@ SetAttachments sets Attachments field to given value.
 
 HasAttachments returns a boolean if a field has been set.
 
+### GetLinks
+
+`func (o *OrderDataRelationships) GetLinks() OrderDataRelationshipsLinks`
+
+GetLinks returns the Links field if non-nil, zero value otherwise.
+
+### GetLinksOk
+
+`func (o *OrderDataRelationships) GetLinksOk() (*OrderDataRelationshipsLinks, bool)`
+
+GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinks
+
+`func (o *OrderDataRelationships) SetLinks(v OrderDataRelationshipsLinks)`
+
+SetLinks sets Links field to given value.
+
+### HasLinks
+
+`func (o *OrderDataRelationships) HasLinks() bool`
+
+HasLinks returns a boolean if a field has been set.
+
+### GetResourceErrors
+
+`func (o *OrderDataRelationships) GetResourceErrors() OrderDataRelationshipsResourceErrors`
+
+GetResourceErrors returns the ResourceErrors field if non-nil, zero value otherwise.
+
+### GetResourceErrorsOk
+
+`func (o *OrderDataRelationships) GetResourceErrorsOk() (*OrderDataRelationshipsResourceErrors, bool)`
+
+GetResourceErrorsOk returns a tuple with the ResourceErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceErrors
+
+`func (o *OrderDataRelationships) SetResourceErrors(v OrderDataRelationshipsResourceErrors)`
+
+SetResourceErrors sets ResourceErrors field to given value.
+
+### HasResourceErrors
+
+`func (o *OrderDataRelationships) HasResourceErrors() bool`
+
+HasResourceErrors returns a boolean if a field has been set.
+
 ### GetEvents
 
-`func (o *OrderDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *OrderDataRelationships) GetEvents() AddressDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *OrderDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *OrderDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *OrderDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *OrderDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 
@@ -647,6 +857,56 @@ SetEvents sets Events field to given value.
 `func (o *OrderDataRelationships) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *OrderDataRelationships) GetTags() AddressDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *OrderDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *OrderDataRelationships) SetTags(v AddressDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *OrderDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *OrderDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *OrderDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *OrderDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *OrderDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

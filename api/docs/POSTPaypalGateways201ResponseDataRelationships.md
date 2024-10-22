@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**POSTAdyenGateways201ResponseDataRelationshipsPaymentMethods**](POSTAdyenGateways201ResponseDataRelationshipsPaymentMethods.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 **PaypalPayments** | Pointer to [**POSTPaypalGateways201ResponseDataRelationshipsPaypalPayments**](POSTPaypalGateways201ResponseDataRelationshipsPaypalPayments.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetPaymentMethods sets PaymentMethods field to given value.
 `func (o *POSTPaypalGateways201ResponseDataRelationships) HasPaymentMethods() bool`
 
 HasPaymentMethods returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *POSTPaypalGateways201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTPaypalGateways201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTPaypalGateways201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTPaypalGateways201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 ### GetPaypalPayments
 

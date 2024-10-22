@@ -6,16 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. When creating a price, either a valid sku_code or a SKU relationship must be present. | [optional] 
 **AmountCents** | **interface{}** | The SKU price amount for the associated price list, in cents. | 
-**CompareAtAmountCents** | **interface{}** | The compared price amount, in cents. Useful to display a percentage discount. | 
+**CompareAtAmountCents** | Pointer to **interface{}** | The compared price amount, in cents. Useful to display a percentage discount. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
+**Rules** | Pointer to **interface{}** | The rules (using Rules Engine) to be applied. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
 
 ### NewPOSTPrices201ResponseDataAttributes
 
-`func NewPOSTPrices201ResponseDataAttributes(amountCents interface{}, compareAtAmountCents interface{}, ) *POSTPrices201ResponseDataAttributes`
+`func NewPOSTPrices201ResponseDataAttributes(amountCents interface{}, ) *POSTPrices201ResponseDataAttributes`
 
 NewPOSTPrices201ResponseDataAttributes instantiates a new POSTPrices201ResponseDataAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -114,6 +115,11 @@ and a boolean to check if the value has been set.
 
 SetCompareAtAmountCents sets CompareAtAmountCents field to given value.
 
+### HasCompareAtAmountCents
+
+`func (o *POSTPrices201ResponseDataAttributes) HasCompareAtAmountCents() bool`
+
+HasCompareAtAmountCents returns a boolean if a field has been set.
 
 ### SetCompareAtAmountCentsNil
 
@@ -195,6 +201,41 @@ HasReferenceOrigin returns a boolean if a field has been set.
 `func (o *POSTPrices201ResponseDataAttributes) UnsetReferenceOrigin()`
 
 UnsetReferenceOrigin ensures that no value is present for ReferenceOrigin, not even an explicit nil
+### GetRules
+
+`func (o *POSTPrices201ResponseDataAttributes) GetRules() interface{}`
+
+GetRules returns the Rules field if non-nil, zero value otherwise.
+
+### GetRulesOk
+
+`func (o *POSTPrices201ResponseDataAttributes) GetRulesOk() (*interface{}, bool)`
+
+GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRules
+
+`func (o *POSTPrices201ResponseDataAttributes) SetRules(v interface{})`
+
+SetRules sets Rules field to given value.
+
+### HasRules
+
+`func (o *POSTPrices201ResponseDataAttributes) HasRules() bool`
+
+HasRules returns a boolean if a field has been set.
+
+### SetRulesNil
+
+`func (o *POSTPrices201ResponseDataAttributes) SetRulesNil(b bool)`
+
+ SetRulesNil sets the value for Rules to be an explicit nil
+
+### UnsetRules
+`func (o *POSTPrices201ResponseDataAttributes) UnsetRules()`
+
+UnsetRules ensures that no value is present for Rules, not even an explicit nil
 ### GetMetadata
 
 `func (o *POSTPrices201ResponseDataAttributes) GetMetadata() interface{}`

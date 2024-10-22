@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes**](GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ExternalPromotionDataRelationships**](ExternalPromotionDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**FreeShippingPromotionDataRelationships**](FreeShippingPromotionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *FreeShippingPromotionData) GetRelationships() ExternalPromotionDataRelationships`
+`func (o *FreeShippingPromotionData) GetRelationships() FreeShippingPromotionDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *FreeShippingPromotionData) GetRelationshipsOk() (*ExternalPromotionDataRelationships, bool)`
+`func (o *FreeShippingPromotionData) GetRelationshipsOk() (*FreeShippingPromotionDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *FreeShippingPromotionData) SetRelationships(v ExternalPromotionDataRelationships)`
+`func (o *FreeShippingPromotionData) SetRelationships(v FreeShippingPromotionDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

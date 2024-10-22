@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **DeliveryLeadTimeForShipment** | Pointer to [**ShipmentDataRelationshipsDeliveryLeadTime**](ShipmentDataRelationshipsDeliveryLeadTime.md) |  | [optional] 
 **ShippingMethodTiers** | Pointer to [**ShippingMethodDataRelationshipsShippingMethodTiers**](ShippingMethodDataRelationshipsShippingMethodTiers.md) |  | [optional] 
 **ShippingWeightTiers** | Pointer to [**ShippingMethodDataRelationshipsShippingWeightTiers**](ShippingMethodDataRelationshipsShippingWeightTiers.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -209,20 +210,20 @@ HasShippingWeightTiers returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *ShippingMethodDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *ShippingMethodDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *ShippingMethodDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *ShippingMethodDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *ShippingMethodDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *ShippingMethodDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -231,6 +232,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *ShippingMethodDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *ShippingMethodDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *ShippingMethodDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *ShippingMethodDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *ShippingMethodDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

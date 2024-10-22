@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,10 @@ var _ MappedNullable = &POSTCustomerAddresses201ResponseDataRelationships{}
 
 // POSTCustomerAddresses201ResponseDataRelationships struct for POSTCustomerAddresses201ResponseDataRelationships
 type POSTCustomerAddresses201ResponseDataRelationships struct {
-	Customer *POSTCouponRecipients201ResponseDataRelationshipsCustomer           `json:"customer,omitempty"`
-	Address  *POSTCustomerAddresses201ResponseDataRelationshipsAddress           `json:"address,omitempty"`
-	Events   *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents `json:"events,omitempty"`
+	Customer *POSTCouponRecipients201ResponseDataRelationshipsCustomer `json:"customer,omitempty"`
+	Address  *POSTCustomerAddresses201ResponseDataRelationshipsAddress `json:"address,omitempty"`
+	Events   *POSTAddresses201ResponseDataRelationshipsEvents          `json:"events,omitempty"`
+	Versions *POSTAddresses201ResponseDataRelationshipsVersions        `json:"versions,omitempty"`
 }
 
 // NewPOSTCustomerAddresses201ResponseDataRelationships instantiates a new POSTCustomerAddresses201ResponseDataRelationships object
@@ -107,9 +108,9 @@ func (o *POSTCustomerAddresses201ResponseDataRelationships) SetAddress(v POSTCus
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *POSTCustomerAddresses201ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents {
+func (o *POSTCustomerAddresses201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -117,7 +118,7 @@ func (o *POSTCustomerAddresses201ResponseDataRelationships) GetEvents() GETAutho
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCustomerAddresses201ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool) {
+func (o *POSTCustomerAddresses201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -133,9 +134,41 @@ func (o *POSTCustomerAddresses201ResponseDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents and assigns it to the Events field.
-func (o *POSTCustomerAddresses201ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents) {
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *POSTCustomerAddresses201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTCustomerAddresses201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTCustomerAddresses201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTCustomerAddresses201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTCustomerAddresses201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTCustomerAddresses201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -156,6 +189,9 @@ func (o POSTCustomerAddresses201ResponseDataRelationships) ToMap() (map[string]i
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

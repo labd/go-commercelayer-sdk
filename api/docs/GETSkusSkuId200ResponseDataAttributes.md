@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ImageUrl** | Pointer to **interface{}** | The URL of an image that represents the SKU. | [optional] 
 **PiecesPerPack** | Pointer to **interface{}** | The number of pieces that compose the SKU. This is useful to describe sets and bundles. | [optional] 
 **Weight** | Pointer to **interface{}** | The weight of the SKU. If present, it will be used to calculate the shipping rates. | [optional] 
-**UnitOfWeight** | Pointer to **interface{}** | Can be one of &#39;gr&#39;, &#39;lb&#39;, or &#39;oz&#39; | [optional] 
+**UnitOfWeight** | Pointer to **interface{}** | The unit of weight. One of &#39;gr&#39;, &#39;oz&#39;, or &#39;lb&#39;. | [optional] 
 **HsTariffNumber** | Pointer to **interface{}** | The Harmonized System Code used by customs to identify the products shipped across international borders. | [optional] 
 **DoNotShip** | Pointer to **interface{}** | Indicates if the SKU doesn&#39;t generate shipments. | [optional] 
 **DoNotTrack** | Pointer to **interface{}** | Indicates if the SKU doesn&#39;t track the stock inventory. | [optional] 
@@ -18,7 +18,8 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
+**JwtCustomClaim** | Pointer to **interface{}** | The custom_claim attached to the current JWT (if any). | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -565,6 +566,41 @@ HasReferenceOrigin returns a boolean if a field has been set.
 `func (o *GETSkusSkuId200ResponseDataAttributes) UnsetReferenceOrigin()`
 
 UnsetReferenceOrigin ensures that no value is present for ReferenceOrigin, not even an explicit nil
+### GetJwtCustomClaim
+
+`func (o *GETSkusSkuId200ResponseDataAttributes) GetJwtCustomClaim() interface{}`
+
+GetJwtCustomClaim returns the JwtCustomClaim field if non-nil, zero value otherwise.
+
+### GetJwtCustomClaimOk
+
+`func (o *GETSkusSkuId200ResponseDataAttributes) GetJwtCustomClaimOk() (*interface{}, bool)`
+
+GetJwtCustomClaimOk returns a tuple with the JwtCustomClaim field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtCustomClaim
+
+`func (o *GETSkusSkuId200ResponseDataAttributes) SetJwtCustomClaim(v interface{})`
+
+SetJwtCustomClaim sets JwtCustomClaim field to given value.
+
+### HasJwtCustomClaim
+
+`func (o *GETSkusSkuId200ResponseDataAttributes) HasJwtCustomClaim() bool`
+
+HasJwtCustomClaim returns a boolean if a field has been set.
+
+### SetJwtCustomClaimNil
+
+`func (o *GETSkusSkuId200ResponseDataAttributes) SetJwtCustomClaimNil(b bool)`
+
+ SetJwtCustomClaimNil sets the value for JwtCustomClaim to be an explicit nil
+
+### UnsetJwtCustomClaim
+`func (o *GETSkusSkuId200ResponseDataAttributes) UnsetJwtCustomClaim()`
+
+UnsetJwtCustomClaim ensures that no value is present for JwtCustomClaim, not even an explicit nil
 ### GetMetadata
 
 `func (o *GETSkusSkuId200ResponseDataAttributes) GetMetadata() interface{}`

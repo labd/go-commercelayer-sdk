@@ -74,6 +74,19 @@ func Test_api_InventoryStockLocationsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test InventoryStockLocationsApiService GETShipmentIdInventoryStockLocation", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var shipmentId interface{}
+
+		httpRes, err := apiClient.InventoryStockLocationsApi.GETShipmentIdInventoryStockLocation(context.Background(), shipmentId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test InventoryStockLocationsApiService GETStockLocationIdInventoryStockLocations", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

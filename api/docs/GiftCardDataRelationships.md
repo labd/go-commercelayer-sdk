@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
 **GiftCardRecipient** | Pointer to [**GiftCardDataRelationshipsGiftCardRecipient**](GiftCardDataRelationshipsGiftCardRecipient.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
+**Tags** | Pointer to [**AddressDataRelationshipsTags**](AddressDataRelationshipsTags.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -80,20 +82,20 @@ HasGiftCardRecipient returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *GiftCardDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *GiftCardDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *GiftCardDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *GiftCardDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *GiftCardDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *GiftCardDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -105,20 +107,20 @@ HasAttachments returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *GiftCardDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *GiftCardDataRelationships) GetEvents() AddressDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *GiftCardDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *GiftCardDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *GiftCardDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *GiftCardDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 
@@ -127,6 +129,56 @@ SetEvents sets Events field to given value.
 `func (o *GiftCardDataRelationships) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *GiftCardDataRelationships) GetTags() AddressDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *GiftCardDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *GiftCardDataRelationships) SetTags(v AddressDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *GiftCardDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *GiftCardDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *GiftCardDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *GiftCardDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *GiftCardDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

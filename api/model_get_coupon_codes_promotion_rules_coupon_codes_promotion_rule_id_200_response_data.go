@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -23,10 +23,10 @@ type GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData struc
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                                                        `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                                                 `json:"links,omitempty"`
-	Attributes    *GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTCouponCodesPromotionRules201ResponseDataRelationships                         `json:"relationships,omitempty"`
+	Type          interface{}                                                                      `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                                               `json:"links,omitempty"`
+	Attributes    *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTCouponCodesPromotionRules201ResponseDataRelationships                       `json:"relationships,omitempty"`
 }
 
 // NewGETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData instantiates a new GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData object
@@ -145,9 +145,9 @@ func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) 
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributes() GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributes() GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes {
 	if o == nil || IsNil(o.Attributes) {
-		var ret GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
+		var ret GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,7 +155,7 @@ func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) 
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributesOk() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributesOk() (*GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, bool) {
 	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) 
 	return false
 }
 
-// SetAttributes gets a reference to the given GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes and assigns it to the Attributes field.
-func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetAttributes(v GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
+// SetAttributes gets a reference to the given GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes and assigns it to the Attributes field.
+func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetAttributes(v GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes) {
 	o.Attributes = &v
 }
 

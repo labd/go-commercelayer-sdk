@@ -7,9 +7,11 @@ Name | Type | Description | Notes
 **PlaceTargetOrder** | Pointer to **interface{}** | Indicates if the target order must be placed upon copy. | [optional] 
 **ReuseWallet** | Pointer to **interface{}** | Indicates if the payment source within the source order customer&#39;s wallet must be copied. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **CancelSourceOrder** | Pointer to **interface{}** | Indicates if the source order must be cancelled upon copy. | [optional] 
+**ApplyPromotions** | Pointer to **interface{}** | Indicates if promotions got applied upon copy. | [optional] 
+**IgnoreInvalidCoupon** | Pointer to **interface{}** | Indicates to ignore invalid coupon code during copy. | [optional] 
 
 ## Methods
 
@@ -240,6 +242,76 @@ HasCancelSourceOrder returns a boolean if a field has been set.
 `func (o *POSTOrderCopies201ResponseDataAttributes) UnsetCancelSourceOrder()`
 
 UnsetCancelSourceOrder ensures that no value is present for CancelSourceOrder, not even an explicit nil
+### GetApplyPromotions
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) GetApplyPromotions() interface{}`
+
+GetApplyPromotions returns the ApplyPromotions field if non-nil, zero value otherwise.
+
+### GetApplyPromotionsOk
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) GetApplyPromotionsOk() (*interface{}, bool)`
+
+GetApplyPromotionsOk returns a tuple with the ApplyPromotions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromotions
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) SetApplyPromotions(v interface{})`
+
+SetApplyPromotions sets ApplyPromotions field to given value.
+
+### HasApplyPromotions
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) HasApplyPromotions() bool`
+
+HasApplyPromotions returns a boolean if a field has been set.
+
+### SetApplyPromotionsNil
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) SetApplyPromotionsNil(b bool)`
+
+ SetApplyPromotionsNil sets the value for ApplyPromotions to be an explicit nil
+
+### UnsetApplyPromotions
+`func (o *POSTOrderCopies201ResponseDataAttributes) UnsetApplyPromotions()`
+
+UnsetApplyPromotions ensures that no value is present for ApplyPromotions, not even an explicit nil
+### GetIgnoreInvalidCoupon
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) GetIgnoreInvalidCoupon() interface{}`
+
+GetIgnoreInvalidCoupon returns the IgnoreInvalidCoupon field if non-nil, zero value otherwise.
+
+### GetIgnoreInvalidCouponOk
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) GetIgnoreInvalidCouponOk() (*interface{}, bool)`
+
+GetIgnoreInvalidCouponOk returns a tuple with the IgnoreInvalidCoupon field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIgnoreInvalidCoupon
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) SetIgnoreInvalidCoupon(v interface{})`
+
+SetIgnoreInvalidCoupon sets IgnoreInvalidCoupon field to given value.
+
+### HasIgnoreInvalidCoupon
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) HasIgnoreInvalidCoupon() bool`
+
+HasIgnoreInvalidCoupon returns a boolean if a field has been set.
+
+### SetIgnoreInvalidCouponNil
+
+`func (o *POSTOrderCopies201ResponseDataAttributes) SetIgnoreInvalidCouponNil(b bool)`
+
+ SetIgnoreInvalidCouponNil sets the value for IgnoreInvalidCoupon to be an explicit nil
+
+### UnsetIgnoreInvalidCoupon
+`func (o *POSTOrderCopies201ResponseDataAttributes) UnsetIgnoreInvalidCoupon()`
+
+UnsetIgnoreInvalidCoupon ensures that no value is present for IgnoreInvalidCoupon, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

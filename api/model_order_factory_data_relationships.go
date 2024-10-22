@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &OrderFactoryDataRelationships{}
 
 // OrderFactoryDataRelationships struct for OrderFactoryDataRelationships
 type OrderFactoryDataRelationships struct {
-	SourceOrder *AdyenPaymentDataRelationshipsOrder   `json:"source_order,omitempty"`
-	TargetOrder *AdyenPaymentDataRelationshipsOrder   `json:"target_order,omitempty"`
-	Events      *AuthorizationDataRelationshipsEvents `json:"events,omitempty"`
+	SourceOrder *AdyenPaymentDataRelationshipsOrder `json:"source_order,omitempty"`
+	TargetOrder *AdyenPaymentDataRelationshipsOrder `json:"target_order,omitempty"`
+	Events      *AddressDataRelationshipsEvents     `json:"events,omitempty"`
 }
 
 // NewOrderFactoryDataRelationships instantiates a new OrderFactoryDataRelationships object
@@ -107,9 +107,9 @@ func (o *OrderFactoryDataRelationships) SetTargetOrder(v AdyenPaymentDataRelatio
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *OrderFactoryDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *OrderFactoryDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -117,7 +117,7 @@ func (o *OrderFactoryDataRelationships) GetEvents() AuthorizationDataRelationshi
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderFactoryDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *OrderFactoryDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *OrderFactoryDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *OrderFactoryDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *OrderFactoryDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
 }
 

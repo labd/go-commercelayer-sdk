@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,20 @@ var _ MappedNullable = &POSTPriceLists201ResponseDataAttributes{}
 
 // POSTPriceLists201ResponseDataAttributes struct for POSTPriceLists201ResponseDataAttributes
 type POSTPriceLists201ResponseDataAttributes struct {
-	// The price list's internal name
+	// The price list's internal name.
 	Name interface{} `json:"name"`
+	// A string that you can use to identify the price list (must be unique within the environment).
+	Code interface{} `json:"code,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode interface{} `json:"currency_code"`
 	// Indicates if the associated prices include taxes.
 	TaxIncluded interface{} `json:"tax_included,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
+	// The rules (using Rules Engine) to be applied.
+	Rules interface{} `json:"rules,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
 }
@@ -77,6 +81,39 @@ func (o *POSTPriceLists201ResponseDataAttributes) GetNameOk() (*interface{}, boo
 // SetName sets field value
 func (o *POSTPriceLists201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPriceLists201ResponseDataAttributes) GetCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Code
+}
+
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPriceLists201ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
+	}
+	return &o.Code, true
+}
+
+// HasCode returns a boolean if a field has been set.
+func (o *POSTPriceLists201ResponseDataAttributes) HasCode() bool {
+	if o != nil && IsNil(o.Code) {
+		return true
+	}
+
+	return false
+}
+
+// SetCode gets a reference to the given interface{} and assigns it to the Code field.
+func (o *POSTPriceLists201ResponseDataAttributes) SetCode(v interface{}) {
+	o.Code = v
 }
 
 // GetCurrencyCode returns the CurrencyCode field value
@@ -204,6 +241,39 @@ func (o *POSTPriceLists201ResponseDataAttributes) SetReferenceOrigin(v interface
 	o.ReferenceOrigin = v
 }
 
+// GetRules returns the Rules field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPriceLists201ResponseDataAttributes) GetRules() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Rules
+}
+
+// GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPriceLists201ResponseDataAttributes) GetRulesOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Rules) {
+		return nil, false
+	}
+	return &o.Rules, true
+}
+
+// HasRules returns a boolean if a field has been set.
+func (o *POSTPriceLists201ResponseDataAttributes) HasRules() bool {
+	if o != nil && IsNil(o.Rules) {
+		return true
+	}
+
+	return false
+}
+
+// SetRules gets a reference to the given interface{} and assigns it to the Rules field.
+func (o *POSTPriceLists201ResponseDataAttributes) SetRules(v interface{}) {
+	o.Rules = v
+}
+
 // GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTPriceLists201ResponseDataAttributes) GetMetadata() interface{} {
 	if o == nil {
@@ -250,6 +320,9 @@ func (o POSTPriceLists201ResponseDataAttributes) ToMap() (map[string]interface{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.Code != nil {
+		toSerialize["code"] = o.Code
+	}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
 	}
@@ -261,6 +334,9 @@ func (o POSTPriceLists201ResponseDataAttributes) ToMap() (map[string]interface{}
 	}
 	if o.ReferenceOrigin != nil {
 		toSerialize["reference_origin"] = o.ReferenceOrigin
+	}
+	if o.Rules != nil {
+		toSerialize["rules"] = o.Rules
 	}
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata

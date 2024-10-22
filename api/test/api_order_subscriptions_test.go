@@ -61,6 +61,19 @@ func Test_api_OrderSubscriptionsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test OrderSubscriptionsApiService GETOrderIdOrderSubscription", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var orderId interface{}
+
+		httpRes, err := apiClient.OrderSubscriptionsApi.GETOrderIdOrderSubscription(context.Background(), orderId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test OrderSubscriptionsApiService GETOrderIdOrderSubscriptions", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

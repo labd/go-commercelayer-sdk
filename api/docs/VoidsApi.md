@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**GETOrderIdVoids**](VoidsApi.md#GETOrderIdVoids) | **Get** /orders/{orderId}/voids | Retrieve the voids associated to the order
 [**GETVoids**](VoidsApi.md#GETVoids) | **Get** /voids | List all voids
 [**GETVoidsVoidId**](VoidsApi.md#GETVoidsVoidId) | **Get** /voids/{voidId} | Retrieve a void
+[**PATCHVoidsVoidId**](VoidsApi.md#PATCHVoidsVoidId) | **Patch** /voids/{voidId} | Update a void
 
 
 
@@ -271,6 +272,78 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PATCHVoidsVoidId
+
+> PATCHVoidsVoidId200Response PATCHVoidsVoidId(ctx, voidId).VoidUpdate(voidUpdate).Execute()
+
+Update a void
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    voidUpdate := *openapiclient.NewVoidUpdate(*openapiclient.NewVoidUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHRefundsRefundId200ResponseDataAttributes())) // VoidUpdate | 
+    voidId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.VoidsApi.PATCHVoidsVoidId(context.Background(), voidId).VoidUpdate(voidUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VoidsApi.PATCHVoidsVoidId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PATCHVoidsVoidId`: PATCHVoidsVoidId200Response
+    fmt.Fprintf(os.Stdout, "Response from `VoidsApi.PATCHVoidsVoidId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**voidId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPATCHVoidsVoidIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **voidUpdate** | [**VoidUpdate**](VoidUpdate.md) |  | 
+
+
+### Return type
+
+[**PATCHVoidsVoidId200Response**](PATCHVoidsVoidId200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/vnd.api+json
 - **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

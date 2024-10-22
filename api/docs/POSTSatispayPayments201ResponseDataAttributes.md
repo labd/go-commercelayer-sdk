@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Token** | Pointer to **interface{}** | Activation code generated from the Satispay Dashboard. | [optional] 
+**Flow** | Pointer to **interface{}** | The Satispay payment flow, inspect gateway API details for more information. | [optional] 
 **RedirectUrl** | Pointer to **interface{}** | The url to redirect the customer after the payment flow is completed. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -29,41 +29,41 @@ NewPOSTSatispayPayments201ResponseDataAttributesWithDefaults instantiates a new 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetToken
+### GetFlow
 
-`func (o *POSTSatispayPayments201ResponseDataAttributes) GetToken() interface{}`
+`func (o *POSTSatispayPayments201ResponseDataAttributes) GetFlow() interface{}`
 
-GetToken returns the Token field if non-nil, zero value otherwise.
+GetFlow returns the Flow field if non-nil, zero value otherwise.
 
-### GetTokenOk
+### GetFlowOk
 
-`func (o *POSTSatispayPayments201ResponseDataAttributes) GetTokenOk() (*interface{}, bool)`
+`func (o *POSTSatispayPayments201ResponseDataAttributes) GetFlowOk() (*interface{}, bool)`
 
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+GetFlowOk returns a tuple with the Flow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetToken
+### SetFlow
 
-`func (o *POSTSatispayPayments201ResponseDataAttributes) SetToken(v interface{})`
+`func (o *POSTSatispayPayments201ResponseDataAttributes) SetFlow(v interface{})`
 
-SetToken sets Token field to given value.
+SetFlow sets Flow field to given value.
 
-### HasToken
+### HasFlow
 
-`func (o *POSTSatispayPayments201ResponseDataAttributes) HasToken() bool`
+`func (o *POSTSatispayPayments201ResponseDataAttributes) HasFlow() bool`
 
-HasToken returns a boolean if a field has been set.
+HasFlow returns a boolean if a field has been set.
 
-### SetTokenNil
+### SetFlowNil
 
-`func (o *POSTSatispayPayments201ResponseDataAttributes) SetTokenNil(b bool)`
+`func (o *POSTSatispayPayments201ResponseDataAttributes) SetFlowNil(b bool)`
 
- SetTokenNil sets the value for Token to be an explicit nil
+ SetFlowNil sets the value for Flow to be an explicit nil
 
-### UnsetToken
-`func (o *POSTSatispayPayments201ResponseDataAttributes) UnsetToken()`
+### UnsetFlow
+`func (o *POSTSatispayPayments201ResponseDataAttributes) UnsetFlow()`
 
-UnsetToken ensures that no value is present for Token, not even an explicit nil
+UnsetFlow ensures that no value is present for Flow, not even an explicit nil
 ### GetRedirectUrl
 
 `func (o *POSTSatispayPayments201ResponseDataAttributes) GetRedirectUrl() interface{}`

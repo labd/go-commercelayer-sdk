@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,23 +20,25 @@ var _ MappedNullable = &GETStripePaymentsStripePaymentId200ResponseDataAttribute
 
 // GETStripePaymentsStripePaymentId200ResponseDataAttributes struct for GETStripePaymentsStripePaymentId200ResponseDataAttributes
 type GETStripePaymentsStripePaymentId200ResponseDataAttributes struct {
+	// The Stripe payment intent ID. Required to identify a payment session on stripe.
+	StripeId interface{} `json:"stripe_id,omitempty"`
 	// The Stripe payment intent client secret. Required to create a charge through Stripe.js.
 	ClientSecret interface{} `json:"client_secret,omitempty"`
+	// The Stripe charge ID. Identifies money movement upon the payment intent confirmation.
+	ChargeId interface{} `json:"charge_id,omitempty"`
 	// The Stripe publishable API key.
 	PublishableKey interface{} `json:"publishable_key,omitempty"`
-	// Stripe payment options: 'customer', 'payment_method', etc. Check Stripe payment intent API for more details.
+	// Stripe payment options: 'customer', 'payment_method', 'return_url', etc. Check Stripe payment intent API for more details.
 	Options interface{} `json:"options,omitempty"`
 	// Stripe 'payment_method', set by webhook.
 	PaymentMethod interface{} `json:"payment_method,omitempty"`
 	// Indicates if the order current amount differs form the one of the created payment intent.
 	MismatchedAmounts interface{} `json:"mismatched_amounts,omitempty"`
-	// The amount of the associated payment intent, in cents.
-	IntentAmountCents interface{} `json:"intent_amount_cents,omitempty"`
-	// The amount of the associated payment intent, float.
-	IntentAmountFloat interface{} `json:"intent_amount_float,omitempty"`
-	// The amount of the associated payment intent, formatted.
-	FormattedIntentAmount interface{} `json:"formatted_intent_amount,omitempty"`
-	// Information about the payment instrument used in the transaction
+	// The URL to return to when a redirect payment is completed.
+	ReturnUrl interface{} `json:"return_url,omitempty"`
+	// The email address to send the receipt to.
+	ReceiptEmail interface{} `json:"receipt_email,omitempty"`
+	// Information about the payment instrument used in the transaction.
 	PaymentInstrument interface{} `json:"payment_instrument,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
@@ -44,7 +46,7 @@ type GETStripePaymentsStripePaymentId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -65,6 +67,39 @@ func NewGETStripePaymentsStripePaymentId200ResponseDataAttributes() *GETStripePa
 func NewGETStripePaymentsStripePaymentId200ResponseDataAttributesWithDefaults() *GETStripePaymentsStripePaymentId200ResponseDataAttributes {
 	this := GETStripePaymentsStripePaymentId200ResponseDataAttributes{}
 	return &this
+}
+
+// GetStripeId returns the StripeId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetStripeId() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.StripeId
+}
+
+// GetStripeIdOk returns a tuple with the StripeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetStripeIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.StripeId) {
+		return nil, false
+	}
+	return &o.StripeId, true
+}
+
+// HasStripeId returns a boolean if a field has been set.
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) HasStripeId() bool {
+	if o != nil && IsNil(o.StripeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetStripeId gets a reference to the given interface{} and assigns it to the StripeId field.
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) SetStripeId(v interface{}) {
+	o.StripeId = v
 }
 
 // GetClientSecret returns the ClientSecret field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -98,6 +133,39 @@ func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) HasClientSec
 // SetClientSecret gets a reference to the given interface{} and assigns it to the ClientSecret field.
 func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) SetClientSecret(v interface{}) {
 	o.ClientSecret = v
+}
+
+// GetChargeId returns the ChargeId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetChargeId() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ChargeId
+}
+
+// GetChargeIdOk returns a tuple with the ChargeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetChargeIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ChargeId) {
+		return nil, false
+	}
+	return &o.ChargeId, true
+}
+
+// HasChargeId returns a boolean if a field has been set.
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) HasChargeId() bool {
+	if o != nil && IsNil(o.ChargeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetChargeId gets a reference to the given interface{} and assigns it to the ChargeId field.
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) SetChargeId(v interface{}) {
+	o.ChargeId = v
 }
 
 // GetPublishableKey returns the PublishableKey field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -232,103 +300,70 @@ func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) SetMismatche
 	o.MismatchedAmounts = v
 }
 
-// GetIntentAmountCents returns the IntentAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetIntentAmountCents() interface{} {
+// GetReturnUrl returns the ReturnUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetReturnUrl() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-	return o.IntentAmountCents
+	return o.ReturnUrl
 }
 
-// GetIntentAmountCentsOk returns a tuple with the IntentAmountCents field value if set, nil otherwise
+// GetReturnUrlOk returns a tuple with the ReturnUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetIntentAmountCentsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.IntentAmountCents) {
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReturnUrl) {
 		return nil, false
 	}
-	return &o.IntentAmountCents, true
+	return &o.ReturnUrl, true
 }
 
-// HasIntentAmountCents returns a boolean if a field has been set.
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) HasIntentAmountCents() bool {
-	if o != nil && IsNil(o.IntentAmountCents) {
+// HasReturnUrl returns a boolean if a field has been set.
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) HasReturnUrl() bool {
+	if o != nil && IsNil(o.ReturnUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetIntentAmountCents gets a reference to the given interface{} and assigns it to the IntentAmountCents field.
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) SetIntentAmountCents(v interface{}) {
-	o.IntentAmountCents = v
+// SetReturnUrl gets a reference to the given interface{} and assigns it to the ReturnUrl field.
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) SetReturnUrl(v interface{}) {
+	o.ReturnUrl = v
 }
 
-// GetIntentAmountFloat returns the IntentAmountFloat field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetIntentAmountFloat() interface{} {
+// GetReceiptEmail returns the ReceiptEmail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetReceiptEmail() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-	return o.IntentAmountFloat
+	return o.ReceiptEmail
 }
 
-// GetIntentAmountFloatOk returns a tuple with the IntentAmountFloat field value if set, nil otherwise
+// GetReceiptEmailOk returns a tuple with the ReceiptEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetIntentAmountFloatOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.IntentAmountFloat) {
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetReceiptEmailOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReceiptEmail) {
 		return nil, false
 	}
-	return &o.IntentAmountFloat, true
+	return &o.ReceiptEmail, true
 }
 
-// HasIntentAmountFloat returns a boolean if a field has been set.
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) HasIntentAmountFloat() bool {
-	if o != nil && IsNil(o.IntentAmountFloat) {
+// HasReceiptEmail returns a boolean if a field has been set.
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) HasReceiptEmail() bool {
+	if o != nil && IsNil(o.ReceiptEmail) {
 		return true
 	}
 
 	return false
 }
 
-// SetIntentAmountFloat gets a reference to the given interface{} and assigns it to the IntentAmountFloat field.
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) SetIntentAmountFloat(v interface{}) {
-	o.IntentAmountFloat = v
-}
-
-// GetFormattedIntentAmount returns the FormattedIntentAmount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetFormattedIntentAmount() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.FormattedIntentAmount
-}
-
-// GetFormattedIntentAmountOk returns a tuple with the FormattedIntentAmount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) GetFormattedIntentAmountOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.FormattedIntentAmount) {
-		return nil, false
-	}
-	return &o.FormattedIntentAmount, true
-}
-
-// HasFormattedIntentAmount returns a boolean if a field has been set.
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) HasFormattedIntentAmount() bool {
-	if o != nil && IsNil(o.FormattedIntentAmount) {
-		return true
-	}
-
-	return false
-}
-
-// SetFormattedIntentAmount gets a reference to the given interface{} and assigns it to the FormattedIntentAmount field.
-func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) SetFormattedIntentAmount(v interface{}) {
-	o.FormattedIntentAmount = v
+// SetReceiptEmail gets a reference to the given interface{} and assigns it to the ReceiptEmail field.
+func (o *GETStripePaymentsStripePaymentId200ResponseDataAttributes) SetReceiptEmail(v interface{}) {
+	o.ReceiptEmail = v
 }
 
 // GetPaymentInstrument returns the PaymentInstrument field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -539,8 +574,14 @@ func (o GETStripePaymentsStripePaymentId200ResponseDataAttributes) MarshalJSON()
 
 func (o GETStripePaymentsStripePaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.StripeId != nil {
+		toSerialize["stripe_id"] = o.StripeId
+	}
 	if o.ClientSecret != nil {
 		toSerialize["client_secret"] = o.ClientSecret
+	}
+	if o.ChargeId != nil {
+		toSerialize["charge_id"] = o.ChargeId
 	}
 	if o.PublishableKey != nil {
 		toSerialize["publishable_key"] = o.PublishableKey
@@ -554,14 +595,11 @@ func (o GETStripePaymentsStripePaymentId200ResponseDataAttributes) ToMap() (map[
 	if o.MismatchedAmounts != nil {
 		toSerialize["mismatched_amounts"] = o.MismatchedAmounts
 	}
-	if o.IntentAmountCents != nil {
-		toSerialize["intent_amount_cents"] = o.IntentAmountCents
+	if o.ReturnUrl != nil {
+		toSerialize["return_url"] = o.ReturnUrl
 	}
-	if o.IntentAmountFloat != nil {
-		toSerialize["intent_amount_float"] = o.IntentAmountFloat
-	}
-	if o.FormattedIntentAmount != nil {
-		toSerialize["formatted_intent_amount"] = o.FormattedIntentAmount
+	if o.ReceiptEmail != nil {
+		toSerialize["receipt_email"] = o.ReceiptEmail
 	}
 	if o.PaymentInstrument != nil {
 		toSerialize["payment_instrument"] = o.PaymentInstrument

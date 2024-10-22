@@ -7,12 +7,17 @@ Name | Type | Description | Notes
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
 **BundleCode** | Pointer to **interface{}** | The code of the associated bundle. | [optional] 
 **Quantity** | Pointer to **interface{}** | The line item quantity. | [optional] 
-**ExternalPrice** | Pointer to **interface{}** | When creating or updating a new line item, set this attribute to &#39;1&#39; if you want to inject the unit_amount_cents price from an external source. | [optional] 
+**ExternalPrice** | Pointer to **interface{}** | When creating or updating a new line item, set this attribute to &#39;1&#39; if you want to inject the unit_amount_cents price from an external source. Any successive price computation will be done externally, until the attribute is reset to &#39;0&#39;. | [optional] 
+**ReserveStock** | Pointer to **interface{}** | Send this attribute if you want to reserve the stock for the line item&#39;s SKUs quantity. Stock reservations expiration depends on the inventory model&#39;s cutoff. When used on update the existing active stock reservations are renewed. Cannot be passed by sales channels. | [optional] 
+**UnitAmountCents** | Pointer to **interface{}** | The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods. | [optional] 
+**CompareAtAmountCents** | Pointer to **interface{}** | The compared price amount, in cents. Useful to display a percentage discount. | [optional] 
+**OptionsAmountCents** | Pointer to **interface{}** | The options amount of the line item, in cents. Cannot be passed by sales channels. | [optional] 
 **Name** | Pointer to **interface{}** | The name of the line item. When blank, it gets populated with the name of the associated item (if present). | [optional] 
 **ImageUrl** | Pointer to **interface{}** | The image_url of the line item. When blank, it gets populated with the image_url of the associated item (if present, SKU only). | [optional] 
 **Frequency** | Pointer to **interface{}** | The frequency which generates a subscription. Must be supported by existing associated subscription_model. | [optional] 
+**ResetCircuit** | Pointer to **interface{}** | Send this attribute if you want to reset the circuit breaker associated to this resource to &#39;closed&#39; state and zero failures count. Cannot be passed by sales channels. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -174,6 +179,146 @@ HasExternalPrice returns a boolean if a field has been set.
 `func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) UnsetExternalPrice()`
 
 UnsetExternalPrice ensures that no value is present for ExternalPrice, not even an explicit nil
+### GetReserveStock
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReserveStock() interface{}`
+
+GetReserveStock returns the ReserveStock field if non-nil, zero value otherwise.
+
+### GetReserveStockOk
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReserveStockOk() (*interface{}, bool)`
+
+GetReserveStockOk returns a tuple with the ReserveStock field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReserveStock
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetReserveStock(v interface{})`
+
+SetReserveStock sets ReserveStock field to given value.
+
+### HasReserveStock
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasReserveStock() bool`
+
+HasReserveStock returns a boolean if a field has been set.
+
+### SetReserveStockNil
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetReserveStockNil(b bool)`
+
+ SetReserveStockNil sets the value for ReserveStock to be an explicit nil
+
+### UnsetReserveStock
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) UnsetReserveStock()`
+
+UnsetReserveStock ensures that no value is present for ReserveStock, not even an explicit nil
+### GetUnitAmountCents
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetUnitAmountCents() interface{}`
+
+GetUnitAmountCents returns the UnitAmountCents field if non-nil, zero value otherwise.
+
+### GetUnitAmountCentsOk
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetUnitAmountCentsOk() (*interface{}, bool)`
+
+GetUnitAmountCentsOk returns a tuple with the UnitAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnitAmountCents
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetUnitAmountCents(v interface{})`
+
+SetUnitAmountCents sets UnitAmountCents field to given value.
+
+### HasUnitAmountCents
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasUnitAmountCents() bool`
+
+HasUnitAmountCents returns a boolean if a field has been set.
+
+### SetUnitAmountCentsNil
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetUnitAmountCentsNil(b bool)`
+
+ SetUnitAmountCentsNil sets the value for UnitAmountCents to be an explicit nil
+
+### UnsetUnitAmountCents
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) UnsetUnitAmountCents()`
+
+UnsetUnitAmountCents ensures that no value is present for UnitAmountCents, not even an explicit nil
+### GetCompareAtAmountCents
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountCents() interface{}`
+
+GetCompareAtAmountCents returns the CompareAtAmountCents field if non-nil, zero value otherwise.
+
+### GetCompareAtAmountCentsOk
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool)`
+
+GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompareAtAmountCents
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetCompareAtAmountCents(v interface{})`
+
+SetCompareAtAmountCents sets CompareAtAmountCents field to given value.
+
+### HasCompareAtAmountCents
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasCompareAtAmountCents() bool`
+
+HasCompareAtAmountCents returns a boolean if a field has been set.
+
+### SetCompareAtAmountCentsNil
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetCompareAtAmountCentsNil(b bool)`
+
+ SetCompareAtAmountCentsNil sets the value for CompareAtAmountCents to be an explicit nil
+
+### UnsetCompareAtAmountCents
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) UnsetCompareAtAmountCents()`
+
+UnsetCompareAtAmountCents ensures that no value is present for CompareAtAmountCents, not even an explicit nil
+### GetOptionsAmountCents
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetOptionsAmountCents() interface{}`
+
+GetOptionsAmountCents returns the OptionsAmountCents field if non-nil, zero value otherwise.
+
+### GetOptionsAmountCentsOk
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetOptionsAmountCentsOk() (*interface{}, bool)`
+
+GetOptionsAmountCentsOk returns a tuple with the OptionsAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptionsAmountCents
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetOptionsAmountCents(v interface{})`
+
+SetOptionsAmountCents sets OptionsAmountCents field to given value.
+
+### HasOptionsAmountCents
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasOptionsAmountCents() bool`
+
+HasOptionsAmountCents returns a boolean if a field has been set.
+
+### SetOptionsAmountCentsNil
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetOptionsAmountCentsNil(b bool)`
+
+ SetOptionsAmountCentsNil sets the value for OptionsAmountCents to be an explicit nil
+
+### UnsetOptionsAmountCents
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) UnsetOptionsAmountCents()`
+
+UnsetOptionsAmountCents ensures that no value is present for OptionsAmountCents, not even an explicit nil
 ### GetName
 
 `func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetName() interface{}`
@@ -279,6 +424,41 @@ HasFrequency returns a boolean if a field has been set.
 `func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) UnsetFrequency()`
 
 UnsetFrequency ensures that no value is present for Frequency, not even an explicit nil
+### GetResetCircuit
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetResetCircuit() interface{}`
+
+GetResetCircuit returns the ResetCircuit field if non-nil, zero value otherwise.
+
+### GetResetCircuitOk
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetResetCircuitOk() (*interface{}, bool)`
+
+GetResetCircuitOk returns a tuple with the ResetCircuit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResetCircuit
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetResetCircuit(v interface{})`
+
+SetResetCircuit sets ResetCircuit field to given value.
+
+### HasResetCircuit
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasResetCircuit() bool`
+
+HasResetCircuit returns a boolean if a field has been set.
+
+### SetResetCircuitNil
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetResetCircuitNil(b bool)`
+
+ SetResetCircuitNil sets the value for ResetCircuit to be an explicit nil
+
+### UnsetResetCircuit
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) UnsetResetCircuit()`
+
+UnsetResetCircuit ensures that no value is present for ResetCircuit, not even an explicit nil
 ### GetReference
 
 `func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReference() interface{}`

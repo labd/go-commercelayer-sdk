@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &OrderCopyDataRelationships{}
 type OrderCopyDataRelationships struct {
 	SourceOrder       *AdyenPaymentDataRelationshipsOrder          `json:"source_order,omitempty"`
 	TargetOrder       *AdyenPaymentDataRelationshipsOrder          `json:"target_order,omitempty"`
-	Events            *AuthorizationDataRelationshipsEvents        `json:"events,omitempty"`
+	Events            *AddressDataRelationshipsEvents              `json:"events,omitempty"`
 	OrderSubscription *CustomerDataRelationshipsOrderSubscriptions `json:"order_subscription,omitempty"`
 }
 
@@ -108,9 +108,9 @@ func (o *OrderCopyDataRelationships) SetTargetOrder(v AdyenPaymentDataRelationsh
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *OrderCopyDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *OrderCopyDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -118,7 +118,7 @@ func (o *OrderCopyDataRelationships) GetEvents() AuthorizationDataRelationshipsE
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCopyDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *OrderCopyDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -134,8 +134,8 @@ func (o *OrderCopyDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *OrderCopyDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *OrderCopyDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
 }
 

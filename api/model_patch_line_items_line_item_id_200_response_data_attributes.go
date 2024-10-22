@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -26,17 +26,27 @@ type PATCHLineItemsLineItemId200ResponseDataAttributes struct {
 	BundleCode interface{} `json:"bundle_code,omitempty"`
 	// The line item quantity.
 	Quantity interface{} `json:"quantity,omitempty"`
-	// When creating or updating a new line item, set this attribute to '1' if you want to inject the unit_amount_cents price from an external source.
+	// When creating or updating a new line item, set this attribute to '1' if you want to inject the unit_amount_cents price from an external source. Any successive price computation will be done externally, until the attribute is reset to '0'.
 	ExternalPrice interface{} `json:"_external_price,omitempty"`
+	// Send this attribute if you want to reserve the stock for the line item's SKUs quantity. Stock reservations expiration depends on the inventory model's cutoff. When used on update the existing active stock reservations are renewed. Cannot be passed by sales channels.
+	ReserveStock interface{} `json:"_reserve_stock,omitempty"`
+	// The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods.
+	UnitAmountCents interface{} `json:"unit_amount_cents,omitempty"`
+	// The compared price amount, in cents. Useful to display a percentage discount.
+	CompareAtAmountCents interface{} `json:"compare_at_amount_cents,omitempty"`
+	// The options amount of the line item, in cents. Cannot be passed by sales channels.
+	OptionsAmountCents interface{} `json:"options_amount_cents,omitempty"`
 	// The name of the line item. When blank, it gets populated with the name of the associated item (if present).
 	Name interface{} `json:"name,omitempty"`
 	// The image_url of the line item. When blank, it gets populated with the image_url of the associated item (if present, SKU only).
 	ImageUrl interface{} `json:"image_url,omitempty"`
 	// The frequency which generates a subscription. Must be supported by existing associated subscription_model.
 	Frequency interface{} `json:"frequency,omitempty"`
+	// Send this attribute if you want to reset the circuit breaker associated to this resource to 'closed' state and zero failures count. Cannot be passed by sales channels.
+	ResetCircuit interface{} `json:"_reset_circuit,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -191,6 +201,138 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetExternalPrice(v i
 	o.ExternalPrice = v
 }
 
+// GetReserveStock returns the ReserveStock field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReserveStock() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ReserveStock
+}
+
+// GetReserveStockOk returns a tuple with the ReserveStock field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReserveStockOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReserveStock) {
+		return nil, false
+	}
+	return &o.ReserveStock, true
+}
+
+// HasReserveStock returns a boolean if a field has been set.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasReserveStock() bool {
+	if o != nil && IsNil(o.ReserveStock) {
+		return true
+	}
+
+	return false
+}
+
+// SetReserveStock gets a reference to the given interface{} and assigns it to the ReserveStock field.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetReserveStock(v interface{}) {
+	o.ReserveStock = v
+}
+
+// GetUnitAmountCents returns the UnitAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetUnitAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.UnitAmountCents
+}
+
+// GetUnitAmountCentsOk returns a tuple with the UnitAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetUnitAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UnitAmountCents) {
+		return nil, false
+	}
+	return &o.UnitAmountCents, true
+}
+
+// HasUnitAmountCents returns a boolean if a field has been set.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasUnitAmountCents() bool {
+	if o != nil && IsNil(o.UnitAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnitAmountCents gets a reference to the given interface{} and assigns it to the UnitAmountCents field.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetUnitAmountCents(v interface{}) {
+	o.UnitAmountCents = v
+}
+
+// GetCompareAtAmountCents returns the CompareAtAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CompareAtAmountCents
+}
+
+// GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CompareAtAmountCents) {
+		return nil, false
+	}
+	return &o.CompareAtAmountCents, true
+}
+
+// HasCompareAtAmountCents returns a boolean if a field has been set.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasCompareAtAmountCents() bool {
+	if o != nil && IsNil(o.CompareAtAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetCompareAtAmountCents gets a reference to the given interface{} and assigns it to the CompareAtAmountCents field.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetCompareAtAmountCents(v interface{}) {
+	o.CompareAtAmountCents = v
+}
+
+// GetOptionsAmountCents returns the OptionsAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetOptionsAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.OptionsAmountCents
+}
+
+// GetOptionsAmountCentsOk returns a tuple with the OptionsAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetOptionsAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.OptionsAmountCents) {
+		return nil, false
+	}
+	return &o.OptionsAmountCents, true
+}
+
+// HasOptionsAmountCents returns a boolean if a field has been set.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasOptionsAmountCents() bool {
+	if o != nil && IsNil(o.OptionsAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetOptionsAmountCents gets a reference to the given interface{} and assigns it to the OptionsAmountCents field.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetOptionsAmountCents(v interface{}) {
+	o.OptionsAmountCents = v
+}
+
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
@@ -288,6 +430,39 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasFrequency() bool 
 // SetFrequency gets a reference to the given interface{} and assigns it to the Frequency field.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetFrequency(v interface{}) {
 	o.Frequency = v
+}
+
+// GetResetCircuit returns the ResetCircuit field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetResetCircuit() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ResetCircuit
+}
+
+// GetResetCircuitOk returns a tuple with the ResetCircuit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetResetCircuitOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ResetCircuit) {
+		return nil, false
+	}
+	return &o.ResetCircuit, true
+}
+
+// HasResetCircuit returns a boolean if a field has been set.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasResetCircuit() bool {
+	if o != nil && IsNil(o.ResetCircuit) {
+		return true
+	}
+
+	return false
+}
+
+// SetResetCircuit gets a reference to the given interface{} and assigns it to the ResetCircuit field.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetResetCircuit(v interface{}) {
+	o.ResetCircuit = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -411,6 +586,18 @@ func (o PATCHLineItemsLineItemId200ResponseDataAttributes) ToMap() (map[string]i
 	if o.ExternalPrice != nil {
 		toSerialize["_external_price"] = o.ExternalPrice
 	}
+	if o.ReserveStock != nil {
+		toSerialize["_reserve_stock"] = o.ReserveStock
+	}
+	if o.UnitAmountCents != nil {
+		toSerialize["unit_amount_cents"] = o.UnitAmountCents
+	}
+	if o.CompareAtAmountCents != nil {
+		toSerialize["compare_at_amount_cents"] = o.CompareAtAmountCents
+	}
+	if o.OptionsAmountCents != nil {
+		toSerialize["options_amount_cents"] = o.OptionsAmountCents
+	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
@@ -419,6 +606,9 @@ func (o PATCHLineItemsLineItemId200ResponseDataAttributes) ToMap() (map[string]i
 	}
 	if o.Frequency != nil {
 		toSerialize["frequency"] = o.Frequency
+	}
+	if o.ResetCircuit != nil {
+		toSerialize["_reset_circuit"] = o.ResetCircuit
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

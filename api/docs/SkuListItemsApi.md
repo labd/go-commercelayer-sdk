@@ -5,6 +5,7 @@ All URIs are relative to *https://.commercelayer.io/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETESkuListItemsSkuListItemId**](SkuListItemsApi.md#DELETESkuListItemsSkuListItemId) | **Delete** /sku_list_items/{skuListItemId} | Delete a SKU list item
+[**GETSkuIdSkuListItems**](SkuListItemsApi.md#GETSkuIdSkuListItems) | **Get** /skus/{skuId}/sku_list_items | Retrieve the sku list items associated to the SKU
 [**GETSkuListIdSkuListItems**](SkuListItemsApi.md#GETSkuListIdSkuListItems) | **Get** /sku_lists/{skuListId}/sku_list_items | Retrieve the sku list items associated to the SKU list
 [**GETSkuListItems**](SkuListItemsApi.md#GETSkuListItems) | **Get** /sku_list_items | List all SKU list items
 [**GETSkuListItemsSkuListItemId**](SkuListItemsApi.md#GETSkuListItemsSkuListItemId) | **Get** /sku_list_items/{skuListItemId} | Retrieve a SKU list item
@@ -57,6 +58,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDELETESkuListItemsSkuListItemIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSkuIdSkuListItems
+
+> GETSkuIdSkuListItems(ctx, skuId).Execute()
+
+Retrieve the sku list items associated to the SKU
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    skuId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.SkuListItemsApi.GETSkuIdSkuListItems(context.Background(), skuId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.GETSkuIdSkuListItems``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**skuId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSkuIdSkuListItemsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,7 @@ var _ MappedNullable = &GiftCardCreateDataRelationships{}
 type GiftCardCreateDataRelationships struct {
 	Market            *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
 	GiftCardRecipient *GiftCardCreateDataRelationshipsGiftCardRecipient       `json:"gift_card_recipient,omitempty"`
+	Tags              *AddressCreateDataRelationshipsTags                     `json:"tags,omitempty"`
 }
 
 // NewGiftCardCreateDataRelationships instantiates a new GiftCardCreateDataRelationships object
@@ -105,6 +106,38 @@ func (o *GiftCardCreateDataRelationships) SetGiftCardRecipient(v GiftCardCreateD
 	o.GiftCardRecipient = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *GiftCardCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GiftCardCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *GiftCardCreateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *GiftCardCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o GiftCardCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o GiftCardCreateDataRelationships) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.GiftCardRecipient) {
 		toSerialize["gift_card_recipient"] = o.GiftCardRecipient
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

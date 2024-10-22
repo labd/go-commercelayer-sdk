@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -26,7 +26,7 @@ type GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData struct {
 	Type          interface{}                                                                `json:"type,omitempty"`
 	Links         *POSTAddresses201ResponseDataLinks                                         `json:"links,omitempty"`
 	Attributes    *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTExternalPromotions201ResponseDataRelationships                        `json:"relationships,omitempty"`
+	Relationships *POSTFreeShippingPromotions201ResponseDataRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewGETFreeShippingPromotionsFreeShippingPromotionId200ResponseData instantiates a new GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData object
@@ -177,9 +177,9 @@ func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) SetAtt
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationships() POSTExternalPromotions201ResponseDataRelationships {
+func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationships() POSTFreeShippingPromotions201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret POSTExternalPromotions201ResponseDataRelationships
+		var ret POSTFreeShippingPromotions201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRel
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationshipsOk() (*POSTExternalPromotions201ResponseDataRelationships, bool) {
+func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationshipsOk() (*POSTFreeShippingPromotions201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) HasRel
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTExternalPromotions201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) SetRelationships(v POSTExternalPromotions201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTFreeShippingPromotions201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) SetRelationships(v POSTFreeShippingPromotions201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,14 +20,14 @@ var _ MappedNullable = &GETShippingMethodsShippingMethodId200ResponseDataAttribu
 
 // GETShippingMethodsShippingMethodId200ResponseDataAttributes struct for GETShippingMethodsShippingMethodId200ResponseDataAttributes
 type GETShippingMethodsShippingMethodId200ResponseDataAttributes struct {
-	// The shipping method's name
+	// The shipping method's name.
 	Name interface{} `json:"name,omitempty"`
-	// The shipping method's scheme, one of 'flat' or 'weight_tiered'.
+	// The shipping method's scheme. One of 'flat', 'weight_tiered', or 'external'.
 	Scheme interface{} `json:"scheme,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
-	// Time at which the shipping method was disabled.
-	DisabledAt interface{} `json:"disabled_at,omitempty"`
+	// The URL used to overwrite prices by an external source.
+	ExternalPricesUrl interface{} `json:"external_prices_url,omitempty"`
 	// The price of this shipping method, in cents.
 	PriceAmountCents interface{} `json:"price_amount_cents,omitempty"`
 	// The price of this shipping method, float.
@@ -40,6 +40,8 @@ type GETShippingMethodsShippingMethodId200ResponseDataAttributes struct {
 	FreeOverAmountFloat interface{} `json:"free_over_amount_float,omitempty"`
 	// Apply free shipping if the order amount is over this value, formatted.
 	FormattedFreeOverAmount interface{} `json:"formatted_free_over_amount,omitempty"`
+	// Send this attribute if you want to compare the free over amount with order's subtotal (excluding discounts, if any).
+	UseSubtotal interface{} `json:"use_subtotal,omitempty"`
 	// The calculated price (zero or price amount) when associated to a shipment, in cents.
 	PriceAmountForShipmentCents interface{} `json:"price_amount_for_shipment_cents,omitempty"`
 	// The calculated price (zero or price amount) when associated to a shipment, float.
@@ -50,15 +52,21 @@ type GETShippingMethodsShippingMethodId200ResponseDataAttributes struct {
 	MinWeight interface{} `json:"min_weight,omitempty"`
 	// The maximum weight for which this shipping method is available.
 	MaxWeight interface{} `json:"max_weight,omitempty"`
-	// Can be one of 'gr', 'lb', or 'oz'
+	// The unit of weight. One of 'gr', 'oz', or 'lb'.
 	UnitOfWeight interface{} `json:"unit_of_weight,omitempty"`
+	// Time at which this resource was disabled.
+	DisabledAt interface{} `json:"disabled_at,omitempty"`
+	// The circuit breaker state, by default it is 'closed'. It can become 'open' once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made.
+	CircuitState interface{} `json:"circuit_state,omitempty"`
+	// The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback.
+	CircuitFailureCount interface{} `json:"circuit_failure_count,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -180,37 +188,37 @@ func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetCurrenc
 	o.CurrencyCode = v
 }
 
-// GetDisabledAt returns the DisabledAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisabledAt() interface{} {
+// GetExternalPricesUrl returns the ExternalPricesUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetExternalPricesUrl() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-	return o.DisabledAt
+	return o.ExternalPricesUrl
 }
 
-// GetDisabledAtOk returns a tuple with the DisabledAt field value if set, nil otherwise
+// GetExternalPricesUrlOk returns a tuple with the ExternalPricesUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.DisabledAt) {
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetExternalPricesUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ExternalPricesUrl) {
 		return nil, false
 	}
-	return &o.DisabledAt, true
+	return &o.ExternalPricesUrl, true
 }
 
-// HasDisabledAt returns a boolean if a field has been set.
-func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasDisabledAt() bool {
-	if o != nil && IsNil(o.DisabledAt) {
+// HasExternalPricesUrl returns a boolean if a field has been set.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasExternalPricesUrl() bool {
+	if o != nil && IsNil(o.ExternalPricesUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetDisabledAt gets a reference to the given interface{} and assigns it to the DisabledAt field.
-func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisabledAt(v interface{}) {
-	o.DisabledAt = v
+// SetExternalPricesUrl gets a reference to the given interface{} and assigns it to the ExternalPricesUrl field.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetExternalPricesUrl(v interface{}) {
+	o.ExternalPricesUrl = v
 }
 
 // GetPriceAmountCents returns the PriceAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -411,6 +419,39 @@ func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetFormatt
 	o.FormattedFreeOverAmount = v
 }
 
+// GetUseSubtotal returns the UseSubtotal field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetUseSubtotal() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.UseSubtotal
+}
+
+// GetUseSubtotalOk returns a tuple with the UseSubtotal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetUseSubtotalOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UseSubtotal) {
+		return nil, false
+	}
+	return &o.UseSubtotal, true
+}
+
+// HasUseSubtotal returns a boolean if a field has been set.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasUseSubtotal() bool {
+	if o != nil && IsNil(o.UseSubtotal) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSubtotal gets a reference to the given interface{} and assigns it to the UseSubtotal field.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetUseSubtotal(v interface{}) {
+	o.UseSubtotal = v
+}
+
 // GetPriceAmountForShipmentCents returns the PriceAmountForShipmentCents field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetPriceAmountForShipmentCents() interface{} {
 	if o == nil {
@@ -609,6 +650,105 @@ func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetUnitOfW
 	o.UnitOfWeight = v
 }
 
+// GetDisabledAt returns the DisabledAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisabledAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DisabledAt
+}
+
+// GetDisabledAtOk returns a tuple with the DisabledAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DisabledAt) {
+		return nil, false
+	}
+	return &o.DisabledAt, true
+}
+
+// HasDisabledAt returns a boolean if a field has been set.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasDisabledAt() bool {
+	if o != nil && IsNil(o.DisabledAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisabledAt gets a reference to the given interface{} and assigns it to the DisabledAt field.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisabledAt(v interface{}) {
+	o.DisabledAt = v
+}
+
+// GetCircuitState returns the CircuitState field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCircuitState() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitState
+}
+
+// GetCircuitStateOk returns a tuple with the CircuitState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitState) {
+		return nil, false
+	}
+	return &o.CircuitState, true
+}
+
+// HasCircuitState returns a boolean if a field has been set.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasCircuitState() bool {
+	if o != nil && IsNil(o.CircuitState) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitState gets a reference to the given interface{} and assigns it to the CircuitState field.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetCircuitState(v interface{}) {
+	o.CircuitState = v
+}
+
+// GetCircuitFailureCount returns the CircuitFailureCount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCircuitFailureCount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitFailureCount
+}
+
+// GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitFailureCount) {
+		return nil, false
+	}
+	return &o.CircuitFailureCount, true
+}
+
+// HasCircuitFailureCount returns a boolean if a field has been set.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasCircuitFailureCount() bool {
+	if o != nil && IsNil(o.CircuitFailureCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitFailureCount gets a reference to the given interface{} and assigns it to the CircuitFailureCount field.
+func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetCircuitFailureCount(v interface{}) {
+	o.CircuitFailureCount = v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCreatedAt() interface{} {
 	if o == nil {
@@ -793,8 +933,8 @@ func (o GETShippingMethodsShippingMethodId200ResponseDataAttributes) ToMap() (ma
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
 	}
-	if o.DisabledAt != nil {
-		toSerialize["disabled_at"] = o.DisabledAt
+	if o.ExternalPricesUrl != nil {
+		toSerialize["external_prices_url"] = o.ExternalPricesUrl
 	}
 	if o.PriceAmountCents != nil {
 		toSerialize["price_amount_cents"] = o.PriceAmountCents
@@ -814,6 +954,9 @@ func (o GETShippingMethodsShippingMethodId200ResponseDataAttributes) ToMap() (ma
 	if o.FormattedFreeOverAmount != nil {
 		toSerialize["formatted_free_over_amount"] = o.FormattedFreeOverAmount
 	}
+	if o.UseSubtotal != nil {
+		toSerialize["use_subtotal"] = o.UseSubtotal
+	}
 	if o.PriceAmountForShipmentCents != nil {
 		toSerialize["price_amount_for_shipment_cents"] = o.PriceAmountForShipmentCents
 	}
@@ -831,6 +974,15 @@ func (o GETShippingMethodsShippingMethodId200ResponseDataAttributes) ToMap() (ma
 	}
 	if o.UnitOfWeight != nil {
 		toSerialize["unit_of_weight"] = o.UnitOfWeight
+	}
+	if o.DisabledAt != nil {
+		toSerialize["disabled_at"] = o.DisabledAt
+	}
+	if o.CircuitState != nil {
+		toSerialize["circuit_state"] = o.CircuitState
+	}
+	if o.CircuitFailureCount != nil {
+		toSerialize["circuit_failure_count"] = o.CircuitFailureCount
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -28,11 +28,9 @@ type POSTImports201ResponseDataAttributes struct {
 	ParentResourceId interface{} `json:"parent_resource_id,omitempty"`
 	// Array of objects representing the resources that are being imported.
 	Inputs interface{} `json:"inputs"`
-	// Indicates if the import should cleanup records that are not included in the inputs array.
-	CleanupRecords interface{} `json:"cleanup_records,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -175,39 +173,6 @@ func (o *POSTImports201ResponseDataAttributes) SetInputs(v interface{}) {
 	o.Inputs = v
 }
 
-// GetCleanupRecords returns the CleanupRecords field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *POSTImports201ResponseDataAttributes) GetCleanupRecords() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.CleanupRecords
-}
-
-// GetCleanupRecordsOk returns a tuple with the CleanupRecords field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *POSTImports201ResponseDataAttributes) GetCleanupRecordsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.CleanupRecords) {
-		return nil, false
-	}
-	return &o.CleanupRecords, true
-}
-
-// HasCleanupRecords returns a boolean if a field has been set.
-func (o *POSTImports201ResponseDataAttributes) HasCleanupRecords() bool {
-	if o != nil && IsNil(o.CleanupRecords) {
-		return true
-	}
-
-	return false
-}
-
-// SetCleanupRecords gets a reference to the given interface{} and assigns it to the CleanupRecords field.
-func (o *POSTImports201ResponseDataAttributes) SetCleanupRecords(v interface{}) {
-	o.CleanupRecords = v
-}
-
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTImports201ResponseDataAttributes) GetReference() interface{} {
 	if o == nil {
@@ -328,9 +293,6 @@ func (o POSTImports201ResponseDataAttributes) ToMap() (map[string]interface{}, e
 	}
 	if o.Inputs != nil {
 		toSerialize["inputs"] = o.Inputs
-	}
-	if o.CleanupRecords != nil {
-		toSerialize["cleanup_records"] = o.CleanupRecords
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

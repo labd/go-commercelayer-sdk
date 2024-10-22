@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -65,6 +65,98 @@ func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrd
 
 	localVarPath := localBasePath + "/order_amount_promotion_rules/{orderAmountPromotionRuleId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"orderAmountPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.orderAmountPromotionRuleId, "orderAmountPromotionRuleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type OrderAmountPromotionRulesApiGETBuyXPayYPromotionIdOrderAmountPromotionRuleRequest struct {
+	ctx                 context.Context
+	ApiService          *OrderAmountPromotionRulesApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r OrderAmountPromotionRulesApiGETBuyXPayYPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdOrderAmountPromotionRuleExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the buy x pay y promotion
+
+Retrieve the order amount promotion rule associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return OrderAmountPromotionRulesApiGETBuyXPayYPromotionIdOrderAmountPromotionRuleRequest
+*/
+func (a *OrderAmountPromotionRulesApiService) GETBuyXPayYPromotionIdOrderAmountPromotionRule(ctx context.Context, buyXPayYPromotionId interface{}) OrderAmountPromotionRulesApiGETBuyXPayYPromotionIdOrderAmountPromotionRuleRequest {
+	return OrderAmountPromotionRulesApiGETBuyXPayYPromotionIdOrderAmountPromotionRuleRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *OrderAmountPromotionRulesApiService) GETBuyXPayYPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETBuyXPayYPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETBuyXPayYPromotionIdOrderAmountPromotionRule")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/order_amount_promotion_rule"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

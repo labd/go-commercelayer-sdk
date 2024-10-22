@@ -8,9 +8,10 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **Login** | Pointer to **interface{}** | The merchant login code. | [optional] 
+**WebhookEndpointUrl** | Pointer to **interface{}** | The gateway webhook URL, generated automatically. | [optional] 
 
 ## Methods
 
@@ -276,6 +277,41 @@ HasLogin returns a boolean if a field has been set.
 `func (o *GETAxerveGatewaysAxerveGatewayId200ResponseDataAttributes) UnsetLogin()`
 
 UnsetLogin ensures that no value is present for Login, not even an explicit nil
+### GetWebhookEndpointUrl
+
+`func (o *GETAxerveGatewaysAxerveGatewayId200ResponseDataAttributes) GetWebhookEndpointUrl() interface{}`
+
+GetWebhookEndpointUrl returns the WebhookEndpointUrl field if non-nil, zero value otherwise.
+
+### GetWebhookEndpointUrlOk
+
+`func (o *GETAxerveGatewaysAxerveGatewayId200ResponseDataAttributes) GetWebhookEndpointUrlOk() (*interface{}, bool)`
+
+GetWebhookEndpointUrlOk returns a tuple with the WebhookEndpointUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookEndpointUrl
+
+`func (o *GETAxerveGatewaysAxerveGatewayId200ResponseDataAttributes) SetWebhookEndpointUrl(v interface{})`
+
+SetWebhookEndpointUrl sets WebhookEndpointUrl field to given value.
+
+### HasWebhookEndpointUrl
+
+`func (o *GETAxerveGatewaysAxerveGatewayId200ResponseDataAttributes) HasWebhookEndpointUrl() bool`
+
+HasWebhookEndpointUrl returns a boolean if a field has been set.
+
+### SetWebhookEndpointUrlNil
+
+`func (o *GETAxerveGatewaysAxerveGatewayId200ResponseDataAttributes) SetWebhookEndpointUrlNil(b bool)`
+
+ SetWebhookEndpointUrlNil sets the value for WebhookEndpointUrl to be an explicit nil
+
+### UnsetWebhookEndpointUrl
+`func (o *GETAxerveGatewaysAxerveGatewayId200ResponseDataAttributes) UnsetWebhookEndpointUrl()`
+
+UnsetWebhookEndpointUrl ensures that no value is present for WebhookEndpointUrl, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

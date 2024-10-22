@@ -35,6 +35,19 @@ func Test_api_SkuListPromotionRulesApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test SkuListPromotionRulesApiService GETBuyXPayYPromotionIdSkuListPromotionRule", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var buyXPayYPromotionId interface{}
+
+		httpRes, err := apiClient.SkuListPromotionRulesApi.GETBuyXPayYPromotionIdSkuListPromotionRule(context.Background(), buyXPayYPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SkuListPromotionRulesApiService GETExternalPromotionIdSkuListPromotionRule", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

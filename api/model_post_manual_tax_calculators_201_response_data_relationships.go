@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,10 @@ var _ MappedNullable = &POSTManualTaxCalculators201ResponseDataRelationships{}
 
 // POSTManualTaxCalculators201ResponseDataRelationships struct for POSTManualTaxCalculators201ResponseDataRelationships
 type POSTManualTaxCalculators201ResponseDataRelationships struct {
-	Markets     *POSTAvalaraAccounts201ResponseDataRelationshipsMarkets       `json:"markets,omitempty"`
-	Attachments *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments   `json:"attachments,omitempty"`
-	TaxRules    *POSTManualTaxCalculators201ResponseDataRelationshipsTaxRules `json:"tax_rules,omitempty"`
+	Markets     *POSTAvalaraAccounts201ResponseDataRelationshipsMarkets                  `json:"markets,omitempty"`
+	Attachments *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Versions    *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
+	TaxRules    *POSTManualTaxCalculators201ResponseDataRelationshipsTaxRules            `json:"tax_rules,omitempty"`
 }
 
 // NewPOSTManualTaxCalculators201ResponseDataRelationships instantiates a new POSTManualTaxCalculators201ResponseDataRelationships object
@@ -75,9 +76,9 @@ func (o *POSTManualTaxCalculators201ResponseDataRelationships) SetMarkets(v POST
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTManualTaxCalculators201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTManualTaxCalculators201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -85,7 +86,7 @@ func (o *POSTManualTaxCalculators201ResponseDataRelationships) GetAttachments() 
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTManualTaxCalculators201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTManualTaxCalculators201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -101,9 +102,41 @@ func (o *POSTManualTaxCalculators201ResponseDataRelationships) HasAttachments() 
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTManualTaxCalculators201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTManualTaxCalculators201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTManualTaxCalculators201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTManualTaxCalculators201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTManualTaxCalculators201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTManualTaxCalculators201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 // GetTaxRules returns the TaxRules field value if set, zero value otherwise.
@@ -153,6 +186,9 @@ func (o POSTManualTaxCalculators201ResponseDataRelationships) ToMap() (map[strin
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	if !IsNil(o.TaxRules) {
 		toSerialize["tax_rules"] = o.TaxRules

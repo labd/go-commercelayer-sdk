@@ -4,13 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **interface{}** | The market&#39;s internal name | 
-**FacebookPixelId** | Pointer to **interface{}** | The Facebook Pixed ID | [optional] 
-**CheckoutUrl** | Pointer to **interface{}** | The checkout URL for this market | [optional] 
+**Name** | **interface{}** | The market&#39;s internal name. | 
+**Code** | Pointer to **interface{}** | A string that you can use to identify the market (must be unique within the environment). | [optional] 
+**FacebookPixelId** | Pointer to **interface{}** | The Facebook Pixed ID. | [optional] 
+**CheckoutUrl** | Pointer to **interface{}** | The checkout URL for this market. | [optional] 
 **ExternalPricesUrl** | Pointer to **interface{}** | The URL used to overwrite prices by an external source. | [optional] 
 **ExternalOrderValidationUrl** | Pointer to **interface{}** | The URL used to validate orders by an external source. | [optional] 
+**ShippingCostCutoff** | Pointer to **interface{}** | When specified indicates the maximum number of shipping line items with cost that will be added to an order. | [optional] 
+**Disable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as disabled. | [optional] 
+**Enable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as enabled. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -62,6 +66,41 @@ SetName sets Name field to given value.
 `func (o *POSTMarkets201ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetCode
+
+`func (o *POSTMarkets201ResponseDataAttributes) GetCode() interface{}`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *POSTMarkets201ResponseDataAttributes) GetCodeOk() (*interface{}, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *POSTMarkets201ResponseDataAttributes) SetCode(v interface{})`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *POSTMarkets201ResponseDataAttributes) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
+
+### SetCodeNil
+
+`func (o *POSTMarkets201ResponseDataAttributes) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *POSTMarkets201ResponseDataAttributes) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetFacebookPixelId
 
 `func (o *POSTMarkets201ResponseDataAttributes) GetFacebookPixelId() interface{}`
@@ -202,6 +241,111 @@ HasExternalOrderValidationUrl returns a boolean if a field has been set.
 `func (o *POSTMarkets201ResponseDataAttributes) UnsetExternalOrderValidationUrl()`
 
 UnsetExternalOrderValidationUrl ensures that no value is present for ExternalOrderValidationUrl, not even an explicit nil
+### GetShippingCostCutoff
+
+`func (o *POSTMarkets201ResponseDataAttributes) GetShippingCostCutoff() interface{}`
+
+GetShippingCostCutoff returns the ShippingCostCutoff field if non-nil, zero value otherwise.
+
+### GetShippingCostCutoffOk
+
+`func (o *POSTMarkets201ResponseDataAttributes) GetShippingCostCutoffOk() (*interface{}, bool)`
+
+GetShippingCostCutoffOk returns a tuple with the ShippingCostCutoff field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingCostCutoff
+
+`func (o *POSTMarkets201ResponseDataAttributes) SetShippingCostCutoff(v interface{})`
+
+SetShippingCostCutoff sets ShippingCostCutoff field to given value.
+
+### HasShippingCostCutoff
+
+`func (o *POSTMarkets201ResponseDataAttributes) HasShippingCostCutoff() bool`
+
+HasShippingCostCutoff returns a boolean if a field has been set.
+
+### SetShippingCostCutoffNil
+
+`func (o *POSTMarkets201ResponseDataAttributes) SetShippingCostCutoffNil(b bool)`
+
+ SetShippingCostCutoffNil sets the value for ShippingCostCutoff to be an explicit nil
+
+### UnsetShippingCostCutoff
+`func (o *POSTMarkets201ResponseDataAttributes) UnsetShippingCostCutoff()`
+
+UnsetShippingCostCutoff ensures that no value is present for ShippingCostCutoff, not even an explicit nil
+### GetDisable
+
+`func (o *POSTMarkets201ResponseDataAttributes) GetDisable() interface{}`
+
+GetDisable returns the Disable field if non-nil, zero value otherwise.
+
+### GetDisableOk
+
+`func (o *POSTMarkets201ResponseDataAttributes) GetDisableOk() (*interface{}, bool)`
+
+GetDisableOk returns a tuple with the Disable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisable
+
+`func (o *POSTMarkets201ResponseDataAttributes) SetDisable(v interface{})`
+
+SetDisable sets Disable field to given value.
+
+### HasDisable
+
+`func (o *POSTMarkets201ResponseDataAttributes) HasDisable() bool`
+
+HasDisable returns a boolean if a field has been set.
+
+### SetDisableNil
+
+`func (o *POSTMarkets201ResponseDataAttributes) SetDisableNil(b bool)`
+
+ SetDisableNil sets the value for Disable to be an explicit nil
+
+### UnsetDisable
+`func (o *POSTMarkets201ResponseDataAttributes) UnsetDisable()`
+
+UnsetDisable ensures that no value is present for Disable, not even an explicit nil
+### GetEnable
+
+`func (o *POSTMarkets201ResponseDataAttributes) GetEnable() interface{}`
+
+GetEnable returns the Enable field if non-nil, zero value otherwise.
+
+### GetEnableOk
+
+`func (o *POSTMarkets201ResponseDataAttributes) GetEnableOk() (*interface{}, bool)`
+
+GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnable
+
+`func (o *POSTMarkets201ResponseDataAttributes) SetEnable(v interface{})`
+
+SetEnable sets Enable field to given value.
+
+### HasEnable
+
+`func (o *POSTMarkets201ResponseDataAttributes) HasEnable() bool`
+
+HasEnable returns a boolean if a field has been set.
+
+### SetEnableNil
+
+`func (o *POSTMarkets201ResponseDataAttributes) SetEnableNil(b bool)`
+
+ SetEnableNil sets the value for Enable to be an explicit nil
+
+### UnsetEnable
+`func (o *POSTMarkets201ResponseDataAttributes) UnsetEnable()`
+
+UnsetEnable ensures that no value is present for Enable, not even an explicit nil
 ### GetReference
 
 `func (o *POSTMarkets201ResponseDataAttributes) GetReference() interface{}`

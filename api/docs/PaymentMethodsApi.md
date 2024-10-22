@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GETAxerveGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETAxerveGatewayIdPaymentMethods) | **Get** /axerve_gateways/{axerveGatewayId}/payment_methods | Retrieve the payment methods associated to the axerve gateway
 [**GETBraintreeGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETBraintreeGatewayIdPaymentMethods) | **Get** /braintree_gateways/{braintreeGatewayId}/payment_methods | Retrieve the payment methods associated to the braintree gateway
 [**GETCheckoutComGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETCheckoutComGatewayIdPaymentMethods) | **Get** /checkout_com_gateways/{checkoutComGatewayId}/payment_methods | Retrieve the payment methods associated to the checkout.com gateway
+[**GETCustomerPaymentSourceIdPaymentMethod**](PaymentMethodsApi.md#GETCustomerPaymentSourceIdPaymentMethod) | **Get** /customer_payment_sources/{customerPaymentSourceId}/payment_method | Retrieve the payment method associated to the customer payment source
 [**GETExternalGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETExternalGatewayIdPaymentMethods) | **Get** /external_gateways/{externalGatewayId}/payment_methods | Retrieve the payment methods associated to the external gateway
 [**GETKlarnaGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETKlarnaGatewayIdPaymentMethods) | **Get** /klarna_gateways/{klarnaGatewayId}/payment_methods | Retrieve the payment methods associated to the klarna gateway
 [**GETManualGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETManualGatewayIdPaymentMethods) | **Get** /manual_gateways/{manualGatewayId}/payment_methods | Retrieve the payment methods associated to the manual gateway
@@ -341,6 +342,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETCheckoutComGatewayIdPaymentMethodsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCustomerPaymentSourceIdPaymentMethod
+
+> GETCustomerPaymentSourceIdPaymentMethod(ctx, customerPaymentSourceId).Execute()
+
+Retrieve the payment method associated to the customer payment source
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    customerPaymentSourceId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.PaymentMethodsApi.GETCustomerPaymentSourceIdPaymentMethod(context.Background(), customerPaymentSourceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETCustomerPaymentSourceIdPaymentMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerPaymentSourceId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCustomerPaymentSourceIdPaymentMethodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1201,7 +1270,7 @@ import (
 )
 
 func main() {
-    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData(interface{}(123), *openapiclient.NewPOSTPaymentMethods201ResponseDataAttributes(interface{}(StripePayment), interface{}(0)))) // PaymentMethodCreate | 
+    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData(interface{}(123), *openapiclient.NewPOSTPaymentMethods201ResponseDataAttributes(interface{}(stripe_payments), interface{}(0)))) // PaymentMethodCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

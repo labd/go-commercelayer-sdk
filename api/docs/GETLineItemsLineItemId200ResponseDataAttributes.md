@@ -7,11 +7,15 @@ Name | Type | Description | Notes
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
 **BundleCode** | Pointer to **interface{}** | The code of the associated bundle. | [optional] 
 **Quantity** | Pointer to **interface{}** | The line item quantity. | [optional] 
+**ExternalPrice** | Pointer to **interface{}** | When creating or updating a new line item, set this attribute to &#39;1&#39; if you want to inject the unit_amount_cents price from an external source. Any successive price computation will be done externally, until the attribute is reset to &#39;0&#39;. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard, automatically inherited from the order&#39;s market. | [optional] 
-**UnitAmountCents** | Pointer to **interface{}** | The unit amount of the line item, in cents. Can be specified without an item, otherwise is automatically populated from the price list associated to the order&#39;s market. | [optional] 
+**UnitAmountCents** | Pointer to **interface{}** | The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods. | [optional] 
 **UnitAmountFloat** | Pointer to **interface{}** | The unit amount of the line item, float. This can be useful to track the purchase on thrid party systems, e.g Google Analyitcs Enhanced Ecommerce. | [optional] 
 **FormattedUnitAmount** | Pointer to **interface{}** | The unit amount of the line item, formatted. This can be useful to display the amount with currency in you views. | [optional] 
-**OptionsAmountCents** | Pointer to **interface{}** | The options amount of the line item, in cents. | [optional] 
+**CompareAtAmountCents** | Pointer to **interface{}** | The compared price amount, in cents. Useful to display a percentage discount. | [optional] 
+**CompareAtAmountFloat** | Pointer to **interface{}** | The compared price amount, float. | [optional] 
+**FormattedCompareAtAmount** | Pointer to **interface{}** | The compared price amount, formatted. | [optional] 
+**OptionsAmountCents** | Pointer to **interface{}** | The options amount of the line item, in cents. Cannot be passed by sales channels. | [optional] 
 **OptionsAmountFloat** | Pointer to **interface{}** | The options amount of the line item, float. | [optional] 
 **FormattedOptionsAmount** | Pointer to **interface{}** | The options amount of the line item, formatted. | [optional] 
 **DiscountCents** | Pointer to **interface{}** | The discount applied to the line item, in cents. When you apply a discount to an order, this is automatically calculated basing on the line item total_amount_cents value. | [optional] 
@@ -28,12 +32,15 @@ Name | Type | Description | Notes
 **DiscountBreakdown** | Pointer to **interface{}** | The discount breakdown for this line item (if calculated). | [optional] 
 **TaxRate** | Pointer to **interface{}** | The tax rate for this line item (if calculated). | [optional] 
 **TaxBreakdown** | Pointer to **interface{}** | The tax breakdown for this line item (if calculated). | [optional] 
-**ItemType** | Pointer to **interface{}** | The type of the associate item. Can be one of &#39;skus&#39;, &#39;bundles&#39;, &#39;shipments&#39;, &#39;payment_methods&#39;, &#39;adjustments&#39;, &#39;gift_cards&#39;, or a valid promotion type. | [optional] 
+**ItemType** | Pointer to **interface{}** | The type of the associated item. One of &#39;skus&#39;, &#39;bundles&#39;, &#39;gift_cards&#39;, &#39;shipments&#39;, &#39;payment_methods&#39;, &#39;adjustments&#39;, &#39;percentage_discount_promotions&#39;, &#39;free_shipping_promotions&#39;, &#39;buy_x_pay_y_promotions&#39;, &#39;free_gift_promotions&#39;, &#39;fixed_price_promotions&#39;, &#39;external_promotions&#39;, &#39;fixed_amount_promotions&#39;, or &#39;flex_promotions&#39;. | [optional] 
 **Frequency** | Pointer to **interface{}** | The frequency which generates a subscription. Must be supported by existing associated subscription_model. | [optional] 
+**CouponCode** | Pointer to **interface{}** | The coupon code, if any, used to trigger this promotion line item. null for other line item types or if the promotion line item wasn&#39;t triggered by a coupon. | [optional] 
+**CircuitState** | Pointer to **interface{}** | The circuit breaker state, by default it is &#39;closed&#39;. It can become &#39;open&#39; once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made. | [optional] 
+**CircuitFailureCount** | Pointer to **interface{}** | The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -160,6 +167,41 @@ HasQuantity returns a boolean if a field has been set.
 `func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetQuantity()`
 
 UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+### GetExternalPrice
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetExternalPrice() interface{}`
+
+GetExternalPrice returns the ExternalPrice field if non-nil, zero value otherwise.
+
+### GetExternalPriceOk
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetExternalPriceOk() (*interface{}, bool)`
+
+GetExternalPriceOk returns a tuple with the ExternalPrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalPrice
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetExternalPrice(v interface{})`
+
+SetExternalPrice sets ExternalPrice field to given value.
+
+### HasExternalPrice
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasExternalPrice() bool`
+
+HasExternalPrice returns a boolean if a field has been set.
+
+### SetExternalPriceNil
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetExternalPriceNil(b bool)`
+
+ SetExternalPriceNil sets the value for ExternalPrice to be an explicit nil
+
+### UnsetExternalPrice
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetExternalPrice()`
+
+UnsetExternalPrice ensures that no value is present for ExternalPrice, not even an explicit nil
 ### GetCurrencyCode
 
 `func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCurrencyCode() interface{}`
@@ -300,6 +342,111 @@ HasFormattedUnitAmount returns a boolean if a field has been set.
 `func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetFormattedUnitAmount()`
 
 UnsetFormattedUnitAmount ensures that no value is present for FormattedUnitAmount, not even an explicit nil
+### GetCompareAtAmountCents
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountCents() interface{}`
+
+GetCompareAtAmountCents returns the CompareAtAmountCents field if non-nil, zero value otherwise.
+
+### GetCompareAtAmountCentsOk
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool)`
+
+GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompareAtAmountCents
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCompareAtAmountCents(v interface{})`
+
+SetCompareAtAmountCents sets CompareAtAmountCents field to given value.
+
+### HasCompareAtAmountCents
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCompareAtAmountCents() bool`
+
+HasCompareAtAmountCents returns a boolean if a field has been set.
+
+### SetCompareAtAmountCentsNil
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCompareAtAmountCentsNil(b bool)`
+
+ SetCompareAtAmountCentsNil sets the value for CompareAtAmountCents to be an explicit nil
+
+### UnsetCompareAtAmountCents
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetCompareAtAmountCents()`
+
+UnsetCompareAtAmountCents ensures that no value is present for CompareAtAmountCents, not even an explicit nil
+### GetCompareAtAmountFloat
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountFloat() interface{}`
+
+GetCompareAtAmountFloat returns the CompareAtAmountFloat field if non-nil, zero value otherwise.
+
+### GetCompareAtAmountFloatOk
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountFloatOk() (*interface{}, bool)`
+
+GetCompareAtAmountFloatOk returns a tuple with the CompareAtAmountFloat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompareAtAmountFloat
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCompareAtAmountFloat(v interface{})`
+
+SetCompareAtAmountFloat sets CompareAtAmountFloat field to given value.
+
+### HasCompareAtAmountFloat
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCompareAtAmountFloat() bool`
+
+HasCompareAtAmountFloat returns a boolean if a field has been set.
+
+### SetCompareAtAmountFloatNil
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCompareAtAmountFloatNil(b bool)`
+
+ SetCompareAtAmountFloatNil sets the value for CompareAtAmountFloat to be an explicit nil
+
+### UnsetCompareAtAmountFloat
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetCompareAtAmountFloat()`
+
+UnsetCompareAtAmountFloat ensures that no value is present for CompareAtAmountFloat, not even an explicit nil
+### GetFormattedCompareAtAmount
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetFormattedCompareAtAmount() interface{}`
+
+GetFormattedCompareAtAmount returns the FormattedCompareAtAmount field if non-nil, zero value otherwise.
+
+### GetFormattedCompareAtAmountOk
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetFormattedCompareAtAmountOk() (*interface{}, bool)`
+
+GetFormattedCompareAtAmountOk returns a tuple with the FormattedCompareAtAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormattedCompareAtAmount
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetFormattedCompareAtAmount(v interface{})`
+
+SetFormattedCompareAtAmount sets FormattedCompareAtAmount field to given value.
+
+### HasFormattedCompareAtAmount
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasFormattedCompareAtAmount() bool`
+
+HasFormattedCompareAtAmount returns a boolean if a field has been set.
+
+### SetFormattedCompareAtAmountNil
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetFormattedCompareAtAmountNil(b bool)`
+
+ SetFormattedCompareAtAmountNil sets the value for FormattedCompareAtAmount to be an explicit nil
+
+### UnsetFormattedCompareAtAmount
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetFormattedCompareAtAmount()`
+
+UnsetFormattedCompareAtAmount ensures that no value is present for FormattedCompareAtAmount, not even an explicit nil
 ### GetOptionsAmountCents
 
 `func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetOptionsAmountCents() interface{}`
@@ -965,6 +1112,111 @@ HasFrequency returns a boolean if a field has been set.
 `func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetFrequency()`
 
 UnsetFrequency ensures that no value is present for Frequency, not even an explicit nil
+### GetCouponCode
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCouponCode() interface{}`
+
+GetCouponCode returns the CouponCode field if non-nil, zero value otherwise.
+
+### GetCouponCodeOk
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCouponCodeOk() (*interface{}, bool)`
+
+GetCouponCodeOk returns a tuple with the CouponCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCouponCode
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCouponCode(v interface{})`
+
+SetCouponCode sets CouponCode field to given value.
+
+### HasCouponCode
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCouponCode() bool`
+
+HasCouponCode returns a boolean if a field has been set.
+
+### SetCouponCodeNil
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCouponCodeNil(b bool)`
+
+ SetCouponCodeNil sets the value for CouponCode to be an explicit nil
+
+### UnsetCouponCode
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetCouponCode()`
+
+UnsetCouponCode ensures that no value is present for CouponCode, not even an explicit nil
+### GetCircuitState
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCircuitState() interface{}`
+
+GetCircuitState returns the CircuitState field if non-nil, zero value otherwise.
+
+### GetCircuitStateOk
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool)`
+
+GetCircuitStateOk returns a tuple with the CircuitState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitState
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCircuitState(v interface{})`
+
+SetCircuitState sets CircuitState field to given value.
+
+### HasCircuitState
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCircuitState() bool`
+
+HasCircuitState returns a boolean if a field has been set.
+
+### SetCircuitStateNil
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCircuitStateNil(b bool)`
+
+ SetCircuitStateNil sets the value for CircuitState to be an explicit nil
+
+### UnsetCircuitState
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetCircuitState()`
+
+UnsetCircuitState ensures that no value is present for CircuitState, not even an explicit nil
+### GetCircuitFailureCount
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCircuitFailureCount() interface{}`
+
+GetCircuitFailureCount returns the CircuitFailureCount field if non-nil, zero value otherwise.
+
+### GetCircuitFailureCountOk
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool)`
+
+GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitFailureCount
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCircuitFailureCount(v interface{})`
+
+SetCircuitFailureCount sets CircuitFailureCount field to given value.
+
+### HasCircuitFailureCount
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCircuitFailureCount() bool`
+
+HasCircuitFailureCount returns a boolean if a field has been set.
+
+### SetCircuitFailureCountNil
+
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCircuitFailureCountNil(b bool)`
+
+ SetCircuitFailureCountNil sets the value for CircuitFailureCount to be an explicit nil
+
+### UnsetCircuitFailureCount
+`func (o *GETLineItemsLineItemId200ResponseDataAttributes) UnsetCircuitFailureCount()`
+
+UnsetCircuitFailureCount ensures that no value is present for CircuitFailureCount, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCreatedAt() interface{}`

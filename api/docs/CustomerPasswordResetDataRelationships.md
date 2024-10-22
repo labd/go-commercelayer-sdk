@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Customer** | Pointer to [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasCustomer returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *CustomerPasswordResetDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *CustomerPasswordResetDataRelationships) GetEvents() AddressDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *CustomerPasswordResetDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *CustomerPasswordResetDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *CustomerPasswordResetDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *CustomerPasswordResetDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

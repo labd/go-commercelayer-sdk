@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,7 @@ type CustomerSubscriptionData struct {
 	// The resource's type
 	Type          interface{}                                                             `json:"type"`
 	Attributes    GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *CustomerPasswordResetDataRelationships                                 `json:"relationships,omitempty"`
+	Relationships *CustomerSubscriptionDataRelationships                                  `json:"relationships,omitempty"`
 }
 
 // NewCustomerSubscriptionData instantiates a new CustomerSubscriptionData object
@@ -96,9 +96,9 @@ func (o *CustomerSubscriptionData) SetAttributes(v GETCustomerSubscriptionsCusto
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerSubscriptionData) GetRelationships() CustomerPasswordResetDataRelationships {
+func (o *CustomerSubscriptionData) GetRelationships() CustomerSubscriptionDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret CustomerPasswordResetDataRelationships
+		var ret CustomerSubscriptionDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -106,7 +106,7 @@ func (o *CustomerSubscriptionData) GetRelationships() CustomerPasswordResetDataR
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionData) GetRelationshipsOk() (*CustomerPasswordResetDataRelationships, bool) {
+func (o *CustomerSubscriptionData) GetRelationshipsOk() (*CustomerSubscriptionDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -122,8 +122,8 @@ func (o *CustomerSubscriptionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CustomerPasswordResetDataRelationships and assigns it to the Relationships field.
-func (o *CustomerSubscriptionData) SetRelationships(v CustomerPasswordResetDataRelationships) {
+// SetRelationships gets a reference to the given CustomerSubscriptionDataRelationships and assigns it to the Relationships field.
+func (o *CustomerSubscriptionData) SetRelationships(v CustomerSubscriptionDataRelationships) {
 	o.Relationships = &v
 }
 

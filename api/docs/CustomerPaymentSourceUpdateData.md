@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Id** | **interface{}** | The resource&#39;s id | 
-**Attributes** | [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes**](PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPaymentSourceUpdateDataRelationships**](CustomerPaymentSourceUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPaymentSourceUpdateData
 
-`func NewCustomerPaymentSourceUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, ) *CustomerPaymentSourceUpdateData`
+`func NewCustomerPaymentSourceUpdateData(type_ interface{}, id interface{}, attributes PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes, ) *CustomerPaymentSourceUpdateData`
 
 NewCustomerPaymentSourceUpdateData instantiates a new CustomerPaymentSourceUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -90,20 +90,20 @@ SetId sets Id field to given value.
 UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerPaymentSourceUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
+`func (o *CustomerPaymentSourceUpdateData) GetAttributes() PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
+`func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPaymentSourceUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
+`func (o *CustomerPaymentSourceUpdateData) SetAttributes(v PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

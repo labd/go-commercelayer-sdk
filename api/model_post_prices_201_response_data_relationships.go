@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,16 @@ var _ MappedNullable = &POSTPrices201ResponseDataRelationships{}
 
 // POSTPrices201ResponseDataRelationships struct for POSTPrices201ResponseDataRelationships
 type POSTPrices201ResponseDataRelationships struct {
-	PriceList           *POSTMarkets201ResponseDataRelationshipsPriceList           `json:"price_list,omitempty"`
-	Sku                 *POSTInStockSubscriptions201ResponseDataRelationshipsSku    `json:"sku,omitempty"`
-	PriceTiers          *POSTPrices201ResponseDataRelationshipsPriceTiers           `json:"price_tiers,omitempty"`
-	PriceVolumeTiers    *POSTPrices201ResponseDataRelationshipsPriceVolumeTiers     `json:"price_volume_tiers,omitempty"`
-	PriceFrequencyTiers *POSTPrices201ResponseDataRelationshipsPriceFrequencyTiers  `json:"price_frequency_tiers,omitempty"`
-	Attachments         *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	PriceList           *POSTMarkets201ResponseDataRelationshipsPriceList                        `json:"price_list,omitempty"`
+	Sku                 *POSTInStockSubscriptions201ResponseDataRelationshipsSku                 `json:"sku,omitempty"`
+	PriceTiers          *POSTPrices201ResponseDataRelationshipsPriceTiers                        `json:"price_tiers,omitempty"`
+	PriceVolumeTiers    *POSTPrices201ResponseDataRelationshipsPriceVolumeTiers                  `json:"price_volume_tiers,omitempty"`
+	PriceFrequencyTiers *POSTPrices201ResponseDataRelationshipsPriceFrequencyTiers               `json:"price_frequency_tiers,omitempty"`
+	Attachments         *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Versions            *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
+	JwtCustomer         *POSTPrices201ResponseDataRelationshipsJwtCustomer                       `json:"jwt_customer,omitempty"`
+	JwtMarkets          *POSTPrices201ResponseDataRelationshipsJwtMarkets                        `json:"jwt_markets,omitempty"`
+	JwtStockLocations   *POSTPrices201ResponseDataRelationshipsJwtStockLocations                 `json:"jwt_stock_locations,omitempty"`
 }
 
 // NewPOSTPrices201ResponseDataRelationships instantiates a new POSTPrices201ResponseDataRelationships object
@@ -206,9 +210,9 @@ func (o *POSTPrices201ResponseDataRelationships) SetPriceFrequencyTiers(v POSTPr
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTPrices201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTPrices201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -216,7 +220,7 @@ func (o *POSTPrices201ResponseDataRelationships) GetAttachments() POSTAvalaraAcc
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPrices201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTPrices201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -232,9 +236,137 @@ func (o *POSTPrices201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTPrices201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTPrices201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTPrices201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTPrices201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTPrices201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTPrices201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
+// GetJwtCustomer returns the JwtCustomer field value if set, zero value otherwise.
+func (o *POSTPrices201ResponseDataRelationships) GetJwtCustomer() POSTPrices201ResponseDataRelationshipsJwtCustomer {
+	if o == nil || IsNil(o.JwtCustomer) {
+		var ret POSTPrices201ResponseDataRelationshipsJwtCustomer
+		return ret
+	}
+	return *o.JwtCustomer
+}
+
+// GetJwtCustomerOk returns a tuple with the JwtCustomer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTPrices201ResponseDataRelationships) GetJwtCustomerOk() (*POSTPrices201ResponseDataRelationshipsJwtCustomer, bool) {
+	if o == nil || IsNil(o.JwtCustomer) {
+		return nil, false
+	}
+	return o.JwtCustomer, true
+}
+
+// HasJwtCustomer returns a boolean if a field has been set.
+func (o *POSTPrices201ResponseDataRelationships) HasJwtCustomer() bool {
+	if o != nil && !IsNil(o.JwtCustomer) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtCustomer gets a reference to the given POSTPrices201ResponseDataRelationshipsJwtCustomer and assigns it to the JwtCustomer field.
+func (o *POSTPrices201ResponseDataRelationships) SetJwtCustomer(v POSTPrices201ResponseDataRelationshipsJwtCustomer) {
+	o.JwtCustomer = &v
+}
+
+// GetJwtMarkets returns the JwtMarkets field value if set, zero value otherwise.
+func (o *POSTPrices201ResponseDataRelationships) GetJwtMarkets() POSTPrices201ResponseDataRelationshipsJwtMarkets {
+	if o == nil || IsNil(o.JwtMarkets) {
+		var ret POSTPrices201ResponseDataRelationshipsJwtMarkets
+		return ret
+	}
+	return *o.JwtMarkets
+}
+
+// GetJwtMarketsOk returns a tuple with the JwtMarkets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTPrices201ResponseDataRelationships) GetJwtMarketsOk() (*POSTPrices201ResponseDataRelationshipsJwtMarkets, bool) {
+	if o == nil || IsNil(o.JwtMarkets) {
+		return nil, false
+	}
+	return o.JwtMarkets, true
+}
+
+// HasJwtMarkets returns a boolean if a field has been set.
+func (o *POSTPrices201ResponseDataRelationships) HasJwtMarkets() bool {
+	if o != nil && !IsNil(o.JwtMarkets) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtMarkets gets a reference to the given POSTPrices201ResponseDataRelationshipsJwtMarkets and assigns it to the JwtMarkets field.
+func (o *POSTPrices201ResponseDataRelationships) SetJwtMarkets(v POSTPrices201ResponseDataRelationshipsJwtMarkets) {
+	o.JwtMarkets = &v
+}
+
+// GetJwtStockLocations returns the JwtStockLocations field value if set, zero value otherwise.
+func (o *POSTPrices201ResponseDataRelationships) GetJwtStockLocations() POSTPrices201ResponseDataRelationshipsJwtStockLocations {
+	if o == nil || IsNil(o.JwtStockLocations) {
+		var ret POSTPrices201ResponseDataRelationshipsJwtStockLocations
+		return ret
+	}
+	return *o.JwtStockLocations
+}
+
+// GetJwtStockLocationsOk returns a tuple with the JwtStockLocations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTPrices201ResponseDataRelationships) GetJwtStockLocationsOk() (*POSTPrices201ResponseDataRelationshipsJwtStockLocations, bool) {
+	if o == nil || IsNil(o.JwtStockLocations) {
+		return nil, false
+	}
+	return o.JwtStockLocations, true
+}
+
+// HasJwtStockLocations returns a boolean if a field has been set.
+func (o *POSTPrices201ResponseDataRelationships) HasJwtStockLocations() bool {
+	if o != nil && !IsNil(o.JwtStockLocations) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtStockLocations gets a reference to the given POSTPrices201ResponseDataRelationshipsJwtStockLocations and assigns it to the JwtStockLocations field.
+func (o *POSTPrices201ResponseDataRelationships) SetJwtStockLocations(v POSTPrices201ResponseDataRelationshipsJwtStockLocations) {
+	o.JwtStockLocations = &v
 }
 
 func (o POSTPrices201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -264,6 +396,18 @@ func (o POSTPrices201ResponseDataRelationships) ToMap() (map[string]interface{},
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
+	}
+	if !IsNil(o.JwtCustomer) {
+		toSerialize["jwt_customer"] = o.JwtCustomer
+	}
+	if !IsNil(o.JwtMarkets) {
+		toSerialize["jwt_markets"] = o.JwtMarkets
+	}
+	if !IsNil(o.JwtStockLocations) {
+		toSerialize["jwt_stock_locations"] = o.JwtStockLocations
 	}
 	return toSerialize, nil
 }

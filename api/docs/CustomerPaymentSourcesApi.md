@@ -508,7 +508,7 @@ import (
 )
 
 func main() {
-    customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // CustomerPaymentSourceUpdate | 
+    customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes())) // CustomerPaymentSourceUpdate | 
     customerPaymentSourceId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -580,7 +580,7 @@ import (
 )
 
 func main() {
-    customerPaymentSourceCreate := *openapiclient.NewCustomerPaymentSourceCreate(*openapiclient.NewCustomerPaymentSourceCreateData(interface{}(123), *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerPaymentSourceCreate | 
+    customerPaymentSourceCreate := *openapiclient.NewCustomerPaymentSourceCreate(*openapiclient.NewCustomerPaymentSourceCreateData(interface{}(123), *openapiclient.NewPOSTCustomerPaymentSources201ResponseDataAttributes())) // CustomerPaymentSourceCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

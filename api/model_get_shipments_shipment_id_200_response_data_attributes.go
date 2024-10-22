@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &GETShipmentsShipmentId200ResponseDataAttributes{}
 
 // GETShipmentsShipmentId200ResponseDataAttributes struct for GETShipmentsShipmentId200ResponseDataAttributes
 type GETShipmentsShipmentId200ResponseDataAttributes struct {
-	// Unique identifier for the shipment
+	// Unique identifier for the shipment. Cannot be passed by sales channels.
 	Number interface{} `json:"number,omitempty"`
-	// The shipment status, one of 'draft', 'upcoming', 'cancelled', 'on_hold', 'picking', 'packing', 'ready_to_ship', or 'shipped'
+	// The shipment status. One of 'draft' (default), 'upcoming', 'cancelled', 'on_hold', 'picking', 'packing', 'ready_to_ship', 'shipped', or 'delivered'.
 	Status interface{} `json:"status,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard, automatically inherited from the associated order.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
@@ -54,13 +54,23 @@ type GETShipmentsShipmentId200ResponseDataAttributes struct {
 	PurchaseCompletedAt interface{} `json:"purchase_completed_at,omitempty"`
 	// Time at which the purchasing of the shipping rate failed.
 	PurchaseFailedAt interface{} `json:"purchase_failed_at,omitempty"`
+	// Time at which the shipment was put on hold.
+	OnHoldAt interface{} `json:"on_hold_at,omitempty"`
+	// Time at which the shipment was picking.
+	PickingAt interface{} `json:"picking_at,omitempty"`
+	// Time at which the shipment was packing.
+	PackingAt interface{} `json:"packing_at,omitempty"`
+	// Time at which the shipment was ready to ship.
+	ReadyToShipAt interface{} `json:"ready_to_ship_at,omitempty"`
+	// Time at which the shipment was shipped.
+	ShippedAt interface{} `json:"shipped_at,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -644,6 +654,171 @@ func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetPurchaseFailedAt(v 
 	o.PurchaseFailedAt = v
 }
 
+// GetOnHoldAt returns the OnHoldAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetOnHoldAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.OnHoldAt
+}
+
+// GetOnHoldAtOk returns a tuple with the OnHoldAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetOnHoldAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.OnHoldAt) {
+		return nil, false
+	}
+	return &o.OnHoldAt, true
+}
+
+// HasOnHoldAt returns a boolean if a field has been set.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasOnHoldAt() bool {
+	if o != nil && IsNil(o.OnHoldAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnHoldAt gets a reference to the given interface{} and assigns it to the OnHoldAt field.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetOnHoldAt(v interface{}) {
+	o.OnHoldAt = v
+}
+
+// GetPickingAt returns the PickingAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetPickingAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PickingAt
+}
+
+// GetPickingAtOk returns a tuple with the PickingAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetPickingAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PickingAt) {
+		return nil, false
+	}
+	return &o.PickingAt, true
+}
+
+// HasPickingAt returns a boolean if a field has been set.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasPickingAt() bool {
+	if o != nil && IsNil(o.PickingAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetPickingAt gets a reference to the given interface{} and assigns it to the PickingAt field.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetPickingAt(v interface{}) {
+	o.PickingAt = v
+}
+
+// GetPackingAt returns the PackingAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetPackingAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PackingAt
+}
+
+// GetPackingAtOk returns a tuple with the PackingAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetPackingAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PackingAt) {
+		return nil, false
+	}
+	return &o.PackingAt, true
+}
+
+// HasPackingAt returns a boolean if a field has been set.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasPackingAt() bool {
+	if o != nil && IsNil(o.PackingAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetPackingAt gets a reference to the given interface{} and assigns it to the PackingAt field.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetPackingAt(v interface{}) {
+	o.PackingAt = v
+}
+
+// GetReadyToShipAt returns the ReadyToShipAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetReadyToShipAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ReadyToShipAt
+}
+
+// GetReadyToShipAtOk returns a tuple with the ReadyToShipAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetReadyToShipAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReadyToShipAt) {
+		return nil, false
+	}
+	return &o.ReadyToShipAt, true
+}
+
+// HasReadyToShipAt returns a boolean if a field has been set.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasReadyToShipAt() bool {
+	if o != nil && IsNil(o.ReadyToShipAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetReadyToShipAt gets a reference to the given interface{} and assigns it to the ReadyToShipAt field.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetReadyToShipAt(v interface{}) {
+	o.ReadyToShipAt = v
+}
+
+// GetShippedAt returns the ShippedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetShippedAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ShippedAt
+}
+
+// GetShippedAtOk returns a tuple with the ShippedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetShippedAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippedAt) {
+		return nil, false
+	}
+	return &o.ShippedAt, true
+}
+
+// HasShippedAt returns a boolean if a field has been set.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasShippedAt() bool {
+	if o != nil && IsNil(o.ShippedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetShippedAt gets a reference to the given interface{} and assigns it to the ShippedAt field.
+func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetShippedAt(v interface{}) {
+	o.ShippedAt = v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetCreatedAt() interface{} {
 	if o == nil {
@@ -869,6 +1044,21 @@ func (o GETShipmentsShipmentId200ResponseDataAttributes) ToMap() (map[string]int
 	}
 	if o.PurchaseFailedAt != nil {
 		toSerialize["purchase_failed_at"] = o.PurchaseFailedAt
+	}
+	if o.OnHoldAt != nil {
+		toSerialize["on_hold_at"] = o.OnHoldAt
+	}
+	if o.PickingAt != nil {
+		toSerialize["picking_at"] = o.PickingAt
+	}
+	if o.PackingAt != nil {
+		toSerialize["packing_at"] = o.PackingAt
+	}
+	if o.ReadyToShipAt != nil {
+		toSerialize["ready_to_ship_at"] = o.ReadyToShipAt
+	}
+	if o.ShippedAt != nil {
+		toSerialize["shipped_at"] = o.ShippedAt
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

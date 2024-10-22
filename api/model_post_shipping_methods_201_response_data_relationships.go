@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,12 +22,13 @@ var _ MappedNullable = &POSTShippingMethods201ResponseDataRelationships{}
 type POSTShippingMethods201ResponseDataRelationships struct {
 	Market                      *POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket           `json:"market,omitempty"`
 	ShippingZone                *POSTShippingMethods201ResponseDataRelationshipsShippingZone                `json:"shipping_zone,omitempty"`
-	ShippingCategory            *GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory         `json:"shipping_category,omitempty"`
+	ShippingCategory            *POSTShipments201ResponseDataRelationshipsShippingCategory                  `json:"shipping_category,omitempty"`
 	StockLocation               *POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation             `json:"stock_location,omitempty"`
 	DeliveryLeadTimeForShipment *POSTShippingMethods201ResponseDataRelationshipsDeliveryLeadTimeForShipment `json:"delivery_lead_time_for_shipment,omitempty"`
 	ShippingMethodTiers         *POSTShippingMethods201ResponseDataRelationshipsShippingMethodTiers         `json:"shipping_method_tiers,omitempty"`
 	ShippingWeightTiers         *POSTShippingMethods201ResponseDataRelationshipsShippingWeightTiers         `json:"shipping_weight_tiers,omitempty"`
-	Attachments                 *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments                 `json:"attachments,omitempty"`
+	Attachments                 *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments    `json:"attachments,omitempty"`
+	Versions                    *POSTAddresses201ResponseDataRelationshipsVersions                          `json:"versions,omitempty"`
 }
 
 // NewPOSTShippingMethods201ResponseDataRelationships instantiates a new POSTShippingMethods201ResponseDataRelationships object
@@ -112,9 +113,9 @@ func (o *POSTShippingMethods201ResponseDataRelationships) SetShippingZone(v POST
 }
 
 // GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataRelationships) GetShippingCategory() GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory {
+func (o *POSTShippingMethods201ResponseDataRelationships) GetShippingCategory() POSTShipments201ResponseDataRelationshipsShippingCategory {
 	if o == nil || IsNil(o.ShippingCategory) {
-		var ret GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory
+		var ret POSTShipments201ResponseDataRelationshipsShippingCategory
 		return ret
 	}
 	return *o.ShippingCategory
@@ -122,7 +123,7 @@ func (o *POSTShippingMethods201ResponseDataRelationships) GetShippingCategory() 
 
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataRelationships) GetShippingCategoryOk() (*GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory, bool) {
+func (o *POSTShippingMethods201ResponseDataRelationships) GetShippingCategoryOk() (*POSTShipments201ResponseDataRelationshipsShippingCategory, bool) {
 	if o == nil || IsNil(o.ShippingCategory) {
 		return nil, false
 	}
@@ -138,8 +139,8 @@ func (o *POSTShippingMethods201ResponseDataRelationships) HasShippingCategory() 
 	return false
 }
 
-// SetShippingCategory gets a reference to the given GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
-func (o *POSTShippingMethods201ResponseDataRelationships) SetShippingCategory(v GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory) {
+// SetShippingCategory gets a reference to the given POSTShipments201ResponseDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
+func (o *POSTShippingMethods201ResponseDataRelationships) SetShippingCategory(v POSTShipments201ResponseDataRelationshipsShippingCategory) {
 	o.ShippingCategory = &v
 }
 
@@ -272,9 +273,9 @@ func (o *POSTShippingMethods201ResponseDataRelationships) SetShippingWeightTiers
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTShippingMethods201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -282,7 +283,7 @@ func (o *POSTShippingMethods201ResponseDataRelationships) GetAttachments() POSTA
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTShippingMethods201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -298,9 +299,41 @@ func (o *POSTShippingMethods201ResponseDataRelationships) HasAttachments() bool 
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTShippingMethods201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTShippingMethods201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTShippingMethods201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTShippingMethods201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTShippingMethods201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTShippingMethods201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTShippingMethods201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -336,6 +369,9 @@ func (o POSTShippingMethods201ResponseDataRelationships) ToMap() (map[string]int
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

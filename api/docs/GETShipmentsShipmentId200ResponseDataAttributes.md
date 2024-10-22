@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Number** | Pointer to **interface{}** | Unique identifier for the shipment | [optional] 
-**Status** | Pointer to **interface{}** | The shipment status, one of &#39;draft&#39;, &#39;upcoming&#39;, &#39;cancelled&#39;, &#39;on_hold&#39;, &#39;picking&#39;, &#39;packing&#39;, &#39;ready_to_ship&#39;, or &#39;shipped&#39; | [optional] 
+**Number** | Pointer to **interface{}** | Unique identifier for the shipment. Cannot be passed by sales channels. | [optional] 
+**Status** | Pointer to **interface{}** | The shipment status. One of &#39;draft&#39; (default), &#39;upcoming&#39;, &#39;cancelled&#39;, &#39;on_hold&#39;, &#39;picking&#39;, &#39;packing&#39;, &#39;ready_to_ship&#39;, &#39;shipped&#39;, or &#39;delivered&#39;. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard, automatically inherited from the associated order. | [optional] 
 **CostAmountCents** | Pointer to **interface{}** | The cost of this shipment from the selected carrier account, in cents. | [optional] 
 **CostAmountFloat** | Pointer to **interface{}** | The cost of this shipment from the selected carrier account, float. | [optional] 
@@ -21,10 +21,15 @@ Name | Type | Description | Notes
 **PurchaseStartedAt** | Pointer to **interface{}** | Time at which the purchasing of the shipping rate started. | [optional] 
 **PurchaseCompletedAt** | Pointer to **interface{}** | Time at which the purchasing of the shipping rate completed. | [optional] 
 **PurchaseFailedAt** | Pointer to **interface{}** | Time at which the purchasing of the shipping rate failed. | [optional] 
+**OnHoldAt** | Pointer to **interface{}** | Time at which the shipment was put on hold. | [optional] 
+**PickingAt** | Pointer to **interface{}** | Time at which the shipment was picking. | [optional] 
+**PackingAt** | Pointer to **interface{}** | Time at which the shipment was packing. | [optional] 
+**ReadyToShipAt** | Pointer to **interface{}** | Time at which the shipment was ready to ship. | [optional] 
+**ShippedAt** | Pointer to **interface{}** | Time at which the shipment was shipped. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -641,6 +646,181 @@ HasPurchaseFailedAt returns a boolean if a field has been set.
 `func (o *GETShipmentsShipmentId200ResponseDataAttributes) UnsetPurchaseFailedAt()`
 
 UnsetPurchaseFailedAt ensures that no value is present for PurchaseFailedAt, not even an explicit nil
+### GetOnHoldAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetOnHoldAt() interface{}`
+
+GetOnHoldAt returns the OnHoldAt field if non-nil, zero value otherwise.
+
+### GetOnHoldAtOk
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetOnHoldAtOk() (*interface{}, bool)`
+
+GetOnHoldAtOk returns a tuple with the OnHoldAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnHoldAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetOnHoldAt(v interface{})`
+
+SetOnHoldAt sets OnHoldAt field to given value.
+
+### HasOnHoldAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasOnHoldAt() bool`
+
+HasOnHoldAt returns a boolean if a field has been set.
+
+### SetOnHoldAtNil
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetOnHoldAtNil(b bool)`
+
+ SetOnHoldAtNil sets the value for OnHoldAt to be an explicit nil
+
+### UnsetOnHoldAt
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) UnsetOnHoldAt()`
+
+UnsetOnHoldAt ensures that no value is present for OnHoldAt, not even an explicit nil
+### GetPickingAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetPickingAt() interface{}`
+
+GetPickingAt returns the PickingAt field if non-nil, zero value otherwise.
+
+### GetPickingAtOk
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetPickingAtOk() (*interface{}, bool)`
+
+GetPickingAtOk returns a tuple with the PickingAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPickingAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetPickingAt(v interface{})`
+
+SetPickingAt sets PickingAt field to given value.
+
+### HasPickingAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasPickingAt() bool`
+
+HasPickingAt returns a boolean if a field has been set.
+
+### SetPickingAtNil
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetPickingAtNil(b bool)`
+
+ SetPickingAtNil sets the value for PickingAt to be an explicit nil
+
+### UnsetPickingAt
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) UnsetPickingAt()`
+
+UnsetPickingAt ensures that no value is present for PickingAt, not even an explicit nil
+### GetPackingAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetPackingAt() interface{}`
+
+GetPackingAt returns the PackingAt field if non-nil, zero value otherwise.
+
+### GetPackingAtOk
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetPackingAtOk() (*interface{}, bool)`
+
+GetPackingAtOk returns a tuple with the PackingAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPackingAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetPackingAt(v interface{})`
+
+SetPackingAt sets PackingAt field to given value.
+
+### HasPackingAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasPackingAt() bool`
+
+HasPackingAt returns a boolean if a field has been set.
+
+### SetPackingAtNil
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetPackingAtNil(b bool)`
+
+ SetPackingAtNil sets the value for PackingAt to be an explicit nil
+
+### UnsetPackingAt
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) UnsetPackingAt()`
+
+UnsetPackingAt ensures that no value is present for PackingAt, not even an explicit nil
+### GetReadyToShipAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetReadyToShipAt() interface{}`
+
+GetReadyToShipAt returns the ReadyToShipAt field if non-nil, zero value otherwise.
+
+### GetReadyToShipAtOk
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetReadyToShipAtOk() (*interface{}, bool)`
+
+GetReadyToShipAtOk returns a tuple with the ReadyToShipAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReadyToShipAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetReadyToShipAt(v interface{})`
+
+SetReadyToShipAt sets ReadyToShipAt field to given value.
+
+### HasReadyToShipAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasReadyToShipAt() bool`
+
+HasReadyToShipAt returns a boolean if a field has been set.
+
+### SetReadyToShipAtNil
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetReadyToShipAtNil(b bool)`
+
+ SetReadyToShipAtNil sets the value for ReadyToShipAt to be an explicit nil
+
+### UnsetReadyToShipAt
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) UnsetReadyToShipAt()`
+
+UnsetReadyToShipAt ensures that no value is present for ReadyToShipAt, not even an explicit nil
+### GetShippedAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetShippedAt() interface{}`
+
+GetShippedAt returns the ShippedAt field if non-nil, zero value otherwise.
+
+### GetShippedAtOk
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetShippedAtOk() (*interface{}, bool)`
+
+GetShippedAtOk returns a tuple with the ShippedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippedAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetShippedAt(v interface{})`
+
+SetShippedAt sets ShippedAt field to given value.
+
+### HasShippedAt
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) HasShippedAt() bool`
+
+HasShippedAt returns a boolean if a field has been set.
+
+### SetShippedAtNil
+
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) SetShippedAtNil(b bool)`
+
+ SetShippedAtNil sets the value for ShippedAt to be an explicit nil
+
+### UnsetShippedAt
+`func (o *GETShipmentsShipmentId200ResponseDataAttributes) UnsetShippedAt()`
+
+UnsetShippedAt ensures that no value is present for ShippedAt, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETShipmentsShipmentId200ResponseDataAttributes) GetCreatedAt() interface{}`

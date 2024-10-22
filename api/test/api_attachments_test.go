@@ -61,6 +61,19 @@ func Test_api_AttachmentsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test AttachmentsApiService GETAuthorizationIdAttachments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var authorizationId interface{}
+
+		httpRes, err := apiClient.AttachmentsApi.GETAuthorizationIdAttachments(context.Background(), authorizationId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test AttachmentsApiService GETAvalaraAccountIdAttachments", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -107,6 +120,32 @@ func Test_api_AttachmentsApiService(t *testing.T) {
 		var bundleId interface{}
 
 		httpRes, err := apiClient.AttachmentsApi.GETBundleIdAttachments(context.Background(), bundleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AttachmentsApiService GETBuyXPayYPromotionIdAttachments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var buyXPayYPromotionId interface{}
+
+		httpRes, err := apiClient.AttachmentsApi.GETBuyXPayYPromotionIdAttachments(context.Background(), buyXPayYPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AttachmentsApiService GETCaptureIdAttachments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var captureId interface{}
+
+		httpRes, err := apiClient.AttachmentsApi.GETCaptureIdAttachments(context.Background(), captureId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -224,6 +263,19 @@ func Test_api_AttachmentsApiService(t *testing.T) {
 		var fixedPricePromotionId interface{}
 
 		httpRes, err := apiClient.AttachmentsApi.GETFixedPricePromotionIdAttachments(context.Background(), fixedPricePromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AttachmentsApiService GETFlexPromotionIdAttachments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var flexPromotionId interface{}
+
+		httpRes, err := apiClient.AttachmentsApi.GETFlexPromotionIdAttachments(context.Background(), flexPromotionId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -373,19 +425,6 @@ func Test_api_AttachmentsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AttachmentsApiService GETOrderValidationRuleIdAttachments", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var orderValidationRuleId interface{}
-
-		httpRes, err := apiClient.AttachmentsApi.GETOrderValidationRuleIdAttachments(context.Background(), orderValidationRuleId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test AttachmentsApiService GETPackageIdAttachments", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -419,6 +458,19 @@ func Test_api_AttachmentsApiService(t *testing.T) {
 		var paymentMethodId interface{}
 
 		httpRes, err := apiClient.AttachmentsApi.GETPaymentMethodIdAttachments(context.Background(), paymentMethodId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AttachmentsApiService GETPaymentOptionIdAttachments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var paymentOptionId interface{}
+
+		httpRes, err := apiClient.AttachmentsApi.GETPaymentOptionIdAttachments(context.Background(), paymentOptionId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -510,6 +562,19 @@ func Test_api_AttachmentsApiService(t *testing.T) {
 		var promotionId interface{}
 
 		httpRes, err := apiClient.AttachmentsApi.GETPromotionIdAttachments(context.Background(), promotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AttachmentsApiService GETRefundIdAttachments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var refundId interface{}
+
+		httpRes, err := apiClient.AttachmentsApi.GETRefundIdAttachments(context.Background(), refundId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -672,6 +737,19 @@ func Test_api_AttachmentsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test AttachmentsApiService GETStockTransferIdAttachments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var stockTransferId interface{}
+
+		httpRes, err := apiClient.AttachmentsApi.GETStockTransferIdAttachments(context.Background(), stockTransferId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test AttachmentsApiService GETSubscriptionModelIdAttachments", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -718,6 +796,32 @@ func Test_api_AttachmentsApiService(t *testing.T) {
 		var taxjarAccountId interface{}
 
 		httpRes, err := apiClient.AttachmentsApi.GETTaxjarAccountIdAttachments(context.Background(), taxjarAccountId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AttachmentsApiService GETTransactionIdAttachments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var transactionId interface{}
+
+		httpRes, err := apiClient.AttachmentsApi.GETTransactionIdAttachments(context.Background(), transactionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test AttachmentsApiService GETVoidIdAttachments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var voidId interface{}
+
+		httpRes, err := apiClient.AttachmentsApi.GETVoidIdAttachments(context.Background(), voidId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

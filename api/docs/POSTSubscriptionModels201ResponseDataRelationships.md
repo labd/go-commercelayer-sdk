@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Markets** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsMarkets**](POSTAvalaraAccounts201ResponseDataRelationshipsMarkets.md) |  | [optional] 
 **OrderSubscriptions** | Pointer to [**POSTCustomers201ResponseDataRelationshipsOrderSubscriptions**](POSTCustomers201ResponseDataRelationshipsOrderSubscriptions.md) |  | [optional] 
-**Attachments** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsAttachments**](POSTAvalaraAccounts201ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasOrderSubscriptions returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *POSTSubscriptionModels201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments`
+`func (o *POSTSubscriptionModels201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *POSTSubscriptionModels201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool)`
+`func (o *POSTSubscriptionModels201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *POSTSubscriptionModels201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments)`
+`func (o *POSTSubscriptionModels201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 

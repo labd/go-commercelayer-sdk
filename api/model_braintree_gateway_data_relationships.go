@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &BraintreeGatewayDataRelationships{}
 // BraintreeGatewayDataRelationships struct for BraintreeGatewayDataRelationships
 type BraintreeGatewayDataRelationships struct {
 	PaymentMethods    *AdyenGatewayDataRelationshipsPaymentMethods        `json:"payment_methods,omitempty"`
+	Versions          *AddressDataRelationshipsVersions                   `json:"versions,omitempty"`
 	BraintreePayments *BraintreeGatewayDataRelationshipsBraintreePayments `json:"braintree_payments,omitempty"`
 }
 
@@ -73,6 +74,38 @@ func (o *BraintreeGatewayDataRelationships) SetPaymentMethods(v AdyenGatewayData
 	o.PaymentMethods = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *BraintreeGatewayDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BraintreeGatewayDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *BraintreeGatewayDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *BraintreeGatewayDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 // GetBraintreePayments returns the BraintreePayments field value if set, zero value otherwise.
 func (o *BraintreeGatewayDataRelationships) GetBraintreePayments() BraintreeGatewayDataRelationshipsBraintreePayments {
 	if o == nil || IsNil(o.BraintreePayments) {
@@ -117,6 +150,9 @@ func (o BraintreeGatewayDataRelationships) ToMap() (map[string]interface{}, erro
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.PaymentMethods) {
 		toSerialize["payment_methods"] = o.PaymentMethods
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	if !IsNil(o.BraintreePayments) {
 		toSerialize["braintree_payments"] = o.BraintreePayments

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -25,7 +25,7 @@ type BundleUpdateData struct {
 	// The resource's id
 	Id            interface{}                                   `json:"id"`
 	Attributes    PATCHBundlesBundleId200ResponseDataAttributes `json:"attributes"`
-	Relationships interface{}                                   `json:"relationships,omitempty"`
+	Relationships *BundleUpdateDataRelationships                `json:"relationships,omitempty"`
 }
 
 // NewBundleUpdateData instantiates a new BundleUpdateData object
@@ -124,37 +124,36 @@ func (o *BundleUpdateData) SetAttributes(v PATCHBundlesBundleId200ResponseDataAt
 	o.Attributes = v
 }
 
-// GetRelationships returns the Relationships field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BundleUpdateData) GetRelationships() interface{} {
-	if o == nil {
-		var ret interface{}
+// GetRelationships returns the Relationships field value if set, zero value otherwise.
+func (o *BundleUpdateData) GetRelationships() BundleUpdateDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret BundleUpdateDataRelationships
 		return ret
 	}
-	return o.Relationships
+	return *o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BundleUpdateData) GetRelationshipsOk() (*interface{}, bool) {
+func (o *BundleUpdateData) GetRelationshipsOk() (*BundleUpdateDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
-	return &o.Relationships, true
+	return o.Relationships, true
 }
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *BundleUpdateData) HasRelationships() bool {
-	if o != nil && IsNil(o.Relationships) {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given interface{} and assigns it to the Relationships field.
-func (o *BundleUpdateData) SetRelationships(v interface{}) {
-	o.Relationships = v
+// SetRelationships gets a reference to the given BundleUpdateDataRelationships and assigns it to the Relationships field.
+func (o *BundleUpdateData) SetRelationships(v BundleUpdateDataRelationships) {
+	o.Relationships = &v
 }
 
 func (o BundleUpdateData) MarshalJSON() ([]byte, error) {
@@ -174,7 +173,7 @@ func (o BundleUpdateData) ToMap() (map[string]interface{}, error) {
 		toSerialize["id"] = o.Id
 	}
 	toSerialize["attributes"] = o.Attributes
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
 	return toSerialize, nil

@@ -4,18 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **interface{}** | The shipping method&#39;s name | [optional] 
-**Scheme** | Pointer to **interface{}** | The shipping method&#39;s scheme, one of &#39;flat&#39; or &#39;weight_tiered&#39;. | [optional] 
+**Name** | Pointer to **interface{}** | The shipping method&#39;s name. | [optional] 
+**Scheme** | Pointer to **interface{}** | The shipping method&#39;s scheme. One of &#39;flat&#39;, &#39;weight_tiered&#39;, or &#39;external&#39;. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
-**Disable** | Pointer to **interface{}** | Send this attribute if you want to mark the shipping method as disabled. | [optional] 
-**Enable** | Pointer to **interface{}** | Send this attribute if you want to mark the shipping method as enabled. | [optional] 
+**ExternalPricesUrl** | Pointer to **interface{}** | The URL used to overwrite prices by an external source. | [optional] 
 **PriceAmountCents** | Pointer to **interface{}** | The price of this shipping method, in cents. | [optional] 
 **FreeOverAmountCents** | Pointer to **interface{}** | Apply free shipping if the order amount is over this value, in cents. | [optional] 
+**UseSubtotal** | Pointer to **interface{}** | Send this attribute if you want to compare the free over amount with order&#39;s subtotal (excluding discounts, if any). | [optional] 
 **MinWeight** | Pointer to **interface{}** | The minimum weight for which this shipping method is available. | [optional] 
 **MaxWeight** | Pointer to **interface{}** | The maximum weight for which this shipping method is available. | [optional] 
-**UnitOfWeight** | Pointer to **interface{}** | Can be one of &#39;gr&#39;, &#39;lb&#39;, or &#39;oz&#39; | [optional] 
+**UnitOfWeight** | Pointer to **interface{}** | The unit of weight. One of &#39;gr&#39;, &#39;oz&#39;, or &#39;lb&#39;. | [optional] 
+**Disable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as disabled. | [optional] 
+**Enable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as enabled. | [optional] 
+**ResetCircuit** | Pointer to **interface{}** | Send this attribute if you want to reset the circuit breaker associated to this resource to &#39;closed&#39; state and zero failures count. Cannot be passed by sales channels. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -142,76 +145,41 @@ HasCurrencyCode returns a boolean if a field has been set.
 `func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetCurrencyCode()`
 
 UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
-### GetDisable
+### GetExternalPricesUrl
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisable() interface{}`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetExternalPricesUrl() interface{}`
 
-GetDisable returns the Disable field if non-nil, zero value otherwise.
+GetExternalPricesUrl returns the ExternalPricesUrl field if non-nil, zero value otherwise.
 
-### GetDisableOk
+### GetExternalPricesUrlOk
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisableOk() (*interface{}, bool)`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetExternalPricesUrlOk() (*interface{}, bool)`
 
-GetDisableOk returns a tuple with the Disable field if it's non-nil, zero value otherwise
+GetExternalPricesUrlOk returns a tuple with the ExternalPricesUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDisable
+### SetExternalPricesUrl
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisable(v interface{})`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetExternalPricesUrl(v interface{})`
 
-SetDisable sets Disable field to given value.
+SetExternalPricesUrl sets ExternalPricesUrl field to given value.
 
-### HasDisable
+### HasExternalPricesUrl
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasDisable() bool`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasExternalPricesUrl() bool`
 
-HasDisable returns a boolean if a field has been set.
+HasExternalPricesUrl returns a boolean if a field has been set.
 
-### SetDisableNil
+### SetExternalPricesUrlNil
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisableNil(b bool)`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetExternalPricesUrlNil(b bool)`
 
- SetDisableNil sets the value for Disable to be an explicit nil
+ SetExternalPricesUrlNil sets the value for ExternalPricesUrl to be an explicit nil
 
-### UnsetDisable
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetDisable()`
+### UnsetExternalPricesUrl
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetExternalPricesUrl()`
 
-UnsetDisable ensures that no value is present for Disable, not even an explicit nil
-### GetEnable
-
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetEnable() interface{}`
-
-GetEnable returns the Enable field if non-nil, zero value otherwise.
-
-### GetEnableOk
-
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetEnableOk() (*interface{}, bool)`
-
-GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEnable
-
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetEnable(v interface{})`
-
-SetEnable sets Enable field to given value.
-
-### HasEnable
-
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasEnable() bool`
-
-HasEnable returns a boolean if a field has been set.
-
-### SetEnableNil
-
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetEnableNil(b bool)`
-
- SetEnableNil sets the value for Enable to be an explicit nil
-
-### UnsetEnable
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetEnable()`
-
-UnsetEnable ensures that no value is present for Enable, not even an explicit nil
+UnsetExternalPricesUrl ensures that no value is present for ExternalPricesUrl, not even an explicit nil
 ### GetPriceAmountCents
 
 `func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetPriceAmountCents() interface{}`
@@ -282,6 +250,41 @@ HasFreeOverAmountCents returns a boolean if a field has been set.
 `func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetFreeOverAmountCents()`
 
 UnsetFreeOverAmountCents ensures that no value is present for FreeOverAmountCents, not even an explicit nil
+### GetUseSubtotal
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetUseSubtotal() interface{}`
+
+GetUseSubtotal returns the UseSubtotal field if non-nil, zero value otherwise.
+
+### GetUseSubtotalOk
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetUseSubtotalOk() (*interface{}, bool)`
+
+GetUseSubtotalOk returns a tuple with the UseSubtotal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSubtotal
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetUseSubtotal(v interface{})`
+
+SetUseSubtotal sets UseSubtotal field to given value.
+
+### HasUseSubtotal
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasUseSubtotal() bool`
+
+HasUseSubtotal returns a boolean if a field has been set.
+
+### SetUseSubtotalNil
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetUseSubtotalNil(b bool)`
+
+ SetUseSubtotalNil sets the value for UseSubtotal to be an explicit nil
+
+### UnsetUseSubtotal
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetUseSubtotal()`
+
+UnsetUseSubtotal ensures that no value is present for UseSubtotal, not even an explicit nil
 ### GetMinWeight
 
 `func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMinWeight() interface{}`
@@ -387,6 +390,111 @@ HasUnitOfWeight returns a boolean if a field has been set.
 `func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetUnitOfWeight()`
 
 UnsetUnitOfWeight ensures that no value is present for UnitOfWeight, not even an explicit nil
+### GetDisable
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisable() interface{}`
+
+GetDisable returns the Disable field if non-nil, zero value otherwise.
+
+### GetDisableOk
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisableOk() (*interface{}, bool)`
+
+GetDisableOk returns a tuple with the Disable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisable
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisable(v interface{})`
+
+SetDisable sets Disable field to given value.
+
+### HasDisable
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasDisable() bool`
+
+HasDisable returns a boolean if a field has been set.
+
+### SetDisableNil
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisableNil(b bool)`
+
+ SetDisableNil sets the value for Disable to be an explicit nil
+
+### UnsetDisable
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetDisable()`
+
+UnsetDisable ensures that no value is present for Disable, not even an explicit nil
+### GetEnable
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetEnable() interface{}`
+
+GetEnable returns the Enable field if non-nil, zero value otherwise.
+
+### GetEnableOk
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetEnableOk() (*interface{}, bool)`
+
+GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnable
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetEnable(v interface{})`
+
+SetEnable sets Enable field to given value.
+
+### HasEnable
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasEnable() bool`
+
+HasEnable returns a boolean if a field has been set.
+
+### SetEnableNil
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetEnableNil(b bool)`
+
+ SetEnableNil sets the value for Enable to be an explicit nil
+
+### UnsetEnable
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetEnable()`
+
+UnsetEnable ensures that no value is present for Enable, not even an explicit nil
+### GetResetCircuit
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetResetCircuit() interface{}`
+
+GetResetCircuit returns the ResetCircuit field if non-nil, zero value otherwise.
+
+### GetResetCircuitOk
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetResetCircuitOk() (*interface{}, bool)`
+
+GetResetCircuitOk returns a tuple with the ResetCircuit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResetCircuit
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetResetCircuit(v interface{})`
+
+SetResetCircuit sets ResetCircuit field to given value.
+
+### HasResetCircuit
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasResetCircuit() bool`
+
+HasResetCircuit returns a boolean if a field has been set.
+
+### SetResetCircuitNil
+
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetResetCircuitNil(b bool)`
+
+ SetResetCircuitNil sets the value for ResetCircuit to be an explicit nil
+
+### UnsetResetCircuit
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetResetCircuit()`
+
+UnsetResetCircuit ensures that no value is present for ResetCircuit, not even an explicit nil
 ### GetReference
 
 `func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetReference() interface{}`

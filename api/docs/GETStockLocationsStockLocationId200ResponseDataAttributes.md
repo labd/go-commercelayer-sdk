@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Number** | Pointer to **interface{}** | Unique identifier for the stock location (numeric) | [optional] 
+**Number** | Pointer to **interface{}** | Unique identifier for the stock location (numeric). | [optional] 
 **Name** | Pointer to **interface{}** | The stock location&#39;s internal name. | [optional] 
-**LabelFormat** | Pointer to **interface{}** | The shipping label format for this stock location. Can be one of &#39;PDF&#39;, &#39;ZPL&#39;, &#39;EPL2&#39;, or &#39;PNG&#39; | [optional] 
+**Code** | Pointer to **interface{}** | A string that you can use to identify the stock location (must be unique within the environment). | [optional] 
+**LabelFormat** | Pointer to **interface{}** | The shipping label format for this stock location. Can be one of &#39;PDF&#39;, &#39;ZPL&#39;, &#39;EPL2&#39;, or &#39;PNG&#39;. | [optional] 
 **SuppressEtd** | Pointer to **interface{}** | Flag it if you want to skip the electronic invoice creation when generating the customs info for this stock location shipments. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -103,6 +104,41 @@ HasName returns a boolean if a field has been set.
 `func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetCode
+
+`func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) GetCode() interface{}`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) SetCode(v interface{})`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
+
+### SetCodeNil
+
+`func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetLabelFormat
 
 `func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) GetLabelFormat() interface{}`

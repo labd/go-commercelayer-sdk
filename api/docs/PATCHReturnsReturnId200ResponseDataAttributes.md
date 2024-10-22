@@ -13,8 +13,10 @@ Name | Type | Description | Notes
 **Restock** | Pointer to **interface{}** | Send this attribute if you want to restock all of the return line items. | [optional] 
 **Archive** | Pointer to **interface{}** | Send this attribute if you want to archive the return. | [optional] 
 **Unarchive** | Pointer to **interface{}** | Send this attribute if you want to unarchive the return. | [optional] 
+**Refund** | Pointer to **interface{}** | Send this attribute if you want to create a refund for this return. | [optional] 
+**RefundAmountCents** | Pointer to **interface{}** | Send this attribute as a value in cents to specify the amount to be refunded. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -351,6 +353,76 @@ HasUnarchive returns a boolean if a field has been set.
 `func (o *PATCHReturnsReturnId200ResponseDataAttributes) UnsetUnarchive()`
 
 UnsetUnarchive ensures that no value is present for Unarchive, not even an explicit nil
+### GetRefund
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRefund() interface{}`
+
+GetRefund returns the Refund field if non-nil, zero value otherwise.
+
+### GetRefundOk
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRefundOk() (*interface{}, bool)`
+
+GetRefundOk returns a tuple with the Refund field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefund
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) SetRefund(v interface{})`
+
+SetRefund sets Refund field to given value.
+
+### HasRefund
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasRefund() bool`
+
+HasRefund returns a boolean if a field has been set.
+
+### SetRefundNil
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) SetRefundNil(b bool)`
+
+ SetRefundNil sets the value for Refund to be an explicit nil
+
+### UnsetRefund
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) UnsetRefund()`
+
+UnsetRefund ensures that no value is present for Refund, not even an explicit nil
+### GetRefundAmountCents
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRefundAmountCents() interface{}`
+
+GetRefundAmountCents returns the RefundAmountCents field if non-nil, zero value otherwise.
+
+### GetRefundAmountCentsOk
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRefundAmountCentsOk() (*interface{}, bool)`
+
+GetRefundAmountCentsOk returns a tuple with the RefundAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefundAmountCents
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) SetRefundAmountCents(v interface{})`
+
+SetRefundAmountCents sets RefundAmountCents field to given value.
+
+### HasRefundAmountCents
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasRefundAmountCents() bool`
+
+HasRefundAmountCents returns a boolean if a field has been set.
+
+### SetRefundAmountCentsNil
+
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) SetRefundAmountCentsNil(b bool)`
+
+ SetRefundAmountCentsNil sets the value for RefundAmountCents to be an explicit nil
+
+### UnsetRefundAmountCents
+`func (o *PATCHReturnsReturnId200ResponseDataAttributes) UnsetRefundAmountCents()`
+
+UnsetRefundAmountCents ensures that no value is present for RefundAmountCents, not even an explicit nil
 ### GetReference
 
 `func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReference() interface{}`

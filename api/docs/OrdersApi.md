@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**GETOrderSubscriptionIdSourceOrder**](OrdersApi.md#GETOrderSubscriptionIdSourceOrder) | **Get** /order_subscriptions/{orderSubscriptionId}/source_order | Retrieve the source order associated to the order subscription
 [**GETOrders**](OrdersApi.md#GETOrders) | **Get** /orders | List all orders
 [**GETOrdersOrderId**](OrdersApi.md#GETOrdersOrderId) | **Get** /orders/{orderId} | Retrieve an order
+[**GETPaymentOptionIdOrder**](OrdersApi.md#GETPaymentOptionIdOrder) | **Get** /payment_options/{paymentOptionId}/order | Retrieve the order associated to the payment option
 [**GETPaypalPaymentIdOrder**](OrdersApi.md#GETPaypalPaymentIdOrder) | **Get** /paypal_payments/{paypalPaymentId}/order | Retrieve the order associated to the paypal payment
 [**GETRecurringOrderCopyIdSourceOrder**](OrdersApi.md#GETRecurringOrderCopyIdSourceOrder) | **Get** /recurring_order_copies/{recurringOrderCopyId}/source_order | Retrieve the source order associated to the recurring order copy
 [**GETRecurringOrderCopyIdTargetOrder**](OrdersApi.md#GETRecurringOrderCopyIdTargetOrder) | **Get** /recurring_order_copies/{recurringOrderCopyId}/target_order | Retrieve the target order associated to the recurring order copy
@@ -30,6 +31,7 @@ Method | HTTP request | Description
 [**GETReturnIdOrder**](OrdersApi.md#GETReturnIdOrder) | **Get** /returns/{returnId}/order | Retrieve the order associated to the return
 [**GETSatispayPaymentIdOrder**](OrdersApi.md#GETSatispayPaymentIdOrder) | **Get** /satispay_payments/{satispayPaymentId}/order | Retrieve the order associated to the satispay payment
 [**GETShipmentIdOrder**](OrdersApi.md#GETShipmentIdOrder) | **Get** /shipments/{shipmentId}/order | Retrieve the order associated to the shipment
+[**GETStockReservationIdOrder**](OrdersApi.md#GETStockReservationIdOrder) | **Get** /stock_reservations/{stockReservationId}/order | Retrieve the order associated to the stock reservation
 [**GETStripePaymentIdOrder**](OrdersApi.md#GETStripePaymentIdOrder) | **Get** /stripe_payments/{stripePaymentId}/order | Retrieve the order associated to the stripe payment
 [**GETTransactionIdOrder**](OrdersApi.md#GETTransactionIdOrder) | **Get** /transactions/{transactionId}/order | Retrieve the order associated to the transaction
 [**GETVoidIdOrder**](OrdersApi.md#GETVoidIdOrder) | **Get** /voids/{voidId}/order | Retrieve the order associated to the void
@@ -1326,6 +1328,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPaymentOptionIdOrder
+
+> GETPaymentOptionIdOrder(ctx, paymentOptionId).Execute()
+
+Retrieve the order associated to the payment option
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    paymentOptionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETPaymentOptionIdOrder(context.Background(), paymentOptionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETPaymentOptionIdOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**paymentOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPaymentOptionIdOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPaypalPaymentIdOrder
 
 > GETPaypalPaymentIdOrder(ctx, paypalPaymentId).Execute()
@@ -1778,6 +1848,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETShipmentIdOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdOrder
+
+> GETStockReservationIdOrder(ctx, stockReservationId).Execute()
+
+Retrieve the order associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETStockReservationIdOrder(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETStockReservationIdOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdOrderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

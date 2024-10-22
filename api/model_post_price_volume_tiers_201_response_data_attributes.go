@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &POSTPriceVolumeTiers201ResponseDataAttributes{}
 
 // POSTPriceVolumeTiers201ResponseDataAttributes struct for POSTPriceVolumeTiers201ResponseDataAttributes
 type POSTPriceVolumeTiers201ResponseDataAttributes struct {
-	// The price tier's name
+	// The price tier's name.
 	Name interface{} `json:"name"`
 	// The tier upper limit, expressed as the line item quantity. When 'null' it means infinity (useful to have an always matching tier).
 	UpTo interface{} `json:"up_to,omitempty"`
@@ -28,7 +28,7 @@ type POSTPriceVolumeTiers201ResponseDataAttributes struct {
 	PriceAmountCents interface{} `json:"price_amount_cents"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

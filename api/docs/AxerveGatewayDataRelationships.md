@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**AdyenGatewayDataRelationshipsPaymentMethods**](AdyenGatewayDataRelationshipsPaymentMethods.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 **AxervePayments** | Pointer to [**AxerveGatewayDataRelationshipsAxervePayments**](AxerveGatewayDataRelationshipsAxervePayments.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetPaymentMethods sets PaymentMethods field to given value.
 `func (o *AxerveGatewayDataRelationships) HasPaymentMethods() bool`
 
 HasPaymentMethods returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *AxerveGatewayDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *AxerveGatewayDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *AxerveGatewayDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *AxerveGatewayDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 ### GetAxervePayments
 

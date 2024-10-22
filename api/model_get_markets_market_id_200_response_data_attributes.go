@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,31 +20,35 @@ var _ MappedNullable = &GETMarketsMarketId200ResponseDataAttributes{}
 
 // GETMarketsMarketId200ResponseDataAttributes struct for GETMarketsMarketId200ResponseDataAttributes
 type GETMarketsMarketId200ResponseDataAttributes struct {
-	// Unique identifier for the market (numeric)
+	// Unique identifier for the market (numeric).
 	Number interface{} `json:"number,omitempty"`
-	// The market's internal name
+	// The market's internal name.
 	Name interface{} `json:"name,omitempty"`
-	// The Facebook Pixed ID
+	// A string that you can use to identify the market (must be unique within the environment).
+	Code interface{} `json:"code,omitempty"`
+	// The Facebook Pixed ID.
 	FacebookPixelId interface{} `json:"facebook_pixel_id,omitempty"`
-	// The checkout URL for this market
+	// The checkout URL for this market.
 	CheckoutUrl interface{} `json:"checkout_url,omitempty"`
 	// The URL used to overwrite prices by an external source.
 	ExternalPricesUrl interface{} `json:"external_prices_url,omitempty"`
 	// The URL used to validate orders by an external source.
 	ExternalOrderValidationUrl interface{} `json:"external_order_validation_url,omitempty"`
-	// The shared secret used to sign the external requests payload.
-	SharedSecret interface{} `json:"shared_secret,omitempty"`
 	// Indicates if market belongs to a customer_group.
 	Private interface{} `json:"private,omitempty"`
-	// Time at which the market was disabled.
+	// When specified indicates the maximum number of shipping line items with cost that will be added to an order.
+	ShippingCostCutoff interface{} `json:"shipping_cost_cutoff,omitempty"`
+	// Time at which this resource was disabled.
 	DisabledAt interface{} `json:"disabled_at,omitempty"`
+	// The shared secret used to sign the external request payload.
+	SharedSecret interface{} `json:"shared_secret,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -131,6 +135,39 @@ func (o *GETMarketsMarketId200ResponseDataAttributes) HasName() bool {
 // SetName gets a reference to the given interface{} and assigns it to the Name field.
 func (o *GETMarketsMarketId200ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETMarketsMarketId200ResponseDataAttributes) GetCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Code
+}
+
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETMarketsMarketId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
+	}
+	return &o.Code, true
+}
+
+// HasCode returns a boolean if a field has been set.
+func (o *GETMarketsMarketId200ResponseDataAttributes) HasCode() bool {
+	if o != nil && IsNil(o.Code) {
+		return true
+	}
+
+	return false
+}
+
+// SetCode gets a reference to the given interface{} and assigns it to the Code field.
+func (o *GETMarketsMarketId200ResponseDataAttributes) SetCode(v interface{}) {
+	o.Code = v
 }
 
 // GetFacebookPixelId returns the FacebookPixelId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -265,39 +302,6 @@ func (o *GETMarketsMarketId200ResponseDataAttributes) SetExternalOrderValidation
 	o.ExternalOrderValidationUrl = v
 }
 
-// GetSharedSecret returns the SharedSecret field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETMarketsMarketId200ResponseDataAttributes) GetSharedSecret() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.SharedSecret
-}
-
-// GetSharedSecretOk returns a tuple with the SharedSecret field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETMarketsMarketId200ResponseDataAttributes) GetSharedSecretOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.SharedSecret) {
-		return nil, false
-	}
-	return &o.SharedSecret, true
-}
-
-// HasSharedSecret returns a boolean if a field has been set.
-func (o *GETMarketsMarketId200ResponseDataAttributes) HasSharedSecret() bool {
-	if o != nil && IsNil(o.SharedSecret) {
-		return true
-	}
-
-	return false
-}
-
-// SetSharedSecret gets a reference to the given interface{} and assigns it to the SharedSecret field.
-func (o *GETMarketsMarketId200ResponseDataAttributes) SetSharedSecret(v interface{}) {
-	o.SharedSecret = v
-}
-
 // GetPrivate returns the Private field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETMarketsMarketId200ResponseDataAttributes) GetPrivate() interface{} {
 	if o == nil {
@@ -331,6 +335,39 @@ func (o *GETMarketsMarketId200ResponseDataAttributes) SetPrivate(v interface{}) 
 	o.Private = v
 }
 
+// GetShippingCostCutoff returns the ShippingCostCutoff field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETMarketsMarketId200ResponseDataAttributes) GetShippingCostCutoff() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ShippingCostCutoff
+}
+
+// GetShippingCostCutoffOk returns a tuple with the ShippingCostCutoff field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETMarketsMarketId200ResponseDataAttributes) GetShippingCostCutoffOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingCostCutoff) {
+		return nil, false
+	}
+	return &o.ShippingCostCutoff, true
+}
+
+// HasShippingCostCutoff returns a boolean if a field has been set.
+func (o *GETMarketsMarketId200ResponseDataAttributes) HasShippingCostCutoff() bool {
+	if o != nil && IsNil(o.ShippingCostCutoff) {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingCostCutoff gets a reference to the given interface{} and assigns it to the ShippingCostCutoff field.
+func (o *GETMarketsMarketId200ResponseDataAttributes) SetShippingCostCutoff(v interface{}) {
+	o.ShippingCostCutoff = v
+}
+
 // GetDisabledAt returns the DisabledAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETMarketsMarketId200ResponseDataAttributes) GetDisabledAt() interface{} {
 	if o == nil {
@@ -362,6 +399,39 @@ func (o *GETMarketsMarketId200ResponseDataAttributes) HasDisabledAt() bool {
 // SetDisabledAt gets a reference to the given interface{} and assigns it to the DisabledAt field.
 func (o *GETMarketsMarketId200ResponseDataAttributes) SetDisabledAt(v interface{}) {
 	o.DisabledAt = v
+}
+
+// GetSharedSecret returns the SharedSecret field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETMarketsMarketId200ResponseDataAttributes) GetSharedSecret() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.SharedSecret
+}
+
+// GetSharedSecretOk returns a tuple with the SharedSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETMarketsMarketId200ResponseDataAttributes) GetSharedSecretOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SharedSecret) {
+		return nil, false
+	}
+	return &o.SharedSecret, true
+}
+
+// HasSharedSecret returns a boolean if a field has been set.
+func (o *GETMarketsMarketId200ResponseDataAttributes) HasSharedSecret() bool {
+	if o != nil && IsNil(o.SharedSecret) {
+		return true
+	}
+
+	return false
+}
+
+// SetSharedSecret gets a reference to the given interface{} and assigns it to the SharedSecret field.
+func (o *GETMarketsMarketId200ResponseDataAttributes) SetSharedSecret(v interface{}) {
+	o.SharedSecret = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -545,6 +615,9 @@ func (o GETMarketsMarketId200ResponseDataAttributes) ToMap() (map[string]interfa
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.Code != nil {
+		toSerialize["code"] = o.Code
+	}
 	if o.FacebookPixelId != nil {
 		toSerialize["facebook_pixel_id"] = o.FacebookPixelId
 	}
@@ -557,14 +630,17 @@ func (o GETMarketsMarketId200ResponseDataAttributes) ToMap() (map[string]interfa
 	if o.ExternalOrderValidationUrl != nil {
 		toSerialize["external_order_validation_url"] = o.ExternalOrderValidationUrl
 	}
-	if o.SharedSecret != nil {
-		toSerialize["shared_secret"] = o.SharedSecret
-	}
 	if o.Private != nil {
 		toSerialize["private"] = o.Private
 	}
+	if o.ShippingCostCutoff != nil {
+		toSerialize["shipping_cost_cutoff"] = o.ShippingCostCutoff
+	}
 	if o.DisabledAt != nil {
 		toSerialize["disabled_at"] = o.DisabledAt
+	}
+	if o.SharedSecret != nil {
+		toSerialize["shared_secret"] = o.SharedSecret
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

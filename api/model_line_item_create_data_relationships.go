@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,7 @@ var _ MappedNullable = &LineItemCreateDataRelationships{}
 type LineItemCreateDataRelationships struct {
 	Order AdyenPaymentCreateDataRelationshipsOrder `json:"order"`
 	Item  *LineItemCreateDataRelationshipsItem     `json:"item,omitempty"`
+	Tags  *AddressCreateDataRelationshipsTags      `json:"tags,omitempty"`
 }
 
 // NewLineItemCreateDataRelationships instantiates a new LineItemCreateDataRelationships object
@@ -98,6 +99,38 @@ func (o *LineItemCreateDataRelationships) SetItem(v LineItemCreateDataRelationsh
 	o.Item = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *LineItemCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *LineItemCreateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *LineItemCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o LineItemCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -111,6 +144,9 @@ func (o LineItemCreateDataRelationships) ToMap() (map[string]interface{}, error)
 	toSerialize["order"] = o.Order
 	if !IsNil(o.Item) {
 		toSerialize["item"] = o.Item
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **SubscriptionModel** | Pointer to [**MarketCreateDataRelationshipsSubscriptionModel**](MarketCreateDataRelationshipsSubscriptionModel.md) |  | [optional] 
 **TaxCalculator** | Pointer to [**MarketCreateDataRelationshipsTaxCalculator**](MarketCreateDataRelationshipsTaxCalculator.md) |  | [optional] 
 **CustomerGroup** | Pointer to [**CustomerCreateDataRelationshipsCustomerGroup**](CustomerCreateDataRelationshipsCustomerGroup.md) |  | [optional] 
+**Geocoder** | Pointer to [**AddressCreateDataRelationshipsGeocoder**](AddressCreateDataRelationshipsGeocoder.md) |  | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetCustomerGroup sets CustomerGroup field to given value.
 `func (o *MarketUpdateDataRelationships) HasCustomerGroup() bool`
 
 HasCustomerGroup returns a boolean if a field has been set.
+
+### GetGeocoder
+
+`func (o *MarketUpdateDataRelationships) GetGeocoder() AddressCreateDataRelationshipsGeocoder`
+
+GetGeocoder returns the Geocoder field if non-nil, zero value otherwise.
+
+### GetGeocoderOk
+
+`func (o *MarketUpdateDataRelationships) GetGeocoderOk() (*AddressCreateDataRelationshipsGeocoder, bool)`
+
+GetGeocoderOk returns a tuple with the Geocoder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGeocoder
+
+`func (o *MarketUpdateDataRelationships) SetGeocoder(v AddressCreateDataRelationshipsGeocoder)`
+
+SetGeocoder sets Geocoder field to given value.
+
+### HasGeocoder
+
+`func (o *MarketUpdateDataRelationships) HasGeocoder() bool`
+
+HasGeocoder returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

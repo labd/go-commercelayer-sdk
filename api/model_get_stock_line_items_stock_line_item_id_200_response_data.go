@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -23,10 +23,10 @@ type GETStockLineItemsStockLineItemId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                                   `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                            `json:"links,omitempty"`
-	Attributes    *GETStockLineItemsStockLineItemId200ResponseDataAttributes    `json:"attributes,omitempty"`
-	Relationships *GETStockLineItemsStockLineItemId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Type          interface{}                                                `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                         `json:"links,omitempty"`
+	Attributes    *GETStockLineItemsStockLineItemId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTStockLineItems201ResponseDataRelationships            `json:"relationships,omitempty"`
 }
 
 // NewGETStockLineItemsStockLineItemId200ResponseData instantiates a new GETStockLineItemsStockLineItemId200ResponseData object
@@ -177,9 +177,9 @@ func (o *GETStockLineItemsStockLineItemId200ResponseData) SetAttributes(v GETSto
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GETStockLineItemsStockLineItemId200ResponseData) GetRelationships() GETStockLineItemsStockLineItemId200ResponseDataRelationships {
+func (o *GETStockLineItemsStockLineItemId200ResponseData) GetRelationships() POSTStockLineItems201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret GETStockLineItemsStockLineItemId200ResponseDataRelationships
+		var ret POSTStockLineItems201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *GETStockLineItemsStockLineItemId200ResponseData) GetRelationships() GET
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETStockLineItemsStockLineItemId200ResponseData) GetRelationshipsOk() (*GETStockLineItemsStockLineItemId200ResponseDataRelationships, bool) {
+func (o *GETStockLineItemsStockLineItemId200ResponseData) GetRelationshipsOk() (*POSTStockLineItems201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *GETStockLineItemsStockLineItemId200ResponseData) HasRelationships() boo
 	return false
 }
 
-// SetRelationships gets a reference to the given GETStockLineItemsStockLineItemId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *GETStockLineItemsStockLineItemId200ResponseData) SetRelationships(v GETStockLineItemsStockLineItemId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTStockLineItems201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *GETStockLineItemsStockLineItemId200ResponseData) SetRelationships(v POSTStockLineItems201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

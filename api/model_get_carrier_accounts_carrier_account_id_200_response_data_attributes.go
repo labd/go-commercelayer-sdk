@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -26,13 +26,15 @@ type GETCarrierAccountsCarrierAccountId200ResponseDataAttributes struct {
 	EasypostType interface{} `json:"easypost_type,omitempty"`
 	// The Easypost internal reference ID.
 	EasypostId interface{} `json:"easypost_id,omitempty"`
+	// The Easypost carrier accounts credentials fields.
+	Credentials interface{} `json:"credentials,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -152,6 +154,39 @@ func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) HasEasypos
 // SetEasypostId gets a reference to the given interface{} and assigns it to the EasypostId field.
 func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) SetEasypostId(v interface{}) {
 	o.EasypostId = v
+}
+
+// GetCredentials returns the Credentials field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) GetCredentials() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Credentials
+}
+
+// GetCredentialsOk returns a tuple with the Credentials field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) GetCredentialsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Credentials) {
+		return nil, false
+	}
+	return &o.Credentials, true
+}
+
+// HasCredentials returns a boolean if a field has been set.
+func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) HasCredentials() bool {
+	if o != nil && IsNil(o.Credentials) {
+		return true
+	}
+
+	return false
+}
+
+// SetCredentials gets a reference to the given interface{} and assigns it to the Credentials field.
+func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) SetCredentials(v interface{}) {
+	o.Credentials = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -337,6 +372,9 @@ func (o GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) ToMap() (ma
 	}
 	if o.EasypostId != nil {
 		toSerialize["easypost_id"] = o.EasypostId
+	}
+	if o.Credentials != nil {
+		toSerialize["credentials"] = o.Credentials
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &POSTKlarnaGateways201ResponseDataRelationships{}
 // POSTKlarnaGateways201ResponseDataRelationships struct for POSTKlarnaGateways201ResponseDataRelationships
 type POSTKlarnaGateways201ResponseDataRelationships struct {
 	PaymentMethods *POSTAdyenGateways201ResponseDataRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
+	Versions       *POSTAddresses201ResponseDataRelationshipsVersions            `json:"versions,omitempty"`
 	KlarnaPayments *POSTKlarnaGateways201ResponseDataRelationshipsKlarnaPayments `json:"klarna_payments,omitempty"`
 }
 
@@ -73,6 +74,38 @@ func (o *POSTKlarnaGateways201ResponseDataRelationships) SetPaymentMethods(v POS
 	o.PaymentMethods = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTKlarnaGateways201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTKlarnaGateways201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTKlarnaGateways201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTKlarnaGateways201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 // GetKlarnaPayments returns the KlarnaPayments field value if set, zero value otherwise.
 func (o *POSTKlarnaGateways201ResponseDataRelationships) GetKlarnaPayments() POSTKlarnaGateways201ResponseDataRelationshipsKlarnaPayments {
 	if o == nil || IsNil(o.KlarnaPayments) {
@@ -117,6 +150,9 @@ func (o POSTKlarnaGateways201ResponseDataRelationships) ToMap() (map[string]inte
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.PaymentMethods) {
 		toSerialize["payment_methods"] = o.PaymentMethods
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	if !IsNil(o.KlarnaPayments) {
 		toSerialize["klarna_payments"] = o.KlarnaPayments

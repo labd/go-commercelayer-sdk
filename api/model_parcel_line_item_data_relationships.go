@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,8 +22,7 @@ var _ MappedNullable = &ParcelLineItemDataRelationships{}
 type ParcelLineItemDataRelationships struct {
 	Parcel        *PackageDataRelationshipsParcels         `json:"parcel,omitempty"`
 	StockLineItem *LineItemDataRelationshipsStockLineItems `json:"stock_line_item,omitempty"`
-	// Deprecated
-	ShipmentLineItem *LineItemDataRelationshipsShipmentLineItems `json:"shipment_line_item,omitempty"`
+	Versions      *AddressDataRelationshipsVersions        `json:"versions,omitempty"`
 }
 
 // NewParcelLineItemDataRelationships instantiates a new ParcelLineItemDataRelationships object
@@ -107,39 +106,36 @@ func (o *ParcelLineItemDataRelationships) SetStockLineItem(v LineItemDataRelatio
 	o.StockLineItem = &v
 }
 
-// GetShipmentLineItem returns the ShipmentLineItem field value if set, zero value otherwise.
-// Deprecated
-func (o *ParcelLineItemDataRelationships) GetShipmentLineItem() LineItemDataRelationshipsShipmentLineItems {
-	if o == nil || IsNil(o.ShipmentLineItem) {
-		var ret LineItemDataRelationshipsShipmentLineItems
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *ParcelLineItemDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
 		return ret
 	}
-	return *o.ShipmentLineItem
+	return *o.Versions
 }
 
-// GetShipmentLineItemOk returns a tuple with the ShipmentLineItem field value if set, nil otherwise
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// Deprecated
-func (o *ParcelLineItemDataRelationships) GetShipmentLineItemOk() (*LineItemDataRelationshipsShipmentLineItems, bool) {
-	if o == nil || IsNil(o.ShipmentLineItem) {
+func (o *ParcelLineItemDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
 		return nil, false
 	}
-	return o.ShipmentLineItem, true
+	return o.Versions, true
 }
 
-// HasShipmentLineItem returns a boolean if a field has been set.
-func (o *ParcelLineItemDataRelationships) HasShipmentLineItem() bool {
-	if o != nil && !IsNil(o.ShipmentLineItem) {
+// HasVersions returns a boolean if a field has been set.
+func (o *ParcelLineItemDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
 		return true
 	}
 
 	return false
 }
 
-// SetShipmentLineItem gets a reference to the given LineItemDataRelationshipsShipmentLineItems and assigns it to the ShipmentLineItem field.
-// Deprecated
-func (o *ParcelLineItemDataRelationships) SetShipmentLineItem(v LineItemDataRelationshipsShipmentLineItems) {
-	o.ShipmentLineItem = &v
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *ParcelLineItemDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o ParcelLineItemDataRelationships) MarshalJSON() ([]byte, error) {
@@ -158,8 +154,8 @@ func (o ParcelLineItemDataRelationships) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.StockLineItem) {
 		toSerialize["stock_line_item"] = o.StockLineItem
 	}
-	if !IsNil(o.ShipmentLineItem) {
-		toSerialize["shipment_line_item"] = o.ShipmentLineItem
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

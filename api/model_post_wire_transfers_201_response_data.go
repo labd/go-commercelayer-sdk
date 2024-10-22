@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -23,10 +23,10 @@ type POSTWireTransfers201ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                               `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                        `json:"links,omitempty"`
-	Attributes    *POSTAdyenPayments201ResponseDataAttributes               `json:"attributes,omitempty"`
-	Relationships *GETTransactionsTransactionId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Type          interface{}                                    `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks             `json:"links,omitempty"`
+	Attributes    *POSTAdyenPayments201ResponseDataAttributes    `json:"attributes,omitempty"`
+	Relationships *POSTWireTransfers201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTWireTransfers201ResponseData instantiates a new POSTWireTransfers201ResponseData object
@@ -177,9 +177,9 @@ func (o *POSTWireTransfers201ResponseData) SetAttributes(v POSTAdyenPayments201R
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTWireTransfers201ResponseData) GetRelationships() GETTransactionsTransactionId200ResponseDataRelationships {
+func (o *POSTWireTransfers201ResponseData) GetRelationships() POSTWireTransfers201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret GETTransactionsTransactionId200ResponseDataRelationships
+		var ret POSTWireTransfers201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *POSTWireTransfers201ResponseData) GetRelationships() GETTransactionsTra
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTWireTransfers201ResponseData) GetRelationshipsOk() (*GETTransactionsTransactionId200ResponseDataRelationships, bool) {
+func (o *POSTWireTransfers201ResponseData) GetRelationshipsOk() (*POSTWireTransfers201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *POSTWireTransfers201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETTransactionsTransactionId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTWireTransfers201ResponseData) SetRelationships(v GETTransactionsTransactionId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTWireTransfers201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *POSTWireTransfers201ResponseData) SetRelationships(v POSTWireTransfers201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

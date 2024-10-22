@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **interface{}** | The customer group&#39;s internal name | 
+**Name** | **interface{}** | The customer group&#39;s internal name. | 
+**Code** | Pointer to **interface{}** | A string that you can use to identify the customer group (must be unique within the environment). | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -58,6 +59,41 @@ SetName sets Name field to given value.
 `func (o *POSTCustomerGroups201ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetCode
+
+`func (o *POSTCustomerGroups201ResponseDataAttributes) GetCode() interface{}`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *POSTCustomerGroups201ResponseDataAttributes) GetCodeOk() (*interface{}, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *POSTCustomerGroups201ResponseDataAttributes) SetCode(v interface{})`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *POSTCustomerGroups201ResponseDataAttributes) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
+
+### SetCodeNil
+
+`func (o *POSTCustomerGroups201ResponseDataAttributes) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *POSTCustomerGroups201ResponseDataAttributes) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetReference
 
 `func (o *POSTCustomerGroups201ResponseDataAttributes) GetReference() interface{}`

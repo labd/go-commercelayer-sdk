@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,14 @@ var _ MappedNullable = &PATCHStockTransfersStockTransferId200ResponseDataAttribu
 
 // PATCHStockTransfersStockTransferId200ResponseDataAttributes struct for PATCHStockTransfersStockTransferId200ResponseDataAttributes
 type PATCHStockTransfersStockTransferId200ResponseDataAttributes struct {
+	// Unique identifier for the stock transfer (numeric).
+	Number interface{} `json:"number,omitempty"`
 	// The code of the associated SKU.
 	SkuCode interface{} `json:"sku_code,omitempty"`
 	// Send this attribute if you want to mark this stock transfer as upcoming.
 	Upcoming interface{} `json:"_upcoming,omitempty"`
+	// Send this attribute if you want to put this stock transfer on hold.
+	OnHold interface{} `json:"_on_hold,omitempty"`
 	// Send this attribute if you want to start picking this stock transfer.
 	Picking interface{} `json:"_picking,omitempty"`
 	// Send this attribute if you want to mark this stock transfer as in transit.
@@ -34,7 +38,7 @@ type PATCHStockTransfersStockTransferId200ResponseDataAttributes struct {
 	Cancel interface{} `json:"_cancel,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -55,6 +59,39 @@ func NewPATCHStockTransfersStockTransferId200ResponseDataAttributes() *PATCHStoc
 func NewPATCHStockTransfersStockTransferId200ResponseDataAttributesWithDefaults() *PATCHStockTransfersStockTransferId200ResponseDataAttributes {
 	this := PATCHStockTransfersStockTransferId200ResponseDataAttributes{}
 	return &this
+}
+
+// GetNumber returns the Number field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetNumber() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Number
+}
+
+// GetNumberOk returns a tuple with the Number field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetNumberOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Number) {
+		return nil, false
+	}
+	return &o.Number, true
+}
+
+// HasNumber returns a boolean if a field has been set.
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasNumber() bool {
+	if o != nil && IsNil(o.Number) {
+		return true
+	}
+
+	return false
+}
+
+// SetNumber gets a reference to the given interface{} and assigns it to the Number field.
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetNumber(v interface{}) {
+	o.Number = v
 }
 
 // GetSkuCode returns the SkuCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -121,6 +158,39 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasUpcomin
 // SetUpcoming gets a reference to the given interface{} and assigns it to the Upcoming field.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetUpcoming(v interface{}) {
 	o.Upcoming = v
+}
+
+// GetOnHold returns the OnHold field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetOnHold() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.OnHold
+}
+
+// GetOnHoldOk returns a tuple with the OnHold field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetOnHoldOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.OnHold) {
+		return nil, false
+	}
+	return &o.OnHold, true
+}
+
+// HasOnHold returns a boolean if a field has been set.
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasOnHold() bool {
+	if o != nil && IsNil(o.OnHold) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnHold gets a reference to the given interface{} and assigns it to the OnHold field.
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetOnHold(v interface{}) {
+	o.OnHold = v
 }
 
 // GetPicking returns the Picking field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -364,11 +434,17 @@ func (o PATCHStockTransfersStockTransferId200ResponseDataAttributes) MarshalJSON
 
 func (o PATCHStockTransfersStockTransferId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Number != nil {
+		toSerialize["number"] = o.Number
+	}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
 	}
 	if o.Upcoming != nil {
 		toSerialize["_upcoming"] = o.Upcoming
+	}
+	if o.OnHold != nil {
+		toSerialize["_on_hold"] = o.OnHold
 	}
 	if o.Picking != nil {
 		toSerialize["_picking"] = o.Picking

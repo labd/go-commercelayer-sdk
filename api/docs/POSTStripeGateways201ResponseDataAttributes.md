@@ -6,10 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **interface{}** | The payment gateway&#39;s internal name. | 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **Login** | **interface{}** | The gateway login. | 
 **PublishableKey** | Pointer to **interface{}** | The gateway publishable API key. | [optional] 
+**ConnectedAccount** | Pointer to **interface{}** | The account (if any) for which the funds of the PaymentIntent are intended. | [optional] 
 **AutoPayments** | Pointer to **interface{}** | Indicates if the gateway will accept payment methods enabled in the Stripe dashboard. | [optional] 
 
 ## Methods
@@ -231,6 +232,41 @@ HasPublishableKey returns a boolean if a field has been set.
 `func (o *POSTStripeGateways201ResponseDataAttributes) UnsetPublishableKey()`
 
 UnsetPublishableKey ensures that no value is present for PublishableKey, not even an explicit nil
+### GetConnectedAccount
+
+`func (o *POSTStripeGateways201ResponseDataAttributes) GetConnectedAccount() interface{}`
+
+GetConnectedAccount returns the ConnectedAccount field if non-nil, zero value otherwise.
+
+### GetConnectedAccountOk
+
+`func (o *POSTStripeGateways201ResponseDataAttributes) GetConnectedAccountOk() (*interface{}, bool)`
+
+GetConnectedAccountOk returns a tuple with the ConnectedAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectedAccount
+
+`func (o *POSTStripeGateways201ResponseDataAttributes) SetConnectedAccount(v interface{})`
+
+SetConnectedAccount sets ConnectedAccount field to given value.
+
+### HasConnectedAccount
+
+`func (o *POSTStripeGateways201ResponseDataAttributes) HasConnectedAccount() bool`
+
+HasConnectedAccount returns a boolean if a field has been set.
+
+### SetConnectedAccountNil
+
+`func (o *POSTStripeGateways201ResponseDataAttributes) SetConnectedAccountNil(b bool)`
+
+ SetConnectedAccountNil sets the value for ConnectedAccount to be an explicit nil
+
+### UnsetConnectedAccount
+`func (o *POSTStripeGateways201ResponseDataAttributes) UnsetConnectedAccount()`
+
+UnsetConnectedAccount ensures that no value is present for ConnectedAccount, not even an explicit nil
 ### GetAutoPayments
 
 `func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPayments() interface{}`

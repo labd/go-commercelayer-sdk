@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**GETWireTransfersWireTransferId200ResponseDataAttributes**](GETWireTransfersWireTransferId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**TransactionDataRelationships**](TransactionDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**WireTransferDataRelationships**](WireTransferDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *WireTransferData) GetRelationships() TransactionDataRelationships`
+`func (o *WireTransferData) GetRelationships() WireTransferDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *WireTransferData) GetRelationshipsOk() (*TransactionDataRelationships, bool)`
+`func (o *WireTransferData) GetRelationshipsOk() (*WireTransferDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *WireTransferData) SetRelationships(v TransactionDataRelationships)`
+`func (o *WireTransferData) SetRelationships(v WireTransferDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

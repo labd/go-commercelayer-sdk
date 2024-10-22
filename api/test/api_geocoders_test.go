@@ -61,4 +61,17 @@ func Test_api_GeocodersApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test GeocodersApiService GETMarketIdGeocoder", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var marketId interface{}
+
+		httpRes, err := apiClient.GeocodersApi.GETMarketIdGeocoder(context.Background(), marketId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 }

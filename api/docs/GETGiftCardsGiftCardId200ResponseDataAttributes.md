@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | Pointer to **interface{}** | The gift card status, one of &#39;draft&#39;, &#39;inactive&#39;, &#39;active&#39;, or &#39;redeemed&#39;. | [optional] 
+**Status** | Pointer to **interface{}** | The gift card status. One of &#39;draft&#39; (default), &#39;inactive&#39;, &#39;active&#39;, or &#39;redeemed&#39;. | [optional] 
 **Code** | Pointer to **interface{}** | The gift card code UUID. If not set, it&#39;s automatically generated. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
 **InitialBalanceCents** | Pointer to **interface{}** | The gift card initial balance, in cents. | [optional] 
@@ -17,15 +17,17 @@ Name | Type | Description | Notes
 **BalanceMaxFloat** | Pointer to **interface{}** | The gift card balance max, float. | [optional] 
 **FormattedBalanceMax** | Pointer to **interface{}** | The gift card balance max, formatted. | [optional] 
 **BalanceLog** | Pointer to **interface{}** | The gift card balance log. Tracks all the gift card transactions. | [optional] 
+**UsageLog** | Pointer to **interface{}** | The gift card usage log. Tracks all the gift card usage actions by orders. | [optional] 
 **SingleUse** | Pointer to **interface{}** | Indicates if the gift card can be used only one. | [optional] 
 **Rechargeable** | Pointer to **interface{}** | Indicates if the gift card can be recharged. | [optional] 
+**DistributeDiscount** | Pointer to **interface{}** | Indicates if redeemed gift card amount is distributed for tax calculation. | [optional] 
 **ImageUrl** | Pointer to **interface{}** | The URL of an image that represents the gift card. | [optional] 
 **ExpiresAt** | Pointer to **interface{}** | Time at which the gift card will expire. | [optional] 
 **RecipientEmail** | Pointer to **interface{}** | The email address of the associated recipient. When creating or updating a gift card, this is a shortcut to find or create the associated recipient by email. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -502,6 +504,41 @@ HasBalanceLog returns a boolean if a field has been set.
 `func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) UnsetBalanceLog()`
 
 UnsetBalanceLog ensures that no value is present for BalanceLog, not even an explicit nil
+### GetUsageLog
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetUsageLog() interface{}`
+
+GetUsageLog returns the UsageLog field if non-nil, zero value otherwise.
+
+### GetUsageLogOk
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetUsageLogOk() (*interface{}, bool)`
+
+GetUsageLogOk returns a tuple with the UsageLog field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsageLog
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) SetUsageLog(v interface{})`
+
+SetUsageLog sets UsageLog field to given value.
+
+### HasUsageLog
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) HasUsageLog() bool`
+
+HasUsageLog returns a boolean if a field has been set.
+
+### SetUsageLogNil
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) SetUsageLogNil(b bool)`
+
+ SetUsageLogNil sets the value for UsageLog to be an explicit nil
+
+### UnsetUsageLog
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) UnsetUsageLog()`
+
+UnsetUsageLog ensures that no value is present for UsageLog, not even an explicit nil
 ### GetSingleUse
 
 `func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetSingleUse() interface{}`
@@ -572,6 +609,41 @@ HasRechargeable returns a boolean if a field has been set.
 `func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) UnsetRechargeable()`
 
 UnsetRechargeable ensures that no value is present for Rechargeable, not even an explicit nil
+### GetDistributeDiscount
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetDistributeDiscount() interface{}`
+
+GetDistributeDiscount returns the DistributeDiscount field if non-nil, zero value otherwise.
+
+### GetDistributeDiscountOk
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetDistributeDiscountOk() (*interface{}, bool)`
+
+GetDistributeDiscountOk returns a tuple with the DistributeDiscount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDistributeDiscount
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) SetDistributeDiscount(v interface{})`
+
+SetDistributeDiscount sets DistributeDiscount field to given value.
+
+### HasDistributeDiscount
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) HasDistributeDiscount() bool`
+
+HasDistributeDiscount returns a boolean if a field has been set.
+
+### SetDistributeDiscountNil
+
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) SetDistributeDiscountNil(b bool)`
+
+ SetDistributeDiscountNil sets the value for DistributeDiscount to be an explicit nil
+
+### UnsetDistributeDiscount
+`func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) UnsetDistributeDiscount()`
+
+UnsetDistributeDiscount ensures that no value is present for DistributeDiscount, not even an explicit nil
 ### GetImageUrl
 
 `func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetImageUrl() interface{}`

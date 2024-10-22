@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **interface{}** | The price tier&#39;s name | [optional] 
+**Name** | Pointer to **interface{}** | The price tier&#39;s name. | [optional] 
+**Type** | Pointer to **interface{}** | The price tier&#39;s type. | [optional] 
 **UpTo** | Pointer to **interface{}** | The tier upper limit. When &#39;null&#39; it means infinity (useful to have an always matching tier). | [optional] 
 **PriceAmountCents** | Pointer to **interface{}** | The price of this price tier, in cents. | [optional] 
 **PriceAmountFloat** | Pointer to **interface{}** | The price of this price tier, float. | [optional] 
@@ -12,7 +13,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -69,6 +70,41 @@ HasName returns a boolean if a field has been set.
 `func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetType
+
+`func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) GetType() interface{}`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) SetType(v interface{})`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### SetTypeNil
+
+`func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetUpTo
 
 `func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) GetUpTo() interface{}`

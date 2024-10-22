@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,374 @@ import (
 
 // HasManyApiService HasManyApi service
 type HasManyApiService service
+
+type HasManyApiGETAddressIdEventsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	addressId  interface{}
+}
+
+func (r HasManyApiGETAddressIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAddressIdEventsExecute(r)
+}
+
+/*
+GETAddressIdEvents Retrieve the events associated to the address
+
+Retrieve the events associated to the address
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param addressId The resource's id
+	@return HasManyApiGETAddressIdEventsRequest
+*/
+func (a *HasManyApiService) GETAddressIdEvents(ctx context.Context, addressId interface{}) HasManyApiGETAddressIdEventsRequest {
+	return HasManyApiGETAddressIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		addressId:  addressId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAddressIdEventsExecute(r HasManyApiGETAddressIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAddressIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/addresses/{addressId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterValueToString(r.addressId, "addressId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAddressIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	addressId  interface{}
+}
+
+func (r HasManyApiGETAddressIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAddressIdTagsExecute(r)
+}
+
+/*
+GETAddressIdTags Retrieve the tags associated to the address
+
+Retrieve the tags associated to the address
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param addressId The resource's id
+	@return HasManyApiGETAddressIdTagsRequest
+*/
+func (a *HasManyApiService) GETAddressIdTags(ctx context.Context, addressId interface{}) HasManyApiGETAddressIdTagsRequest {
+	return HasManyApiGETAddressIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		addressId:  addressId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAddressIdTagsExecute(r HasManyApiGETAddressIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAddressIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/addresses/{addressId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterValueToString(r.addressId, "addressId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAddressIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	addressId  interface{}
+}
+
+func (r HasManyApiGETAddressIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAddressIdVersionsExecute(r)
+}
+
+/*
+GETAddressIdVersions Retrieve the versions associated to the address
+
+Retrieve the versions associated to the address
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param addressId The resource's id
+	@return HasManyApiGETAddressIdVersionsRequest
+*/
+func (a *HasManyApiService) GETAddressIdVersions(ctx context.Context, addressId interface{}) HasManyApiGETAddressIdVersionsRequest {
+	return HasManyApiGETAddressIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		addressId:  addressId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAddressIdVersionsExecute(r HasManyApiGETAddressIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAddressIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/addresses/{addressId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterValueToString(r.addressId, "addressId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAdjustmentIdVersionsRequest struct {
+	ctx          context.Context
+	ApiService   *HasManyApiService
+	adjustmentId interface{}
+}
+
+func (r HasManyApiGETAdjustmentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAdjustmentIdVersionsExecute(r)
+}
+
+/*
+GETAdjustmentIdVersions Retrieve the versions associated to the adjustment
+
+Retrieve the versions associated to the adjustment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adjustmentId The resource's id
+	@return HasManyApiGETAdjustmentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETAdjustmentIdVersions(ctx context.Context, adjustmentId interface{}) HasManyApiGETAdjustmentIdVersionsRequest {
+	return HasManyApiGETAdjustmentIdVersionsRequest{
+		ApiService:   a,
+		ctx:          ctx,
+		adjustmentId: adjustmentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAdjustmentIdVersionsExecute(r HasManyApiGETAdjustmentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAdjustmentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/adjustments/{adjustmentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterValueToString(r.adjustmentId, "adjustmentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
 
 type HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest struct {
 	ctx            context.Context
@@ -207,6 +575,282 @@ func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethodsExecute(r HasManyApiG
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETAdyenGatewayIdVersionsRequest struct {
+	ctx            context.Context
+	ApiService     *HasManyApiService
+	adyenGatewayId interface{}
+}
+
+func (r HasManyApiGETAdyenGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAdyenGatewayIdVersionsExecute(r)
+}
+
+/*
+GETAdyenGatewayIdVersions Retrieve the versions associated to the adyen gateway
+
+Retrieve the versions associated to the adyen gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adyenGatewayId The resource's id
+	@return HasManyApiGETAdyenGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETAdyenGatewayIdVersions(ctx context.Context, adyenGatewayId interface{}) HasManyApiGETAdyenGatewayIdVersionsRequest {
+	return HasManyApiGETAdyenGatewayIdVersionsRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		adyenGatewayId: adyenGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAdyenGatewayIdVersionsExecute(r HasManyApiGETAdyenGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAdyenGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterValueToString(r.adyenGatewayId, "adyenGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAdyenPaymentIdVersionsRequest struct {
+	ctx            context.Context
+	ApiService     *HasManyApiService
+	adyenPaymentId interface{}
+}
+
+func (r HasManyApiGETAdyenPaymentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAdyenPaymentIdVersionsExecute(r)
+}
+
+/*
+GETAdyenPaymentIdVersions Retrieve the versions associated to the adyen payment
+
+Retrieve the versions associated to the adyen payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adyenPaymentId The resource's id
+	@return HasManyApiGETAdyenPaymentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETAdyenPaymentIdVersions(ctx context.Context, adyenPaymentId interface{}) HasManyApiGETAdyenPaymentIdVersionsRequest {
+	return HasManyApiGETAdyenPaymentIdVersionsRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		adyenPaymentId: adyenPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAdyenPaymentIdVersionsExecute(r HasManyApiGETAdyenPaymentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAdyenPaymentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/adyen_payments/{adyenPaymentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterValueToString(r.adyenPaymentId, "adyenPaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAuthorizationIdAttachmentsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	authorizationId interface{}
+}
+
+func (r HasManyApiGETAuthorizationIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAuthorizationIdAttachmentsExecute(r)
+}
+
+/*
+GETAuthorizationIdAttachments Retrieve the attachments associated to the authorization
+
+Retrieve the attachments associated to the authorization
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authorizationId The resource's id
+	@return HasManyApiGETAuthorizationIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETAuthorizationIdAttachments(ctx context.Context, authorizationId interface{}) HasManyApiGETAuthorizationIdAttachmentsRequest {
+	return HasManyApiGETAuthorizationIdAttachmentsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		authorizationId: authorizationId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAuthorizationIdAttachmentsExecute(r HasManyApiGETAuthorizationIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAuthorizationIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/authorizations/{authorizationId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETAuthorizationIdCapturesRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
@@ -340,6 +984,98 @@ func (a *HasManyApiService) GETAuthorizationIdEventsExecute(r HasManyApiGETAutho
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAuthorizationIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	authorizationId interface{}
+}
+
+func (r HasManyApiGETAuthorizationIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAuthorizationIdVersionsExecute(r)
+}
+
+/*
+GETAuthorizationIdVersions Retrieve the versions associated to the authorization
+
+Retrieve the versions associated to the authorization
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authorizationId The resource's id
+	@return HasManyApiGETAuthorizationIdVersionsRequest
+*/
+func (a *HasManyApiService) GETAuthorizationIdVersions(ctx context.Context, authorizationId interface{}) HasManyApiGETAuthorizationIdVersionsRequest {
+	return HasManyApiGETAuthorizationIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		authorizationId: authorizationId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAuthorizationIdVersionsExecute(r HasManyApiGETAuthorizationIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAuthorizationIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/authorizations/{authorizationId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -575,6 +1311,98 @@ func (a *HasManyApiService) GETAvalaraAccountIdAttachmentsExecute(r HasManyApiGE
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETAvalaraAccountIdEventsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	avalaraAccountId interface{}
+}
+
+func (r HasManyApiGETAvalaraAccountIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAvalaraAccountIdEventsExecute(r)
+}
+
+/*
+GETAvalaraAccountIdEvents Retrieve the events associated to the avalara account
+
+Retrieve the events associated to the avalara account
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param avalaraAccountId The resource's id
+	@return HasManyApiGETAvalaraAccountIdEventsRequest
+*/
+func (a *HasManyApiService) GETAvalaraAccountIdEvents(ctx context.Context, avalaraAccountId interface{}) HasManyApiGETAvalaraAccountIdEventsRequest {
+	return HasManyApiGETAvalaraAccountIdEventsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		avalaraAccountId: avalaraAccountId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAvalaraAccountIdEventsExecute(r HasManyApiGETAvalaraAccountIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAvalaraAccountIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETAvalaraAccountIdMarketsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
@@ -708,6 +1536,98 @@ func (a *HasManyApiService) GETAvalaraAccountIdTaxCategoriesExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/tax_categories"
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAvalaraAccountIdVersionsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	avalaraAccountId interface{}
+}
+
+func (r HasManyApiGETAvalaraAccountIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAvalaraAccountIdVersionsExecute(r)
+}
+
+/*
+GETAvalaraAccountIdVersions Retrieve the versions associated to the avalara account
+
+Retrieve the versions associated to the avalara account
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param avalaraAccountId The resource's id
+	@return HasManyApiGETAvalaraAccountIdVersionsRequest
+*/
+func (a *HasManyApiService) GETAvalaraAccountIdVersions(ctx context.Context, avalaraAccountId interface{}) HasManyApiGETAvalaraAccountIdVersionsRequest {
+	return HasManyApiGETAvalaraAccountIdVersionsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		avalaraAccountId: avalaraAccountId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAvalaraAccountIdVersionsExecute(r HasManyApiGETAvalaraAccountIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAvalaraAccountIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -943,6 +1863,190 @@ func (a *HasManyApiService) GETAxerveGatewayIdPaymentMethodsExecute(r HasManyApi
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETAxerveGatewayIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	axerveGatewayId interface{}
+}
+
+func (r HasManyApiGETAxerveGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAxerveGatewayIdVersionsExecute(r)
+}
+
+/*
+GETAxerveGatewayIdVersions Retrieve the versions associated to the axerve gateway
+
+Retrieve the versions associated to the axerve gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param axerveGatewayId The resource's id
+	@return HasManyApiGETAxerveGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETAxerveGatewayIdVersions(ctx context.Context, axerveGatewayId interface{}) HasManyApiGETAxerveGatewayIdVersionsRequest {
+	return HasManyApiGETAxerveGatewayIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		axerveGatewayId: axerveGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAxerveGatewayIdVersionsExecute(r HasManyApiGETAxerveGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAxerveGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/axerve_gateways/{axerveGatewayId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterValueToString(r.axerveGatewayId, "axerveGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAxervePaymentIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	axervePaymentId interface{}
+}
+
+func (r HasManyApiGETAxervePaymentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAxervePaymentIdVersionsExecute(r)
+}
+
+/*
+GETAxervePaymentIdVersions Retrieve the versions associated to the axerve payment
+
+Retrieve the versions associated to the axerve payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param axervePaymentId The resource's id
+	@return HasManyApiGETAxervePaymentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETAxervePaymentIdVersions(ctx context.Context, axervePaymentId interface{}) HasManyApiGETAxervePaymentIdVersionsRequest {
+	return HasManyApiGETAxervePaymentIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		axervePaymentId: axervePaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAxervePaymentIdVersionsExecute(r HasManyApiGETAxervePaymentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAxervePaymentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETBillingInfoValidationRuleIdAttachmentsRequest struct {
 	ctx                         context.Context
 	ApiService                  *HasManyApiService
@@ -984,6 +2088,98 @@ func (a *HasManyApiService) GETBillingInfoValidationRuleIdAttachmentsExecute(r H
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBillingInfoValidationRuleIdVersionsRequest struct {
+	ctx                         context.Context
+	ApiService                  *HasManyApiService
+	billingInfoValidationRuleId interface{}
+}
+
+func (r HasManyApiGETBillingInfoValidationRuleIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBillingInfoValidationRuleIdVersionsExecute(r)
+}
+
+/*
+GETBillingInfoValidationRuleIdVersions Retrieve the versions associated to the billing info validation rule
+
+Retrieve the versions associated to the billing info validation rule
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param billingInfoValidationRuleId The resource's id
+	@return HasManyApiGETBillingInfoValidationRuleIdVersionsRequest
+*/
+func (a *HasManyApiService) GETBillingInfoValidationRuleIdVersions(ctx context.Context, billingInfoValidationRuleId interface{}) HasManyApiGETBillingInfoValidationRuleIdVersionsRequest {
+	return HasManyApiGETBillingInfoValidationRuleIdVersionsRequest{
+		ApiService:                  a,
+		ctx:                         ctx,
+		billingInfoValidationRuleId: billingInfoValidationRuleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBillingInfoValidationRuleIdVersionsExecute(r HasManyApiGETBillingInfoValidationRuleIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBillingInfoValidationRuleIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1219,6 +2415,98 @@ func (a *HasManyApiService) GETBingGeocoderIdAttachmentsExecute(r HasManyApiGETB
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETBingGeocoderIdMarketsRequest struct {
+	ctx            context.Context
+	ApiService     *HasManyApiService
+	bingGeocoderId interface{}
+}
+
+func (r HasManyApiGETBingGeocoderIdMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBingGeocoderIdMarketsExecute(r)
+}
+
+/*
+GETBingGeocoderIdMarkets Retrieve the markets associated to the bing geocoder
+
+Retrieve the markets associated to the bing geocoder
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bingGeocoderId The resource's id
+	@return HasManyApiGETBingGeocoderIdMarketsRequest
+*/
+func (a *HasManyApiService) GETBingGeocoderIdMarkets(ctx context.Context, bingGeocoderId interface{}) HasManyApiGETBingGeocoderIdMarketsRequest {
+	return HasManyApiGETBingGeocoderIdMarketsRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		bingGeocoderId: bingGeocoderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBingGeocoderIdMarketsExecute(r HasManyApiGETBingGeocoderIdMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBingGeocoderIdMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}/markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest struct {
 	ctx                context.Context
 	ApiService         *HasManyApiService
@@ -1403,6 +2691,190 @@ func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r HasMany
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETBraintreeGatewayIdVersionsRequest struct {
+	ctx                context.Context
+	ApiService         *HasManyApiService
+	braintreeGatewayId interface{}
+}
+
+func (r HasManyApiGETBraintreeGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBraintreeGatewayIdVersionsExecute(r)
+}
+
+/*
+GETBraintreeGatewayIdVersions Retrieve the versions associated to the braintree gateway
+
+Retrieve the versions associated to the braintree gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param braintreeGatewayId The resource's id
+	@return HasManyApiGETBraintreeGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETBraintreeGatewayIdVersions(ctx context.Context, braintreeGatewayId interface{}) HasManyApiGETBraintreeGatewayIdVersionsRequest {
+	return HasManyApiGETBraintreeGatewayIdVersionsRequest{
+		ApiService:         a,
+		ctx:                ctx,
+		braintreeGatewayId: braintreeGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBraintreeGatewayIdVersionsExecute(r HasManyApiGETBraintreeGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBraintreeGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/braintree_gateways/{braintreeGatewayId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterValueToString(r.braintreeGatewayId, "braintreeGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBraintreePaymentIdVersionsRequest struct {
+	ctx                context.Context
+	ApiService         *HasManyApiService
+	braintreePaymentId interface{}
+}
+
+func (r HasManyApiGETBraintreePaymentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBraintreePaymentIdVersionsExecute(r)
+}
+
+/*
+GETBraintreePaymentIdVersions Retrieve the versions associated to the braintree payment
+
+Retrieve the versions associated to the braintree payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param braintreePaymentId The resource's id
+	@return HasManyApiGETBraintreePaymentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETBraintreePaymentIdVersions(ctx context.Context, braintreePaymentId interface{}) HasManyApiGETBraintreePaymentIdVersionsRequest {
+	return HasManyApiGETBraintreePaymentIdVersionsRequest{
+		ApiService:         a,
+		ctx:                ctx,
+		braintreePaymentId: braintreePaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBraintreePaymentIdVersionsExecute(r HasManyApiGETBraintreePaymentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBraintreePaymentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/braintree_payments/{braintreePaymentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterValueToString(r.braintreePaymentId, "braintreePaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETBundleIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -1444,6 +2916,98 @@ func (a *HasManyApiService) GETBundleIdAttachmentsExecute(r HasManyApiGETBundleI
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBundleIdEventsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	bundleId   interface{}
+}
+
+func (r HasManyApiGETBundleIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBundleIdEventsExecute(r)
+}
+
+/*
+GETBundleIdEvents Retrieve the events associated to the bundle
+
+Retrieve the events associated to the bundle
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return HasManyApiGETBundleIdEventsRequest
+*/
+func (a *HasManyApiService) GETBundleIdEvents(ctx context.Context, bundleId interface{}) HasManyApiGETBundleIdEventsRequest {
+	return HasManyApiGETBundleIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		bundleId:   bundleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBundleIdEventsExecute(r HasManyApiGETBundleIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBundleIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/bundles/{bundleId}/events"
 	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1537,6 +3101,834 @@ func (a *HasManyApiService) GETBundleIdSkusExecute(r HasManyApiGETBundleIdSkusRe
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/skus"
 	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBundleIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	bundleId   interface{}
+}
+
+func (r HasManyApiGETBundleIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBundleIdTagsExecute(r)
+}
+
+/*
+GETBundleIdTags Retrieve the tags associated to the bundle
+
+Retrieve the tags associated to the bundle
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return HasManyApiGETBundleIdTagsRequest
+*/
+func (a *HasManyApiService) GETBundleIdTags(ctx context.Context, bundleId interface{}) HasManyApiGETBundleIdTagsRequest {
+	return HasManyApiGETBundleIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		bundleId:   bundleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBundleIdTagsExecute(r HasManyApiGETBundleIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBundleIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/bundles/{bundleId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBundleIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	bundleId   interface{}
+}
+
+func (r HasManyApiGETBundleIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBundleIdVersionsExecute(r)
+}
+
+/*
+GETBundleIdVersions Retrieve the versions associated to the bundle
+
+Retrieve the versions associated to the bundle
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return HasManyApiGETBundleIdVersionsRequest
+*/
+func (a *HasManyApiService) GETBundleIdVersions(ctx context.Context, bundleId interface{}) HasManyApiGETBundleIdVersionsRequest {
+	return HasManyApiGETBundleIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		bundleId:   bundleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBundleIdVersionsExecute(r HasManyApiGETBundleIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBundleIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/bundles/{bundleId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBuyXPayYPromotionIdAttachmentsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r HasManyApiGETBuyXPayYPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdAttachmentsExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdAttachments Retrieve the attachments associated to the buy x pay y promotion
+
+Retrieve the attachments associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return HasManyApiGETBuyXPayYPromotionIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETBuyXPayYPromotionIdAttachments(ctx context.Context, buyXPayYPromotionId interface{}) HasManyApiGETBuyXPayYPromotionIdAttachmentsRequest {
+	return HasManyApiGETBuyXPayYPromotionIdAttachmentsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBuyXPayYPromotionIdAttachmentsExecute(r HasManyApiGETBuyXPayYPromotionIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBuyXPayYPromotionIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBuyXPayYPromotionIdCouponsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r HasManyApiGETBuyXPayYPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdCouponsExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdCoupons Retrieve the coupons associated to the buy x pay y promotion
+
+Retrieve the coupons associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return HasManyApiGETBuyXPayYPromotionIdCouponsRequest
+*/
+func (a *HasManyApiService) GETBuyXPayYPromotionIdCoupons(ctx context.Context, buyXPayYPromotionId interface{}) HasManyApiGETBuyXPayYPromotionIdCouponsRequest {
+	return HasManyApiGETBuyXPayYPromotionIdCouponsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBuyXPayYPromotionIdCouponsExecute(r HasManyApiGETBuyXPayYPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBuyXPayYPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBuyXPayYPromotionIdEventsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r HasManyApiGETBuyXPayYPromotionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdEventsExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdEvents Retrieve the events associated to the buy x pay y promotion
+
+Retrieve the events associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return HasManyApiGETBuyXPayYPromotionIdEventsRequest
+*/
+func (a *HasManyApiService) GETBuyXPayYPromotionIdEvents(ctx context.Context, buyXPayYPromotionId interface{}) HasManyApiGETBuyXPayYPromotionIdEventsRequest {
+	return HasManyApiGETBuyXPayYPromotionIdEventsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBuyXPayYPromotionIdEventsExecute(r HasManyApiGETBuyXPayYPromotionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBuyXPayYPromotionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBuyXPayYPromotionIdSkusRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r HasManyApiGETBuyXPayYPromotionIdSkusRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdSkusExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdSkus Retrieve the skus associated to the buy x pay y promotion
+
+Retrieve the skus associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return HasManyApiGETBuyXPayYPromotionIdSkusRequest
+*/
+func (a *HasManyApiService) GETBuyXPayYPromotionIdSkus(ctx context.Context, buyXPayYPromotionId interface{}) HasManyApiGETBuyXPayYPromotionIdSkusRequest {
+	return HasManyApiGETBuyXPayYPromotionIdSkusRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBuyXPayYPromotionIdSkusExecute(r HasManyApiGETBuyXPayYPromotionIdSkusRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBuyXPayYPromotionIdSkus")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/skus"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBuyXPayYPromotionIdTagsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r HasManyApiGETBuyXPayYPromotionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdTagsExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdTags Retrieve the tags associated to the buy x pay y promotion
+
+Retrieve the tags associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return HasManyApiGETBuyXPayYPromotionIdTagsRequest
+*/
+func (a *HasManyApiService) GETBuyXPayYPromotionIdTags(ctx context.Context, buyXPayYPromotionId interface{}) HasManyApiGETBuyXPayYPromotionIdTagsRequest {
+	return HasManyApiGETBuyXPayYPromotionIdTagsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBuyXPayYPromotionIdTagsExecute(r HasManyApiGETBuyXPayYPromotionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBuyXPayYPromotionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETBuyXPayYPromotionIdVersionsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r HasManyApiGETBuyXPayYPromotionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdVersionsExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdVersions Retrieve the versions associated to the buy x pay y promotion
+
+Retrieve the versions associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return HasManyApiGETBuyXPayYPromotionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETBuyXPayYPromotionIdVersions(ctx context.Context, buyXPayYPromotionId interface{}) HasManyApiGETBuyXPayYPromotionIdVersionsRequest {
+	return HasManyApiGETBuyXPayYPromotionIdVersionsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETBuyXPayYPromotionIdVersionsExecute(r HasManyApiGETBuyXPayYPromotionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBuyXPayYPromotionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCaptureIdAttachmentsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	captureId  interface{}
+}
+
+func (r HasManyApiGETCaptureIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCaptureIdAttachmentsExecute(r)
+}
+
+/*
+GETCaptureIdAttachments Retrieve the attachments associated to the capture
+
+Retrieve the attachments associated to the capture
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return HasManyApiGETCaptureIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETCaptureIdAttachments(ctx context.Context, captureId interface{}) HasManyApiGETCaptureIdAttachmentsRequest {
+	return HasManyApiGETCaptureIdAttachmentsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		captureId:  captureId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCaptureIdAttachmentsExecute(r HasManyApiGETCaptureIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCaptureIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/captures/{captureId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1771,6 +4163,98 @@ func (a *HasManyApiService) GETCaptureIdRefundsExecute(r HasManyApiGETCaptureIdR
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETCaptureIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	captureId  interface{}
+}
+
+func (r HasManyApiGETCaptureIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCaptureIdVersionsExecute(r)
+}
+
+/*
+GETCaptureIdVersions Retrieve the versions associated to the capture
+
+Retrieve the versions associated to the capture
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return HasManyApiGETCaptureIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCaptureIdVersions(ctx context.Context, captureId interface{}) HasManyApiGETCaptureIdVersionsRequest {
+	return HasManyApiGETCaptureIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		captureId:  captureId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCaptureIdVersionsExecute(r HasManyApiGETCaptureIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCaptureIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/captures/{captureId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETCarrierAccountIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
@@ -1812,6 +4296,98 @@ func (a *HasManyApiService) GETCarrierAccountIdAttachmentsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/carrier_accounts/{carrierAccountId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterValueToString(r.carrierAccountId, "carrierAccountId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCarrierAccountIdVersionsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	carrierAccountId interface{}
+}
+
+func (r HasManyApiGETCarrierAccountIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCarrierAccountIdVersionsExecute(r)
+}
+
+/*
+GETCarrierAccountIdVersions Retrieve the versions associated to the carrier account
+
+Retrieve the versions associated to the carrier account
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param carrierAccountId The resource's id
+	@return HasManyApiGETCarrierAccountIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCarrierAccountIdVersions(ctx context.Context, carrierAccountId interface{}) HasManyApiGETCarrierAccountIdVersionsRequest {
+	return HasManyApiGETCarrierAccountIdVersionsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		carrierAccountId: carrierAccountId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCarrierAccountIdVersionsExecute(r HasManyApiGETCarrierAccountIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCarrierAccountIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/carrier_accounts/{carrierAccountId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterValueToString(r.carrierAccountId, "carrierAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2047,6 +4623,190 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r HasMa
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETCheckoutComGatewayIdVersionsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	checkoutComGatewayId interface{}
+}
+
+func (r HasManyApiGETCheckoutComGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCheckoutComGatewayIdVersionsExecute(r)
+}
+
+/*
+GETCheckoutComGatewayIdVersions Retrieve the versions associated to the checkout.com gateway
+
+Retrieve the versions associated to the checkout.com gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param checkoutComGatewayId The resource's id
+	@return HasManyApiGETCheckoutComGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCheckoutComGatewayIdVersions(ctx context.Context, checkoutComGatewayId interface{}) HasManyApiGETCheckoutComGatewayIdVersionsRequest {
+	return HasManyApiGETCheckoutComGatewayIdVersionsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		checkoutComGatewayId: checkoutComGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCheckoutComGatewayIdVersionsExecute(r HasManyApiGETCheckoutComGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCheckoutComGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/checkout_com_gateways/{checkoutComGatewayId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterValueToString(r.checkoutComGatewayId, "checkoutComGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCheckoutComPaymentIdVersionsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	checkoutComPaymentId interface{}
+}
+
+func (r HasManyApiGETCheckoutComPaymentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCheckoutComPaymentIdVersionsExecute(r)
+}
+
+/*
+GETCheckoutComPaymentIdVersions Retrieve the versions associated to the checkout.com payment
+
+Retrieve the versions associated to the checkout.com payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param checkoutComPaymentId The resource's id
+	@return HasManyApiGETCheckoutComPaymentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCheckoutComPaymentIdVersions(ctx context.Context, checkoutComPaymentId interface{}) HasManyApiGETCheckoutComPaymentIdVersionsRequest {
+	return HasManyApiGETCheckoutComPaymentIdVersionsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		checkoutComPaymentId: checkoutComPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCheckoutComPaymentIdVersionsExecute(r HasManyApiGETCheckoutComPaymentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCheckoutComPaymentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETCleanupIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -2088,6 +4848,98 @@ func (a *HasManyApiService) GETCleanupIdEventsExecute(r HasManyApiGETCleanupIdEv
 	}
 
 	localVarPath := localBasePath + "/cleanups/{cleanupId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"cleanupId"+"}", url.PathEscape(parameterValueToString(r.cleanupId, "cleanupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCleanupIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	cleanupId  interface{}
+}
+
+func (r HasManyApiGETCleanupIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCleanupIdVersionsExecute(r)
+}
+
+/*
+GETCleanupIdVersions Retrieve the versions associated to the cleanup
+
+Retrieve the versions associated to the cleanup
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cleanupId The resource's id
+	@return HasManyApiGETCleanupIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCleanupIdVersions(ctx context.Context, cleanupId interface{}) HasManyApiGETCleanupIdVersionsRequest {
+	return HasManyApiGETCleanupIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		cleanupId:  cleanupId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCleanupIdVersionsExecute(r HasManyApiGETCleanupIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCleanupIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/cleanups/{cleanupId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"cleanupId"+"}", url.PathEscape(parameterValueToString(r.cleanupId, "cleanupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2231,6 +5083,374 @@ func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r HasMan
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETCouponCodesPromotionRuleIdVersionsRequest struct {
+	ctx                        context.Context
+	ApiService                 *HasManyApiService
+	couponCodesPromotionRuleId interface{}
+}
+
+func (r HasManyApiGETCouponCodesPromotionRuleIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCouponCodesPromotionRuleIdVersionsExecute(r)
+}
+
+/*
+GETCouponCodesPromotionRuleIdVersions Retrieve the versions associated to the coupon codes promotion rule
+
+Retrieve the versions associated to the coupon codes promotion rule
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponCodesPromotionRuleId The resource's id
+	@return HasManyApiGETCouponCodesPromotionRuleIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCouponCodesPromotionRuleIdVersions(ctx context.Context, couponCodesPromotionRuleId interface{}) HasManyApiGETCouponCodesPromotionRuleIdVersionsRequest {
+	return HasManyApiGETCouponCodesPromotionRuleIdVersionsRequest{
+		ApiService:                 a,
+		ctx:                        ctx,
+		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCouponCodesPromotionRuleIdVersionsExecute(r HasManyApiGETCouponCodesPromotionRuleIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCouponCodesPromotionRuleIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/coupon_codes_promotion_rules/{couponCodesPromotionRuleId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.couponCodesPromotionRuleId, "couponCodesPromotionRuleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCouponIdEventsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	couponId   interface{}
+}
+
+func (r HasManyApiGETCouponIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCouponIdEventsExecute(r)
+}
+
+/*
+GETCouponIdEvents Retrieve the events associated to the coupon
+
+Retrieve the events associated to the coupon
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponId The resource's id
+	@return HasManyApiGETCouponIdEventsRequest
+*/
+func (a *HasManyApiService) GETCouponIdEvents(ctx context.Context, couponId interface{}) HasManyApiGETCouponIdEventsRequest {
+	return HasManyApiGETCouponIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		couponId:   couponId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCouponIdEventsExecute(r HasManyApiGETCouponIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCouponIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/coupons/{couponId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCouponIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	couponId   interface{}
+}
+
+func (r HasManyApiGETCouponIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCouponIdTagsExecute(r)
+}
+
+/*
+GETCouponIdTags Retrieve the tags associated to the coupon
+
+Retrieve the tags associated to the coupon
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponId The resource's id
+	@return HasManyApiGETCouponIdTagsRequest
+*/
+func (a *HasManyApiService) GETCouponIdTags(ctx context.Context, couponId interface{}) HasManyApiGETCouponIdTagsRequest {
+	return HasManyApiGETCouponIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		couponId:   couponId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCouponIdTagsExecute(r HasManyApiGETCouponIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCouponIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/coupons/{couponId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCouponIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	couponId   interface{}
+}
+
+func (r HasManyApiGETCouponIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCouponIdVersionsExecute(r)
+}
+
+/*
+GETCouponIdVersions Retrieve the versions associated to the coupon
+
+Retrieve the versions associated to the coupon
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponId The resource's id
+	@return HasManyApiGETCouponIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCouponIdVersions(ctx context.Context, couponId interface{}) HasManyApiGETCouponIdVersionsRequest {
+	return HasManyApiGETCouponIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		couponId:   couponId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCouponIdVersionsExecute(r HasManyApiGETCouponIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCouponIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/coupons/{couponId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETCouponRecipientIdAttachmentsRequest struct {
 	ctx               context.Context
 	ApiService        *HasManyApiService
@@ -2323,6 +5543,190 @@ func (a *HasManyApiService) GETCouponRecipientIdAttachmentsExecute(r HasManyApiG
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETCouponRecipientIdVersionsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	couponRecipientId interface{}
+}
+
+func (r HasManyApiGETCouponRecipientIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCouponRecipientIdVersionsExecute(r)
+}
+
+/*
+GETCouponRecipientIdVersions Retrieve the versions associated to the coupon recipient
+
+Retrieve the versions associated to the coupon recipient
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponRecipientId The resource's id
+	@return HasManyApiGETCouponRecipientIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCouponRecipientIdVersions(ctx context.Context, couponRecipientId interface{}) HasManyApiGETCouponRecipientIdVersionsRequest {
+	return HasManyApiGETCouponRecipientIdVersionsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		couponRecipientId: couponRecipientId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCouponRecipientIdVersionsExecute(r HasManyApiGETCouponRecipientIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCouponRecipientIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/coupon_recipients/{couponRecipientId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterValueToString(r.couponRecipientId, "couponRecipientId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCustomPromotionRuleIdVersionsRequest struct {
+	ctx                   context.Context
+	ApiService            *HasManyApiService
+	customPromotionRuleId interface{}
+}
+
+func (r HasManyApiGETCustomPromotionRuleIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomPromotionRuleIdVersionsExecute(r)
+}
+
+/*
+GETCustomPromotionRuleIdVersions Retrieve the versions associated to the custom promotion rule
+
+Retrieve the versions associated to the custom promotion rule
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customPromotionRuleId The resource's id
+	@return HasManyApiGETCustomPromotionRuleIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCustomPromotionRuleIdVersions(ctx context.Context, customPromotionRuleId interface{}) HasManyApiGETCustomPromotionRuleIdVersionsRequest {
+	return HasManyApiGETCustomPromotionRuleIdVersionsRequest{
+		ApiService:            a,
+		ctx:                   ctx,
+		customPromotionRuleId: customPromotionRuleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomPromotionRuleIdVersionsExecute(r HasManyApiGETCustomPromotionRuleIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomPromotionRuleIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/custom_promotion_rules/{customPromotionRuleId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"customPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.customPromotionRuleId, "customPromotionRuleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETCustomerAddressIdEventsRequest struct {
 	ctx               context.Context
 	ApiService        *HasManyApiService
@@ -2364,6 +5768,98 @@ func (a *HasManyApiService) GETCustomerAddressIdEventsExecute(r HasManyApiGETCus
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCustomerAddressIdVersionsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	customerAddressId interface{}
+}
+
+func (r HasManyApiGETCustomerAddressIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomerAddressIdVersionsExecute(r)
+}
+
+/*
+GETCustomerAddressIdVersions Retrieve the versions associated to the customer address
+
+Retrieve the versions associated to the customer address
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerAddressId The resource's id
+	@return HasManyApiGETCustomerAddressIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCustomerAddressIdVersions(ctx context.Context, customerAddressId interface{}) HasManyApiGETCustomerAddressIdVersionsRequest {
+	return HasManyApiGETCustomerAddressIdVersionsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		customerAddressId: customerAddressId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomerAddressIdVersionsExecute(r HasManyApiGETCustomerAddressIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerAddressIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2640,6 +6136,98 @@ func (a *HasManyApiService) GETCustomerGroupIdMarketsExecute(r HasManyApiGETCust
 	}
 
 	localVarPath := localBasePath + "/customer_groups/{customerGroupId}/markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterValueToString(r.customerGroupId, "customerGroupId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCustomerGroupIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	customerGroupId interface{}
+}
+
+func (r HasManyApiGETCustomerGroupIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomerGroupIdVersionsExecute(r)
+}
+
+/*
+GETCustomerGroupIdVersions Retrieve the versions associated to the customer group
+
+Retrieve the versions associated to the customer group
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerGroupId The resource's id
+	@return HasManyApiGETCustomerGroupIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCustomerGroupIdVersions(ctx context.Context, customerGroupId interface{}) HasManyApiGETCustomerGroupIdVersionsRequest {
+	return HasManyApiGETCustomerGroupIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		customerGroupId: customerGroupId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomerGroupIdVersionsExecute(r HasManyApiGETCustomerGroupIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerGroupIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/customer_groups/{customerGroupId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterValueToString(r.customerGroupId, "customerGroupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3519,6 +7107,98 @@ func (a *HasManyApiService) GETCustomerIdSkuListsExecute(r HasManyApiGETCustomer
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETCustomerIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	customerId interface{}
+}
+
+func (r HasManyApiGETCustomerIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomerIdTagsExecute(r)
+}
+
+/*
+GETCustomerIdTags Retrieve the tags associated to the customer
+
+Retrieve the tags associated to the customer
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return HasManyApiGETCustomerIdTagsRequest
+*/
+func (a *HasManyApiService) GETCustomerIdTags(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdTagsRequest {
+	return HasManyApiGETCustomerIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		customerId: customerId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomerIdTagsExecute(r HasManyApiGETCustomerIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/customers/{customerId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETCustomerPasswordResetIdEventsRequest struct {
 	ctx                     context.Context
 	ApiService              *HasManyApiService
@@ -3561,6 +7241,98 @@ func (a *HasManyApiService) GETCustomerPasswordResetIdEventsExecute(r HasManyApi
 
 	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}/events"
 	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterValueToString(r.customerPasswordResetId, "customerPasswordResetId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCustomerPaymentSourceIdVersionsRequest struct {
+	ctx                     context.Context
+	ApiService              *HasManyApiService
+	customerPaymentSourceId interface{}
+}
+
+func (r HasManyApiGETCustomerPaymentSourceIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomerPaymentSourceIdVersionsExecute(r)
+}
+
+/*
+GETCustomerPaymentSourceIdVersions Retrieve the versions associated to the customer payment source
+
+Retrieve the versions associated to the customer payment source
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerPaymentSourceId The resource's id
+	@return HasManyApiGETCustomerPaymentSourceIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCustomerPaymentSourceIdVersions(ctx context.Context, customerPaymentSourceId interface{}) HasManyApiGETCustomerPaymentSourceIdVersionsRequest {
+	return HasManyApiGETCustomerPaymentSourceIdVersionsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		customerPaymentSourceId: customerPaymentSourceId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomerPaymentSourceIdVersionsExecute(r HasManyApiGETCustomerPaymentSourceIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerPaymentSourceIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/customer_payment_sources/{customerPaymentSourceId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPaymentSourceId"+"}", url.PathEscape(parameterValueToString(r.customerPaymentSourceId, "customerPaymentSourceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3703,6 +7475,98 @@ func (a *HasManyApiService) GETCustomerSubscriptionIdEventsExecute(r HasManyApiG
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETCustomerSubscriptionIdVersionsRequest struct {
+	ctx                    context.Context
+	ApiService             *HasManyApiService
+	customerSubscriptionId interface{}
+}
+
+func (r HasManyApiGETCustomerSubscriptionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomerSubscriptionIdVersionsExecute(r)
+}
+
+/*
+GETCustomerSubscriptionIdVersions Retrieve the versions associated to the customer subscription
+
+Retrieve the versions associated to the customer subscription
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerSubscriptionId The resource's id
+	@return HasManyApiGETCustomerSubscriptionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETCustomerSubscriptionIdVersions(ctx context.Context, customerSubscriptionId interface{}) HasManyApiGETCustomerSubscriptionIdVersionsRequest {
+	return HasManyApiGETCustomerSubscriptionIdVersionsRequest{
+		ApiService:             a,
+		ctx:                    ctx,
+		customerSubscriptionId: customerSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomerSubscriptionIdVersionsExecute(r HasManyApiGETCustomerSubscriptionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerSubscriptionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/customer_subscriptions/{customerSubscriptionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.customerSubscriptionId, "customerSubscriptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest struct {
 	ctx                context.Context
 	ApiService         *HasManyApiService
@@ -3744,6 +7608,98 @@ func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETDeliveryLeadTimeIdVersionsRequest struct {
+	ctx                context.Context
+	ApiService         *HasManyApiService
+	deliveryLeadTimeId interface{}
+}
+
+func (r HasManyApiGETDeliveryLeadTimeIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETDeliveryLeadTimeIdVersionsExecute(r)
+}
+
+/*
+GETDeliveryLeadTimeIdVersions Retrieve the versions associated to the delivery lead time
+
+Retrieve the versions associated to the delivery lead time
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deliveryLeadTimeId The resource's id
+	@return HasManyApiGETDeliveryLeadTimeIdVersionsRequest
+*/
+func (a *HasManyApiService) GETDeliveryLeadTimeIdVersions(ctx context.Context, deliveryLeadTimeId interface{}) HasManyApiGETDeliveryLeadTimeIdVersionsRequest {
+	return HasManyApiGETDeliveryLeadTimeIdVersionsRequest{
+		ApiService:         a,
+		ctx:                ctx,
+		deliveryLeadTimeId: deliveryLeadTimeId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETDeliveryLeadTimeIdVersionsExecute(r HasManyApiGETDeliveryLeadTimeIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETDeliveryLeadTimeIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4255,6 +8211,190 @@ func (a *HasManyApiService) GETExternalGatewayIdPaymentMethodsExecute(r HasManyA
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETExternalGatewayIdVersionsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	externalGatewayId interface{}
+}
+
+func (r HasManyApiGETExternalGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExternalGatewayIdVersionsExecute(r)
+}
+
+/*
+GETExternalGatewayIdVersions Retrieve the versions associated to the external gateway
+
+Retrieve the versions associated to the external gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGatewayId The resource's id
+	@return HasManyApiGETExternalGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETExternalGatewayIdVersions(ctx context.Context, externalGatewayId interface{}) HasManyApiGETExternalGatewayIdVersionsRequest {
+	return HasManyApiGETExternalGatewayIdVersionsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		externalGatewayId: externalGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETExternalGatewayIdVersionsExecute(r HasManyApiGETExternalGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_gateways/{externalGatewayId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterValueToString(r.externalGatewayId, "externalGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETExternalPaymentIdVersionsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	externalPaymentId interface{}
+}
+
+func (r HasManyApiGETExternalPaymentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExternalPaymentIdVersionsExecute(r)
+}
+
+/*
+GETExternalPaymentIdVersions Retrieve the versions associated to the external payment
+
+Retrieve the versions associated to the external payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPaymentId The resource's id
+	@return HasManyApiGETExternalPaymentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETExternalPaymentIdVersions(ctx context.Context, externalPaymentId interface{}) HasManyApiGETExternalPaymentIdVersionsRequest {
+	return HasManyApiGETExternalPaymentIdVersionsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		externalPaymentId: externalPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETExternalPaymentIdVersionsExecute(r HasManyApiGETExternalPaymentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalPaymentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_payments/{externalPaymentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETExternalPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
@@ -4347,6 +8487,98 @@ func (a *HasManyApiService) GETExternalPromotionIdAttachmentsExecute(r HasManyAp
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETExternalPromotionIdCouponsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	externalPromotionId interface{}
+}
+
+func (r HasManyApiGETExternalPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExternalPromotionIdCouponsExecute(r)
+}
+
+/*
+GETExternalPromotionIdCoupons Retrieve the coupons associated to the external promotion
+
+Retrieve the coupons associated to the external promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return HasManyApiGETExternalPromotionIdCouponsRequest
+*/
+func (a *HasManyApiService) GETExternalPromotionIdCoupons(ctx context.Context, externalPromotionId interface{}) HasManyApiGETExternalPromotionIdCouponsRequest {
+	return HasManyApiGETExternalPromotionIdCouponsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		externalPromotionId: externalPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETExternalPromotionIdCouponsExecute(r HasManyApiGETExternalPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETExternalPromotionIdEventsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
@@ -4388,6 +8620,282 @@ func (a *HasManyApiService) GETExternalPromotionIdEventsExecute(r HasManyApiGETE
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETExternalPromotionIdSkusRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	externalPromotionId interface{}
+}
+
+func (r HasManyApiGETExternalPromotionIdSkusRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExternalPromotionIdSkusExecute(r)
+}
+
+/*
+GETExternalPromotionIdSkus Retrieve the skus associated to the external promotion
+
+Retrieve the skus associated to the external promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return HasManyApiGETExternalPromotionIdSkusRequest
+*/
+func (a *HasManyApiService) GETExternalPromotionIdSkus(ctx context.Context, externalPromotionId interface{}) HasManyApiGETExternalPromotionIdSkusRequest {
+	return HasManyApiGETExternalPromotionIdSkusRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		externalPromotionId: externalPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETExternalPromotionIdSkusExecute(r HasManyApiGETExternalPromotionIdSkusRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalPromotionIdSkus")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/skus"
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETExternalPromotionIdTagsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	externalPromotionId interface{}
+}
+
+func (r HasManyApiGETExternalPromotionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExternalPromotionIdTagsExecute(r)
+}
+
+/*
+GETExternalPromotionIdTags Retrieve the tags associated to the external promotion
+
+Retrieve the tags associated to the external promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return HasManyApiGETExternalPromotionIdTagsRequest
+*/
+func (a *HasManyApiService) GETExternalPromotionIdTags(ctx context.Context, externalPromotionId interface{}) HasManyApiGETExternalPromotionIdTagsRequest {
+	return HasManyApiGETExternalPromotionIdTagsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		externalPromotionId: externalPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETExternalPromotionIdTagsExecute(r HasManyApiGETExternalPromotionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalPromotionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETExternalPromotionIdVersionsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	externalPromotionId interface{}
+}
+
+func (r HasManyApiGETExternalPromotionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExternalPromotionIdVersionsExecute(r)
+}
+
+/*
+GETExternalPromotionIdVersions Retrieve the versions associated to the external promotion
+
+Retrieve the versions associated to the external promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return HasManyApiGETExternalPromotionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETExternalPromotionIdVersions(ctx context.Context, externalPromotionId interface{}) HasManyApiGETExternalPromotionIdVersionsRequest {
+	return HasManyApiGETExternalPromotionIdVersionsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		externalPromotionId: externalPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETExternalPromotionIdVersionsExecute(r HasManyApiGETExternalPromotionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalPromotionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4623,6 +9131,98 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdMarketsExecute(r HasManyAp
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETExternalTaxCalculatorIdVersionsRequest struct {
+	ctx                     context.Context
+	ApiService              *HasManyApiService
+	externalTaxCalculatorId interface{}
+}
+
+func (r HasManyApiGETExternalTaxCalculatorIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExternalTaxCalculatorIdVersionsExecute(r)
+}
+
+/*
+GETExternalTaxCalculatorIdVersions Retrieve the versions associated to the external tax calculator
+
+Retrieve the versions associated to the external tax calculator
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalTaxCalculatorId The resource's id
+	@return HasManyApiGETExternalTaxCalculatorIdVersionsRequest
+*/
+func (a *HasManyApiService) GETExternalTaxCalculatorIdVersions(ctx context.Context, externalTaxCalculatorId interface{}) HasManyApiGETExternalTaxCalculatorIdVersionsRequest {
+	return HasManyApiGETExternalTaxCalculatorIdVersionsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		externalTaxCalculatorId: externalTaxCalculatorId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETExternalTaxCalculatorIdVersionsExecute(r HasManyApiGETExternalTaxCalculatorIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalTaxCalculatorIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.externalTaxCalculatorId, "externalTaxCalculatorId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETFixedAmountPromotionIdAttachmentsRequest struct {
 	ctx                    context.Context
 	ApiService             *HasManyApiService
@@ -4664,6 +9264,98 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdAttachmentsExecute(r HasMan
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFixedAmountPromotionIdCouponsRequest struct {
+	ctx                    context.Context
+	ApiService             *HasManyApiService
+	fixedAmountPromotionId interface{}
+}
+
+func (r HasManyApiGETFixedAmountPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedAmountPromotionIdCouponsExecute(r)
+}
+
+/*
+GETFixedAmountPromotionIdCoupons Retrieve the coupons associated to the fixed amount promotion
+
+Retrieve the coupons associated to the fixed amount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return HasManyApiGETFixedAmountPromotionIdCouponsRequest
+*/
+func (a *HasManyApiService) GETFixedAmountPromotionIdCoupons(ctx context.Context, fixedAmountPromotionId interface{}) HasManyApiGETFixedAmountPromotionIdCouponsRequest {
+	return HasManyApiGETFixedAmountPromotionIdCouponsRequest{
+		ApiService:             a,
+		ctx:                    ctx,
+		fixedAmountPromotionId: fixedAmountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFixedAmountPromotionIdCouponsExecute(r HasManyApiGETFixedAmountPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedAmountPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/coupons"
 	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4807,6 +9499,282 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdEventsExecute(r HasManyApiG
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETFixedAmountPromotionIdSkusRequest struct {
+	ctx                    context.Context
+	ApiService             *HasManyApiService
+	fixedAmountPromotionId interface{}
+}
+
+func (r HasManyApiGETFixedAmountPromotionIdSkusRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedAmountPromotionIdSkusExecute(r)
+}
+
+/*
+GETFixedAmountPromotionIdSkus Retrieve the skus associated to the fixed amount promotion
+
+Retrieve the skus associated to the fixed amount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return HasManyApiGETFixedAmountPromotionIdSkusRequest
+*/
+func (a *HasManyApiService) GETFixedAmountPromotionIdSkus(ctx context.Context, fixedAmountPromotionId interface{}) HasManyApiGETFixedAmountPromotionIdSkusRequest {
+	return HasManyApiGETFixedAmountPromotionIdSkusRequest{
+		ApiService:             a,
+		ctx:                    ctx,
+		fixedAmountPromotionId: fixedAmountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFixedAmountPromotionIdSkusExecute(r HasManyApiGETFixedAmountPromotionIdSkusRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedAmountPromotionIdSkus")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/skus"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFixedAmountPromotionIdTagsRequest struct {
+	ctx                    context.Context
+	ApiService             *HasManyApiService
+	fixedAmountPromotionId interface{}
+}
+
+func (r HasManyApiGETFixedAmountPromotionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedAmountPromotionIdTagsExecute(r)
+}
+
+/*
+GETFixedAmountPromotionIdTags Retrieve the tags associated to the fixed amount promotion
+
+Retrieve the tags associated to the fixed amount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return HasManyApiGETFixedAmountPromotionIdTagsRequest
+*/
+func (a *HasManyApiService) GETFixedAmountPromotionIdTags(ctx context.Context, fixedAmountPromotionId interface{}) HasManyApiGETFixedAmountPromotionIdTagsRequest {
+	return HasManyApiGETFixedAmountPromotionIdTagsRequest{
+		ApiService:             a,
+		ctx:                    ctx,
+		fixedAmountPromotionId: fixedAmountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFixedAmountPromotionIdTagsExecute(r HasManyApiGETFixedAmountPromotionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedAmountPromotionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFixedAmountPromotionIdVersionsRequest struct {
+	ctx                    context.Context
+	ApiService             *HasManyApiService
+	fixedAmountPromotionId interface{}
+}
+
+func (r HasManyApiGETFixedAmountPromotionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedAmountPromotionIdVersionsExecute(r)
+}
+
+/*
+GETFixedAmountPromotionIdVersions Retrieve the versions associated to the fixed amount promotion
+
+Retrieve the versions associated to the fixed amount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return HasManyApiGETFixedAmountPromotionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETFixedAmountPromotionIdVersions(ctx context.Context, fixedAmountPromotionId interface{}) HasManyApiGETFixedAmountPromotionIdVersionsRequest {
+	return HasManyApiGETFixedAmountPromotionIdVersionsRequest{
+		ApiService:             a,
+		ctx:                    ctx,
+		fixedAmountPromotionId: fixedAmountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFixedAmountPromotionIdVersionsExecute(r HasManyApiGETFixedAmountPromotionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedAmountPromotionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETFixedPricePromotionIdAttachmentsRequest struct {
 	ctx                   context.Context
 	ApiService            *HasManyApiService
@@ -4848,6 +9816,98 @@ func (a *HasManyApiService) GETFixedPricePromotionIdAttachmentsExecute(r HasMany
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFixedPricePromotionIdCouponsRequest struct {
+	ctx                   context.Context
+	ApiService            *HasManyApiService
+	fixedPricePromotionId interface{}
+}
+
+func (r HasManyApiGETFixedPricePromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedPricePromotionIdCouponsExecute(r)
+}
+
+/*
+GETFixedPricePromotionIdCoupons Retrieve the coupons associated to the fixed price promotion
+
+Retrieve the coupons associated to the fixed price promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return HasManyApiGETFixedPricePromotionIdCouponsRequest
+*/
+func (a *HasManyApiService) GETFixedPricePromotionIdCoupons(ctx context.Context, fixedPricePromotionId interface{}) HasManyApiGETFixedPricePromotionIdCouponsRequest {
+	return HasManyApiGETFixedPricePromotionIdCouponsRequest{
+		ApiService:            a,
+		ctx:                   ctx,
+		fixedPricePromotionId: fixedPricePromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFixedPricePromotionIdCouponsExecute(r HasManyApiGETFixedPricePromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedPricePromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/coupons"
 	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5083,6 +10143,650 @@ func (a *HasManyApiService) GETFixedPricePromotionIdSkusExecute(r HasManyApiGETF
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETFixedPricePromotionIdTagsRequest struct {
+	ctx                   context.Context
+	ApiService            *HasManyApiService
+	fixedPricePromotionId interface{}
+}
+
+func (r HasManyApiGETFixedPricePromotionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedPricePromotionIdTagsExecute(r)
+}
+
+/*
+GETFixedPricePromotionIdTags Retrieve the tags associated to the fixed price promotion
+
+Retrieve the tags associated to the fixed price promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return HasManyApiGETFixedPricePromotionIdTagsRequest
+*/
+func (a *HasManyApiService) GETFixedPricePromotionIdTags(ctx context.Context, fixedPricePromotionId interface{}) HasManyApiGETFixedPricePromotionIdTagsRequest {
+	return HasManyApiGETFixedPricePromotionIdTagsRequest{
+		ApiService:            a,
+		ctx:                   ctx,
+		fixedPricePromotionId: fixedPricePromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFixedPricePromotionIdTagsExecute(r HasManyApiGETFixedPricePromotionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedPricePromotionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFixedPricePromotionIdVersionsRequest struct {
+	ctx                   context.Context
+	ApiService            *HasManyApiService
+	fixedPricePromotionId interface{}
+}
+
+func (r HasManyApiGETFixedPricePromotionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedPricePromotionIdVersionsExecute(r)
+}
+
+/*
+GETFixedPricePromotionIdVersions Retrieve the versions associated to the fixed price promotion
+
+Retrieve the versions associated to the fixed price promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return HasManyApiGETFixedPricePromotionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETFixedPricePromotionIdVersions(ctx context.Context, fixedPricePromotionId interface{}) HasManyApiGETFixedPricePromotionIdVersionsRequest {
+	return HasManyApiGETFixedPricePromotionIdVersionsRequest{
+		ApiService:            a,
+		ctx:                   ctx,
+		fixedPricePromotionId: fixedPricePromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFixedPricePromotionIdVersionsExecute(r HasManyApiGETFixedPricePromotionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedPricePromotionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFlexPromotionIdAttachmentsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	flexPromotionId interface{}
+}
+
+func (r HasManyApiGETFlexPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFlexPromotionIdAttachmentsExecute(r)
+}
+
+/*
+GETFlexPromotionIdAttachments Retrieve the attachments associated to the flex promotion
+
+Retrieve the attachments associated to the flex promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param flexPromotionId The resource's id
+	@return HasManyApiGETFlexPromotionIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETFlexPromotionIdAttachments(ctx context.Context, flexPromotionId interface{}) HasManyApiGETFlexPromotionIdAttachmentsRequest {
+	return HasManyApiGETFlexPromotionIdAttachmentsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		flexPromotionId: flexPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFlexPromotionIdAttachmentsExecute(r HasManyApiGETFlexPromotionIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFlexPromotionIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/flex_promotions/{flexPromotionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"flexPromotionId"+"}", url.PathEscape(parameterValueToString(r.flexPromotionId, "flexPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFlexPromotionIdCouponsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	flexPromotionId interface{}
+}
+
+func (r HasManyApiGETFlexPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFlexPromotionIdCouponsExecute(r)
+}
+
+/*
+GETFlexPromotionIdCoupons Retrieve the coupons associated to the flex promotion
+
+Retrieve the coupons associated to the flex promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param flexPromotionId The resource's id
+	@return HasManyApiGETFlexPromotionIdCouponsRequest
+*/
+func (a *HasManyApiService) GETFlexPromotionIdCoupons(ctx context.Context, flexPromotionId interface{}) HasManyApiGETFlexPromotionIdCouponsRequest {
+	return HasManyApiGETFlexPromotionIdCouponsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		flexPromotionId: flexPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFlexPromotionIdCouponsExecute(r HasManyApiGETFlexPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFlexPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/flex_promotions/{flexPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"flexPromotionId"+"}", url.PathEscape(parameterValueToString(r.flexPromotionId, "flexPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFlexPromotionIdEventsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	flexPromotionId interface{}
+}
+
+func (r HasManyApiGETFlexPromotionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFlexPromotionIdEventsExecute(r)
+}
+
+/*
+GETFlexPromotionIdEvents Retrieve the events associated to the flex promotion
+
+Retrieve the events associated to the flex promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param flexPromotionId The resource's id
+	@return HasManyApiGETFlexPromotionIdEventsRequest
+*/
+func (a *HasManyApiService) GETFlexPromotionIdEvents(ctx context.Context, flexPromotionId interface{}) HasManyApiGETFlexPromotionIdEventsRequest {
+	return HasManyApiGETFlexPromotionIdEventsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		flexPromotionId: flexPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFlexPromotionIdEventsExecute(r HasManyApiGETFlexPromotionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFlexPromotionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/flex_promotions/{flexPromotionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"flexPromotionId"+"}", url.PathEscape(parameterValueToString(r.flexPromotionId, "flexPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFlexPromotionIdTagsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	flexPromotionId interface{}
+}
+
+func (r HasManyApiGETFlexPromotionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFlexPromotionIdTagsExecute(r)
+}
+
+/*
+GETFlexPromotionIdTags Retrieve the tags associated to the flex promotion
+
+Retrieve the tags associated to the flex promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param flexPromotionId The resource's id
+	@return HasManyApiGETFlexPromotionIdTagsRequest
+*/
+func (a *HasManyApiService) GETFlexPromotionIdTags(ctx context.Context, flexPromotionId interface{}) HasManyApiGETFlexPromotionIdTagsRequest {
+	return HasManyApiGETFlexPromotionIdTagsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		flexPromotionId: flexPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFlexPromotionIdTagsExecute(r HasManyApiGETFlexPromotionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFlexPromotionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/flex_promotions/{flexPromotionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"flexPromotionId"+"}", url.PathEscape(parameterValueToString(r.flexPromotionId, "flexPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFlexPromotionIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	flexPromotionId interface{}
+}
+
+func (r HasManyApiGETFlexPromotionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFlexPromotionIdVersionsExecute(r)
+}
+
+/*
+GETFlexPromotionIdVersions Retrieve the versions associated to the flex promotion
+
+Retrieve the versions associated to the flex promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param flexPromotionId The resource's id
+	@return HasManyApiGETFlexPromotionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETFlexPromotionIdVersions(ctx context.Context, flexPromotionId interface{}) HasManyApiGETFlexPromotionIdVersionsRequest {
+	return HasManyApiGETFlexPromotionIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		flexPromotionId: flexPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFlexPromotionIdVersionsExecute(r HasManyApiGETFlexPromotionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFlexPromotionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/flex_promotions/{flexPromotionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"flexPromotionId"+"}", url.PathEscape(parameterValueToString(r.flexPromotionId, "flexPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETFreeGiftPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
@@ -5124,6 +10828,98 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdAttachmentsExecute(r HasManyAp
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFreeGiftPromotionIdCouponsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	freeGiftPromotionId interface{}
+}
+
+func (r HasManyApiGETFreeGiftPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeGiftPromotionIdCouponsExecute(r)
+}
+
+/*
+GETFreeGiftPromotionIdCoupons Retrieve the coupons associated to the free gift promotion
+
+Retrieve the coupons associated to the free gift promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return HasManyApiGETFreeGiftPromotionIdCouponsRequest
+*/
+func (a *HasManyApiService) GETFreeGiftPromotionIdCoupons(ctx context.Context, freeGiftPromotionId interface{}) HasManyApiGETFreeGiftPromotionIdCouponsRequest {
+	return HasManyApiGETFreeGiftPromotionIdCouponsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		freeGiftPromotionId: freeGiftPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFreeGiftPromotionIdCouponsExecute(r HasManyApiGETFreeGiftPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeGiftPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/coupons"
 	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5359,6 +11155,190 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdSkusExecute(r HasManyApiGETFre
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETFreeGiftPromotionIdTagsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	freeGiftPromotionId interface{}
+}
+
+func (r HasManyApiGETFreeGiftPromotionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeGiftPromotionIdTagsExecute(r)
+}
+
+/*
+GETFreeGiftPromotionIdTags Retrieve the tags associated to the free gift promotion
+
+Retrieve the tags associated to the free gift promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return HasManyApiGETFreeGiftPromotionIdTagsRequest
+*/
+func (a *HasManyApiService) GETFreeGiftPromotionIdTags(ctx context.Context, freeGiftPromotionId interface{}) HasManyApiGETFreeGiftPromotionIdTagsRequest {
+	return HasManyApiGETFreeGiftPromotionIdTagsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		freeGiftPromotionId: freeGiftPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFreeGiftPromotionIdTagsExecute(r HasManyApiGETFreeGiftPromotionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeGiftPromotionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFreeGiftPromotionIdVersionsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	freeGiftPromotionId interface{}
+}
+
+func (r HasManyApiGETFreeGiftPromotionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeGiftPromotionIdVersionsExecute(r)
+}
+
+/*
+GETFreeGiftPromotionIdVersions Retrieve the versions associated to the free gift promotion
+
+Retrieve the versions associated to the free gift promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return HasManyApiGETFreeGiftPromotionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETFreeGiftPromotionIdVersions(ctx context.Context, freeGiftPromotionId interface{}) HasManyApiGETFreeGiftPromotionIdVersionsRequest {
+	return HasManyApiGETFreeGiftPromotionIdVersionsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		freeGiftPromotionId: freeGiftPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFreeGiftPromotionIdVersionsExecute(r HasManyApiGETFreeGiftPromotionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeGiftPromotionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETFreeShippingPromotionIdAttachmentsRequest struct {
 	ctx                     context.Context
 	ApiService              *HasManyApiService
@@ -5451,6 +11431,98 @@ func (a *HasManyApiService) GETFreeShippingPromotionIdAttachmentsExecute(r HasMa
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETFreeShippingPromotionIdCouponsRequest struct {
+	ctx                     context.Context
+	ApiService              *HasManyApiService
+	freeShippingPromotionId interface{}
+}
+
+func (r HasManyApiGETFreeShippingPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeShippingPromotionIdCouponsExecute(r)
+}
+
+/*
+GETFreeShippingPromotionIdCoupons Retrieve the coupons associated to the free shipping promotion
+
+Retrieve the coupons associated to the free shipping promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return HasManyApiGETFreeShippingPromotionIdCouponsRequest
+*/
+func (a *HasManyApiService) GETFreeShippingPromotionIdCoupons(ctx context.Context, freeShippingPromotionId interface{}) HasManyApiGETFreeShippingPromotionIdCouponsRequest {
+	return HasManyApiGETFreeShippingPromotionIdCouponsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		freeShippingPromotionId: freeShippingPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFreeShippingPromotionIdCouponsExecute(r HasManyApiGETFreeShippingPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeShippingPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/coupons"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETFreeShippingPromotionIdEventsRequest struct {
 	ctx                     context.Context
 	ApiService              *HasManyApiService
@@ -5492,6 +11564,190 @@ func (a *HasManyApiService) GETFreeShippingPromotionIdEventsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFreeShippingPromotionIdTagsRequest struct {
+	ctx                     context.Context
+	ApiService              *HasManyApiService
+	freeShippingPromotionId interface{}
+}
+
+func (r HasManyApiGETFreeShippingPromotionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeShippingPromotionIdTagsExecute(r)
+}
+
+/*
+GETFreeShippingPromotionIdTags Retrieve the tags associated to the free shipping promotion
+
+Retrieve the tags associated to the free shipping promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return HasManyApiGETFreeShippingPromotionIdTagsRequest
+*/
+func (a *HasManyApiService) GETFreeShippingPromotionIdTags(ctx context.Context, freeShippingPromotionId interface{}) HasManyApiGETFreeShippingPromotionIdTagsRequest {
+	return HasManyApiGETFreeShippingPromotionIdTagsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		freeShippingPromotionId: freeShippingPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFreeShippingPromotionIdTagsExecute(r HasManyApiGETFreeShippingPromotionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeShippingPromotionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFreeShippingPromotionIdVersionsRequest struct {
+	ctx                     context.Context
+	ApiService              *HasManyApiService
+	freeShippingPromotionId interface{}
+}
+
+func (r HasManyApiGETFreeShippingPromotionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeShippingPromotionIdVersionsExecute(r)
+}
+
+/*
+GETFreeShippingPromotionIdVersions Retrieve the versions associated to the free shipping promotion
+
+Retrieve the versions associated to the free shipping promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return HasManyApiGETFreeShippingPromotionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETFreeShippingPromotionIdVersions(ctx context.Context, freeShippingPromotionId interface{}) HasManyApiGETFreeShippingPromotionIdVersionsRequest {
+	return HasManyApiGETFreeShippingPromotionIdVersionsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		freeShippingPromotionId: freeShippingPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFreeShippingPromotionIdVersionsExecute(r HasManyApiGETFreeShippingPromotionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeShippingPromotionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5727,6 +11983,98 @@ func (a *HasManyApiService) GETGeocoderIdAttachmentsExecute(r HasManyApiGETGeoco
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETGeocoderIdMarketsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	geocoderId interface{}
+}
+
+func (r HasManyApiGETGeocoderIdMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETGeocoderIdMarketsExecute(r)
+}
+
+/*
+GETGeocoderIdMarkets Retrieve the markets associated to the geocoder
+
+Retrieve the markets associated to the geocoder
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param geocoderId The resource's id
+	@return HasManyApiGETGeocoderIdMarketsRequest
+*/
+func (a *HasManyApiService) GETGeocoderIdMarkets(ctx context.Context, geocoderId interface{}) HasManyApiGETGeocoderIdMarketsRequest {
+	return HasManyApiGETGeocoderIdMarketsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		geocoderId: geocoderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETGeocoderIdMarketsExecute(r HasManyApiGETGeocoderIdMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGeocoderIdMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/geocoders/{geocoderId}/markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterValueToString(r.geocoderId, "geocoderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETGiftCardIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -5911,6 +12259,190 @@ func (a *HasManyApiService) GETGiftCardIdEventsExecute(r HasManyApiGETGiftCardId
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETGiftCardIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	giftCardId interface{}
+}
+
+func (r HasManyApiGETGiftCardIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETGiftCardIdTagsExecute(r)
+}
+
+/*
+GETGiftCardIdTags Retrieve the tags associated to the gift card
+
+Retrieve the tags associated to the gift card
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardId The resource's id
+	@return HasManyApiGETGiftCardIdTagsRequest
+*/
+func (a *HasManyApiService) GETGiftCardIdTags(ctx context.Context, giftCardId interface{}) HasManyApiGETGiftCardIdTagsRequest {
+	return HasManyApiGETGiftCardIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		giftCardId: giftCardId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETGiftCardIdTagsExecute(r HasManyApiGETGiftCardIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGiftCardIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/gift_cards/{giftCardId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETGiftCardIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	giftCardId interface{}
+}
+
+func (r HasManyApiGETGiftCardIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETGiftCardIdVersionsExecute(r)
+}
+
+/*
+GETGiftCardIdVersions Retrieve the versions associated to the gift card
+
+Retrieve the versions associated to the gift card
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardId The resource's id
+	@return HasManyApiGETGiftCardIdVersionsRequest
+*/
+func (a *HasManyApiService) GETGiftCardIdVersions(ctx context.Context, giftCardId interface{}) HasManyApiGETGiftCardIdVersionsRequest {
+	return HasManyApiGETGiftCardIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		giftCardId: giftCardId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETGiftCardIdVersionsExecute(r HasManyApiGETGiftCardIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGiftCardIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/gift_cards/{giftCardId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETGiftCardRecipientIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
@@ -5952,6 +12484,98 @@ func (a *HasManyApiService) GETGiftCardRecipientIdAttachmentsExecute(r HasManyAp
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETGiftCardRecipientIdVersionsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	giftCardRecipientId interface{}
+}
+
+func (r HasManyApiGETGiftCardRecipientIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETGiftCardRecipientIdVersionsExecute(r)
+}
+
+/*
+GETGiftCardRecipientIdVersions Retrieve the versions associated to the gift card recipient
+
+Retrieve the versions associated to the gift card recipient
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardRecipientId The resource's id
+	@return HasManyApiGETGiftCardRecipientIdVersionsRequest
+*/
+func (a *HasManyApiService) GETGiftCardRecipientIdVersions(ctx context.Context, giftCardRecipientId interface{}) HasManyApiGETGiftCardRecipientIdVersionsRequest {
+	return HasManyApiGETGiftCardRecipientIdVersionsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		giftCardRecipientId: giftCardRecipientId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETGiftCardRecipientIdVersionsExecute(r HasManyApiGETGiftCardRecipientIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGiftCardRecipientIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6187,6 +12811,98 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAttachmentsExecute(r HasManyApiGE
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETGoogleGeocoderIdMarketsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	googleGeocoderId interface{}
+}
+
+func (r HasManyApiGETGoogleGeocoderIdMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETGoogleGeocoderIdMarketsExecute(r)
+}
+
+/*
+GETGoogleGeocoderIdMarkets Retrieve the markets associated to the google geocoder
+
+Retrieve the markets associated to the google geocoder
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param googleGeocoderId The resource's id
+	@return HasManyApiGETGoogleGeocoderIdMarketsRequest
+*/
+func (a *HasManyApiService) GETGoogleGeocoderIdMarkets(ctx context.Context, googleGeocoderId interface{}) HasManyApiGETGoogleGeocoderIdMarketsRequest {
+	return HasManyApiGETGoogleGeocoderIdMarketsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		googleGeocoderId: googleGeocoderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETGoogleGeocoderIdMarketsExecute(r HasManyApiGETGoogleGeocoderIdMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGoogleGeocoderIdMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}/markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETImportIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -6320,6 +13036,98 @@ func (a *HasManyApiService) GETInStockSubscriptionIdEventsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETInStockSubscriptionIdVersionsRequest struct {
+	ctx                   context.Context
+	ApiService            *HasManyApiService
+	inStockSubscriptionId interface{}
+}
+
+func (r HasManyApiGETInStockSubscriptionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETInStockSubscriptionIdVersionsExecute(r)
+}
+
+/*
+GETInStockSubscriptionIdVersions Retrieve the versions associated to the in stock subscription
+
+Retrieve the versions associated to the in stock subscription
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inStockSubscriptionId The resource's id
+	@return HasManyApiGETInStockSubscriptionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETInStockSubscriptionIdVersions(ctx context.Context, inStockSubscriptionId interface{}) HasManyApiGETInStockSubscriptionIdVersionsRequest {
+	return HasManyApiGETInStockSubscriptionIdVersionsRequest{
+		ApiService:            a,
+		ctx:                   ctx,
+		inStockSubscriptionId: inStockSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETInStockSubscriptionIdVersionsExecute(r HasManyApiGETInStockSubscriptionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETInStockSubscriptionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6647,6 +13455,282 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocationsExecute(r 
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETInventoryModelIdVersionsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	inventoryModelId interface{}
+}
+
+func (r HasManyApiGETInventoryModelIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETInventoryModelIdVersionsExecute(r)
+}
+
+/*
+GETInventoryModelIdVersions Retrieve the versions associated to the inventory model
+
+Retrieve the versions associated to the inventory model
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryModelId The resource's id
+	@return HasManyApiGETInventoryModelIdVersionsRequest
+*/
+func (a *HasManyApiService) GETInventoryModelIdVersions(ctx context.Context, inventoryModelId interface{}) HasManyApiGETInventoryModelIdVersionsRequest {
+	return HasManyApiGETInventoryModelIdVersionsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		inventoryModelId: inventoryModelId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETInventoryModelIdVersionsExecute(r HasManyApiGETInventoryModelIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETInventoryModelIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/inventory_models/{inventoryModelId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterValueToString(r.inventoryModelId, "inventoryModelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETInventoryReturnLocationIdVersionsRequest struct {
+	ctx                       context.Context
+	ApiService                *HasManyApiService
+	inventoryReturnLocationId interface{}
+}
+
+func (r HasManyApiGETInventoryReturnLocationIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETInventoryReturnLocationIdVersionsExecute(r)
+}
+
+/*
+GETInventoryReturnLocationIdVersions Retrieve the versions associated to the inventory return location
+
+Retrieve the versions associated to the inventory return location
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryReturnLocationId The resource's id
+	@return HasManyApiGETInventoryReturnLocationIdVersionsRequest
+*/
+func (a *HasManyApiService) GETInventoryReturnLocationIdVersions(ctx context.Context, inventoryReturnLocationId interface{}) HasManyApiGETInventoryReturnLocationIdVersionsRequest {
+	return HasManyApiGETInventoryReturnLocationIdVersionsRequest{
+		ApiService:                a,
+		ctx:                       ctx,
+		inventoryReturnLocationId: inventoryReturnLocationId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETInventoryReturnLocationIdVersionsExecute(r HasManyApiGETInventoryReturnLocationIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETInventoryReturnLocationIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/inventory_return_locations/{inventoryReturnLocationId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryReturnLocationId, "inventoryReturnLocationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETInventoryStockLocationIdVersionsRequest struct {
+	ctx                      context.Context
+	ApiService               *HasManyApiService
+	inventoryStockLocationId interface{}
+}
+
+func (r HasManyApiGETInventoryStockLocationIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETInventoryStockLocationIdVersionsExecute(r)
+}
+
+/*
+GETInventoryStockLocationIdVersions Retrieve the versions associated to the inventory stock location
+
+Retrieve the versions associated to the inventory stock location
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryStockLocationId The resource's id
+	@return HasManyApiGETInventoryStockLocationIdVersionsRequest
+*/
+func (a *HasManyApiService) GETInventoryStockLocationIdVersions(ctx context.Context, inventoryStockLocationId interface{}) HasManyApiGETInventoryStockLocationIdVersionsRequest {
+	return HasManyApiGETInventoryStockLocationIdVersionsRequest{
+		ApiService:               a,
+		ctx:                      ctx,
+		inventoryStockLocationId: inventoryStockLocationId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETInventoryStockLocationIdVersionsExecute(r HasManyApiGETInventoryStockLocationIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETInventoryStockLocationIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/inventory_stock_locations/{inventoryStockLocationId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryStockLocationId, "inventoryStockLocationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
@@ -6831,6 +13915,282 @@ func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r HasManyApi
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETKlarnaGatewayIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	klarnaGatewayId interface{}
+}
+
+func (r HasManyApiGETKlarnaGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETKlarnaGatewayIdVersionsExecute(r)
+}
+
+/*
+GETKlarnaGatewayIdVersions Retrieve the versions associated to the klarna gateway
+
+Retrieve the versions associated to the klarna gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param klarnaGatewayId The resource's id
+	@return HasManyApiGETKlarnaGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETKlarnaGatewayIdVersions(ctx context.Context, klarnaGatewayId interface{}) HasManyApiGETKlarnaGatewayIdVersionsRequest {
+	return HasManyApiGETKlarnaGatewayIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		klarnaGatewayId: klarnaGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETKlarnaGatewayIdVersionsExecute(r HasManyApiGETKlarnaGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETKlarnaGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETKlarnaPaymentIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	klarnaPaymentId interface{}
+}
+
+func (r HasManyApiGETKlarnaPaymentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETKlarnaPaymentIdVersionsExecute(r)
+}
+
+/*
+GETKlarnaPaymentIdVersions Retrieve the versions associated to the klarna payment
+
+Retrieve the versions associated to the klarna payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param klarnaPaymentId The resource's id
+	@return HasManyApiGETKlarnaPaymentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETKlarnaPaymentIdVersions(ctx context.Context, klarnaPaymentId interface{}) HasManyApiGETKlarnaPaymentIdVersionsRequest {
+	return HasManyApiGETKlarnaPaymentIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		klarnaPaymentId: klarnaPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETKlarnaPaymentIdVersionsExecute(r HasManyApiGETKlarnaPaymentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETKlarnaPaymentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETLineItemIdEventsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	lineItemId interface{}
+}
+
+func (r HasManyApiGETLineItemIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETLineItemIdEventsExecute(r)
+}
+
+/*
+GETLineItemIdEvents Retrieve the events associated to the line item
+
+Retrieve the events associated to the line item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return HasManyApiGETLineItemIdEventsRequest
+*/
+func (a *HasManyApiService) GETLineItemIdEvents(ctx context.Context, lineItemId interface{}) HasManyApiGETLineItemIdEventsRequest {
+	return HasManyApiGETLineItemIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		lineItemId: lineItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETLineItemIdEventsExecute(r HasManyApiGETLineItemIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLineItemIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/line_items/{lineItemId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETLineItemIdLineItemOptionsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -6872,6 +14232,98 @@ func (a *HasManyApiService) GETLineItemIdLineItemOptionsExecute(r HasManyApiGETL
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/line_item_options"
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETLineItemIdReturnLineItemsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	lineItemId interface{}
+}
+
+func (r HasManyApiGETLineItemIdReturnLineItemsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETLineItemIdReturnLineItemsExecute(r)
+}
+
+/*
+GETLineItemIdReturnLineItems Retrieve the return line items associated to the line item
+
+Retrieve the return line items associated to the line item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return HasManyApiGETLineItemIdReturnLineItemsRequest
+*/
+func (a *HasManyApiService) GETLineItemIdReturnLineItems(ctx context.Context, lineItemId interface{}) HasManyApiGETLineItemIdReturnLineItemsRequest {
+	return HasManyApiGETLineItemIdReturnLineItemsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		lineItemId: lineItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETLineItemIdReturnLineItemsExecute(r HasManyApiGETLineItemIdReturnLineItemsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLineItemIdReturnLineItems")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/line_items/{lineItemId}/return_line_items"
 	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7015,6 +14467,98 @@ func (a *HasManyApiService) GETLineItemIdStockLineItemsExecute(r HasManyApiGETLi
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETLineItemIdStockReservationsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	lineItemId interface{}
+}
+
+func (r HasManyApiGETLineItemIdStockReservationsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETLineItemIdStockReservationsExecute(r)
+}
+
+/*
+GETLineItemIdStockReservations Retrieve the stock reservations associated to the line item
+
+Retrieve the stock reservations associated to the line item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return HasManyApiGETLineItemIdStockReservationsRequest
+*/
+func (a *HasManyApiService) GETLineItemIdStockReservations(ctx context.Context, lineItemId interface{}) HasManyApiGETLineItemIdStockReservationsRequest {
+	return HasManyApiGETLineItemIdStockReservationsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		lineItemId: lineItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETLineItemIdStockReservationsExecute(r HasManyApiGETLineItemIdStockReservationsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLineItemIdStockReservations")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/line_items/{lineItemId}/stock_reservations"
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETLineItemIdStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -7107,6 +14651,374 @@ func (a *HasManyApiService) GETLineItemIdStockTransfersExecute(r HasManyApiGETLi
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETLineItemIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	lineItemId interface{}
+}
+
+func (r HasManyApiGETLineItemIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETLineItemIdTagsExecute(r)
+}
+
+/*
+GETLineItemIdTags Retrieve the tags associated to the line item
+
+Retrieve the tags associated to the line item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return HasManyApiGETLineItemIdTagsRequest
+*/
+func (a *HasManyApiService) GETLineItemIdTags(ctx context.Context, lineItemId interface{}) HasManyApiGETLineItemIdTagsRequest {
+	return HasManyApiGETLineItemIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		lineItemId: lineItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETLineItemIdTagsExecute(r HasManyApiGETLineItemIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLineItemIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/line_items/{lineItemId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETLineItemOptionIdEventsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	lineItemOptionId interface{}
+}
+
+func (r HasManyApiGETLineItemOptionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETLineItemOptionIdEventsExecute(r)
+}
+
+/*
+GETLineItemOptionIdEvents Retrieve the events associated to the line item option
+
+Retrieve the events associated to the line item option
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemOptionId The resource's id
+	@return HasManyApiGETLineItemOptionIdEventsRequest
+*/
+func (a *HasManyApiService) GETLineItemOptionIdEvents(ctx context.Context, lineItemOptionId interface{}) HasManyApiGETLineItemOptionIdEventsRequest {
+	return HasManyApiGETLineItemOptionIdEventsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		lineItemOptionId: lineItemOptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETLineItemOptionIdEventsExecute(r HasManyApiGETLineItemOptionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLineItemOptionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETLineItemOptionIdTagsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	lineItemOptionId interface{}
+}
+
+func (r HasManyApiGETLineItemOptionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETLineItemOptionIdTagsExecute(r)
+}
+
+/*
+GETLineItemOptionIdTags Retrieve the tags associated to the line item option
+
+Retrieve the tags associated to the line item option
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemOptionId The resource's id
+	@return HasManyApiGETLineItemOptionIdTagsRequest
+*/
+func (a *HasManyApiService) GETLineItemOptionIdTags(ctx context.Context, lineItemOptionId interface{}) HasManyApiGETLineItemOptionIdTagsRequest {
+	return HasManyApiGETLineItemOptionIdTagsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		lineItemOptionId: lineItemOptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETLineItemOptionIdTagsExecute(r HasManyApiGETLineItemOptionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLineItemOptionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETLinkIdEventsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	linkId     interface{}
+}
+
+func (r HasManyApiGETLinkIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETLinkIdEventsExecute(r)
+}
+
+/*
+GETLinkIdEvents Retrieve the events associated to the link
+
+Retrieve the events associated to the link
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param linkId The resource's id
+	@return HasManyApiGETLinkIdEventsRequest
+*/
+func (a *HasManyApiService) GETLinkIdEvents(ctx context.Context, linkId interface{}) HasManyApiGETLinkIdEventsRequest {
+	return HasManyApiGETLinkIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		linkId:     linkId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETLinkIdEventsExecute(r HasManyApiGETLinkIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLinkIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/links/{linkId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"linkId"+"}", url.PathEscape(parameterValueToString(r.linkId, "linkId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETManualGatewayIdPaymentMethodsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
@@ -7148,6 +15060,98 @@ func (a *HasManyApiService) GETManualGatewayIdPaymentMethodsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/manual_gateways/{manualGatewayId}/payment_methods"
+	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterValueToString(r.manualGatewayId, "manualGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETManualGatewayIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	manualGatewayId interface{}
+}
+
+func (r HasManyApiGETManualGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETManualGatewayIdVersionsExecute(r)
+}
+
+/*
+GETManualGatewayIdVersions Retrieve the versions associated to the manual gateway
+
+Retrieve the versions associated to the manual gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualGatewayId The resource's id
+	@return HasManyApiGETManualGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETManualGatewayIdVersions(ctx context.Context, manualGatewayId interface{}) HasManyApiGETManualGatewayIdVersionsRequest {
+	return HasManyApiGETManualGatewayIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		manualGatewayId: manualGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETManualGatewayIdVersionsExecute(r HasManyApiGETManualGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETManualGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/manual_gateways/{manualGatewayId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterValueToString(r.manualGatewayId, "manualGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7475,6 +15479,98 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRulesExecute(r HasManyApi
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETManualTaxCalculatorIdVersionsRequest struct {
+	ctx                   context.Context
+	ApiService            *HasManyApiService
+	manualTaxCalculatorId interface{}
+}
+
+func (r HasManyApiGETManualTaxCalculatorIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETManualTaxCalculatorIdVersionsExecute(r)
+}
+
+/*
+GETManualTaxCalculatorIdVersions Retrieve the versions associated to the manual tax calculator
+
+Retrieve the versions associated to the manual tax calculator
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualTaxCalculatorId The resource's id
+	@return HasManyApiGETManualTaxCalculatorIdVersionsRequest
+*/
+func (a *HasManyApiService) GETManualTaxCalculatorIdVersions(ctx context.Context, manualTaxCalculatorId interface{}) HasManyApiGETManualTaxCalculatorIdVersionsRequest {
+	return HasManyApiGETManualTaxCalculatorIdVersionsRequest{
+		ApiService:            a,
+		ctx:                   ctx,
+		manualTaxCalculatorId: manualTaxCalculatorId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETManualTaxCalculatorIdVersionsExecute(r HasManyApiGETManualTaxCalculatorIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETManualTaxCalculatorIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETMarketIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -7516,6 +15612,190 @@ func (a *HasManyApiService) GETMarketIdAttachmentsExecute(r HasManyApiGETMarketI
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETMarketIdPriceListSchedulersRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	marketId   interface{}
+}
+
+func (r HasManyApiGETMarketIdPriceListSchedulersRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETMarketIdPriceListSchedulersExecute(r)
+}
+
+/*
+GETMarketIdPriceListSchedulers Retrieve the price list schedulers associated to the market
+
+Retrieve the price list schedulers associated to the market
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return HasManyApiGETMarketIdPriceListSchedulersRequest
+*/
+func (a *HasManyApiService) GETMarketIdPriceListSchedulers(ctx context.Context, marketId interface{}) HasManyApiGETMarketIdPriceListSchedulersRequest {
+	return HasManyApiGETMarketIdPriceListSchedulersRequest{
+		ApiService: a,
+		ctx:        ctx,
+		marketId:   marketId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETMarketIdPriceListSchedulersExecute(r HasManyApiGETMarketIdPriceListSchedulersRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETMarketIdPriceListSchedulers")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/markets/{marketId}/price_list_schedulers"
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETMarketIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	marketId   interface{}
+}
+
+func (r HasManyApiGETMarketIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETMarketIdVersionsExecute(r)
+}
+
+/*
+GETMarketIdVersions Retrieve the versions associated to the market
+
+Retrieve the versions associated to the market
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return HasManyApiGETMarketIdVersionsRequest
+*/
+func (a *HasManyApiService) GETMarketIdVersions(ctx context.Context, marketId interface{}) HasManyApiGETMarketIdVersionsRequest {
+	return HasManyApiGETMarketIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		marketId:   marketId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETMarketIdVersionsExecute(r HasManyApiGETMarketIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETMarketIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/markets/{marketId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7609,6 +15889,190 @@ func (a *HasManyApiService) GETMerchantIdAttachmentsExecute(r HasManyApiGETMerch
 
 	localVarPath := localBasePath + "/merchants/{merchantId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETMerchantIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	merchantId interface{}
+}
+
+func (r HasManyApiGETMerchantIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETMerchantIdVersionsExecute(r)
+}
+
+/*
+GETMerchantIdVersions Retrieve the versions associated to the merchant
+
+Retrieve the versions associated to the merchant
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param merchantId The resource's id
+	@return HasManyApiGETMerchantIdVersionsRequest
+*/
+func (a *HasManyApiService) GETMerchantIdVersions(ctx context.Context, merchantId interface{}) HasManyApiGETMerchantIdVersionsRequest {
+	return HasManyApiGETMerchantIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		merchantId: merchantId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETMerchantIdVersionsExecute(r HasManyApiGETMerchantIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETMerchantIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/merchants/{merchantId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderAmountPromotionRuleIdVersionsRequest struct {
+	ctx                        context.Context
+	ApiService                 *HasManyApiService
+	orderAmountPromotionRuleId interface{}
+}
+
+func (r HasManyApiGETOrderAmountPromotionRuleIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderAmountPromotionRuleIdVersionsExecute(r)
+}
+
+/*
+GETOrderAmountPromotionRuleIdVersions Retrieve the versions associated to the order amount promotion rule
+
+Retrieve the versions associated to the order amount promotion rule
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderAmountPromotionRuleId The resource's id
+	@return HasManyApiGETOrderAmountPromotionRuleIdVersionsRequest
+*/
+func (a *HasManyApiService) GETOrderAmountPromotionRuleIdVersions(ctx context.Context, orderAmountPromotionRuleId interface{}) HasManyApiGETOrderAmountPromotionRuleIdVersionsRequest {
+	return HasManyApiGETOrderAmountPromotionRuleIdVersionsRequest{
+		ApiService:                 a,
+		ctx:                        ctx,
+		orderAmountPromotionRuleId: orderAmountPromotionRuleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderAmountPromotionRuleIdVersionsExecute(r HasManyApiGETOrderAmountPromotionRuleIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderAmountPromotionRuleIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_amount_promotion_rules/{orderAmountPromotionRuleId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderAmountPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.orderAmountPromotionRuleId, "orderAmountPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8579,6 +17043,98 @@ func (a *HasManyApiService) GETOrderIdEventsExecute(r HasManyApiGETOrderIdEvents
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETOrderIdLineItemOptionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdLineItemOptionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdLineItemOptionsExecute(r)
+}
+
+/*
+GETOrderIdLineItemOptions Retrieve the line item options associated to the order
+
+Retrieve the line item options associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdLineItemOptionsRequest
+*/
+func (a *HasManyApiService) GETOrderIdLineItemOptions(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdLineItemOptionsRequest {
+	return HasManyApiGETOrderIdLineItemOptionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdLineItemOptionsExecute(r HasManyApiGETOrderIdLineItemOptionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdLineItemOptions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/line_item_options"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETOrderIdLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -8620,6 +17176,98 @@ func (a *HasManyApiService) GETOrderIdLineItemsExecute(r HasManyApiGETOrderIdLin
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/line_items"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdLinksRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdLinksRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdLinksExecute(r)
+}
+
+/*
+GETOrderIdLinks Retrieve the links associated to the order
+
+Retrieve the links associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdLinksRequest
+*/
+func (a *HasManyApiService) GETOrderIdLinks(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdLinksRequest {
+	return HasManyApiGETOrderIdLinksRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdLinksExecute(r HasManyApiGETOrderIdLinksRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdLinks")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/links"
 	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8947,6 +17595,98 @@ func (a *HasManyApiService) GETOrderIdOrderSubscriptionsExecute(r HasManyApiGETO
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETOrderIdPaymentOptionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdPaymentOptionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdPaymentOptionsExecute(r)
+}
+
+/*
+GETOrderIdPaymentOptions Retrieve the payment options associated to the order
+
+Retrieve the payment options associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdPaymentOptionsRequest
+*/
+func (a *HasManyApiService) GETOrderIdPaymentOptions(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdPaymentOptionsRequest {
+	return HasManyApiGETOrderIdPaymentOptionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdPaymentOptionsExecute(r HasManyApiGETOrderIdPaymentOptionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdPaymentOptions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/payment_options"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETOrderIdRecurringOrderCopiesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -9131,6 +17871,98 @@ func (a *HasManyApiService) GETOrderIdRefundsExecute(r HasManyApiGETOrderIdRefun
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETOrderIdResourceErrorsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdResourceErrorsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdResourceErrorsExecute(r)
+}
+
+/*
+GETOrderIdResourceErrors Retrieve the resource errors associated to the order
+
+Retrieve the resource errors associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdResourceErrorsRequest
+*/
+func (a *HasManyApiService) GETOrderIdResourceErrors(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdResourceErrorsRequest {
+	return HasManyApiGETOrderIdResourceErrorsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdResourceErrorsExecute(r HasManyApiGETOrderIdResourceErrorsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdResourceErrors")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/resource_errors"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETOrderIdReturnsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -9264,6 +18096,466 @@ func (a *HasManyApiService) GETOrderIdShipmentsExecute(r HasManyApiGETOrderIdShi
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/shipments"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdStockLineItemsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdStockLineItemsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdStockLineItemsExecute(r)
+}
+
+/*
+GETOrderIdStockLineItems Retrieve the stock line items associated to the order
+
+Retrieve the stock line items associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdStockLineItemsRequest
+*/
+func (a *HasManyApiService) GETOrderIdStockLineItems(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdStockLineItemsRequest {
+	return HasManyApiGETOrderIdStockLineItemsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdStockLineItemsExecute(r HasManyApiGETOrderIdStockLineItemsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdStockLineItems")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/stock_line_items"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdStockReservationsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdStockReservationsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdStockReservationsExecute(r)
+}
+
+/*
+GETOrderIdStockReservations Retrieve the stock reservations associated to the order
+
+Retrieve the stock reservations associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdStockReservationsRequest
+*/
+func (a *HasManyApiService) GETOrderIdStockReservations(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdStockReservationsRequest {
+	return HasManyApiGETOrderIdStockReservationsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdStockReservationsExecute(r HasManyApiGETOrderIdStockReservationsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdStockReservations")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/stock_reservations"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdStockTransfersRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdStockTransfersRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdStockTransfersExecute(r)
+}
+
+/*
+GETOrderIdStockTransfers Retrieve the stock transfers associated to the order
+
+Retrieve the stock transfers associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdStockTransfersRequest
+*/
+func (a *HasManyApiService) GETOrderIdStockTransfers(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdStockTransfersRequest {
+	return HasManyApiGETOrderIdStockTransfersRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdStockTransfersExecute(r HasManyApiGETOrderIdStockTransfersRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdStockTransfers")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/stock_transfers"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdTagsExecute(r)
+}
+
+/*
+GETOrderIdTags Retrieve the tags associated to the order
+
+Retrieve the tags associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdTagsRequest
+*/
+func (a *HasManyApiService) GETOrderIdTags(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdTagsRequest {
+	return HasManyApiGETOrderIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdTagsExecute(r HasManyApiGETOrderIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdVersionsExecute(r)
+}
+
+/*
+GETOrderIdVersions Retrieve the versions associated to the order
+
+Retrieve the versions associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdVersionsRequest
+*/
+func (a *HasManyApiService) GETOrderIdVersions(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdVersionsRequest {
+	return HasManyApiGETOrderIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdVersionsExecute(r HasManyApiGETOrderIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9867,48 +19159,140 @@ func (a *HasManyApiService) GETOrderSubscriptionIdRecurringOrderCopiesExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type HasManyApiGETOrderValidationRuleIdAttachmentsRequest struct {
-	ctx                   context.Context
-	ApiService            *HasManyApiService
-	orderValidationRuleId interface{}
+type HasManyApiGETOrderSubscriptionIdTagsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	orderSubscriptionId interface{}
 }
 
-func (r HasManyApiGETOrderValidationRuleIdAttachmentsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GETOrderValidationRuleIdAttachmentsExecute(r)
+func (r HasManyApiGETOrderSubscriptionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionIdTagsExecute(r)
 }
 
 /*
-GETOrderValidationRuleIdAttachments Retrieve the attachments associated to the order validation rule
+GETOrderSubscriptionIdTags Retrieve the tags associated to the order subscription
 
-Retrieve the attachments associated to the order validation rule
+Retrieve the tags associated to the order subscription
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param orderValidationRuleId The resource's id
-	@return HasManyApiGETOrderValidationRuleIdAttachmentsRequest
+	@param orderSubscriptionId The resource's id
+	@return HasManyApiGETOrderSubscriptionIdTagsRequest
 */
-func (a *HasManyApiService) GETOrderValidationRuleIdAttachments(ctx context.Context, orderValidationRuleId interface{}) HasManyApiGETOrderValidationRuleIdAttachmentsRequest {
-	return HasManyApiGETOrderValidationRuleIdAttachmentsRequest{
-		ApiService:            a,
-		ctx:                   ctx,
-		orderValidationRuleId: orderValidationRuleId,
+func (a *HasManyApiService) GETOrderSubscriptionIdTags(ctx context.Context, orderSubscriptionId interface{}) HasManyApiGETOrderSubscriptionIdTagsRequest {
+	return HasManyApiGETOrderSubscriptionIdTagsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		orderSubscriptionId: orderSubscriptionId,
 	}
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderValidationRuleIdAttachmentsExecute(r HasManyApiGETOrderValidationRuleIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderSubscriptionIdTagsExecute(r HasManyApiGETOrderSubscriptionIdTagsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderValidationRuleIdAttachments")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdTags")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
+	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderSubscriptionIdVersionsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	orderSubscriptionId interface{}
+}
+
+func (r HasManyApiGETOrderSubscriptionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionIdVersionsExecute(r)
+}
+
+/*
+GETOrderSubscriptionIdVersions Retrieve the versions associated to the order subscription
+
+Retrieve the versions associated to the order subscription
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return HasManyApiGETOrderSubscriptionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETOrderSubscriptionIdVersions(ctx context.Context, orderSubscriptionId interface{}) HasManyApiGETOrderSubscriptionIdVersionsRequest {
+	return HasManyApiGETOrderSubscriptionIdVersionsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		orderSubscriptionId: orderSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderSubscriptionIdVersionsExecute(r HasManyApiGETOrderSubscriptionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10092,6 +19476,98 @@ func (a *HasManyApiService) GETPackageIdParcelsExecute(r HasManyApiGETPackageIdP
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}/parcels"
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPackageIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	packageId  interface{}
+}
+
+func (r HasManyApiGETPackageIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPackageIdVersionsExecute(r)
+}
+
+/*
+GETPackageIdVersions Retrieve the versions associated to the package
+
+Retrieve the versions associated to the package
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param packageId The resource's id
+	@return HasManyApiGETPackageIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPackageIdVersions(ctx context.Context, packageId interface{}) HasManyApiGETPackageIdVersionsRequest {
+	return HasManyApiGETPackageIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		packageId:  packageId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPackageIdVersionsExecute(r HasManyApiGETPackageIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPackageIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/packages/{packageId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10419,6 +19895,190 @@ func (a *HasManyApiService) GETParcelIdParcelLineItemsExecute(r HasManyApiGETPar
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETParcelIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	parcelId   interface{}
+}
+
+func (r HasManyApiGETParcelIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETParcelIdVersionsExecute(r)
+}
+
+/*
+GETParcelIdVersions Retrieve the versions associated to the parcel
+
+Retrieve the versions associated to the parcel
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param parcelId The resource's id
+	@return HasManyApiGETParcelIdVersionsRequest
+*/
+func (a *HasManyApiService) GETParcelIdVersions(ctx context.Context, parcelId interface{}) HasManyApiGETParcelIdVersionsRequest {
+	return HasManyApiGETParcelIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		parcelId:   parcelId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETParcelIdVersionsExecute(r HasManyApiGETParcelIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETParcelIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/parcels/{parcelId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETParcelLineItemIdVersionsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	parcelLineItemId interface{}
+}
+
+func (r HasManyApiGETParcelLineItemIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETParcelLineItemIdVersionsExecute(r)
+}
+
+/*
+GETParcelLineItemIdVersions Retrieve the versions associated to the parcel line item
+
+Retrieve the versions associated to the parcel line item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param parcelLineItemId The resource's id
+	@return HasManyApiGETParcelLineItemIdVersionsRequest
+*/
+func (a *HasManyApiService) GETParcelLineItemIdVersions(ctx context.Context, parcelLineItemId interface{}) HasManyApiGETParcelLineItemIdVersionsRequest {
+	return HasManyApiGETParcelLineItemIdVersionsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		parcelLineItemId: parcelLineItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETParcelLineItemIdVersionsExecute(r HasManyApiGETParcelLineItemIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETParcelLineItemIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/parcel_line_items/{parcelLineItemId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterValueToString(r.parcelLineItemId, "parcelLineItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETPaymentGatewayIdPaymentMethodsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
@@ -10460,6 +20120,98 @@ func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethodsExecute(r HasManyAp
 	}
 
 	localVarPath := localBasePath + "/payment_gateways/{paymentGatewayId}/payment_methods"
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentGatewayId"+"}", url.PathEscape(parameterValueToString(r.paymentGatewayId, "paymentGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPaymentGatewayIdVersionsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	paymentGatewayId interface{}
+}
+
+func (r HasManyApiGETPaymentGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPaymentGatewayIdVersionsExecute(r)
+}
+
+/*
+GETPaymentGatewayIdVersions Retrieve the versions associated to the payment gateway
+
+Retrieve the versions associated to the payment gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paymentGatewayId The resource's id
+	@return HasManyApiGETPaymentGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPaymentGatewayIdVersions(ctx context.Context, paymentGatewayId interface{}) HasManyApiGETPaymentGatewayIdVersionsRequest {
+	return HasManyApiGETPaymentGatewayIdVersionsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		paymentGatewayId: paymentGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPaymentGatewayIdVersionsExecute(r HasManyApiGETPaymentGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPaymentGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/payment_gateways/{paymentGatewayId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"paymentGatewayId"+"}", url.PathEscape(parameterValueToString(r.paymentGatewayId, "paymentGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10553,6 +20305,190 @@ func (a *HasManyApiService) GETPaymentMethodIdAttachmentsExecute(r HasManyApiGET
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPaymentMethodIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	paymentMethodId interface{}
+}
+
+func (r HasManyApiGETPaymentMethodIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPaymentMethodIdVersionsExecute(r)
+}
+
+/*
+GETPaymentMethodIdVersions Retrieve the versions associated to the payment method
+
+Retrieve the versions associated to the payment method
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paymentMethodId The resource's id
+	@return HasManyApiGETPaymentMethodIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPaymentMethodIdVersions(ctx context.Context, paymentMethodId interface{}) HasManyApiGETPaymentMethodIdVersionsRequest {
+	return HasManyApiGETPaymentMethodIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		paymentMethodId: paymentMethodId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPaymentMethodIdVersionsExecute(r HasManyApiGETPaymentMethodIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPaymentMethodIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPaymentOptionIdAttachmentsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	paymentOptionId interface{}
+}
+
+func (r HasManyApiGETPaymentOptionIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPaymentOptionIdAttachmentsExecute(r)
+}
+
+/*
+GETPaymentOptionIdAttachments Retrieve the attachments associated to the payment option
+
+Retrieve the attachments associated to the payment option
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paymentOptionId The resource's id
+	@return HasManyApiGETPaymentOptionIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETPaymentOptionIdAttachments(ctx context.Context, paymentOptionId interface{}) HasManyApiGETPaymentOptionIdAttachmentsRequest {
+	return HasManyApiGETPaymentOptionIdAttachmentsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		paymentOptionId: paymentOptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPaymentOptionIdAttachmentsExecute(r HasManyApiGETPaymentOptionIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPaymentOptionIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/payment_options/{paymentOptionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentOptionId"+"}", url.PathEscape(parameterValueToString(r.paymentOptionId, "paymentOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10787,6 +20723,190 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r HasManyApi
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETPaypalGatewayIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	paypalGatewayId interface{}
+}
+
+func (r HasManyApiGETPaypalGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPaypalGatewayIdVersionsExecute(r)
+}
+
+/*
+GETPaypalGatewayIdVersions Retrieve the versions associated to the paypal gateway
+
+Retrieve the versions associated to the paypal gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalGatewayId The resource's id
+	@return HasManyApiGETPaypalGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPaypalGatewayIdVersions(ctx context.Context, paypalGatewayId interface{}) HasManyApiGETPaypalGatewayIdVersionsRequest {
+	return HasManyApiGETPaypalGatewayIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		paypalGatewayId: paypalGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPaypalGatewayIdVersionsExecute(r HasManyApiGETPaypalGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPaypalGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/paypal_gateways/{paypalGatewayId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterValueToString(r.paypalGatewayId, "paypalGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPaypalPaymentIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	paypalPaymentId interface{}
+}
+
+func (r HasManyApiGETPaypalPaymentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPaypalPaymentIdVersionsExecute(r)
+}
+
+/*
+GETPaypalPaymentIdVersions Retrieve the versions associated to the paypal payment
+
+Retrieve the versions associated to the paypal payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalPaymentId The resource's id
+	@return HasManyApiGETPaypalPaymentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPaypalPaymentIdVersions(ctx context.Context, paypalPaymentId interface{}) HasManyApiGETPaypalPaymentIdVersionsRequest {
+	return HasManyApiGETPaypalPaymentIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		paypalPaymentId: paypalPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPaypalPaymentIdVersionsExecute(r HasManyApiGETPaypalPaymentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPaypalPaymentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest struct {
 	ctx                           context.Context
 	ApiService                    *HasManyApiService
@@ -10828,6 +20948,98 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPercentageDiscountPromotionIdCouponsRequest struct {
+	ctx                           context.Context
+	ApiService                    *HasManyApiService
+	percentageDiscountPromotionId interface{}
+}
+
+func (r HasManyApiGETPercentageDiscountPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPercentageDiscountPromotionIdCouponsExecute(r)
+}
+
+/*
+GETPercentageDiscountPromotionIdCoupons Retrieve the coupons associated to the percentage discount promotion
+
+Retrieve the coupons associated to the percentage discount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return HasManyApiGETPercentageDiscountPromotionIdCouponsRequest
+*/
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdCoupons(ctx context.Context, percentageDiscountPromotionId interface{}) HasManyApiGETPercentageDiscountPromotionIdCouponsRequest {
+	return HasManyApiGETPercentageDiscountPromotionIdCouponsRequest{
+		ApiService:                    a,
+		ctx:                           ctx,
+		percentageDiscountPromotionId: percentageDiscountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdCouponsExecute(r HasManyApiGETPercentageDiscountPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPercentageDiscountPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/coupons"
 	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11063,6 +21275,190 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkusExecute(r HasMan
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETPercentageDiscountPromotionIdTagsRequest struct {
+	ctx                           context.Context
+	ApiService                    *HasManyApiService
+	percentageDiscountPromotionId interface{}
+}
+
+func (r HasManyApiGETPercentageDiscountPromotionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPercentageDiscountPromotionIdTagsExecute(r)
+}
+
+/*
+GETPercentageDiscountPromotionIdTags Retrieve the tags associated to the percentage discount promotion
+
+Retrieve the tags associated to the percentage discount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return HasManyApiGETPercentageDiscountPromotionIdTagsRequest
+*/
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdTags(ctx context.Context, percentageDiscountPromotionId interface{}) HasManyApiGETPercentageDiscountPromotionIdTagsRequest {
+	return HasManyApiGETPercentageDiscountPromotionIdTagsRequest{
+		ApiService:                    a,
+		ctx:                           ctx,
+		percentageDiscountPromotionId: percentageDiscountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdTagsExecute(r HasManyApiGETPercentageDiscountPromotionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPercentageDiscountPromotionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPercentageDiscountPromotionIdVersionsRequest struct {
+	ctx                           context.Context
+	ApiService                    *HasManyApiService
+	percentageDiscountPromotionId interface{}
+}
+
+func (r HasManyApiGETPercentageDiscountPromotionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPercentageDiscountPromotionIdVersionsExecute(r)
+}
+
+/*
+GETPercentageDiscountPromotionIdVersions Retrieve the versions associated to the percentage discount promotion
+
+Retrieve the versions associated to the percentage discount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return HasManyApiGETPercentageDiscountPromotionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdVersions(ctx context.Context, percentageDiscountPromotionId interface{}) HasManyApiGETPercentageDiscountPromotionIdVersionsRequest {
+	return HasManyApiGETPercentageDiscountPromotionIdVersionsRequest{
+		ApiService:                    a,
+		ctx:                           ctx,
+		percentageDiscountPromotionId: percentageDiscountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdVersionsExecute(r HasManyApiGETPercentageDiscountPromotionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPercentageDiscountPromotionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETPriceFrequencyTierIdAttachmentsRequest struct {
 	ctx                  context.Context
 	ApiService           *HasManyApiService
@@ -11247,6 +21643,98 @@ func (a *HasManyApiService) GETPriceFrequencyTierIdEventsExecute(r HasManyApiGET
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETPriceFrequencyTierIdVersionsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	priceFrequencyTierId interface{}
+}
+
+func (r HasManyApiGETPriceFrequencyTierIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceFrequencyTierIdVersionsExecute(r)
+}
+
+/*
+GETPriceFrequencyTierIdVersions Retrieve the versions associated to the price frequency tier
+
+Retrieve the versions associated to the price frequency tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceFrequencyTierId The resource's id
+	@return HasManyApiGETPriceFrequencyTierIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPriceFrequencyTierIdVersions(ctx context.Context, priceFrequencyTierId interface{}) HasManyApiGETPriceFrequencyTierIdVersionsRequest {
+	return HasManyApiGETPriceFrequencyTierIdVersionsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceFrequencyTierId: priceFrequencyTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceFrequencyTierIdVersionsExecute(r HasManyApiGETPriceFrequencyTierIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceFrequencyTierIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETPriceIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -11288,6 +21776,190 @@ func (a *HasManyApiService) GETPriceIdAttachmentsExecute(r HasManyApiGETPriceIdA
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceIdJwtMarketsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	priceId    interface{}
+}
+
+func (r HasManyApiGETPriceIdJwtMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceIdJwtMarketsExecute(r)
+}
+
+/*
+GETPriceIdJwtMarkets Retrieve the jwt markets associated to the price
+
+Retrieve the jwt markets associated to the price
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return HasManyApiGETPriceIdJwtMarketsRequest
+*/
+func (a *HasManyApiService) GETPriceIdJwtMarkets(ctx context.Context, priceId interface{}) HasManyApiGETPriceIdJwtMarketsRequest {
+	return HasManyApiGETPriceIdJwtMarketsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		priceId:    priceId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceIdJwtMarketsExecute(r HasManyApiGETPriceIdJwtMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceIdJwtMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/prices/{priceId}/jwt_markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceIdJwtStockLocationsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	priceId    interface{}
+}
+
+func (r HasManyApiGETPriceIdJwtStockLocationsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceIdJwtStockLocationsExecute(r)
+}
+
+/*
+GETPriceIdJwtStockLocations Retrieve the jwt stock locations associated to the price
+
+Retrieve the jwt stock locations associated to the price
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return HasManyApiGETPriceIdJwtStockLocationsRequest
+*/
+func (a *HasManyApiService) GETPriceIdJwtStockLocations(ctx context.Context, priceId interface{}) HasManyApiGETPriceIdJwtStockLocationsRequest {
+	return HasManyApiGETPriceIdJwtStockLocationsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		priceId:    priceId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceIdJwtStockLocationsExecute(r HasManyApiGETPriceIdJwtStockLocationsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceIdJwtStockLocations")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/prices/{priceId}/jwt_stock_locations"
 	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11615,6 +22287,98 @@ func (a *HasManyApiService) GETPriceIdPriceVolumeTiersExecute(r HasManyApiGETPri
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETPriceIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	priceId    interface{}
+}
+
+func (r HasManyApiGETPriceIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceIdVersionsExecute(r)
+}
+
+/*
+GETPriceIdVersions Retrieve the versions associated to the price
+
+Retrieve the versions associated to the price
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return HasManyApiGETPriceIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPriceIdVersions(ctx context.Context, priceId interface{}) HasManyApiGETPriceIdVersionsRequest {
+	return HasManyApiGETPriceIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		priceId:    priceId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceIdVersionsExecute(r HasManyApiGETPriceIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/prices/{priceId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETPriceListIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
@@ -11656,6 +22420,98 @@ func (a *HasManyApiService) GETPriceListIdAttachmentsExecute(r HasManyApiGETPric
 	}
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceListIdPriceListSchedulersRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	priceListId interface{}
+}
+
+func (r HasManyApiGETPriceListIdPriceListSchedulersRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceListIdPriceListSchedulersExecute(r)
+}
+
+/*
+GETPriceListIdPriceListSchedulers Retrieve the price list schedulers associated to the price list
+
+Retrieve the price list schedulers associated to the price list
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceListId The resource's id
+	@return HasManyApiGETPriceListIdPriceListSchedulersRequest
+*/
+func (a *HasManyApiService) GETPriceListIdPriceListSchedulers(ctx context.Context, priceListId interface{}) HasManyApiGETPriceListIdPriceListSchedulersRequest {
+	return HasManyApiGETPriceListIdPriceListSchedulersRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		priceListId: priceListId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceListIdPriceListSchedulersExecute(r HasManyApiGETPriceListIdPriceListSchedulersRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceListIdPriceListSchedulers")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_lists/{priceListId}/price_list_schedulers"
 	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11799,6 +22655,282 @@ func (a *HasManyApiService) GETPriceListIdPricesExecute(r HasManyApiGETPriceList
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETPriceListIdVersionsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	priceListId interface{}
+}
+
+func (r HasManyApiGETPriceListIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceListIdVersionsExecute(r)
+}
+
+/*
+GETPriceListIdVersions Retrieve the versions associated to the price list
+
+Retrieve the versions associated to the price list
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceListId The resource's id
+	@return HasManyApiGETPriceListIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPriceListIdVersions(ctx context.Context, priceListId interface{}) HasManyApiGETPriceListIdVersionsRequest {
+	return HasManyApiGETPriceListIdVersionsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		priceListId: priceListId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceListIdVersionsExecute(r HasManyApiGETPriceListIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceListIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_lists/{priceListId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceListSchedulerIdEventsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	priceListSchedulerId interface{}
+}
+
+func (r HasManyApiGETPriceListSchedulerIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceListSchedulerIdEventsExecute(r)
+}
+
+/*
+GETPriceListSchedulerIdEvents Retrieve the events associated to the price list scheduler
+
+Retrieve the events associated to the price list scheduler
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceListSchedulerId The resource's id
+	@return HasManyApiGETPriceListSchedulerIdEventsRequest
+*/
+func (a *HasManyApiService) GETPriceListSchedulerIdEvents(ctx context.Context, priceListSchedulerId interface{}) HasManyApiGETPriceListSchedulerIdEventsRequest {
+	return HasManyApiGETPriceListSchedulerIdEventsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceListSchedulerId: priceListSchedulerId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceListSchedulerIdEventsExecute(r HasManyApiGETPriceListSchedulerIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceListSchedulerIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_list_schedulers/{priceListSchedulerId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListSchedulerId"+"}", url.PathEscape(parameterValueToString(r.priceListSchedulerId, "priceListSchedulerId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceListSchedulerIdVersionsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	priceListSchedulerId interface{}
+}
+
+func (r HasManyApiGETPriceListSchedulerIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceListSchedulerIdVersionsExecute(r)
+}
+
+/*
+GETPriceListSchedulerIdVersions Retrieve the versions associated to the price list scheduler
+
+Retrieve the versions associated to the price list scheduler
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceListSchedulerId The resource's id
+	@return HasManyApiGETPriceListSchedulerIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPriceListSchedulerIdVersions(ctx context.Context, priceListSchedulerId interface{}) HasManyApiGETPriceListSchedulerIdVersionsRequest {
+	return HasManyApiGETPriceListSchedulerIdVersionsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceListSchedulerId: priceListSchedulerId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceListSchedulerIdVersionsExecute(r HasManyApiGETPriceListSchedulerIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceListSchedulerIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_list_schedulers/{priceListSchedulerId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListSchedulerId"+"}", url.PathEscape(parameterValueToString(r.priceListSchedulerId, "priceListSchedulerId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETPriceTierIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
@@ -11840,6 +22972,98 @@ func (a *HasManyApiService) GETPriceTierIdAttachmentsExecute(r HasManyApiGETPric
 	}
 
 	localVarPath := localBasePath + "/price_tiers/{priceTierId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterValueToString(r.priceTierId, "priceTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceTierIdVersionsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	priceTierId interface{}
+}
+
+func (r HasManyApiGETPriceTierIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceTierIdVersionsExecute(r)
+}
+
+/*
+GETPriceTierIdVersions Retrieve the versions associated to the price tier
+
+Retrieve the versions associated to the price tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceTierId The resource's id
+	@return HasManyApiGETPriceTierIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPriceTierIdVersions(ctx context.Context, priceTierId interface{}) HasManyApiGETPriceTierIdVersionsRequest {
+	return HasManyApiGETPriceTierIdVersionsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		priceTierId: priceTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceTierIdVersionsExecute(r HasManyApiGETPriceTierIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceTierIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_tiers/{priceTierId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterValueToString(r.priceTierId, "priceTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12075,6 +23299,98 @@ func (a *HasManyApiService) GETPriceVolumeTierIdEventsExecute(r HasManyApiGETPri
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETPriceVolumeTierIdVersionsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	priceVolumeTierId interface{}
+}
+
+func (r HasManyApiGETPriceVolumeTierIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceVolumeTierIdVersionsExecute(r)
+}
+
+/*
+GETPriceVolumeTierIdVersions Retrieve the versions associated to the price volume tier
+
+Retrieve the versions associated to the price volume tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceVolumeTierId The resource's id
+	@return HasManyApiGETPriceVolumeTierIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPriceVolumeTierIdVersions(ctx context.Context, priceVolumeTierId interface{}) HasManyApiGETPriceVolumeTierIdVersionsRequest {
+	return HasManyApiGETPriceVolumeTierIdVersionsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		priceVolumeTierId: priceVolumeTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceVolumeTierIdVersionsExecute(r HasManyApiGETPriceVolumeTierIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceVolumeTierIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETPromotionIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
@@ -12116,6 +23432,98 @@ func (a *HasManyApiService) GETPromotionIdAttachmentsExecute(r HasManyApiGETProm
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPromotionIdCouponsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	promotionId interface{}
+}
+
+func (r HasManyApiGETPromotionIdCouponsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPromotionIdCouponsExecute(r)
+}
+
+/*
+GETPromotionIdCoupons Retrieve the coupons associated to the promotion
+
+Retrieve the coupons associated to the promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return HasManyApiGETPromotionIdCouponsRequest
+*/
+func (a *HasManyApiService) GETPromotionIdCoupons(ctx context.Context, promotionId interface{}) HasManyApiGETPromotionIdCouponsRequest {
+	return HasManyApiGETPromotionIdCouponsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		promotionId: promotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPromotionIdCouponsExecute(r HasManyApiGETPromotionIdCouponsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPromotionIdCoupons")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/promotions/{promotionId}/coupons"
 	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12259,6 +23667,282 @@ func (a *HasManyApiService) GETPromotionIdEventsExecute(r HasManyApiGETPromotion
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETPromotionIdTagsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	promotionId interface{}
+}
+
+func (r HasManyApiGETPromotionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPromotionIdTagsExecute(r)
+}
+
+/*
+GETPromotionIdTags Retrieve the tags associated to the promotion
+
+Retrieve the tags associated to the promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return HasManyApiGETPromotionIdTagsRequest
+*/
+func (a *HasManyApiService) GETPromotionIdTags(ctx context.Context, promotionId interface{}) HasManyApiGETPromotionIdTagsRequest {
+	return HasManyApiGETPromotionIdTagsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		promotionId: promotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPromotionIdTagsExecute(r HasManyApiGETPromotionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPromotionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/promotions/{promotionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPromotionIdVersionsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	promotionId interface{}
+}
+
+func (r HasManyApiGETPromotionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPromotionIdVersionsExecute(r)
+}
+
+/*
+GETPromotionIdVersions Retrieve the versions associated to the promotion
+
+Retrieve the versions associated to the promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return HasManyApiGETPromotionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPromotionIdVersions(ctx context.Context, promotionId interface{}) HasManyApiGETPromotionIdVersionsRequest {
+	return HasManyApiGETPromotionIdVersionsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		promotionId: promotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPromotionIdVersionsExecute(r HasManyApiGETPromotionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPromotionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/promotions/{promotionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPromotionRuleIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	promotionRuleId interface{}
+}
+
+func (r HasManyApiGETPromotionRuleIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPromotionRuleIdVersionsExecute(r)
+}
+
+/*
+GETPromotionRuleIdVersions Retrieve the versions associated to the promotion rule
+
+Retrieve the versions associated to the promotion rule
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionRuleId The resource's id
+	@return HasManyApiGETPromotionRuleIdVersionsRequest
+*/
+func (a *HasManyApiService) GETPromotionRuleIdVersions(ctx context.Context, promotionRuleId interface{}) HasManyApiGETPromotionRuleIdVersionsRequest {
+	return HasManyApiGETPromotionRuleIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		promotionRuleId: promotionRuleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPromotionRuleIdVersionsExecute(r HasManyApiGETPromotionRuleIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPromotionRuleIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/promotion_rules/{promotionRuleId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionRuleId"+"}", url.PathEscape(parameterValueToString(r.promotionRuleId, "promotionRuleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETRecurringOrderCopyIdEventsRequest struct {
 	ctx                  context.Context
 	ApiService           *HasManyApiService
@@ -12351,6 +24035,98 @@ func (a *HasManyApiService) GETRecurringOrderCopyIdEventsExecute(r HasManyApiGET
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETRefundIdAttachmentsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	refundId   interface{}
+}
+
+func (r HasManyApiGETRefundIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRefundIdAttachmentsExecute(r)
+}
+
+/*
+GETRefundIdAttachments Retrieve the attachments associated to the refund
+
+Retrieve the attachments associated to the refund
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param refundId The resource's id
+	@return HasManyApiGETRefundIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETRefundIdAttachments(ctx context.Context, refundId interface{}) HasManyApiGETRefundIdAttachmentsRequest {
+	return HasManyApiGETRefundIdAttachmentsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		refundId:   refundId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETRefundIdAttachmentsExecute(r HasManyApiGETRefundIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETRefundIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/refunds/{refundId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETRefundIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -12393,6 +24169,282 @@ func (a *HasManyApiService) GETRefundIdEventsExecute(r HasManyApiGETRefundIdEven
 
 	localVarPath := localBasePath + "/refunds/{refundId}/events"
 	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETRefundIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	refundId   interface{}
+}
+
+func (r HasManyApiGETRefundIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRefundIdVersionsExecute(r)
+}
+
+/*
+GETRefundIdVersions Retrieve the versions associated to the refund
+
+Retrieve the versions associated to the refund
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param refundId The resource's id
+	@return HasManyApiGETRefundIdVersionsRequest
+*/
+func (a *HasManyApiService) GETRefundIdVersions(ctx context.Context, refundId interface{}) HasManyApiGETRefundIdVersionsRequest {
+	return HasManyApiGETRefundIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		refundId:   refundId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETRefundIdVersionsExecute(r HasManyApiGETRefundIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETRefundIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/refunds/{refundId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETReservedStockIdStockReservationsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	reservedStockId interface{}
+}
+
+func (r HasManyApiGETReservedStockIdStockReservationsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETReservedStockIdStockReservationsExecute(r)
+}
+
+/*
+GETReservedStockIdStockReservations Retrieve the stock reservations associated to the reserved stock
+
+Retrieve the stock reservations associated to the reserved stock
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param reservedStockId The resource's id
+	@return HasManyApiGETReservedStockIdStockReservationsRequest
+*/
+func (a *HasManyApiService) GETReservedStockIdStockReservations(ctx context.Context, reservedStockId interface{}) HasManyApiGETReservedStockIdStockReservationsRequest {
+	return HasManyApiGETReservedStockIdStockReservationsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		reservedStockId: reservedStockId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETReservedStockIdStockReservationsExecute(r HasManyApiGETReservedStockIdStockReservationsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETReservedStockIdStockReservations")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/reserved_stocks/{reservedStockId}/stock_reservations"
+	localVarPath = strings.Replace(localVarPath, "{"+"reservedStockId"+"}", url.PathEscape(parameterValueToString(r.reservedStockId, "reservedStockId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETReservedStockIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	reservedStockId interface{}
+}
+
+func (r HasManyApiGETReservedStockIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETReservedStockIdVersionsExecute(r)
+}
+
+/*
+GETReservedStockIdVersions Retrieve the versions associated to the reserved stock
+
+Retrieve the versions associated to the reserved stock
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param reservedStockId The resource's id
+	@return HasManyApiGETReservedStockIdVersionsRequest
+*/
+func (a *HasManyApiService) GETReservedStockIdVersions(ctx context.Context, reservedStockId interface{}) HasManyApiGETReservedStockIdVersionsRequest {
+	return HasManyApiGETReservedStockIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		reservedStockId: reservedStockId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETReservedStockIdVersionsExecute(r HasManyApiGETReservedStockIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETReservedStockIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/reserved_stocks/{reservedStockId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"reservedStockId"+"}", url.PathEscape(parameterValueToString(r.reservedStockId, "reservedStockId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12627,6 +24679,98 @@ func (a *HasManyApiService) GETReturnIdEventsExecute(r HasManyApiGETReturnIdEven
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETReturnIdResourceErrorsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	returnId   interface{}
+}
+
+func (r HasManyApiGETReturnIdResourceErrorsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETReturnIdResourceErrorsExecute(r)
+}
+
+/*
+GETReturnIdResourceErrors Retrieve the resource errors associated to the return
+
+Retrieve the resource errors associated to the return
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return HasManyApiGETReturnIdResourceErrorsRequest
+*/
+func (a *HasManyApiService) GETReturnIdResourceErrors(ctx context.Context, returnId interface{}) HasManyApiGETReturnIdResourceErrorsRequest {
+	return HasManyApiGETReturnIdResourceErrorsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		returnId:   returnId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETReturnIdResourceErrorsExecute(r HasManyApiGETReturnIdResourceErrorsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETReturnIdResourceErrors")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/returns/{returnId}/resource_errors"
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETReturnIdReturnLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -12668,6 +24812,190 @@ func (a *HasManyApiService) GETReturnIdReturnLineItemsExecute(r HasManyApiGETRet
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/return_line_items"
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETReturnIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	returnId   interface{}
+}
+
+func (r HasManyApiGETReturnIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETReturnIdTagsExecute(r)
+}
+
+/*
+GETReturnIdTags Retrieve the tags associated to the return
+
+Retrieve the tags associated to the return
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return HasManyApiGETReturnIdTagsRequest
+*/
+func (a *HasManyApiService) GETReturnIdTags(ctx context.Context, returnId interface{}) HasManyApiGETReturnIdTagsRequest {
+	return HasManyApiGETReturnIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		returnId:   returnId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETReturnIdTagsExecute(r HasManyApiGETReturnIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETReturnIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/returns/{returnId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETReturnIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	returnId   interface{}
+}
+
+func (r HasManyApiGETReturnIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETReturnIdVersionsExecute(r)
+}
+
+/*
+GETReturnIdVersions Retrieve the versions associated to the return
+
+Retrieve the versions associated to the return
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return HasManyApiGETReturnIdVersionsRequest
+*/
+func (a *HasManyApiService) GETReturnIdVersions(ctx context.Context, returnId interface{}) HasManyApiGETReturnIdVersionsRequest {
+	return HasManyApiGETReturnIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		returnId:   returnId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETReturnIdVersionsExecute(r HasManyApiGETReturnIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETReturnIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/returns/{returnId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12853,6 +25181,190 @@ func (a *HasManyApiService) GETSatispayGatewayIdSatispayPaymentsExecute(r HasMan
 
 	localVarPath := localBasePath + "/satispay_gateways/{satispayGatewayId}/satispay_payments"
 	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterValueToString(r.satispayGatewayId, "satispayGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSatispayGatewayIdVersionsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	satispayGatewayId interface{}
+}
+
+func (r HasManyApiGETSatispayGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSatispayGatewayIdVersionsExecute(r)
+}
+
+/*
+GETSatispayGatewayIdVersions Retrieve the versions associated to the satispay gateway
+
+Retrieve the versions associated to the satispay gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param satispayGatewayId The resource's id
+	@return HasManyApiGETSatispayGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETSatispayGatewayIdVersions(ctx context.Context, satispayGatewayId interface{}) HasManyApiGETSatispayGatewayIdVersionsRequest {
+	return HasManyApiGETSatispayGatewayIdVersionsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		satispayGatewayId: satispayGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSatispayGatewayIdVersionsExecute(r HasManyApiGETSatispayGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSatispayGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/satispay_gateways/{satispayGatewayId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterValueToString(r.satispayGatewayId, "satispayGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSatispayPaymentIdVersionsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	satispayPaymentId interface{}
+}
+
+func (r HasManyApiGETSatispayPaymentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSatispayPaymentIdVersionsExecute(r)
+}
+
+/*
+GETSatispayPaymentIdVersions Retrieve the versions associated to the satispay payment
+
+Retrieve the versions associated to the satispay payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param satispayPaymentId The resource's id
+	@return HasManyApiGETSatispayPaymentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETSatispayPaymentIdVersions(ctx context.Context, satispayPaymentId interface{}) HasManyApiGETSatispayPaymentIdVersionsRequest {
+	return HasManyApiGETSatispayPaymentIdVersionsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		satispayPaymentId: satispayPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSatispayPaymentIdVersionsExecute(r HasManyApiGETSatispayPaymentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSatispayPaymentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13271,6 +25783,98 @@ func (a *HasManyApiService) GETShipmentIdEventsExecute(r HasManyApiGETShipmentId
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETShipmentIdLineItemsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	shipmentId interface{}
+}
+
+func (r HasManyApiGETShipmentIdLineItemsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShipmentIdLineItemsExecute(r)
+}
+
+/*
+GETShipmentIdLineItems Retrieve the line items associated to the shipment
+
+Retrieve the line items associated to the shipment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasManyApiGETShipmentIdLineItemsRequest
+*/
+func (a *HasManyApiService) GETShipmentIdLineItems(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdLineItemsRequest {
+	return HasManyApiGETShipmentIdLineItemsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		shipmentId: shipmentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShipmentIdLineItemsExecute(r HasManyApiGETShipmentIdLineItemsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdLineItems")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipments/{shipmentId}/line_items"
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETShipmentIdParcelsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -13547,6 +26151,190 @@ func (a *HasManyApiService) GETShipmentIdStockTransfersExecute(r HasManyApiGETSh
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETShipmentIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	shipmentId interface{}
+}
+
+func (r HasManyApiGETShipmentIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShipmentIdTagsExecute(r)
+}
+
+/*
+GETShipmentIdTags Retrieve the tags associated to the shipment
+
+Retrieve the tags associated to the shipment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasManyApiGETShipmentIdTagsRequest
+*/
+func (a *HasManyApiService) GETShipmentIdTags(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdTagsRequest {
+	return HasManyApiGETShipmentIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		shipmentId: shipmentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShipmentIdTagsExecute(r HasManyApiGETShipmentIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipments/{shipmentId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETShipmentIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	shipmentId interface{}
+}
+
+func (r HasManyApiGETShipmentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShipmentIdVersionsExecute(r)
+}
+
+/*
+GETShipmentIdVersions Retrieve the versions associated to the shipment
+
+Retrieve the versions associated to the shipment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasManyApiGETShipmentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETShipmentIdVersions(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdVersionsRequest {
+	return HasManyApiGETShipmentIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		shipmentId: shipmentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShipmentIdVersionsExecute(r HasManyApiGETShipmentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipments/{shipmentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETShippingCategoryIdAttachmentsRequest struct {
 	ctx                context.Context
 	ApiService         *HasManyApiService
@@ -13680,6 +26468,98 @@ func (a *HasManyApiService) GETShippingCategoryIdSkusExecute(r HasManyApiGETShip
 	}
 
 	localVarPath := localBasePath + "/shipping_categories/{shippingCategoryId}/skus"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterValueToString(r.shippingCategoryId, "shippingCategoryId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETShippingCategoryIdVersionsRequest struct {
+	ctx                context.Context
+	ApiService         *HasManyApiService
+	shippingCategoryId interface{}
+}
+
+func (r HasManyApiGETShippingCategoryIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingCategoryIdVersionsExecute(r)
+}
+
+/*
+GETShippingCategoryIdVersions Retrieve the versions associated to the shipping category
+
+Retrieve the versions associated to the shipping category
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingCategoryId The resource's id
+	@return HasManyApiGETShippingCategoryIdVersionsRequest
+*/
+func (a *HasManyApiService) GETShippingCategoryIdVersions(ctx context.Context, shippingCategoryId interface{}) HasManyApiGETShippingCategoryIdVersionsRequest {
+	return HasManyApiGETShippingCategoryIdVersionsRequest{
+		ApiService:         a,
+		ctx:                ctx,
+		shippingCategoryId: shippingCategoryId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShippingCategoryIdVersionsExecute(r HasManyApiGETShippingCategoryIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingCategoryIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_categories/{shippingCategoryId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterValueToString(r.shippingCategoryId, "shippingCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14007,6 +26887,98 @@ func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiersExecute(r HasM
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETShippingMethodIdVersionsRequest struct {
+	ctx              context.Context
+	ApiService       *HasManyApiService
+	shippingMethodId interface{}
+}
+
+func (r HasManyApiGETShippingMethodIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingMethodIdVersionsExecute(r)
+}
+
+/*
+GETShippingMethodIdVersions Retrieve the versions associated to the shipping method
+
+Retrieve the versions associated to the shipping method
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return HasManyApiGETShippingMethodIdVersionsRequest
+*/
+func (a *HasManyApiService) GETShippingMethodIdVersions(ctx context.Context, shippingMethodId interface{}) HasManyApiGETShippingMethodIdVersionsRequest {
+	return HasManyApiGETShippingMethodIdVersionsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		shippingMethodId: shippingMethodId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShippingMethodIdVersionsExecute(r HasManyApiGETShippingMethodIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingMethodIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETShippingMethodTierIdAttachmentsRequest struct {
 	ctx                  context.Context
 	ApiService           *HasManyApiService
@@ -14048,6 +27020,98 @@ func (a *HasManyApiService) GETShippingMethodTierIdAttachmentsExecute(r HasManyA
 	}
 
 	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodTierId, "shippingMethodTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETShippingMethodTierIdVersionsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	shippingMethodTierId interface{}
+}
+
+func (r HasManyApiGETShippingMethodTierIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingMethodTierIdVersionsExecute(r)
+}
+
+/*
+GETShippingMethodTierIdVersions Retrieve the versions associated to the shipping method tier
+
+Retrieve the versions associated to the shipping method tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodTierId The resource's id
+	@return HasManyApiGETShippingMethodTierIdVersionsRequest
+*/
+func (a *HasManyApiService) GETShippingMethodTierIdVersions(ctx context.Context, shippingMethodTierId interface{}) HasManyApiGETShippingMethodTierIdVersionsRequest {
+	return HasManyApiGETShippingMethodTierIdVersionsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		shippingMethodTierId: shippingMethodTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShippingMethodTierIdVersionsExecute(r HasManyApiGETShippingMethodTierIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingMethodTierIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodTierId, "shippingMethodTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14191,6 +27255,98 @@ func (a *HasManyApiService) GETShippingWeightTierIdAttachmentsExecute(r HasManyA
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETShippingWeightTierIdVersionsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	shippingWeightTierId interface{}
+}
+
+func (r HasManyApiGETShippingWeightTierIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingWeightTierIdVersionsExecute(r)
+}
+
+/*
+GETShippingWeightTierIdVersions Retrieve the versions associated to the shipping weight tier
+
+Retrieve the versions associated to the shipping weight tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingWeightTierId The resource's id
+	@return HasManyApiGETShippingWeightTierIdVersionsRequest
+*/
+func (a *HasManyApiService) GETShippingWeightTierIdVersions(ctx context.Context, shippingWeightTierId interface{}) HasManyApiGETShippingWeightTierIdVersionsRequest {
+	return HasManyApiGETShippingWeightTierIdVersionsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		shippingWeightTierId: shippingWeightTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShippingWeightTierIdVersionsExecute(r HasManyApiGETShippingWeightTierIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingWeightTierIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETShippingZoneIdAttachmentsRequest struct {
 	ctx            context.Context
 	ApiService     *HasManyApiService
@@ -14232,6 +27388,98 @@ func (a *HasManyApiService) GETShippingZoneIdAttachmentsExecute(r HasManyApiGETS
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETShippingZoneIdVersionsRequest struct {
+	ctx            context.Context
+	ApiService     *HasManyApiService
+	shippingZoneId interface{}
+}
+
+func (r HasManyApiGETShippingZoneIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingZoneIdVersionsExecute(r)
+}
+
+/*
+GETShippingZoneIdVersions Retrieve the versions associated to the shipping zone
+
+Retrieve the versions associated to the shipping zone
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingZoneId The resource's id
+	@return HasManyApiGETShippingZoneIdVersionsRequest
+*/
+func (a *HasManyApiService) GETShippingZoneIdVersions(ctx context.Context, shippingZoneId interface{}) HasManyApiGETShippingZoneIdVersionsRequest {
+	return HasManyApiGETShippingZoneIdVersionsRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		shippingZoneId: shippingZoneId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShippingZoneIdVersionsExecute(r HasManyApiGETShippingZoneIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingZoneIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14467,6 +27715,374 @@ func (a *HasManyApiService) GETSkuIdDeliveryLeadTimesExecute(r HasManyApiGETSkuI
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETSkuIdEventsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuId      interface{}
+}
+
+func (r HasManyApiGETSkuIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdEventsExecute(r)
+}
+
+/*
+GETSkuIdEvents Retrieve the events associated to the SKU
+
+Retrieve the events associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasManyApiGETSkuIdEventsRequest
+*/
+func (a *HasManyApiService) GETSkuIdEvents(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdEventsRequest {
+	return HasManyApiGETSkuIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuIdEventsExecute(r HasManyApiGETSkuIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuIdJwtMarketsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuId      interface{}
+}
+
+func (r HasManyApiGETSkuIdJwtMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdJwtMarketsExecute(r)
+}
+
+/*
+GETSkuIdJwtMarkets Retrieve the jwt markets associated to the SKU
+
+Retrieve the jwt markets associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasManyApiGETSkuIdJwtMarketsRequest
+*/
+func (a *HasManyApiService) GETSkuIdJwtMarkets(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdJwtMarketsRequest {
+	return HasManyApiGETSkuIdJwtMarketsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuIdJwtMarketsExecute(r HasManyApiGETSkuIdJwtMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdJwtMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/jwt_markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuIdJwtStockLocationsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuId      interface{}
+}
+
+func (r HasManyApiGETSkuIdJwtStockLocationsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdJwtStockLocationsExecute(r)
+}
+
+/*
+GETSkuIdJwtStockLocations Retrieve the jwt stock locations associated to the SKU
+
+Retrieve the jwt stock locations associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasManyApiGETSkuIdJwtStockLocationsRequest
+*/
+func (a *HasManyApiService) GETSkuIdJwtStockLocations(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdJwtStockLocationsRequest {
+	return HasManyApiGETSkuIdJwtStockLocationsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuIdJwtStockLocationsExecute(r HasManyApiGETSkuIdJwtStockLocationsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdJwtStockLocations")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/jwt_stock_locations"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuIdLinksRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuId      interface{}
+}
+
+func (r HasManyApiGETSkuIdLinksRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdLinksExecute(r)
+}
+
+/*
+GETSkuIdLinks Retrieve the links associated to the SKU
+
+Retrieve the links associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasManyApiGETSkuIdLinksRequest
+*/
+func (a *HasManyApiService) GETSkuIdLinks(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdLinksRequest {
+	return HasManyApiGETSkuIdLinksRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuIdLinksExecute(r HasManyApiGETSkuIdLinksRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdLinks")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/links"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETSkuIdPricesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -14508,6 +28124,190 @@ func (a *HasManyApiService) GETSkuIdPricesExecute(r HasManyApiGETSkuIdPricesRequ
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/prices"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuIdSkuListItemsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuId      interface{}
+}
+
+func (r HasManyApiGETSkuIdSkuListItemsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdSkuListItemsExecute(r)
+}
+
+/*
+GETSkuIdSkuListItems Retrieve the sku list items associated to the SKU
+
+Retrieve the sku list items associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasManyApiGETSkuIdSkuListItemsRequest
+*/
+func (a *HasManyApiService) GETSkuIdSkuListItems(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdSkuListItemsRequest {
+	return HasManyApiGETSkuIdSkuListItemsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuIdSkuListItemsExecute(r HasManyApiGETSkuIdSkuListItemsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdSkuListItems")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/sku_list_items"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuIdSkuListsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuId      interface{}
+}
+
+func (r HasManyApiGETSkuIdSkuListsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdSkuListsExecute(r)
+}
+
+/*
+GETSkuIdSkuLists Retrieve the sku lists associated to the SKU
+
+Retrieve the sku lists associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasManyApiGETSkuIdSkuListsRequest
+*/
+func (a *HasManyApiService) GETSkuIdSkuLists(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdSkuListsRequest {
+	return HasManyApiGETSkuIdSkuListsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuIdSkuListsExecute(r HasManyApiGETSkuIdSkuListsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdSkuLists")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/sku_lists"
 	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14743,6 +28543,282 @@ func (a *HasManyApiService) GETSkuIdStockItemsExecute(r HasManyApiGETSkuIdStockI
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETSkuIdStockReservationsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuId      interface{}
+}
+
+func (r HasManyApiGETSkuIdStockReservationsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdStockReservationsExecute(r)
+}
+
+/*
+GETSkuIdStockReservations Retrieve the stock reservations associated to the SKU
+
+Retrieve the stock reservations associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasManyApiGETSkuIdStockReservationsRequest
+*/
+func (a *HasManyApiService) GETSkuIdStockReservations(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdStockReservationsRequest {
+	return HasManyApiGETSkuIdStockReservationsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuIdStockReservationsExecute(r HasManyApiGETSkuIdStockReservationsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdStockReservations")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/stock_reservations"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuIdTagsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuId      interface{}
+}
+
+func (r HasManyApiGETSkuIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdTagsExecute(r)
+}
+
+/*
+GETSkuIdTags Retrieve the tags associated to the SKU
+
+Retrieve the tags associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasManyApiGETSkuIdTagsRequest
+*/
+func (a *HasManyApiService) GETSkuIdTags(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdTagsRequest {
+	return HasManyApiGETSkuIdTagsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuIdTagsExecute(r HasManyApiGETSkuIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuId      interface{}
+}
+
+func (r HasManyApiGETSkuIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdVersionsExecute(r)
+}
+
+/*
+GETSkuIdVersions Retrieve the versions associated to the SKU
+
+Retrieve the versions associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasManyApiGETSkuIdVersionsRequest
+*/
+func (a *HasManyApiService) GETSkuIdVersions(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdVersionsRequest {
+	return HasManyApiGETSkuIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuIdVersionsExecute(r HasManyApiGETSkuIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETSkuListIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -14876,6 +28952,98 @@ func (a *HasManyApiService) GETSkuListIdBundlesExecute(r HasManyApiGETSkuListIdB
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/bundles"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuListIdLinksRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuListId  interface{}
+}
+
+func (r HasManyApiGETSkuListIdLinksRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuListIdLinksExecute(r)
+}
+
+/*
+GETSkuListIdLinks Retrieve the links associated to the SKU list
+
+Retrieve the links associated to the SKU list
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return HasManyApiGETSkuListIdLinksRequest
+*/
+func (a *HasManyApiService) GETSkuListIdLinks(ctx context.Context, skuListId interface{}) HasManyApiGETSkuListIdLinksRequest {
+	return HasManyApiGETSkuListIdLinksRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuListId:  skuListId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuListIdLinksExecute(r HasManyApiGETSkuListIdLinksRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuListIdLinks")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sku_lists/{skuListId}/links"
 	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15111,6 +29279,190 @@ func (a *HasManyApiService) GETSkuListIdSkusExecute(r HasManyApiGETSkuListIdSkus
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETSkuListIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	skuListId  interface{}
+}
+
+func (r HasManyApiGETSkuListIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuListIdVersionsExecute(r)
+}
+
+/*
+GETSkuListIdVersions Retrieve the versions associated to the SKU list
+
+Retrieve the versions associated to the SKU list
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return HasManyApiGETSkuListIdVersionsRequest
+*/
+func (a *HasManyApiService) GETSkuListIdVersions(ctx context.Context, skuListId interface{}) HasManyApiGETSkuListIdVersionsRequest {
+	return HasManyApiGETSkuListIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuListId:  skuListId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuListIdVersionsExecute(r HasManyApiGETSkuListIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuListIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sku_lists/{skuListId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuListItemIdVersionsRequest struct {
+	ctx           context.Context
+	ApiService    *HasManyApiService
+	skuListItemId interface{}
+}
+
+func (r HasManyApiGETSkuListItemIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuListItemIdVersionsExecute(r)
+}
+
+/*
+GETSkuListItemIdVersions Retrieve the versions associated to the SKU list item
+
+Retrieve the versions associated to the SKU list item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListItemId The resource's id
+	@return HasManyApiGETSkuListItemIdVersionsRequest
+*/
+func (a *HasManyApiService) GETSkuListItemIdVersions(ctx context.Context, skuListItemId interface{}) HasManyApiGETSkuListItemIdVersionsRequest {
+	return HasManyApiGETSkuListItemIdVersionsRequest{
+		ApiService:    a,
+		ctx:           ctx,
+		skuListItemId: skuListItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuListItemIdVersionsExecute(r HasManyApiGETSkuListItemIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuListItemIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sku_list_items/{skuListItemId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterValueToString(r.skuListItemId, "skuListItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETSkuListPromotionRuleIdSkusRequest struct {
 	ctx                    context.Context
 	ApiService             *HasManyApiService
@@ -15152,6 +29504,98 @@ func (a *HasManyApiService) GETSkuListPromotionRuleIdSkusExecute(r HasManyApiGET
 	}
 
 	localVarPath := localBasePath + "/sku_list_promotion_rules/{skuListPromotionRuleId}/skus"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.skuListPromotionRuleId, "skuListPromotionRuleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuListPromotionRuleIdVersionsRequest struct {
+	ctx                    context.Context
+	ApiService             *HasManyApiService
+	skuListPromotionRuleId interface{}
+}
+
+func (r HasManyApiGETSkuListPromotionRuleIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuListPromotionRuleIdVersionsExecute(r)
+}
+
+/*
+GETSkuListPromotionRuleIdVersions Retrieve the versions associated to the SKU list promotion rule
+
+Retrieve the versions associated to the SKU list promotion rule
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListPromotionRuleId The resource's id
+	@return HasManyApiGETSkuListPromotionRuleIdVersionsRequest
+*/
+func (a *HasManyApiService) GETSkuListPromotionRuleIdVersions(ctx context.Context, skuListPromotionRuleId interface{}) HasManyApiGETSkuListPromotionRuleIdVersionsRequest {
+	return HasManyApiGETSkuListPromotionRuleIdVersionsRequest{
+		ApiService:             a,
+		ctx:                    ctx,
+		skuListPromotionRuleId: skuListPromotionRuleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuListPromotionRuleIdVersionsExecute(r HasManyApiGETSkuListPromotionRuleIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuListPromotionRuleIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sku_list_promotion_rules/{skuListPromotionRuleId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.skuListPromotionRuleId, "skuListPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15295,6 +29739,282 @@ func (a *HasManyApiService) GETSkuOptionIdAttachmentsExecute(r HasManyApiGETSkuO
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETSkuOptionIdEventsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	skuOptionId interface{}
+}
+
+func (r HasManyApiGETSkuOptionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuOptionIdEventsExecute(r)
+}
+
+/*
+GETSkuOptionIdEvents Retrieve the events associated to the SKU option
+
+Retrieve the events associated to the SKU option
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuOptionId The resource's id
+	@return HasManyApiGETSkuOptionIdEventsRequest
+*/
+func (a *HasManyApiService) GETSkuOptionIdEvents(ctx context.Context, skuOptionId interface{}) HasManyApiGETSkuOptionIdEventsRequest {
+	return HasManyApiGETSkuOptionIdEventsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		skuOptionId: skuOptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuOptionIdEventsExecute(r HasManyApiGETSkuOptionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuOptionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sku_options/{skuOptionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuOptionIdTagsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	skuOptionId interface{}
+}
+
+func (r HasManyApiGETSkuOptionIdTagsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuOptionIdTagsExecute(r)
+}
+
+/*
+GETSkuOptionIdTags Retrieve the tags associated to the SKU option
+
+Retrieve the tags associated to the SKU option
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuOptionId The resource's id
+	@return HasManyApiGETSkuOptionIdTagsRequest
+*/
+func (a *HasManyApiService) GETSkuOptionIdTags(ctx context.Context, skuOptionId interface{}) HasManyApiGETSkuOptionIdTagsRequest {
+	return HasManyApiGETSkuOptionIdTagsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		skuOptionId: skuOptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuOptionIdTagsExecute(r HasManyApiGETSkuOptionIdTagsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuOptionIdTags")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sku_options/{skuOptionId}/tags"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSkuOptionIdVersionsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	skuOptionId interface{}
+}
+
+func (r HasManyApiGETSkuOptionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuOptionIdVersionsExecute(r)
+}
+
+/*
+GETSkuOptionIdVersions Retrieve the versions associated to the SKU option
+
+Retrieve the versions associated to the SKU option
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuOptionId The resource's id
+	@return HasManyApiGETSkuOptionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETSkuOptionIdVersions(ctx context.Context, skuOptionId interface{}) HasManyApiGETSkuOptionIdVersionsRequest {
+	return HasManyApiGETSkuOptionIdVersionsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		skuOptionId: skuOptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSkuOptionIdVersionsExecute(r HasManyApiGETSkuOptionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuOptionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sku_options/{skuOptionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETStockItemIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
@@ -15337,6 +30057,282 @@ func (a *HasManyApiService) GETStockItemIdAttachmentsExecute(r HasManyApiGETStoc
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETStockItemIdStockReservationsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	stockItemId interface{}
+}
+
+func (r HasManyApiGETStockItemIdStockReservationsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockItemIdStockReservationsExecute(r)
+}
+
+/*
+GETStockItemIdStockReservations Retrieve the stock reservations associated to the stock item
+
+Retrieve the stock reservations associated to the stock item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockItemId The resource's id
+	@return HasManyApiGETStockItemIdStockReservationsRequest
+*/
+func (a *HasManyApiService) GETStockItemIdStockReservations(ctx context.Context, stockItemId interface{}) HasManyApiGETStockItemIdStockReservationsRequest {
+	return HasManyApiGETStockItemIdStockReservationsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		stockItemId: stockItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETStockItemIdStockReservationsExecute(r HasManyApiGETStockItemIdStockReservationsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockItemIdStockReservations")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_items/{stockItemId}/stock_reservations"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETStockItemIdVersionsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	stockItemId interface{}
+}
+
+func (r HasManyApiGETStockItemIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockItemIdVersionsExecute(r)
+}
+
+/*
+GETStockItemIdVersions Retrieve the versions associated to the stock item
+
+Retrieve the versions associated to the stock item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockItemId The resource's id
+	@return HasManyApiGETStockItemIdVersionsRequest
+*/
+func (a *HasManyApiService) GETStockItemIdVersions(ctx context.Context, stockItemId interface{}) HasManyApiGETStockItemIdVersionsRequest {
+	return HasManyApiGETStockItemIdVersionsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		stockItemId: stockItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETStockItemIdVersionsExecute(r HasManyApiGETStockItemIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockItemIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_items/{stockItemId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETStockLineItemIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	stockLineItemId interface{}
+}
+
+func (r HasManyApiGETStockLineItemIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockLineItemIdVersionsExecute(r)
+}
+
+/*
+GETStockLineItemIdVersions Retrieve the versions associated to the stock line item
+
+Retrieve the versions associated to the stock line item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLineItemId The resource's id
+	@return HasManyApiGETStockLineItemIdVersionsRequest
+*/
+func (a *HasManyApiService) GETStockLineItemIdVersions(ctx context.Context, stockLineItemId interface{}) HasManyApiGETStockLineItemIdVersionsRequest {
+	return HasManyApiGETStockLineItemIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		stockLineItemId: stockLineItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETStockLineItemIdVersionsExecute(r HasManyApiGETStockLineItemIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockLineItemIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15847,6 +30843,190 @@ func (a *HasManyApiService) GETStockLocationIdStockTransfersExecute(r HasManyApi
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETStockLocationIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	stockLocationId interface{}
+}
+
+func (r HasManyApiGETStockLocationIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockLocationIdVersionsExecute(r)
+}
+
+/*
+GETStockLocationIdVersions Retrieve the versions associated to the stock location
+
+Retrieve the versions associated to the stock location
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLocationId The resource's id
+	@return HasManyApiGETStockLocationIdVersionsRequest
+*/
+func (a *HasManyApiService) GETStockLocationIdVersions(ctx context.Context, stockLocationId interface{}) HasManyApiGETStockLocationIdVersionsRequest {
+	return HasManyApiGETStockLocationIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		stockLocationId: stockLocationId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETStockLocationIdVersionsExecute(r HasManyApiGETStockLocationIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockLocationIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETStockTransferIdAttachmentsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	stockTransferId interface{}
+}
+
+func (r HasManyApiGETStockTransferIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockTransferIdAttachmentsExecute(r)
+}
+
+/*
+GETStockTransferIdAttachments Retrieve the attachments associated to the stock transfer
+
+Retrieve the attachments associated to the stock transfer
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return HasManyApiGETStockTransferIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETStockTransferIdAttachments(ctx context.Context, stockTransferId interface{}) HasManyApiGETStockTransferIdAttachmentsRequest {
+	return HasManyApiGETStockTransferIdAttachmentsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		stockTransferId: stockTransferId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETStockTransferIdAttachmentsExecute(r HasManyApiGETStockTransferIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockTransferIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETStockTransferIdEventsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
@@ -15888,6 +31068,98 @@ func (a *HasManyApiService) GETStockTransferIdEventsExecute(r HasManyApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETStockTransferIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	stockTransferId interface{}
+}
+
+func (r HasManyApiGETStockTransferIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockTransferIdVersionsExecute(r)
+}
+
+/*
+GETStockTransferIdVersions Retrieve the versions associated to the stock transfer
+
+Retrieve the versions associated to the stock transfer
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return HasManyApiGETStockTransferIdVersionsRequest
+*/
+func (a *HasManyApiService) GETStockTransferIdVersions(ctx context.Context, stockTransferId interface{}) HasManyApiGETStockTransferIdVersionsRequest {
+	return HasManyApiGETStockTransferIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		stockTransferId: stockTransferId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETStockTransferIdVersionsExecute(r HasManyApiGETStockTransferIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockTransferIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16073,6 +31345,190 @@ func (a *HasManyApiService) GETStripeGatewayIdStripePaymentsExecute(r HasManyApi
 
 	localVarPath := localBasePath + "/stripe_gateways/{stripeGatewayId}/stripe_payments"
 	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterValueToString(r.stripeGatewayId, "stripeGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETStripeGatewayIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	stripeGatewayId interface{}
+}
+
+func (r HasManyApiGETStripeGatewayIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStripeGatewayIdVersionsExecute(r)
+}
+
+/*
+GETStripeGatewayIdVersions Retrieve the versions associated to the stripe gateway
+
+Retrieve the versions associated to the stripe gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stripeGatewayId The resource's id
+	@return HasManyApiGETStripeGatewayIdVersionsRequest
+*/
+func (a *HasManyApiService) GETStripeGatewayIdVersions(ctx context.Context, stripeGatewayId interface{}) HasManyApiGETStripeGatewayIdVersionsRequest {
+	return HasManyApiGETStripeGatewayIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		stripeGatewayId: stripeGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETStripeGatewayIdVersionsExecute(r HasManyApiGETStripeGatewayIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStripeGatewayIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stripe_gateways/{stripeGatewayId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterValueToString(r.stripeGatewayId, "stripeGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETStripePaymentIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	stripePaymentId interface{}
+}
+
+func (r HasManyApiGETStripePaymentIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStripePaymentIdVersionsExecute(r)
+}
+
+/*
+GETStripePaymentIdVersions Retrieve the versions associated to the stripe payment
+
+Retrieve the versions associated to the stripe payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stripePaymentId The resource's id
+	@return HasManyApiGETStripePaymentIdVersionsRequest
+*/
+func (a *HasManyApiService) GETStripePaymentIdVersions(ctx context.Context, stripePaymentId interface{}) HasManyApiGETStripePaymentIdVersionsRequest {
+	return HasManyApiGETStripePaymentIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		stripePaymentId: stripePaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETStripePaymentIdVersionsExecute(r HasManyApiGETStripePaymentIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStripePaymentIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16583,6 +32039,98 @@ func (a *HasManyApiService) GETTaxCalculatorIdMarketsExecute(r HasManyApiGETTaxC
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETTaxCalculatorIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	taxCalculatorId interface{}
+}
+
+func (r HasManyApiGETTaxCalculatorIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETTaxCalculatorIdVersionsExecute(r)
+}
+
+/*
+GETTaxCalculatorIdVersions Retrieve the versions associated to the tax calculator
+
+Retrieve the versions associated to the tax calculator
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxCalculatorId The resource's id
+	@return HasManyApiGETTaxCalculatorIdVersionsRequest
+*/
+func (a *HasManyApiService) GETTaxCalculatorIdVersions(ctx context.Context, taxCalculatorId interface{}) HasManyApiGETTaxCalculatorIdVersionsRequest {
+	return HasManyApiGETTaxCalculatorIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		taxCalculatorId: taxCalculatorId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETTaxCalculatorIdVersionsExecute(r HasManyApiGETTaxCalculatorIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxCalculatorIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/tax_calculators/{taxCalculatorId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.taxCalculatorId, "taxCalculatorId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETTaxCategoryIdAttachmentsRequest struct {
 	ctx           context.Context
 	ApiService    *HasManyApiService
@@ -16625,6 +32173,190 @@ func (a *HasManyApiService) GETTaxCategoryIdAttachmentsExecute(r HasManyApiGETTa
 
 	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETTaxCategoryIdVersionsRequest struct {
+	ctx           context.Context
+	ApiService    *HasManyApiService
+	taxCategoryId interface{}
+}
+
+func (r HasManyApiGETTaxCategoryIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETTaxCategoryIdVersionsExecute(r)
+}
+
+/*
+GETTaxCategoryIdVersions Retrieve the versions associated to the tax category
+
+Retrieve the versions associated to the tax category
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxCategoryId The resource's id
+	@return HasManyApiGETTaxCategoryIdVersionsRequest
+*/
+func (a *HasManyApiService) GETTaxCategoryIdVersions(ctx context.Context, taxCategoryId interface{}) HasManyApiGETTaxCategoryIdVersionsRequest {
+	return HasManyApiGETTaxCategoryIdVersionsRequest{
+		ApiService:    a,
+		ctx:           ctx,
+		taxCategoryId: taxCategoryId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETTaxCategoryIdVersionsExecute(r HasManyApiGETTaxCategoryIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxCategoryIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETTaxRuleIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	taxRuleId  interface{}
+}
+
+func (r HasManyApiGETTaxRuleIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETTaxRuleIdVersionsExecute(r)
+}
+
+/*
+GETTaxRuleIdVersions Retrieve the versions associated to the tax rule
+
+Retrieve the versions associated to the tax rule
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxRuleId The resource's id
+	@return HasManyApiGETTaxRuleIdVersionsRequest
+*/
+func (a *HasManyApiService) GETTaxRuleIdVersions(ctx context.Context, taxRuleId interface{}) HasManyApiGETTaxRuleIdVersionsRequest {
+	return HasManyApiGETTaxRuleIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		taxRuleId:  taxRuleId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETTaxRuleIdVersionsExecute(r HasManyApiGETTaxRuleIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxRuleIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/tax_rules/{taxRuleId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16951,6 +32683,466 @@ func (a *HasManyApiService) GETTaxjarAccountIdTaxCategoriesExecute(r HasManyApiG
 	return localVarHTTPResponse, nil
 }
 
+type HasManyApiGETTaxjarAccountIdVersionsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	taxjarAccountId interface{}
+}
+
+func (r HasManyApiGETTaxjarAccountIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETTaxjarAccountIdVersionsExecute(r)
+}
+
+/*
+GETTaxjarAccountIdVersions Retrieve the versions associated to the taxjar account
+
+Retrieve the versions associated to the taxjar account
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxjarAccountId The resource's id
+	@return HasManyApiGETTaxjarAccountIdVersionsRequest
+*/
+func (a *HasManyApiService) GETTaxjarAccountIdVersions(ctx context.Context, taxjarAccountId interface{}) HasManyApiGETTaxjarAccountIdVersionsRequest {
+	return HasManyApiGETTaxjarAccountIdVersionsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		taxjarAccountId: taxjarAccountId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETTaxjarAccountIdVersionsExecute(r HasManyApiGETTaxjarAccountIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxjarAccountIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETTransactionIdAttachmentsRequest struct {
+	ctx           context.Context
+	ApiService    *HasManyApiService
+	transactionId interface{}
+}
+
+func (r HasManyApiGETTransactionIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETTransactionIdAttachmentsExecute(r)
+}
+
+/*
+GETTransactionIdAttachments Retrieve the attachments associated to the transaction
+
+Retrieve the attachments associated to the transaction
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param transactionId The resource's id
+	@return HasManyApiGETTransactionIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETTransactionIdAttachments(ctx context.Context, transactionId interface{}) HasManyApiGETTransactionIdAttachmentsRequest {
+	return HasManyApiGETTransactionIdAttachmentsRequest{
+		ApiService:    a,
+		ctx:           ctx,
+		transactionId: transactionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETTransactionIdAttachmentsExecute(r HasManyApiGETTransactionIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTransactionIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/transactions/{transactionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterValueToString(r.transactionId, "transactionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETTransactionIdEventsRequest struct {
+	ctx           context.Context
+	ApiService    *HasManyApiService
+	transactionId interface{}
+}
+
+func (r HasManyApiGETTransactionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETTransactionIdEventsExecute(r)
+}
+
+/*
+GETTransactionIdEvents Retrieve the events associated to the transaction
+
+Retrieve the events associated to the transaction
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param transactionId The resource's id
+	@return HasManyApiGETTransactionIdEventsRequest
+*/
+func (a *HasManyApiService) GETTransactionIdEvents(ctx context.Context, transactionId interface{}) HasManyApiGETTransactionIdEventsRequest {
+	return HasManyApiGETTransactionIdEventsRequest{
+		ApiService:    a,
+		ctx:           ctx,
+		transactionId: transactionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETTransactionIdEventsExecute(r HasManyApiGETTransactionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTransactionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/transactions/{transactionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterValueToString(r.transactionId, "transactionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETTransactionIdVersionsRequest struct {
+	ctx           context.Context
+	ApiService    *HasManyApiService
+	transactionId interface{}
+}
+
+func (r HasManyApiGETTransactionIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETTransactionIdVersionsExecute(r)
+}
+
+/*
+GETTransactionIdVersions Retrieve the versions associated to the transaction
+
+Retrieve the versions associated to the transaction
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param transactionId The resource's id
+	@return HasManyApiGETTransactionIdVersionsRequest
+*/
+func (a *HasManyApiService) GETTransactionIdVersions(ctx context.Context, transactionId interface{}) HasManyApiGETTransactionIdVersionsRequest {
+	return HasManyApiGETTransactionIdVersionsRequest{
+		ApiService:    a,
+		ctx:           ctx,
+		transactionId: transactionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETTransactionIdVersionsExecute(r HasManyApiGETTransactionIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTransactionIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/transactions/{transactionId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterValueToString(r.transactionId, "transactionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETVoidIdAttachmentsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	voidId     interface{}
+}
+
+func (r HasManyApiGETVoidIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETVoidIdAttachmentsExecute(r)
+}
+
+/*
+GETVoidIdAttachments Retrieve the attachments associated to the void
+
+Retrieve the attachments associated to the void
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param voidId The resource's id
+	@return HasManyApiGETVoidIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETVoidIdAttachments(ctx context.Context, voidId interface{}) HasManyApiGETVoidIdAttachmentsRequest {
+	return HasManyApiGETVoidIdAttachmentsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		voidId:     voidId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETVoidIdAttachmentsExecute(r HasManyApiGETVoidIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETVoidIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/voids/{voidId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type HasManyApiGETVoidIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
@@ -16992,6 +33184,98 @@ func (a *HasManyApiService) GETVoidIdEventsExecute(r HasManyApiGETVoidIdEventsRe
 	}
 
 	localVarPath := localBasePath + "/voids/{voidId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETVoidIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	voidId     interface{}
+}
+
+func (r HasManyApiGETVoidIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETVoidIdVersionsExecute(r)
+}
+
+/*
+GETVoidIdVersions Retrieve the versions associated to the void
+
+Retrieve the versions associated to the void
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param voidId The resource's id
+	@return HasManyApiGETVoidIdVersionsRequest
+*/
+func (a *HasManyApiService) GETVoidIdVersions(ctx context.Context, voidId interface{}) HasManyApiGETVoidIdVersionsRequest {
+	return HasManyApiGETVoidIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		voidId:     voidId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETVoidIdVersionsExecute(r HasManyApiGETVoidIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETVoidIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/voids/{voidId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17085,6 +33369,190 @@ func (a *HasManyApiService) GETWebhookIdLastEventCallbacksExecute(r HasManyApiGE
 
 	localVarPath := localBasePath + "/webhooks/{webhookId}/last_event_callbacks"
 	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterValueToString(r.webhookId, "webhookId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETWebhookIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	webhookId  interface{}
+}
+
+func (r HasManyApiGETWebhookIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETWebhookIdVersionsExecute(r)
+}
+
+/*
+GETWebhookIdVersions Retrieve the versions associated to the webhook
+
+Retrieve the versions associated to the webhook
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webhookId The resource's id
+	@return HasManyApiGETWebhookIdVersionsRequest
+*/
+func (a *HasManyApiService) GETWebhookIdVersions(ctx context.Context, webhookId interface{}) HasManyApiGETWebhookIdVersionsRequest {
+	return HasManyApiGETWebhookIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		webhookId:  webhookId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETWebhookIdVersionsExecute(r HasManyApiGETWebhookIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETWebhookIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/webhooks/{webhookId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterValueToString(r.webhookId, "webhookId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETWireTransferIdVersionsRequest struct {
+	ctx            context.Context
+	ApiService     *HasManyApiService
+	wireTransferId interface{}
+}
+
+func (r HasManyApiGETWireTransferIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETWireTransferIdVersionsExecute(r)
+}
+
+/*
+GETWireTransferIdVersions Retrieve the versions associated to the wire transfer
+
+Retrieve the versions associated to the wire transfer
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param wireTransferId The resource's id
+	@return HasManyApiGETWireTransferIdVersionsRequest
+*/
+func (a *HasManyApiService) GETWireTransferIdVersions(ctx context.Context, wireTransferId interface{}) HasManyApiGETWireTransferIdVersionsRequest {
+	return HasManyApiGETWireTransferIdVersionsRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		wireTransferId: wireTransferId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETWireTransferIdVersionsExecute(r HasManyApiGETWireTransferIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETWireTransferIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

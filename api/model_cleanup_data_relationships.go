@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,8 @@ var _ MappedNullable = &CleanupDataRelationships{}
 
 // CleanupDataRelationships struct for CleanupDataRelationships
 type CleanupDataRelationships struct {
-	Events *AuthorizationDataRelationshipsEvents `json:"events,omitempty"`
+	Events   *AddressDataRelationshipsEvents   `json:"events,omitempty"`
+	Versions *AddressDataRelationshipsVersions `json:"versions,omitempty"`
 }
 
 // NewCleanupDataRelationships instantiates a new CleanupDataRelationships object
@@ -41,9 +42,9 @@ func NewCleanupDataRelationshipsWithDefaults() *CleanupDataRelationships {
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *CleanupDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *CleanupDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -51,7 +52,7 @@ func (o *CleanupDataRelationships) GetEvents() AuthorizationDataRelationshipsEve
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CleanupDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *CleanupDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -67,9 +68,41 @@ func (o *CleanupDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *CleanupDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *CleanupDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *CleanupDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CleanupDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *CleanupDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *CleanupDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o CleanupDataRelationships) MarshalJSON() ([]byte, error) {
@@ -84,6 +117,9 @@ func (o CleanupDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

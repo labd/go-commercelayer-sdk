@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Sku** | Pointer to [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | [optional] 
 **OriginStockLocation** | Pointer to [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | [optional] 
 **DestinationStockLocation** | Pointer to [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | [optional] 
+**Shipment** | Pointer to [**ParcelCreateDataRelationshipsShipment**](ParcelCreateDataRelationshipsShipment.md) |  | [optional] 
+**LineItem** | Pointer to [**LineItemOptionCreateDataRelationshipsLineItem**](LineItemOptionCreateDataRelationshipsLineItem.md) |  | [optional] 
 
 ## Methods
 
@@ -101,6 +103,56 @@ SetDestinationStockLocation sets DestinationStockLocation field to given value.
 `func (o *StockTransferUpdateDataRelationships) HasDestinationStockLocation() bool`
 
 HasDestinationStockLocation returns a boolean if a field has been set.
+
+### GetShipment
+
+`func (o *StockTransferUpdateDataRelationships) GetShipment() ParcelCreateDataRelationshipsShipment`
+
+GetShipment returns the Shipment field if non-nil, zero value otherwise.
+
+### GetShipmentOk
+
+`func (o *StockTransferUpdateDataRelationships) GetShipmentOk() (*ParcelCreateDataRelationshipsShipment, bool)`
+
+GetShipmentOk returns a tuple with the Shipment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShipment
+
+`func (o *StockTransferUpdateDataRelationships) SetShipment(v ParcelCreateDataRelationshipsShipment)`
+
+SetShipment sets Shipment field to given value.
+
+### HasShipment
+
+`func (o *StockTransferUpdateDataRelationships) HasShipment() bool`
+
+HasShipment returns a boolean if a field has been set.
+
+### GetLineItem
+
+`func (o *StockTransferUpdateDataRelationships) GetLineItem() LineItemOptionCreateDataRelationshipsLineItem`
+
+GetLineItem returns the LineItem field if non-nil, zero value otherwise.
+
+### GetLineItemOk
+
+`func (o *StockTransferUpdateDataRelationships) GetLineItemOk() (*LineItemOptionCreateDataRelationshipsLineItem, bool)`
+
+GetLineItemOk returns a tuple with the LineItem field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLineItem
+
+`func (o *StockTransferUpdateDataRelationships) SetLineItem(v LineItemOptionCreateDataRelationshipsLineItem)`
+
+SetLineItem sets LineItem field to given value.
+
+### HasLineItem
+
+`func (o *StockTransferUpdateDataRelationships) HasLineItem() bool`
+
+HasLineItem returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

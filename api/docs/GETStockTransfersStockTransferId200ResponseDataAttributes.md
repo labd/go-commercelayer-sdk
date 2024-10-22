@@ -4,15 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Number** | Pointer to **interface{}** | Unique identifier for the stock transfer (numeric). | [optional] 
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
-**Status** | Pointer to **interface{}** | The stock transfer status, one of &#39;draft&#39;, &#39;upcoming&#39;, &#39;picking&#39;, &#39;in_transit&#39;, &#39;completed&#39;, or &#39;cancelled&#39; | [optional] 
-**Quantity** | Pointer to **interface{}** | The stock quantity to be transferred from the origin stock location to destination one | [optional] 
+**Status** | Pointer to **interface{}** | The stock transfer status. One of &#39;draft&#39; (default), &#39;upcoming&#39;, &#39;on_hold&#39;, &#39;picking&#39;, &#39;in_transit&#39;, &#39;completed&#39;, or &#39;cancelled&#39;. | [optional] 
+**Quantity** | Pointer to **interface{}** | The stock quantity to be transferred from the origin stock location to destination one. | [optional] 
+**OnHoldAt** | Pointer to **interface{}** | Time at which the stock transfer was put on hold. | [optional] 
+**PickingAt** | Pointer to **interface{}** | Time at which the stock transfer was picking. | [optional] 
+**InTransitAt** | Pointer to **interface{}** | Time at which the stock transfer was in transit. | [optional] 
 **CompletedAt** | Pointer to **interface{}** | Time at which the stock transfer was completed. | [optional] 
 **CancelledAt** | Pointer to **interface{}** | Time at which the stock transfer was cancelled. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -34,6 +38,41 @@ NewGETStockTransfersStockTransferId200ResponseDataAttributesWithDefaults instant
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetNumber
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetNumber() interface{}`
+
+GetNumber returns the Number field if non-nil, zero value otherwise.
+
+### GetNumberOk
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetNumberOk() (*interface{}, bool)`
+
+GetNumberOk returns a tuple with the Number field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumber
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetNumber(v interface{})`
+
+SetNumber sets Number field to given value.
+
+### HasNumber
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) HasNumber() bool`
+
+HasNumber returns a boolean if a field has been set.
+
+### SetNumberNil
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetNumberNil(b bool)`
+
+ SetNumberNil sets the value for Number to be an explicit nil
+
+### UnsetNumber
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) UnsetNumber()`
+
+UnsetNumber ensures that no value is present for Number, not even an explicit nil
 ### GetSkuCode
 
 `func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetSkuCode() interface{}`
@@ -139,6 +178,111 @@ HasQuantity returns a boolean if a field has been set.
 `func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) UnsetQuantity()`
 
 UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+### GetOnHoldAt
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetOnHoldAt() interface{}`
+
+GetOnHoldAt returns the OnHoldAt field if non-nil, zero value otherwise.
+
+### GetOnHoldAtOk
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetOnHoldAtOk() (*interface{}, bool)`
+
+GetOnHoldAtOk returns a tuple with the OnHoldAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnHoldAt
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetOnHoldAt(v interface{})`
+
+SetOnHoldAt sets OnHoldAt field to given value.
+
+### HasOnHoldAt
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) HasOnHoldAt() bool`
+
+HasOnHoldAt returns a boolean if a field has been set.
+
+### SetOnHoldAtNil
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetOnHoldAtNil(b bool)`
+
+ SetOnHoldAtNil sets the value for OnHoldAt to be an explicit nil
+
+### UnsetOnHoldAt
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) UnsetOnHoldAt()`
+
+UnsetOnHoldAt ensures that no value is present for OnHoldAt, not even an explicit nil
+### GetPickingAt
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetPickingAt() interface{}`
+
+GetPickingAt returns the PickingAt field if non-nil, zero value otherwise.
+
+### GetPickingAtOk
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetPickingAtOk() (*interface{}, bool)`
+
+GetPickingAtOk returns a tuple with the PickingAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPickingAt
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetPickingAt(v interface{})`
+
+SetPickingAt sets PickingAt field to given value.
+
+### HasPickingAt
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) HasPickingAt() bool`
+
+HasPickingAt returns a boolean if a field has been set.
+
+### SetPickingAtNil
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetPickingAtNil(b bool)`
+
+ SetPickingAtNil sets the value for PickingAt to be an explicit nil
+
+### UnsetPickingAt
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) UnsetPickingAt()`
+
+UnsetPickingAt ensures that no value is present for PickingAt, not even an explicit nil
+### GetInTransitAt
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetInTransitAt() interface{}`
+
+GetInTransitAt returns the InTransitAt field if non-nil, zero value otherwise.
+
+### GetInTransitAtOk
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetInTransitAtOk() (*interface{}, bool)`
+
+GetInTransitAtOk returns a tuple with the InTransitAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInTransitAt
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetInTransitAt(v interface{})`
+
+SetInTransitAt sets InTransitAt field to given value.
+
+### HasInTransitAt
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) HasInTransitAt() bool`
+
+HasInTransitAt returns a boolean if a field has been set.
+
+### SetInTransitAtNil
+
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) SetInTransitAtNil(b bool)`
+
+ SetInTransitAtNil sets the value for InTransitAt to be an explicit nil
+
+### UnsetInTransitAt
+`func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) UnsetInTransitAt()`
+
+UnsetInTransitAt ensures that no value is present for InTransitAt, not even an explicit nil
 ### GetCompletedAt
 
 `func (o *GETStockTransfersStockTransferId200ResponseDataAttributes) GetCompletedAt() interface{}`

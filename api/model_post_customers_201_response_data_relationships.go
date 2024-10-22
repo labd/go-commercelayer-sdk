@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,17 @@ var _ MappedNullable = &POSTCustomers201ResponseDataRelationships{}
 
 // POSTCustomers201ResponseDataRelationships struct for POSTCustomers201ResponseDataRelationships
 type POSTCustomers201ResponseDataRelationships struct {
-	CustomerGroup          *POSTCustomers201ResponseDataRelationshipsCustomerGroup             `json:"customer_group,omitempty"`
-	CustomerAddresses      *POSTCustomers201ResponseDataRelationshipsCustomerAddresses         `json:"customer_addresses,omitempty"`
-	CustomerPaymentSources *POSTCustomers201ResponseDataRelationshipsCustomerPaymentSources    `json:"customer_payment_sources,omitempty"`
-	CustomerSubscriptions  *POSTCustomers201ResponseDataRelationshipsCustomerSubscriptions     `json:"customer_subscriptions,omitempty"`
-	Orders                 *POSTCustomers201ResponseDataRelationshipsOrders                    `json:"orders,omitempty"`
-	OrderSubscriptions     *POSTCustomers201ResponseDataRelationshipsOrderSubscriptions        `json:"order_subscriptions,omitempty"`
-	Returns                *POSTCustomers201ResponseDataRelationshipsReturns                   `json:"returns,omitempty"`
-	SkuLists               *POSTCustomers201ResponseDataRelationshipsSkuLists                  `json:"sku_lists,omitempty"`
-	Attachments            *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments         `json:"attachments,omitempty"`
-	Events                 *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents `json:"events,omitempty"`
+	CustomerGroup          *POSTCustomers201ResponseDataRelationshipsCustomerGroup                  `json:"customer_group,omitempty"`
+	CustomerAddresses      *POSTCustomers201ResponseDataRelationshipsCustomerAddresses              `json:"customer_addresses,omitempty"`
+	CustomerPaymentSources *POSTCustomers201ResponseDataRelationshipsCustomerPaymentSources         `json:"customer_payment_sources,omitempty"`
+	CustomerSubscriptions  *POSTCustomers201ResponseDataRelationshipsCustomerSubscriptions          `json:"customer_subscriptions,omitempty"`
+	Orders                 *POSTCustomers201ResponseDataRelationshipsOrders                         `json:"orders,omitempty"`
+	OrderSubscriptions     *POSTCustomers201ResponseDataRelationshipsOrderSubscriptions             `json:"order_subscriptions,omitempty"`
+	Returns                *POSTCustomers201ResponseDataRelationshipsReturns                        `json:"returns,omitempty"`
+	SkuLists               *POSTCustomers201ResponseDataRelationshipsSkuLists                       `json:"sku_lists,omitempty"`
+	Attachments            *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Events                 *POSTAddresses201ResponseDataRelationshipsEvents                         `json:"events,omitempty"`
+	Tags                   *POSTAddresses201ResponseDataRelationshipsTags                           `json:"tags,omitempty"`
 }
 
 // NewPOSTCustomers201ResponseDataRelationships instantiates a new POSTCustomers201ResponseDataRelationships object
@@ -306,9 +307,9 @@ func (o *POSTCustomers201ResponseDataRelationships) SetSkuLists(v POSTCustomers2
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTCustomers201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTCustomers201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -316,7 +317,7 @@ func (o *POSTCustomers201ResponseDataRelationships) GetAttachments() POSTAvalara
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCustomers201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTCustomers201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -332,15 +333,15 @@ func (o *POSTCustomers201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTCustomers201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTCustomers201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *POSTCustomers201ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents {
+func (o *POSTCustomers201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -348,7 +349,7 @@ func (o *POSTCustomers201ResponseDataRelationships) GetEvents() GETAuthorization
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCustomers201ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool) {
+func (o *POSTCustomers201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -364,9 +365,41 @@ func (o *POSTCustomers201ResponseDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents and assigns it to the Events field.
-func (o *POSTCustomers201ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents) {
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *POSTCustomers201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *POSTCustomers201ResponseDataRelationships) GetTags() POSTAddresses201ResponseDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret POSTAddresses201ResponseDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTCustomers201ResponseDataRelationships) GetTagsOk() (*POSTAddresses201ResponseDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *POSTCustomers201ResponseDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given POSTAddresses201ResponseDataRelationshipsTags and assigns it to the Tags field.
+func (o *POSTCustomers201ResponseDataRelationships) SetTags(v POSTAddresses201ResponseDataRelationshipsTags) {
+	o.Tags = &v
 }
 
 func (o POSTCustomers201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -408,6 +441,9 @@ func (o POSTCustomers201ResponseDataRelationships) ToMap() (map[string]interface
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

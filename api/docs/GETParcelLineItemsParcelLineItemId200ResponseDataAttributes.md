@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SkuCode** | Pointer to **interface{}** | The code of the SKU of the associated shipment_line_item. | [optional] 
+**SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
+**BundleCode** | Pointer to **interface{}** | The code of the associated bundle. | [optional] 
 **Quantity** | Pointer to **interface{}** | The parcel line item quantity. | [optional] 
 **Name** | Pointer to **interface{}** | The internal name of the associated line item. | [optional] 
 **ImageUrl** | Pointer to **interface{}** | The image_url of the associated line item. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -68,6 +69,41 @@ HasSkuCode returns a boolean if a field has been set.
 `func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) UnsetSkuCode()`
 
 UnsetSkuCode ensures that no value is present for SkuCode, not even an explicit nil
+### GetBundleCode
+
+`func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) GetBundleCode() interface{}`
+
+GetBundleCode returns the BundleCode field if non-nil, zero value otherwise.
+
+### GetBundleCodeOk
+
+`func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) GetBundleCodeOk() (*interface{}, bool)`
+
+GetBundleCodeOk returns a tuple with the BundleCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBundleCode
+
+`func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) SetBundleCode(v interface{})`
+
+SetBundleCode sets BundleCode field to given value.
+
+### HasBundleCode
+
+`func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) HasBundleCode() bool`
+
+HasBundleCode returns a boolean if a field has been set.
+
+### SetBundleCodeNil
+
+`func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) SetBundleCodeNil(b bool)`
+
+ SetBundleCodeNil sets the value for BundleCode to be an explicit nil
+
+### UnsetBundleCode
+`func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) UnsetBundleCode()`
+
+UnsetBundleCode ensures that no value is present for BundleCode, not even an explicit nil
 ### GetQuantity
 
 `func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) GetQuantity() interface{}`

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,11 @@ var _ MappedNullable = &POSTParcelLineItems201ResponseDataAttributes{}
 
 // POSTParcelLineItems201ResponseDataAttributes struct for POSTParcelLineItems201ResponseDataAttributes
 type POSTParcelLineItems201ResponseDataAttributes struct {
-	// The code of the SKU of the associated shipment_line_item.
-	SkuCode interface{} `json:"sku_code,omitempty"`
 	// The parcel line item quantity.
 	Quantity interface{} `json:"quantity"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -48,39 +46,6 @@ func NewPOSTParcelLineItems201ResponseDataAttributes(quantity interface{}) *POST
 func NewPOSTParcelLineItems201ResponseDataAttributesWithDefaults() *POSTParcelLineItems201ResponseDataAttributes {
 	this := POSTParcelLineItems201ResponseDataAttributes{}
 	return &this
-}
-
-// GetSkuCode returns the SkuCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *POSTParcelLineItems201ResponseDataAttributes) GetSkuCode() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.SkuCode
-}
-
-// GetSkuCodeOk returns a tuple with the SkuCode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *POSTParcelLineItems201ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.SkuCode) {
-		return nil, false
-	}
-	return &o.SkuCode, true
-}
-
-// HasSkuCode returns a boolean if a field has been set.
-func (o *POSTParcelLineItems201ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && IsNil(o.SkuCode) {
-		return true
-	}
-
-	return false
-}
-
-// SetSkuCode gets a reference to the given interface{} and assigns it to the SkuCode field.
-func (o *POSTParcelLineItems201ResponseDataAttributes) SetSkuCode(v interface{}) {
-	o.SkuCode = v
 }
 
 // GetQuantity returns the Quantity field value
@@ -218,9 +183,6 @@ func (o POSTParcelLineItems201ResponseDataAttributes) MarshalJSON() ([]byte, err
 
 func (o POSTParcelLineItems201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SkuCode != nil {
-		toSerialize["sku_code"] = o.SkuCode
-	}
 	if o.Quantity != nil {
 		toSerialize["quantity"] = o.Quantity
 	}

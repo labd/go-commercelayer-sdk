@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
+**Attributes** | [**POSTCustomerAddresses201ResponseDataAttributes**](POSTCustomerAddresses201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerAddressCreateDataRelationships**](CustomerAddressCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerAddressCreateData
 
-`func NewCustomerAddressCreateData(type_ interface{}, attributes POSTAdyenPayments201ResponseDataAttributes, ) *CustomerAddressCreateData`
+`func NewCustomerAddressCreateData(type_ interface{}, attributes POSTCustomerAddresses201ResponseDataAttributes, ) *CustomerAddressCreateData`
 
 NewCustomerAddressCreateData instantiates a new CustomerAddressCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerAddressCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
+`func (o *CustomerAddressCreateData) GetAttributes() POSTCustomerAddresses201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerAddressCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
+`func (o *CustomerAddressCreateData) GetAttributesOk() (*POSTCustomerAddresses201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerAddressCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
+`func (o *CustomerAddressCreateData) SetAttributes(v POSTCustomerAddresses201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

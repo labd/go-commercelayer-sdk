@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Return** | Pointer to [**POSTReturnLineItems201ResponseDataRelationshipsReturn**](POSTReturnLineItems201ResponseDataRelationshipsReturn.md) |  | [optional] 
+**Return** | Pointer to [**GETCapturesCaptureId200ResponseDataRelationshipsReturn**](GETCapturesCaptureId200ResponseDataRelationshipsReturn.md) |  | [optional] 
 **LineItem** | Pointer to [**POSTLineItemOptions201ResponseDataRelationshipsLineItem**](POSTLineItemOptions201ResponseDataRelationshipsLineItem.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetReturn
 
-`func (o *POSTReturnLineItems201ResponseDataRelationships) GetReturn() POSTReturnLineItems201ResponseDataRelationshipsReturn`
+`func (o *POSTReturnLineItems201ResponseDataRelationships) GetReturn() GETCapturesCaptureId200ResponseDataRelationshipsReturn`
 
 GetReturn returns the Return field if non-nil, zero value otherwise.
 
 ### GetReturnOk
 
-`func (o *POSTReturnLineItems201ResponseDataRelationships) GetReturnOk() (*POSTReturnLineItems201ResponseDataRelationshipsReturn, bool)`
+`func (o *POSTReturnLineItems201ResponseDataRelationships) GetReturnOk() (*GETCapturesCaptureId200ResponseDataRelationshipsReturn, bool)`
 
 GetReturnOk returns a tuple with the Return field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReturn
 
-`func (o *POSTReturnLineItems201ResponseDataRelationships) SetReturn(v POSTReturnLineItems201ResponseDataRelationshipsReturn)`
+`func (o *POSTReturnLineItems201ResponseDataRelationships) SetReturn(v GETCapturesCaptureId200ResponseDataRelationshipsReturn)`
 
 SetReturn sets Return field to given value.
 

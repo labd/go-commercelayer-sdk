@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,12 @@ var _ MappedNullable = &POSTStockItems201ResponseDataRelationships{}
 
 // POSTStockItems201ResponseDataRelationships struct for POSTStockItems201ResponseDataRelationships
 type POSTStockItems201ResponseDataRelationships struct {
-	StockLocation *POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation `json:"stock_location,omitempty"`
-	Sku           *POSTInStockSubscriptions201ResponseDataRelationshipsSku        `json:"sku,omitempty"`
-	Attachments   *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments     `json:"attachments,omitempty"`
+	StockLocation     *POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation          `json:"stock_location,omitempty"`
+	Sku               *POSTInStockSubscriptions201ResponseDataRelationshipsSku                 `json:"sku,omitempty"`
+	ReservedStock     *POSTStockItems201ResponseDataRelationshipsReservedStock                 `json:"reserved_stock,omitempty"`
+	StockReservations *POSTLineItems201ResponseDataRelationshipsStockReservations              `json:"stock_reservations,omitempty"`
+	Attachments       *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Versions          *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewPOSTStockItems201ResponseDataRelationships instantiates a new POSTStockItems201ResponseDataRelationships object
@@ -106,10 +109,74 @@ func (o *POSTStockItems201ResponseDataRelationships) SetSku(v POSTInStockSubscri
 	o.Sku = &v
 }
 
+// GetReservedStock returns the ReservedStock field value if set, zero value otherwise.
+func (o *POSTStockItems201ResponseDataRelationships) GetReservedStock() POSTStockItems201ResponseDataRelationshipsReservedStock {
+	if o == nil || IsNil(o.ReservedStock) {
+		var ret POSTStockItems201ResponseDataRelationshipsReservedStock
+		return ret
+	}
+	return *o.ReservedStock
+}
+
+// GetReservedStockOk returns a tuple with the ReservedStock field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTStockItems201ResponseDataRelationships) GetReservedStockOk() (*POSTStockItems201ResponseDataRelationshipsReservedStock, bool) {
+	if o == nil || IsNil(o.ReservedStock) {
+		return nil, false
+	}
+	return o.ReservedStock, true
+}
+
+// HasReservedStock returns a boolean if a field has been set.
+func (o *POSTStockItems201ResponseDataRelationships) HasReservedStock() bool {
+	if o != nil && !IsNil(o.ReservedStock) {
+		return true
+	}
+
+	return false
+}
+
+// SetReservedStock gets a reference to the given POSTStockItems201ResponseDataRelationshipsReservedStock and assigns it to the ReservedStock field.
+func (o *POSTStockItems201ResponseDataRelationships) SetReservedStock(v POSTStockItems201ResponseDataRelationshipsReservedStock) {
+	o.ReservedStock = &v
+}
+
+// GetStockReservations returns the StockReservations field value if set, zero value otherwise.
+func (o *POSTStockItems201ResponseDataRelationships) GetStockReservations() POSTLineItems201ResponseDataRelationshipsStockReservations {
+	if o == nil || IsNil(o.StockReservations) {
+		var ret POSTLineItems201ResponseDataRelationshipsStockReservations
+		return ret
+	}
+	return *o.StockReservations
+}
+
+// GetStockReservationsOk returns a tuple with the StockReservations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTStockItems201ResponseDataRelationships) GetStockReservationsOk() (*POSTLineItems201ResponseDataRelationshipsStockReservations, bool) {
+	if o == nil || IsNil(o.StockReservations) {
+		return nil, false
+	}
+	return o.StockReservations, true
+}
+
+// HasStockReservations returns a boolean if a field has been set.
+func (o *POSTStockItems201ResponseDataRelationships) HasStockReservations() bool {
+	if o != nil && !IsNil(o.StockReservations) {
+		return true
+	}
+
+	return false
+}
+
+// SetStockReservations gets a reference to the given POSTLineItems201ResponseDataRelationshipsStockReservations and assigns it to the StockReservations field.
+func (o *POSTStockItems201ResponseDataRelationships) SetStockReservations(v POSTLineItems201ResponseDataRelationshipsStockReservations) {
+	o.StockReservations = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTStockItems201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTStockItems201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -117,7 +184,7 @@ func (o *POSTStockItems201ResponseDataRelationships) GetAttachments() POSTAvalar
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTStockItems201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTStockItems201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -133,9 +200,41 @@ func (o *POSTStockItems201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTStockItems201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTStockItems201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTStockItems201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTStockItems201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTStockItems201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTStockItems201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTStockItems201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -154,8 +253,17 @@ func (o POSTStockItems201ResponseDataRelationships) ToMap() (map[string]interfac
 	if !IsNil(o.Sku) {
 		toSerialize["sku"] = o.Sku
 	}
+	if !IsNil(o.ReservedStock) {
+		toSerialize["reserved_stock"] = o.ReservedStock
+	}
+	if !IsNil(o.StockReservations) {
+		toSerialize["stock_reservations"] = o.StockReservations
+	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

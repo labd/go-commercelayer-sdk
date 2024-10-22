@@ -87,6 +87,19 @@ func Test_api_CapturesApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test CapturesApiService GETReturnIdReferenceCapture", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var returnId interface{}
+
+		httpRes, err := apiClient.CapturesApi.GETReturnIdReferenceCapture(context.Background(), returnId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CapturesApiService PATCHCapturesCaptureId", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **Login** | Pointer to **interface{}** | The merchant login code. | [optional] 
 **ReturnUrl** | Pointer to **interface{}** | The URL where the payer is redirected after they approve the payment. | [optional] 
 **PaymentRequestData** | Pointer to **interface{}** | The Axerve payment request data, collected by client. | [optional] 
+**ClientIp** | Pointer to **interface{}** | The IP adress of the client creating the payment. | [optional] 
+**BuyerDetails** | Pointer to **interface{}** | The details of the buyer creating the payment. | [optional] 
+**RequestToken** | Pointer to **interface{}** | Requires the creation of a token to represent this payment, mandatory to use customer&#39;s wallet and order subscriptions. | [optional] 
 **MismatchedAmounts** | Pointer to **interface{}** | Indicates if the order current amount differs form the one of the associated authorization. | [optional] 
-**IntentAmountCents** | Pointer to **interface{}** | The amount of the associated payment intent, in cents. | [optional] 
-**IntentAmountFloat** | Pointer to **interface{}** | The amount of the associated payment intent, float. | [optional] 
-**FormattedIntentAmount** | Pointer to **interface{}** | The amount of the associated payment intent, formatted. | [optional] 
-**PaymentInstrument** | Pointer to **interface{}** | Information about the payment instrument used in the transaction | [optional] 
+**PaymentInstrument** | Pointer to **interface{}** | Information about the payment instrument used in the transaction. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -142,6 +142,111 @@ HasPaymentRequestData returns a boolean if a field has been set.
 `func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) UnsetPaymentRequestData()`
 
 UnsetPaymentRequestData ensures that no value is present for PaymentRequestData, not even an explicit nil
+### GetClientIp
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetClientIp() interface{}`
+
+GetClientIp returns the ClientIp field if non-nil, zero value otherwise.
+
+### GetClientIpOk
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetClientIpOk() (*interface{}, bool)`
+
+GetClientIpOk returns a tuple with the ClientIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientIp
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetClientIp(v interface{})`
+
+SetClientIp sets ClientIp field to given value.
+
+### HasClientIp
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasClientIp() bool`
+
+HasClientIp returns a boolean if a field has been set.
+
+### SetClientIpNil
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetClientIpNil(b bool)`
+
+ SetClientIpNil sets the value for ClientIp to be an explicit nil
+
+### UnsetClientIp
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) UnsetClientIp()`
+
+UnsetClientIp ensures that no value is present for ClientIp, not even an explicit nil
+### GetBuyerDetails
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetBuyerDetails() interface{}`
+
+GetBuyerDetails returns the BuyerDetails field if non-nil, zero value otherwise.
+
+### GetBuyerDetailsOk
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetBuyerDetailsOk() (*interface{}, bool)`
+
+GetBuyerDetailsOk returns a tuple with the BuyerDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBuyerDetails
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetBuyerDetails(v interface{})`
+
+SetBuyerDetails sets BuyerDetails field to given value.
+
+### HasBuyerDetails
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasBuyerDetails() bool`
+
+HasBuyerDetails returns a boolean if a field has been set.
+
+### SetBuyerDetailsNil
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetBuyerDetailsNil(b bool)`
+
+ SetBuyerDetailsNil sets the value for BuyerDetails to be an explicit nil
+
+### UnsetBuyerDetails
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) UnsetBuyerDetails()`
+
+UnsetBuyerDetails ensures that no value is present for BuyerDetails, not even an explicit nil
+### GetRequestToken
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetRequestToken() interface{}`
+
+GetRequestToken returns the RequestToken field if non-nil, zero value otherwise.
+
+### GetRequestTokenOk
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetRequestTokenOk() (*interface{}, bool)`
+
+GetRequestTokenOk returns a tuple with the RequestToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestToken
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetRequestToken(v interface{})`
+
+SetRequestToken sets RequestToken field to given value.
+
+### HasRequestToken
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasRequestToken() bool`
+
+HasRequestToken returns a boolean if a field has been set.
+
+### SetRequestTokenNil
+
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetRequestTokenNil(b bool)`
+
+ SetRequestTokenNil sets the value for RequestToken to be an explicit nil
+
+### UnsetRequestToken
+`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) UnsetRequestToken()`
+
+UnsetRequestToken ensures that no value is present for RequestToken, not even an explicit nil
 ### GetMismatchedAmounts
 
 `func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetMismatchedAmounts() interface{}`
@@ -177,111 +282,6 @@ HasMismatchedAmounts returns a boolean if a field has been set.
 `func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) UnsetMismatchedAmounts()`
 
 UnsetMismatchedAmounts ensures that no value is present for MismatchedAmounts, not even an explicit nil
-### GetIntentAmountCents
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetIntentAmountCents() interface{}`
-
-GetIntentAmountCents returns the IntentAmountCents field if non-nil, zero value otherwise.
-
-### GetIntentAmountCentsOk
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetIntentAmountCentsOk() (*interface{}, bool)`
-
-GetIntentAmountCentsOk returns a tuple with the IntentAmountCents field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntentAmountCents
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetIntentAmountCents(v interface{})`
-
-SetIntentAmountCents sets IntentAmountCents field to given value.
-
-### HasIntentAmountCents
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasIntentAmountCents() bool`
-
-HasIntentAmountCents returns a boolean if a field has been set.
-
-### SetIntentAmountCentsNil
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetIntentAmountCentsNil(b bool)`
-
- SetIntentAmountCentsNil sets the value for IntentAmountCents to be an explicit nil
-
-### UnsetIntentAmountCents
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) UnsetIntentAmountCents()`
-
-UnsetIntentAmountCents ensures that no value is present for IntentAmountCents, not even an explicit nil
-### GetIntentAmountFloat
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetIntentAmountFloat() interface{}`
-
-GetIntentAmountFloat returns the IntentAmountFloat field if non-nil, zero value otherwise.
-
-### GetIntentAmountFloatOk
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetIntentAmountFloatOk() (*interface{}, bool)`
-
-GetIntentAmountFloatOk returns a tuple with the IntentAmountFloat field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntentAmountFloat
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetIntentAmountFloat(v interface{})`
-
-SetIntentAmountFloat sets IntentAmountFloat field to given value.
-
-### HasIntentAmountFloat
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasIntentAmountFloat() bool`
-
-HasIntentAmountFloat returns a boolean if a field has been set.
-
-### SetIntentAmountFloatNil
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetIntentAmountFloatNil(b bool)`
-
- SetIntentAmountFloatNil sets the value for IntentAmountFloat to be an explicit nil
-
-### UnsetIntentAmountFloat
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) UnsetIntentAmountFloat()`
-
-UnsetIntentAmountFloat ensures that no value is present for IntentAmountFloat, not even an explicit nil
-### GetFormattedIntentAmount
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetFormattedIntentAmount() interface{}`
-
-GetFormattedIntentAmount returns the FormattedIntentAmount field if non-nil, zero value otherwise.
-
-### GetFormattedIntentAmountOk
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetFormattedIntentAmountOk() (*interface{}, bool)`
-
-GetFormattedIntentAmountOk returns a tuple with the FormattedIntentAmount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormattedIntentAmount
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetFormattedIntentAmount(v interface{})`
-
-SetFormattedIntentAmount sets FormattedIntentAmount field to given value.
-
-### HasFormattedIntentAmount
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasFormattedIntentAmount() bool`
-
-HasFormattedIntentAmount returns a boolean if a field has been set.
-
-### SetFormattedIntentAmountNil
-
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetFormattedIntentAmountNil(b bool)`
-
- SetFormattedIntentAmountNil sets the value for FormattedIntentAmount to be an explicit nil
-
-### UnsetFormattedIntentAmount
-`func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) UnsetFormattedIntentAmount()`
-
-UnsetFormattedIntentAmount ensures that no value is present for FormattedIntentAmount, not even an explicit nil
 ### GetPaymentInstrument
 
 `func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetPaymentInstrument() interface{}`

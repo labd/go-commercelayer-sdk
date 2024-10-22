@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **BalanceMaxCents** | Pointer to **interface{}** | The gift card balance max, in cents. | [optional] 
 **SingleUse** | Pointer to **interface{}** | Indicates if the gift card can be used only one. | [optional] 
 **Rechargeable** | Pointer to **interface{}** | Indicates if the gift card can be recharged. | [optional] 
+**DistributeDiscount** | Pointer to **interface{}** | Indicates if redeemed gift card amount is distributed for tax calculation. | [optional] 
 **ImageUrl** | Pointer to **interface{}** | The URL of an image that represents the gift card. | [optional] 
 **ExpiresAt** | Pointer to **interface{}** | Time at which the gift card will expire. | [optional] 
 **RecipientEmail** | Pointer to **interface{}** | The email address of the associated recipient. When creating or updating a gift card, this is a shortcut to find or create the associated recipient by email. | [optional] 
@@ -17,7 +18,7 @@ Name | Type | Description | Notes
 **Deactivate** | Pointer to **interface{}** | Send this attribute if you want to deactivate a gift card. | [optional] 
 **BalanceChangeCents** | Pointer to **interface{}** | The balance change, in cents. Send a negative value to reduces the card balance by the specified amount. Send a positive value to recharge the gift card (if rechargeable). | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -214,6 +215,41 @@ HasRechargeable returns a boolean if a field has been set.
 `func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) UnsetRechargeable()`
 
 UnsetRechargeable ensures that no value is present for Rechargeable, not even an explicit nil
+### GetDistributeDiscount
+
+`func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDistributeDiscount() interface{}`
+
+GetDistributeDiscount returns the DistributeDiscount field if non-nil, zero value otherwise.
+
+### GetDistributeDiscountOk
+
+`func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDistributeDiscountOk() (*interface{}, bool)`
+
+GetDistributeDiscountOk returns a tuple with the DistributeDiscount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDistributeDiscount
+
+`func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetDistributeDiscount(v interface{})`
+
+SetDistributeDiscount sets DistributeDiscount field to given value.
+
+### HasDistributeDiscount
+
+`func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasDistributeDiscount() bool`
+
+HasDistributeDiscount returns a boolean if a field has been set.
+
+### SetDistributeDiscountNil
+
+`func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetDistributeDiscountNil(b bool)`
+
+ SetDistributeDiscountNil sets the value for DistributeDiscount to be an explicit nil
+
+### UnsetDistributeDiscount
+`func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) UnsetDistributeDiscount()`
+
+UnsetDistributeDiscount ensures that no value is present for DistributeDiscount, not even an explicit nil
 ### GetImageUrl
 
 `func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetImageUrl() interface{}`

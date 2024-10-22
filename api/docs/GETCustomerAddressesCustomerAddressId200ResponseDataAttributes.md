@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **interface{}** | Returns the associated address&#39; name | [optional] 
+**Name** | Pointer to **interface{}** | Returns the associated address&#39; name. | [optional] 
+**CustomerEmail** | Pointer to **interface{}** | The email of the customer associated to the address. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -65,6 +66,41 @@ HasName returns a boolean if a field has been set.
 `func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetCustomerEmail
+
+`func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) GetCustomerEmail() interface{}`
+
+GetCustomerEmail returns the CustomerEmail field if non-nil, zero value otherwise.
+
+### GetCustomerEmailOk
+
+`func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) GetCustomerEmailOk() (*interface{}, bool)`
+
+GetCustomerEmailOk returns a tuple with the CustomerEmail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomerEmail
+
+`func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) SetCustomerEmail(v interface{})`
+
+SetCustomerEmail sets CustomerEmail field to given value.
+
+### HasCustomerEmail
+
+`func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) HasCustomerEmail() bool`
+
+HasCustomerEmail returns a boolean if a field has been set.
+
+### SetCustomerEmailNil
+
+`func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) SetCustomerEmailNil(b bool)`
+
+ SetCustomerEmailNil sets the value for CustomerEmail to be an explicit nil
+
+### UnsetCustomerEmail
+`func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) UnsetCustomerEmail()`
+
+UnsetCustomerEmail ensures that no value is present for CustomerEmail, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) GetCreatedAt() interface{}`

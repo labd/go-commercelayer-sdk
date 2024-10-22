@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &PaypalGatewayDataRelationships{}
 // PaypalGatewayDataRelationships struct for PaypalGatewayDataRelationships
 type PaypalGatewayDataRelationships struct {
 	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
+	Versions       *AddressDataRelationshipsVersions             `json:"versions,omitempty"`
 	PaypalPayments *PaypalGatewayDataRelationshipsPaypalPayments `json:"paypal_payments,omitempty"`
 }
 
@@ -73,6 +74,38 @@ func (o *PaypalGatewayDataRelationships) SetPaymentMethods(v AdyenGatewayDataRel
 	o.PaymentMethods = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *PaypalGatewayDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PaypalGatewayDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *PaypalGatewayDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *PaypalGatewayDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 // GetPaypalPayments returns the PaypalPayments field value if set, zero value otherwise.
 func (o *PaypalGatewayDataRelationships) GetPaypalPayments() PaypalGatewayDataRelationshipsPaypalPayments {
 	if o == nil || IsNil(o.PaypalPayments) {
@@ -117,6 +150,9 @@ func (o PaypalGatewayDataRelationships) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.PaymentMethods) {
 		toSerialize["payment_methods"] = o.PaymentMethods
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	if !IsNil(o.PaypalPayments) {
 		toSerialize["paypal_payments"] = o.PaypalPayments

@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
+**BundleCode** | Pointer to **interface{}** | The code of the associated bundle. | [optional] 
 **Quantity** | Pointer to **interface{}** | The subscription item quantity. | [optional] 
 **UnitAmountCents** | Pointer to **interface{}** | The unit amount of the subscription item, in cents. | [optional] 
 **UnitAmountFloat** | Pointer to **interface{}** | The unit amount of the subscription item, float. This can be useful to track the purchase on thrid party systems, e.g Google Analyitcs Enhanced Ecommerce. | [optional] 
@@ -14,7 +16,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -36,6 +38,76 @@ NewGETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributesWith
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetSkuCode
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) GetSkuCode() interface{}`
+
+GetSkuCode returns the SkuCode field if non-nil, zero value otherwise.
+
+### GetSkuCodeOk
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool)`
+
+GetSkuCodeOk returns a tuple with the SkuCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkuCode
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) SetSkuCode(v interface{})`
+
+SetSkuCode sets SkuCode field to given value.
+
+### HasSkuCode
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) HasSkuCode() bool`
+
+HasSkuCode returns a boolean if a field has been set.
+
+### SetSkuCodeNil
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) SetSkuCodeNil(b bool)`
+
+ SetSkuCodeNil sets the value for SkuCode to be an explicit nil
+
+### UnsetSkuCode
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) UnsetSkuCode()`
+
+UnsetSkuCode ensures that no value is present for SkuCode, not even an explicit nil
+### GetBundleCode
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) GetBundleCode() interface{}`
+
+GetBundleCode returns the BundleCode field if non-nil, zero value otherwise.
+
+### GetBundleCodeOk
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) GetBundleCodeOk() (*interface{}, bool)`
+
+GetBundleCodeOk returns a tuple with the BundleCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBundleCode
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) SetBundleCode(v interface{})`
+
+SetBundleCode sets BundleCode field to given value.
+
+### HasBundleCode
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) HasBundleCode() bool`
+
+HasBundleCode returns a boolean if a field has been set.
+
+### SetBundleCodeNil
+
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) SetBundleCodeNil(b bool)`
+
+ SetBundleCodeNil sets the value for BundleCode to be an explicit nil
+
+### UnsetBundleCode
+`func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) UnsetBundleCode()`
+
+UnsetBundleCode ensures that no value is present for BundleCode, not even an explicit nil
 ### GetQuantity
 
 `func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) GetQuantity() interface{}`

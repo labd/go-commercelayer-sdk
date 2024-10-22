@@ -17,7 +17,9 @@ Method | HTTP request | Description
 [**GETInStockSubscriptionIdCustomer**](CustomersApi.md#GETInStockSubscriptionIdCustomer) | **Get** /in_stock_subscriptions/{inStockSubscriptionId}/customer | Retrieve the customer associated to the in stock subscription
 [**GETOrderIdCustomer**](CustomersApi.md#GETOrderIdCustomer) | **Get** /orders/{orderId}/customer | Retrieve the customer associated to the order
 [**GETOrderSubscriptionIdCustomer**](CustomersApi.md#GETOrderSubscriptionIdCustomer) | **Get** /order_subscriptions/{orderSubscriptionId}/customer | Retrieve the customer associated to the order subscription
+[**GETPriceIdJwtCustomer**](CustomersApi.md#GETPriceIdJwtCustomer) | **Get** /prices/{priceId}/jwt_customer | Retrieve the jwt customer associated to the price
 [**GETReturnIdCustomer**](CustomersApi.md#GETReturnIdCustomer) | **Get** /returns/{returnId}/customer | Retrieve the customer associated to the return
+[**GETSkuIdJwtCustomer**](CustomersApi.md#GETSkuIdJwtCustomer) | **Get** /skus/{skuId}/jwt_customer | Retrieve the jwt customer associated to the SKU
 [**GETSkuListIdCustomer**](CustomersApi.md#GETSkuListIdCustomer) | **Get** /sku_lists/{skuListId}/customer | Retrieve the customer associated to the SKU list
 [**PATCHCustomersCustomerId**](CustomersApi.md#PATCHCustomersCustomerId) | **Patch** /customers/{customerId} | Update a customer
 [**POSTCustomers**](CustomersApi.md#POSTCustomers) | **Post** /customers | Create a customer
@@ -903,6 +905,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPriceIdJwtCustomer
+
+> GETPriceIdJwtCustomer(ctx, priceId).Execute()
+
+Retrieve the jwt customer associated to the price
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    priceId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.CustomersApi.GETPriceIdJwtCustomer(context.Background(), priceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.GETPriceIdJwtCustomer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceIdJwtCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETReturnIdCustomer
 
 > GETReturnIdCustomer(ctx, returnId).Execute()
@@ -947,6 +1017,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETReturnIdCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSkuIdJwtCustomer
+
+> GETSkuIdJwtCustomer(ctx, skuId).Execute()
+
+Retrieve the jwt customer associated to the SKU
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    skuId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.CustomersApi.GETSkuIdJwtCustomer(context.Background(), skuId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.GETSkuIdJwtCustomer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**skuId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSkuIdJwtCustomerRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Details** | Pointer to **interface{}** | Send this attribute if you want to send additional details the payment request (i.e. upon 3DS check). | [optional] 
 **Refresh** | Pointer to **interface{}** | Send this attribute if you want to refresh all the pending transactions, can be used as webhooks fallback logic. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods

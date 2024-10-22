@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **interface{}** | The adjustment name | [optional] 
+**Name** | Pointer to **interface{}** | The adjustment name. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
 **AmountCents** | Pointer to **interface{}** | The adjustment amount, in cents. | [optional] 
+**DistributeDiscount** | Pointer to **interface{}** | Indicates if negative adjustment amount is distributed for tax calculation. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -135,6 +136,41 @@ HasAmountCents returns a boolean if a field has been set.
 `func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) UnsetAmountCents()`
 
 UnsetAmountCents ensures that no value is present for AmountCents, not even an explicit nil
+### GetDistributeDiscount
+
+`func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetDistributeDiscount() interface{}`
+
+GetDistributeDiscount returns the DistributeDiscount field if non-nil, zero value otherwise.
+
+### GetDistributeDiscountOk
+
+`func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetDistributeDiscountOk() (*interface{}, bool)`
+
+GetDistributeDiscountOk returns a tuple with the DistributeDiscount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDistributeDiscount
+
+`func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) SetDistributeDiscount(v interface{})`
+
+SetDistributeDiscount sets DistributeDiscount field to given value.
+
+### HasDistributeDiscount
+
+`func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) HasDistributeDiscount() bool`
+
+HasDistributeDiscount returns a boolean if a field has been set.
+
+### SetDistributeDiscountNil
+
+`func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) SetDistributeDiscountNil(b bool)`
+
+ SetDistributeDiscountNil sets the value for DistributeDiscount to be an explicit nil
+
+### UnsetDistributeDiscount
+`func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) UnsetDistributeDiscount()`
+
+UnsetDistributeDiscount ensures that no value is present for DistributeDiscount, not even an explicit nil
 ### GetReference
 
 `func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetReference() interface{}`

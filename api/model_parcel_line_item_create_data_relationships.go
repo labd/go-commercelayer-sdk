@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,8 +22,6 @@ var _ MappedNullable = &ParcelLineItemCreateDataRelationships{}
 type ParcelLineItemCreateDataRelationships struct {
 	Parcel        ParcelLineItemCreateDataRelationshipsParcel        `json:"parcel"`
 	StockLineItem ParcelLineItemCreateDataRelationshipsStockLineItem `json:"stock_line_item"`
-	// Deprecated
-	ShipmentLineItem *ParcelLineItemCreateDataRelationshipsShipmentLineItem `json:"shipment_line_item,omitempty"`
 }
 
 // NewParcelLineItemCreateDataRelationships instantiates a new ParcelLineItemCreateDataRelationships object
@@ -93,41 +91,6 @@ func (o *ParcelLineItemCreateDataRelationships) SetStockLineItem(v ParcelLineIte
 	o.StockLineItem = v
 }
 
-// GetShipmentLineItem returns the ShipmentLineItem field value if set, zero value otherwise.
-// Deprecated
-func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItem() ParcelLineItemCreateDataRelationshipsShipmentLineItem {
-	if o == nil || IsNil(o.ShipmentLineItem) {
-		var ret ParcelLineItemCreateDataRelationshipsShipmentLineItem
-		return ret
-	}
-	return *o.ShipmentLineItem
-}
-
-// GetShipmentLineItemOk returns a tuple with the ShipmentLineItem field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItemOk() (*ParcelLineItemCreateDataRelationshipsShipmentLineItem, bool) {
-	if o == nil || IsNil(o.ShipmentLineItem) {
-		return nil, false
-	}
-	return o.ShipmentLineItem, true
-}
-
-// HasShipmentLineItem returns a boolean if a field has been set.
-func (o *ParcelLineItemCreateDataRelationships) HasShipmentLineItem() bool {
-	if o != nil && !IsNil(o.ShipmentLineItem) {
-		return true
-	}
-
-	return false
-}
-
-// SetShipmentLineItem gets a reference to the given ParcelLineItemCreateDataRelationshipsShipmentLineItem and assigns it to the ShipmentLineItem field.
-// Deprecated
-func (o *ParcelLineItemCreateDataRelationships) SetShipmentLineItem(v ParcelLineItemCreateDataRelationshipsShipmentLineItem) {
-	o.ShipmentLineItem = &v
-}
-
 func (o ParcelLineItemCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -140,9 +103,6 @@ func (o ParcelLineItemCreateDataRelationships) ToMap() (map[string]interface{}, 
 	toSerialize := map[string]interface{}{}
 	toSerialize["parcel"] = o.Parcel
 	toSerialize["stock_line_item"] = o.StockLineItem
-	if !IsNil(o.ShipmentLineItem) {
-		toSerialize["shipment_line_item"] = o.ShipmentLineItem
-	}
 	return toSerialize, nil
 }
 

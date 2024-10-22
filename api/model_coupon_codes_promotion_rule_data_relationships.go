@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -21,7 +21,8 @@ var _ MappedNullable = &CouponCodesPromotionRuleDataRelationships{}
 // CouponCodesPromotionRuleDataRelationships struct for CouponCodesPromotionRuleDataRelationships
 type CouponCodesPromotionRuleDataRelationships struct {
 	Promotion *CouponCodesPromotionRuleDataRelationshipsPromotion `json:"promotion,omitempty"`
-	Coupons   *CouponCodesPromotionRuleDataRelationshipsCoupons   `json:"coupons,omitempty"`
+	Versions  *AddressDataRelationshipsVersions                   `json:"versions,omitempty"`
+	Coupons   *BuyXPayYPromotionDataRelationshipsCoupons          `json:"coupons,omitempty"`
 }
 
 // NewCouponCodesPromotionRuleDataRelationships instantiates a new CouponCodesPromotionRuleDataRelationships object
@@ -73,10 +74,42 @@ func (o *CouponCodesPromotionRuleDataRelationships) SetPromotion(v CouponCodesPr
 	o.Promotion = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *CouponCodesPromotionRuleDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CouponCodesPromotionRuleDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *CouponCodesPromotionRuleDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *CouponCodesPromotionRuleDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 // GetCoupons returns the Coupons field value if set, zero value otherwise.
-func (o *CouponCodesPromotionRuleDataRelationships) GetCoupons() CouponCodesPromotionRuleDataRelationshipsCoupons {
+func (o *CouponCodesPromotionRuleDataRelationships) GetCoupons() BuyXPayYPromotionDataRelationshipsCoupons {
 	if o == nil || IsNil(o.Coupons) {
-		var ret CouponCodesPromotionRuleDataRelationshipsCoupons
+		var ret BuyXPayYPromotionDataRelationshipsCoupons
 		return ret
 	}
 	return *o.Coupons
@@ -84,7 +117,7 @@ func (o *CouponCodesPromotionRuleDataRelationships) GetCoupons() CouponCodesProm
 
 // GetCouponsOk returns a tuple with the Coupons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleDataRelationships) GetCouponsOk() (*CouponCodesPromotionRuleDataRelationshipsCoupons, bool) {
+func (o *CouponCodesPromotionRuleDataRelationships) GetCouponsOk() (*BuyXPayYPromotionDataRelationshipsCoupons, bool) {
 	if o == nil || IsNil(o.Coupons) {
 		return nil, false
 	}
@@ -100,8 +133,8 @@ func (o *CouponCodesPromotionRuleDataRelationships) HasCoupons() bool {
 	return false
 }
 
-// SetCoupons gets a reference to the given CouponCodesPromotionRuleDataRelationshipsCoupons and assigns it to the Coupons field.
-func (o *CouponCodesPromotionRuleDataRelationships) SetCoupons(v CouponCodesPromotionRuleDataRelationshipsCoupons) {
+// SetCoupons gets a reference to the given BuyXPayYPromotionDataRelationshipsCoupons and assigns it to the Coupons field.
+func (o *CouponCodesPromotionRuleDataRelationships) SetCoupons(v BuyXPayYPromotionDataRelationshipsCoupons) {
 	o.Coupons = &v
 }
 
@@ -117,6 +150,9 @@ func (o CouponCodesPromotionRuleDataRelationships) ToMap() (map[string]interface
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Promotion) {
 		toSerialize["promotion"] = o.Promotion
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	if !IsNil(o.Coupons) {
 		toSerialize["coupons"] = o.Coupons

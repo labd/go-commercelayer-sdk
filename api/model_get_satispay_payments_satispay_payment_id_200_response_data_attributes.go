@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,21 +20,27 @@ var _ MappedNullable = &GETSatispayPaymentsSatispayPaymentId200ResponseDataAttri
 
 // GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes struct for GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes
 type GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes struct {
-	// Activation code generated from the Satispay Dashboard.
-	Token interface{} `json:"token,omitempty"`
-	// The Satispay API key auto generated basing on activation code.
-	KeyId interface{} `json:"key_id,omitempty"`
 	// The payment unique identifier.
 	PaymentId interface{} `json:"payment_id,omitempty"`
+	// The Satispay payment flow, inspect gateway API details for more information.
+	Flow interface{} `json:"flow,omitempty"`
+	// The Satispay payment status.
+	Status interface{} `json:"status,omitempty"`
 	// The url to redirect the customer after the payment flow is completed.
 	RedirectUrl interface{} `json:"redirect_url,omitempty"`
+	// Redirect url to the payment page.
+	PaymentUrl interface{} `json:"payment_url,omitempty"`
+	// The Satispay payment response, used to fetch internal data.
+	PaymentResponse interface{} `json:"payment_response,omitempty"`
+	// Information about the payment instrument used in the transaction.
+	PaymentInstrument interface{} `json:"payment_instrument,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -55,72 +61,6 @@ func NewGETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes() *GETSati
 func NewGETSatispayPaymentsSatispayPaymentId200ResponseDataAttributesWithDefaults() *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes {
 	this := GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes{}
 	return &this
-}
-
-// GetToken returns the Token field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetToken() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Token
-}
-
-// GetTokenOk returns a tuple with the Token field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetTokenOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Token) {
-		return nil, false
-	}
-	return &o.Token, true
-}
-
-// HasToken returns a boolean if a field has been set.
-func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasToken() bool {
-	if o != nil && IsNil(o.Token) {
-		return true
-	}
-
-	return false
-}
-
-// SetToken gets a reference to the given interface{} and assigns it to the Token field.
-func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetToken(v interface{}) {
-	o.Token = v
-}
-
-// GetKeyId returns the KeyId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetKeyId() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.KeyId
-}
-
-// GetKeyIdOk returns a tuple with the KeyId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetKeyIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.KeyId) {
-		return nil, false
-	}
-	return &o.KeyId, true
-}
-
-// HasKeyId returns a boolean if a field has been set.
-func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasKeyId() bool {
-	if o != nil && IsNil(o.KeyId) {
-		return true
-	}
-
-	return false
-}
-
-// SetKeyId gets a reference to the given interface{} and assigns it to the KeyId field.
-func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetKeyId(v interface{}) {
-	o.KeyId = v
 }
 
 // GetPaymentId returns the PaymentId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -156,6 +96,72 @@ func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPayme
 	o.PaymentId = v
 }
 
+// GetFlow returns the Flow field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetFlow() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Flow
+}
+
+// GetFlowOk returns a tuple with the Flow field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetFlowOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Flow) {
+		return nil, false
+	}
+	return &o.Flow, true
+}
+
+// HasFlow returns a boolean if a field has been set.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasFlow() bool {
+	if o != nil && IsNil(o.Flow) {
+		return true
+	}
+
+	return false
+}
+
+// SetFlow gets a reference to the given interface{} and assigns it to the Flow field.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetFlow(v interface{}) {
+	o.Flow = v
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetStatus() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetStatusOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Status) {
+		return nil, false
+	}
+	return &o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasStatus() bool {
+	if o != nil && IsNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given interface{} and assigns it to the Status field.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetStatus(v interface{}) {
+	o.Status = v
+}
+
 // GetRedirectUrl returns the RedirectUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRedirectUrl() interface{} {
 	if o == nil {
@@ -187,6 +193,105 @@ func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasRedir
 // SetRedirectUrl gets a reference to the given interface{} and assigns it to the RedirectUrl field.
 func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetRedirectUrl(v interface{}) {
 	o.RedirectUrl = v
+}
+
+// GetPaymentUrl returns the PaymentUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentUrl() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PaymentUrl
+}
+
+// GetPaymentUrlOk returns a tuple with the PaymentUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentUrl) {
+		return nil, false
+	}
+	return &o.PaymentUrl, true
+}
+
+// HasPaymentUrl returns a boolean if a field has been set.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasPaymentUrl() bool {
+	if o != nil && IsNil(o.PaymentUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentUrl gets a reference to the given interface{} and assigns it to the PaymentUrl field.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPaymentUrl(v interface{}) {
+	o.PaymentUrl = v
+}
+
+// GetPaymentResponse returns the PaymentResponse field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentResponse() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PaymentResponse
+}
+
+// GetPaymentResponseOk returns a tuple with the PaymentResponse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentResponseOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentResponse) {
+		return nil, false
+	}
+	return &o.PaymentResponse, true
+}
+
+// HasPaymentResponse returns a boolean if a field has been set.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasPaymentResponse() bool {
+	if o != nil && IsNil(o.PaymentResponse) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentResponse gets a reference to the given interface{} and assigns it to the PaymentResponse field.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPaymentResponse(v interface{}) {
+	o.PaymentResponse = v
+}
+
+// GetPaymentInstrument returns the PaymentInstrument field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentInstrument() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PaymentInstrument
+}
+
+// GetPaymentInstrumentOk returns a tuple with the PaymentInstrument field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentInstrumentOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentInstrument) {
+		return nil, false
+	}
+	return &o.PaymentInstrument, true
+}
+
+// HasPaymentInstrument returns a boolean if a field has been set.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasPaymentInstrument() bool {
+	if o != nil && IsNil(o.PaymentInstrument) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentInstrument gets a reference to the given interface{} and assigns it to the PaymentInstrument field.
+func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPaymentInstrument(v interface{}) {
+	o.PaymentInstrument = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -364,17 +469,26 @@ func (o GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) MarshalJS
 
 func (o GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
-	if o.KeyId != nil {
-		toSerialize["key_id"] = o.KeyId
-	}
 	if o.PaymentId != nil {
 		toSerialize["payment_id"] = o.PaymentId
 	}
+	if o.Flow != nil {
+		toSerialize["flow"] = o.Flow
+	}
+	if o.Status != nil {
+		toSerialize["status"] = o.Status
+	}
 	if o.RedirectUrl != nil {
 		toSerialize["redirect_url"] = o.RedirectUrl
+	}
+	if o.PaymentUrl != nil {
+		toSerialize["payment_url"] = o.PaymentUrl
+	}
+	if o.PaymentResponse != nil {
+		toSerialize["payment_response"] = o.PaymentResponse
+	}
+	if o.PaymentInstrument != nil {
+		toSerialize["payment_instrument"] = o.PaymentInstrument
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

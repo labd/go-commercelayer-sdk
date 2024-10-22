@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes**](GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTFixedPricePromotions201ResponseDataRelationships**](POSTFixedPricePromotions201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTBuyXPayYPromotions201ResponseDataRelationships**](POSTBuyXPayYPromotions201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) GetRelationships() POSTFixedPricePromotions201ResponseDataRelationships`
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) GetRelationships() POSTBuyXPayYPromotions201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) GetRelationshipsOk() (*POSTFixedPricePromotions201ResponseDataRelationships, bool)`
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) GetRelationshipsOk() (*POSTBuyXPayYPromotions201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) SetRelationships(v POSTFixedPricePromotions201ResponseDataRelationships)`
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) SetRelationships(v POSTBuyXPayYPromotions201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

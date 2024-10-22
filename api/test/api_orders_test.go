@@ -269,6 +269,19 @@ func Test_api_OrdersApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test OrdersApiService GETPaymentOptionIdOrder", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var paymentOptionId interface{}
+
+		httpRes, err := apiClient.OrdersApi.GETPaymentOptionIdOrder(context.Background(), paymentOptionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test OrdersApiService GETPaypalPaymentIdOrder", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -354,6 +367,19 @@ func Test_api_OrdersApiService(t *testing.T) {
 		var shipmentId interface{}
 
 		httpRes, err := apiClient.OrdersApi.GETShipmentIdOrder(context.Background(), shipmentId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test OrdersApiService GETStockReservationIdOrder", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var stockReservationId interface{}
+
+		httpRes, err := apiClient.OrdersApi.GETStockReservationIdOrder(context.Background(), stockReservationId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

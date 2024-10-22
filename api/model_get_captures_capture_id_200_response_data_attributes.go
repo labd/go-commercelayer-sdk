@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,10 @@ var _ MappedNullable = &GETCapturesCaptureId200ResponseDataAttributes{}
 
 // GETCapturesCaptureId200ResponseDataAttributes struct for GETCapturesCaptureId200ResponseDataAttributes
 type GETCapturesCaptureId200ResponseDataAttributes struct {
-	// The transaction number, auto generated
+	// The transaction number, auto generated.
 	Number interface{} `json:"number,omitempty"`
+	// The transaction's type.
+	Type interface{} `json:"type,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard, inherited from the associated order.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
 	// The transaction amount, in cents.
@@ -30,17 +32,17 @@ type GETCapturesCaptureId200ResponseDataAttributes struct {
 	AmountFloat interface{} `json:"amount_float,omitempty"`
 	// The transaction amount, formatted.
 	FormattedAmount interface{} `json:"formatted_amount,omitempty"`
-	// Indicates if the transaction is successful
+	// Indicates if the transaction is successful.
 	Succeeded interface{} `json:"succeeded,omitempty"`
-	// The message returned by the payment gateway
+	// The message returned by the payment gateway.
 	Message interface{} `json:"message,omitempty"`
-	// The error code, if any, returned by the payment gateway
+	// The error code, if any, returned by the payment gateway.
 	ErrorCode interface{} `json:"error_code,omitempty"`
-	// The error detail, if any, returned by the payment gateway
+	// The error detail, if any, returned by the payment gateway.
 	ErrorDetail interface{} `json:"error_detail,omitempty"`
-	// The token identifying the transaction, returned by the payment gateway
+	// The token identifying the transaction, returned by the payment gateway.
 	Token interface{} `json:"token,omitempty"`
-	// The ID identifying the transaction, returned by the payment gateway
+	// The ID identifying the transaction, returned by the payment gateway.
 	GatewayTransactionId interface{} `json:"gateway_transaction_id,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
@@ -48,7 +50,7 @@ type GETCapturesCaptureId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -114,6 +116,39 @@ func (o *GETCapturesCaptureId200ResponseDataAttributes) HasNumber() bool {
 // SetNumber gets a reference to the given interface{} and assigns it to the Number field.
 func (o *GETCapturesCaptureId200ResponseDataAttributes) SetNumber(v interface{}) {
 	o.Number = v
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETCapturesCaptureId200ResponseDataAttributes) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETCapturesCaptureId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *GETCapturesCaptureId200ResponseDataAttributes) HasType() bool {
+	if o != nil && IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *GETCapturesCaptureId200ResponseDataAttributes) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -821,6 +856,9 @@ func (o GETCapturesCaptureId200ResponseDataAttributes) ToMap() (map[string]inter
 	toSerialize := map[string]interface{}{}
 	if o.Number != nil {
 		toSerialize["number"] = o.Number
+	}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
 	}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode

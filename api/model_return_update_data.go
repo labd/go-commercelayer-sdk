@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -25,7 +25,7 @@ type ReturnUpdateData struct {
 	// The resource's id
 	Id            interface{}                                   `json:"id"`
 	Attributes    PATCHReturnsReturnId200ResponseDataAttributes `json:"attributes"`
-	Relationships *PackageUpdateDataRelationships               `json:"relationships,omitempty"`
+	Relationships *ReturnUpdateDataRelationships                `json:"relationships,omitempty"`
 }
 
 // NewReturnUpdateData instantiates a new ReturnUpdateData object
@@ -125,9 +125,9 @@ func (o *ReturnUpdateData) SetAttributes(v PATCHReturnsReturnId200ResponseDataAt
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ReturnUpdateData) GetRelationships() PackageUpdateDataRelationships {
+func (o *ReturnUpdateData) GetRelationships() ReturnUpdateDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret PackageUpdateDataRelationships
+		var ret ReturnUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -135,7 +135,7 @@ func (o *ReturnUpdateData) GetRelationships() PackageUpdateDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnUpdateData) GetRelationshipsOk() (*PackageUpdateDataRelationships, bool) {
+func (o *ReturnUpdateData) GetRelationshipsOk() (*ReturnUpdateDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -151,8 +151,8 @@ func (o *ReturnUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PackageUpdateDataRelationships and assigns it to the Relationships field.
-func (o *ReturnUpdateData) SetRelationships(v PackageUpdateDataRelationships) {
+// SetRelationships gets a reference to the given ReturnUpdateDataRelationships and assigns it to the Relationships field.
+func (o *ReturnUpdateData) SetRelationships(v ReturnUpdateDataRelationships) {
 	o.Relationships = &v
 }
 

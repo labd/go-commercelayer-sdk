@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &POSTCustomerPasswordResets201ResponseDataRelationships{}
 
 // POSTCustomerPasswordResets201ResponseDataRelationships struct for POSTCustomerPasswordResets201ResponseDataRelationships
 type POSTCustomerPasswordResets201ResponseDataRelationships struct {
-	Customer *POSTCouponRecipients201ResponseDataRelationshipsCustomer           `json:"customer,omitempty"`
-	Events   *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents `json:"events,omitempty"`
+	Customer *POSTCouponRecipients201ResponseDataRelationshipsCustomer `json:"customer,omitempty"`
+	Events   *POSTAddresses201ResponseDataRelationshipsEvents          `json:"events,omitempty"`
 }
 
 // NewPOSTCustomerPasswordResets201ResponseDataRelationships instantiates a new POSTCustomerPasswordResets201ResponseDataRelationships object
@@ -74,9 +74,9 @@ func (o *POSTCustomerPasswordResets201ResponseDataRelationships) SetCustomer(v P
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *POSTCustomerPasswordResets201ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents {
+func (o *POSTCustomerPasswordResets201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -84,7 +84,7 @@ func (o *POSTCustomerPasswordResets201ResponseDataRelationships) GetEvents() GET
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCustomerPasswordResets201ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool) {
+func (o *POSTCustomerPasswordResets201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *POSTCustomerPasswordResets201ResponseDataRelationships) HasEvents() boo
 	return false
 }
 
-// SetEvents gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents and assigns it to the Events field.
-func (o *POSTCustomerPasswordResets201ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents) {
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *POSTCustomerPasswordResets201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
 	o.Events = &v
 }
 

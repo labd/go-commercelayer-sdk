@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,15 @@ var _ MappedNullable = &POSTStockTransfers201ResponseDataAttributes{}
 
 // POSTStockTransfers201ResponseDataAttributes struct for POSTStockTransfers201ResponseDataAttributes
 type POSTStockTransfers201ResponseDataAttributes struct {
+	// Unique identifier for the stock transfer (numeric).
+	Number interface{} `json:"number,omitempty"`
 	// The code of the associated SKU.
 	SkuCode interface{} `json:"sku_code,omitempty"`
-	// The stock quantity to be transferred from the origin stock location to destination one
+	// The stock quantity to be transferred from the origin stock location to destination one.
 	Quantity interface{} `json:"quantity"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -48,6 +50,39 @@ func NewPOSTStockTransfers201ResponseDataAttributes(quantity interface{}) *POSTS
 func NewPOSTStockTransfers201ResponseDataAttributesWithDefaults() *POSTStockTransfers201ResponseDataAttributes {
 	this := POSTStockTransfers201ResponseDataAttributes{}
 	return &this
+}
+
+// GetNumber returns the Number field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStockTransfers201ResponseDataAttributes) GetNumber() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Number
+}
+
+// GetNumberOk returns a tuple with the Number field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStockTransfers201ResponseDataAttributes) GetNumberOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Number) {
+		return nil, false
+	}
+	return &o.Number, true
+}
+
+// HasNumber returns a boolean if a field has been set.
+func (o *POSTStockTransfers201ResponseDataAttributes) HasNumber() bool {
+	if o != nil && IsNil(o.Number) {
+		return true
+	}
+
+	return false
+}
+
+// SetNumber gets a reference to the given interface{} and assigns it to the Number field.
+func (o *POSTStockTransfers201ResponseDataAttributes) SetNumber(v interface{}) {
+	o.Number = v
 }
 
 // GetSkuCode returns the SkuCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -218,6 +253,9 @@ func (o POSTStockTransfers201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 
 func (o POSTStockTransfers201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Number != nil {
+		toSerialize["number"] = o.Number
+	}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
 	}

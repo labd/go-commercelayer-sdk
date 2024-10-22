@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -503,6 +503,98 @@ func (a *LineItemsApiService) GETOrderIdLineItemsExecute(r LineItemsApiGETOrderI
 	return localVarHTTPResponse, nil
 }
 
+type LineItemsApiGETOrderSubscriptionItemIdSourceLineItemRequest struct {
+	ctx                     context.Context
+	ApiService              *LineItemsApiService
+	orderSubscriptionItemId interface{}
+}
+
+func (r LineItemsApiGETOrderSubscriptionItemIdSourceLineItemRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionItemIdSourceLineItemExecute(r)
+}
+
+/*
+GETOrderSubscriptionItemIdSourceLineItem Retrieve the source line item associated to the order subscription item
+
+Retrieve the source line item associated to the order subscription item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionItemId The resource's id
+	@return LineItemsApiGETOrderSubscriptionItemIdSourceLineItemRequest
+*/
+func (a *LineItemsApiService) GETOrderSubscriptionItemIdSourceLineItem(ctx context.Context, orderSubscriptionItemId interface{}) LineItemsApiGETOrderSubscriptionItemIdSourceLineItemRequest {
+	return LineItemsApiGETOrderSubscriptionItemIdSourceLineItemRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		orderSubscriptionItemId: orderSubscriptionItemId,
+	}
+}
+
+// Execute executes the request
+func (a *LineItemsApiService) GETOrderSubscriptionItemIdSourceLineItemExecute(r LineItemsApiGETOrderSubscriptionItemIdSourceLineItemRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETOrderSubscriptionItemIdSourceLineItem")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_subscription_items/{orderSubscriptionItemId}/source_line_item"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionItemId, "orderSubscriptionItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type LineItemsApiGETReturnLineItemIdLineItemRequest struct {
 	ctx              context.Context
 	ApiService       *LineItemsApiService
@@ -595,6 +687,98 @@ func (a *LineItemsApiService) GETReturnLineItemIdLineItemExecute(r LineItemsApiG
 	return localVarHTTPResponse, nil
 }
 
+type LineItemsApiGETShipmentIdLineItemsRequest struct {
+	ctx        context.Context
+	ApiService *LineItemsApiService
+	shipmentId interface{}
+}
+
+func (r LineItemsApiGETShipmentIdLineItemsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShipmentIdLineItemsExecute(r)
+}
+
+/*
+GETShipmentIdLineItems Retrieve the line items associated to the shipment
+
+Retrieve the line items associated to the shipment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return LineItemsApiGETShipmentIdLineItemsRequest
+*/
+func (a *LineItemsApiService) GETShipmentIdLineItems(ctx context.Context, shipmentId interface{}) LineItemsApiGETShipmentIdLineItemsRequest {
+	return LineItemsApiGETShipmentIdLineItemsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		shipmentId: shipmentId,
+	}
+}
+
+// Execute executes the request
+func (a *LineItemsApiService) GETShipmentIdLineItemsExecute(r LineItemsApiGETShipmentIdLineItemsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETShipmentIdLineItems")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipments/{shipmentId}/line_items"
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type LineItemsApiGETStockLineItemIdLineItemRequest struct {
 	ctx             context.Context
 	ApiService      *LineItemsApiService
@@ -637,6 +821,98 @@ func (a *LineItemsApiService) GETStockLineItemIdLineItemExecute(r LineItemsApiGE
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/line_item"
 	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type LineItemsApiGETStockReservationIdLineItemRequest struct {
+	ctx                context.Context
+	ApiService         *LineItemsApiService
+	stockReservationId interface{}
+}
+
+func (r LineItemsApiGETStockReservationIdLineItemRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockReservationIdLineItemExecute(r)
+}
+
+/*
+GETStockReservationIdLineItem Retrieve the line item associated to the stock reservation
+
+Retrieve the line item associated to the stock reservation
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockReservationId The resource's id
+	@return LineItemsApiGETStockReservationIdLineItemRequest
+*/
+func (a *LineItemsApiService) GETStockReservationIdLineItem(ctx context.Context, stockReservationId interface{}) LineItemsApiGETStockReservationIdLineItemRequest {
+	return LineItemsApiGETStockReservationIdLineItemRequest{
+		ApiService:         a,
+		ctx:                ctx,
+		stockReservationId: stockReservationId,
+	}
+}
+
+// Execute executes the request
+func (a *LineItemsApiService) GETStockReservationIdLineItemExecute(r LineItemsApiGETStockReservationIdLineItemRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETStockReservationIdLineItem")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_reservations/{stockReservationId}/line_item"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockReservationId"+"}", url.PathEscape(parameterValueToString(r.stockReservationId, "stockReservationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

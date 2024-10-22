@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &GETAdjustmentsAdjustmentId200ResponseDataAttributes{}
 
 // GETAdjustmentsAdjustmentId200ResponseDataAttributes struct for GETAdjustmentsAdjustmentId200ResponseDataAttributes
 type GETAdjustmentsAdjustmentId200ResponseDataAttributes struct {
-	// The adjustment name
+	// The adjustment name.
 	Name interface{} `json:"name,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
@@ -30,13 +30,15 @@ type GETAdjustmentsAdjustmentId200ResponseDataAttributes struct {
 	AmountFloat interface{} `json:"amount_float,omitempty"`
 	// The adjustment amount, formatted.
 	FormattedAmount interface{} `json:"formatted_amount,omitempty"`
+	// Indicates if negative adjustment amount is distributed for tax calculation.
+	DistributeDiscount interface{} `json:"distribute_discount,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -222,6 +224,39 @@ func (o *GETAdjustmentsAdjustmentId200ResponseDataAttributes) HasFormattedAmount
 // SetFormattedAmount gets a reference to the given interface{} and assigns it to the FormattedAmount field.
 func (o *GETAdjustmentsAdjustmentId200ResponseDataAttributes) SetFormattedAmount(v interface{}) {
 	o.FormattedAmount = v
+}
+
+// GetDistributeDiscount returns the DistributeDiscount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETAdjustmentsAdjustmentId200ResponseDataAttributes) GetDistributeDiscount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DistributeDiscount
+}
+
+// GetDistributeDiscountOk returns a tuple with the DistributeDiscount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETAdjustmentsAdjustmentId200ResponseDataAttributes) GetDistributeDiscountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DistributeDiscount) {
+		return nil, false
+	}
+	return &o.DistributeDiscount, true
+}
+
+// HasDistributeDiscount returns a boolean if a field has been set.
+func (o *GETAdjustmentsAdjustmentId200ResponseDataAttributes) HasDistributeDiscount() bool {
+	if o != nil && IsNil(o.DistributeDiscount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDistributeDiscount gets a reference to the given interface{} and assigns it to the DistributeDiscount field.
+func (o *GETAdjustmentsAdjustmentId200ResponseDataAttributes) SetDistributeDiscount(v interface{}) {
+	o.DistributeDiscount = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -413,6 +448,9 @@ func (o GETAdjustmentsAdjustmentId200ResponseDataAttributes) ToMap() (map[string
 	}
 	if o.FormattedAmount != nil {
 		toSerialize["formatted_amount"] = o.FormattedAmount
+	}
+	if o.DistributeDiscount != nil {
+		toSerialize["distribute_discount"] = o.DistributeDiscount
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

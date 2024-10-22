@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,10 @@ var _ MappedNullable = &POSTCustomerGroups201ResponseDataRelationships{}
 
 // POSTCustomerGroups201ResponseDataRelationships struct for POSTCustomerGroups201ResponseDataRelationships
 type POSTCustomerGroups201ResponseDataRelationships struct {
-	Customers   *POSTCustomerGroups201ResponseDataRelationshipsCustomers    `json:"customers,omitempty"`
-	Markets     *POSTAvalaraAccounts201ResponseDataRelationshipsMarkets     `json:"markets,omitempty"`
-	Attachments *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Customers   *POSTCustomerGroups201ResponseDataRelationshipsCustomers                 `json:"customers,omitempty"`
+	Markets     *POSTAvalaraAccounts201ResponseDataRelationshipsMarkets                  `json:"markets,omitempty"`
+	Attachments *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Versions    *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewPOSTCustomerGroups201ResponseDataRelationships instantiates a new POSTCustomerGroups201ResponseDataRelationships object
@@ -107,9 +108,9 @@ func (o *POSTCustomerGroups201ResponseDataRelationships) SetMarkets(v POSTAvalar
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTCustomerGroups201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTCustomerGroups201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -117,7 +118,7 @@ func (o *POSTCustomerGroups201ResponseDataRelationships) GetAttachments() POSTAv
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCustomerGroups201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTCustomerGroups201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -133,9 +134,41 @@ func (o *POSTCustomerGroups201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTCustomerGroups201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTCustomerGroups201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTCustomerGroups201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTCustomerGroups201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTCustomerGroups201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTCustomerGroups201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTCustomerGroups201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -156,6 +189,9 @@ func (o POSTCustomerGroups201ResponseDataRelationships) ToMap() (map[string]inte
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

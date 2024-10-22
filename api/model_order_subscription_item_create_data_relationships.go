@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,9 @@ var _ MappedNullable = &OrderSubscriptionItemCreateDataRelationships{}
 type OrderSubscriptionItemCreateDataRelationships struct {
 	OrderSubscription OrderSubscriptionItemCreateDataRelationshipsOrderSubscription `json:"order_subscription"`
 	Item              OrderSubscriptionItemCreateDataRelationshipsItem              `json:"item"`
+	Sku               *InStockSubscriptionCreateDataRelationshipsSku                `json:"sku,omitempty"`
+	Bundle            *OrderSubscriptionItemCreateDataRelationshipsBundle           `json:"bundle,omitempty"`
+	Adjustment        *OrderSubscriptionItemCreateDataRelationshipsAdjustment       `json:"adjustment,omitempty"`
 }
 
 // NewOrderSubscriptionItemCreateDataRelationships instantiates a new OrderSubscriptionItemCreateDataRelationships object
@@ -91,6 +94,102 @@ func (o *OrderSubscriptionItemCreateDataRelationships) SetItem(v OrderSubscripti
 	o.Item = v
 }
 
+// GetSku returns the Sku field value if set, zero value otherwise.
+func (o *OrderSubscriptionItemCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
+	if o == nil || IsNil(o.Sku) {
+		var ret InStockSubscriptionCreateDataRelationshipsSku
+		return ret
+	}
+	return *o.Sku
+}
+
+// GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionItemCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
+	if o == nil || IsNil(o.Sku) {
+		return nil, false
+	}
+	return o.Sku, true
+}
+
+// HasSku returns a boolean if a field has been set.
+func (o *OrderSubscriptionItemCreateDataRelationships) HasSku() bool {
+	if o != nil && !IsNil(o.Sku) {
+		return true
+	}
+
+	return false
+}
+
+// SetSku gets a reference to the given InStockSubscriptionCreateDataRelationshipsSku and assigns it to the Sku field.
+func (o *OrderSubscriptionItemCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
+	o.Sku = &v
+}
+
+// GetBundle returns the Bundle field value if set, zero value otherwise.
+func (o *OrderSubscriptionItemCreateDataRelationships) GetBundle() OrderSubscriptionItemCreateDataRelationshipsBundle {
+	if o == nil || IsNil(o.Bundle) {
+		var ret OrderSubscriptionItemCreateDataRelationshipsBundle
+		return ret
+	}
+	return *o.Bundle
+}
+
+// GetBundleOk returns a tuple with the Bundle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionItemCreateDataRelationships) GetBundleOk() (*OrderSubscriptionItemCreateDataRelationshipsBundle, bool) {
+	if o == nil || IsNil(o.Bundle) {
+		return nil, false
+	}
+	return o.Bundle, true
+}
+
+// HasBundle returns a boolean if a field has been set.
+func (o *OrderSubscriptionItemCreateDataRelationships) HasBundle() bool {
+	if o != nil && !IsNil(o.Bundle) {
+		return true
+	}
+
+	return false
+}
+
+// SetBundle gets a reference to the given OrderSubscriptionItemCreateDataRelationshipsBundle and assigns it to the Bundle field.
+func (o *OrderSubscriptionItemCreateDataRelationships) SetBundle(v OrderSubscriptionItemCreateDataRelationshipsBundle) {
+	o.Bundle = &v
+}
+
+// GetAdjustment returns the Adjustment field value if set, zero value otherwise.
+func (o *OrderSubscriptionItemCreateDataRelationships) GetAdjustment() OrderSubscriptionItemCreateDataRelationshipsAdjustment {
+	if o == nil || IsNil(o.Adjustment) {
+		var ret OrderSubscriptionItemCreateDataRelationshipsAdjustment
+		return ret
+	}
+	return *o.Adjustment
+}
+
+// GetAdjustmentOk returns a tuple with the Adjustment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionItemCreateDataRelationships) GetAdjustmentOk() (*OrderSubscriptionItemCreateDataRelationshipsAdjustment, bool) {
+	if o == nil || IsNil(o.Adjustment) {
+		return nil, false
+	}
+	return o.Adjustment, true
+}
+
+// HasAdjustment returns a boolean if a field has been set.
+func (o *OrderSubscriptionItemCreateDataRelationships) HasAdjustment() bool {
+	if o != nil && !IsNil(o.Adjustment) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdjustment gets a reference to the given OrderSubscriptionItemCreateDataRelationshipsAdjustment and assigns it to the Adjustment field.
+func (o *OrderSubscriptionItemCreateDataRelationships) SetAdjustment(v OrderSubscriptionItemCreateDataRelationshipsAdjustment) {
+	o.Adjustment = &v
+}
+
 func (o OrderSubscriptionItemCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -103,6 +202,15 @@ func (o OrderSubscriptionItemCreateDataRelationships) ToMap() (map[string]interf
 	toSerialize := map[string]interface{}{}
 	toSerialize["order_subscription"] = o.OrderSubscription
 	toSerialize["item"] = o.Item
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.Bundle) {
+		toSerialize["bundle"] = o.Bundle
+	}
+	if !IsNil(o.Adjustment) {
+		toSerialize["adjustment"] = o.Adjustment
+	}
 	return toSerialize, nil
 }
 

@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    externalPromotionCreate := *openapiclient.NewExternalPromotionCreate(*openapiclient.NewExternalPromotionCreateData(interface{}(123), *openapiclient.NewPOSTExternalPromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5), interface{}(https://external_promotion.yourbrand.com)))) // ExternalPromotionCreate | 
+    externalPromotionCreate := *openapiclient.NewExternalPromotionCreate(*openapiclient.NewExternalPromotionCreateData(interface{}(123), *openapiclient.NewPOSTExternalPromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(https://external_promotion.yourbrand.com)))) // ExternalPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

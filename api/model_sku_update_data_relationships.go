@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,8 @@ var _ MappedNullable = &SkuUpdateDataRelationships{}
 
 // SkuUpdateDataRelationships struct for SkuUpdateDataRelationships
 type SkuUpdateDataRelationships struct {
-	ShippingCategory *ShippingMethodCreateDataRelationshipsShippingCategory `json:"shipping_category,omitempty"`
+	ShippingCategory *ShipmentCreateDataRelationshipsShippingCategory `json:"shipping_category,omitempty"`
+	Tags             *AddressCreateDataRelationshipsTags              `json:"tags,omitempty"`
 }
 
 // NewSkuUpdateDataRelationships instantiates a new SkuUpdateDataRelationships object
@@ -41,9 +42,9 @@ func NewSkuUpdateDataRelationshipsWithDefaults() *SkuUpdateDataRelationships {
 }
 
 // GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
-func (o *SkuUpdateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory {
+func (o *SkuUpdateDataRelationships) GetShippingCategory() ShipmentCreateDataRelationshipsShippingCategory {
 	if o == nil || IsNil(o.ShippingCategory) {
-		var ret ShippingMethodCreateDataRelationshipsShippingCategory
+		var ret ShipmentCreateDataRelationshipsShippingCategory
 		return ret
 	}
 	return *o.ShippingCategory
@@ -51,7 +52,7 @@ func (o *SkuUpdateDataRelationships) GetShippingCategory() ShippingMethodCreateD
 
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuUpdateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool) {
+func (o *SkuUpdateDataRelationships) GetShippingCategoryOk() (*ShipmentCreateDataRelationshipsShippingCategory, bool) {
 	if o == nil || IsNil(o.ShippingCategory) {
 		return nil, false
 	}
@@ -67,9 +68,41 @@ func (o *SkuUpdateDataRelationships) HasShippingCategory() bool {
 	return false
 }
 
-// SetShippingCategory gets a reference to the given ShippingMethodCreateDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
-func (o *SkuUpdateDataRelationships) SetShippingCategory(v ShippingMethodCreateDataRelationshipsShippingCategory) {
+// SetShippingCategory gets a reference to the given ShipmentCreateDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
+func (o *SkuUpdateDataRelationships) SetShippingCategory(v ShipmentCreateDataRelationshipsShippingCategory) {
 	o.ShippingCategory = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *SkuUpdateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuUpdateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *SkuUpdateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *SkuUpdateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
 }
 
 func (o SkuUpdateDataRelationships) MarshalJSON() ([]byte, error) {
@@ -84,6 +117,9 @@ func (o SkuUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ShippingCategory) {
 		toSerialize["shipping_category"] = o.ShippingCategory
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

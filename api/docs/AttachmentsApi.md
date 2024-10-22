@@ -7,10 +7,13 @@ Method | HTTP request | Description
 [**DELETEAttachmentsAttachmentId**](AttachmentsApi.md#DELETEAttachmentsAttachmentId) | **Delete** /attachments/{attachmentId} | Delete an attachment
 [**GETAttachments**](AttachmentsApi.md#GETAttachments) | **Get** /attachments | List all attachments
 [**GETAttachmentsAttachmentId**](AttachmentsApi.md#GETAttachmentsAttachmentId) | **Get** /attachments/{attachmentId} | Retrieve an attachment
+[**GETAuthorizationIdAttachments**](AttachmentsApi.md#GETAuthorizationIdAttachments) | **Get** /authorizations/{authorizationId}/attachments | Retrieve the attachments associated to the authorization
 [**GETAvalaraAccountIdAttachments**](AttachmentsApi.md#GETAvalaraAccountIdAttachments) | **Get** /avalara_accounts/{avalaraAccountId}/attachments | Retrieve the attachments associated to the avalara account
 [**GETBillingInfoValidationRuleIdAttachments**](AttachmentsApi.md#GETBillingInfoValidationRuleIdAttachments) | **Get** /billing_info_validation_rules/{billingInfoValidationRuleId}/attachments | Retrieve the attachments associated to the billing info validation rule
 [**GETBingGeocoderIdAttachments**](AttachmentsApi.md#GETBingGeocoderIdAttachments) | **Get** /bing_geocoders/{bingGeocoderId}/attachments | Retrieve the attachments associated to the bing geocoder
 [**GETBundleIdAttachments**](AttachmentsApi.md#GETBundleIdAttachments) | **Get** /bundles/{bundleId}/attachments | Retrieve the attachments associated to the bundle
+[**GETBuyXPayYPromotionIdAttachments**](AttachmentsApi.md#GETBuyXPayYPromotionIdAttachments) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/attachments | Retrieve the attachments associated to the buy x pay y promotion
+[**GETCaptureIdAttachments**](AttachmentsApi.md#GETCaptureIdAttachments) | **Get** /captures/{captureId}/attachments | Retrieve the attachments associated to the capture
 [**GETCarrierAccountIdAttachments**](AttachmentsApi.md#GETCarrierAccountIdAttachments) | **Get** /carrier_accounts/{carrierAccountId}/attachments | Retrieve the attachments associated to the carrier account
 [**GETCouponRecipientIdAttachments**](AttachmentsApi.md#GETCouponRecipientIdAttachments) | **Get** /coupon_recipients/{couponRecipientId}/attachments | Retrieve the attachments associated to the coupon recipient
 [**GETCustomerGroupIdAttachments**](AttachmentsApi.md#GETCustomerGroupIdAttachments) | **Get** /customer_groups/{customerGroupId}/attachments | Retrieve the attachments associated to the customer group
@@ -20,6 +23,7 @@ Method | HTTP request | Description
 [**GETExternalTaxCalculatorIdAttachments**](AttachmentsApi.md#GETExternalTaxCalculatorIdAttachments) | **Get** /external_tax_calculators/{externalTaxCalculatorId}/attachments | Retrieve the attachments associated to the external tax calculator
 [**GETFixedAmountPromotionIdAttachments**](AttachmentsApi.md#GETFixedAmountPromotionIdAttachments) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/attachments | Retrieve the attachments associated to the fixed amount promotion
 [**GETFixedPricePromotionIdAttachments**](AttachmentsApi.md#GETFixedPricePromotionIdAttachments) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/attachments | Retrieve the attachments associated to the fixed price promotion
+[**GETFlexPromotionIdAttachments**](AttachmentsApi.md#GETFlexPromotionIdAttachments) | **Get** /flex_promotions/{flexPromotionId}/attachments | Retrieve the attachments associated to the flex promotion
 [**GETFreeGiftPromotionIdAttachments**](AttachmentsApi.md#GETFreeGiftPromotionIdAttachments) | **Get** /free_gift_promotions/{freeGiftPromotionId}/attachments | Retrieve the attachments associated to the free gift promotion
 [**GETFreeShippingPromotionIdAttachments**](AttachmentsApi.md#GETFreeShippingPromotionIdAttachments) | **Get** /free_shipping_promotions/{freeShippingPromotionId}/attachments | Retrieve the attachments associated to the free shipping promotion
 [**GETGeocoderIdAttachments**](AttachmentsApi.md#GETGeocoderIdAttachments) | **Get** /geocoders/{geocoderId}/attachments | Retrieve the attachments associated to the geocoder
@@ -31,10 +35,10 @@ Method | HTTP request | Description
 [**GETMarketIdAttachments**](AttachmentsApi.md#GETMarketIdAttachments) | **Get** /markets/{marketId}/attachments | Retrieve the attachments associated to the market
 [**GETMerchantIdAttachments**](AttachmentsApi.md#GETMerchantIdAttachments) | **Get** /merchants/{merchantId}/attachments | Retrieve the attachments associated to the merchant
 [**GETOrderIdAttachments**](AttachmentsApi.md#GETOrderIdAttachments) | **Get** /orders/{orderId}/attachments | Retrieve the attachments associated to the order
-[**GETOrderValidationRuleIdAttachments**](AttachmentsApi.md#GETOrderValidationRuleIdAttachments) | **Get** /order_validation_rules/{orderValidationRuleId}/attachments | Retrieve the attachments associated to the order validation rule
 [**GETPackageIdAttachments**](AttachmentsApi.md#GETPackageIdAttachments) | **Get** /packages/{packageId}/attachments | Retrieve the attachments associated to the package
 [**GETParcelIdAttachments**](AttachmentsApi.md#GETParcelIdAttachments) | **Get** /parcels/{parcelId}/attachments | Retrieve the attachments associated to the parcel
 [**GETPaymentMethodIdAttachments**](AttachmentsApi.md#GETPaymentMethodIdAttachments) | **Get** /payment_methods/{paymentMethodId}/attachments | Retrieve the attachments associated to the payment method
+[**GETPaymentOptionIdAttachments**](AttachmentsApi.md#GETPaymentOptionIdAttachments) | **Get** /payment_options/{paymentOptionId}/attachments | Retrieve the attachments associated to the payment option
 [**GETPercentageDiscountPromotionIdAttachments**](AttachmentsApi.md#GETPercentageDiscountPromotionIdAttachments) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/attachments | Retrieve the attachments associated to the percentage discount promotion
 [**GETPriceFrequencyTierIdAttachments**](AttachmentsApi.md#GETPriceFrequencyTierIdAttachments) | **Get** /price_frequency_tiers/{priceFrequencyTierId}/attachments | Retrieve the attachments associated to the price frequency tier
 [**GETPriceIdAttachments**](AttachmentsApi.md#GETPriceIdAttachments) | **Get** /prices/{priceId}/attachments | Retrieve the attachments associated to the price
@@ -42,6 +46,7 @@ Method | HTTP request | Description
 [**GETPriceTierIdAttachments**](AttachmentsApi.md#GETPriceTierIdAttachments) | **Get** /price_tiers/{priceTierId}/attachments | Retrieve the attachments associated to the price tier
 [**GETPriceVolumeTierIdAttachments**](AttachmentsApi.md#GETPriceVolumeTierIdAttachments) | **Get** /price_volume_tiers/{priceVolumeTierId}/attachments | Retrieve the attachments associated to the price volume tier
 [**GETPromotionIdAttachments**](AttachmentsApi.md#GETPromotionIdAttachments) | **Get** /promotions/{promotionId}/attachments | Retrieve the attachments associated to the promotion
+[**GETRefundIdAttachments**](AttachmentsApi.md#GETRefundIdAttachments) | **Get** /refunds/{refundId}/attachments | Retrieve the attachments associated to the refund
 [**GETReturnIdAttachments**](AttachmentsApi.md#GETReturnIdAttachments) | **Get** /returns/{returnId}/attachments | Retrieve the attachments associated to the return
 [**GETShipmentIdAttachments**](AttachmentsApi.md#GETShipmentIdAttachments) | **Get** /shipments/{shipmentId}/attachments | Retrieve the attachments associated to the shipment
 [**GETShippingCategoryIdAttachments**](AttachmentsApi.md#GETShippingCategoryIdAttachments) | **Get** /shipping_categories/{shippingCategoryId}/attachments | Retrieve the attachments associated to the shipping category
@@ -54,10 +59,13 @@ Method | HTTP request | Description
 [**GETSkuOptionIdAttachments**](AttachmentsApi.md#GETSkuOptionIdAttachments) | **Get** /sku_options/{skuOptionId}/attachments | Retrieve the attachments associated to the SKU option
 [**GETStockItemIdAttachments**](AttachmentsApi.md#GETStockItemIdAttachments) | **Get** /stock_items/{stockItemId}/attachments | Retrieve the attachments associated to the stock item
 [**GETStockLocationIdAttachments**](AttachmentsApi.md#GETStockLocationIdAttachments) | **Get** /stock_locations/{stockLocationId}/attachments | Retrieve the attachments associated to the stock location
+[**GETStockTransferIdAttachments**](AttachmentsApi.md#GETStockTransferIdAttachments) | **Get** /stock_transfers/{stockTransferId}/attachments | Retrieve the attachments associated to the stock transfer
 [**GETSubscriptionModelIdAttachments**](AttachmentsApi.md#GETSubscriptionModelIdAttachments) | **Get** /subscription_models/{subscriptionModelId}/attachments | Retrieve the attachments associated to the subscription model
 [**GETTaxCalculatorIdAttachments**](AttachmentsApi.md#GETTaxCalculatorIdAttachments) | **Get** /tax_calculators/{taxCalculatorId}/attachments | Retrieve the attachments associated to the tax calculator
 [**GETTaxCategoryIdAttachments**](AttachmentsApi.md#GETTaxCategoryIdAttachments) | **Get** /tax_categories/{taxCategoryId}/attachments | Retrieve the attachments associated to the tax category
 [**GETTaxjarAccountIdAttachments**](AttachmentsApi.md#GETTaxjarAccountIdAttachments) | **Get** /taxjar_accounts/{taxjarAccountId}/attachments | Retrieve the attachments associated to the taxjar account
+[**GETTransactionIdAttachments**](AttachmentsApi.md#GETTransactionIdAttachments) | **Get** /transactions/{transactionId}/attachments | Retrieve the attachments associated to the transaction
+[**GETVoidIdAttachments**](AttachmentsApi.md#GETVoidIdAttachments) | **Get** /voids/{voidId}/attachments | Retrieve the attachments associated to the void
 [**PATCHAttachmentsAttachmentId**](AttachmentsApi.md#PATCHAttachmentsAttachmentId) | **Patch** /attachments/{attachmentId} | Update an attachment
 [**POSTAttachments**](AttachmentsApi.md#POSTAttachments) | **Post** /attachments | Create an attachment
 
@@ -256,6 +264,74 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/vnd.api+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETAuthorizationIdAttachments
+
+> GETAuthorizationIdAttachments(ctx, authorizationId).Execute()
+
+Retrieve the attachments associated to the authorization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    authorizationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETAuthorizationIdAttachments(context.Background(), authorizationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETAuthorizationIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**authorizationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETAuthorizationIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -510,6 +586,142 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETBundleIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdAttachments
+
+> GETBuyXPayYPromotionIdAttachments(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the attachments associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETBuyXPayYPromotionIdAttachments(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETBuyXPayYPromotionIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCaptureIdAttachments
+
+> GETCaptureIdAttachments(ctx, captureId).Execute()
+
+Retrieve the attachments associated to the capture
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    captureId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETCaptureIdAttachments(context.Background(), captureId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETCaptureIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**captureId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCaptureIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1122,6 +1334,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETFixedPricePromotionIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETFlexPromotionIdAttachments
+
+> GETFlexPromotionIdAttachments(ctx, flexPromotionId).Execute()
+
+Retrieve the attachments associated to the flex promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    flexPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETFlexPromotionIdAttachments(context.Background(), flexPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETFlexPromotionIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**flexPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFlexPromotionIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1894,74 +2174,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GETOrderValidationRuleIdAttachments
-
-> GETOrderValidationRuleIdAttachments(ctx, orderValidationRuleId).Execute()
-
-Retrieve the attachments associated to the order validation rule
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
-)
-
-func main() {
-    orderValidationRuleId := TODO // interface{} | The resource's id
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AttachmentsApi.GETOrderValidationRuleIdAttachments(context.Background(), orderValidationRuleId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETOrderValidationRuleIdAttachments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderValidationRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGETOrderValidationRuleIdAttachmentsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GETPackageIdAttachments
 
 > GETPackageIdAttachments(ctx, packageId).Execute()
@@ -2142,6 +2354,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPaymentMethodIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPaymentOptionIdAttachments
+
+> GETPaymentOptionIdAttachments(ctx, paymentOptionId).Execute()
+
+Retrieve the attachments associated to the payment option
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    paymentOptionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETPaymentOptionIdAttachments(context.Background(), paymentOptionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPaymentOptionIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**paymentOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPaymentOptionIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2618,6 +2898,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPromotionIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETRefundIdAttachments
+
+> GETRefundIdAttachments(ctx, refundId).Execute()
+
+Retrieve the attachments associated to the refund
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    refundId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETRefundIdAttachments(context.Background(), refundId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETRefundIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**refundId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETRefundIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3458,6 +3806,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETStockTransferIdAttachments
+
+> GETStockTransferIdAttachments(ctx, stockTransferId).Execute()
+
+Retrieve the attachments associated to the stock transfer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockTransferId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETStockTransferIdAttachments(context.Background(), stockTransferId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETStockTransferIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockTransferIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETSubscriptionModelIdAttachments
 
 > GETSubscriptionModelIdAttachments(ctx, subscriptionModelId).Execute()
@@ -3706,6 +4122,142 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETTaxjarAccountIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETTransactionIdAttachments
+
+> GETTransactionIdAttachments(ctx, transactionId).Execute()
+
+Retrieve the attachments associated to the transaction
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    transactionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETTransactionIdAttachments(context.Background(), transactionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETTransactionIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**transactionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETTransactionIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETVoidIdAttachments
+
+> GETVoidIdAttachments(ctx, voidId).Execute()
+
+Retrieve the attachments associated to the void
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    voidId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETVoidIdAttachments(context.Background(), voidId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETVoidIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**voidId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETVoidIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

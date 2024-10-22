@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -28,12 +28,10 @@ type GETExternalGatewaysExternalGatewayId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
-	// The shared secret used to sign the external request payload.
-	SharedSecret interface{} `json:"shared_secret,omitempty"`
 	// The endpoint used by the external gateway to authorize payments.
 	AuthorizeUrl interface{} `json:"authorize_url,omitempty"`
 	// The endpoint used by the external gateway to capture payments.
@@ -44,6 +42,12 @@ type GETExternalGatewaysExternalGatewayId200ResponseDataAttributes struct {
 	RefundUrl interface{} `json:"refund_url,omitempty"`
 	// The endpoint used by the external gateway to create a customer payment token.
 	TokenUrl interface{} `json:"token_url,omitempty"`
+	// The circuit breaker state, by default it is 'closed'. It can become 'open' once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made.
+	CircuitState interface{} `json:"circuit_state,omitempty"`
+	// The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback.
+	CircuitFailureCount interface{} `json:"circuit_failure_count,omitempty"`
+	// The shared secret used to sign the external request payload.
+	SharedSecret interface{} `json:"shared_secret,omitempty"`
 }
 
 // NewGETExternalGatewaysExternalGatewayId200ResponseDataAttributes instantiates a new GETExternalGatewaysExternalGatewayId200ResponseDataAttributes object
@@ -261,39 +265,6 @@ func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetMetad
 	o.Metadata = v
 }
 
-// GetSharedSecret returns the SharedSecret field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetSharedSecret() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.SharedSecret
-}
-
-// GetSharedSecretOk returns a tuple with the SharedSecret field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetSharedSecretOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.SharedSecret) {
-		return nil, false
-	}
-	return &o.SharedSecret, true
-}
-
-// HasSharedSecret returns a boolean if a field has been set.
-func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasSharedSecret() bool {
-	if o != nil && IsNil(o.SharedSecret) {
-		return true
-	}
-
-	return false
-}
-
-// SetSharedSecret gets a reference to the given interface{} and assigns it to the SharedSecret field.
-func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetSharedSecret(v interface{}) {
-	o.SharedSecret = v
-}
-
 // GetAuthorizeUrl returns the AuthorizeUrl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetAuthorizeUrl() interface{} {
 	if o == nil {
@@ -459,6 +430,105 @@ func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetToken
 	o.TokenUrl = v
 }
 
+// GetCircuitState returns the CircuitState field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCircuitState() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitState
+}
+
+// GetCircuitStateOk returns a tuple with the CircuitState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitState) {
+		return nil, false
+	}
+	return &o.CircuitState, true
+}
+
+// HasCircuitState returns a boolean if a field has been set.
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasCircuitState() bool {
+	if o != nil && IsNil(o.CircuitState) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitState gets a reference to the given interface{} and assigns it to the CircuitState field.
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetCircuitState(v interface{}) {
+	o.CircuitState = v
+}
+
+// GetCircuitFailureCount returns the CircuitFailureCount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCircuitFailureCount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitFailureCount
+}
+
+// GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitFailureCount) {
+		return nil, false
+	}
+	return &o.CircuitFailureCount, true
+}
+
+// HasCircuitFailureCount returns a boolean if a field has been set.
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasCircuitFailureCount() bool {
+	if o != nil && IsNil(o.CircuitFailureCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitFailureCount gets a reference to the given interface{} and assigns it to the CircuitFailureCount field.
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetCircuitFailureCount(v interface{}) {
+	o.CircuitFailureCount = v
+}
+
+// GetSharedSecret returns the SharedSecret field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetSharedSecret() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.SharedSecret
+}
+
+// GetSharedSecretOk returns a tuple with the SharedSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetSharedSecretOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SharedSecret) {
+		return nil, false
+	}
+	return &o.SharedSecret, true
+}
+
+// HasSharedSecret returns a boolean if a field has been set.
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasSharedSecret() bool {
+	if o != nil && IsNil(o.SharedSecret) {
+		return true
+	}
+
+	return false
+}
+
+// SetSharedSecret gets a reference to the given interface{} and assigns it to the SharedSecret field.
+func (o *GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetSharedSecret(v interface{}) {
+	o.SharedSecret = v
+}
+
 func (o GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -487,9 +557,6 @@ func (o GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) ToMap() (
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	if o.SharedSecret != nil {
-		toSerialize["shared_secret"] = o.SharedSecret
-	}
 	if o.AuthorizeUrl != nil {
 		toSerialize["authorize_url"] = o.AuthorizeUrl
 	}
@@ -504,6 +571,15 @@ func (o GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) ToMap() (
 	}
 	if o.TokenUrl != nil {
 		toSerialize["token_url"] = o.TokenUrl
+	}
+	if o.CircuitState != nil {
+		toSerialize["circuit_state"] = o.CircuitState
+	}
+	if o.CircuitFailureCount != nil {
+		toSerialize["circuit_failure_count"] = o.CircuitFailureCount
+	}
+	if o.SharedSecret != nil {
+		toSerialize["shared_secret"] = o.SharedSecret
 	}
 	return toSerialize, nil
 }

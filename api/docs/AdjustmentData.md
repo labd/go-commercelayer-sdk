@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**GETAdjustmentsAdjustmentId200ResponseDataAttributes**](GETAdjustmentsAdjustmentId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to **interface{}** |  | [optional] 
+**Relationships** | Pointer to [**AdjustmentDataRelationships**](AdjustmentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *AdjustmentData) GetRelationships() interface{}`
+`func (o *AdjustmentData) GetRelationships() AdjustmentDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *AdjustmentData) GetRelationshipsOk() (*interface{}, bool)`
+`func (o *AdjustmentData) GetRelationshipsOk() (*AdjustmentDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *AdjustmentData) SetRelationships(v interface{})`
+`func (o *AdjustmentData) SetRelationships(v AdjustmentDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 
@@ -102,16 +102,6 @@ SetRelationships sets Relationships field to given value.
 
 HasRelationships returns a boolean if a field has been set.
 
-### SetRelationshipsNil
-
-`func (o *AdjustmentData) SetRelationshipsNil(b bool)`
-
- SetRelationshipsNil sets the value for Relationships to be an explicit nil
-
-### UnsetRelationships
-`func (o *AdjustmentData) UnsetRelationships()`
-
-UnsetRelationships ensures that no value is present for Relationships, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

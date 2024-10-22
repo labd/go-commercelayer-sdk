@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &POSTWebhooks201ResponseDataRelationships{}
 // POSTWebhooks201ResponseDataRelationships struct for POSTWebhooks201ResponseDataRelationships
 type POSTWebhooks201ResponseDataRelationships struct {
 	LastEventCallbacks *GETEventsEventId200ResponseDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
+	Versions           *POSTAddresses201ResponseDataRelationshipsVersions              `json:"versions,omitempty"`
 }
 
 // NewPOSTWebhooks201ResponseDataRelationships instantiates a new POSTWebhooks201ResponseDataRelationships object
@@ -72,6 +73,38 @@ func (o *POSTWebhooks201ResponseDataRelationships) SetLastEventCallbacks(v GETEv
 	o.LastEventCallbacks = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTWebhooks201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTWebhooks201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTWebhooks201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTWebhooks201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 func (o POSTWebhooks201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -84,6 +117,9 @@ func (o POSTWebhooks201ResponseDataRelationships) ToMap() (map[string]interface{
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.LastEventCallbacks) {
 		toSerialize["last_event_callbacks"] = o.LastEventCallbacks
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

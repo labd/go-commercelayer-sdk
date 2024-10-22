@@ -61,6 +61,20 @@ func Test_api_ExportsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test ExportsApiService PATCHExportsExportId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var exportId interface{}
+
+		resp, httpRes, err := apiClient.ExportsApi.PATCHExportsExportId(context.Background(), exportId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ExportsApiService POSTExports", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

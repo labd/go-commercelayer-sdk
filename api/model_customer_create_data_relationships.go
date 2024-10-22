@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &CustomerCreateDataRelationships{}
 // CustomerCreateDataRelationships struct for CustomerCreateDataRelationships
 type CustomerCreateDataRelationships struct {
 	CustomerGroup *CustomerCreateDataRelationshipsCustomerGroup `json:"customer_group,omitempty"`
+	Tags          *AddressCreateDataRelationshipsTags           `json:"tags,omitempty"`
 }
 
 // NewCustomerCreateDataRelationships instantiates a new CustomerCreateDataRelationships object
@@ -72,6 +73,38 @@ func (o *CustomerCreateDataRelationships) SetCustomerGroup(v CustomerCreateDataR
 	o.CustomerGroup = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *CustomerCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomerCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *CustomerCreateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *CustomerCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o CustomerCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -84,6 +117,9 @@ func (o CustomerCreateDataRelationships) ToMap() (map[string]interface{}, error)
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CustomerGroup) {
 		toSerialize["customer_group"] = o.CustomerGroup
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

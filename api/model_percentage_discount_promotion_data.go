@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,7 @@ type PercentageDiscountPromotionData struct {
 	// The resource's type
 	Type          interface{}                                                                           `json:"type"`
 	Attributes    GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionDataRelationships                                                 `json:"relationships,omitempty"`
+	Relationships *BuyXPayYPromotionDataRelationships                                                   `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionData instantiates a new PercentageDiscountPromotionData object
@@ -96,9 +96,9 @@ func (o *PercentageDiscountPromotionData) SetAttributes(v GETPercentageDiscountP
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PercentageDiscountPromotionData) GetRelationships() FixedPricePromotionDataRelationships {
+func (o *PercentageDiscountPromotionData) GetRelationships() BuyXPayYPromotionDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret FixedPricePromotionDataRelationships
+		var ret BuyXPayYPromotionDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -106,7 +106,7 @@ func (o *PercentageDiscountPromotionData) GetRelationships() FixedPricePromotion
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*FixedPricePromotionDataRelationships, bool) {
+func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*BuyXPayYPromotionDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -122,8 +122,8 @@ func (o *PercentageDiscountPromotionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given FixedPricePromotionDataRelationships and assigns it to the Relationships field.
-func (o *PercentageDiscountPromotionData) SetRelationships(v FixedPricePromotionDataRelationships) {
+// SetRelationships gets a reference to the given BuyXPayYPromotionDataRelationships and assigns it to the Relationships field.
+func (o *PercentageDiscountPromotionData) SetRelationships(v BuyXPayYPromotionDataRelationships) {
 	o.Relationships = &v
 }
 

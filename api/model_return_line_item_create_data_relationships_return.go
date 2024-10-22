@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,14 +20,14 @@ var _ MappedNullable = &ReturnLineItemCreateDataRelationshipsReturn{}
 
 // ReturnLineItemCreateDataRelationshipsReturn struct for ReturnLineItemCreateDataRelationshipsReturn
 type ReturnLineItemCreateDataRelationshipsReturn struct {
-	Data CustomerDataRelationshipsReturnsData `json:"data"`
+	Data CaptureDataRelationshipsReturnData `json:"data"`
 }
 
 // NewReturnLineItemCreateDataRelationshipsReturn instantiates a new ReturnLineItemCreateDataRelationshipsReturn object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemCreateDataRelationshipsReturn(data CustomerDataRelationshipsReturnsData) *ReturnLineItemCreateDataRelationshipsReturn {
+func NewReturnLineItemCreateDataRelationshipsReturn(data CaptureDataRelationshipsReturnData) *ReturnLineItemCreateDataRelationshipsReturn {
 	this := ReturnLineItemCreateDataRelationshipsReturn{}
 	this.Data = data
 	return &this
@@ -42,9 +42,9 @@ func NewReturnLineItemCreateDataRelationshipsReturnWithDefaults() *ReturnLineIte
 }
 
 // GetData returns the Data field value
-func (o *ReturnLineItemCreateDataRelationshipsReturn) GetData() CustomerDataRelationshipsReturnsData {
+func (o *ReturnLineItemCreateDataRelationshipsReturn) GetData() CaptureDataRelationshipsReturnData {
 	if o == nil {
-		var ret CustomerDataRelationshipsReturnsData
+		var ret CaptureDataRelationshipsReturnData
 		return ret
 	}
 
@@ -53,7 +53,7 @@ func (o *ReturnLineItemCreateDataRelationshipsReturn) GetData() CustomerDataRela
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemCreateDataRelationshipsReturn) GetDataOk() (*CustomerDataRelationshipsReturnsData, bool) {
+func (o *ReturnLineItemCreateDataRelationshipsReturn) GetDataOk() (*CaptureDataRelationshipsReturnData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *ReturnLineItemCreateDataRelationshipsReturn) GetDataOk() (*CustomerData
 }
 
 // SetData sets field value
-func (o *ReturnLineItemCreateDataRelationshipsReturn) SetData(v CustomerDataRelationshipsReturnsData) {
+func (o *ReturnLineItemCreateDataRelationshipsReturn) SetData(v CaptureDataRelationshipsReturnData) {
 	o.Data = v
 }
 

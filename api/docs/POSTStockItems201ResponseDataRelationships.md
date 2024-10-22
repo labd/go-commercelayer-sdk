@@ -6,7 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StockLocation** | Pointer to [**POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation**](POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation.md) |  | [optional] 
 **Sku** | Pointer to [**POSTInStockSubscriptions201ResponseDataRelationshipsSku**](POSTInStockSubscriptions201ResponseDataRelationshipsSku.md) |  | [optional] 
-**Attachments** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsAttachments**](POSTAvalaraAccounts201ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**ReservedStock** | Pointer to [**POSTStockItems201ResponseDataRelationshipsReservedStock**](POSTStockItems201ResponseDataRelationshipsReservedStock.md) |  | [optional] 
+**StockReservations** | Pointer to [**POSTLineItems201ResponseDataRelationshipsStockReservations**](POSTLineItems201ResponseDataRelationshipsStockReservations.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -77,22 +80,72 @@ SetSku sets Sku field to given value.
 
 HasSku returns a boolean if a field has been set.
 
+### GetReservedStock
+
+`func (o *POSTStockItems201ResponseDataRelationships) GetReservedStock() POSTStockItems201ResponseDataRelationshipsReservedStock`
+
+GetReservedStock returns the ReservedStock field if non-nil, zero value otherwise.
+
+### GetReservedStockOk
+
+`func (o *POSTStockItems201ResponseDataRelationships) GetReservedStockOk() (*POSTStockItems201ResponseDataRelationshipsReservedStock, bool)`
+
+GetReservedStockOk returns a tuple with the ReservedStock field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReservedStock
+
+`func (o *POSTStockItems201ResponseDataRelationships) SetReservedStock(v POSTStockItems201ResponseDataRelationshipsReservedStock)`
+
+SetReservedStock sets ReservedStock field to given value.
+
+### HasReservedStock
+
+`func (o *POSTStockItems201ResponseDataRelationships) HasReservedStock() bool`
+
+HasReservedStock returns a boolean if a field has been set.
+
+### GetStockReservations
+
+`func (o *POSTStockItems201ResponseDataRelationships) GetStockReservations() POSTLineItems201ResponseDataRelationshipsStockReservations`
+
+GetStockReservations returns the StockReservations field if non-nil, zero value otherwise.
+
+### GetStockReservationsOk
+
+`func (o *POSTStockItems201ResponseDataRelationships) GetStockReservationsOk() (*POSTLineItems201ResponseDataRelationshipsStockReservations, bool)`
+
+GetStockReservationsOk returns a tuple with the StockReservations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStockReservations
+
+`func (o *POSTStockItems201ResponseDataRelationships) SetStockReservations(v POSTLineItems201ResponseDataRelationshipsStockReservations)`
+
+SetStockReservations sets StockReservations field to given value.
+
+### HasStockReservations
+
+`func (o *POSTStockItems201ResponseDataRelationships) HasStockReservations() bool`
+
+HasStockReservations returns a boolean if a field has been set.
+
 ### GetAttachments
 
-`func (o *POSTStockItems201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments`
+`func (o *POSTStockItems201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *POSTStockItems201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool)`
+`func (o *POSTStockItems201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *POSTStockItems201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments)`
+`func (o *POSTStockItems201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -101,6 +154,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *POSTStockItems201ResponseDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *POSTStockItems201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTStockItems201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTStockItems201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTStockItems201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,9 +4,14 @@ All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GETAddressIdEvents**](EventsApi.md#GETAddressIdEvents) | **Get** /addresses/{addressId}/events | Retrieve the events associated to the address
 [**GETAuthorizationIdEvents**](EventsApi.md#GETAuthorizationIdEvents) | **Get** /authorizations/{authorizationId}/events | Retrieve the events associated to the authorization
+[**GETAvalaraAccountIdEvents**](EventsApi.md#GETAvalaraAccountIdEvents) | **Get** /avalara_accounts/{avalaraAccountId}/events | Retrieve the events associated to the avalara account
+[**GETBundleIdEvents**](EventsApi.md#GETBundleIdEvents) | **Get** /bundles/{bundleId}/events | Retrieve the events associated to the bundle
+[**GETBuyXPayYPromotionIdEvents**](EventsApi.md#GETBuyXPayYPromotionIdEvents) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/events | Retrieve the events associated to the buy x pay y promotion
 [**GETCaptureIdEvents**](EventsApi.md#GETCaptureIdEvents) | **Get** /captures/{captureId}/events | Retrieve the events associated to the capture
 [**GETCleanupIdEvents**](EventsApi.md#GETCleanupIdEvents) | **Get** /cleanups/{cleanupId}/events | Retrieve the events associated to the cleanup
+[**GETCouponIdEvents**](EventsApi.md#GETCouponIdEvents) | **Get** /coupons/{couponId}/events | Retrieve the events associated to the coupon
 [**GETCustomerAddressIdEvents**](EventsApi.md#GETCustomerAddressIdEvents) | **Get** /customer_addresses/{customerAddressId}/events | Retrieve the events associated to the customer address
 [**GETCustomerIdEvents**](EventsApi.md#GETCustomerIdEvents) | **Get** /customers/{customerId}/events | Retrieve the events associated to the customer
 [**GETCustomerPasswordResetIdEvents**](EventsApi.md#GETCustomerPasswordResetIdEvents) | **Get** /customer_password_resets/{customerPasswordResetId}/events | Retrieve the events associated to the customer password reset
@@ -17,11 +22,15 @@ Method | HTTP request | Description
 [**GETExternalPromotionIdEvents**](EventsApi.md#GETExternalPromotionIdEvents) | **Get** /external_promotions/{externalPromotionId}/events | Retrieve the events associated to the external promotion
 [**GETFixedAmountPromotionIdEvents**](EventsApi.md#GETFixedAmountPromotionIdEvents) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/events | Retrieve the events associated to the fixed amount promotion
 [**GETFixedPricePromotionIdEvents**](EventsApi.md#GETFixedPricePromotionIdEvents) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/events | Retrieve the events associated to the fixed price promotion
+[**GETFlexPromotionIdEvents**](EventsApi.md#GETFlexPromotionIdEvents) | **Get** /flex_promotions/{flexPromotionId}/events | Retrieve the events associated to the flex promotion
 [**GETFreeGiftPromotionIdEvents**](EventsApi.md#GETFreeGiftPromotionIdEvents) | **Get** /free_gift_promotions/{freeGiftPromotionId}/events | Retrieve the events associated to the free gift promotion
 [**GETFreeShippingPromotionIdEvents**](EventsApi.md#GETFreeShippingPromotionIdEvents) | **Get** /free_shipping_promotions/{freeShippingPromotionId}/events | Retrieve the events associated to the free shipping promotion
 [**GETGiftCardIdEvents**](EventsApi.md#GETGiftCardIdEvents) | **Get** /gift_cards/{giftCardId}/events | Retrieve the events associated to the gift card
 [**GETImportIdEvents**](EventsApi.md#GETImportIdEvents) | **Get** /imports/{importId}/events | Retrieve the events associated to the import
 [**GETInStockSubscriptionIdEvents**](EventsApi.md#GETInStockSubscriptionIdEvents) | **Get** /in_stock_subscriptions/{inStockSubscriptionId}/events | Retrieve the events associated to the in stock subscription
+[**GETLineItemIdEvents**](EventsApi.md#GETLineItemIdEvents) | **Get** /line_items/{lineItemId}/events | Retrieve the events associated to the line item
+[**GETLineItemOptionIdEvents**](EventsApi.md#GETLineItemOptionIdEvents) | **Get** /line_item_options/{lineItemOptionId}/events | Retrieve the events associated to the line item option
+[**GETLinkIdEvents**](EventsApi.md#GETLinkIdEvents) | **Get** /links/{linkId}/events | Retrieve the events associated to the link
 [**GETOrderCopyIdEvents**](EventsApi.md#GETOrderCopyIdEvents) | **Get** /order_copies/{orderCopyId}/events | Retrieve the events associated to the order copy
 [**GETOrderFactoryIdEvents**](EventsApi.md#GETOrderFactoryIdEvents) | **Get** /order_factories/{orderFactoryId}/events | Retrieve the events associated to the order factory
 [**GETOrderIdEvents**](EventsApi.md#GETOrderIdEvents) | **Get** /orders/{orderId}/events | Retrieve the events associated to the order
@@ -29,15 +38,88 @@ Method | HTTP request | Description
 [**GETParcelIdEvents**](EventsApi.md#GETParcelIdEvents) | **Get** /parcels/{parcelId}/events | Retrieve the events associated to the parcel
 [**GETPercentageDiscountPromotionIdEvents**](EventsApi.md#GETPercentageDiscountPromotionIdEvents) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/events | Retrieve the events associated to the percentage discount promotion
 [**GETPriceFrequencyTierIdEvents**](EventsApi.md#GETPriceFrequencyTierIdEvents) | **Get** /price_frequency_tiers/{priceFrequencyTierId}/events | Retrieve the events associated to the price frequency tier
+[**GETPriceListSchedulerIdEvents**](EventsApi.md#GETPriceListSchedulerIdEvents) | **Get** /price_list_schedulers/{priceListSchedulerId}/events | Retrieve the events associated to the price list scheduler
 [**GETPriceVolumeTierIdEvents**](EventsApi.md#GETPriceVolumeTierIdEvents) | **Get** /price_volume_tiers/{priceVolumeTierId}/events | Retrieve the events associated to the price volume tier
 [**GETPromotionIdEvents**](EventsApi.md#GETPromotionIdEvents) | **Get** /promotions/{promotionId}/events | Retrieve the events associated to the promotion
 [**GETRecurringOrderCopyIdEvents**](EventsApi.md#GETRecurringOrderCopyIdEvents) | **Get** /recurring_order_copies/{recurringOrderCopyId}/events | Retrieve the events associated to the recurring order copy
 [**GETRefundIdEvents**](EventsApi.md#GETRefundIdEvents) | **Get** /refunds/{refundId}/events | Retrieve the events associated to the refund
 [**GETReturnIdEvents**](EventsApi.md#GETReturnIdEvents) | **Get** /returns/{returnId}/events | Retrieve the events associated to the return
 [**GETShipmentIdEvents**](EventsApi.md#GETShipmentIdEvents) | **Get** /shipments/{shipmentId}/events | Retrieve the events associated to the shipment
+[**GETSkuIdEvents**](EventsApi.md#GETSkuIdEvents) | **Get** /skus/{skuId}/events | Retrieve the events associated to the SKU
+[**GETSkuOptionIdEvents**](EventsApi.md#GETSkuOptionIdEvents) | **Get** /sku_options/{skuOptionId}/events | Retrieve the events associated to the SKU option
 [**GETStockTransferIdEvents**](EventsApi.md#GETStockTransferIdEvents) | **Get** /stock_transfers/{stockTransferId}/events | Retrieve the events associated to the stock transfer
+[**GETTransactionIdEvents**](EventsApi.md#GETTransactionIdEvents) | **Get** /transactions/{transactionId}/events | Retrieve the events associated to the transaction
 [**GETVoidIdEvents**](EventsApi.md#GETVoidIdEvents) | **Get** /voids/{voidId}/events | Retrieve the events associated to the void
+[**PATCHEventsEventId**](EventsApi.md#PATCHEventsEventId) | **Patch** /events/{eventId} | Update an event
 
+
+
+## GETAddressIdEvents
+
+> GETAddressIdEvents(ctx, addressId).Execute()
+
+Retrieve the events associated to the address
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    addressId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETAddressIdEvents(context.Background(), addressId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETAddressIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**addressId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETAddressIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GETAuthorizationIdEvents
@@ -84,6 +166,210 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETAuthorizationIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETAvalaraAccountIdEvents
+
+> GETAvalaraAccountIdEvents(ctx, avalaraAccountId).Execute()
+
+Retrieve the events associated to the avalara account
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    avalaraAccountId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETAvalaraAccountIdEvents(context.Background(), avalaraAccountId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETAvalaraAccountIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**avalaraAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETAvalaraAccountIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBundleIdEvents
+
+> GETBundleIdEvents(ctx, bundleId).Execute()
+
+Retrieve the events associated to the bundle
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    bundleId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETBundleIdEvents(context.Background(), bundleId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETBundleIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**bundleId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBundleIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdEvents
+
+> GETBuyXPayYPromotionIdEvents(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the events associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETBuyXPayYPromotionIdEvents(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETBuyXPayYPromotionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -220,6 +506,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETCleanupIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCouponIdEvents
+
+> GETCouponIdEvents(ctx, couponId).Execute()
+
+Retrieve the events associated to the coupon
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    couponId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETCouponIdEvents(context.Background(), couponId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETCouponIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**couponId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCouponIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -919,6 +1273,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETFlexPromotionIdEvents
+
+> GETFlexPromotionIdEvents(ctx, flexPromotionId).Execute()
+
+Retrieve the events associated to the flex promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    flexPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETFlexPromotionIdEvents(context.Background(), flexPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETFlexPromotionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**flexPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFlexPromotionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETFreeGiftPromotionIdEvents
 
 > GETFreeGiftPromotionIdEvents(ctx, freeGiftPromotionId).Execute()
@@ -1235,6 +1657,210 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETInStockSubscriptionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETLineItemIdEvents
+
+> GETLineItemIdEvents(ctx, lineItemId).Execute()
+
+Retrieve the events associated to the line item
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    lineItemId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETLineItemIdEvents(context.Background(), lineItemId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETLineItemIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**lineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETLineItemIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETLineItemOptionIdEvents
+
+> GETLineItemOptionIdEvents(ctx, lineItemOptionId).Execute()
+
+Retrieve the events associated to the line item option
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    lineItemOptionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETLineItemOptionIdEvents(context.Background(), lineItemOptionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETLineItemOptionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**lineItemOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETLineItemOptionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETLinkIdEvents
+
+> GETLinkIdEvents(ctx, linkId).Execute()
+
+Retrieve the events associated to the link
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    linkId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETLinkIdEvents(context.Background(), linkId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETLinkIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**linkId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETLinkIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1735,6 +2361,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPriceListSchedulerIdEvents
+
+> GETPriceListSchedulerIdEvents(ctx, priceListSchedulerId).Execute()
+
+Retrieve the events associated to the price list scheduler
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    priceListSchedulerId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETPriceListSchedulerIdEvents(context.Background(), priceListSchedulerId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETPriceListSchedulerIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceListSchedulerId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceListSchedulerIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPriceVolumeTierIdEvents
 
 > GETPriceVolumeTierIdEvents(ctx, priceVolumeTierId).Execute()
@@ -2143,6 +2837,142 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETSkuIdEvents
+
+> GETSkuIdEvents(ctx, skuId).Execute()
+
+Retrieve the events associated to the SKU
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    skuId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETSkuIdEvents(context.Background(), skuId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETSkuIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**skuId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSkuIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSkuOptionIdEvents
+
+> GETSkuOptionIdEvents(ctx, skuOptionId).Execute()
+
+Retrieve the events associated to the SKU option
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    skuOptionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETSkuOptionIdEvents(context.Background(), skuOptionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETSkuOptionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**skuOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSkuOptionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETStockTransferIdEvents
 
 > GETStockTransferIdEvents(ctx, stockTransferId).Execute()
@@ -2187,6 +3017,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockTransferIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETTransactionIdEvents
+
+> GETTransactionIdEvents(ctx, transactionId).Execute()
+
+Retrieve the events associated to the transaction
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    transactionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETTransactionIdEvents(context.Background(), transactionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETTransactionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**transactionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETTransactionIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2273,6 +3171,78 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PATCHEventsEventId
+
+> PATCHEventsEventId200Response PATCHEventsEventId(ctx, eventId).EventUpdate(eventUpdate).Execute()
+
+Update an event
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    eventUpdate := *openapiclient.NewEventUpdate(*openapiclient.NewEventUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHEventsEventId200ResponseDataAttributes())) // EventUpdate | 
+    eventId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.PATCHEventsEventId(context.Background(), eventId).EventUpdate(eventUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.PATCHEventsEventId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PATCHEventsEventId`: PATCHEventsEventId200Response
+    fmt.Fprintf(os.Stdout, "Response from `EventsApi.PATCHEventsEventId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**eventId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPATCHEventsEventIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eventUpdate** | [**EventUpdate**](EventUpdate.md) |  | 
+
+
+### Return type
+
+[**PATCHEventsEventId200Response**](PATCHEventsEventId200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/vnd.api+json
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

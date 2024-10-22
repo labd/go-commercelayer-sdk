@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,11 +20,11 @@ var _ MappedNullable = &POSTCustomerSubscriptions201ResponseDataAttributes{}
 
 // POSTCustomerSubscriptions201ResponseDataAttributes struct for POSTCustomerSubscriptions201ResponseDataAttributes
 type POSTCustomerSubscriptions201ResponseDataAttributes struct {
-	// The email of the customer that owns the subscription
+	// The email of the customer that owns the subscription.
 	CustomerEmail interface{} `json:"customer_email"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	Reference interface{} `json:"reference"`
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -34,9 +34,10 @@ type POSTCustomerSubscriptions201ResponseDataAttributes struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTCustomerSubscriptions201ResponseDataAttributes(customerEmail interface{}) *POSTCustomerSubscriptions201ResponseDataAttributes {
+func NewPOSTCustomerSubscriptions201ResponseDataAttributes(customerEmail interface{}, reference interface{}) *POSTCustomerSubscriptions201ResponseDataAttributes {
 	this := POSTCustomerSubscriptions201ResponseDataAttributes{}
 	this.CustomerEmail = customerEmail
+	this.Reference = reference
 	return &this
 }
 
@@ -74,16 +75,18 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) SetCustomerEmail(v 
 	o.CustomerEmail = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetReference returns the Reference field value
+// If the value is explicit nil, the zero value for interface{} will be returned
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetReference() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
+
 	return o.Reference
 }
 
-// GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
+// GetReferenceOk returns a tuple with the Reference field value
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
@@ -93,16 +96,7 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetReferenceOk() (*
 	return &o.Reference, true
 }
 
-// HasReference returns a boolean if a field has been set.
-func (o *POSTCustomerSubscriptions201ResponseDataAttributes) HasReference() bool {
-	if o != nil && IsNil(o.Reference) {
-		return true
-	}
-
-	return false
-}
-
-// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+// SetReference sets field value
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) SetReference(v interface{}) {
 	o.Reference = v
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -25,7 +25,7 @@ type POSTSatispayGateways201ResponseData struct {
 	// The resource's type
 	Type          interface{}                                       `json:"type,omitempty"`
 	Links         *POSTAddresses201ResponseDataLinks                `json:"links,omitempty"`
-	Attributes    *POSTManualGateways201ResponseDataAttributes      `json:"attributes,omitempty"`
+	Attributes    *POSTSatispayGateways201ResponseDataAttributes    `json:"attributes,omitempty"`
 	Relationships *POSTSatispayGateways201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -145,9 +145,9 @@ func (o *POSTSatispayGateways201ResponseData) SetLinks(v POSTAddresses201Respons
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *POSTSatispayGateways201ResponseData) GetAttributes() POSTManualGateways201ResponseDataAttributes {
+func (o *POSTSatispayGateways201ResponseData) GetAttributes() POSTSatispayGateways201ResponseDataAttributes {
 	if o == nil || IsNil(o.Attributes) {
-		var ret POSTManualGateways201ResponseDataAttributes
+		var ret POSTSatispayGateways201ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,7 +155,7 @@ func (o *POSTSatispayGateways201ResponseData) GetAttributes() POSTManualGateways
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSatispayGateways201ResponseData) GetAttributesOk() (*POSTManualGateways201ResponseDataAttributes, bool) {
+func (o *POSTSatispayGateways201ResponseData) GetAttributesOk() (*POSTSatispayGateways201ResponseDataAttributes, bool) {
 	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *POSTSatispayGateways201ResponseData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given POSTManualGateways201ResponseDataAttributes and assigns it to the Attributes field.
-func (o *POSTSatispayGateways201ResponseData) SetAttributes(v POSTManualGateways201ResponseDataAttributes) {
+// SetAttributes gets a reference to the given POSTSatispayGateways201ResponseDataAttributes and assigns it to the Attributes field.
+func (o *POSTSatispayGateways201ResponseData) SetAttributes(v POSTSatispayGateways201ResponseDataAttributes) {
 	o.Attributes = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,17 @@ var _ MappedNullable = &PATCHStripePaymentsStripePaymentId200ResponseDataAttribu
 
 // PATCHStripePaymentsStripePaymentId200ResponseDataAttributes struct for PATCHStripePaymentsStripePaymentId200ResponseDataAttributes
 type PATCHStripePaymentsStripePaymentId200ResponseDataAttributes struct {
-	// Stripe payment options: 'customer', 'payment_method', etc. Check Stripe payment intent API for more details.
+	// Stripe payment options: 'customer', 'payment_method', 'return_url', etc. Check Stripe payment intent API for more details.
 	Options interface{} `json:"options,omitempty"`
+	// The URL to return to when a redirect payment is completed.
+	ReturnUrl interface{} `json:"return_url,omitempty"`
+	// Send this attribute if you want to update the created payment intent with fresh order data.
+	Update interface{} `json:"_update,omitempty"`
 	// Send this attribute if you want to refresh the payment status, can be used as webhooks fallback logic.
 	Refresh interface{} `json:"_refresh,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -80,6 +84,72 @@ func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) HasOptions
 // SetOptions gets a reference to the given interface{} and assigns it to the Options field.
 func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) SetOptions(v interface{}) {
 	o.Options = v
+}
+
+// GetReturnUrl returns the ReturnUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) GetReturnUrl() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ReturnUrl
+}
+
+// GetReturnUrlOk returns a tuple with the ReturnUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReturnUrl) {
+		return nil, false
+	}
+	return &o.ReturnUrl, true
+}
+
+// HasReturnUrl returns a boolean if a field has been set.
+func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) HasReturnUrl() bool {
+	if o != nil && IsNil(o.ReturnUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetReturnUrl gets a reference to the given interface{} and assigns it to the ReturnUrl field.
+func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) SetReturnUrl(v interface{}) {
+	o.ReturnUrl = v
+}
+
+// GetUpdate returns the Update field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) GetUpdate() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Update
+}
+
+// GetUpdateOk returns a tuple with the Update field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) GetUpdateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Update) {
+		return nil, false
+	}
+	return &o.Update, true
+}
+
+// HasUpdate returns a boolean if a field has been set.
+func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) HasUpdate() bool {
+	if o != nil && IsNil(o.Update) {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdate gets a reference to the given interface{} and assigns it to the Update field.
+func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) SetUpdate(v interface{}) {
+	o.Update = v
 }
 
 // GetRefresh returns the Refresh field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -226,6 +296,12 @@ func (o PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) ToMap() (ma
 	toSerialize := map[string]interface{}{}
 	if o.Options != nil {
 		toSerialize["options"] = o.Options
+	}
+	if o.ReturnUrl != nil {
+		toSerialize["return_url"] = o.ReturnUrl
+	}
+	if o.Update != nil {
+		toSerialize["_update"] = o.Update
 	}
 	if o.Refresh != nil {
 		toSerialize["_refresh"] = o.Refresh

@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    satispayGatewayCreate := *openapiclient.NewSatispayGatewayCreate(*openapiclient.NewSatispayGatewayCreateData(interface{}(123), *openapiclient.NewPOSTManualGateways201ResponseDataAttributes(interface{}(US payment gateway)))) // SatispayGatewayCreate | 
+    satispayGatewayCreate := *openapiclient.NewSatispayGatewayCreate(*openapiclient.NewSatispayGatewayCreateData(interface{}(123), *openapiclient.NewPOSTSatispayGateways201ResponseDataAttributes(interface{}(US payment gateway), interface{}(623ECX)))) // SatispayGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

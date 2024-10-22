@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &GETSkuOptionsSkuOptionId200ResponseDataAttributes{}
 
 // GETSkuOptionsSkuOptionId200ResponseDataAttributes struct for GETSkuOptionsSkuOptionId200ResponseDataAttributes
 type GETSkuOptionsSkuOptionId200ResponseDataAttributes struct {
-	// The SKU option's internal name
+	// The SKU option's internal name.
 	Name interface{} `json:"name,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
@@ -34,7 +34,7 @@ type GETSkuOptionsSkuOptionId200ResponseDataAttributes struct {
 	FormattedPriceAmount interface{} `json:"formatted_price_amount,omitempty"`
 	// The delay time (in hours) that should be added to the delivery lead time when this option is purchased.
 	DelayHours interface{} `json:"delay_hours,omitempty"`
-	// The delay time, in days (rounded)
+	// The delay time, in days (rounded).
 	DelayDays interface{} `json:"delay_days,omitempty"`
 	// The regex that will be evaluated to match the SKU codes.
 	SkuCodeRegex interface{} `json:"sku_code_regex,omitempty"`
@@ -44,7 +44,7 @@ type GETSkuOptionsSkuOptionId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

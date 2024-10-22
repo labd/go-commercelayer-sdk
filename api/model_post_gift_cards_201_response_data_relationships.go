@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,12 @@ var _ MappedNullable = &POSTGiftCards201ResponseDataRelationships{}
 
 // POSTGiftCards201ResponseDataRelationships struct for POSTGiftCards201ResponseDataRelationships
 type POSTGiftCards201ResponseDataRelationships struct {
-	Market            *POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket   `json:"market,omitempty"`
-	GiftCardRecipient *POSTGiftCards201ResponseDataRelationshipsGiftCardRecipient         `json:"gift_card_recipient,omitempty"`
-	Attachments       *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments         `json:"attachments,omitempty"`
-	Events            *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents `json:"events,omitempty"`
+	Market            *POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket        `json:"market,omitempty"`
+	GiftCardRecipient *POSTGiftCards201ResponseDataRelationshipsGiftCardRecipient              `json:"gift_card_recipient,omitempty"`
+	Attachments       *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Events            *POSTAddresses201ResponseDataRelationshipsEvents                         `json:"events,omitempty"`
+	Tags              *POSTAddresses201ResponseDataRelationshipsTags                           `json:"tags,omitempty"`
+	Versions          *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewPOSTGiftCards201ResponseDataRelationships instantiates a new POSTGiftCards201ResponseDataRelationships object
@@ -108,9 +110,9 @@ func (o *POSTGiftCards201ResponseDataRelationships) SetGiftCardRecipient(v POSTG
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTGiftCards201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTGiftCards201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -118,7 +120,7 @@ func (o *POSTGiftCards201ResponseDataRelationships) GetAttachments() POSTAvalara
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTGiftCards201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTGiftCards201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -134,15 +136,15 @@ func (o *POSTGiftCards201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTGiftCards201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTGiftCards201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *POSTGiftCards201ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents {
+func (o *POSTGiftCards201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -150,7 +152,7 @@ func (o *POSTGiftCards201ResponseDataRelationships) GetEvents() GETAuthorization
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTGiftCards201ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool) {
+func (o *POSTGiftCards201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -166,9 +168,73 @@ func (o *POSTGiftCards201ResponseDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents and assigns it to the Events field.
-func (o *POSTGiftCards201ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents) {
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *POSTGiftCards201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *POSTGiftCards201ResponseDataRelationships) GetTags() POSTAddresses201ResponseDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret POSTAddresses201ResponseDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTGiftCards201ResponseDataRelationships) GetTagsOk() (*POSTAddresses201ResponseDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *POSTGiftCards201ResponseDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given POSTAddresses201ResponseDataRelationshipsTags and assigns it to the Tags field.
+func (o *POSTGiftCards201ResponseDataRelationships) SetTags(v POSTAddresses201ResponseDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTGiftCards201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTGiftCards201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTGiftCards201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTGiftCards201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTGiftCards201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -192,6 +258,12 @@ func (o POSTGiftCards201ResponseDataRelationships) ToMap() (map[string]interface
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

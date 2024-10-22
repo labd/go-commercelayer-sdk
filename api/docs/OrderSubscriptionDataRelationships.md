@@ -11,10 +11,11 @@ Name | Type | Description | Notes
 **CustomerPaymentSource** | Pointer to [**CustomerDataRelationshipsCustomerPaymentSources**](CustomerDataRelationshipsCustomerPaymentSources.md) |  | [optional] 
 **OrderSubscriptionItems** | Pointer to [**OrderSubscriptionDataRelationshipsOrderSubscriptionItems**](OrderSubscriptionDataRelationshipsOrderSubscriptionItems.md) |  | [optional] 
 **OrderFactories** | Pointer to [**OrderSubscriptionDataRelationshipsOrderFactories**](OrderSubscriptionDataRelationshipsOrderFactories.md) |  | [optional] 
-**OrderCopies** | Pointer to [**OrderSubscriptionDataRelationshipsOrderCopies**](OrderSubscriptionDataRelationshipsOrderCopies.md) |  | [optional] 
 **RecurringOrderCopies** | Pointer to [**OrderSubscriptionDataRelationshipsRecurringOrderCopies**](OrderSubscriptionDataRelationshipsRecurringOrderCopies.md) |  | [optional] 
 **Orders** | Pointer to [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
+**Tags** | Pointer to [**AddressDataRelationshipsTags**](AddressDataRelationshipsTags.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -210,31 +211,6 @@ SetOrderFactories sets OrderFactories field to given value.
 
 HasOrderFactories returns a boolean if a field has been set.
 
-### GetOrderCopies
-
-`func (o *OrderSubscriptionDataRelationships) GetOrderCopies() OrderSubscriptionDataRelationshipsOrderCopies`
-
-GetOrderCopies returns the OrderCopies field if non-nil, zero value otherwise.
-
-### GetOrderCopiesOk
-
-`func (o *OrderSubscriptionDataRelationships) GetOrderCopiesOk() (*OrderSubscriptionDataRelationshipsOrderCopies, bool)`
-
-GetOrderCopiesOk returns a tuple with the OrderCopies field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrderCopies
-
-`func (o *OrderSubscriptionDataRelationships) SetOrderCopies(v OrderSubscriptionDataRelationshipsOrderCopies)`
-
-SetOrderCopies sets OrderCopies field to given value.
-
-### HasOrderCopies
-
-`func (o *OrderSubscriptionDataRelationships) HasOrderCopies() bool`
-
-HasOrderCopies returns a boolean if a field has been set.
-
 ### GetRecurringOrderCopies
 
 `func (o *OrderSubscriptionDataRelationships) GetRecurringOrderCopies() OrderSubscriptionDataRelationshipsRecurringOrderCopies`
@@ -287,20 +263,20 @@ HasOrders returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *OrderSubscriptionDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *OrderSubscriptionDataRelationships) GetEvents() AddressDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *OrderSubscriptionDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *OrderSubscriptionDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *OrderSubscriptionDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *OrderSubscriptionDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 
@@ -309,6 +285,56 @@ SetEvents sets Events field to given value.
 `func (o *OrderSubscriptionDataRelationships) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *OrderSubscriptionDataRelationships) GetTags() AddressDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *OrderSubscriptionDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *OrderSubscriptionDataRelationships) SetTags(v AddressDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *OrderSubscriptionDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *OrderSubscriptionDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *OrderSubscriptionDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *OrderSubscriptionDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *OrderSubscriptionDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

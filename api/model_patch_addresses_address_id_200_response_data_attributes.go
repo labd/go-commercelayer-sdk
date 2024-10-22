@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,25 +20,25 @@ var _ MappedNullable = &PATCHAddressesAddressId200ResponseDataAttributes{}
 
 // PATCHAddressesAddressId200ResponseDataAttributes struct for PATCHAddressesAddressId200ResponseDataAttributes
 type PATCHAddressesAddressId200ResponseDataAttributes struct {
-	// Indicates if it's a business or a personal address
+	// Indicates if it's a business or a personal address.
 	Business interface{} `json:"business,omitempty"`
-	// Address first name (personal)
+	// Address first name (personal).
 	FirstName interface{} `json:"first_name,omitempty"`
-	// Address last name (personal)
+	// Address last name (personal).
 	LastName interface{} `json:"last_name,omitempty"`
-	// Address company name (business)
+	// Address company name (business).
 	Company interface{} `json:"company,omitempty"`
-	// Address line 1, i.e. Street address, PO Box
+	// Address line 1, i.e. Street address, PO Box.
 	Line1 interface{} `json:"line_1,omitempty"`
-	// Address line 2, i.e. Apartment, Suite, Building
+	// Address line 2, i.e. Apartment, Suite, Building.
 	Line2 interface{} `json:"line_2,omitempty"`
-	// Address city
+	// Address city.
 	City interface{} `json:"city,omitempty"`
-	// ZIP or postal code
+	// ZIP or postal code.
 	ZipCode interface{} `json:"zip_code,omitempty"`
 	// State, province or region code.
 	StateCode interface{} `json:"state_code,omitempty"`
-	// The international 2-letter country code as defined by the ISO 3166-1 standard
+	// The international 2-letter country code as defined by the ISO 3166-1 standard.
 	CountryCode interface{} `json:"country_code,omitempty"`
 	// Phone number (including extension).
 	Phone interface{} `json:"phone,omitempty"`
@@ -50,11 +50,11 @@ type PATCHAddressesAddressId200ResponseDataAttributes struct {
 	Lat interface{} `json:"lat,omitempty"`
 	// The address geocoded longitude. This is automatically generated when creating a shipping/billing address for an order and a valid geocoder is attached to the order's market.
 	Lng interface{} `json:"lng,omitempty"`
-	// Customer's billing information (i.e. VAT number, codice fiscale)
+	// Customer's billing information (i.e. VAT number, codice fiscale).
 	BillingInfo interface{} `json:"billing_info,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

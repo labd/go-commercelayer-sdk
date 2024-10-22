@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -25,7 +25,7 @@ type POSTCustomerAddresses201ResponseData struct {
 	// The resource's type
 	Type          interface{}                                        `json:"type,omitempty"`
 	Links         *POSTAddresses201ResponseDataLinks                 `json:"links,omitempty"`
-	Attributes    *POSTAdyenPayments201ResponseDataAttributes        `json:"attributes,omitempty"`
+	Attributes    *POSTCustomerAddresses201ResponseDataAttributes    `json:"attributes,omitempty"`
 	Relationships *POSTCustomerAddresses201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -145,9 +145,9 @@ func (o *POSTCustomerAddresses201ResponseData) SetLinks(v POSTAddresses201Respon
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *POSTCustomerAddresses201ResponseData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
+func (o *POSTCustomerAddresses201ResponseData) GetAttributes() POSTCustomerAddresses201ResponseDataAttributes {
 	if o == nil || IsNil(o.Attributes) {
-		var ret POSTAdyenPayments201ResponseDataAttributes
+		var ret POSTCustomerAddresses201ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,7 +155,7 @@ func (o *POSTCustomerAddresses201ResponseData) GetAttributes() POSTAdyenPayments
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCustomerAddresses201ResponseData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
+func (o *POSTCustomerAddresses201ResponseData) GetAttributesOk() (*POSTCustomerAddresses201ResponseDataAttributes, bool) {
 	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *POSTCustomerAddresses201ResponseData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given POSTAdyenPayments201ResponseDataAttributes and assigns it to the Attributes field.
-func (o *POSTCustomerAddresses201ResponseData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
+// SetAttributes gets a reference to the given POSTCustomerAddresses201ResponseDataAttributes and assigns it to the Attributes field.
+func (o *POSTCustomerAddresses201ResponseData) SetAttributes(v POSTCustomerAddresses201ResponseDataAttributes) {
 	o.Attributes = &v
 }
 

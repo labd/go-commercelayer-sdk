@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,6 +20,8 @@ var _ MappedNullable = &GETOrderCopiesOrderCopyId200ResponseDataAttributes{}
 
 // GETOrderCopiesOrderCopyId200ResponseDataAttributes struct for GETOrderCopiesOrderCopyId200ResponseDataAttributes
 type GETOrderCopiesOrderCopyId200ResponseDataAttributes struct {
+	// The order factory's type.
+	Type interface{} `json:"type,omitempty"`
 	// The order factory status. One of 'pending' (default), 'in_progress', 'failed', or 'completed'.
 	Status interface{} `json:"status,omitempty"`
 	// Time at which the order copy was started.
@@ -42,12 +44,16 @@ type GETOrderCopiesOrderCopyId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
 	// Indicates if the source order must be cancelled upon copy.
 	CancelSourceOrder interface{} `json:"cancel_source_order,omitempty"`
+	// Indicates if promotions got applied upon copy.
+	ApplyPromotions interface{} `json:"apply_promotions,omitempty"`
+	// Indicates to ignore invalid coupon code during copy.
+	IgnoreInvalidCoupon interface{} `json:"ignore_invalid_coupon,omitempty"`
 }
 
 // NewGETOrderCopiesOrderCopyId200ResponseDataAttributes instantiates a new GETOrderCopiesOrderCopyId200ResponseDataAttributes object
@@ -65,6 +71,39 @@ func NewGETOrderCopiesOrderCopyId200ResponseDataAttributes() *GETOrderCopiesOrde
 func NewGETOrderCopiesOrderCopyId200ResponseDataAttributesWithDefaults() *GETOrderCopiesOrderCopyId200ResponseDataAttributes {
 	this := GETOrderCopiesOrderCopyId200ResponseDataAttributes{}
 	return &this
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) HasType() bool {
+	if o != nil && IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -529,6 +568,72 @@ func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetCancelSourceOrde
 	o.CancelSourceOrder = v
 }
 
+// GetApplyPromotions returns the ApplyPromotions field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetApplyPromotions() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ApplyPromotions
+}
+
+// GetApplyPromotionsOk returns a tuple with the ApplyPromotions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetApplyPromotionsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ApplyPromotions) {
+		return nil, false
+	}
+	return &o.ApplyPromotions, true
+}
+
+// HasApplyPromotions returns a boolean if a field has been set.
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) HasApplyPromotions() bool {
+	if o != nil && IsNil(o.ApplyPromotions) {
+		return true
+	}
+
+	return false
+}
+
+// SetApplyPromotions gets a reference to the given interface{} and assigns it to the ApplyPromotions field.
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetApplyPromotions(v interface{}) {
+	o.ApplyPromotions = v
+}
+
+// GetIgnoreInvalidCoupon returns the IgnoreInvalidCoupon field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetIgnoreInvalidCoupon() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.IgnoreInvalidCoupon
+}
+
+// GetIgnoreInvalidCouponOk returns a tuple with the IgnoreInvalidCoupon field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetIgnoreInvalidCouponOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.IgnoreInvalidCoupon) {
+		return nil, false
+	}
+	return &o.IgnoreInvalidCoupon, true
+}
+
+// HasIgnoreInvalidCoupon returns a boolean if a field has been set.
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) HasIgnoreInvalidCoupon() bool {
+	if o != nil && IsNil(o.IgnoreInvalidCoupon) {
+		return true
+	}
+
+	return false
+}
+
+// SetIgnoreInvalidCoupon gets a reference to the given interface{} and assigns it to the IgnoreInvalidCoupon field.
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetIgnoreInvalidCoupon(v interface{}) {
+	o.IgnoreInvalidCoupon = v
+}
+
 func (o GETOrderCopiesOrderCopyId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -539,6 +644,9 @@ func (o GETOrderCopiesOrderCopyId200ResponseDataAttributes) MarshalJSON() ([]byt
 
 func (o GETOrderCopiesOrderCopyId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
 	}
@@ -580,6 +688,12 @@ func (o GETOrderCopiesOrderCopyId200ResponseDataAttributes) ToMap() (map[string]
 	}
 	if o.CancelSourceOrder != nil {
 		toSerialize["cancel_source_order"] = o.CancelSourceOrder
+	}
+	if o.ApplyPromotions != nil {
+		toSerialize["apply_promotions"] = o.ApplyPromotions
+	}
+	if o.IgnoreInvalidCoupon != nil {
+		toSerialize["ignore_invalid_coupon"] = o.IgnoreInvalidCoupon
 	}
 	return toSerialize, nil
 }

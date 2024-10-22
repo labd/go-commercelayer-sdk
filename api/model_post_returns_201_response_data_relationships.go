@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,14 +20,19 @@ var _ MappedNullable = &POSTReturns201ResponseDataRelationships{}
 
 // POSTReturns201ResponseDataRelationships struct for POSTReturns201ResponseDataRelationships
 type POSTReturns201ResponseDataRelationships struct {
-	Order              *POSTAdyenPayments201ResponseDataRelationshipsOrder                 `json:"order,omitempty"`
-	Customer           *POSTCouponRecipients201ResponseDataRelationshipsCustomer           `json:"customer,omitempty"`
-	StockLocation      *POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation     `json:"stock_location,omitempty"`
-	OriginAddress      *POSTReturns201ResponseDataRelationshipsOriginAddress               `json:"origin_address,omitempty"`
-	DestinationAddress *POSTReturns201ResponseDataRelationshipsDestinationAddress          `json:"destination_address,omitempty"`
-	ReturnLineItems    *POSTReturns201ResponseDataRelationshipsReturnLineItems             `json:"return_line_items,omitempty"`
-	Attachments        *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments         `json:"attachments,omitempty"`
-	Events             *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents `json:"events,omitempty"`
+	Order              *POSTAdyenPayments201ResponseDataRelationshipsOrder                      `json:"order,omitempty"`
+	Customer           *POSTCouponRecipients201ResponseDataRelationshipsCustomer                `json:"customer,omitempty"`
+	StockLocation      *POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation          `json:"stock_location,omitempty"`
+	OriginAddress      *POSTReturns201ResponseDataRelationshipsOriginAddress                    `json:"origin_address,omitempty"`
+	DestinationAddress *POSTReturns201ResponseDataRelationshipsDestinationAddress               `json:"destination_address,omitempty"`
+	ReferenceCapture   *GETRefundsRefundId200ResponseDataRelationshipsReferenceCapture          `json:"reference_capture,omitempty"`
+	ReferenceRefund    *POSTReturns201ResponseDataRelationshipsReferenceRefund                  `json:"reference_refund,omitempty"`
+	ReturnLineItems    *POSTLineItems201ResponseDataRelationshipsReturnLineItems                `json:"return_line_items,omitempty"`
+	Attachments        *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	ResourceErrors     *POSTOrders201ResponseDataRelationshipsResourceErrors                    `json:"resource_errors,omitempty"`
+	Events             *POSTAddresses201ResponseDataRelationshipsEvents                         `json:"events,omitempty"`
+	Tags               *POSTAddresses201ResponseDataRelationshipsTags                           `json:"tags,omitempty"`
+	Versions           *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewPOSTReturns201ResponseDataRelationships instantiates a new POSTReturns201ResponseDataRelationships object
@@ -207,10 +212,74 @@ func (o *POSTReturns201ResponseDataRelationships) SetDestinationAddress(v POSTRe
 	o.DestinationAddress = &v
 }
 
+// GetReferenceCapture returns the ReferenceCapture field value if set, zero value otherwise.
+func (o *POSTReturns201ResponseDataRelationships) GetReferenceCapture() GETRefundsRefundId200ResponseDataRelationshipsReferenceCapture {
+	if o == nil || IsNil(o.ReferenceCapture) {
+		var ret GETRefundsRefundId200ResponseDataRelationshipsReferenceCapture
+		return ret
+	}
+	return *o.ReferenceCapture
+}
+
+// GetReferenceCaptureOk returns a tuple with the ReferenceCapture field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTReturns201ResponseDataRelationships) GetReferenceCaptureOk() (*GETRefundsRefundId200ResponseDataRelationshipsReferenceCapture, bool) {
+	if o == nil || IsNil(o.ReferenceCapture) {
+		return nil, false
+	}
+	return o.ReferenceCapture, true
+}
+
+// HasReferenceCapture returns a boolean if a field has been set.
+func (o *POSTReturns201ResponseDataRelationships) HasReferenceCapture() bool {
+	if o != nil && !IsNil(o.ReferenceCapture) {
+		return true
+	}
+
+	return false
+}
+
+// SetReferenceCapture gets a reference to the given GETRefundsRefundId200ResponseDataRelationshipsReferenceCapture and assigns it to the ReferenceCapture field.
+func (o *POSTReturns201ResponseDataRelationships) SetReferenceCapture(v GETRefundsRefundId200ResponseDataRelationshipsReferenceCapture) {
+	o.ReferenceCapture = &v
+}
+
+// GetReferenceRefund returns the ReferenceRefund field value if set, zero value otherwise.
+func (o *POSTReturns201ResponseDataRelationships) GetReferenceRefund() POSTReturns201ResponseDataRelationshipsReferenceRefund {
+	if o == nil || IsNil(o.ReferenceRefund) {
+		var ret POSTReturns201ResponseDataRelationshipsReferenceRefund
+		return ret
+	}
+	return *o.ReferenceRefund
+}
+
+// GetReferenceRefundOk returns a tuple with the ReferenceRefund field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTReturns201ResponseDataRelationships) GetReferenceRefundOk() (*POSTReturns201ResponseDataRelationshipsReferenceRefund, bool) {
+	if o == nil || IsNil(o.ReferenceRefund) {
+		return nil, false
+	}
+	return o.ReferenceRefund, true
+}
+
+// HasReferenceRefund returns a boolean if a field has been set.
+func (o *POSTReturns201ResponseDataRelationships) HasReferenceRefund() bool {
+	if o != nil && !IsNil(o.ReferenceRefund) {
+		return true
+	}
+
+	return false
+}
+
+// SetReferenceRefund gets a reference to the given POSTReturns201ResponseDataRelationshipsReferenceRefund and assigns it to the ReferenceRefund field.
+func (o *POSTReturns201ResponseDataRelationships) SetReferenceRefund(v POSTReturns201ResponseDataRelationshipsReferenceRefund) {
+	o.ReferenceRefund = &v
+}
+
 // GetReturnLineItems returns the ReturnLineItems field value if set, zero value otherwise.
-func (o *POSTReturns201ResponseDataRelationships) GetReturnLineItems() POSTReturns201ResponseDataRelationshipsReturnLineItems {
+func (o *POSTReturns201ResponseDataRelationships) GetReturnLineItems() POSTLineItems201ResponseDataRelationshipsReturnLineItems {
 	if o == nil || IsNil(o.ReturnLineItems) {
-		var ret POSTReturns201ResponseDataRelationshipsReturnLineItems
+		var ret POSTLineItems201ResponseDataRelationshipsReturnLineItems
 		return ret
 	}
 	return *o.ReturnLineItems
@@ -218,7 +287,7 @@ func (o *POSTReturns201ResponseDataRelationships) GetReturnLineItems() POSTRetur
 
 // GetReturnLineItemsOk returns a tuple with the ReturnLineItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTReturns201ResponseDataRelationships) GetReturnLineItemsOk() (*POSTReturns201ResponseDataRelationshipsReturnLineItems, bool) {
+func (o *POSTReturns201ResponseDataRelationships) GetReturnLineItemsOk() (*POSTLineItems201ResponseDataRelationshipsReturnLineItems, bool) {
 	if o == nil || IsNil(o.ReturnLineItems) {
 		return nil, false
 	}
@@ -234,15 +303,15 @@ func (o *POSTReturns201ResponseDataRelationships) HasReturnLineItems() bool {
 	return false
 }
 
-// SetReturnLineItems gets a reference to the given POSTReturns201ResponseDataRelationshipsReturnLineItems and assigns it to the ReturnLineItems field.
-func (o *POSTReturns201ResponseDataRelationships) SetReturnLineItems(v POSTReturns201ResponseDataRelationshipsReturnLineItems) {
+// SetReturnLineItems gets a reference to the given POSTLineItems201ResponseDataRelationshipsReturnLineItems and assigns it to the ReturnLineItems field.
+func (o *POSTReturns201ResponseDataRelationships) SetReturnLineItems(v POSTLineItems201ResponseDataRelationshipsReturnLineItems) {
 	o.ReturnLineItems = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTReturns201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTReturns201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -250,7 +319,7 @@ func (o *POSTReturns201ResponseDataRelationships) GetAttachments() POSTAvalaraAc
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTReturns201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTReturns201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -266,15 +335,47 @@ func (o *POSTReturns201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTReturns201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTReturns201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
+// GetResourceErrors returns the ResourceErrors field value if set, zero value otherwise.
+func (o *POSTReturns201ResponseDataRelationships) GetResourceErrors() POSTOrders201ResponseDataRelationshipsResourceErrors {
+	if o == nil || IsNil(o.ResourceErrors) {
+		var ret POSTOrders201ResponseDataRelationshipsResourceErrors
+		return ret
+	}
+	return *o.ResourceErrors
+}
+
+// GetResourceErrorsOk returns a tuple with the ResourceErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTReturns201ResponseDataRelationships) GetResourceErrorsOk() (*POSTOrders201ResponseDataRelationshipsResourceErrors, bool) {
+	if o == nil || IsNil(o.ResourceErrors) {
+		return nil, false
+	}
+	return o.ResourceErrors, true
+}
+
+// HasResourceErrors returns a boolean if a field has been set.
+func (o *POSTReturns201ResponseDataRelationships) HasResourceErrors() bool {
+	if o != nil && !IsNil(o.ResourceErrors) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceErrors gets a reference to the given POSTOrders201ResponseDataRelationshipsResourceErrors and assigns it to the ResourceErrors field.
+func (o *POSTReturns201ResponseDataRelationships) SetResourceErrors(v POSTOrders201ResponseDataRelationshipsResourceErrors) {
+	o.ResourceErrors = &v
+}
+
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *POSTReturns201ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents {
+func (o *POSTReturns201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -282,7 +383,7 @@ func (o *POSTReturns201ResponseDataRelationships) GetEvents() GETAuthorizationsA
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTReturns201ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool) {
+func (o *POSTReturns201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -298,9 +399,73 @@ func (o *POSTReturns201ResponseDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents and assigns it to the Events field.
-func (o *POSTReturns201ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents) {
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *POSTReturns201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *POSTReturns201ResponseDataRelationships) GetTags() POSTAddresses201ResponseDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret POSTAddresses201ResponseDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTReturns201ResponseDataRelationships) GetTagsOk() (*POSTAddresses201ResponseDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *POSTReturns201ResponseDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given POSTAddresses201ResponseDataRelationshipsTags and assigns it to the Tags field.
+func (o *POSTReturns201ResponseDataRelationships) SetTags(v POSTAddresses201ResponseDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTReturns201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTReturns201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTReturns201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTReturns201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTReturns201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -328,14 +493,29 @@ func (o POSTReturns201ResponseDataRelationships) ToMap() (map[string]interface{}
 	if !IsNil(o.DestinationAddress) {
 		toSerialize["destination_address"] = o.DestinationAddress
 	}
+	if !IsNil(o.ReferenceCapture) {
+		toSerialize["reference_capture"] = o.ReferenceCapture
+	}
+	if !IsNil(o.ReferenceRefund) {
+		toSerialize["reference_refund"] = o.ReferenceRefund
+	}
 	if !IsNil(o.ReturnLineItems) {
 		toSerialize["return_line_items"] = o.ReturnLineItems
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
 	}
+	if !IsNil(o.ResourceErrors) {
+		toSerialize["resource_errors"] = o.ResourceErrors
+	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

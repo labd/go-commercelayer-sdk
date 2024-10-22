@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETStockLineItemsStockLineItemId200ResponseDataAttributes**](GETStockLineItemsStockLineItemId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**GETStockLineItemsStockLineItemId200ResponseDataRelationships**](GETStockLineItemsStockLineItemId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTStockLineItems201ResponseDataRelationships**](POSTStockLineItems201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *GETStockLineItemsStockLineItemId200ResponseData) GetRelationships() GETStockLineItemsStockLineItemId200ResponseDataRelationships`
+`func (o *GETStockLineItemsStockLineItemId200ResponseData) GetRelationships() POSTStockLineItems201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *GETStockLineItemsStockLineItemId200ResponseData) GetRelationshipsOk() (*GETStockLineItemsStockLineItemId200ResponseDataRelationships, bool)`
+`func (o *GETStockLineItemsStockLineItemId200ResponseData) GetRelationshipsOk() (*POSTStockLineItems201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *GETStockLineItemsStockLineItemId200ResponseData) SetRelationships(v GETStockLineItemsStockLineItemId200ResponseDataRelationships)`
+`func (o *GETStockLineItemsStockLineItemId200ResponseData) SetRelationships(v POSTStockLineItems201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

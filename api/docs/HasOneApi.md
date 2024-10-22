@@ -15,11 +15,19 @@ Method | HTTP request | Description
 [**GETBraintreePaymentIdPaymentGateway**](HasOneApi.md#GETBraintreePaymentIdPaymentGateway) | **Get** /braintree_payments/{braintreePaymentId}/payment_gateway | Retrieve the payment gateway associated to the braintree payment
 [**GETBundleIdMarket**](HasOneApi.md#GETBundleIdMarket) | **Get** /bundles/{bundleId}/market | Retrieve the market associated to the bundle
 [**GETBundleIdSkuList**](HasOneApi.md#GETBundleIdSkuList) | **Get** /bundles/{bundleId}/sku_list | Retrieve the sku list associated to the bundle
+[**GETBuyXPayYPromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETBuyXPayYPromotionIdCouponCodesPromotionRule) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the buy x pay y promotion
+[**GETBuyXPayYPromotionIdCustomPromotionRule**](HasOneApi.md#GETBuyXPayYPromotionIdCustomPromotionRule) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/custom_promotion_rule | Retrieve the custom promotion rule associated to the buy x pay y promotion
+[**GETBuyXPayYPromotionIdMarket**](HasOneApi.md#GETBuyXPayYPromotionIdMarket) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/market | Retrieve the market associated to the buy x pay y promotion
+[**GETBuyXPayYPromotionIdOrderAmountPromotionRule**](HasOneApi.md#GETBuyXPayYPromotionIdOrderAmountPromotionRule) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the buy x pay y promotion
+[**GETBuyXPayYPromotionIdSkuList**](HasOneApi.md#GETBuyXPayYPromotionIdSkuList) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/sku_list | Retrieve the sku list associated to the buy x pay y promotion
+[**GETBuyXPayYPromotionIdSkuListPromotionRule**](HasOneApi.md#GETBuyXPayYPromotionIdSkuListPromotionRule) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the buy x pay y promotion
 [**GETCaptureIdOrder**](HasOneApi.md#GETCaptureIdOrder) | **Get** /captures/{captureId}/order | Retrieve the order associated to the capture
 [**GETCaptureIdReferenceAuthorization**](HasOneApi.md#GETCaptureIdReferenceAuthorization) | **Get** /captures/{captureId}/reference_authorization | Retrieve the reference authorization associated to the capture
+[**GETCaptureIdReturn**](HasOneApi.md#GETCaptureIdReturn) | **Get** /captures/{captureId}/return | Retrieve the return associated to the capture
 [**GETCarrierAccountIdMarket**](HasOneApi.md#GETCarrierAccountIdMarket) | **Get** /carrier_accounts/{carrierAccountId}/market | Retrieve the market associated to the carrier account
 [**GETCheckoutComPaymentIdOrder**](HasOneApi.md#GETCheckoutComPaymentIdOrder) | **Get** /checkout_com_payments/{checkoutComPaymentId}/order | Retrieve the order associated to the checkout.com payment
 [**GETCheckoutComPaymentIdPaymentGateway**](HasOneApi.md#GETCheckoutComPaymentIdPaymentGateway) | **Get** /checkout_com_payments/{checkoutComPaymentId}/payment_gateway | Retrieve the payment gateway associated to the checkout.com payment
+[**GETCouponIdCouponRecipient**](HasOneApi.md#GETCouponIdCouponRecipient) | **Get** /coupons/{couponId}/coupon_recipient | Retrieve the coupon recipient associated to the coupon
 [**GETCouponIdPromotionRule**](HasOneApi.md#GETCouponIdPromotionRule) | **Get** /coupons/{couponId}/promotion_rule | Retrieve the promotion rule associated to the coupon
 [**GETCouponRecipientIdCustomer**](HasOneApi.md#GETCouponRecipientIdCustomer) | **Get** /coupon_recipients/{couponRecipientId}/customer | Retrieve the customer associated to the coupon recipient
 [**GETCustomerAddressIdAddress**](HasOneApi.md#GETCustomerAddressIdAddress) | **Get** /customer_addresses/{customerAddressId}/address | Retrieve the address associated to the customer address
@@ -27,6 +35,7 @@ Method | HTTP request | Description
 [**GETCustomerIdCustomerGroup**](HasOneApi.md#GETCustomerIdCustomerGroup) | **Get** /customers/{customerId}/customer_group | Retrieve the customer group associated to the customer
 [**GETCustomerPasswordResetIdCustomer**](HasOneApi.md#GETCustomerPasswordResetIdCustomer) | **Get** /customer_password_resets/{customerPasswordResetId}/customer | Retrieve the customer associated to the customer password reset
 [**GETCustomerPaymentSourceIdCustomer**](HasOneApi.md#GETCustomerPaymentSourceIdCustomer) | **Get** /customer_payment_sources/{customerPaymentSourceId}/customer | Retrieve the customer associated to the customer payment source
+[**GETCustomerPaymentSourceIdPaymentMethod**](HasOneApi.md#GETCustomerPaymentSourceIdPaymentMethod) | **Get** /customer_payment_sources/{customerPaymentSourceId}/payment_method | Retrieve the payment method associated to the customer payment source
 [**GETCustomerSubscriptionIdCustomer**](HasOneApi.md#GETCustomerSubscriptionIdCustomer) | **Get** /customer_subscriptions/{customerSubscriptionId}/customer | Retrieve the customer associated to the customer subscription
 [**GETDeliveryLeadTimeIdShippingMethod**](HasOneApi.md#GETDeliveryLeadTimeIdShippingMethod) | **Get** /delivery_lead_times/{deliveryLeadTimeId}/shipping_method | Retrieve the shipping method associated to the delivery lead time
 [**GETDeliveryLeadTimeIdStockLocation**](HasOneApi.md#GETDeliveryLeadTimeIdStockLocation) | **Get** /delivery_lead_times/{deliveryLeadTimeId}/stock_location | Retrieve the stock location associated to the delivery lead time
@@ -35,26 +44,35 @@ Method | HTTP request | Description
 [**GETExternalPaymentIdPaymentGateway**](HasOneApi.md#GETExternalPaymentIdPaymentGateway) | **Get** /external_payments/{externalPaymentId}/payment_gateway | Retrieve the payment gateway associated to the external payment
 [**GETExternalPaymentIdWallet**](HasOneApi.md#GETExternalPaymentIdWallet) | **Get** /external_payments/{externalPaymentId}/wallet | Retrieve the wallet associated to the external payment
 [**GETExternalPromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETExternalPromotionIdCouponCodesPromotionRule) | **Get** /external_promotions/{externalPromotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the external promotion
+[**GETExternalPromotionIdCustomPromotionRule**](HasOneApi.md#GETExternalPromotionIdCustomPromotionRule) | **Get** /external_promotions/{externalPromotionId}/custom_promotion_rule | Retrieve the custom promotion rule associated to the external promotion
 [**GETExternalPromotionIdMarket**](HasOneApi.md#GETExternalPromotionIdMarket) | **Get** /external_promotions/{externalPromotionId}/market | Retrieve the market associated to the external promotion
 [**GETExternalPromotionIdOrderAmountPromotionRule**](HasOneApi.md#GETExternalPromotionIdOrderAmountPromotionRule) | **Get** /external_promotions/{externalPromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the external promotion
+[**GETExternalPromotionIdSkuList**](HasOneApi.md#GETExternalPromotionIdSkuList) | **Get** /external_promotions/{externalPromotionId}/sku_list | Retrieve the sku list associated to the external promotion
 [**GETExternalPromotionIdSkuListPromotionRule**](HasOneApi.md#GETExternalPromotionIdSkuListPromotionRule) | **Get** /external_promotions/{externalPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the external promotion
 [**GETFixedAmountPromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETFixedAmountPromotionIdCouponCodesPromotionRule) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the fixed amount promotion
+[**GETFixedAmountPromotionIdCustomPromotionRule**](HasOneApi.md#GETFixedAmountPromotionIdCustomPromotionRule) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/custom_promotion_rule | Retrieve the custom promotion rule associated to the fixed amount promotion
 [**GETFixedAmountPromotionIdMarket**](HasOneApi.md#GETFixedAmountPromotionIdMarket) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/market | Retrieve the market associated to the fixed amount promotion
 [**GETFixedAmountPromotionIdOrderAmountPromotionRule**](HasOneApi.md#GETFixedAmountPromotionIdOrderAmountPromotionRule) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the fixed amount promotion
+[**GETFixedAmountPromotionIdSkuList**](HasOneApi.md#GETFixedAmountPromotionIdSkuList) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/sku_list | Retrieve the sku list associated to the fixed amount promotion
 [**GETFixedAmountPromotionIdSkuListPromotionRule**](HasOneApi.md#GETFixedAmountPromotionIdSkuListPromotionRule) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the fixed amount promotion
 [**GETFixedPricePromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETFixedPricePromotionIdCouponCodesPromotionRule) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the fixed price promotion
+[**GETFixedPricePromotionIdCustomPromotionRule**](HasOneApi.md#GETFixedPricePromotionIdCustomPromotionRule) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/custom_promotion_rule | Retrieve the custom promotion rule associated to the fixed price promotion
 [**GETFixedPricePromotionIdMarket**](HasOneApi.md#GETFixedPricePromotionIdMarket) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/market | Retrieve the market associated to the fixed price promotion
 [**GETFixedPricePromotionIdOrderAmountPromotionRule**](HasOneApi.md#GETFixedPricePromotionIdOrderAmountPromotionRule) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the fixed price promotion
 [**GETFixedPricePromotionIdSkuList**](HasOneApi.md#GETFixedPricePromotionIdSkuList) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/sku_list | Retrieve the sku list associated to the fixed price promotion
 [**GETFixedPricePromotionIdSkuListPromotionRule**](HasOneApi.md#GETFixedPricePromotionIdSkuListPromotionRule) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the fixed price promotion
+[**GETFlexPromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETFlexPromotionIdCouponCodesPromotionRule) | **Get** /flex_promotions/{flexPromotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the flex promotion
 [**GETFreeGiftPromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETFreeGiftPromotionIdCouponCodesPromotionRule) | **Get** /free_gift_promotions/{freeGiftPromotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the free gift promotion
+[**GETFreeGiftPromotionIdCustomPromotionRule**](HasOneApi.md#GETFreeGiftPromotionIdCustomPromotionRule) | **Get** /free_gift_promotions/{freeGiftPromotionId}/custom_promotion_rule | Retrieve the custom promotion rule associated to the free gift promotion
 [**GETFreeGiftPromotionIdMarket**](HasOneApi.md#GETFreeGiftPromotionIdMarket) | **Get** /free_gift_promotions/{freeGiftPromotionId}/market | Retrieve the market associated to the free gift promotion
 [**GETFreeGiftPromotionIdOrderAmountPromotionRule**](HasOneApi.md#GETFreeGiftPromotionIdOrderAmountPromotionRule) | **Get** /free_gift_promotions/{freeGiftPromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the free gift promotion
 [**GETFreeGiftPromotionIdSkuList**](HasOneApi.md#GETFreeGiftPromotionIdSkuList) | **Get** /free_gift_promotions/{freeGiftPromotionId}/sku_list | Retrieve the sku list associated to the free gift promotion
 [**GETFreeGiftPromotionIdSkuListPromotionRule**](HasOneApi.md#GETFreeGiftPromotionIdSkuListPromotionRule) | **Get** /free_gift_promotions/{freeGiftPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the free gift promotion
 [**GETFreeShippingPromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETFreeShippingPromotionIdCouponCodesPromotionRule) | **Get** /free_shipping_promotions/{freeShippingPromotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the free shipping promotion
+[**GETFreeShippingPromotionIdCustomPromotionRule**](HasOneApi.md#GETFreeShippingPromotionIdCustomPromotionRule) | **Get** /free_shipping_promotions/{freeShippingPromotionId}/custom_promotion_rule | Retrieve the custom promotion rule associated to the free shipping promotion
 [**GETFreeShippingPromotionIdMarket**](HasOneApi.md#GETFreeShippingPromotionIdMarket) | **Get** /free_shipping_promotions/{freeShippingPromotionId}/market | Retrieve the market associated to the free shipping promotion
 [**GETFreeShippingPromotionIdOrderAmountPromotionRule**](HasOneApi.md#GETFreeShippingPromotionIdOrderAmountPromotionRule) | **Get** /free_shipping_promotions/{freeShippingPromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the free shipping promotion
+[**GETFreeShippingPromotionIdSkuList**](HasOneApi.md#GETFreeShippingPromotionIdSkuList) | **Get** /free_shipping_promotions/{freeShippingPromotionId}/sku_list | Retrieve the sku list associated to the free shipping promotion
 [**GETFreeShippingPromotionIdSkuListPromotionRule**](HasOneApi.md#GETFreeShippingPromotionIdSkuListPromotionRule) | **Get** /free_shipping_promotions/{freeShippingPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the free shipping promotion
 [**GETGiftCardIdGiftCardRecipient**](HasOneApi.md#GETGiftCardIdGiftCardRecipient) | **Get** /gift_cards/{giftCardId}/gift_card_recipient | Retrieve the gift card recipient associated to the gift card
 [**GETGiftCardIdMarket**](HasOneApi.md#GETGiftCardIdMarket) | **Get** /gift_cards/{giftCardId}/market | Retrieve the market associated to the gift card
@@ -71,7 +89,9 @@ Method | HTTP request | Description
 [**GETLineItemIdOrder**](HasOneApi.md#GETLineItemIdOrder) | **Get** /line_items/{lineItemId}/order | Retrieve the order associated to the line item
 [**GETLineItemOptionIdLineItem**](HasOneApi.md#GETLineItemOptionIdLineItem) | **Get** /line_item_options/{lineItemOptionId}/line_item | Retrieve the line item associated to the line item option
 [**GETLineItemOptionIdSkuOption**](HasOneApi.md#GETLineItemOptionIdSkuOption) | **Get** /line_item_options/{lineItemOptionId}/sku_option | Retrieve the sku option associated to the line item option
+[**GETMarketIdBasePriceList**](HasOneApi.md#GETMarketIdBasePriceList) | **Get** /markets/{marketId}/base_price_list | Retrieve the base price list associated to the market
 [**GETMarketIdCustomerGroup**](HasOneApi.md#GETMarketIdCustomerGroup) | **Get** /markets/{marketId}/customer_group | Retrieve the customer group associated to the market
+[**GETMarketIdGeocoder**](HasOneApi.md#GETMarketIdGeocoder) | **Get** /markets/{marketId}/geocoder | Retrieve the geocoder associated to the market
 [**GETMarketIdInventoryModel**](HasOneApi.md#GETMarketIdInventoryModel) | **Get** /markets/{marketId}/inventory_model | Retrieve the inventory model associated to the market
 [**GETMarketIdMerchant**](HasOneApi.md#GETMarketIdMerchant) | **Get** /markets/{marketId}/merchant | Retrieve the merchant associated to the market
 [**GETMarketIdPriceList**](HasOneApi.md#GETMarketIdPriceList) | **Get** /markets/{marketId}/price_list | Retrieve the price list associated to the market
@@ -86,6 +106,7 @@ Method | HTTP request | Description
 [**GETOrderIdBillingAddress**](HasOneApi.md#GETOrderIdBillingAddress) | **Get** /orders/{orderId}/billing_address | Retrieve the billing address associated to the order
 [**GETOrderIdCustomer**](HasOneApi.md#GETOrderIdCustomer) | **Get** /orders/{orderId}/customer | Retrieve the customer associated to the order
 [**GETOrderIdMarket**](HasOneApi.md#GETOrderIdMarket) | **Get** /orders/{orderId}/market | Retrieve the market associated to the order
+[**GETOrderIdOrderSubscription**](HasOneApi.md#GETOrderIdOrderSubscription) | **Get** /orders/{orderId}/order_subscription | Retrieve the order subscription associated to the order
 [**GETOrderIdPaymentMethod**](HasOneApi.md#GETOrderIdPaymentMethod) | **Get** /orders/{orderId}/payment_method | Retrieve the payment method associated to the order
 [**GETOrderIdShippingAddress**](HasOneApi.md#GETOrderIdShippingAddress) | **Get** /orders/{orderId}/shipping_address | Retrieve the shipping address associated to the order
 [**GETOrderSubscriptionIdCustomer**](HasOneApi.md#GETOrderSubscriptionIdCustomer) | **Get** /order_subscriptions/{orderSubscriptionId}/customer | Retrieve the customer associated to the order subscription
@@ -94,7 +115,7 @@ Method | HTTP request | Description
 [**GETOrderSubscriptionIdSourceOrder**](HasOneApi.md#GETOrderSubscriptionIdSourceOrder) | **Get** /order_subscriptions/{orderSubscriptionId}/source_order | Retrieve the source order associated to the order subscription
 [**GETOrderSubscriptionIdSubscriptionModel**](HasOneApi.md#GETOrderSubscriptionIdSubscriptionModel) | **Get** /order_subscriptions/{orderSubscriptionId}/subscription_model | Retrieve the subscription model associated to the order subscription
 [**GETOrderSubscriptionItemIdOrderSubscription**](HasOneApi.md#GETOrderSubscriptionItemIdOrderSubscription) | **Get** /order_subscription_items/{orderSubscriptionItemId}/order_subscription | Retrieve the order subscription associated to the order subscription item
-[**GETOrderValidationRuleIdMarket**](HasOneApi.md#GETOrderValidationRuleIdMarket) | **Get** /order_validation_rules/{orderValidationRuleId}/market | Retrieve the market associated to the order validation rule
+[**GETOrderSubscriptionItemIdSourceLineItem**](HasOneApi.md#GETOrderSubscriptionItemIdSourceLineItem) | **Get** /order_subscription_items/{orderSubscriptionItemId}/source_line_item | Retrieve the source line item associated to the order subscription item
 [**GETPackageIdStockLocation**](HasOneApi.md#GETPackageIdStockLocation) | **Get** /packages/{packageId}/stock_location | Retrieve the stock location associated to the package
 [**GETParcelIdPackage**](HasOneApi.md#GETParcelIdPackage) | **Get** /parcels/{parcelId}/package | Retrieve the package associated to the parcel
 [**GETParcelIdShipment**](HasOneApi.md#GETParcelIdShipment) | **Get** /parcels/{parcelId}/shipment | Retrieve the shipment associated to the parcel
@@ -102,37 +123,50 @@ Method | HTTP request | Description
 [**GETParcelLineItemIdStockLineItem**](HasOneApi.md#GETParcelLineItemIdStockLineItem) | **Get** /parcel_line_items/{parcelLineItemId}/stock_line_item | Retrieve the stock line item associated to the parcel line item
 [**GETPaymentMethodIdMarket**](HasOneApi.md#GETPaymentMethodIdMarket) | **Get** /payment_methods/{paymentMethodId}/market | Retrieve the market associated to the payment method
 [**GETPaymentMethodIdPaymentGateway**](HasOneApi.md#GETPaymentMethodIdPaymentGateway) | **Get** /payment_methods/{paymentMethodId}/payment_gateway | Retrieve the payment gateway associated to the payment method
+[**GETPaymentOptionIdOrder**](HasOneApi.md#GETPaymentOptionIdOrder) | **Get** /payment_options/{paymentOptionId}/order | Retrieve the order associated to the payment option
 [**GETPaypalPaymentIdOrder**](HasOneApi.md#GETPaypalPaymentIdOrder) | **Get** /paypal_payments/{paypalPaymentId}/order | Retrieve the order associated to the paypal payment
 [**GETPaypalPaymentIdPaymentGateway**](HasOneApi.md#GETPaypalPaymentIdPaymentGateway) | **Get** /paypal_payments/{paypalPaymentId}/payment_gateway | Retrieve the payment gateway associated to the paypal payment
 [**GETPercentageDiscountPromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETPercentageDiscountPromotionIdCouponCodesPromotionRule) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the percentage discount promotion
+[**GETPercentageDiscountPromotionIdCustomPromotionRule**](HasOneApi.md#GETPercentageDiscountPromotionIdCustomPromotionRule) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/custom_promotion_rule | Retrieve the custom promotion rule associated to the percentage discount promotion
 [**GETPercentageDiscountPromotionIdMarket**](HasOneApi.md#GETPercentageDiscountPromotionIdMarket) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/market | Retrieve the market associated to the percentage discount promotion
 [**GETPercentageDiscountPromotionIdOrderAmountPromotionRule**](HasOneApi.md#GETPercentageDiscountPromotionIdOrderAmountPromotionRule) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the percentage discount promotion
 [**GETPercentageDiscountPromotionIdSkuList**](HasOneApi.md#GETPercentageDiscountPromotionIdSkuList) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list | Retrieve the sku list associated to the percentage discount promotion
 [**GETPercentageDiscountPromotionIdSkuListPromotionRule**](HasOneApi.md#GETPercentageDiscountPromotionIdSkuListPromotionRule) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the percentage discount promotion
 [**GETPriceFrequencyTierIdPrice**](HasOneApi.md#GETPriceFrequencyTierIdPrice) | **Get** /price_frequency_tiers/{priceFrequencyTierId}/price | Retrieve the price associated to the price frequency tier
+[**GETPriceIdJwtCustomer**](HasOneApi.md#GETPriceIdJwtCustomer) | **Get** /prices/{priceId}/jwt_customer | Retrieve the jwt customer associated to the price
 [**GETPriceIdPriceList**](HasOneApi.md#GETPriceIdPriceList) | **Get** /prices/{priceId}/price_list | Retrieve the price list associated to the price
 [**GETPriceIdSku**](HasOneApi.md#GETPriceIdSku) | **Get** /prices/{priceId}/sku | Retrieve the sku associated to the price
+[**GETPriceListSchedulerIdMarket**](HasOneApi.md#GETPriceListSchedulerIdMarket) | **Get** /price_list_schedulers/{priceListSchedulerId}/market | Retrieve the market associated to the price list scheduler
+[**GETPriceListSchedulerIdPriceList**](HasOneApi.md#GETPriceListSchedulerIdPriceList) | **Get** /price_list_schedulers/{priceListSchedulerId}/price_list | Retrieve the price list associated to the price list scheduler
 [**GETPriceTierIdPrice**](HasOneApi.md#GETPriceTierIdPrice) | **Get** /price_tiers/{priceTierId}/price | Retrieve the price associated to the price tier
 [**GETPriceVolumeTierIdPrice**](HasOneApi.md#GETPriceVolumeTierIdPrice) | **Get** /price_volume_tiers/{priceVolumeTierId}/price | Retrieve the price associated to the price volume tier
 [**GETPromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETPromotionIdCouponCodesPromotionRule) | **Get** /promotions/{promotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the promotion
+[**GETPromotionIdCustomPromotionRule**](HasOneApi.md#GETPromotionIdCustomPromotionRule) | **Get** /promotions/{promotionId}/custom_promotion_rule | Retrieve the custom promotion rule associated to the promotion
 [**GETPromotionIdMarket**](HasOneApi.md#GETPromotionIdMarket) | **Get** /promotions/{promotionId}/market | Retrieve the market associated to the promotion
 [**GETPromotionIdOrderAmountPromotionRule**](HasOneApi.md#GETPromotionIdOrderAmountPromotionRule) | **Get** /promotions/{promotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the promotion
+[**GETPromotionIdSkuList**](HasOneApi.md#GETPromotionIdSkuList) | **Get** /promotions/{promotionId}/sku_list | Retrieve the sku list associated to the promotion
 [**GETPromotionIdSkuListPromotionRule**](HasOneApi.md#GETPromotionIdSkuListPromotionRule) | **Get** /promotions/{promotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the promotion
 [**GETRecurringOrderCopyIdOrderSubscription**](HasOneApi.md#GETRecurringOrderCopyIdOrderSubscription) | **Get** /recurring_order_copies/{recurringOrderCopyId}/order_subscription | Retrieve the order subscription associated to the recurring order copy
 [**GETRecurringOrderCopyIdSourceOrder**](HasOneApi.md#GETRecurringOrderCopyIdSourceOrder) | **Get** /recurring_order_copies/{recurringOrderCopyId}/source_order | Retrieve the source order associated to the recurring order copy
 [**GETRecurringOrderCopyIdTargetOrder**](HasOneApi.md#GETRecurringOrderCopyIdTargetOrder) | **Get** /recurring_order_copies/{recurringOrderCopyId}/target_order | Retrieve the target order associated to the recurring order copy
 [**GETRefundIdOrder**](HasOneApi.md#GETRefundIdOrder) | **Get** /refunds/{refundId}/order | Retrieve the order associated to the refund
 [**GETRefundIdReferenceCapture**](HasOneApi.md#GETRefundIdReferenceCapture) | **Get** /refunds/{refundId}/reference_capture | Retrieve the reference capture associated to the refund
+[**GETRefundIdReturn**](HasOneApi.md#GETRefundIdReturn) | **Get** /refunds/{refundId}/return | Retrieve the return associated to the refund
+[**GETReservedStockIdSku**](HasOneApi.md#GETReservedStockIdSku) | **Get** /reserved_stocks/{reservedStockId}/sku | Retrieve the sku associated to the reserved stock
+[**GETReservedStockIdStockItem**](HasOneApi.md#GETReservedStockIdStockItem) | **Get** /reserved_stocks/{reservedStockId}/stock_item | Retrieve the stock item associated to the reserved stock
 [**GETReturnIdCustomer**](HasOneApi.md#GETReturnIdCustomer) | **Get** /returns/{returnId}/customer | Retrieve the customer associated to the return
 [**GETReturnIdDestinationAddress**](HasOneApi.md#GETReturnIdDestinationAddress) | **Get** /returns/{returnId}/destination_address | Retrieve the destination address associated to the return
 [**GETReturnIdOrder**](HasOneApi.md#GETReturnIdOrder) | **Get** /returns/{returnId}/order | Retrieve the order associated to the return
 [**GETReturnIdOriginAddress**](HasOneApi.md#GETReturnIdOriginAddress) | **Get** /returns/{returnId}/origin_address | Retrieve the origin address associated to the return
+[**GETReturnIdReferenceCapture**](HasOneApi.md#GETReturnIdReferenceCapture) | **Get** /returns/{returnId}/reference_capture | Retrieve the reference capture associated to the return
+[**GETReturnIdReferenceRefund**](HasOneApi.md#GETReturnIdReferenceRefund) | **Get** /returns/{returnId}/reference_refund | Retrieve the reference refund associated to the return
 [**GETReturnIdStockLocation**](HasOneApi.md#GETReturnIdStockLocation) | **Get** /returns/{returnId}/stock_location | Retrieve the stock location associated to the return
 [**GETReturnLineItemIdLineItem**](HasOneApi.md#GETReturnLineItemIdLineItem) | **Get** /return_line_items/{returnLineItemId}/line_item | Retrieve the line item associated to the return line item
 [**GETReturnLineItemIdReturn**](HasOneApi.md#GETReturnLineItemIdReturn) | **Get** /return_line_items/{returnLineItemId}/return | Retrieve the return associated to the return line item
 [**GETSatispayPaymentIdOrder**](HasOneApi.md#GETSatispayPaymentIdOrder) | **Get** /satispay_payments/{satispayPaymentId}/order | Retrieve the order associated to the satispay payment
 [**GETSatispayPaymentIdPaymentGateway**](HasOneApi.md#GETSatispayPaymentIdPaymentGateway) | **Get** /satispay_payments/{satispayPaymentId}/payment_gateway | Retrieve the payment gateway associated to the satispay payment
 [**GETShipmentIdDeliveryLeadTime**](HasOneApi.md#GETShipmentIdDeliveryLeadTime) | **Get** /shipments/{shipmentId}/delivery_lead_time | Retrieve the delivery lead time associated to the shipment
+[**GETShipmentIdInventoryStockLocation**](HasOneApi.md#GETShipmentIdInventoryStockLocation) | **Get** /shipments/{shipmentId}/inventory_stock_location | Retrieve the inventory stock location associated to the shipment
 [**GETShipmentIdOrder**](HasOneApi.md#GETShipmentIdOrder) | **Get** /shipments/{shipmentId}/order | Retrieve the order associated to the shipment
 [**GETShipmentIdOriginAddress**](HasOneApi.md#GETShipmentIdOriginAddress) | **Get** /shipments/{shipmentId}/origin_address | Retrieve the origin address associated to the shipment
 [**GETShipmentIdShippingAddress**](HasOneApi.md#GETShipmentIdShippingAddress) | **Get** /shipments/{shipmentId}/shipping_address | Retrieve the shipping address associated to the shipment
@@ -146,23 +180,35 @@ Method | HTTP request | Description
 [**GETShippingMethodIdStockLocation**](HasOneApi.md#GETShippingMethodIdStockLocation) | **Get** /shipping_methods/{shippingMethodId}/stock_location | Retrieve the stock location associated to the shipping method
 [**GETShippingMethodTierIdShippingMethod**](HasOneApi.md#GETShippingMethodTierIdShippingMethod) | **Get** /shipping_method_tiers/{shippingMethodTierId}/shipping_method | Retrieve the shipping method associated to the shipping method tier
 [**GETShippingWeightTierIdShippingMethod**](HasOneApi.md#GETShippingWeightTierIdShippingMethod) | **Get** /shipping_weight_tiers/{shippingWeightTierId}/shipping_method | Retrieve the shipping method associated to the shipping weight tier
+[**GETSkuIdJwtCustomer**](HasOneApi.md#GETSkuIdJwtCustomer) | **Get** /skus/{skuId}/jwt_customer | Retrieve the jwt customer associated to the SKU
 [**GETSkuIdShippingCategory**](HasOneApi.md#GETSkuIdShippingCategory) | **Get** /skus/{skuId}/shipping_category | Retrieve the shipping category associated to the SKU
 [**GETSkuListIdCustomer**](HasOneApi.md#GETSkuListIdCustomer) | **Get** /sku_lists/{skuListId}/customer | Retrieve the customer associated to the SKU list
 [**GETSkuListItemIdSku**](HasOneApi.md#GETSkuListItemIdSku) | **Get** /sku_list_items/{skuListItemId}/sku | Retrieve the sku associated to the SKU list item
 [**GETSkuListItemIdSkuList**](HasOneApi.md#GETSkuListItemIdSkuList) | **Get** /sku_list_items/{skuListItemId}/sku_list | Retrieve the sku list associated to the SKU list item
 [**GETSkuListPromotionRuleIdSkuList**](HasOneApi.md#GETSkuListPromotionRuleIdSkuList) | **Get** /sku_list_promotion_rules/{skuListPromotionRuleId}/sku_list | Retrieve the sku list associated to the SKU list promotion rule
 [**GETSkuOptionIdMarket**](HasOneApi.md#GETSkuOptionIdMarket) | **Get** /sku_options/{skuOptionId}/market | Retrieve the market associated to the SKU option
+[**GETStockItemIdReservedStock**](HasOneApi.md#GETStockItemIdReservedStock) | **Get** /stock_items/{stockItemId}/reserved_stock | Retrieve the reserved stock associated to the stock item
 [**GETStockItemIdSku**](HasOneApi.md#GETStockItemIdSku) | **Get** /stock_items/{stockItemId}/sku | Retrieve the sku associated to the stock item
 [**GETStockItemIdStockLocation**](HasOneApi.md#GETStockItemIdStockLocation) | **Get** /stock_items/{stockItemId}/stock_location | Retrieve the stock location associated to the stock item
 [**GETStockLineItemIdLineItem**](HasOneApi.md#GETStockLineItemIdLineItem) | **Get** /stock_line_items/{stockLineItemId}/line_item | Retrieve the line item associated to the stock line item
 [**GETStockLineItemIdShipment**](HasOneApi.md#GETStockLineItemIdShipment) | **Get** /stock_line_items/{stockLineItemId}/shipment | Retrieve the shipment associated to the stock line item
+[**GETStockLineItemIdSku**](HasOneApi.md#GETStockLineItemIdSku) | **Get** /stock_line_items/{stockLineItemId}/sku | Retrieve the sku associated to the stock line item
 [**GETStockLineItemIdStockItem**](HasOneApi.md#GETStockLineItemIdStockItem) | **Get** /stock_line_items/{stockLineItemId}/stock_item | Retrieve the stock item associated to the stock line item
+[**GETStockLineItemIdStockReservation**](HasOneApi.md#GETStockLineItemIdStockReservation) | **Get** /stock_line_items/{stockLineItemId}/stock_reservation | Retrieve the stock reservation associated to the stock line item
 [**GETStockLocationIdAddress**](HasOneApi.md#GETStockLocationIdAddress) | **Get** /stock_locations/{stockLocationId}/address | Retrieve the address associated to the stock location
+[**GETStockReservationIdLineItem**](HasOneApi.md#GETStockReservationIdLineItem) | **Get** /stock_reservations/{stockReservationId}/line_item | Retrieve the line item associated to the stock reservation
+[**GETStockReservationIdOrder**](HasOneApi.md#GETStockReservationIdOrder) | **Get** /stock_reservations/{stockReservationId}/order | Retrieve the order associated to the stock reservation
+[**GETStockReservationIdReservedStock**](HasOneApi.md#GETStockReservationIdReservedStock) | **Get** /stock_reservations/{stockReservationId}/reserved_stock | Retrieve the reserved stock associated to the stock reservation
+[**GETStockReservationIdSku**](HasOneApi.md#GETStockReservationIdSku) | **Get** /stock_reservations/{stockReservationId}/sku | Retrieve the sku associated to the stock reservation
+[**GETStockReservationIdStockItem**](HasOneApi.md#GETStockReservationIdStockItem) | **Get** /stock_reservations/{stockReservationId}/stock_item | Retrieve the stock item associated to the stock reservation
+[**GETStockReservationIdStockLineItem**](HasOneApi.md#GETStockReservationIdStockLineItem) | **Get** /stock_reservations/{stockReservationId}/stock_line_item | Retrieve the stock line item associated to the stock reservation
+[**GETStockReservationIdStockTransfer**](HasOneApi.md#GETStockReservationIdStockTransfer) | **Get** /stock_reservations/{stockReservationId}/stock_transfer | Retrieve the stock transfer associated to the stock reservation
 [**GETStockTransferIdDestinationStockLocation**](HasOneApi.md#GETStockTransferIdDestinationStockLocation) | **Get** /stock_transfers/{stockTransferId}/destination_stock_location | Retrieve the destination stock location associated to the stock transfer
 [**GETStockTransferIdLineItem**](HasOneApi.md#GETStockTransferIdLineItem) | **Get** /stock_transfers/{stockTransferId}/line_item | Retrieve the line item associated to the stock transfer
 [**GETStockTransferIdOriginStockLocation**](HasOneApi.md#GETStockTransferIdOriginStockLocation) | **Get** /stock_transfers/{stockTransferId}/origin_stock_location | Retrieve the origin stock location associated to the stock transfer
 [**GETStockTransferIdShipment**](HasOneApi.md#GETStockTransferIdShipment) | **Get** /stock_transfers/{stockTransferId}/shipment | Retrieve the shipment associated to the stock transfer
 [**GETStockTransferIdSku**](HasOneApi.md#GETStockTransferIdSku) | **Get** /stock_transfers/{stockTransferId}/sku | Retrieve the sku associated to the stock transfer
+[**GETStockTransferIdStockReservation**](HasOneApi.md#GETStockTransferIdStockReservation) | **Get** /stock_transfers/{stockTransferId}/stock_reservation | Retrieve the stock reservation associated to the stock transfer
 [**GETStripePaymentIdOrder**](HasOneApi.md#GETStripePaymentIdOrder) | **Get** /stripe_payments/{stripePaymentId}/order | Retrieve the order associated to the stripe payment
 [**GETStripePaymentIdPaymentGateway**](HasOneApi.md#GETStripePaymentIdPaymentGateway) | **Get** /stripe_payments/{stripePaymentId}/payment_gateway | Retrieve the payment gateway associated to the stripe payment
 [**GETTaxCategoryIdSku**](HasOneApi.md#GETTaxCategoryIdSku) | **Get** /tax_categories/{taxCategoryId}/sku | Retrieve the sku associated to the tax category
@@ -922,6 +968,414 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETBuyXPayYPromotionIdCouponCodesPromotionRule
+
+> GETBuyXPayYPromotionIdCouponCodesPromotionRule(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the coupon codes promotion rule associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETBuyXPayYPromotionIdCouponCodesPromotionRule(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETBuyXPayYPromotionIdCouponCodesPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdCouponCodesPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdCustomPromotionRule
+
+> GETBuyXPayYPromotionIdCustomPromotionRule(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the custom promotion rule associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETBuyXPayYPromotionIdCustomPromotionRule(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETBuyXPayYPromotionIdCustomPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdCustomPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdMarket
+
+> GETBuyXPayYPromotionIdMarket(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the market associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETBuyXPayYPromotionIdMarket(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETBuyXPayYPromotionIdMarket``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdMarketRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdOrderAmountPromotionRule
+
+> GETBuyXPayYPromotionIdOrderAmountPromotionRule(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the order amount promotion rule associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETBuyXPayYPromotionIdOrderAmountPromotionRule(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETBuyXPayYPromotionIdOrderAmountPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdOrderAmountPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdSkuList
+
+> GETBuyXPayYPromotionIdSkuList(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the sku list associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETBuyXPayYPromotionIdSkuList(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETBuyXPayYPromotionIdSkuList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdSkuListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdSkuListPromotionRule
+
+> GETBuyXPayYPromotionIdSkuListPromotionRule(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the sku list promotion rule associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETBuyXPayYPromotionIdSkuListPromotionRule(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETBuyXPayYPromotionIdSkuListPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdSkuListPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETCaptureIdOrder
 
 > GETCaptureIdOrder(ctx, captureId).Execute()
@@ -1034,6 +1488,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETCaptureIdReferenceAuthorizationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCaptureIdReturn
+
+> GETCaptureIdReturn(ctx, captureId).Execute()
+
+Retrieve the return associated to the capture
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    captureId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETCaptureIdReturn(context.Background(), captureId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETCaptureIdReturn``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**captureId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCaptureIdReturnRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1238,6 +1760,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETCheckoutComPaymentIdPaymentGatewayRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCouponIdCouponRecipient
+
+> GETCouponIdCouponRecipient(ctx, couponId).Execute()
+
+Retrieve the coupon recipient associated to the coupon
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    couponId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETCouponIdCouponRecipient(context.Background(), couponId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETCouponIdCouponRecipient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**couponId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCouponIdCouponRecipientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1714,6 +2304,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETCustomerPaymentSourceIdCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCustomerPaymentSourceIdPaymentMethod
+
+> GETCustomerPaymentSourceIdPaymentMethod(ctx, customerPaymentSourceId).Execute()
+
+Retrieve the payment method associated to the customer payment source
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    customerPaymentSourceId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETCustomerPaymentSourceIdPaymentMethod(context.Background(), customerPaymentSourceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETCustomerPaymentSourceIdPaymentMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerPaymentSourceId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCustomerPaymentSourceIdPaymentMethodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2282,6 +2940,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETExternalPromotionIdCustomPromotionRule
+
+> GETExternalPromotionIdCustomPromotionRule(ctx, externalPromotionId).Execute()
+
+Retrieve the custom promotion rule associated to the external promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    externalPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETExternalPromotionIdCustomPromotionRule(context.Background(), externalPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETExternalPromotionIdCustomPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**externalPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETExternalPromotionIdCustomPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETExternalPromotionIdMarket
 
 > GETExternalPromotionIdMarket(ctx, externalPromotionId).Execute()
@@ -2394,6 +3120,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETExternalPromotionIdOrderAmountPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETExternalPromotionIdSkuList
+
+> GETExternalPromotionIdSkuList(ctx, externalPromotionId).Execute()
+
+Retrieve the sku list associated to the external promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    externalPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETExternalPromotionIdSkuList(context.Background(), externalPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETExternalPromotionIdSkuList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**externalPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETExternalPromotionIdSkuListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2554,6 +3348,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETFixedAmountPromotionIdCustomPromotionRule
+
+> GETFixedAmountPromotionIdCustomPromotionRule(ctx, fixedAmountPromotionId).Execute()
+
+Retrieve the custom promotion rule associated to the fixed amount promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    fixedAmountPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETFixedAmountPromotionIdCustomPromotionRule(context.Background(), fixedAmountPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETFixedAmountPromotionIdCustomPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**fixedAmountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFixedAmountPromotionIdCustomPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETFixedAmountPromotionIdMarket
 
 > GETFixedAmountPromotionIdMarket(ctx, fixedAmountPromotionId).Execute()
@@ -2690,6 +3552,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETFixedAmountPromotionIdSkuList
+
+> GETFixedAmountPromotionIdSkuList(ctx, fixedAmountPromotionId).Execute()
+
+Retrieve the sku list associated to the fixed amount promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    fixedAmountPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETFixedAmountPromotionIdSkuList(context.Background(), fixedAmountPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETFixedAmountPromotionIdSkuList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**fixedAmountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFixedAmountPromotionIdSkuListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETFixedAmountPromotionIdSkuListPromotionRule
 
 > GETFixedAmountPromotionIdSkuListPromotionRule(ctx, fixedAmountPromotionId).Execute()
@@ -2802,6 +3732,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETFixedPricePromotionIdCustomPromotionRule
+
+> GETFixedPricePromotionIdCustomPromotionRule(ctx, fixedPricePromotionId).Execute()
+
+Retrieve the custom promotion rule associated to the fixed price promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    fixedPricePromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETFixedPricePromotionIdCustomPromotionRule(context.Background(), fixedPricePromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETFixedPricePromotionIdCustomPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**fixedPricePromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFixedPricePromotionIdCustomPromotionRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3098,6 +4096,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETFlexPromotionIdCouponCodesPromotionRule
+
+> GETFlexPromotionIdCouponCodesPromotionRule(ctx, flexPromotionId).Execute()
+
+Retrieve the coupon codes promotion rule associated to the flex promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    flexPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETFlexPromotionIdCouponCodesPromotionRule(context.Background(), flexPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETFlexPromotionIdCouponCodesPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**flexPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFlexPromotionIdCouponCodesPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETFreeGiftPromotionIdCouponCodesPromotionRule
 
 > GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx, freeGiftPromotionId).Execute()
@@ -3142,6 +4208,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETFreeGiftPromotionIdCustomPromotionRule
+
+> GETFreeGiftPromotionIdCustomPromotionRule(ctx, freeGiftPromotionId).Execute()
+
+Retrieve the custom promotion rule associated to the free gift promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    freeGiftPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETFreeGiftPromotionIdCustomPromotionRule(context.Background(), freeGiftPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETFreeGiftPromotionIdCustomPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**freeGiftPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFreeGiftPromotionIdCustomPromotionRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3506,6 +4640,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETFreeShippingPromotionIdCustomPromotionRule
+
+> GETFreeShippingPromotionIdCustomPromotionRule(ctx, freeShippingPromotionId).Execute()
+
+Retrieve the custom promotion rule associated to the free shipping promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    freeShippingPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETFreeShippingPromotionIdCustomPromotionRule(context.Background(), freeShippingPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETFreeShippingPromotionIdCustomPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**freeShippingPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFreeShippingPromotionIdCustomPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETFreeShippingPromotionIdMarket
 
 > GETFreeShippingPromotionIdMarket(ctx, freeShippingPromotionId).Execute()
@@ -3618,6 +4820,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETFreeShippingPromotionIdSkuList
+
+> GETFreeShippingPromotionIdSkuList(ctx, freeShippingPromotionId).Execute()
+
+Retrieve the sku list associated to the free shipping promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    freeShippingPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETFreeShippingPromotionIdSkuList(context.Background(), freeShippingPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETFreeShippingPromotionIdSkuList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**freeShippingPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFreeShippingPromotionIdSkuListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4730,6 +6000,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETMarketIdBasePriceList
+
+> GETMarketIdBasePriceList(ctx, marketId).Execute()
+
+Retrieve the base price list associated to the market
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    marketId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETMarketIdBasePriceList(context.Background(), marketId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETMarketIdBasePriceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**marketId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETMarketIdBasePriceListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETMarketIdCustomerGroup
 
 > GETMarketIdCustomerGroup(ctx, marketId).Execute()
@@ -4774,6 +6112,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETMarketIdCustomerGroupRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETMarketIdGeocoder
+
+> GETMarketIdGeocoder(ctx, marketId).Execute()
+
+Retrieve the geocoder associated to the market
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    marketId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETMarketIdGeocoder(context.Background(), marketId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETMarketIdGeocoder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**marketId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETMarketIdGeocoderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -5750,6 +7156,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETOrderIdOrderSubscription
+
+> GETOrderIdOrderSubscription(ctx, orderId).Execute()
+
+Retrieve the order subscription associated to the order
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    orderId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETOrderIdOrderSubscription(context.Background(), orderId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETOrderIdOrderSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderIdOrderSubscriptionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETOrderIdPaymentMethod
 
 > GETOrderIdPaymentMethod(ctx, orderId).Execute()
@@ -6294,11 +7768,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GETOrderValidationRuleIdMarket
+## GETOrderSubscriptionItemIdSourceLineItem
 
-> GETOrderValidationRuleIdMarket(ctx, orderValidationRuleId).Execute()
+> GETOrderSubscriptionItemIdSourceLineItem(ctx, orderSubscriptionItemId).Execute()
 
-Retrieve the market associated to the order validation rule
+Retrieve the source line item associated to the order subscription item
 
 
 
@@ -6315,13 +7789,13 @@ import (
 )
 
 func main() {
-    orderValidationRuleId := TODO // interface{} | The resource's id
+    orderSubscriptionItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasOneApi.GETOrderValidationRuleIdMarket(context.Background(), orderValidationRuleId).Execute()
+    r, err := apiClient.HasOneApi.GETOrderSubscriptionItemIdSourceLineItem(context.Background(), orderSubscriptionItemId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETOrderValidationRuleIdMarket``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETOrderSubscriptionItemIdSourceLineItem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6333,11 +7807,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderValidationRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
+**orderSubscriptionItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGETOrderValidationRuleIdMarketRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGETOrderSubscriptionItemIdSourceLineItemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6838,6 +8312,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPaymentOptionIdOrder
+
+> GETPaymentOptionIdOrder(ctx, paymentOptionId).Execute()
+
+Retrieve the order associated to the payment option
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    paymentOptionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETPaymentOptionIdOrder(context.Background(), paymentOptionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETPaymentOptionIdOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**paymentOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPaymentOptionIdOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPaypalPaymentIdOrder
 
 > GETPaypalPaymentIdOrder(ctx, paypalPaymentId).Execute()
@@ -7018,6 +8560,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPercentageDiscountPromotionIdCustomPromotionRule
+
+> GETPercentageDiscountPromotionIdCustomPromotionRule(ctx, percentageDiscountPromotionId).Execute()
+
+Retrieve the custom promotion rule associated to the percentage discount promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETPercentageDiscountPromotionIdCustomPromotionRule(context.Background(), percentageDiscountPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETPercentageDiscountPromotionIdCustomPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPercentageDiscountPromotionIdCustomPromotionRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7382,6 +8992,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPriceIdJwtCustomer
+
+> GETPriceIdJwtCustomer(ctx, priceId).Execute()
+
+Retrieve the jwt customer associated to the price
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    priceId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETPriceIdJwtCustomer(context.Background(), priceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETPriceIdJwtCustomer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceIdJwtCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPriceIdPriceList
 
 > GETPriceIdPriceList(ctx, priceId).Execute()
@@ -7494,6 +9172,142 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPriceIdSkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceListSchedulerIdMarket
+
+> GETPriceListSchedulerIdMarket(ctx, priceListSchedulerId).Execute()
+
+Retrieve the market associated to the price list scheduler
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    priceListSchedulerId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETPriceListSchedulerIdMarket(context.Background(), priceListSchedulerId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETPriceListSchedulerIdMarket``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceListSchedulerId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceListSchedulerIdMarketRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceListSchedulerIdPriceList
+
+> GETPriceListSchedulerIdPriceList(ctx, priceListSchedulerId).Execute()
+
+Retrieve the price list associated to the price list scheduler
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    priceListSchedulerId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETPriceListSchedulerIdPriceList(context.Background(), priceListSchedulerId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETPriceListSchedulerIdPriceList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceListSchedulerId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceListSchedulerIdPriceListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7722,6 +9536,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPromotionIdCustomPromotionRule
+
+> GETPromotionIdCustomPromotionRule(ctx, promotionId).Execute()
+
+Retrieve the custom promotion rule associated to the promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    promotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETPromotionIdCustomPromotionRule(context.Background(), promotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETPromotionIdCustomPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**promotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPromotionIdCustomPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPromotionIdMarket
 
 > GETPromotionIdMarket(ctx, promotionId).Execute()
@@ -7834,6 +9716,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPromotionIdOrderAmountPromotionRuleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPromotionIdSkuList
+
+> GETPromotionIdSkuList(ctx, promotionId).Execute()
+
+Retrieve the sku list associated to the promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    promotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETPromotionIdSkuList(context.Background(), promotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETPromotionIdSkuList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**promotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPromotionIdSkuListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8266,6 +10216,210 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETRefundIdReturn
+
+> GETRefundIdReturn(ctx, refundId).Execute()
+
+Retrieve the return associated to the refund
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    refundId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETRefundIdReturn(context.Background(), refundId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETRefundIdReturn``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**refundId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETRefundIdReturnRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETReservedStockIdSku
+
+> GETReservedStockIdSku(ctx, reservedStockId).Execute()
+
+Retrieve the sku associated to the reserved stock
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    reservedStockId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETReservedStockIdSku(context.Background(), reservedStockId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETReservedStockIdSku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**reservedStockId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETReservedStockIdSkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETReservedStockIdStockItem
+
+> GETReservedStockIdStockItem(ctx, reservedStockId).Execute()
+
+Retrieve the stock item associated to the reserved stock
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    reservedStockId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETReservedStockIdStockItem(context.Background(), reservedStockId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETReservedStockIdStockItem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**reservedStockId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETReservedStockIdStockItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETReturnIdCustomer
 
 > GETReturnIdCustomer(ctx, returnId).Execute()
@@ -8514,6 +10668,142 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETReturnIdOriginAddressRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETReturnIdReferenceCapture
+
+> GETReturnIdReferenceCapture(ctx, returnId).Execute()
+
+Retrieve the reference capture associated to the return
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    returnId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETReturnIdReferenceCapture(context.Background(), returnId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETReturnIdReferenceCapture``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**returnId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETReturnIdReferenceCaptureRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETReturnIdReferenceRefund
+
+> GETReturnIdReferenceRefund(ctx, returnId).Execute()
+
+Retrieve the reference refund associated to the return
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    returnId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETReturnIdReferenceRefund(context.Background(), returnId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETReturnIdReferenceRefund``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**returnId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETReturnIdReferenceRefundRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8922,6 +11212,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETShipmentIdDeliveryLeadTimeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShipmentIdInventoryStockLocation
+
+> GETShipmentIdInventoryStockLocation(ctx, shipmentId).Execute()
+
+Retrieve the inventory stock location associated to the shipment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    shipmentId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETShipmentIdInventoryStockLocation(context.Background(), shipmentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETShipmentIdInventoryStockLocation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShipmentIdInventoryStockLocationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9830,6 +12188,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETSkuIdJwtCustomer
+
+> GETSkuIdJwtCustomer(ctx, skuId).Execute()
+
+Retrieve the jwt customer associated to the SKU
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    skuId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETSkuIdJwtCustomer(context.Background(), skuId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETSkuIdJwtCustomer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**skuId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSkuIdJwtCustomerRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETSkuIdShippingCategory
 
 > GETSkuIdShippingCategory(ctx, skuId).Execute()
@@ -10238,6 +12664,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETStockItemIdReservedStock
+
+> GETStockItemIdReservedStock(ctx, stockItemId).Execute()
+
+Retrieve the reserved stock associated to the stock item
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockItemId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockItemIdReservedStock(context.Background(), stockItemId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockItemIdReservedStock``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockItemId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockItemIdReservedStockRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETStockItemIdSku
 
 > GETStockItemIdSku(ctx, stockItemId).Execute()
@@ -10510,6 +13004,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETStockLineItemIdSku
+
+> GETStockLineItemIdSku(ctx, stockLineItemId).Execute()
+
+Retrieve the sku associated to the stock line item
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockLineItemId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockLineItemIdSku(context.Background(), stockLineItemId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockLineItemIdSku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockLineItemIdSkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETStockLineItemIdStockItem
 
 > GETStockLineItemIdStockItem(ctx, stockLineItemId).Execute()
@@ -10578,6 +13140,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETStockLineItemIdStockReservation
+
+> GETStockLineItemIdStockReservation(ctx, stockLineItemId).Execute()
+
+Retrieve the stock reservation associated to the stock line item
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockLineItemId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockLineItemIdStockReservation(context.Background(), stockLineItemId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockLineItemIdStockReservation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockLineItemIdStockReservationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETStockLocationIdAddress
 
 > GETStockLocationIdAddress(ctx, stockLocationId).Execute()
@@ -10622,6 +13252,482 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockLocationIdAddressRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdLineItem
+
+> GETStockReservationIdLineItem(ctx, stockReservationId).Execute()
+
+Retrieve the line item associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockReservationIdLineItem(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockReservationIdLineItem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdLineItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdOrder
+
+> GETStockReservationIdOrder(ctx, stockReservationId).Execute()
+
+Retrieve the order associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockReservationIdOrder(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockReservationIdOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdReservedStock
+
+> GETStockReservationIdReservedStock(ctx, stockReservationId).Execute()
+
+Retrieve the reserved stock associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockReservationIdReservedStock(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockReservationIdReservedStock``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdReservedStockRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdSku
+
+> GETStockReservationIdSku(ctx, stockReservationId).Execute()
+
+Retrieve the sku associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockReservationIdSku(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockReservationIdSku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdSkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdStockItem
+
+> GETStockReservationIdStockItem(ctx, stockReservationId).Execute()
+
+Retrieve the stock item associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockReservationIdStockItem(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockReservationIdStockItem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdStockItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdStockLineItem
+
+> GETStockReservationIdStockLineItem(ctx, stockReservationId).Execute()
+
+Retrieve the stock line item associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockReservationIdStockLineItem(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockReservationIdStockLineItem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdStockLineItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdStockTransfer
+
+> GETStockReservationIdStockTransfer(ctx, stockReservationId).Execute()
+
+Retrieve the stock transfer associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockReservationIdStockTransfer(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockReservationIdStockTransfer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdStockTransferRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -10962,6 +14068,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockTransferIdSkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockTransferIdStockReservation
+
+> GETStockTransferIdStockReservation(ctx, stockTransferId).Execute()
+
+Retrieve the stock reservation associated to the stock transfer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockTransferId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.HasOneApi.GETStockTransferIdStockReservation(context.Background(), stockTransferId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETStockTransferIdStockReservation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockTransferIdStockReservationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -21,16 +21,16 @@ var _ MappedNullable = &SatispayGatewayCreateData{}
 // SatispayGatewayCreateData struct for SatispayGatewayCreateData
 type SatispayGatewayCreateData struct {
 	// The resource's type
-	Type          interface{}                                 `json:"type"`
-	Attributes    POSTManualGateways201ResponseDataAttributes `json:"attributes"`
-	Relationships *SatispayGatewayCreateDataRelationships     `json:"relationships,omitempty"`
+	Type          interface{}                                   `json:"type"`
+	Attributes    POSTSatispayGateways201ResponseDataAttributes `json:"attributes"`
+	Relationships *SatispayGatewayCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewSatispayGatewayCreateData instantiates a new SatispayGatewayCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSatispayGatewayCreateData(type_ interface{}, attributes POSTManualGateways201ResponseDataAttributes) *SatispayGatewayCreateData {
+func NewSatispayGatewayCreateData(type_ interface{}, attributes POSTSatispayGateways201ResponseDataAttributes) *SatispayGatewayCreateData {
 	this := SatispayGatewayCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -72,9 +72,9 @@ func (o *SatispayGatewayCreateData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SatispayGatewayCreateData) GetAttributes() POSTManualGateways201ResponseDataAttributes {
+func (o *SatispayGatewayCreateData) GetAttributes() POSTSatispayGateways201ResponseDataAttributes {
 	if o == nil {
-		var ret POSTManualGateways201ResponseDataAttributes
+		var ret POSTSatispayGateways201ResponseDataAttributes
 		return ret
 	}
 
@@ -83,7 +83,7 @@ func (o *SatispayGatewayCreateData) GetAttributes() POSTManualGateways201Respons
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SatispayGatewayCreateData) GetAttributesOk() (*POSTManualGateways201ResponseDataAttributes, bool) {
+func (o *SatispayGatewayCreateData) GetAttributesOk() (*POSTSatispayGateways201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *SatispayGatewayCreateData) GetAttributesOk() (*POSTManualGateways201Res
 }
 
 // SetAttributes sets field value
-func (o *SatispayGatewayCreateData) SetAttributes(v POSTManualGateways201ResponseDataAttributes) {
+func (o *SatispayGatewayCreateData) SetAttributes(v POSTSatispayGateways201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

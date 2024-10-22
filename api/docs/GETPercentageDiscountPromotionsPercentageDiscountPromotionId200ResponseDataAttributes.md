@@ -5,16 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **interface{}** | The promotion&#39;s internal name. | [optional] 
+**Type** | Pointer to **interface{}** | The promotion&#39;s type. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
+**Exclusive** | Pointer to **interface{}** | Indicates if the promotion will be applied exclusively, based on its priority score. | [optional] 
+**Priority** | Pointer to **interface{}** | The priority assigned to the promotion (lower means higher priority). | [optional] 
 **StartsAt** | Pointer to **interface{}** | The activation date/time of this promotion. | [optional] 
 **ExpiresAt** | Pointer to **interface{}** | The expiration date/time of this promotion (must be after starts_at). | [optional] 
-**TotalUsageLimit** | Pointer to **interface{}** | The total number of times this promotion can be applied. | [optional] 
+**TotalUsageLimit** | Pointer to **interface{}** | The total number of times this promotion can be applied. When &#39;null&#39; it means promotion can be applied infinite times. | [optional] 
 **TotalUsageCount** | Pointer to **interface{}** | The number of times this promotion has been applied. | [optional] 
-**Active** | Pointer to **interface{}** | Indicates if the promotion is active. | [optional] 
+**Active** | Pointer to **interface{}** | Indicates if the promotion is active (enabled and not expired). | [optional] 
+**Status** | Pointer to **interface{}** | The promotion status. One of &#39;disabled&#39;, &#39;expired&#39;, &#39;pending&#39;, &#39;active&#39;, or &#39;inactive&#39;. | [optional] 
+**DisabledAt** | Pointer to **interface{}** | Time at which this resource was disabled. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **Percentage** | Pointer to **interface{}** | The discount percentage to be applied. | [optional] 
 
@@ -72,6 +77,41 @@ HasName returns a boolean if a field has been set.
 `func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetType
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetType() interface{}`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetType(v interface{})`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### SetTypeNil
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetCurrencyCode
 
 `func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetCurrencyCode() interface{}`
@@ -107,6 +147,76 @@ HasCurrencyCode returns a boolean if a field has been set.
 `func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) UnsetCurrencyCode()`
 
 UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
+### GetExclusive
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetExclusive() interface{}`
+
+GetExclusive returns the Exclusive field if non-nil, zero value otherwise.
+
+### GetExclusiveOk
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetExclusiveOk() (*interface{}, bool)`
+
+GetExclusiveOk returns a tuple with the Exclusive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExclusive
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetExclusive(v interface{})`
+
+SetExclusive sets Exclusive field to given value.
+
+### HasExclusive
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasExclusive() bool`
+
+HasExclusive returns a boolean if a field has been set.
+
+### SetExclusiveNil
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetExclusiveNil(b bool)`
+
+ SetExclusiveNil sets the value for Exclusive to be an explicit nil
+
+### UnsetExclusive
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) UnsetExclusive()`
+
+UnsetExclusive ensures that no value is present for Exclusive, not even an explicit nil
+### GetPriority
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetPriority() interface{}`
+
+GetPriority returns the Priority field if non-nil, zero value otherwise.
+
+### GetPriorityOk
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetPriorityOk() (*interface{}, bool)`
+
+GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriority
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetPriority(v interface{})`
+
+SetPriority sets Priority field to given value.
+
+### HasPriority
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasPriority() bool`
+
+HasPriority returns a boolean if a field has been set.
+
+### SetPriorityNil
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetPriorityNil(b bool)`
+
+ SetPriorityNil sets the value for Priority to be an explicit nil
+
+### UnsetPriority
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) UnsetPriority()`
+
+UnsetPriority ensures that no value is present for Priority, not even an explicit nil
 ### GetStartsAt
 
 `func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetStartsAt() interface{}`
@@ -282,6 +392,76 @@ HasActive returns a boolean if a field has been set.
 `func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) UnsetActive()`
 
 UnsetActive ensures that no value is present for Active, not even an explicit nil
+### GetStatus
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetStatus() interface{}`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetStatusOk() (*interface{}, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetStatus(v interface{})`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+### SetStatusNil
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
+### GetDisabledAt
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetDisabledAt() interface{}`
+
+GetDisabledAt returns the DisabledAt field if non-nil, zero value otherwise.
+
+### GetDisabledAtOk
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool)`
+
+GetDisabledAtOk returns a tuple with the DisabledAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisabledAt
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetDisabledAt(v interface{})`
+
+SetDisabledAt sets DisabledAt field to given value.
+
+### HasDisabledAt
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasDisabledAt() bool`
+
+HasDisabledAt returns a boolean if a field has been set.
+
+### SetDisabledAtNil
+
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetDisabledAtNil(b bool)`
+
+ SetDisabledAtNil sets the value for DisabledAt to be an explicit nil
+
+### UnsetDisabledAt
+`func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) UnsetDisabledAt()`
+
+UnsetDisabledAt ensures that no value is present for DisabledAt, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetCreatedAt() interface{}`

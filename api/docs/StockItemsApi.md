@@ -5,11 +5,13 @@ All URIs are relative to *https://.commercelayer.io/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETEStockItemsStockItemId**](StockItemsApi.md#DELETEStockItemsStockItemId) | **Delete** /stock_items/{stockItemId} | Delete a stock item
+[**GETReservedStockIdStockItem**](StockItemsApi.md#GETReservedStockIdStockItem) | **Get** /reserved_stocks/{reservedStockId}/stock_item | Retrieve the stock item associated to the reserved stock
 [**GETSkuIdStockItems**](StockItemsApi.md#GETSkuIdStockItems) | **Get** /skus/{skuId}/stock_items | Retrieve the stock items associated to the SKU
 [**GETStockItems**](StockItemsApi.md#GETStockItems) | **Get** /stock_items | List all stock items
 [**GETStockItemsStockItemId**](StockItemsApi.md#GETStockItemsStockItemId) | **Get** /stock_items/{stockItemId} | Retrieve a stock item
 [**GETStockLineItemIdStockItem**](StockItemsApi.md#GETStockLineItemIdStockItem) | **Get** /stock_line_items/{stockLineItemId}/stock_item | Retrieve the stock item associated to the stock line item
 [**GETStockLocationIdStockItems**](StockItemsApi.md#GETStockLocationIdStockItems) | **Get** /stock_locations/{stockLocationId}/stock_items | Retrieve the stock items associated to the stock location
+[**GETStockReservationIdStockItem**](StockItemsApi.md#GETStockReservationIdStockItem) | **Get** /stock_reservations/{stockReservationId}/stock_item | Retrieve the stock item associated to the stock reservation
 [**PATCHStockItemsStockItemId**](StockItemsApi.md#PATCHStockItemsStockItemId) | **Patch** /stock_items/{stockItemId} | Update a stock item
 [**POSTStockItems**](StockItemsApi.md#POSTStockItems) | **Post** /stock_items | Create a stock item
 
@@ -59,6 +61,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDELETEStockItemsStockItemIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETReservedStockIdStockItem
+
+> GETReservedStockIdStockItem(ctx, reservedStockId).Execute()
+
+Retrieve the stock item associated to the reserved stock
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    reservedStockId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.StockItemsApi.GETReservedStockIdStockItem(context.Background(), reservedStockId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.GETReservedStockIdStockItem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**reservedStockId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETReservedStockIdStockItemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -394,6 +464,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockLocationIdStockItemsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdStockItem
+
+> GETStockReservationIdStockItem(ctx, stockReservationId).Execute()
+
+Retrieve the stock item associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.StockItemsApi.GETStockReservationIdStockItem(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.GETStockReservationIdStockItem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdStockItemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

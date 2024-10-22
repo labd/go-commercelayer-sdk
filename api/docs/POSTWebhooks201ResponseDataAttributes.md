@@ -8,8 +8,10 @@ Name | Type | Description | Notes
 **Topic** | **interface{}** | The identifier of the resource/event that will trigger the webhook. | 
 **CallbackUrl** | **interface{}** | URI where the webhook subscription should send the POST request when the event occurs. | 
 **IncludeResources** | Pointer to **interface{}** | List of related resources that should be included in the webhook body. | [optional] 
+**Disable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as disabled. | [optional] 
+**Enable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as enabled. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -161,6 +163,76 @@ HasIncludeResources returns a boolean if a field has been set.
 `func (o *POSTWebhooks201ResponseDataAttributes) UnsetIncludeResources()`
 
 UnsetIncludeResources ensures that no value is present for IncludeResources, not even an explicit nil
+### GetDisable
+
+`func (o *POSTWebhooks201ResponseDataAttributes) GetDisable() interface{}`
+
+GetDisable returns the Disable field if non-nil, zero value otherwise.
+
+### GetDisableOk
+
+`func (o *POSTWebhooks201ResponseDataAttributes) GetDisableOk() (*interface{}, bool)`
+
+GetDisableOk returns a tuple with the Disable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisable
+
+`func (o *POSTWebhooks201ResponseDataAttributes) SetDisable(v interface{})`
+
+SetDisable sets Disable field to given value.
+
+### HasDisable
+
+`func (o *POSTWebhooks201ResponseDataAttributes) HasDisable() bool`
+
+HasDisable returns a boolean if a field has been set.
+
+### SetDisableNil
+
+`func (o *POSTWebhooks201ResponseDataAttributes) SetDisableNil(b bool)`
+
+ SetDisableNil sets the value for Disable to be an explicit nil
+
+### UnsetDisable
+`func (o *POSTWebhooks201ResponseDataAttributes) UnsetDisable()`
+
+UnsetDisable ensures that no value is present for Disable, not even an explicit nil
+### GetEnable
+
+`func (o *POSTWebhooks201ResponseDataAttributes) GetEnable() interface{}`
+
+GetEnable returns the Enable field if non-nil, zero value otherwise.
+
+### GetEnableOk
+
+`func (o *POSTWebhooks201ResponseDataAttributes) GetEnableOk() (*interface{}, bool)`
+
+GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnable
+
+`func (o *POSTWebhooks201ResponseDataAttributes) SetEnable(v interface{})`
+
+SetEnable sets Enable field to given value.
+
+### HasEnable
+
+`func (o *POSTWebhooks201ResponseDataAttributes) HasEnable() bool`
+
+HasEnable returns a boolean if a field has been set.
+
+### SetEnableNil
+
+`func (o *POSTWebhooks201ResponseDataAttributes) SetEnableNil(b bool)`
+
+ SetEnableNil sets the value for Enable to be an explicit nil
+
+### UnsetEnable
+`func (o *POSTWebhooks201ResponseDataAttributes) UnsetEnable()`
+
+UnsetEnable ensures that no value is present for Enable, not even an explicit nil
 ### GetReference
 
 `func (o *POSTWebhooks201ResponseDataAttributes) GetReference() interface{}`

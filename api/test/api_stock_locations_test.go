@@ -87,6 +87,19 @@ func Test_api_StockLocationsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test StockLocationsApiService GETPriceIdJwtStockLocations", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var priceId interface{}
+
+		httpRes, err := apiClient.StockLocationsApi.GETPriceIdJwtStockLocations(context.Background(), priceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test StockLocationsApiService GETReturnIdStockLocation", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -120,6 +133,19 @@ func Test_api_StockLocationsApiService(t *testing.T) {
 		var shippingMethodId interface{}
 
 		httpRes, err := apiClient.StockLocationsApi.GETShippingMethodIdStockLocation(context.Background(), shippingMethodId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StockLocationsApiService GETSkuIdJwtStockLocations", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var skuId interface{}
+
+		httpRes, err := apiClient.StockLocationsApi.GETSkuIdJwtStockLocations(context.Background(), skuId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

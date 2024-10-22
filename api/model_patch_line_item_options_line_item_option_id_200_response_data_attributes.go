@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,13 +22,15 @@ var _ MappedNullable = &PATCHLineItemOptionsLineItemOptionId200ResponseDataAttri
 type PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes struct {
 	// The name of the line item option. When blank, it gets populated with the name of the associated SKU option.
 	Name interface{} `json:"name,omitempty"`
-	// The line item option's quantity
+	// The line item option's quantity.
 	Quantity interface{} `json:"quantity,omitempty"`
+	// The unit amount of the line item option, in cents. When you add a line item option to an order, this is automatically populated from associated SKU option's price. Cannot be passed by sales channels.
+	UnitAmountCents interface{} `json:"unit_amount_cents,omitempty"`
 	// Set of key-value pairs that represent the selected options.
 	Options interface{} `json:"options,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -115,6 +117,39 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasQuant
 // SetQuantity gets a reference to the given interface{} and assigns it to the Quantity field.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetQuantity(v interface{}) {
 	o.Quantity = v
+}
+
+// GetUnitAmountCents returns the UnitAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetUnitAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.UnitAmountCents
+}
+
+// GetUnitAmountCentsOk returns a tuple with the UnitAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetUnitAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UnitAmountCents) {
+		return nil, false
+	}
+	return &o.UnitAmountCents, true
+}
+
+// HasUnitAmountCents returns a boolean if a field has been set.
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasUnitAmountCents() bool {
+	if o != nil && IsNil(o.UnitAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnitAmountCents gets a reference to the given interface{} and assigns it to the UnitAmountCents field.
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetUnitAmountCents(v interface{}) {
+	o.UnitAmountCents = v
 }
 
 // GetOptions returns the Options field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -264,6 +299,9 @@ func (o PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) ToMap() (
 	}
 	if o.Quantity != nil {
 		toSerialize["quantity"] = o.Quantity
+	}
+	if o.UnitAmountCents != nil {
+		toSerialize["unit_amount_cents"] = o.UnitAmountCents
 	}
 	if o.Options != nil {
 		toSerialize["options"] = o.Options

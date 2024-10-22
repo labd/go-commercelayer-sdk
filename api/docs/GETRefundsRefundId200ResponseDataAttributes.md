@@ -4,21 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Number** | Pointer to **interface{}** | The transaction number, auto generated | [optional] 
+**Number** | Pointer to **interface{}** | The transaction number, auto generated. | [optional] 
+**Type** | Pointer to **interface{}** | The transaction&#39;s type. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard, inherited from the associated order. | [optional] 
 **AmountCents** | Pointer to **interface{}** | The transaction amount, in cents. | [optional] 
 **AmountFloat** | Pointer to **interface{}** | The transaction amount, float. | [optional] 
 **FormattedAmount** | Pointer to **interface{}** | The transaction amount, formatted. | [optional] 
-**Succeeded** | Pointer to **interface{}** | Indicates if the transaction is successful | [optional] 
-**Message** | Pointer to **interface{}** | The message returned by the payment gateway | [optional] 
-**ErrorCode** | Pointer to **interface{}** | The error code, if any, returned by the payment gateway | [optional] 
-**ErrorDetail** | Pointer to **interface{}** | The error detail, if any, returned by the payment gateway | [optional] 
-**Token** | Pointer to **interface{}** | The token identifying the transaction, returned by the payment gateway | [optional] 
-**GatewayTransactionId** | Pointer to **interface{}** | The ID identifying the transaction, returned by the payment gateway | [optional] 
+**Succeeded** | Pointer to **interface{}** | Indicates if the transaction is successful. | [optional] 
+**Message** | Pointer to **interface{}** | The message returned by the payment gateway. | [optional] 
+**ErrorCode** | Pointer to **interface{}** | The error code, if any, returned by the payment gateway. | [optional] 
+**ErrorDetail** | Pointer to **interface{}** | The error detail, if any, returned by the payment gateway. | [optional] 
+**Token** | Pointer to **interface{}** | The token identifying the transaction, returned by the payment gateway. | [optional] 
+**GatewayTransactionId** | Pointer to **interface{}** | The ID identifying the transaction, returned by the payment gateway. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -75,6 +76,41 @@ HasNumber returns a boolean if a field has been set.
 `func (o *GETRefundsRefundId200ResponseDataAttributes) UnsetNumber()`
 
 UnsetNumber ensures that no value is present for Number, not even an explicit nil
+### GetType
+
+`func (o *GETRefundsRefundId200ResponseDataAttributes) GetType() interface{}`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *GETRefundsRefundId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *GETRefundsRefundId200ResponseDataAttributes) SetType(v interface{})`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *GETRefundsRefundId200ResponseDataAttributes) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### SetTypeNil
+
+`func (o *GETRefundsRefundId200ResponseDataAttributes) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *GETRefundsRefundId200ResponseDataAttributes) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetCurrencyCode
 
 `func (o *GETRefundsRefundId200ResponseDataAttributes) GetCurrencyCode() interface{}`

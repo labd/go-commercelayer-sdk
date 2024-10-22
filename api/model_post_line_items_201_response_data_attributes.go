@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -26,23 +26,27 @@ type POSTLineItems201ResponseDataAttributes struct {
 	BundleCode interface{} `json:"bundle_code,omitempty"`
 	// The line item quantity.
 	Quantity interface{} `json:"quantity"`
-	// When creating or updating a new line item, set this attribute to '1' if you want to inject the unit_amount_cents price from an external source.
+	// When creating or updating a new line item, set this attribute to '1' if you want to inject the unit_amount_cents price from an external source. Any successive price computation will be done externally, until the attribute is reset to '0'.
 	ExternalPrice interface{} `json:"_external_price,omitempty"`
 	// When creating a new line item, set this attribute to '1' if you want to update the line item quantity (if present) instead of creating a new line item for the same SKU.
 	UpdateQuantity interface{} `json:"_update_quantity,omitempty"`
-	// The unit amount of the line item, in cents. Can be specified without an item, otherwise is automatically populated from the price list associated to the order's market.
+	// Send this attribute if you want to reserve the stock for the line item's SKUs quantity. Stock reservations expiration depends on the inventory model's cutoff. When used on update the existing active stock reservations are renewed. Cannot be passed by sales channels.
+	ReserveStock interface{} `json:"_reserve_stock,omitempty"`
+	// The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods.
 	UnitAmountCents interface{} `json:"unit_amount_cents,omitempty"`
+	// The compared price amount, in cents. Useful to display a percentage discount.
+	CompareAtAmountCents interface{} `json:"compare_at_amount_cents,omitempty"`
 	// The name of the line item. When blank, it gets populated with the name of the associated item (if present).
 	Name interface{} `json:"name,omitempty"`
 	// The image_url of the line item. When blank, it gets populated with the image_url of the associated item (if present, SKU only).
 	ImageUrl interface{} `json:"image_url,omitempty"`
-	// The type of the associate item. Can be one of 'skus', 'bundles', 'shipments', 'payment_methods', 'adjustments', 'gift_cards', or a valid promotion type.
+	// The type of the associated item. One of 'skus', 'bundles', 'gift_cards', 'shipments', 'payment_methods', 'adjustments', 'percentage_discount_promotions', 'free_shipping_promotions', 'buy_x_pay_y_promotions', 'free_gift_promotions', 'fixed_price_promotions', 'external_promotions', 'fixed_amount_promotions', or 'flex_promotions'.
 	ItemType interface{} `json:"item_type,omitempty"`
 	// The frequency which generates a subscription. Must be supported by existing associated subscription_model.
 	Frequency interface{} `json:"frequency,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -224,6 +228,39 @@ func (o *POSTLineItems201ResponseDataAttributes) SetUpdateQuantity(v interface{}
 	o.UpdateQuantity = v
 }
 
+// GetReserveStock returns the ReserveStock field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTLineItems201ResponseDataAttributes) GetReserveStock() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ReserveStock
+}
+
+// GetReserveStockOk returns a tuple with the ReserveStock field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTLineItems201ResponseDataAttributes) GetReserveStockOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReserveStock) {
+		return nil, false
+	}
+	return &o.ReserveStock, true
+}
+
+// HasReserveStock returns a boolean if a field has been set.
+func (o *POSTLineItems201ResponseDataAttributes) HasReserveStock() bool {
+	if o != nil && IsNil(o.ReserveStock) {
+		return true
+	}
+
+	return false
+}
+
+// SetReserveStock gets a reference to the given interface{} and assigns it to the ReserveStock field.
+func (o *POSTLineItems201ResponseDataAttributes) SetReserveStock(v interface{}) {
+	o.ReserveStock = v
+}
+
 // GetUnitAmountCents returns the UnitAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTLineItems201ResponseDataAttributes) GetUnitAmountCents() interface{} {
 	if o == nil {
@@ -255,6 +292,39 @@ func (o *POSTLineItems201ResponseDataAttributes) HasUnitAmountCents() bool {
 // SetUnitAmountCents gets a reference to the given interface{} and assigns it to the UnitAmountCents field.
 func (o *POSTLineItems201ResponseDataAttributes) SetUnitAmountCents(v interface{}) {
 	o.UnitAmountCents = v
+}
+
+// GetCompareAtAmountCents returns the CompareAtAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTLineItems201ResponseDataAttributes) GetCompareAtAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CompareAtAmountCents
+}
+
+// GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTLineItems201ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CompareAtAmountCents) {
+		return nil, false
+	}
+	return &o.CompareAtAmountCents, true
+}
+
+// HasCompareAtAmountCents returns a boolean if a field has been set.
+func (o *POSTLineItems201ResponseDataAttributes) HasCompareAtAmountCents() bool {
+	if o != nil && IsNil(o.CompareAtAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetCompareAtAmountCents gets a reference to the given interface{} and assigns it to the CompareAtAmountCents field.
+func (o *POSTLineItems201ResponseDataAttributes) SetCompareAtAmountCents(v interface{}) {
+	o.CompareAtAmountCents = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -513,8 +583,14 @@ func (o POSTLineItems201ResponseDataAttributes) ToMap() (map[string]interface{},
 	if o.UpdateQuantity != nil {
 		toSerialize["_update_quantity"] = o.UpdateQuantity
 	}
+	if o.ReserveStock != nil {
+		toSerialize["_reserve_stock"] = o.ReserveStock
+	}
 	if o.UnitAmountCents != nil {
 		toSerialize["unit_amount_cents"] = o.UnitAmountCents
+	}
+	if o.CompareAtAmountCents != nil {
+		toSerialize["compare_at_amount_cents"] = o.CompareAtAmountCents
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

@@ -4,16 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **interface{}** | The shipping method&#39;s name | 
-**Scheme** | Pointer to **interface{}** | The shipping method&#39;s scheme, one of &#39;flat&#39; or &#39;weight_tiered&#39;. | [optional] 
+**Name** | **interface{}** | The shipping method&#39;s name. | 
+**Scheme** | Pointer to **interface{}** | The shipping method&#39;s scheme. One of &#39;flat&#39;, &#39;weight_tiered&#39;, or &#39;external&#39;. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
+**ExternalPricesUrl** | Pointer to **interface{}** | The URL used to overwrite prices by an external source. | [optional] 
 **PriceAmountCents** | **interface{}** | The price of this shipping method, in cents. | 
 **FreeOverAmountCents** | Pointer to **interface{}** | Apply free shipping if the order amount is over this value, in cents. | [optional] 
+**UseSubtotal** | Pointer to **interface{}** | Send this attribute if you want to compare the free over amount with order&#39;s subtotal (excluding discounts, if any). | [optional] 
 **MinWeight** | Pointer to **interface{}** | The minimum weight for which this shipping method is available. | [optional] 
 **MaxWeight** | Pointer to **interface{}** | The maximum weight for which this shipping method is available. | [optional] 
-**UnitOfWeight** | Pointer to **interface{}** | Can be one of &#39;gr&#39;, &#39;lb&#39;, or &#39;oz&#39; | [optional] 
+**UnitOfWeight** | Pointer to **interface{}** | The unit of weight. One of &#39;gr&#39;, &#39;oz&#39;, or &#39;lb&#39;. | [optional] 
+**Disable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as disabled. | [optional] 
+**Enable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as enabled. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -135,6 +139,41 @@ HasCurrencyCode returns a boolean if a field has been set.
 `func (o *POSTShippingMethods201ResponseDataAttributes) UnsetCurrencyCode()`
 
 UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
+### GetExternalPricesUrl
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) GetExternalPricesUrl() interface{}`
+
+GetExternalPricesUrl returns the ExternalPricesUrl field if non-nil, zero value otherwise.
+
+### GetExternalPricesUrlOk
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) GetExternalPricesUrlOk() (*interface{}, bool)`
+
+GetExternalPricesUrlOk returns a tuple with the ExternalPricesUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalPricesUrl
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) SetExternalPricesUrl(v interface{})`
+
+SetExternalPricesUrl sets ExternalPricesUrl field to given value.
+
+### HasExternalPricesUrl
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) HasExternalPricesUrl() bool`
+
+HasExternalPricesUrl returns a boolean if a field has been set.
+
+### SetExternalPricesUrlNil
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) SetExternalPricesUrlNil(b bool)`
+
+ SetExternalPricesUrlNil sets the value for ExternalPricesUrl to be an explicit nil
+
+### UnsetExternalPricesUrl
+`func (o *POSTShippingMethods201ResponseDataAttributes) UnsetExternalPricesUrl()`
+
+UnsetExternalPricesUrl ensures that no value is present for ExternalPricesUrl, not even an explicit nil
 ### GetPriceAmountCents
 
 `func (o *POSTShippingMethods201ResponseDataAttributes) GetPriceAmountCents() interface{}`
@@ -200,6 +239,41 @@ HasFreeOverAmountCents returns a boolean if a field has been set.
 `func (o *POSTShippingMethods201ResponseDataAttributes) UnsetFreeOverAmountCents()`
 
 UnsetFreeOverAmountCents ensures that no value is present for FreeOverAmountCents, not even an explicit nil
+### GetUseSubtotal
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) GetUseSubtotal() interface{}`
+
+GetUseSubtotal returns the UseSubtotal field if non-nil, zero value otherwise.
+
+### GetUseSubtotalOk
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) GetUseSubtotalOk() (*interface{}, bool)`
+
+GetUseSubtotalOk returns a tuple with the UseSubtotal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSubtotal
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) SetUseSubtotal(v interface{})`
+
+SetUseSubtotal sets UseSubtotal field to given value.
+
+### HasUseSubtotal
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) HasUseSubtotal() bool`
+
+HasUseSubtotal returns a boolean if a field has been set.
+
+### SetUseSubtotalNil
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) SetUseSubtotalNil(b bool)`
+
+ SetUseSubtotalNil sets the value for UseSubtotal to be an explicit nil
+
+### UnsetUseSubtotal
+`func (o *POSTShippingMethods201ResponseDataAttributes) UnsetUseSubtotal()`
+
+UnsetUseSubtotal ensures that no value is present for UseSubtotal, not even an explicit nil
 ### GetMinWeight
 
 `func (o *POSTShippingMethods201ResponseDataAttributes) GetMinWeight() interface{}`
@@ -305,6 +379,76 @@ HasUnitOfWeight returns a boolean if a field has been set.
 `func (o *POSTShippingMethods201ResponseDataAttributes) UnsetUnitOfWeight()`
 
 UnsetUnitOfWeight ensures that no value is present for UnitOfWeight, not even an explicit nil
+### GetDisable
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) GetDisable() interface{}`
+
+GetDisable returns the Disable field if non-nil, zero value otherwise.
+
+### GetDisableOk
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) GetDisableOk() (*interface{}, bool)`
+
+GetDisableOk returns a tuple with the Disable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisable
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) SetDisable(v interface{})`
+
+SetDisable sets Disable field to given value.
+
+### HasDisable
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) HasDisable() bool`
+
+HasDisable returns a boolean if a field has been set.
+
+### SetDisableNil
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) SetDisableNil(b bool)`
+
+ SetDisableNil sets the value for Disable to be an explicit nil
+
+### UnsetDisable
+`func (o *POSTShippingMethods201ResponseDataAttributes) UnsetDisable()`
+
+UnsetDisable ensures that no value is present for Disable, not even an explicit nil
+### GetEnable
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) GetEnable() interface{}`
+
+GetEnable returns the Enable field if non-nil, zero value otherwise.
+
+### GetEnableOk
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) GetEnableOk() (*interface{}, bool)`
+
+GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnable
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) SetEnable(v interface{})`
+
+SetEnable sets Enable field to given value.
+
+### HasEnable
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) HasEnable() bool`
+
+HasEnable returns a boolean if a field has been set.
+
+### SetEnableNil
+
+`func (o *POSTShippingMethods201ResponseDataAttributes) SetEnableNil(b bool)`
+
+ SetEnableNil sets the value for Enable to be an explicit nil
+
+### UnsetEnable
+`func (o *POSTShippingMethods201ResponseDataAttributes) UnsetEnable()`
+
+UnsetEnable ensures that no value is present for Enable, not even an explicit nil
 ### GetReference
 
 `func (o *POSTShippingMethods201ResponseDataAttributes) GetReference() interface{}`

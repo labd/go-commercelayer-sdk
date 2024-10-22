@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTFixedPricePromotions201ResponseDataAttributes**](POSTFixedPricePromotions201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**FixedPricePromotionCreateDataRelationships**](FixedPricePromotionCreateDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**BuyXPayYPromotionCreateDataRelationships**](BuyXPayYPromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *FixedPricePromotionCreateData) GetRelationships() FixedPricePromotionCreateDataRelationships`
+`func (o *FixedPricePromotionCreateData) GetRelationships() BuyXPayYPromotionCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *FixedPricePromotionCreateData) GetRelationshipsOk() (*FixedPricePromotionCreateDataRelationships, bool)`
+`func (o *FixedPricePromotionCreateData) GetRelationshipsOk() (*BuyXPayYPromotionCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *FixedPricePromotionCreateData) SetRelationships(v FixedPricePromotionCreateDataRelationships)`
+`func (o *FixedPricePromotionCreateData) SetRelationships(v BuyXPayYPromotionCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

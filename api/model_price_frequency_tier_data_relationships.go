@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,10 @@ var _ MappedNullable = &PriceFrequencyTierDataRelationships{}
 
 // PriceFrequencyTierDataRelationships struct for PriceFrequencyTierDataRelationships
 type PriceFrequencyTierDataRelationships struct {
-	Price       *PriceFrequencyTierDataRelationshipsPrice   `json:"price,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events      *AuthorizationDataRelationshipsEvents       `json:"events,omitempty"`
+	Price       *PriceFrequencyTierDataRelationshipsPrice  `json:"price,omitempty"`
+	Attachments *AuthorizationDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Versions    *AddressDataRelationshipsVersions          `json:"versions,omitempty"`
+	Events      *AddressDataRelationshipsEvents            `json:"events,omitempty"`
 }
 
 // NewPriceFrequencyTierDataRelationships instantiates a new PriceFrequencyTierDataRelationships object
@@ -75,9 +76,9 @@ func (o *PriceFrequencyTierDataRelationships) SetPrice(v PriceFrequencyTierDataR
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *PriceFrequencyTierDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *PriceFrequencyTierDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -85,7 +86,7 @@ func (o *PriceFrequencyTierDataRelationships) GetAttachments() AvalaraAccountDat
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceFrequencyTierDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *PriceFrequencyTierDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -101,15 +102,47 @@ func (o *PriceFrequencyTierDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *PriceFrequencyTierDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *PriceFrequencyTierDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *PriceFrequencyTierDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceFrequencyTierDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *PriceFrequencyTierDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *PriceFrequencyTierDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *PriceFrequencyTierDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *PriceFrequencyTierDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -117,7 +150,7 @@ func (o *PriceFrequencyTierDataRelationships) GetEvents() AuthorizationDataRelat
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceFrequencyTierDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *PriceFrequencyTierDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -133,8 +166,8 @@ func (o *PriceFrequencyTierDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *PriceFrequencyTierDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *PriceFrequencyTierDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
 }
 
@@ -153,6 +186,9 @@ func (o PriceFrequencyTierDataRelationships) ToMap() (map[string]interface{}, er
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events

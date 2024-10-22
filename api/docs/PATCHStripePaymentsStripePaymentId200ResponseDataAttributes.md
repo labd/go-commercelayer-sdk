@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Options** | Pointer to **interface{}** | Stripe payment options: &#39;customer&#39;, &#39;payment_method&#39;, etc. Check Stripe payment intent API for more details. | [optional] 
+**Options** | Pointer to **interface{}** | Stripe payment options: &#39;customer&#39;, &#39;payment_method&#39;, &#39;return_url&#39;, etc. Check Stripe payment intent API for more details. | [optional] 
+**ReturnUrl** | Pointer to **interface{}** | The URL to return to when a redirect payment is completed. | [optional] 
+**Update** | Pointer to **interface{}** | Send this attribute if you want to update the created payment intent with fresh order data. | [optional] 
 **Refresh** | Pointer to **interface{}** | Send this attribute if you want to refresh the payment status, can be used as webhooks fallback logic. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -64,6 +66,76 @@ HasOptions returns a boolean if a field has been set.
 `func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) UnsetOptions()`
 
 UnsetOptions ensures that no value is present for Options, not even an explicit nil
+### GetReturnUrl
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) GetReturnUrl() interface{}`
+
+GetReturnUrl returns the ReturnUrl field if non-nil, zero value otherwise.
+
+### GetReturnUrlOk
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bool)`
+
+GetReturnUrlOk returns a tuple with the ReturnUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReturnUrl
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) SetReturnUrl(v interface{})`
+
+SetReturnUrl sets ReturnUrl field to given value.
+
+### HasReturnUrl
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) HasReturnUrl() bool`
+
+HasReturnUrl returns a boolean if a field has been set.
+
+### SetReturnUrlNil
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) SetReturnUrlNil(b bool)`
+
+ SetReturnUrlNil sets the value for ReturnUrl to be an explicit nil
+
+### UnsetReturnUrl
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) UnsetReturnUrl()`
+
+UnsetReturnUrl ensures that no value is present for ReturnUrl, not even an explicit nil
+### GetUpdate
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) GetUpdate() interface{}`
+
+GetUpdate returns the Update field if non-nil, zero value otherwise.
+
+### GetUpdateOk
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) GetUpdateOk() (*interface{}, bool)`
+
+GetUpdateOk returns a tuple with the Update field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdate
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) SetUpdate(v interface{})`
+
+SetUpdate sets Update field to given value.
+
+### HasUpdate
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) HasUpdate() bool`
+
+HasUpdate returns a boolean if a field has been set.
+
+### SetUpdateNil
+
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) SetUpdateNil(b bool)`
+
+ SetUpdateNil sets the value for Update to be an explicit nil
+
+### UnsetUpdate
+`func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) UnsetUpdate()`
+
+UnsetUpdate ensures that no value is present for Update, not even an explicit nil
 ### GetRefresh
 
 `func (o *PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) GetRefresh() interface{}`

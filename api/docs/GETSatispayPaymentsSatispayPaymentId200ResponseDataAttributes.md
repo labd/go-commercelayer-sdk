@@ -4,14 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Token** | Pointer to **interface{}** | Activation code generated from the Satispay Dashboard. | [optional] 
-**KeyId** | Pointer to **interface{}** | The Satispay API key auto generated basing on activation code. | [optional] 
 **PaymentId** | Pointer to **interface{}** | The payment unique identifier. | [optional] 
+**Flow** | Pointer to **interface{}** | The Satispay payment flow, inspect gateway API details for more information. | [optional] 
+**Status** | Pointer to **interface{}** | The Satispay payment status. | [optional] 
 **RedirectUrl** | Pointer to **interface{}** | The url to redirect the customer after the payment flow is completed. | [optional] 
+**PaymentUrl** | Pointer to **interface{}** | Redirect url to the payment page. | [optional] 
+**PaymentResponse** | Pointer to **interface{}** | The Satispay payment response, used to fetch internal data. | [optional] 
+**PaymentInstrument** | Pointer to **interface{}** | Information about the payment instrument used in the transaction. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -33,76 +36,6 @@ NewGETSatispayPaymentsSatispayPaymentId200ResponseDataAttributesWithDefaults ins
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetToken
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetToken() interface{}`
-
-GetToken returns the Token field if non-nil, zero value otherwise.
-
-### GetTokenOk
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetTokenOk() (*interface{}, bool)`
-
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetToken
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetToken(v interface{})`
-
-SetToken sets Token field to given value.
-
-### HasToken
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasToken() bool`
-
-HasToken returns a boolean if a field has been set.
-
-### SetTokenNil
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetTokenNil(b bool)`
-
- SetTokenNil sets the value for Token to be an explicit nil
-
-### UnsetToken
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) UnsetToken()`
-
-UnsetToken ensures that no value is present for Token, not even an explicit nil
-### GetKeyId
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetKeyId() interface{}`
-
-GetKeyId returns the KeyId field if non-nil, zero value otherwise.
-
-### GetKeyIdOk
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetKeyIdOk() (*interface{}, bool)`
-
-GetKeyIdOk returns a tuple with the KeyId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKeyId
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetKeyId(v interface{})`
-
-SetKeyId sets KeyId field to given value.
-
-### HasKeyId
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasKeyId() bool`
-
-HasKeyId returns a boolean if a field has been set.
-
-### SetKeyIdNil
-
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetKeyIdNil(b bool)`
-
- SetKeyIdNil sets the value for KeyId to be an explicit nil
-
-### UnsetKeyId
-`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) UnsetKeyId()`
-
-UnsetKeyId ensures that no value is present for KeyId, not even an explicit nil
 ### GetPaymentId
 
 `func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentId() interface{}`
@@ -138,6 +71,76 @@ HasPaymentId returns a boolean if a field has been set.
 `func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) UnsetPaymentId()`
 
 UnsetPaymentId ensures that no value is present for PaymentId, not even an explicit nil
+### GetFlow
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetFlow() interface{}`
+
+GetFlow returns the Flow field if non-nil, zero value otherwise.
+
+### GetFlowOk
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetFlowOk() (*interface{}, bool)`
+
+GetFlowOk returns a tuple with the Flow field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlow
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetFlow(v interface{})`
+
+SetFlow sets Flow field to given value.
+
+### HasFlow
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasFlow() bool`
+
+HasFlow returns a boolean if a field has been set.
+
+### SetFlowNil
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetFlowNil(b bool)`
+
+ SetFlowNil sets the value for Flow to be an explicit nil
+
+### UnsetFlow
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) UnsetFlow()`
+
+UnsetFlow ensures that no value is present for Flow, not even an explicit nil
+### GetStatus
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetStatus() interface{}`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetStatusOk() (*interface{}, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetStatus(v interface{})`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+### SetStatusNil
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetRedirectUrl
 
 `func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRedirectUrl() interface{}`
@@ -173,6 +176,111 @@ HasRedirectUrl returns a boolean if a field has been set.
 `func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) UnsetRedirectUrl()`
 
 UnsetRedirectUrl ensures that no value is present for RedirectUrl, not even an explicit nil
+### GetPaymentUrl
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentUrl() interface{}`
+
+GetPaymentUrl returns the PaymentUrl field if non-nil, zero value otherwise.
+
+### GetPaymentUrlOk
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentUrlOk() (*interface{}, bool)`
+
+GetPaymentUrlOk returns a tuple with the PaymentUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentUrl
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPaymentUrl(v interface{})`
+
+SetPaymentUrl sets PaymentUrl field to given value.
+
+### HasPaymentUrl
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasPaymentUrl() bool`
+
+HasPaymentUrl returns a boolean if a field has been set.
+
+### SetPaymentUrlNil
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPaymentUrlNil(b bool)`
+
+ SetPaymentUrlNil sets the value for PaymentUrl to be an explicit nil
+
+### UnsetPaymentUrl
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) UnsetPaymentUrl()`
+
+UnsetPaymentUrl ensures that no value is present for PaymentUrl, not even an explicit nil
+### GetPaymentResponse
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentResponse() interface{}`
+
+GetPaymentResponse returns the PaymentResponse field if non-nil, zero value otherwise.
+
+### GetPaymentResponseOk
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentResponseOk() (*interface{}, bool)`
+
+GetPaymentResponseOk returns a tuple with the PaymentResponse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentResponse
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPaymentResponse(v interface{})`
+
+SetPaymentResponse sets PaymentResponse field to given value.
+
+### HasPaymentResponse
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasPaymentResponse() bool`
+
+HasPaymentResponse returns a boolean if a field has been set.
+
+### SetPaymentResponseNil
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPaymentResponseNil(b bool)`
+
+ SetPaymentResponseNil sets the value for PaymentResponse to be an explicit nil
+
+### UnsetPaymentResponse
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) UnsetPaymentResponse()`
+
+UnsetPaymentResponse ensures that no value is present for PaymentResponse, not even an explicit nil
+### GetPaymentInstrument
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentInstrument() interface{}`
+
+GetPaymentInstrument returns the PaymentInstrument field if non-nil, zero value otherwise.
+
+### GetPaymentInstrumentOk
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetPaymentInstrumentOk() (*interface{}, bool)`
+
+GetPaymentInstrumentOk returns a tuple with the PaymentInstrument field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentInstrument
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPaymentInstrument(v interface{})`
+
+SetPaymentInstrument sets PaymentInstrument field to given value.
+
+### HasPaymentInstrument
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasPaymentInstrument() bool`
+
+HasPaymentInstrument returns a boolean if a field has been set.
+
+### SetPaymentInstrumentNil
+
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetPaymentInstrumentNil(b bool)`
+
+ SetPaymentInstrumentNil sets the value for PaymentInstrument to be an explicit nil
+
+### UnsetPaymentInstrument
+`func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) UnsetPaymentInstrument()`
+
+UnsetPaymentInstrument ensures that no value is present for PaymentInstrument, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetCreatedAt() interface{}`

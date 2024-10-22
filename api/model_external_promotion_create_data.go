@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,7 @@ type ExternalPromotionCreateData struct {
 	// The resource's type
 	Type          interface{}                                     `json:"type"`
 	Attributes    POSTExternalPromotions201ResponseDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionCreateDataRelationships       `json:"relationships,omitempty"`
+	Relationships *BuyXPayYPromotionUpdateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewExternalPromotionCreateData instantiates a new ExternalPromotionCreateData object
@@ -96,9 +96,9 @@ func (o *ExternalPromotionCreateData) SetAttributes(v POSTExternalPromotions201R
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ExternalPromotionCreateData) GetRelationships() ExternalPromotionCreateDataRelationships {
+func (o *ExternalPromotionCreateData) GetRelationships() BuyXPayYPromotionUpdateDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret ExternalPromotionCreateDataRelationships
+		var ret BuyXPayYPromotionUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -106,7 +106,7 @@ func (o *ExternalPromotionCreateData) GetRelationships() ExternalPromotionCreate
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalPromotionCreateData) GetRelationshipsOk() (*ExternalPromotionCreateDataRelationships, bool) {
+func (o *ExternalPromotionCreateData) GetRelationshipsOk() (*BuyXPayYPromotionUpdateDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -122,8 +122,8 @@ func (o *ExternalPromotionCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ExternalPromotionCreateDataRelationships and assigns it to the Relationships field.
-func (o *ExternalPromotionCreateData) SetRelationships(v ExternalPromotionCreateDataRelationships) {
+// SetRelationships gets a reference to the given BuyXPayYPromotionUpdateDataRelationships and assigns it to the Relationships field.
+func (o *ExternalPromotionCreateData) SetRelationships(v BuyXPayYPromotionUpdateDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,7 @@ var _ MappedNullable = &BundleCreateDataRelationships{}
 type BundleCreateDataRelationships struct {
 	Market  *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
 	SkuList BundleCreateDataRelationshipsSkuList                    `json:"sku_list"`
+	Tags    *AddressCreateDataRelationshipsTags                     `json:"tags,omitempty"`
 }
 
 // NewBundleCreateDataRelationships instantiates a new BundleCreateDataRelationships object
@@ -98,6 +99,38 @@ func (o *BundleCreateDataRelationships) SetSkuList(v BundleCreateDataRelationshi
 	o.SkuList = v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *BundleCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BundleCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *BundleCreateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *BundleCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o BundleCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -112,6 +145,9 @@ func (o BundleCreateDataRelationships) ToMap() (map[string]interface{}, error) {
 		toSerialize["market"] = o.Market
 	}
 	toSerialize["sku_list"] = o.SkuList
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
 	return toSerialize, nil
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -299,6 +299,98 @@ func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarketExecute(r Market
 	return localVarHTTPResponse, nil
 }
 
+type MarketsApiGETBingGeocoderIdMarketsRequest struct {
+	ctx            context.Context
+	ApiService     *MarketsApiService
+	bingGeocoderId interface{}
+}
+
+func (r MarketsApiGETBingGeocoderIdMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBingGeocoderIdMarketsExecute(r)
+}
+
+/*
+GETBingGeocoderIdMarkets Retrieve the markets associated to the bing geocoder
+
+Retrieve the markets associated to the bing geocoder
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bingGeocoderId The resource's id
+	@return MarketsApiGETBingGeocoderIdMarketsRequest
+*/
+func (a *MarketsApiService) GETBingGeocoderIdMarkets(ctx context.Context, bingGeocoderId interface{}) MarketsApiGETBingGeocoderIdMarketsRequest {
+	return MarketsApiGETBingGeocoderIdMarketsRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		bingGeocoderId: bingGeocoderId,
+	}
+}
+
+// Execute executes the request
+func (a *MarketsApiService) GETBingGeocoderIdMarketsExecute(r MarketsApiGETBingGeocoderIdMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETBingGeocoderIdMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}/markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type MarketsApiGETBundleIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
@@ -341,6 +433,98 @@ func (a *MarketsApiService) GETBundleIdMarketExecute(r MarketsApiGETBundleIdMark
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/market"
 	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type MarketsApiGETBuyXPayYPromotionIdMarketRequest struct {
+	ctx                 context.Context
+	ApiService          *MarketsApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r MarketsApiGETBuyXPayYPromotionIdMarketRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdMarketExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdMarket Retrieve the market associated to the buy x pay y promotion
+
+Retrieve the market associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return MarketsApiGETBuyXPayYPromotionIdMarketRequest
+*/
+func (a *MarketsApiService) GETBuyXPayYPromotionIdMarket(ctx context.Context, buyXPayYPromotionId interface{}) MarketsApiGETBuyXPayYPromotionIdMarketRequest {
+	return MarketsApiGETBuyXPayYPromotionIdMarketRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *MarketsApiService) GETBuyXPayYPromotionIdMarketExecute(r MarketsApiGETBuyXPayYPromotionIdMarketRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETBuyXPayYPromotionIdMarket")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/market"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1127,6 +1311,98 @@ func (a *MarketsApiService) GETFreeShippingPromotionIdMarketExecute(r MarketsApi
 	return localVarHTTPResponse, nil
 }
 
+type MarketsApiGETGeocoderIdMarketsRequest struct {
+	ctx        context.Context
+	ApiService *MarketsApiService
+	geocoderId interface{}
+}
+
+func (r MarketsApiGETGeocoderIdMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETGeocoderIdMarketsExecute(r)
+}
+
+/*
+GETGeocoderIdMarkets Retrieve the markets associated to the geocoder
+
+Retrieve the markets associated to the geocoder
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param geocoderId The resource's id
+	@return MarketsApiGETGeocoderIdMarketsRequest
+*/
+func (a *MarketsApiService) GETGeocoderIdMarkets(ctx context.Context, geocoderId interface{}) MarketsApiGETGeocoderIdMarketsRequest {
+	return MarketsApiGETGeocoderIdMarketsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		geocoderId: geocoderId,
+	}
+}
+
+// Execute executes the request
+func (a *MarketsApiService) GETGeocoderIdMarketsExecute(r MarketsApiGETGeocoderIdMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETGeocoderIdMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/geocoders/{geocoderId}/markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterValueToString(r.geocoderId, "geocoderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type MarketsApiGETGiftCardIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
@@ -1169,6 +1445,98 @@ func (a *MarketsApiService) GETGiftCardIdMarketExecute(r MarketsApiGETGiftCardId
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/market"
 	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type MarketsApiGETGoogleGeocoderIdMarketsRequest struct {
+	ctx              context.Context
+	ApiService       *MarketsApiService
+	googleGeocoderId interface{}
+}
+
+func (r MarketsApiGETGoogleGeocoderIdMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETGoogleGeocoderIdMarketsExecute(r)
+}
+
+/*
+GETGoogleGeocoderIdMarkets Retrieve the markets associated to the google geocoder
+
+Retrieve the markets associated to the google geocoder
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param googleGeocoderId The resource's id
+	@return MarketsApiGETGoogleGeocoderIdMarketsRequest
+*/
+func (a *MarketsApiService) GETGoogleGeocoderIdMarkets(ctx context.Context, googleGeocoderId interface{}) MarketsApiGETGoogleGeocoderIdMarketsRequest {
+	return MarketsApiGETGoogleGeocoderIdMarketsRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		googleGeocoderId: googleGeocoderId,
+	}
+}
+
+// Execute executes the request
+func (a *MarketsApiService) GETGoogleGeocoderIdMarketsExecute(r MarketsApiGETGoogleGeocoderIdMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETGoogleGeocoderIdMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}/markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1791,98 +2159,6 @@ func (a *MarketsApiService) GETOrderSubscriptionIdMarketExecute(r MarketsApiGETO
 	return localVarHTTPResponse, nil
 }
 
-type MarketsApiGETOrderValidationRuleIdMarketRequest struct {
-	ctx                   context.Context
-	ApiService            *MarketsApiService
-	orderValidationRuleId interface{}
-}
-
-func (r MarketsApiGETOrderValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GETOrderValidationRuleIdMarketExecute(r)
-}
-
-/*
-GETOrderValidationRuleIdMarket Retrieve the market associated to the order validation rule
-
-Retrieve the market associated to the order validation rule
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param orderValidationRuleId The resource's id
-	@return MarketsApiGETOrderValidationRuleIdMarketRequest
-*/
-func (a *MarketsApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId interface{}) MarketsApiGETOrderValidationRuleIdMarketRequest {
-	return MarketsApiGETOrderValidationRuleIdMarketRequest{
-		ApiService:            a,
-		ctx:                   ctx,
-		orderValidationRuleId: orderValidationRuleId,
-	}
-}
-
-// Execute executes the request
-func (a *MarketsApiService) GETOrderValidationRuleIdMarketExecute(r MarketsApiGETOrderValidationRuleIdMarketRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETOrderValidationRuleIdMarket")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
 type MarketsApiGETPaymentMethodIdMarketRequest struct {
 	ctx             context.Context
 	ApiService      *MarketsApiService
@@ -2067,6 +2343,190 @@ func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarketExecute(r Mark
 	return localVarHTTPResponse, nil
 }
 
+type MarketsApiGETPriceIdJwtMarketsRequest struct {
+	ctx        context.Context
+	ApiService *MarketsApiService
+	priceId    interface{}
+}
+
+func (r MarketsApiGETPriceIdJwtMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceIdJwtMarketsExecute(r)
+}
+
+/*
+GETPriceIdJwtMarkets Retrieve the jwt markets associated to the price
+
+Retrieve the jwt markets associated to the price
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return MarketsApiGETPriceIdJwtMarketsRequest
+*/
+func (a *MarketsApiService) GETPriceIdJwtMarkets(ctx context.Context, priceId interface{}) MarketsApiGETPriceIdJwtMarketsRequest {
+	return MarketsApiGETPriceIdJwtMarketsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		priceId:    priceId,
+	}
+}
+
+// Execute executes the request
+func (a *MarketsApiService) GETPriceIdJwtMarketsExecute(r MarketsApiGETPriceIdJwtMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETPriceIdJwtMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/prices/{priceId}/jwt_markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type MarketsApiGETPriceListSchedulerIdMarketRequest struct {
+	ctx                  context.Context
+	ApiService           *MarketsApiService
+	priceListSchedulerId interface{}
+}
+
+func (r MarketsApiGETPriceListSchedulerIdMarketRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceListSchedulerIdMarketExecute(r)
+}
+
+/*
+GETPriceListSchedulerIdMarket Retrieve the market associated to the price list scheduler
+
+Retrieve the market associated to the price list scheduler
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceListSchedulerId The resource's id
+	@return MarketsApiGETPriceListSchedulerIdMarketRequest
+*/
+func (a *MarketsApiService) GETPriceListSchedulerIdMarket(ctx context.Context, priceListSchedulerId interface{}) MarketsApiGETPriceListSchedulerIdMarketRequest {
+	return MarketsApiGETPriceListSchedulerIdMarketRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceListSchedulerId: priceListSchedulerId,
+	}
+}
+
+// Execute executes the request
+func (a *MarketsApiService) GETPriceListSchedulerIdMarketExecute(r MarketsApiGETPriceListSchedulerIdMarketRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETPriceListSchedulerIdMarket")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_list_schedulers/{priceListSchedulerId}/market"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListSchedulerId"+"}", url.PathEscape(parameterValueToString(r.priceListSchedulerId, "priceListSchedulerId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type MarketsApiGETPromotionIdMarketRequest struct {
 	ctx         context.Context
 	ApiService  *MarketsApiService
@@ -2201,6 +2661,98 @@ func (a *MarketsApiService) GETShippingMethodIdMarketExecute(r MarketsApiGETShip
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/market"
 	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type MarketsApiGETSkuIdJwtMarketsRequest struct {
+	ctx        context.Context
+	ApiService *MarketsApiService
+	skuId      interface{}
+}
+
+func (r MarketsApiGETSkuIdJwtMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdJwtMarketsExecute(r)
+}
+
+/*
+GETSkuIdJwtMarkets Retrieve the jwt markets associated to the SKU
+
+Retrieve the jwt markets associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return MarketsApiGETSkuIdJwtMarketsRequest
+*/
+func (a *MarketsApiService) GETSkuIdJwtMarkets(ctx context.Context, skuId interface{}) MarketsApiGETSkuIdJwtMarketsRequest {
+	return MarketsApiGETSkuIdJwtMarketsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *MarketsApiService) GETSkuIdJwtMarketsExecute(r MarketsApiGETSkuIdJwtMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETSkuIdJwtMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/jwt_markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

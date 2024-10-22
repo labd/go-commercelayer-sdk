@@ -4,14 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Number** | Pointer to **interface{}** | Unique identifier for the stock transfer (numeric). | [optional] 
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
 **Upcoming** | Pointer to **interface{}** | Send this attribute if you want to mark this stock transfer as upcoming. | [optional] 
+**OnHold** | Pointer to **interface{}** | Send this attribute if you want to put this stock transfer on hold. | [optional] 
 **Picking** | Pointer to **interface{}** | Send this attribute if you want to start picking this stock transfer. | [optional] 
 **InTransit** | Pointer to **interface{}** | Send this attribute if you want to mark this stock transfer as in transit. | [optional] 
 **Complete** | Pointer to **interface{}** | Send this attribute if you want to complete this stock transfer. | [optional] 
 **Cancel** | Pointer to **interface{}** | Send this attribute if you want to cancel this stock transfer. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -33,6 +35,41 @@ NewPATCHStockTransfersStockTransferId200ResponseDataAttributesWithDefaults insta
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetNumber
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetNumber() interface{}`
+
+GetNumber returns the Number field if non-nil, zero value otherwise.
+
+### GetNumberOk
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetNumberOk() (*interface{}, bool)`
+
+GetNumberOk returns a tuple with the Number field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumber
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetNumber(v interface{})`
+
+SetNumber sets Number field to given value.
+
+### HasNumber
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasNumber() bool`
+
+HasNumber returns a boolean if a field has been set.
+
+### SetNumberNil
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetNumberNil(b bool)`
+
+ SetNumberNil sets the value for Number to be an explicit nil
+
+### UnsetNumber
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) UnsetNumber()`
+
+UnsetNumber ensures that no value is present for Number, not even an explicit nil
 ### GetSkuCode
 
 `func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetSkuCode() interface{}`
@@ -103,6 +140,41 @@ HasUpcoming returns a boolean if a field has been set.
 `func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) UnsetUpcoming()`
 
 UnsetUpcoming ensures that no value is present for Upcoming, not even an explicit nil
+### GetOnHold
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetOnHold() interface{}`
+
+GetOnHold returns the OnHold field if non-nil, zero value otherwise.
+
+### GetOnHoldOk
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetOnHoldOk() (*interface{}, bool)`
+
+GetOnHoldOk returns a tuple with the OnHold field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnHold
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetOnHold(v interface{})`
+
+SetOnHold sets OnHold field to given value.
+
+### HasOnHold
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasOnHold() bool`
+
+HasOnHold returns a boolean if a field has been set.
+
+### SetOnHoldNil
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetOnHoldNil(b bool)`
+
+ SetOnHoldNil sets the value for OnHold to be an explicit nil
+
+### UnsetOnHold
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) UnsetOnHold()`
+
+UnsetOnHold ensures that no value is present for OnHold, not even an explicit nil
 ### GetPicking
 
 `func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetPicking() interface{}`

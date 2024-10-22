@@ -4,13 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | Pointer to **interface{}** | The customer&#39;s email address | [optional] 
-**Status** | Pointer to **interface{}** | The customer&#39;s status, one of &#39;prospect&#39;, &#39;acquired&#39;, or &#39;repeat&#39;. | [optional] 
+**Email** | Pointer to **interface{}** | The customer&#39;s email address. | [optional] 
+**Status** | Pointer to **interface{}** | The customer&#39;s status. One of &#39;prospect&#39; (default), &#39;acquired&#39;, or &#39;repeat&#39;. | [optional] 
 **HasPassword** | Pointer to **interface{}** | Indicates if the customer has a password. | [optional] 
+**TotalOrdersCount** | Pointer to **interface{}** | The total number of orders for the customer. | [optional] 
+**ShopperReference** | Pointer to **interface{}** | A reference to uniquely identify the shopper during payment sessions. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -137,6 +139,76 @@ HasHasPassword returns a boolean if a field has been set.
 `func (o *GETCustomersCustomerId200ResponseDataAttributes) UnsetHasPassword()`
 
 UnsetHasPassword ensures that no value is present for HasPassword, not even an explicit nil
+### GetTotalOrdersCount
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) GetTotalOrdersCount() interface{}`
+
+GetTotalOrdersCount returns the TotalOrdersCount field if non-nil, zero value otherwise.
+
+### GetTotalOrdersCountOk
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) GetTotalOrdersCountOk() (*interface{}, bool)`
+
+GetTotalOrdersCountOk returns a tuple with the TotalOrdersCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalOrdersCount
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) SetTotalOrdersCount(v interface{})`
+
+SetTotalOrdersCount sets TotalOrdersCount field to given value.
+
+### HasTotalOrdersCount
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) HasTotalOrdersCount() bool`
+
+HasTotalOrdersCount returns a boolean if a field has been set.
+
+### SetTotalOrdersCountNil
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) SetTotalOrdersCountNil(b bool)`
+
+ SetTotalOrdersCountNil sets the value for TotalOrdersCount to be an explicit nil
+
+### UnsetTotalOrdersCount
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) UnsetTotalOrdersCount()`
+
+UnsetTotalOrdersCount ensures that no value is present for TotalOrdersCount, not even an explicit nil
+### GetShopperReference
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) GetShopperReference() interface{}`
+
+GetShopperReference returns the ShopperReference field if non-nil, zero value otherwise.
+
+### GetShopperReferenceOk
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) GetShopperReferenceOk() (*interface{}, bool)`
+
+GetShopperReferenceOk returns a tuple with the ShopperReference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShopperReference
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) SetShopperReference(v interface{})`
+
+SetShopperReference sets ShopperReference field to given value.
+
+### HasShopperReference
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) HasShopperReference() bool`
+
+HasShopperReference returns a boolean if a field has been set.
+
+### SetShopperReferenceNil
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) SetShopperReferenceNil(b bool)`
+
+ SetShopperReferenceNil sets the value for ShopperReference to be an explicit nil
+
+### UnsetShopperReference
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) UnsetShopperReference()`
+
+UnsetShopperReference ensures that no value is present for ShopperReference, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETCustomersCustomerId200ResponseDataAttributes) GetCreatedAt() interface{}`

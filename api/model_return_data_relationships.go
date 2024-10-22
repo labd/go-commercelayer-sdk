@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -25,9 +25,14 @@ type ReturnDataRelationships struct {
 	StockLocation      *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
 	OriginAddress      *BingGeocoderDataRelationshipsAddresses         `json:"origin_address,omitempty"`
 	DestinationAddress *BingGeocoderDataRelationshipsAddresses         `json:"destination_address,omitempty"`
-	ReturnLineItems    *ReturnDataRelationshipsReturnLineItems         `json:"return_line_items,omitempty"`
-	Attachments        *AvalaraAccountDataRelationshipsAttachments     `json:"attachments,omitempty"`
-	Events             *AuthorizationDataRelationshipsEvents           `json:"events,omitempty"`
+	ReferenceCapture   *AuthorizationDataRelationshipsCaptures         `json:"reference_capture,omitempty"`
+	ReferenceRefund    *CaptureDataRelationshipsRefunds                `json:"reference_refund,omitempty"`
+	ReturnLineItems    *LineItemDataRelationshipsReturnLineItems       `json:"return_line_items,omitempty"`
+	Attachments        *AuthorizationDataRelationshipsAttachments      `json:"attachments,omitempty"`
+	ResourceErrors     *OrderDataRelationshipsResourceErrors           `json:"resource_errors,omitempty"`
+	Events             *AddressDataRelationshipsEvents                 `json:"events,omitempty"`
+	Tags               *AddressDataRelationshipsTags                   `json:"tags,omitempty"`
+	Versions           *AddressDataRelationshipsVersions               `json:"versions,omitempty"`
 }
 
 // NewReturnDataRelationships instantiates a new ReturnDataRelationships object
@@ -207,10 +212,74 @@ func (o *ReturnDataRelationships) SetDestinationAddress(v BingGeocoderDataRelati
 	o.DestinationAddress = &v
 }
 
+// GetReferenceCapture returns the ReferenceCapture field value if set, zero value otherwise.
+func (o *ReturnDataRelationships) GetReferenceCapture() AuthorizationDataRelationshipsCaptures {
+	if o == nil || IsNil(o.ReferenceCapture) {
+		var ret AuthorizationDataRelationshipsCaptures
+		return ret
+	}
+	return *o.ReferenceCapture
+}
+
+// GetReferenceCaptureOk returns a tuple with the ReferenceCapture field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReturnDataRelationships) GetReferenceCaptureOk() (*AuthorizationDataRelationshipsCaptures, bool) {
+	if o == nil || IsNil(o.ReferenceCapture) {
+		return nil, false
+	}
+	return o.ReferenceCapture, true
+}
+
+// HasReferenceCapture returns a boolean if a field has been set.
+func (o *ReturnDataRelationships) HasReferenceCapture() bool {
+	if o != nil && !IsNil(o.ReferenceCapture) {
+		return true
+	}
+
+	return false
+}
+
+// SetReferenceCapture gets a reference to the given AuthorizationDataRelationshipsCaptures and assigns it to the ReferenceCapture field.
+func (o *ReturnDataRelationships) SetReferenceCapture(v AuthorizationDataRelationshipsCaptures) {
+	o.ReferenceCapture = &v
+}
+
+// GetReferenceRefund returns the ReferenceRefund field value if set, zero value otherwise.
+func (o *ReturnDataRelationships) GetReferenceRefund() CaptureDataRelationshipsRefunds {
+	if o == nil || IsNil(o.ReferenceRefund) {
+		var ret CaptureDataRelationshipsRefunds
+		return ret
+	}
+	return *o.ReferenceRefund
+}
+
+// GetReferenceRefundOk returns a tuple with the ReferenceRefund field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReturnDataRelationships) GetReferenceRefundOk() (*CaptureDataRelationshipsRefunds, bool) {
+	if o == nil || IsNil(o.ReferenceRefund) {
+		return nil, false
+	}
+	return o.ReferenceRefund, true
+}
+
+// HasReferenceRefund returns a boolean if a field has been set.
+func (o *ReturnDataRelationships) HasReferenceRefund() bool {
+	if o != nil && !IsNil(o.ReferenceRefund) {
+		return true
+	}
+
+	return false
+}
+
+// SetReferenceRefund gets a reference to the given CaptureDataRelationshipsRefunds and assigns it to the ReferenceRefund field.
+func (o *ReturnDataRelationships) SetReferenceRefund(v CaptureDataRelationshipsRefunds) {
+	o.ReferenceRefund = &v
+}
+
 // GetReturnLineItems returns the ReturnLineItems field value if set, zero value otherwise.
-func (o *ReturnDataRelationships) GetReturnLineItems() ReturnDataRelationshipsReturnLineItems {
+func (o *ReturnDataRelationships) GetReturnLineItems() LineItemDataRelationshipsReturnLineItems {
 	if o == nil || IsNil(o.ReturnLineItems) {
-		var ret ReturnDataRelationshipsReturnLineItems
+		var ret LineItemDataRelationshipsReturnLineItems
 		return ret
 	}
 	return *o.ReturnLineItems
@@ -218,7 +287,7 @@ func (o *ReturnDataRelationships) GetReturnLineItems() ReturnDataRelationshipsRe
 
 // GetReturnLineItemsOk returns a tuple with the ReturnLineItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnDataRelationships) GetReturnLineItemsOk() (*ReturnDataRelationshipsReturnLineItems, bool) {
+func (o *ReturnDataRelationships) GetReturnLineItemsOk() (*LineItemDataRelationshipsReturnLineItems, bool) {
 	if o == nil || IsNil(o.ReturnLineItems) {
 		return nil, false
 	}
@@ -234,15 +303,15 @@ func (o *ReturnDataRelationships) HasReturnLineItems() bool {
 	return false
 }
 
-// SetReturnLineItems gets a reference to the given ReturnDataRelationshipsReturnLineItems and assigns it to the ReturnLineItems field.
-func (o *ReturnDataRelationships) SetReturnLineItems(v ReturnDataRelationshipsReturnLineItems) {
+// SetReturnLineItems gets a reference to the given LineItemDataRelationshipsReturnLineItems and assigns it to the ReturnLineItems field.
+func (o *ReturnDataRelationships) SetReturnLineItems(v LineItemDataRelationshipsReturnLineItems) {
 	o.ReturnLineItems = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *ReturnDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *ReturnDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -250,7 +319,7 @@ func (o *ReturnDataRelationships) GetAttachments() AvalaraAccountDataRelationshi
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *ReturnDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -266,15 +335,47 @@ func (o *ReturnDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *ReturnDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *ReturnDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
+// GetResourceErrors returns the ResourceErrors field value if set, zero value otherwise.
+func (o *ReturnDataRelationships) GetResourceErrors() OrderDataRelationshipsResourceErrors {
+	if o == nil || IsNil(o.ResourceErrors) {
+		var ret OrderDataRelationshipsResourceErrors
+		return ret
+	}
+	return *o.ResourceErrors
+}
+
+// GetResourceErrorsOk returns a tuple with the ResourceErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReturnDataRelationships) GetResourceErrorsOk() (*OrderDataRelationshipsResourceErrors, bool) {
+	if o == nil || IsNil(o.ResourceErrors) {
+		return nil, false
+	}
+	return o.ResourceErrors, true
+}
+
+// HasResourceErrors returns a boolean if a field has been set.
+func (o *ReturnDataRelationships) HasResourceErrors() bool {
+	if o != nil && !IsNil(o.ResourceErrors) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceErrors gets a reference to the given OrderDataRelationshipsResourceErrors and assigns it to the ResourceErrors field.
+func (o *ReturnDataRelationships) SetResourceErrors(v OrderDataRelationshipsResourceErrors) {
+	o.ResourceErrors = &v
+}
+
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *ReturnDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *ReturnDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -282,7 +383,7 @@ func (o *ReturnDataRelationships) GetEvents() AuthorizationDataRelationshipsEven
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *ReturnDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -298,9 +399,73 @@ func (o *ReturnDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *ReturnDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *ReturnDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *ReturnDataRelationships) GetTags() AddressDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReturnDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *ReturnDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressDataRelationshipsTags and assigns it to the Tags field.
+func (o *ReturnDataRelationships) SetTags(v AddressDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *ReturnDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ReturnDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *ReturnDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *ReturnDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o ReturnDataRelationships) MarshalJSON() ([]byte, error) {
@@ -328,14 +493,29 @@ func (o ReturnDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DestinationAddress) {
 		toSerialize["destination_address"] = o.DestinationAddress
 	}
+	if !IsNil(o.ReferenceCapture) {
+		toSerialize["reference_capture"] = o.ReferenceCapture
+	}
+	if !IsNil(o.ReferenceRefund) {
+		toSerialize["reference_refund"] = o.ReferenceRefund
+	}
 	if !IsNil(o.ReturnLineItems) {
 		toSerialize["return_line_items"] = o.ReturnLineItems
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
 	}
+	if !IsNil(o.ResourceErrors) {
+		toSerialize["resource_errors"] = o.ResourceErrors
+	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

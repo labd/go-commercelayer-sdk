@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -24,9 +24,9 @@ type GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes struct {
 	MinHours interface{} `json:"min_hours,omitempty"`
 	// The delivery lead maximun time (in hours) when shipping from the associated stock location with the associated shipping method.
 	MaxHours interface{} `json:"max_hours,omitempty"`
-	// The delivery lead minimum time, in days (rounded)
+	// The delivery lead minimum time, in days (rounded).
 	MinDays interface{} `json:"min_days,omitempty"`
-	// The delivery lead maximun time, in days (rounded)
+	// The delivery lead maximun time, in days (rounded).
 	MaxDays interface{} `json:"max_days,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
@@ -34,7 +34,7 @@ type GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

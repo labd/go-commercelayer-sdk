@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &POSTSubscriptionModels201ResponseDataRelationships{}
 
 // POSTSubscriptionModels201ResponseDataRelationships struct for POSTSubscriptionModels201ResponseDataRelationships
 type POSTSubscriptionModels201ResponseDataRelationships struct {
-	Markets            *POSTAvalaraAccounts201ResponseDataRelationshipsMarkets      `json:"markets,omitempty"`
-	OrderSubscriptions *POSTCustomers201ResponseDataRelationshipsOrderSubscriptions `json:"order_subscriptions,omitempty"`
-	Attachments        *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments  `json:"attachments,omitempty"`
+	Markets            *POSTAvalaraAccounts201ResponseDataRelationshipsMarkets                  `json:"markets,omitempty"`
+	OrderSubscriptions *POSTCustomers201ResponseDataRelationshipsOrderSubscriptions             `json:"order_subscriptions,omitempty"`
+	Attachments        *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewPOSTSubscriptionModels201ResponseDataRelationships instantiates a new POSTSubscriptionModels201ResponseDataRelationships object
@@ -107,9 +107,9 @@ func (o *POSTSubscriptionModels201ResponseDataRelationships) SetOrderSubscriptio
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTSubscriptionModels201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTSubscriptionModels201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -117,7 +117,7 @@ func (o *POSTSubscriptionModels201ResponseDataRelationships) GetAttachments() PO
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSubscriptionModels201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTSubscriptionModels201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *POSTSubscriptionModels201ResponseDataRelationships) HasAttachments() bo
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTSubscriptionModels201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTSubscriptionModels201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 

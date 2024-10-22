@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes**](GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTExternalPromotions201ResponseDataRelationships**](POSTExternalPromotions201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTFreeShippingPromotions201ResponseDataRelationships**](POSTFreeShippingPromotions201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationships() POSTExternalPromotions201ResponseDataRelationships`
+`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationships() POSTFreeShippingPromotions201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationshipsOk() (*POSTExternalPromotions201ResponseDataRelationships, bool)`
+`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationshipsOk() (*POSTFreeShippingPromotions201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) SetRelationships(v POSTExternalPromotions201ResponseDataRelationships)`
+`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) SetRelationships(v POSTFreeShippingPromotions201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

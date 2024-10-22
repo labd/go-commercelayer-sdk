@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerEmail** | Pointer to **interface{}** | The email of the customer that owns the subscription | [optional] 
+**CustomerEmail** | Pointer to **interface{}** | The email of the customer that owns the subscription. | [optional] 
+**Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
-**Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -65,6 +65,41 @@ HasCustomerEmail returns a boolean if a field has been set.
 `func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) UnsetCustomerEmail()`
 
 UnsetCustomerEmail ensures that no value is present for CustomerEmail, not even an explicit nil
+### GetReference
+
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) GetReference() interface{}`
+
+GetReference returns the Reference field if non-nil, zero value otherwise.
+
+### GetReferenceOk
+
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool)`
+
+GetReferenceOk returns a tuple with the Reference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReference
+
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) SetReference(v interface{})`
+
+SetReference sets Reference field to given value.
+
+### HasReference
+
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) HasReference() bool`
+
+HasReference returns a boolean if a field has been set.
+
+### SetReferenceNil
+
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) SetReferenceNil(b bool)`
+
+ SetReferenceNil sets the value for Reference to be an explicit nil
+
+### UnsetReference
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) UnsetReference()`
+
+UnsetReference ensures that no value is present for Reference, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) GetCreatedAt() interface{}`
@@ -135,41 +170,6 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetReference
-
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) GetReference() interface{}`
-
-GetReference returns the Reference field if non-nil, zero value otherwise.
-
-### GetReferenceOk
-
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool)`
-
-GetReferenceOk returns a tuple with the Reference field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReference
-
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) SetReference(v interface{})`
-
-SetReference sets Reference field to given value.
-
-### HasReference
-
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) HasReference() bool`
-
-HasReference returns a boolean if a field has been set.
-
-### SetReferenceNil
-
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) SetReferenceNil(b bool)`
-
- SetReferenceNil sets the value for Reference to be an explicit nil
-
-### UnsetReference
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) UnsetReference()`
-
-UnsetReference ensures that no value is present for Reference, not even an explicit nil
 ### GetReferenceOrigin
 
 `func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) GetReferenceOrigin() interface{}`

@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 **Topic** | Pointer to **interface{}** | The identifier of the resource/event that will trigger the webhook. | [optional] 
 **CallbackUrl** | Pointer to **interface{}** | URI where the webhook subscription should send the POST request when the event occurs. | [optional] 
 **IncludeResources** | Pointer to **interface{}** | List of related resources that should be included in the webhook body. | [optional] 
-**ResetCircuit** | Pointer to **interface{}** | Send this attribute if you want to reset the circuit breaker associated to this webhook to &#39;closed&#39; state and zero failures count. | [optional] 
+**Disable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as disabled. | [optional] 
+**Enable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as enabled. | [optional] 
+**ResetCircuit** | Pointer to **interface{}** | Send this attribute if you want to reset the circuit breaker associated to this resource to &#39;closed&#39; state and zero failures count. Cannot be passed by sales channels. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -172,6 +174,76 @@ HasIncludeResources returns a boolean if a field has been set.
 `func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) UnsetIncludeResources()`
 
 UnsetIncludeResources ensures that no value is present for IncludeResources, not even an explicit nil
+### GetDisable
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetDisable() interface{}`
+
+GetDisable returns the Disable field if non-nil, zero value otherwise.
+
+### GetDisableOk
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetDisableOk() (*interface{}, bool)`
+
+GetDisableOk returns a tuple with the Disable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisable
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetDisable(v interface{})`
+
+SetDisable sets Disable field to given value.
+
+### HasDisable
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasDisable() bool`
+
+HasDisable returns a boolean if a field has been set.
+
+### SetDisableNil
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetDisableNil(b bool)`
+
+ SetDisableNil sets the value for Disable to be an explicit nil
+
+### UnsetDisable
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) UnsetDisable()`
+
+UnsetDisable ensures that no value is present for Disable, not even an explicit nil
+### GetEnable
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetEnable() interface{}`
+
+GetEnable returns the Enable field if non-nil, zero value otherwise.
+
+### GetEnableOk
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetEnableOk() (*interface{}, bool)`
+
+GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnable
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetEnable(v interface{})`
+
+SetEnable sets Enable field to given value.
+
+### HasEnable
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasEnable() bool`
+
+HasEnable returns a boolean if a field has been set.
+
+### SetEnableNil
+
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetEnableNil(b bool)`
+
+ SetEnableNil sets the value for Enable to be an explicit nil
+
+### UnsetEnable
+`func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) UnsetEnable()`
+
+UnsetEnable ensures that no value is present for Enable, not even an explicit nil
 ### GetResetCircuit
 
 `func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetResetCircuit() interface{}`

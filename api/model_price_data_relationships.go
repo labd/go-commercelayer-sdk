@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,16 @@ var _ MappedNullable = &PriceDataRelationships{}
 
 // PriceDataRelationships struct for PriceDataRelationships
 type PriceDataRelationships struct {
-	PriceList           *MarketDataRelationshipsPriceList           `json:"price_list,omitempty"`
-	Sku                 *BundleDataRelationshipsSkus                `json:"sku,omitempty"`
-	PriceTiers          *PriceDataRelationshipsPriceTiers           `json:"price_tiers,omitempty"`
-	PriceVolumeTiers    *PriceDataRelationshipsPriceVolumeTiers     `json:"price_volume_tiers,omitempty"`
-	PriceFrequencyTiers *PriceDataRelationshipsPriceFrequencyTiers  `json:"price_frequency_tiers,omitempty"`
-	Attachments         *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	PriceList           *MarketDataRelationshipsPriceList               `json:"price_list,omitempty"`
+	Sku                 *BundleDataRelationshipsSkus                    `json:"sku,omitempty"`
+	PriceTiers          *PriceDataRelationshipsPriceTiers               `json:"price_tiers,omitempty"`
+	PriceVolumeTiers    *PriceDataRelationshipsPriceVolumeTiers         `json:"price_volume_tiers,omitempty"`
+	PriceFrequencyTiers *PriceDataRelationshipsPriceFrequencyTiers      `json:"price_frequency_tiers,omitempty"`
+	Attachments         *AuthorizationDataRelationshipsAttachments      `json:"attachments,omitempty"`
+	Versions            *AddressDataRelationshipsVersions               `json:"versions,omitempty"`
+	JwtCustomer         *CouponRecipientDataRelationshipsCustomer       `json:"jwt_customer,omitempty"`
+	JwtMarkets          *AvalaraAccountDataRelationshipsMarkets         `json:"jwt_markets,omitempty"`
+	JwtStockLocations   *DeliveryLeadTimeDataRelationshipsStockLocation `json:"jwt_stock_locations,omitempty"`
 }
 
 // NewPriceDataRelationships instantiates a new PriceDataRelationships object
@@ -206,9 +210,9 @@ func (o *PriceDataRelationships) SetPriceFrequencyTiers(v PriceDataRelationships
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *PriceDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *PriceDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -216,7 +220,7 @@ func (o *PriceDataRelationships) GetAttachments() AvalaraAccountDataRelationship
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *PriceDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -232,9 +236,137 @@ func (o *PriceDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *PriceDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *PriceDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *PriceDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *PriceDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *PriceDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
+// GetJwtCustomer returns the JwtCustomer field value if set, zero value otherwise.
+func (o *PriceDataRelationships) GetJwtCustomer() CouponRecipientDataRelationshipsCustomer {
+	if o == nil || IsNil(o.JwtCustomer) {
+		var ret CouponRecipientDataRelationshipsCustomer
+		return ret
+	}
+	return *o.JwtCustomer
+}
+
+// GetJwtCustomerOk returns a tuple with the JwtCustomer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceDataRelationships) GetJwtCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
+	if o == nil || IsNil(o.JwtCustomer) {
+		return nil, false
+	}
+	return o.JwtCustomer, true
+}
+
+// HasJwtCustomer returns a boolean if a field has been set.
+func (o *PriceDataRelationships) HasJwtCustomer() bool {
+	if o != nil && !IsNil(o.JwtCustomer) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtCustomer gets a reference to the given CouponRecipientDataRelationshipsCustomer and assigns it to the JwtCustomer field.
+func (o *PriceDataRelationships) SetJwtCustomer(v CouponRecipientDataRelationshipsCustomer) {
+	o.JwtCustomer = &v
+}
+
+// GetJwtMarkets returns the JwtMarkets field value if set, zero value otherwise.
+func (o *PriceDataRelationships) GetJwtMarkets() AvalaraAccountDataRelationshipsMarkets {
+	if o == nil || IsNil(o.JwtMarkets) {
+		var ret AvalaraAccountDataRelationshipsMarkets
+		return ret
+	}
+	return *o.JwtMarkets
+}
+
+// GetJwtMarketsOk returns a tuple with the JwtMarkets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceDataRelationships) GetJwtMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+	if o == nil || IsNil(o.JwtMarkets) {
+		return nil, false
+	}
+	return o.JwtMarkets, true
+}
+
+// HasJwtMarkets returns a boolean if a field has been set.
+func (o *PriceDataRelationships) HasJwtMarkets() bool {
+	if o != nil && !IsNil(o.JwtMarkets) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtMarkets gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the JwtMarkets field.
+func (o *PriceDataRelationships) SetJwtMarkets(v AvalaraAccountDataRelationshipsMarkets) {
+	o.JwtMarkets = &v
+}
+
+// GetJwtStockLocations returns the JwtStockLocations field value if set, zero value otherwise.
+func (o *PriceDataRelationships) GetJwtStockLocations() DeliveryLeadTimeDataRelationshipsStockLocation {
+	if o == nil || IsNil(o.JwtStockLocations) {
+		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		return ret
+	}
+	return *o.JwtStockLocations
+}
+
+// GetJwtStockLocationsOk returns a tuple with the JwtStockLocations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceDataRelationships) GetJwtStockLocationsOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+	if o == nil || IsNil(o.JwtStockLocations) {
+		return nil, false
+	}
+	return o.JwtStockLocations, true
+}
+
+// HasJwtStockLocations returns a boolean if a field has been set.
+func (o *PriceDataRelationships) HasJwtStockLocations() bool {
+	if o != nil && !IsNil(o.JwtStockLocations) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtStockLocations gets a reference to the given DeliveryLeadTimeDataRelationshipsStockLocation and assigns it to the JwtStockLocations field.
+func (o *PriceDataRelationships) SetJwtStockLocations(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+	o.JwtStockLocations = &v
 }
 
 func (o PriceDataRelationships) MarshalJSON() ([]byte, error) {
@@ -264,6 +396,18 @@ func (o PriceDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
+	}
+	if !IsNil(o.JwtCustomer) {
+		toSerialize["jwt_customer"] = o.JwtCustomer
+	}
+	if !IsNil(o.JwtMarkets) {
+		toSerialize["jwt_markets"] = o.JwtMarkets
+	}
+	if !IsNil(o.JwtStockLocations) {
+		toSerialize["jwt_stock_locations"] = o.JwtStockLocations
 	}
 	return toSerialize, nil
 }

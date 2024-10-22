@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Customer** | Pointer to [**CouponRecipientCreateDataRelationshipsCustomer**](CouponRecipientCreateDataRelationshipsCustomer.md) |  | [optional] 
+**PaymentMethod** | Pointer to [**CustomerPaymentSourceCreateDataRelationshipsPaymentMethod**](CustomerPaymentSourceCreateDataRelationshipsPaymentMethod.md) |  | [optional] 
 **PaymentSource** | Pointer to [**CustomerPaymentSourceCreateDataRelationshipsPaymentSource**](CustomerPaymentSourceCreateDataRelationshipsPaymentSource.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetCustomer sets Customer field to given value.
 `func (o *CustomerPaymentSourceUpdateDataRelationships) HasCustomer() bool`
 
 HasCustomer returns a boolean if a field has been set.
+
+### GetPaymentMethod
+
+`func (o *CustomerPaymentSourceUpdateDataRelationships) GetPaymentMethod() CustomerPaymentSourceCreateDataRelationshipsPaymentMethod`
+
+GetPaymentMethod returns the PaymentMethod field if non-nil, zero value otherwise.
+
+### GetPaymentMethodOk
+
+`func (o *CustomerPaymentSourceUpdateDataRelationships) GetPaymentMethodOk() (*CustomerPaymentSourceCreateDataRelationshipsPaymentMethod, bool)`
+
+GetPaymentMethodOk returns a tuple with the PaymentMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentMethod
+
+`func (o *CustomerPaymentSourceUpdateDataRelationships) SetPaymentMethod(v CustomerPaymentSourceCreateDataRelationshipsPaymentMethod)`
+
+SetPaymentMethod sets PaymentMethod field to given value.
+
+### HasPaymentMethod
+
+`func (o *CustomerPaymentSourceUpdateDataRelationships) HasPaymentMethod() bool`
+
+HasPaymentMethod returns a boolean if a field has been set.
 
 ### GetPaymentSource
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,9 @@ var _ MappedNullable = &POSTBingGeocoders201ResponseDataRelationships{}
 
 // POSTBingGeocoders201ResponseDataRelationships struct for POSTBingGeocoders201ResponseDataRelationships
 type POSTBingGeocoders201ResponseDataRelationships struct {
-	Addresses   *POSTBingGeocoders201ResponseDataRelationshipsAddresses     `json:"addresses,omitempty"`
-	Attachments *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Markets     *POSTAvalaraAccounts201ResponseDataRelationshipsMarkets                  `json:"markets,omitempty"`
+	Addresses   *POSTBingGeocoders201ResponseDataRelationshipsAddresses                  `json:"addresses,omitempty"`
+	Attachments *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewPOSTBingGeocoders201ResponseDataRelationships instantiates a new POSTBingGeocoders201ResponseDataRelationships object
@@ -39,6 +40,38 @@ func NewPOSTBingGeocoders201ResponseDataRelationships() *POSTBingGeocoders201Res
 func NewPOSTBingGeocoders201ResponseDataRelationshipsWithDefaults() *POSTBingGeocoders201ResponseDataRelationships {
 	this := POSTBingGeocoders201ResponseDataRelationships{}
 	return &this
+}
+
+// GetMarkets returns the Markets field value if set, zero value otherwise.
+func (o *POSTBingGeocoders201ResponseDataRelationships) GetMarkets() POSTAvalaraAccounts201ResponseDataRelationshipsMarkets {
+	if o == nil || IsNil(o.Markets) {
+		var ret POSTAvalaraAccounts201ResponseDataRelationshipsMarkets
+		return ret
+	}
+	return *o.Markets
+}
+
+// GetMarketsOk returns a tuple with the Markets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTBingGeocoders201ResponseDataRelationships) GetMarketsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsMarkets, bool) {
+	if o == nil || IsNil(o.Markets) {
+		return nil, false
+	}
+	return o.Markets, true
+}
+
+// HasMarkets returns a boolean if a field has been set.
+func (o *POSTBingGeocoders201ResponseDataRelationships) HasMarkets() bool {
+	if o != nil && !IsNil(o.Markets) {
+		return true
+	}
+
+	return false
+}
+
+// SetMarkets gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsMarkets and assigns it to the Markets field.
+func (o *POSTBingGeocoders201ResponseDataRelationships) SetMarkets(v POSTAvalaraAccounts201ResponseDataRelationshipsMarkets) {
+	o.Markets = &v
 }
 
 // GetAddresses returns the Addresses field value if set, zero value otherwise.
@@ -74,9 +107,9 @@ func (o *POSTBingGeocoders201ResponseDataRelationships) SetAddresses(v POSTBingG
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTBingGeocoders201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTBingGeocoders201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -84,7 +117,7 @@ func (o *POSTBingGeocoders201ResponseDataRelationships) GetAttachments() POSTAva
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBingGeocoders201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTBingGeocoders201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -100,8 +133,8 @@ func (o *POSTBingGeocoders201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTBingGeocoders201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTBingGeocoders201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
@@ -115,6 +148,9 @@ func (o POSTBingGeocoders201ResponseDataRelationships) MarshalJSON() ([]byte, er
 
 func (o POSTBingGeocoders201ResponseDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Markets) {
+		toSerialize["markets"] = o.Markets
+	}
 	if !IsNil(o.Addresses) {
 		toSerialize["addresses"] = o.Addresses
 	}

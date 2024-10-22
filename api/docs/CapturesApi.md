@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GETCapturesCaptureId**](CapturesApi.md#GETCapturesCaptureId) | **Get** /captures/{captureId} | Retrieve a capture
 [**GETOrderIdCaptures**](CapturesApi.md#GETOrderIdCaptures) | **Get** /orders/{orderId}/captures | Retrieve the captures associated to the order
 [**GETRefundIdReferenceCapture**](CapturesApi.md#GETRefundIdReferenceCapture) | **Get** /refunds/{refundId}/reference_capture | Retrieve the reference capture associated to the refund
+[**GETReturnIdReferenceCapture**](CapturesApi.md#GETReturnIdReferenceCapture) | **Get** /returns/{returnId}/reference_capture | Retrieve the reference capture associated to the return
 [**PATCHCapturesCaptureId**](CapturesApi.md#PATCHCapturesCaptureId) | **Patch** /captures/{captureId} | Update a capture
 
 
@@ -324,6 +325,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETRefundIdReferenceCaptureRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETReturnIdReferenceCapture
+
+> GETReturnIdReferenceCapture(ctx, returnId).Execute()
+
+Retrieve the reference capture associated to the return
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    returnId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.CapturesApi.GETReturnIdReferenceCapture(context.Background(), returnId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETReturnIdReferenceCapture``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**returnId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETReturnIdReferenceCaptureRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

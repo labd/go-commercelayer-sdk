@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -23,6 +23,8 @@ type StockTransferUpdateDataRelationships struct {
 	Sku                      *InStockSubscriptionCreateDataRelationshipsSku        `json:"sku,omitempty"`
 	OriginStockLocation      *DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"origin_stock_location,omitempty"`
 	DestinationStockLocation *DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"destination_stock_location,omitempty"`
+	Shipment                 *ParcelCreateDataRelationshipsShipment                `json:"shipment,omitempty"`
+	LineItem                 *LineItemOptionCreateDataRelationshipsLineItem        `json:"line_item,omitempty"`
 }
 
 // NewStockTransferUpdateDataRelationships instantiates a new StockTransferUpdateDataRelationships object
@@ -138,6 +140,70 @@ func (o *StockTransferUpdateDataRelationships) SetDestinationStockLocation(v Del
 	o.DestinationStockLocation = &v
 }
 
+// GetShipment returns the Shipment field value if set, zero value otherwise.
+func (o *StockTransferUpdateDataRelationships) GetShipment() ParcelCreateDataRelationshipsShipment {
+	if o == nil || IsNil(o.Shipment) {
+		var ret ParcelCreateDataRelationshipsShipment
+		return ret
+	}
+	return *o.Shipment
+}
+
+// GetShipmentOk returns a tuple with the Shipment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StockTransferUpdateDataRelationships) GetShipmentOk() (*ParcelCreateDataRelationshipsShipment, bool) {
+	if o == nil || IsNil(o.Shipment) {
+		return nil, false
+	}
+	return o.Shipment, true
+}
+
+// HasShipment returns a boolean if a field has been set.
+func (o *StockTransferUpdateDataRelationships) HasShipment() bool {
+	if o != nil && !IsNil(o.Shipment) {
+		return true
+	}
+
+	return false
+}
+
+// SetShipment gets a reference to the given ParcelCreateDataRelationshipsShipment and assigns it to the Shipment field.
+func (o *StockTransferUpdateDataRelationships) SetShipment(v ParcelCreateDataRelationshipsShipment) {
+	o.Shipment = &v
+}
+
+// GetLineItem returns the LineItem field value if set, zero value otherwise.
+func (o *StockTransferUpdateDataRelationships) GetLineItem() LineItemOptionCreateDataRelationshipsLineItem {
+	if o == nil || IsNil(o.LineItem) {
+		var ret LineItemOptionCreateDataRelationshipsLineItem
+		return ret
+	}
+	return *o.LineItem
+}
+
+// GetLineItemOk returns a tuple with the LineItem field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StockTransferUpdateDataRelationships) GetLineItemOk() (*LineItemOptionCreateDataRelationshipsLineItem, bool) {
+	if o == nil || IsNil(o.LineItem) {
+		return nil, false
+	}
+	return o.LineItem, true
+}
+
+// HasLineItem returns a boolean if a field has been set.
+func (o *StockTransferUpdateDataRelationships) HasLineItem() bool {
+	if o != nil && !IsNil(o.LineItem) {
+		return true
+	}
+
+	return false
+}
+
+// SetLineItem gets a reference to the given LineItemOptionCreateDataRelationshipsLineItem and assigns it to the LineItem field.
+func (o *StockTransferUpdateDataRelationships) SetLineItem(v LineItemOptionCreateDataRelationshipsLineItem) {
+	o.LineItem = &v
+}
+
 func (o StockTransferUpdateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -156,6 +222,12 @@ func (o StockTransferUpdateDataRelationships) ToMap() (map[string]interface{}, e
 	}
 	if !IsNil(o.DestinationStockLocation) {
 		toSerialize["destination_stock_location"] = o.DestinationStockLocation
+	}
+	if !IsNil(o.Shipment) {
+		toSerialize["shipment"] = o.Shipment
+	}
+	if !IsNil(o.LineItem) {
+		toSerialize["line_item"] = o.LineItem
 	}
 	return toSerialize, nil
 }

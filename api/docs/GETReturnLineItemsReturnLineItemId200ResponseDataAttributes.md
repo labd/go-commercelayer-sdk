@@ -6,14 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
 **BundleCode** | Pointer to **interface{}** | The code of the associated bundle. | [optional] 
+**Quantity** | Pointer to **interface{}** | The return line item quantity. | [optional] 
 **Name** | Pointer to **interface{}** | The name of the line item. | [optional] 
-**Quantity** | Pointer to **interface{}** | The line item quantity. | [optional] 
+**ImageUrl** | Pointer to **interface{}** | The image_url of the associated line item. | [optional] 
+**TotalAmountCents** | Pointer to **interface{}** | Calculated as line item unit amount x returned quantity and applied discounts, if any. | [optional] 
+**TotalAmountFloat** | Pointer to **interface{}** | The return line item total amount, float. This can be useful to track the purchase on thrid party systems, e.g Google Analyitcs Enhanced Ecommerce. | [optional] 
+**FormattedTotalAmount** | Pointer to **interface{}** | The return line item total amount, formatted. This can be useful to display the amount with currency in you views. | [optional] 
 **ReturnReason** | Pointer to **interface{}** | Set of key-value pairs that you can use to add details about return reason. | [optional] 
 **RestockedAt** | Pointer to **interface{}** | Time at which the return line item was restocked. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -105,41 +109,6 @@ HasBundleCode returns a boolean if a field has been set.
 `func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) UnsetBundleCode()`
 
 UnsetBundleCode ensures that no value is present for BundleCode, not even an explicit nil
-### GetName
-
-`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetName() interface{}`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetNameOk() (*interface{}, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetName(v interface{})`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### SetNameNil
-
-`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetQuantity
 
 `func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetQuantity() interface{}`
@@ -175,6 +144,181 @@ HasQuantity returns a boolean if a field has been set.
 `func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) UnsetQuantity()`
 
 UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+### GetName
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetName() interface{}`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetNameOk() (*interface{}, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetName(v interface{})`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### SetNameNil
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetImageUrl
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetImageUrl() interface{}`
+
+GetImageUrl returns the ImageUrl field if non-nil, zero value otherwise.
+
+### GetImageUrlOk
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool)`
+
+GetImageUrlOk returns a tuple with the ImageUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImageUrl
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetImageUrl(v interface{})`
+
+SetImageUrl sets ImageUrl field to given value.
+
+### HasImageUrl
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasImageUrl() bool`
+
+HasImageUrl returns a boolean if a field has been set.
+
+### SetImageUrlNil
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetImageUrlNil(b bool)`
+
+ SetImageUrlNil sets the value for ImageUrl to be an explicit nil
+
+### UnsetImageUrl
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) UnsetImageUrl()`
+
+UnsetImageUrl ensures that no value is present for ImageUrl, not even an explicit nil
+### GetTotalAmountCents
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetTotalAmountCents() interface{}`
+
+GetTotalAmountCents returns the TotalAmountCents field if non-nil, zero value otherwise.
+
+### GetTotalAmountCentsOk
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetTotalAmountCentsOk() (*interface{}, bool)`
+
+GetTotalAmountCentsOk returns a tuple with the TotalAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalAmountCents
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetTotalAmountCents(v interface{})`
+
+SetTotalAmountCents sets TotalAmountCents field to given value.
+
+### HasTotalAmountCents
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasTotalAmountCents() bool`
+
+HasTotalAmountCents returns a boolean if a field has been set.
+
+### SetTotalAmountCentsNil
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetTotalAmountCentsNil(b bool)`
+
+ SetTotalAmountCentsNil sets the value for TotalAmountCents to be an explicit nil
+
+### UnsetTotalAmountCents
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) UnsetTotalAmountCents()`
+
+UnsetTotalAmountCents ensures that no value is present for TotalAmountCents, not even an explicit nil
+### GetTotalAmountFloat
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetTotalAmountFloat() interface{}`
+
+GetTotalAmountFloat returns the TotalAmountFloat field if non-nil, zero value otherwise.
+
+### GetTotalAmountFloatOk
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetTotalAmountFloatOk() (*interface{}, bool)`
+
+GetTotalAmountFloatOk returns a tuple with the TotalAmountFloat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalAmountFloat
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetTotalAmountFloat(v interface{})`
+
+SetTotalAmountFloat sets TotalAmountFloat field to given value.
+
+### HasTotalAmountFloat
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasTotalAmountFloat() bool`
+
+HasTotalAmountFloat returns a boolean if a field has been set.
+
+### SetTotalAmountFloatNil
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetTotalAmountFloatNil(b bool)`
+
+ SetTotalAmountFloatNil sets the value for TotalAmountFloat to be an explicit nil
+
+### UnsetTotalAmountFloat
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) UnsetTotalAmountFloat()`
+
+UnsetTotalAmountFloat ensures that no value is present for TotalAmountFloat, not even an explicit nil
+### GetFormattedTotalAmount
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetFormattedTotalAmount() interface{}`
+
+GetFormattedTotalAmount returns the FormattedTotalAmount field if non-nil, zero value otherwise.
+
+### GetFormattedTotalAmountOk
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetFormattedTotalAmountOk() (*interface{}, bool)`
+
+GetFormattedTotalAmountOk returns a tuple with the FormattedTotalAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormattedTotalAmount
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetFormattedTotalAmount(v interface{})`
+
+SetFormattedTotalAmount sets FormattedTotalAmount field to given value.
+
+### HasFormattedTotalAmount
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasFormattedTotalAmount() bool`
+
+HasFormattedTotalAmount returns a boolean if a field has been set.
+
+### SetFormattedTotalAmountNil
+
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetFormattedTotalAmountNil(b bool)`
+
+ SetFormattedTotalAmountNil sets the value for FormattedTotalAmount to be an explicit nil
+
+### UnsetFormattedTotalAmount
+`func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) UnsetFormattedTotalAmount()`
+
+UnsetFormattedTotalAmount ensures that no value is present for FormattedTotalAmount, not even an explicit nil
 ### GetReturnReason
 
 `func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetReturnReason() interface{}`

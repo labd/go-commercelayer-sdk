@@ -5,8 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Price** | Pointer to [**PriceFrequencyTierDataRelationshipsPrice**](PriceFrequencyTierDataRelationshipsPrice.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -54,20 +55,20 @@ HasPrice returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *PriceFrequencyTierDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *PriceFrequencyTierDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *PriceFrequencyTierDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *PriceFrequencyTierDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *PriceFrequencyTierDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *PriceFrequencyTierDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -77,22 +78,47 @@ SetAttachments sets Attachments field to given value.
 
 HasAttachments returns a boolean if a field has been set.
 
+### GetVersions
+
+`func (o *PriceFrequencyTierDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *PriceFrequencyTierDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *PriceFrequencyTierDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *PriceFrequencyTierDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
+
 ### GetEvents
 
-`func (o *PriceFrequencyTierDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *PriceFrequencyTierDataRelationships) GetEvents() AddressDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *PriceFrequencyTierDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *PriceFrequencyTierDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *PriceFrequencyTierDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *PriceFrequencyTierDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

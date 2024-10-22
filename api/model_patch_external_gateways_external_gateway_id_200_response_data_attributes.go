@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -24,7 +24,7 @@ type PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes struct {
 	Name interface{} `json:"name,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -38,6 +38,8 @@ type PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes struct {
 	RefundUrl interface{} `json:"refund_url,omitempty"`
 	// The endpoint used by the external gateway to create a customer payment token.
 	TokenUrl interface{} `json:"token_url,omitempty"`
+	// Send this attribute if you want to reset the circuit breaker associated to this resource to 'closed' state and zero failures count. Cannot be passed by sales channels.
+	ResetCircuit interface{} `json:"_reset_circuit,omitempty"`
 }
 
 // NewPATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes instantiates a new PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes object
@@ -354,6 +356,39 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetTok
 	o.TokenUrl = v
 }
 
+// GetResetCircuit returns the ResetCircuit field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetResetCircuit() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ResetCircuit
+}
+
+// GetResetCircuitOk returns a tuple with the ResetCircuit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetResetCircuitOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ResetCircuit) {
+		return nil, false
+	}
+	return &o.ResetCircuit, true
+}
+
+// HasResetCircuit returns a boolean if a field has been set.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasResetCircuit() bool {
+	if o != nil && IsNil(o.ResetCircuit) {
+		return true
+	}
+
+	return false
+}
+
+// SetResetCircuit gets a reference to the given interface{} and assigns it to the ResetCircuit field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetResetCircuit(v interface{}) {
+	o.ResetCircuit = v
+}
+
 func (o PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -390,6 +425,9 @@ func (o PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) ToMap()
 	}
 	if o.TokenUrl != nil {
 		toSerialize["token_url"] = o.TokenUrl
+	}
+	if o.ResetCircuit != nil {
+		toSerialize["_reset_circuit"] = o.ResetCircuit
 	}
 	return toSerialize, nil
 }

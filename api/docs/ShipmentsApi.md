@@ -4,6 +4,7 @@ All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**DELETEShipmentsShipmentId**](ShipmentsApi.md#DELETEShipmentsShipmentId) | **Delete** /shipments/{shipmentId} | Delete a shipment
 [**GETOrderIdShipments**](ShipmentsApi.md#GETOrderIdShipments) | **Get** /orders/{orderId}/shipments | Retrieve the shipments associated to the order
 [**GETParcelIdShipment**](ShipmentsApi.md#GETParcelIdShipment) | **Get** /parcels/{parcelId}/shipment | Retrieve the shipment associated to the parcel
 [**GETShipments**](ShipmentsApi.md#GETShipments) | **Get** /shipments | List all shipments
@@ -11,7 +12,76 @@ Method | HTTP request | Description
 [**GETStockLineItemIdShipment**](ShipmentsApi.md#GETStockLineItemIdShipment) | **Get** /stock_line_items/{stockLineItemId}/shipment | Retrieve the shipment associated to the stock line item
 [**GETStockTransferIdShipment**](ShipmentsApi.md#GETStockTransferIdShipment) | **Get** /stock_transfers/{stockTransferId}/shipment | Retrieve the shipment associated to the stock transfer
 [**PATCHShipmentsShipmentId**](ShipmentsApi.md#PATCHShipmentsShipmentId) | **Patch** /shipments/{shipmentId} | Update a shipment
+[**POSTShipments**](ShipmentsApi.md#POSTShipments) | **Post** /shipments | Create a shipment
 
+
+
+## DELETEShipmentsShipmentId
+
+> DELETEShipmentsShipmentId(ctx, shipmentId).Execute()
+
+Delete a shipment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    shipmentId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.ShipmentsApi.DELETEShipmentsShipmentId(context.Background(), shipmentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.DELETEShipmentsShipmentId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDELETEShipmentsShipmentIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GETOrderIdShipments
@@ -474,6 +544,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PATCHShipmentsShipmentId200Response**](PATCHShipmentsShipmentId200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/vnd.api+json
+- **Accept**: application/vnd.api+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## POSTShipments
+
+> POSTShipments201Response POSTShipments(ctx).ShipmentCreate(shipmentCreate).Execute()
+
+Create a shipment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    shipmentCreate := *openapiclient.NewShipmentCreate(*openapiclient.NewShipmentCreateData(interface{}(123), *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ShipmentCreate | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ShipmentsApi.POSTShipments(context.Background()).ShipmentCreate(shipmentCreate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.POSTShipments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `POSTShipments`: POSTShipments201Response
+    fmt.Fprintf(os.Stdout, "Response from `ShipmentsApi.POSTShipments`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPOSTShipmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **shipmentCreate** | [**ShipmentCreate**](ShipmentCreate.md) |  | 
+
+### Return type
+
+[**POSTShipments201Response**](POSTShipments201Response.md)
 
 ### Authorization
 

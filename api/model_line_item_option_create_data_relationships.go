@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,7 @@ var _ MappedNullable = &LineItemOptionCreateDataRelationships{}
 type LineItemOptionCreateDataRelationships struct {
 	LineItem  LineItemOptionCreateDataRelationshipsLineItem  `json:"line_item"`
 	SkuOption LineItemOptionCreateDataRelationshipsSkuOption `json:"sku_option"`
+	Tags      *AddressCreateDataRelationshipsTags            `json:"tags,omitempty"`
 }
 
 // NewLineItemOptionCreateDataRelationships instantiates a new LineItemOptionCreateDataRelationships object
@@ -91,6 +92,38 @@ func (o *LineItemOptionCreateDataRelationships) SetSkuOption(v LineItemOptionCre
 	o.SkuOption = v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *LineItemOptionCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemOptionCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *LineItemOptionCreateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *LineItemOptionCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o LineItemOptionCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -103,6 +136,9 @@ func (o LineItemOptionCreateDataRelationships) ToMap() (map[string]interface{}, 
 	toSerialize := map[string]interface{}{}
 	toSerialize["line_item"] = o.LineItem
 	toSerialize["sku_option"] = o.SkuOption
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
 	return toSerialize, nil
 }
 

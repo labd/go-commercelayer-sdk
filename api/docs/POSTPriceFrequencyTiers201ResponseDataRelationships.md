@@ -5,8 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Price** | Pointer to [**POSTPriceFrequencyTiers201ResponseDataRelationshipsPrice**](POSTPriceFrequencyTiers201ResponseDataRelationshipsPrice.md) |  | [optional] 
-**Attachments** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsAttachments**](POSTAvalaraAccounts201ResponseDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
+**Events** | Pointer to [**POSTAddresses201ResponseDataRelationshipsEvents**](POSTAddresses201ResponseDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -54,20 +55,20 @@ HasPrice returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments`
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool)`
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments)`
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -77,22 +78,47 @@ SetAttachments sets Attachments field to given value.
 
 HasAttachments returns a boolean if a field has been set.
 
+### GetVersions
+
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
+
 ### GetEvents
 
-`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents`
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool)`
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents)`
+`func (o *POSTPriceFrequencyTiers201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

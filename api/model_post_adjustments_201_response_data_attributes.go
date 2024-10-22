@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,15 +20,17 @@ var _ MappedNullable = &POSTAdjustments201ResponseDataAttributes{}
 
 // POSTAdjustments201ResponseDataAttributes struct for POSTAdjustments201ResponseDataAttributes
 type POSTAdjustments201ResponseDataAttributes struct {
-	// The adjustment name
+	// The adjustment name.
 	Name interface{} `json:"name"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode interface{} `json:"currency_code"`
 	// The adjustment amount, in cents.
 	AmountCents interface{} `json:"amount_cents"`
+	// Indicates if negative adjustment amount is distributed for tax calculation.
+	DistributeDiscount interface{} `json:"distribute_discount,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -130,6 +132,39 @@ func (o *POSTAdjustments201ResponseDataAttributes) GetAmountCentsOk() (*interfac
 // SetAmountCents sets field value
 func (o *POSTAdjustments201ResponseDataAttributes) SetAmountCents(v interface{}) {
 	o.AmountCents = v
+}
+
+// GetDistributeDiscount returns the DistributeDiscount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTAdjustments201ResponseDataAttributes) GetDistributeDiscount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DistributeDiscount
+}
+
+// GetDistributeDiscountOk returns a tuple with the DistributeDiscount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAdjustments201ResponseDataAttributes) GetDistributeDiscountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DistributeDiscount) {
+		return nil, false
+	}
+	return &o.DistributeDiscount, true
+}
+
+// HasDistributeDiscount returns a boolean if a field has been set.
+func (o *POSTAdjustments201ResponseDataAttributes) HasDistributeDiscount() bool {
+	if o != nil && IsNil(o.DistributeDiscount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDistributeDiscount gets a reference to the given interface{} and assigns it to the DistributeDiscount field.
+func (o *POSTAdjustments201ResponseDataAttributes) SetDistributeDiscount(v interface{}) {
+	o.DistributeDiscount = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -249,6 +284,9 @@ func (o POSTAdjustments201ResponseDataAttributes) ToMap() (map[string]interface{
 	}
 	if o.AmountCents != nil {
 		toSerialize["amount_cents"] = o.AmountCents
+	}
+	if o.DistributeDiscount != nil {
+		toSerialize["distribute_discount"] = o.DistributeDiscount
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

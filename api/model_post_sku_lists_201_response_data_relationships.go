@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,11 +20,13 @@ var _ MappedNullable = &POSTSkuLists201ResponseDataRelationships{}
 
 // POSTSkuLists201ResponseDataRelationships struct for POSTSkuLists201ResponseDataRelationships
 type POSTSkuLists201ResponseDataRelationships struct {
-	Customer     *POSTCouponRecipients201ResponseDataRelationshipsCustomer   `json:"customer,omitempty"`
-	Skus         *POSTBundles201ResponseDataRelationshipsSkus                `json:"skus,omitempty"`
-	SkuListItems *POSTSkuLists201ResponseDataRelationshipsSkuListItems       `json:"sku_list_items,omitempty"`
-	Bundles      *POSTSkuLists201ResponseDataRelationshipsBundles            `json:"bundles,omitempty"`
-	Attachments  *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Customer     *POSTCouponRecipients201ResponseDataRelationshipsCustomer                `json:"customer,omitempty"`
+	Skus         *POSTBundles201ResponseDataRelationshipsSkus                             `json:"skus,omitempty"`
+	SkuListItems *POSTSkuLists201ResponseDataRelationshipsSkuListItems                    `json:"sku_list_items,omitempty"`
+	Bundles      *POSTSkuLists201ResponseDataRelationshipsBundles                         `json:"bundles,omitempty"`
+	Attachments  *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Links        *POSTOrders201ResponseDataRelationshipsLinks                             `json:"links,omitempty"`
+	Versions     *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewPOSTSkuLists201ResponseDataRelationships instantiates a new POSTSkuLists201ResponseDataRelationships object
@@ -173,9 +175,9 @@ func (o *POSTSkuLists201ResponseDataRelationships) SetBundles(v POSTSkuLists201R
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTSkuLists201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTSkuLists201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -183,7 +185,7 @@ func (o *POSTSkuLists201ResponseDataRelationships) GetAttachments() POSTAvalaraA
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkuLists201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTSkuLists201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -199,9 +201,73 @@ func (o *POSTSkuLists201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTSkuLists201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTSkuLists201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetLinks returns the Links field value if set, zero value otherwise.
+func (o *POSTSkuLists201ResponseDataRelationships) GetLinks() POSTOrders201ResponseDataRelationshipsLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTOrders201ResponseDataRelationshipsLinks
+		return ret
+	}
+	return *o.Links
+}
+
+// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkuLists201ResponseDataRelationships) GetLinksOk() (*POSTOrders201ResponseDataRelationshipsLinks, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
+	}
+	return o.Links, true
+}
+
+// HasLinks returns a boolean if a field has been set.
+func (o *POSTSkuLists201ResponseDataRelationships) HasLinks() bool {
+	if o != nil && !IsNil(o.Links) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinks gets a reference to the given POSTOrders201ResponseDataRelationshipsLinks and assigns it to the Links field.
+func (o *POSTSkuLists201ResponseDataRelationships) SetLinks(v POSTOrders201ResponseDataRelationshipsLinks) {
+	o.Links = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTSkuLists201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkuLists201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTSkuLists201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTSkuLists201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTSkuLists201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -228,6 +294,12 @@ func (o POSTSkuLists201ResponseDataRelationships) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Links) {
+		toSerialize["links"] = o.Links
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

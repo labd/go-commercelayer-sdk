@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,13 @@ var _ MappedNullable = &BundleDataRelationships{}
 
 // BundleDataRelationships struct for BundleDataRelationships
 type BundleDataRelationships struct {
-	Market      *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
-	SkuList     *BundleDataRelationshipsSkuList             `json:"sku_list,omitempty"`
-	Skus        *BundleDataRelationshipsSkus                `json:"skus,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Market      *AvalaraAccountDataRelationshipsMarkets    `json:"market,omitempty"`
+	SkuList     *BundleDataRelationshipsSkuList            `json:"sku_list,omitempty"`
+	Skus        *BundleDataRelationshipsSkus               `json:"skus,omitempty"`
+	Attachments *AuthorizationDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Events      *AddressDataRelationshipsEvents            `json:"events,omitempty"`
+	Tags        *AddressDataRelationshipsTags              `json:"tags,omitempty"`
+	Versions    *AddressDataRelationshipsVersions          `json:"versions,omitempty"`
 }
 
 // NewBundleDataRelationships instantiates a new BundleDataRelationships object
@@ -140,9 +143,9 @@ func (o *BundleDataRelationships) SetSkus(v BundleDataRelationshipsSkus) {
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *BundleDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *BundleDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -150,7 +153,7 @@ func (o *BundleDataRelationships) GetAttachments() AvalaraAccountDataRelationshi
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BundleDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *BundleDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -166,9 +169,105 @@ func (o *BundleDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *BundleDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *BundleDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *BundleDataRelationships) GetEvents() AddressDataRelationshipsEvents {
+	if o == nil || IsNil(o.Events) {
+		var ret AddressDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BundleDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
+	if o == nil || IsNil(o.Events) {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *BundleDataRelationships) HasEvents() bool {
+	if o != nil && !IsNil(o.Events) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *BundleDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
+	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *BundleDataRelationships) GetTags() AddressDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BundleDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *BundleDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressDataRelationshipsTags and assigns it to the Tags field.
+func (o *BundleDataRelationships) SetTags(v AddressDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *BundleDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BundleDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *BundleDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *BundleDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o BundleDataRelationships) MarshalJSON() ([]byte, error) {
@@ -192,6 +291,15 @@ func (o BundleDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

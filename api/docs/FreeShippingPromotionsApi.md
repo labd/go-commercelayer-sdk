@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    freeShippingPromotionCreate := *openapiclient.NewFreeShippingPromotionCreate(*openapiclient.NewFreeShippingPromotionCreateData(interface{}(123), *openapiclient.NewPOSTFreeShippingPromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5)))) // FreeShippingPromotionCreate | 
+    freeShippingPromotionCreate := *openapiclient.NewFreeShippingPromotionCreate(*openapiclient.NewFreeShippingPromotionCreateData(interface{}(123), *openapiclient.NewPOSTFreeShippingPromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z)))) // FreeShippingPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

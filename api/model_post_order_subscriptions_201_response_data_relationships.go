@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -27,10 +27,11 @@ type POSTOrderSubscriptions201ResponseDataRelationships struct {
 	CustomerPaymentSource  *POSTOrderSubscriptions201ResponseDataRelationshipsCustomerPaymentSource  `json:"customer_payment_source,omitempty"`
 	OrderSubscriptionItems *POSTOrderSubscriptions201ResponseDataRelationshipsOrderSubscriptionItems `json:"order_subscription_items,omitempty"`
 	OrderFactories         *POSTOrderSubscriptions201ResponseDataRelationshipsOrderFactories         `json:"order_factories,omitempty"`
-	OrderCopies            *POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies            `json:"order_copies,omitempty"`
 	RecurringOrderCopies   *POSTOrderSubscriptions201ResponseDataRelationshipsRecurringOrderCopies   `json:"recurring_order_copies,omitempty"`
 	Orders                 *POSTCustomers201ResponseDataRelationshipsOrders                          `json:"orders,omitempty"`
-	Events                 *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents       `json:"events,omitempty"`
+	Events                 *POSTAddresses201ResponseDataRelationshipsEvents                          `json:"events,omitempty"`
+	Tags                   *POSTAddresses201ResponseDataRelationshipsTags                            `json:"tags,omitempty"`
+	Versions               *POSTAddresses201ResponseDataRelationshipsVersions                        `json:"versions,omitempty"`
 }
 
 // NewPOSTOrderSubscriptions201ResponseDataRelationships instantiates a new POSTOrderSubscriptions201ResponseDataRelationships object
@@ -274,38 +275,6 @@ func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetOrderFactories(v
 	o.OrderFactories = &v
 }
 
-// GetOrderCopies returns the OrderCopies field value if set, zero value otherwise.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetOrderCopies() POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies {
-	if o == nil || IsNil(o.OrderCopies) {
-		var ret POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies
-		return ret
-	}
-	return *o.OrderCopies
-}
-
-// GetOrderCopiesOk returns a tuple with the OrderCopies field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetOrderCopiesOk() (*POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies, bool) {
-	if o == nil || IsNil(o.OrderCopies) {
-		return nil, false
-	}
-	return o.OrderCopies, true
-}
-
-// HasOrderCopies returns a boolean if a field has been set.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) HasOrderCopies() bool {
-	if o != nil && !IsNil(o.OrderCopies) {
-		return true
-	}
-
-	return false
-}
-
-// SetOrderCopies gets a reference to the given POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies and assigns it to the OrderCopies field.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetOrderCopies(v POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies) {
-	o.OrderCopies = &v
-}
-
 // GetRecurringOrderCopies returns the RecurringOrderCopies field value if set, zero value otherwise.
 func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetRecurringOrderCopies() POSTOrderSubscriptions201ResponseDataRelationshipsRecurringOrderCopies {
 	if o == nil || IsNil(o.RecurringOrderCopies) {
@@ -371,9 +340,9 @@ func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetOrders(v POSTCus
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents {
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -381,7 +350,7 @@ func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetEvents() GETAuth
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool) {
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -397,9 +366,73 @@ func (o *POSTOrderSubscriptions201ResponseDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents and assigns it to the Events field.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents) {
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetTags() POSTAddresses201ResponseDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret POSTAddresses201ResponseDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetTagsOk() (*POSTAddresses201ResponseDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given POSTAddresses201ResponseDataRelationshipsTags and assigns it to the Tags field.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetTags(v POSTAddresses201ResponseDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTOrderSubscriptions201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -433,9 +466,6 @@ func (o POSTOrderSubscriptions201ResponseDataRelationships) ToMap() (map[string]
 	if !IsNil(o.OrderFactories) {
 		toSerialize["order_factories"] = o.OrderFactories
 	}
-	if !IsNil(o.OrderCopies) {
-		toSerialize["order_copies"] = o.OrderCopies
-	}
 	if !IsNil(o.RecurringOrderCopies) {
 		toSerialize["recurring_order_copies"] = o.RecurringOrderCopies
 	}
@@ -444,6 +474,12 @@ func (o POSTOrderSubscriptions201ResponseDataRelationships) ToMap() (map[string]
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

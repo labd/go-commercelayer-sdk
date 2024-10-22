@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,15 +20,15 @@ var _ MappedNullable = &TaxCategoryCreateDataRelationships{}
 
 // TaxCategoryCreateDataRelationships struct for TaxCategoryCreateDataRelationships
 type TaxCategoryCreateDataRelationships struct {
-	Sku           InStockSubscriptionCreateDataRelationshipsSku   `json:"sku"`
-	TaxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator `json:"tax_calculator"`
+	Sku           InStockSubscriptionCreateDataRelationshipsSku `json:"sku"`
+	TaxCalculator MarketCreateDataRelationshipsTaxCalculator    `json:"tax_calculator"`
 }
 
 // NewTaxCategoryCreateDataRelationships instantiates a new TaxCategoryCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, taxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator) *TaxCategoryCreateDataRelationships {
+func NewTaxCategoryCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, taxCalculator MarketCreateDataRelationshipsTaxCalculator) *TaxCategoryCreateDataRelationships {
 	this := TaxCategoryCreateDataRelationships{}
 	this.Sku = sku
 	this.TaxCalculator = taxCalculator
@@ -68,9 +68,9 @@ func (o *TaxCategoryCreateDataRelationships) SetSku(v InStockSubscriptionCreateD
 }
 
 // GetTaxCalculator returns the TaxCalculator field value
-func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() TaxCategoryCreateDataRelationshipsTaxCalculator {
+func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() MarketCreateDataRelationshipsTaxCalculator {
 	if o == nil {
-		var ret TaxCategoryCreateDataRelationshipsTaxCalculator
+		var ret MarketCreateDataRelationshipsTaxCalculator
 		return ret
 	}
 
@@ -79,7 +79,7 @@ func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() TaxCategoryCreat
 
 // GetTaxCalculatorOk returns a tuple with the TaxCalculator field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*TaxCategoryCreateDataRelationshipsTaxCalculator, bool) {
+func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*MarketCreateDataRelationshipsTaxCalculator, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -87,7 +87,7 @@ func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*TaxCategoryC
 }
 
 // SetTaxCalculator sets field value
-func (o *TaxCategoryCreateDataRelationships) SetTaxCalculator(v TaxCategoryCreateDataRelationshipsTaxCalculator) {
+func (o *TaxCategoryCreateDataRelationships) SetTaxCalculator(v MarketCreateDataRelationshipsTaxCalculator) {
 	o.TaxCalculator = v
 }
 

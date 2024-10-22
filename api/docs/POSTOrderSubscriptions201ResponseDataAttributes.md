@@ -6,11 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Frequency** | **interface{}** | The frequency of the subscription. Use one of the supported within &#39;hourly&#39;, &#39;daily&#39;, &#39;weekly&#39;, &#39;monthly&#39;, &#39;two-month&#39;, &#39;three-month&#39;, &#39;four-month&#39;, &#39;six-month&#39;, &#39;yearly&#39;, or provide your custom crontab expression (min unit is hour). Must be supported by existing associated subscription_model. | 
 **ActivateBySourceOrder** | Pointer to **interface{}** | Indicates if the subscription will be activated considering the placed source order as its first run. | [optional] 
+**PlaceTargetOrder** | Pointer to **interface{}** | Indicates if the subscription created orders are automatically placed at the end of the copy. | [optional] 
+**RenewalAlertPeriod** | Pointer to **interface{}** | Indicates the number of hours the renewal alert will be triggered before the subscription next run. Must be included between 1 and 720 hours. | [optional] 
 **StartsAt** | Pointer to **interface{}** | The activation date/time of this subscription. | [optional] 
 **ExpiresAt** | Pointer to **interface{}** | The expiration date/time of this subscription (must be after starts_at). | [optional] 
-**Options** | Pointer to **interface{}** | The subscription options used to create the order (check order_factories for more information). For subscriptions the &#x60;place_target_order&#x60; is enabled by default, specify custom options to overwrite it. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -97,6 +98,76 @@ HasActivateBySourceOrder returns a boolean if a field has been set.
 `func (o *POSTOrderSubscriptions201ResponseDataAttributes) UnsetActivateBySourceOrder()`
 
 UnsetActivateBySourceOrder ensures that no value is present for ActivateBySourceOrder, not even an explicit nil
+### GetPlaceTargetOrder
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetPlaceTargetOrder() interface{}`
+
+GetPlaceTargetOrder returns the PlaceTargetOrder field if non-nil, zero value otherwise.
+
+### GetPlaceTargetOrderOk
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetPlaceTargetOrderOk() (*interface{}, bool)`
+
+GetPlaceTargetOrderOk returns a tuple with the PlaceTargetOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlaceTargetOrder
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetPlaceTargetOrder(v interface{})`
+
+SetPlaceTargetOrder sets PlaceTargetOrder field to given value.
+
+### HasPlaceTargetOrder
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasPlaceTargetOrder() bool`
+
+HasPlaceTargetOrder returns a boolean if a field has been set.
+
+### SetPlaceTargetOrderNil
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetPlaceTargetOrderNil(b bool)`
+
+ SetPlaceTargetOrderNil sets the value for PlaceTargetOrder to be an explicit nil
+
+### UnsetPlaceTargetOrder
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) UnsetPlaceTargetOrder()`
+
+UnsetPlaceTargetOrder ensures that no value is present for PlaceTargetOrder, not even an explicit nil
+### GetRenewalAlertPeriod
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetRenewalAlertPeriod() interface{}`
+
+GetRenewalAlertPeriod returns the RenewalAlertPeriod field if non-nil, zero value otherwise.
+
+### GetRenewalAlertPeriodOk
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetRenewalAlertPeriodOk() (*interface{}, bool)`
+
+GetRenewalAlertPeriodOk returns a tuple with the RenewalAlertPeriod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRenewalAlertPeriod
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetRenewalAlertPeriod(v interface{})`
+
+SetRenewalAlertPeriod sets RenewalAlertPeriod field to given value.
+
+### HasRenewalAlertPeriod
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasRenewalAlertPeriod() bool`
+
+HasRenewalAlertPeriod returns a boolean if a field has been set.
+
+### SetRenewalAlertPeriodNil
+
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetRenewalAlertPeriodNil(b bool)`
+
+ SetRenewalAlertPeriodNil sets the value for RenewalAlertPeriod to be an explicit nil
+
+### UnsetRenewalAlertPeriod
+`func (o *POSTOrderSubscriptions201ResponseDataAttributes) UnsetRenewalAlertPeriod()`
+
+UnsetRenewalAlertPeriod ensures that no value is present for RenewalAlertPeriod, not even an explicit nil
 ### GetStartsAt
 
 `func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetStartsAt() interface{}`
@@ -167,41 +238,6 @@ HasExpiresAt returns a boolean if a field has been set.
 `func (o *POSTOrderSubscriptions201ResponseDataAttributes) UnsetExpiresAt()`
 
 UnsetExpiresAt ensures that no value is present for ExpiresAt, not even an explicit nil
-### GetOptions
-
-`func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetOptions() interface{}`
-
-GetOptions returns the Options field if non-nil, zero value otherwise.
-
-### GetOptionsOk
-
-`func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetOptionsOk() (*interface{}, bool)`
-
-GetOptionsOk returns a tuple with the Options field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOptions
-
-`func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetOptions(v interface{})`
-
-SetOptions sets Options field to given value.
-
-### HasOptions
-
-`func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasOptions() bool`
-
-HasOptions returns a boolean if a field has been set.
-
-### SetOptionsNil
-
-`func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetOptionsNil(b bool)`
-
- SetOptionsNil sets the value for Options to be an explicit nil
-
-### UnsetOptions
-`func (o *POSTOrderSubscriptions201ResponseDataAttributes) UnsetOptions()`
-
-UnsetOptions ensures that no value is present for Options, not even an explicit nil
 ### GetReference
 
 `func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetReference() interface{}`

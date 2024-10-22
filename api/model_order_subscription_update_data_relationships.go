@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &OrderSubscriptionUpdateDataRelationships{}
 // OrderSubscriptionUpdateDataRelationships struct for OrderSubscriptionUpdateDataRelationships
 type OrderSubscriptionUpdateDataRelationships struct {
 	CustomerPaymentSource *OrderSubscriptionUpdateDataRelationshipsCustomerPaymentSource `json:"customer_payment_source,omitempty"`
+	Tags                  *AddressCreateDataRelationshipsTags                            `json:"tags,omitempty"`
 }
 
 // NewOrderSubscriptionUpdateDataRelationships instantiates a new OrderSubscriptionUpdateDataRelationships object
@@ -72,6 +73,38 @@ func (o *OrderSubscriptionUpdateDataRelationships) SetCustomerPaymentSource(v Or
 	o.CustomerPaymentSource = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *OrderSubscriptionUpdateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionUpdateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *OrderSubscriptionUpdateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *OrderSubscriptionUpdateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o OrderSubscriptionUpdateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -84,6 +117,9 @@ func (o OrderSubscriptionUpdateDataRelationships) ToMap() (map[string]interface{
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CustomerPaymentSource) {
 		toSerialize["customer_payment_source"] = o.CustomerPaymentSource
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

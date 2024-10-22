@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -41,7 +41,7 @@ var (
 	queryDescape    = strings.NewReplacer("%5B", "[", "%5D", "]")
 )
 
-// APIClient manages communication with the Commerce Layer API API v4.1.3
+// APIClient manages communication with the Commerce Layer API API v7.3.0
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -79,6 +79,8 @@ type APIClient struct {
 
 	BundlesApi *BundlesApiService
 
+	BuyXPayYPromotionsApi *BuyXPayYPromotionsApiService
+
 	CapturesApi *CapturesApiService
 
 	CarrierAccountsApi *CarrierAccountsApiService
@@ -94,6 +96,8 @@ type APIClient struct {
 	CouponRecipientsApi *CouponRecipientsApiService
 
 	CouponsApi *CouponsApiService
+
+	CustomPromotionRulesApi *CustomPromotionRulesApiService
 
 	CustomerAddressesApi *CustomerAddressesApiService
 
@@ -126,6 +130,8 @@ type APIClient struct {
 	FixedAmountPromotionsApi *FixedAmountPromotionsApiService
 
 	FixedPricePromotionsApi *FixedPricePromotionsApiService
+
+	FlexPromotionsApi *FlexPromotionsApiService
 
 	FreeGiftPromotionsApi *FreeGiftPromotionsApiService
 
@@ -161,6 +167,8 @@ type APIClient struct {
 
 	LineItemsApi *LineItemsApiService
 
+	LinksApi *LinksApiService
+
 	ManualGatewaysApi *ManualGatewaysApiService
 
 	ManualTaxCalculatorsApi *ManualTaxCalculatorsApiService
@@ -179,8 +187,6 @@ type APIClient struct {
 
 	OrderSubscriptionsApi *OrderSubscriptionsApiService
 
-	OrderValidationRulesApi *OrderValidationRulesApiService
-
 	OrdersApi *OrdersApiService
 
 	OrganizationApi *OrganizationApiService
@@ -195,6 +201,8 @@ type APIClient struct {
 
 	PaymentMethodsApi *PaymentMethodsApiService
 
+	PaymentOptionsApi *PaymentOptionsApiService
+
 	PaypalGatewaysApi *PaypalGatewaysApiService
 
 	PaypalPaymentsApi *PaypalPaymentsApiService
@@ -202,6 +210,8 @@ type APIClient struct {
 	PercentageDiscountPromotionsApi *PercentageDiscountPromotionsApiService
 
 	PriceFrequencyTiersApi *PriceFrequencyTiersApiService
+
+	PriceListSchedulersApi *PriceListSchedulersApiService
 
 	PriceListsApi *PriceListsApiService
 
@@ -218,6 +228,10 @@ type APIClient struct {
 	RecurringOrderCopiesApi *RecurringOrderCopiesApiService
 
 	RefundsApi *RefundsApiService
+
+	ReservedStocksApi *ReservedStocksApiService
+
+	ResourceErrorsApi *ResourceErrorsApiService
 
 	ReturnLineItemsApi *ReturnLineItemsApiService
 
@@ -257,6 +271,8 @@ type APIClient struct {
 
 	StockLocationsApi *StockLocationsApiService
 
+	StockReservationsApi *StockReservationsApiService
+
 	StockTransfersApi *StockTransfersApiService
 
 	StripeGatewaysApi *StripeGatewaysApiService
@@ -264,6 +280,8 @@ type APIClient struct {
 	StripePaymentsApi *StripePaymentsApiService
 
 	SubscriptionModelsApi *SubscriptionModelsApiService
+
+	TagsApi *TagsApiService
 
 	TaxCalculatorsApi *TaxCalculatorsApiService
 
@@ -274,6 +292,8 @@ type APIClient struct {
 	TaxjarAccountsApi *TaxjarAccountsApiService
 
 	TransactionsApi *TransactionsApiService
+
+	VersionsApi *VersionsApiService
 
 	VoidsApi *VoidsApiService
 
@@ -313,6 +333,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BraintreeGatewaysApi = (*BraintreeGatewaysApiService)(&c.common)
 	c.BraintreePaymentsApi = (*BraintreePaymentsApiService)(&c.common)
 	c.BundlesApi = (*BundlesApiService)(&c.common)
+	c.BuyXPayYPromotionsApi = (*BuyXPayYPromotionsApiService)(&c.common)
 	c.CapturesApi = (*CapturesApiService)(&c.common)
 	c.CarrierAccountsApi = (*CarrierAccountsApiService)(&c.common)
 	c.CheckoutComGatewaysApi = (*CheckoutComGatewaysApiService)(&c.common)
@@ -321,6 +342,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CouponCodesPromotionRulesApi = (*CouponCodesPromotionRulesApiService)(&c.common)
 	c.CouponRecipientsApi = (*CouponRecipientsApiService)(&c.common)
 	c.CouponsApi = (*CouponsApiService)(&c.common)
+	c.CustomPromotionRulesApi = (*CustomPromotionRulesApiService)(&c.common)
 	c.CustomerAddressesApi = (*CustomerAddressesApiService)(&c.common)
 	c.CustomerGroupsApi = (*CustomerGroupsApiService)(&c.common)
 	c.CustomerPasswordResetsApi = (*CustomerPasswordResetsApiService)(&c.common)
@@ -337,6 +359,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ExternalTaxCalculatorsApi = (*ExternalTaxCalculatorsApiService)(&c.common)
 	c.FixedAmountPromotionsApi = (*FixedAmountPromotionsApiService)(&c.common)
 	c.FixedPricePromotionsApi = (*FixedPricePromotionsApiService)(&c.common)
+	c.FlexPromotionsApi = (*FlexPromotionsApiService)(&c.common)
 	c.FreeGiftPromotionsApi = (*FreeGiftPromotionsApiService)(&c.common)
 	c.FreeShippingPromotionsApi = (*FreeShippingPromotionsApiService)(&c.common)
 	c.GeocodersApi = (*GeocodersApiService)(&c.common)
@@ -354,6 +377,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.KlarnaPaymentsApi = (*KlarnaPaymentsApiService)(&c.common)
 	c.LineItemOptionsApi = (*LineItemOptionsApiService)(&c.common)
 	c.LineItemsApi = (*LineItemsApiService)(&c.common)
+	c.LinksApi = (*LinksApiService)(&c.common)
 	c.ManualGatewaysApi = (*ManualGatewaysApiService)(&c.common)
 	c.ManualTaxCalculatorsApi = (*ManualTaxCalculatorsApiService)(&c.common)
 	c.MarketsApi = (*MarketsApiService)(&c.common)
@@ -363,7 +387,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.OrderFactoriesApi = (*OrderFactoriesApiService)(&c.common)
 	c.OrderSubscriptionItemsApi = (*OrderSubscriptionItemsApiService)(&c.common)
 	c.OrderSubscriptionsApi = (*OrderSubscriptionsApiService)(&c.common)
-	c.OrderValidationRulesApi = (*OrderValidationRulesApiService)(&c.common)
 	c.OrdersApi = (*OrdersApiService)(&c.common)
 	c.OrganizationApi = (*OrganizationApiService)(&c.common)
 	c.PackagesApi = (*PackagesApiService)(&c.common)
@@ -371,10 +394,12 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ParcelsApi = (*ParcelsApiService)(&c.common)
 	c.PaymentGatewaysApi = (*PaymentGatewaysApiService)(&c.common)
 	c.PaymentMethodsApi = (*PaymentMethodsApiService)(&c.common)
+	c.PaymentOptionsApi = (*PaymentOptionsApiService)(&c.common)
 	c.PaypalGatewaysApi = (*PaypalGatewaysApiService)(&c.common)
 	c.PaypalPaymentsApi = (*PaypalPaymentsApiService)(&c.common)
 	c.PercentageDiscountPromotionsApi = (*PercentageDiscountPromotionsApiService)(&c.common)
 	c.PriceFrequencyTiersApi = (*PriceFrequencyTiersApiService)(&c.common)
+	c.PriceListSchedulersApi = (*PriceListSchedulersApiService)(&c.common)
 	c.PriceListsApi = (*PriceListsApiService)(&c.common)
 	c.PriceTiersApi = (*PriceTiersApiService)(&c.common)
 	c.PriceVolumeTiersApi = (*PriceVolumeTiersApiService)(&c.common)
@@ -383,6 +408,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.PromotionsApi = (*PromotionsApiService)(&c.common)
 	c.RecurringOrderCopiesApi = (*RecurringOrderCopiesApiService)(&c.common)
 	c.RefundsApi = (*RefundsApiService)(&c.common)
+	c.ReservedStocksApi = (*ReservedStocksApiService)(&c.common)
+	c.ResourceErrorsApi = (*ResourceErrorsApiService)(&c.common)
 	c.ReturnLineItemsApi = (*ReturnLineItemsApiService)(&c.common)
 	c.ReturnsApi = (*ReturnsApiService)(&c.common)
 	c.SatispayGatewaysApi = (*SatispayGatewaysApiService)(&c.common)
@@ -402,15 +429,18 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.StockItemsApi = (*StockItemsApiService)(&c.common)
 	c.StockLineItemsApi = (*StockLineItemsApiService)(&c.common)
 	c.StockLocationsApi = (*StockLocationsApiService)(&c.common)
+	c.StockReservationsApi = (*StockReservationsApiService)(&c.common)
 	c.StockTransfersApi = (*StockTransfersApiService)(&c.common)
 	c.StripeGatewaysApi = (*StripeGatewaysApiService)(&c.common)
 	c.StripePaymentsApi = (*StripePaymentsApiService)(&c.common)
 	c.SubscriptionModelsApi = (*SubscriptionModelsApiService)(&c.common)
+	c.TagsApi = (*TagsApiService)(&c.common)
 	c.TaxCalculatorsApi = (*TaxCalculatorsApiService)(&c.common)
 	c.TaxCategoriesApi = (*TaxCategoriesApiService)(&c.common)
 	c.TaxRulesApi = (*TaxRulesApiService)(&c.common)
 	c.TaxjarAccountsApi = (*TaxjarAccountsApiService)(&c.common)
 	c.TransactionsApi = (*TransactionsApiService)(&c.common)
+	c.VersionsApi = (*VersionsApiService)(&c.common)
 	c.VoidsApi = (*VoidsApiService)(&c.common)
 	c.WebhooksApi = (*WebhooksApiService)(&c.common)
 	c.WireTransfersApi = (*WireTransfersApiService)(&c.common)

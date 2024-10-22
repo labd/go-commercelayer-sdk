@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,10 @@ var _ MappedNullable = &GETPriceTiersPriceTierId200ResponseDataAttributes{}
 
 // GETPriceTiersPriceTierId200ResponseDataAttributes struct for GETPriceTiersPriceTierId200ResponseDataAttributes
 type GETPriceTiersPriceTierId200ResponseDataAttributes struct {
-	// The price tier's name
+	// The price tier's name.
 	Name interface{} `json:"name,omitempty"`
+	// The price tier's type.
+	Type interface{} `json:"type,omitempty"`
 	// The tier upper limit. When 'null' it means infinity (useful to have an always matching tier).
 	UpTo interface{} `json:"up_to,omitempty"`
 	// The price of this price tier, in cents.
@@ -36,7 +38,7 @@ type GETPriceTiersPriceTierId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -90,6 +92,39 @@ func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) HasName() bool {
 // SetName gets a reference to the given interface{} and assigns it to the Name field.
 func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) HasType() bool {
+	if o != nil && IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *GETPriceTiersPriceTierId200ResponseDataAttributes) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetUpTo returns the UpTo field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -401,6 +436,9 @@ func (o GETPriceTiersPriceTierId200ResponseDataAttributes) ToMap() (map[string]i
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
 	}
 	if o.UpTo != nil {
 		toSerialize["up_to"] = o.UpTo

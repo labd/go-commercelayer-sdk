@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,7 @@ var _ MappedNullable = &AdyenPaymentDataRelationships{}
 type AdyenPaymentDataRelationships struct {
 	Order          *AdyenPaymentDataRelationshipsOrder          `json:"order,omitempty"`
 	PaymentGateway *AdyenPaymentDataRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
+	Versions       *AddressDataRelationshipsVersions            `json:"versions,omitempty"`
 }
 
 // NewAdyenPaymentDataRelationships instantiates a new AdyenPaymentDataRelationships object
@@ -105,6 +106,38 @@ func (o *AdyenPaymentDataRelationships) SetPaymentGateway(v AdyenPaymentDataRela
 	o.PaymentGateway = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *AdyenPaymentDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AdyenPaymentDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *AdyenPaymentDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *AdyenPaymentDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 func (o AdyenPaymentDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o AdyenPaymentDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PaymentGateway) {
 		toSerialize["payment_gateway"] = o.PaymentGateway
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -317,4 +317,96 @@ func (a *GeocodersApiService) GETGeocodersGeocoderIdExecute(r GeocodersApiGETGeo
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type GeocodersApiGETMarketIdGeocoderRequest struct {
+	ctx        context.Context
+	ApiService *GeocodersApiService
+	marketId   interface{}
+}
+
+func (r GeocodersApiGETMarketIdGeocoderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETMarketIdGeocoderExecute(r)
+}
+
+/*
+GETMarketIdGeocoder Retrieve the geocoder associated to the market
+
+Retrieve the geocoder associated to the market
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return GeocodersApiGETMarketIdGeocoderRequest
+*/
+func (a *GeocodersApiService) GETMarketIdGeocoder(ctx context.Context, marketId interface{}) GeocodersApiGETMarketIdGeocoderRequest {
+	return GeocodersApiGETMarketIdGeocoderRequest{
+		ApiService: a,
+		ctx:        ctx,
+		marketId:   marketId,
+	}
+}
+
+// Execute executes the request
+func (a *GeocodersApiService) GETMarketIdGeocoderExecute(r GeocodersApiGETMarketIdGeocoderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GeocodersApiService.GETMarketIdGeocoder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/markets/{marketId}/geocoder"
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }

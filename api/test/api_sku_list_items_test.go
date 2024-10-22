@@ -35,6 +35,19 @@ func Test_api_SkuListItemsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test SkuListItemsApiService GETSkuIdSkuListItems", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var skuId interface{}
+
+		httpRes, err := apiClient.SkuListItemsApi.GETSkuIdSkuListItems(context.Background(), skuId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SkuListItemsApiService GETSkuListIdSkuListItems", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

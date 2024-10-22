@@ -6,12 +6,16 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETESkusSkuId**](SkusApi.md#DELETESkusSkuId) | **Delete** /skus/{skuId} | Delete a SKU
 [**GETBundleIdSkus**](SkusApi.md#GETBundleIdSkus) | **Get** /bundles/{bundleId}/skus | Retrieve the skus associated to the bundle
+[**GETBuyXPayYPromotionIdSkus**](SkusApi.md#GETBuyXPayYPromotionIdSkus) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/skus | Retrieve the skus associated to the buy x pay y promotion
+[**GETExternalPromotionIdSkus**](SkusApi.md#GETExternalPromotionIdSkus) | **Get** /external_promotions/{externalPromotionId}/skus | Retrieve the skus associated to the external promotion
+[**GETFixedAmountPromotionIdSkus**](SkusApi.md#GETFixedAmountPromotionIdSkus) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/skus | Retrieve the skus associated to the fixed amount promotion
 [**GETFixedPricePromotionIdSkus**](SkusApi.md#GETFixedPricePromotionIdSkus) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/skus | Retrieve the skus associated to the fixed price promotion
 [**GETFreeGiftPromotionIdSkus**](SkusApi.md#GETFreeGiftPromotionIdSkus) | **Get** /free_gift_promotions/{freeGiftPromotionId}/skus | Retrieve the skus associated to the free gift promotion
 [**GETInStockSubscriptionIdSku**](SkusApi.md#GETInStockSubscriptionIdSku) | **Get** /in_stock_subscriptions/{inStockSubscriptionId}/sku | Retrieve the sku associated to the in stock subscription
 [**GETOrderIdAvailableFreeSkus**](SkusApi.md#GETOrderIdAvailableFreeSkus) | **Get** /orders/{orderId}/available_free_skus | Retrieve the available free skus associated to the order
 [**GETPercentageDiscountPromotionIdSkus**](SkusApi.md#GETPercentageDiscountPromotionIdSkus) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/skus | Retrieve the skus associated to the percentage discount promotion
 [**GETPriceIdSku**](SkusApi.md#GETPriceIdSku) | **Get** /prices/{priceId}/sku | Retrieve the sku associated to the price
+[**GETReservedStockIdSku**](SkusApi.md#GETReservedStockIdSku) | **Get** /reserved_stocks/{reservedStockId}/sku | Retrieve the sku associated to the reserved stock
 [**GETShippingCategoryIdSkus**](SkusApi.md#GETShippingCategoryIdSkus) | **Get** /shipping_categories/{shippingCategoryId}/skus | Retrieve the skus associated to the shipping category
 [**GETSkuListIdSkus**](SkusApi.md#GETSkuListIdSkus) | **Get** /sku_lists/{skuListId}/skus | Retrieve the skus associated to the SKU list
 [**GETSkuListItemIdSku**](SkusApi.md#GETSkuListItemIdSku) | **Get** /sku_list_items/{skuListItemId}/sku | Retrieve the sku associated to the SKU list item
@@ -19,6 +23,8 @@ Method | HTTP request | Description
 [**GETSkus**](SkusApi.md#GETSkus) | **Get** /skus | List all SKUs
 [**GETSkusSkuId**](SkusApi.md#GETSkusSkuId) | **Get** /skus/{skuId} | Retrieve a SKU
 [**GETStockItemIdSku**](SkusApi.md#GETStockItemIdSku) | **Get** /stock_items/{stockItemId}/sku | Retrieve the sku associated to the stock item
+[**GETStockLineItemIdSku**](SkusApi.md#GETStockLineItemIdSku) | **Get** /stock_line_items/{stockLineItemId}/sku | Retrieve the sku associated to the stock line item
+[**GETStockReservationIdSku**](SkusApi.md#GETStockReservationIdSku) | **Get** /stock_reservations/{stockReservationId}/sku | Retrieve the sku associated to the stock reservation
 [**GETStockTransferIdSku**](SkusApi.md#GETStockTransferIdSku) | **Get** /stock_transfers/{stockTransferId}/sku | Retrieve the sku associated to the stock transfer
 [**GETTaxCategoryIdSku**](SkusApi.md#GETTaxCategoryIdSku) | **Get** /tax_categories/{taxCategoryId}/sku | Retrieve the sku associated to the tax category
 [**PATCHSkusSkuId**](SkusApi.md#PATCHSkusSkuId) | **Patch** /skus/{skuId} | Update a SKU
@@ -138,6 +144,210 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETBundleIdSkusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdSkus
+
+> GETBuyXPayYPromotionIdSkus(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the skus associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.SkusApi.GETBuyXPayYPromotionIdSkus(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETBuyXPayYPromotionIdSkus``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdSkusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETExternalPromotionIdSkus
+
+> GETExternalPromotionIdSkus(ctx, externalPromotionId).Execute()
+
+Retrieve the skus associated to the external promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    externalPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.SkusApi.GETExternalPromotionIdSkus(context.Background(), externalPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETExternalPromotionIdSkus``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**externalPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETExternalPromotionIdSkusRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETFixedAmountPromotionIdSkus
+
+> GETFixedAmountPromotionIdSkus(ctx, fixedAmountPromotionId).Execute()
+
+Retrieve the skus associated to the fixed amount promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    fixedAmountPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.SkusApi.GETFixedAmountPromotionIdSkus(context.Background(), fixedAmountPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETFixedAmountPromotionIdSkus``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**fixedAmountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFixedAmountPromotionIdSkusRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -546,6 +756,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPriceIdSkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETReservedStockIdSku
+
+> GETReservedStockIdSku(ctx, reservedStockId).Execute()
+
+Retrieve the sku associated to the reserved stock
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    reservedStockId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.SkusApi.GETReservedStockIdSku(context.Background(), reservedStockId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETReservedStockIdSku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**reservedStockId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETReservedStockIdSkuRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1041,6 +1319,142 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETStockLineItemIdSku
+
+> GETStockLineItemIdSku(ctx, stockLineItemId).Execute()
+
+Retrieve the sku associated to the stock line item
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockLineItemId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.SkusApi.GETStockLineItemIdSku(context.Background(), stockLineItemId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETStockLineItemIdSku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockLineItemIdSkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdSku
+
+> GETStockReservationIdSku(ctx, stockReservationId).Execute()
+
+Retrieve the sku associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.SkusApi.GETStockReservationIdSku(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETStockReservationIdSku``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdSkuRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETStockTransferIdSku
 
 > GETStockTransferIdSku(ctx, stockTransferId).Execute()
@@ -1270,7 +1684,7 @@ import (
 )
 
 func main() {
-    skuCreate := *openapiclient.NewSkuCreate(*openapiclient.NewSkuCreateData(interface{}(123), *openapiclient.NewPOSTSkus201ResponseDataAttributes(interface{}(TSHIRTMM000000FFFFFFXLXX), interface{}(Black Men T-shirt with White Logo (XL))))) // SkuCreate | 
+    skuCreate := *openapiclient.NewSkuCreate(*openapiclient.NewSkuCreateData(interface{}(123), *openapiclient.NewPOSTSkus201ResponseDataAttributes(interface{}(TSHIRTMM000000FFFFFFXLXX), interface{}(Men's Black T-shirt with White Logo (XL))))) // SkuCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

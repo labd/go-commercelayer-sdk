@@ -22,6 +22,19 @@ func Test_api_EventsApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test EventsApiService GETAddressIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var addressId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETAddressIdEvents(context.Background(), addressId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test EventsApiService GETAuthorizationIdEvents", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -29,6 +42,45 @@ func Test_api_EventsApiService(t *testing.T) {
 		var authorizationId interface{}
 
 		httpRes, err := apiClient.EventsApi.GETAuthorizationIdEvents(context.Background(), authorizationId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService GETAvalaraAccountIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var avalaraAccountId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETAvalaraAccountIdEvents(context.Background(), avalaraAccountId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService GETBundleIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var bundleId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETBundleIdEvents(context.Background(), bundleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService GETBuyXPayYPromotionIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var buyXPayYPromotionId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETBuyXPayYPromotionIdEvents(context.Background(), buyXPayYPromotionId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -55,6 +107,19 @@ func Test_api_EventsApiService(t *testing.T) {
 		var cleanupId interface{}
 
 		httpRes, err := apiClient.EventsApi.GETCleanupIdEvents(context.Background(), cleanupId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService GETCouponIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var couponId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETCouponIdEvents(context.Background(), couponId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -191,6 +256,19 @@ func Test_api_EventsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test EventsApiService GETFlexPromotionIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var flexPromotionId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETFlexPromotionIdEvents(context.Background(), flexPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test EventsApiService GETFreeGiftPromotionIdEvents", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -250,6 +328,45 @@ func Test_api_EventsApiService(t *testing.T) {
 		var inStockSubscriptionId interface{}
 
 		httpRes, err := apiClient.EventsApi.GETInStockSubscriptionIdEvents(context.Background(), inStockSubscriptionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService GETLineItemIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var lineItemId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETLineItemIdEvents(context.Background(), lineItemId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService GETLineItemOptionIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var lineItemOptionId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETLineItemOptionIdEvents(context.Background(), lineItemOptionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService GETLinkIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var linkId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETLinkIdEvents(context.Background(), linkId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -347,6 +464,19 @@ func Test_api_EventsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test EventsApiService GETPriceListSchedulerIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var priceListSchedulerId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETPriceListSchedulerIdEvents(context.Background(), priceListSchedulerId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test EventsApiService GETPriceVolumeTierIdEvents", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -425,6 +555,32 @@ func Test_api_EventsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test EventsApiService GETSkuIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var skuId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETSkuIdEvents(context.Background(), skuId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService GETSkuOptionIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var skuOptionId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETSkuOptionIdEvents(context.Background(), skuOptionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test EventsApiService GETStockTransferIdEvents", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -432,6 +588,19 @@ func Test_api_EventsApiService(t *testing.T) {
 		var stockTransferId interface{}
 
 		httpRes, err := apiClient.EventsApi.GETStockTransferIdEvents(context.Background(), stockTransferId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService GETTransactionIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var transactionId interface{}
+
+		httpRes, err := apiClient.EventsApi.GETTransactionIdEvents(context.Background(), transactionId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -447,6 +616,20 @@ func Test_api_EventsApiService(t *testing.T) {
 		httpRes, err := apiClient.EventsApi.GETVoidIdEvents(context.Background(), voidId).Execute()
 
 		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EventsApiService PATCHEventsEventId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var eventId interface{}
+
+		resp, httpRes, err := apiClient.EventsApi.PATCHEventsEventId(context.Background(), eventId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

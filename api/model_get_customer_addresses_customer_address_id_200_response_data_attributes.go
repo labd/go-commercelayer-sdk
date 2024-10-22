@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,15 +20,17 @@ var _ MappedNullable = &GETCustomerAddressesCustomerAddressId200ResponseDataAttr
 
 // GETCustomerAddressesCustomerAddressId200ResponseDataAttributes struct for GETCustomerAddressesCustomerAddressId200ResponseDataAttributes
 type GETCustomerAddressesCustomerAddressId200ResponseDataAttributes struct {
-	// Returns the associated address' name
+	// Returns the associated address' name.
 	Name interface{} `json:"name,omitempty"`
+	// The email of the customer associated to the address.
+	CustomerEmail interface{} `json:"customer_email,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -82,6 +84,39 @@ func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) HasName
 // SetName gets a reference to the given interface{} and assigns it to the Name field.
 func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetCustomerEmail returns the CustomerEmail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) GetCustomerEmail() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CustomerEmail
+}
+
+// GetCustomerEmailOk returns a tuple with the CustomerEmail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) GetCustomerEmailOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomerEmail) {
+		return nil, false
+	}
+	return &o.CustomerEmail, true
+}
+
+// HasCustomerEmail returns a boolean if a field has been set.
+func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) HasCustomerEmail() bool {
+	if o != nil && IsNil(o.CustomerEmail) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomerEmail gets a reference to the given interface{} and assigns it to the CustomerEmail field.
+func (o *GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) SetCustomerEmail(v interface{}) {
+	o.CustomerEmail = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -261,6 +296,9 @@ func (o GETCustomerAddressesCustomerAddressId200ResponseDataAttributes) ToMap() 
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.CustomerEmail != nil {
+		toSerialize["customer_email"] = o.CustomerEmail
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

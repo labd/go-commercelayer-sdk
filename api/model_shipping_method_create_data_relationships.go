@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &ShippingMethodCreateDataRelationships{}
 type ShippingMethodCreateDataRelationships struct {
 	Market              *BillingInfoValidationRuleCreateDataRelationshipsMarket   `json:"market,omitempty"`
 	ShippingZone        *ShippingMethodCreateDataRelationshipsShippingZone        `json:"shipping_zone,omitempty"`
-	ShippingCategory    *ShippingMethodCreateDataRelationshipsShippingCategory    `json:"shipping_category,omitempty"`
+	ShippingCategory    *ShipmentCreateDataRelationshipsShippingCategory          `json:"shipping_category,omitempty"`
 	StockLocation       *DeliveryLeadTimeCreateDataRelationshipsStockLocation     `json:"stock_location,omitempty"`
 	ShippingMethodTiers *ShippingMethodCreateDataRelationshipsShippingMethodTiers `json:"shipping_method_tiers,omitempty"`
 }
@@ -109,9 +109,9 @@ func (o *ShippingMethodCreateDataRelationships) SetShippingZone(v ShippingMethod
 }
 
 // GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
-func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory {
+func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShipmentCreateDataRelationshipsShippingCategory {
 	if o == nil || IsNil(o.ShippingCategory) {
-		var ret ShippingMethodCreateDataRelationshipsShippingCategory
+		var ret ShipmentCreateDataRelationshipsShippingCategory
 		return ret
 	}
 	return *o.ShippingCategory
@@ -119,7 +119,7 @@ func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShippingMe
 
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodCreateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool) {
+func (o *ShippingMethodCreateDataRelationships) GetShippingCategoryOk() (*ShipmentCreateDataRelationshipsShippingCategory, bool) {
 	if o == nil || IsNil(o.ShippingCategory) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *ShippingMethodCreateDataRelationships) HasShippingCategory() bool {
 	return false
 }
 
-// SetShippingCategory gets a reference to the given ShippingMethodCreateDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
-func (o *ShippingMethodCreateDataRelationships) SetShippingCategory(v ShippingMethodCreateDataRelationshipsShippingCategory) {
+// SetShippingCategory gets a reference to the given ShipmentCreateDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
+func (o *ShippingMethodCreateDataRelationships) SetShippingCategory(v ShipmentCreateDataRelationshipsShippingCategory) {
 	o.ShippingCategory = &v
 }
 

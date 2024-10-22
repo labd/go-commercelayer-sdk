@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourceType** | Pointer to **interface{}** | The type of resource being imported. | [optional] 
+**Format** | Pointer to **interface{}** | The format of the import inputs one of &#39;json&#39; (default) or &#39;csv&#39;. | [optional] 
 **ParentResourceId** | Pointer to **interface{}** | The ID of the parent resource to be associated with imported data. | [optional] 
 **Status** | Pointer to **interface{}** | The import job status. One of &#39;pending&#39; (default), &#39;in_progress&#39;, &#39;interrupted&#39;, or &#39;completed&#39;. | [optional] 
 **StartedAt** | Pointer to **interface{}** | Time at which the import was started. | [optional] 
@@ -14,16 +15,14 @@ Name | Type | Description | Notes
 **InputsSize** | Pointer to **interface{}** | Indicates the size of the objects to be imported. | [optional] 
 **ErrorsCount** | Pointer to **interface{}** | Indicates the number of import errors, if any. | [optional] 
 **WarningsCount** | Pointer to **interface{}** | Indicates the number of import warnings, if any. | [optional] 
-**DestroyedCount** | Pointer to **interface{}** | Indicates the number of records that have been destroyed, if any. | [optional] 
 **ProcessedCount** | Pointer to **interface{}** | Indicates the number of records that have been processed (created or updated). | [optional] 
 **ErrorsLog** | Pointer to **interface{}** | Contains the import errors, if any. | [optional] 
 **WarningsLog** | Pointer to **interface{}** | Contains the import warnings, if any. | [optional] 
-**CleanupRecords** | Pointer to **interface{}** | Indicates if the import should cleanup records that are not included in the inputs array. | [optional] 
 **AttachmentUrl** | Pointer to **interface{}** | The URL the the raw inputs file, which will be generated at import start. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -80,6 +79,41 @@ HasResourceType returns a boolean if a field has been set.
 `func (o *GETImportsImportId200ResponseDataAttributes) UnsetResourceType()`
 
 UnsetResourceType ensures that no value is present for ResourceType, not even an explicit nil
+### GetFormat
+
+`func (o *GETImportsImportId200ResponseDataAttributes) GetFormat() interface{}`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *GETImportsImportId200ResponseDataAttributes) GetFormatOk() (*interface{}, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *GETImportsImportId200ResponseDataAttributes) SetFormat(v interface{})`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *GETImportsImportId200ResponseDataAttributes) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
+
+### SetFormatNil
+
+`func (o *GETImportsImportId200ResponseDataAttributes) SetFormatNil(b bool)`
+
+ SetFormatNil sets the value for Format to be an explicit nil
+
+### UnsetFormat
+`func (o *GETImportsImportId200ResponseDataAttributes) UnsetFormat()`
+
+UnsetFormat ensures that no value is present for Format, not even an explicit nil
 ### GetParentResourceId
 
 `func (o *GETImportsImportId200ResponseDataAttributes) GetParentResourceId() interface{}`
@@ -395,41 +429,6 @@ HasWarningsCount returns a boolean if a field has been set.
 `func (o *GETImportsImportId200ResponseDataAttributes) UnsetWarningsCount()`
 
 UnsetWarningsCount ensures that no value is present for WarningsCount, not even an explicit nil
-### GetDestroyedCount
-
-`func (o *GETImportsImportId200ResponseDataAttributes) GetDestroyedCount() interface{}`
-
-GetDestroyedCount returns the DestroyedCount field if non-nil, zero value otherwise.
-
-### GetDestroyedCountOk
-
-`func (o *GETImportsImportId200ResponseDataAttributes) GetDestroyedCountOk() (*interface{}, bool)`
-
-GetDestroyedCountOk returns a tuple with the DestroyedCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDestroyedCount
-
-`func (o *GETImportsImportId200ResponseDataAttributes) SetDestroyedCount(v interface{})`
-
-SetDestroyedCount sets DestroyedCount field to given value.
-
-### HasDestroyedCount
-
-`func (o *GETImportsImportId200ResponseDataAttributes) HasDestroyedCount() bool`
-
-HasDestroyedCount returns a boolean if a field has been set.
-
-### SetDestroyedCountNil
-
-`func (o *GETImportsImportId200ResponseDataAttributes) SetDestroyedCountNil(b bool)`
-
- SetDestroyedCountNil sets the value for DestroyedCount to be an explicit nil
-
-### UnsetDestroyedCount
-`func (o *GETImportsImportId200ResponseDataAttributes) UnsetDestroyedCount()`
-
-UnsetDestroyedCount ensures that no value is present for DestroyedCount, not even an explicit nil
 ### GetProcessedCount
 
 `func (o *GETImportsImportId200ResponseDataAttributes) GetProcessedCount() interface{}`
@@ -535,41 +534,6 @@ HasWarningsLog returns a boolean if a field has been set.
 `func (o *GETImportsImportId200ResponseDataAttributes) UnsetWarningsLog()`
 
 UnsetWarningsLog ensures that no value is present for WarningsLog, not even an explicit nil
-### GetCleanupRecords
-
-`func (o *GETImportsImportId200ResponseDataAttributes) GetCleanupRecords() interface{}`
-
-GetCleanupRecords returns the CleanupRecords field if non-nil, zero value otherwise.
-
-### GetCleanupRecordsOk
-
-`func (o *GETImportsImportId200ResponseDataAttributes) GetCleanupRecordsOk() (*interface{}, bool)`
-
-GetCleanupRecordsOk returns a tuple with the CleanupRecords field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCleanupRecords
-
-`func (o *GETImportsImportId200ResponseDataAttributes) SetCleanupRecords(v interface{})`
-
-SetCleanupRecords sets CleanupRecords field to given value.
-
-### HasCleanupRecords
-
-`func (o *GETImportsImportId200ResponseDataAttributes) HasCleanupRecords() bool`
-
-HasCleanupRecords returns a boolean if a field has been set.
-
-### SetCleanupRecordsNil
-
-`func (o *GETImportsImportId200ResponseDataAttributes) SetCleanupRecordsNil(b bool)`
-
- SetCleanupRecordsNil sets the value for CleanupRecords to be an explicit nil
-
-### UnsetCleanupRecords
-`func (o *GETImportsImportId200ResponseDataAttributes) UnsetCleanupRecords()`
-
-UnsetCleanupRecords ensures that no value is present for CleanupRecords, not even an explicit nil
 ### GetAttachmentUrl
 
 `func (o *GETImportsImportId200ResponseDataAttributes) GetAttachmentUrl() interface{}`

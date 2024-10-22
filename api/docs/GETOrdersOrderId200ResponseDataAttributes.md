@@ -4,11 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Number** | Pointer to **interface{}** | Unique identifier for the order (numeric). | [optional] 
+**Number** | Pointer to **interface{}** | The order identifier. Can be specified if unique within the organization (for enterprise plans only), default to numeric ID otherwise. Cannot be passed by sales channels. | [optional] 
+**AffiliateCode** | Pointer to **interface{}** | The affiliate code, if any, the seller will transfer commission on shop by link transactions. | [optional] 
 **Autorefresh** | Pointer to **interface{}** | Save this attribute as &#39;false&#39; if you want prevent the order to be refreshed automatically at each change (much faster). | [optional] 
-**Status** | Pointer to **interface{}** | The order status. One of &#39;draft&#39; (default), &#39;pending&#39;, &#39;placed&#39;, &#39;approved&#39;, or &#39;cancelled&#39;. | [optional] 
-**PaymentStatus** | Pointer to **interface{}** | The order&#39;s payment status. One of &#39;unpaid&#39; (default), &#39;authorized&#39;, &#39;partially_authorized&#39;, &#39;paid&#39;, &#39;partially_paid&#39;, &#39;voided&#39;, &#39;partially_voided&#39;, &#39;refunded&#39;, &#39;partially_refunded&#39; or &#39;free&#39;. | [optional] 
-**FulfillmentStatus** | Pointer to **interface{}** | The order&#39;s fulfillment status. One of &#39;unfulfilled&#39; (default), &#39;in_progress&#39;, &#39;fulfilled&#39;, or &#39;not_required&#39;. | [optional] 
+**PlaceAsync** | Pointer to **interface{}** | Save this attribute as &#39;true&#39; if you want perform the place asynchronously. Payment errors, if any, will be collected afterwards. | [optional] 
+**Status** | Pointer to **interface{}** | The order status. One of &#39;draft&#39; (default), &#39;pending&#39;, &#39;editing&#39;, &#39;placing&#39;, &#39;placed&#39;, &#39;approved&#39;, or &#39;cancelled&#39;. | [optional] 
+**PaymentStatus** | Pointer to **interface{}** | The order payment status. One of &#39;unpaid&#39; (default), &#39;authorized&#39;, &#39;partially_authorized&#39;, &#39;paid&#39;, &#39;partially_paid&#39;, &#39;voided&#39;, &#39;partially_voided&#39;, &#39;refunded&#39;, &#39;partially_refunded&#39;, or &#39;free&#39;. | [optional] 
+**FulfillmentStatus** | Pointer to **interface{}** | The order fulfillment status. One of &#39;unfulfilled&#39; (default), &#39;in_progress&#39;, &#39;fulfilled&#39;, or &#39;not_required&#39;. | [optional] 
 **Guest** | Pointer to **interface{}** | Indicates if the order has been placed as guest. | [optional] 
 **Editable** | Pointer to **interface{}** | Indicates if the order can be edited. | [optional] 
 **CustomerEmail** | Pointer to **interface{}** | The email address of the associated customer. When creating or updating an order, this is a shortcut to find or create the associated customer by email. | [optional] 
@@ -17,12 +19,14 @@ Name | Type | Description | Notes
 **TaxIncluded** | Pointer to **interface{}** | Indicates if taxes are included in the order amounts, automatically inherited from the order&#39;s price list. | [optional] 
 **TaxRate** | Pointer to **interface{}** | The tax rate for this order (if calculated). | [optional] 
 **FreightTaxable** | Pointer to **interface{}** | Indicates if taxes are applied to shipping costs. | [optional] 
+**PaymentMethodTaxable** | Pointer to **interface{}** | Indicates if taxes are applied to payment methods costs. | [optional] 
+**AdjustmentTaxable** | Pointer to **interface{}** | Indicates if taxes are applied to positive adjustments. | [optional] 
+**GiftCardTaxable** | Pointer to **interface{}** | Indicates if taxes are applied to purchased gift cards. | [optional] 
 **RequiresBillingInfo** | Pointer to **interface{}** | Indicates if the billing address associated to this order requires billing info to be present. | [optional] 
-**CountryCode** | Pointer to **interface{}** | The international 2-letter country code as defined by the ISO 3166-1 standard, automatically inherited from the order&#39;s shipping address. | [optional] 
-**ShippingCountryCodeLock** | Pointer to **interface{}** | The country code that you want the shipping address to be locked to. This can be useful to make sure the shipping address belongs to a given shipping country, e.g. the one selected in a country selector page. | [optional] 
+**CountryCode** | Pointer to **interface{}** | The international 2-letter country code as defined by the ISO 3166-1 standard, automatically inherited from the order&#39;s shipping or billing addresses. | [optional] 
+**ShippingCountryCodeLock** | Pointer to **interface{}** | The country code that you want the shipping address to be locked to. This can be useful to make sure the shipping address belongs to a given shipping country, e.g. the one selected in a country selector page. Not relevant if order contains only digital products. | [optional] 
 **CouponCode** | Pointer to **interface{}** | The coupon code to be used for the order. If valid, it triggers a promotion adding a discount line item to the order. | [optional] 
 **GiftCardCode** | Pointer to **interface{}** | The gift card code (at least the first 8 characters) to be used for the order. If valid, it uses the gift card balance to pay for the order. | [optional] 
-**GiftCardOrCouponCode** | Pointer to **interface{}** | The gift card or coupon code (at least the first 8 characters) to be used for the order. If a gift card mathes, it uses the gift card balance to pay for the order. Otherwise it tries to find a valid coupon code and applies the associated discount. | [optional] 
 **SubtotalAmountCents** | Pointer to **interface{}** | The sum of all the SKU line items total amounts, in cents. | [optional] 
 **SubtotalAmountFloat** | Pointer to **interface{}** | The sum of all the SKU line items total amounts, float. | [optional] 
 **FormattedSubtotalAmount** | Pointer to **interface{}** | The sum of all the SKU line items total amounts, formatted. | [optional] 
@@ -83,10 +87,15 @@ Name | Type | Description | Notes
 **DutyAmountCents** | Pointer to **interface{}** | The duty amount that is calculated by external services, in cents. | [optional] 
 **DutyAmountFloat** | Pointer to **interface{}** | The duty amount that is calculated by external services, float. | [optional] 
 **FormattedDutyAmount** | Pointer to **interface{}** | The duty amount that is calculated by external services, formatted. | [optional] 
+**PlaceTotalAmountCents** | Pointer to **interface{}** | The total amount at place time, in cents, which is used internally for editing. | [optional] 
+**PlaceTotalAmountFloat** | Pointer to **interface{}** | The total amount at place time, float. | [optional] 
+**FormattedPlaceTotalAmount** | Pointer to **interface{}** | The total amount at place time, formatted. | [optional] 
 **SkusCount** | Pointer to **interface{}** | The total number of SKUs in the order&#39;s line items. This can be useful to display a preview of the customer shopping cart content. | [optional] 
 **LineItemOptionsCount** | Pointer to **interface{}** | The total number of line item options. This can be useful to display a preview of the customer shopping cart content. | [optional] 
 **ShipmentsCount** | Pointer to **interface{}** | The total number of shipments. This can be useful to manage the shipping method(s) selection during checkout. | [optional] 
 **TaxCalculationsCount** | Pointer to **interface{}** | The total number of tax calculations. This can be useful to monitor external tax service usage. | [optional] 
+**ValidationsCount** | Pointer to **interface{}** | The total number of external validation performed. This can be useful to monitor if external validation has been triggered. | [optional] 
+**ErrorsCount** | Pointer to **interface{}** | The total number of resource errors. | [optional] 
 **PaymentSourceDetails** | Pointer to **interface{}** | An object that contains the shareable details of the order&#39;s payment source. | [optional] 
 **Token** | Pointer to **interface{}** | A unique token that can be shared more securely instead of the order&#39;s id. | [optional] 
 **CartUrl** | Pointer to **interface{}** | The cart url on your site. If present, it will be used on our hosted checkout application. | [optional] 
@@ -101,12 +110,13 @@ Name | Type | Description | Notes
 **FulfillmentUpdatedAt** | Pointer to **interface{}** | Time at which the order&#39;s fulfillment status was last updated. | [optional] 
 **RefreshedAt** | Pointer to **interface{}** | Last time at which an order was manually refreshed. | [optional] 
 **ArchivedAt** | Pointer to **interface{}** | Time at which the resource has been archived. | [optional] 
-**ExpiresAt** | Pointer to **interface{}** | Time at which an order is marked for cleanup. Any order will start with a default expire time of 2 months. Expiration is reset once a line item is added to the order. | [optional] 
 **SubscriptionCreatedAt** | Pointer to **interface{}** | Time at which the order has been marked to create a subscription from its recurring line items. | [optional] 
+**CircuitState** | Pointer to **interface{}** | The circuit breaker state, by default it is &#39;closed&#39;. It can become &#39;open&#39; once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made. | [optional] 
+**CircuitFailureCount** | Pointer to **interface{}** | The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -163,6 +173,41 @@ HasNumber returns a boolean if a field has been set.
 `func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetNumber()`
 
 UnsetNumber ensures that no value is present for Number, not even an explicit nil
+### GetAffiliateCode
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetAffiliateCode() interface{}`
+
+GetAffiliateCode returns the AffiliateCode field if non-nil, zero value otherwise.
+
+### GetAffiliateCodeOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetAffiliateCodeOk() (*interface{}, bool)`
+
+GetAffiliateCodeOk returns a tuple with the AffiliateCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAffiliateCode
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetAffiliateCode(v interface{})`
+
+SetAffiliateCode sets AffiliateCode field to given value.
+
+### HasAffiliateCode
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasAffiliateCode() bool`
+
+HasAffiliateCode returns a boolean if a field has been set.
+
+### SetAffiliateCodeNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetAffiliateCodeNil(b bool)`
+
+ SetAffiliateCodeNil sets the value for AffiliateCode to be an explicit nil
+
+### UnsetAffiliateCode
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetAffiliateCode()`
+
+UnsetAffiliateCode ensures that no value is present for AffiliateCode, not even an explicit nil
 ### GetAutorefresh
 
 `func (o *GETOrdersOrderId200ResponseDataAttributes) GetAutorefresh() interface{}`
@@ -198,6 +243,41 @@ HasAutorefresh returns a boolean if a field has been set.
 `func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetAutorefresh()`
 
 UnsetAutorefresh ensures that no value is present for Autorefresh, not even an explicit nil
+### GetPlaceAsync
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceAsync() interface{}`
+
+GetPlaceAsync returns the PlaceAsync field if non-nil, zero value otherwise.
+
+### GetPlaceAsyncOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceAsyncOk() (*interface{}, bool)`
+
+GetPlaceAsyncOk returns a tuple with the PlaceAsync field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlaceAsync
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetPlaceAsync(v interface{})`
+
+SetPlaceAsync sets PlaceAsync field to given value.
+
+### HasPlaceAsync
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasPlaceAsync() bool`
+
+HasPlaceAsync returns a boolean if a field has been set.
+
+### SetPlaceAsyncNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetPlaceAsyncNil(b bool)`
+
+ SetPlaceAsyncNil sets the value for PlaceAsync to be an explicit nil
+
+### UnsetPlaceAsync
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetPlaceAsync()`
+
+UnsetPlaceAsync ensures that no value is present for PlaceAsync, not even an explicit nil
 ### GetStatus
 
 `func (o *GETOrdersOrderId200ResponseDataAttributes) GetStatus() interface{}`
@@ -583,6 +663,111 @@ HasFreightTaxable returns a boolean if a field has been set.
 `func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetFreightTaxable()`
 
 UnsetFreightTaxable ensures that no value is present for FreightTaxable, not even an explicit nil
+### GetPaymentMethodTaxable
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetPaymentMethodTaxable() interface{}`
+
+GetPaymentMethodTaxable returns the PaymentMethodTaxable field if non-nil, zero value otherwise.
+
+### GetPaymentMethodTaxableOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetPaymentMethodTaxableOk() (*interface{}, bool)`
+
+GetPaymentMethodTaxableOk returns a tuple with the PaymentMethodTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentMethodTaxable
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetPaymentMethodTaxable(v interface{})`
+
+SetPaymentMethodTaxable sets PaymentMethodTaxable field to given value.
+
+### HasPaymentMethodTaxable
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasPaymentMethodTaxable() bool`
+
+HasPaymentMethodTaxable returns a boolean if a field has been set.
+
+### SetPaymentMethodTaxableNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetPaymentMethodTaxableNil(b bool)`
+
+ SetPaymentMethodTaxableNil sets the value for PaymentMethodTaxable to be an explicit nil
+
+### UnsetPaymentMethodTaxable
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetPaymentMethodTaxable()`
+
+UnsetPaymentMethodTaxable ensures that no value is present for PaymentMethodTaxable, not even an explicit nil
+### GetAdjustmentTaxable
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetAdjustmentTaxable() interface{}`
+
+GetAdjustmentTaxable returns the AdjustmentTaxable field if non-nil, zero value otherwise.
+
+### GetAdjustmentTaxableOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetAdjustmentTaxableOk() (*interface{}, bool)`
+
+GetAdjustmentTaxableOk returns a tuple with the AdjustmentTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdjustmentTaxable
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetAdjustmentTaxable(v interface{})`
+
+SetAdjustmentTaxable sets AdjustmentTaxable field to given value.
+
+### HasAdjustmentTaxable
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasAdjustmentTaxable() bool`
+
+HasAdjustmentTaxable returns a boolean if a field has been set.
+
+### SetAdjustmentTaxableNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetAdjustmentTaxableNil(b bool)`
+
+ SetAdjustmentTaxableNil sets the value for AdjustmentTaxable to be an explicit nil
+
+### UnsetAdjustmentTaxable
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetAdjustmentTaxable()`
+
+UnsetAdjustmentTaxable ensures that no value is present for AdjustmentTaxable, not even an explicit nil
+### GetGiftCardTaxable
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetGiftCardTaxable() interface{}`
+
+GetGiftCardTaxable returns the GiftCardTaxable field if non-nil, zero value otherwise.
+
+### GetGiftCardTaxableOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetGiftCardTaxableOk() (*interface{}, bool)`
+
+GetGiftCardTaxableOk returns a tuple with the GiftCardTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGiftCardTaxable
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetGiftCardTaxable(v interface{})`
+
+SetGiftCardTaxable sets GiftCardTaxable field to given value.
+
+### HasGiftCardTaxable
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasGiftCardTaxable() bool`
+
+HasGiftCardTaxable returns a boolean if a field has been set.
+
+### SetGiftCardTaxableNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetGiftCardTaxableNil(b bool)`
+
+ SetGiftCardTaxableNil sets the value for GiftCardTaxable to be an explicit nil
+
+### UnsetGiftCardTaxable
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetGiftCardTaxable()`
+
+UnsetGiftCardTaxable ensures that no value is present for GiftCardTaxable, not even an explicit nil
 ### GetRequiresBillingInfo
 
 `func (o *GETOrdersOrderId200ResponseDataAttributes) GetRequiresBillingInfo() interface{}`
@@ -758,41 +943,6 @@ HasGiftCardCode returns a boolean if a field has been set.
 `func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetGiftCardCode()`
 
 UnsetGiftCardCode ensures that no value is present for GiftCardCode, not even an explicit nil
-### GetGiftCardOrCouponCode
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCode() interface{}`
-
-GetGiftCardOrCouponCode returns the GiftCardOrCouponCode field if non-nil, zero value otherwise.
-
-### GetGiftCardOrCouponCodeOk
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*interface{}, bool)`
-
-GetGiftCardOrCouponCodeOk returns a tuple with the GiftCardOrCouponCode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGiftCardOrCouponCode
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) SetGiftCardOrCouponCode(v interface{})`
-
-SetGiftCardOrCouponCode sets GiftCardOrCouponCode field to given value.
-
-### HasGiftCardOrCouponCode
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) HasGiftCardOrCouponCode() bool`
-
-HasGiftCardOrCouponCode returns a boolean if a field has been set.
-
-### SetGiftCardOrCouponCodeNil
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) SetGiftCardOrCouponCodeNil(b bool)`
-
- SetGiftCardOrCouponCodeNil sets the value for GiftCardOrCouponCode to be an explicit nil
-
-### UnsetGiftCardOrCouponCode
-`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetGiftCardOrCouponCode()`
-
-UnsetGiftCardOrCouponCode ensures that no value is present for GiftCardOrCouponCode, not even an explicit nil
 ### GetSubtotalAmountCents
 
 `func (o *GETOrdersOrderId200ResponseDataAttributes) GetSubtotalAmountCents() interface{}`
@@ -2893,6 +3043,111 @@ HasFormattedDutyAmount returns a boolean if a field has been set.
 `func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetFormattedDutyAmount()`
 
 UnsetFormattedDutyAmount ensures that no value is present for FormattedDutyAmount, not even an explicit nil
+### GetPlaceTotalAmountCents
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceTotalAmountCents() interface{}`
+
+GetPlaceTotalAmountCents returns the PlaceTotalAmountCents field if non-nil, zero value otherwise.
+
+### GetPlaceTotalAmountCentsOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceTotalAmountCentsOk() (*interface{}, bool)`
+
+GetPlaceTotalAmountCentsOk returns a tuple with the PlaceTotalAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlaceTotalAmountCents
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetPlaceTotalAmountCents(v interface{})`
+
+SetPlaceTotalAmountCents sets PlaceTotalAmountCents field to given value.
+
+### HasPlaceTotalAmountCents
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasPlaceTotalAmountCents() bool`
+
+HasPlaceTotalAmountCents returns a boolean if a field has been set.
+
+### SetPlaceTotalAmountCentsNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetPlaceTotalAmountCentsNil(b bool)`
+
+ SetPlaceTotalAmountCentsNil sets the value for PlaceTotalAmountCents to be an explicit nil
+
+### UnsetPlaceTotalAmountCents
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetPlaceTotalAmountCents()`
+
+UnsetPlaceTotalAmountCents ensures that no value is present for PlaceTotalAmountCents, not even an explicit nil
+### GetPlaceTotalAmountFloat
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceTotalAmountFloat() interface{}`
+
+GetPlaceTotalAmountFloat returns the PlaceTotalAmountFloat field if non-nil, zero value otherwise.
+
+### GetPlaceTotalAmountFloatOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceTotalAmountFloatOk() (*interface{}, bool)`
+
+GetPlaceTotalAmountFloatOk returns a tuple with the PlaceTotalAmountFloat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlaceTotalAmountFloat
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetPlaceTotalAmountFloat(v interface{})`
+
+SetPlaceTotalAmountFloat sets PlaceTotalAmountFloat field to given value.
+
+### HasPlaceTotalAmountFloat
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasPlaceTotalAmountFloat() bool`
+
+HasPlaceTotalAmountFloat returns a boolean if a field has been set.
+
+### SetPlaceTotalAmountFloatNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetPlaceTotalAmountFloatNil(b bool)`
+
+ SetPlaceTotalAmountFloatNil sets the value for PlaceTotalAmountFloat to be an explicit nil
+
+### UnsetPlaceTotalAmountFloat
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetPlaceTotalAmountFloat()`
+
+UnsetPlaceTotalAmountFloat ensures that no value is present for PlaceTotalAmountFloat, not even an explicit nil
+### GetFormattedPlaceTotalAmount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetFormattedPlaceTotalAmount() interface{}`
+
+GetFormattedPlaceTotalAmount returns the FormattedPlaceTotalAmount field if non-nil, zero value otherwise.
+
+### GetFormattedPlaceTotalAmountOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetFormattedPlaceTotalAmountOk() (*interface{}, bool)`
+
+GetFormattedPlaceTotalAmountOk returns a tuple with the FormattedPlaceTotalAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormattedPlaceTotalAmount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetFormattedPlaceTotalAmount(v interface{})`
+
+SetFormattedPlaceTotalAmount sets FormattedPlaceTotalAmount field to given value.
+
+### HasFormattedPlaceTotalAmount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasFormattedPlaceTotalAmount() bool`
+
+HasFormattedPlaceTotalAmount returns a boolean if a field has been set.
+
+### SetFormattedPlaceTotalAmountNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetFormattedPlaceTotalAmountNil(b bool)`
+
+ SetFormattedPlaceTotalAmountNil sets the value for FormattedPlaceTotalAmount to be an explicit nil
+
+### UnsetFormattedPlaceTotalAmount
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetFormattedPlaceTotalAmount()`
+
+UnsetFormattedPlaceTotalAmount ensures that no value is present for FormattedPlaceTotalAmount, not even an explicit nil
 ### GetSkusCount
 
 `func (o *GETOrdersOrderId200ResponseDataAttributes) GetSkusCount() interface{}`
@@ -3033,6 +3288,76 @@ HasTaxCalculationsCount returns a boolean if a field has been set.
 `func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetTaxCalculationsCount()`
 
 UnsetTaxCalculationsCount ensures that no value is present for TaxCalculationsCount, not even an explicit nil
+### GetValidationsCount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetValidationsCount() interface{}`
+
+GetValidationsCount returns the ValidationsCount field if non-nil, zero value otherwise.
+
+### GetValidationsCountOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetValidationsCountOk() (*interface{}, bool)`
+
+GetValidationsCountOk returns a tuple with the ValidationsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidationsCount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetValidationsCount(v interface{})`
+
+SetValidationsCount sets ValidationsCount field to given value.
+
+### HasValidationsCount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasValidationsCount() bool`
+
+HasValidationsCount returns a boolean if a field has been set.
+
+### SetValidationsCountNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetValidationsCountNil(b bool)`
+
+ SetValidationsCountNil sets the value for ValidationsCount to be an explicit nil
+
+### UnsetValidationsCount
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetValidationsCount()`
+
+UnsetValidationsCount ensures that no value is present for ValidationsCount, not even an explicit nil
+### GetErrorsCount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetErrorsCount() interface{}`
+
+GetErrorsCount returns the ErrorsCount field if non-nil, zero value otherwise.
+
+### GetErrorsCountOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetErrorsCountOk() (*interface{}, bool)`
+
+GetErrorsCountOk returns a tuple with the ErrorsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrorsCount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetErrorsCount(v interface{})`
+
+SetErrorsCount sets ErrorsCount field to given value.
+
+### HasErrorsCount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasErrorsCount() bool`
+
+HasErrorsCount returns a boolean if a field has been set.
+
+### SetErrorsCountNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetErrorsCountNil(b bool)`
+
+ SetErrorsCountNil sets the value for ErrorsCount to be an explicit nil
+
+### UnsetErrorsCount
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetErrorsCount()`
+
+UnsetErrorsCount ensures that no value is present for ErrorsCount, not even an explicit nil
 ### GetPaymentSourceDetails
 
 `func (o *GETOrdersOrderId200ResponseDataAttributes) GetPaymentSourceDetails() interface{}`
@@ -3523,41 +3848,6 @@ HasArchivedAt returns a boolean if a field has been set.
 `func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetArchivedAt()`
 
 UnsetArchivedAt ensures that no value is present for ArchivedAt, not even an explicit nil
-### GetExpiresAt
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) GetExpiresAt() interface{}`
-
-GetExpiresAt returns the ExpiresAt field if non-nil, zero value otherwise.
-
-### GetExpiresAtOk
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool)`
-
-GetExpiresAtOk returns a tuple with the ExpiresAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExpiresAt
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) SetExpiresAt(v interface{})`
-
-SetExpiresAt sets ExpiresAt field to given value.
-
-### HasExpiresAt
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) HasExpiresAt() bool`
-
-HasExpiresAt returns a boolean if a field has been set.
-
-### SetExpiresAtNil
-
-`func (o *GETOrdersOrderId200ResponseDataAttributes) SetExpiresAtNil(b bool)`
-
- SetExpiresAtNil sets the value for ExpiresAt to be an explicit nil
-
-### UnsetExpiresAt
-`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetExpiresAt()`
-
-UnsetExpiresAt ensures that no value is present for ExpiresAt, not even an explicit nil
 ### GetSubscriptionCreatedAt
 
 `func (o *GETOrdersOrderId200ResponseDataAttributes) GetSubscriptionCreatedAt() interface{}`
@@ -3593,6 +3883,76 @@ HasSubscriptionCreatedAt returns a boolean if a field has been set.
 `func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetSubscriptionCreatedAt()`
 
 UnsetSubscriptionCreatedAt ensures that no value is present for SubscriptionCreatedAt, not even an explicit nil
+### GetCircuitState
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetCircuitState() interface{}`
+
+GetCircuitState returns the CircuitState field if non-nil, zero value otherwise.
+
+### GetCircuitStateOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool)`
+
+GetCircuitStateOk returns a tuple with the CircuitState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitState
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetCircuitState(v interface{})`
+
+SetCircuitState sets CircuitState field to given value.
+
+### HasCircuitState
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasCircuitState() bool`
+
+HasCircuitState returns a boolean if a field has been set.
+
+### SetCircuitStateNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetCircuitStateNil(b bool)`
+
+ SetCircuitStateNil sets the value for CircuitState to be an explicit nil
+
+### UnsetCircuitState
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetCircuitState()`
+
+UnsetCircuitState ensures that no value is present for CircuitState, not even an explicit nil
+### GetCircuitFailureCount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetCircuitFailureCount() interface{}`
+
+GetCircuitFailureCount returns the CircuitFailureCount field if non-nil, zero value otherwise.
+
+### GetCircuitFailureCountOk
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool)`
+
+GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitFailureCount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetCircuitFailureCount(v interface{})`
+
+SetCircuitFailureCount sets CircuitFailureCount field to given value.
+
+### HasCircuitFailureCount
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) HasCircuitFailureCount() bool`
+
+HasCircuitFailureCount returns a boolean if a field has been set.
+
+### SetCircuitFailureCountNil
+
+`func (o *GETOrdersOrderId200ResponseDataAttributes) SetCircuitFailureCountNil(b bool)`
+
+ SetCircuitFailureCountNil sets the value for CircuitFailureCount to be an explicit nil
+
+### UnsetCircuitFailureCount
+`func (o *GETOrdersOrderId200ResponseDataAttributes) UnsetCircuitFailureCount()`
+
+UnsetCircuitFailureCount ensures that no value is present for CircuitFailureCount, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETOrdersOrderId200ResponseDataAttributes) GetCreatedAt() interface{}`

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -21,16 +21,16 @@ var _ MappedNullable = &CustomerAddressCreateData{}
 // CustomerAddressCreateData struct for CustomerAddressCreateData
 type CustomerAddressCreateData struct {
 	// The resource's type
-	Type          interface{}                                `json:"type"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships *CustomerAddressCreateDataRelationships    `json:"relationships,omitempty"`
+	Type          interface{}                                    `json:"type"`
+	Attributes    POSTCustomerAddresses201ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerAddressCreateDataRelationships        `json:"relationships,omitempty"`
 }
 
 // NewCustomerAddressCreateData instantiates a new CustomerAddressCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerAddressCreateData(type_ interface{}, attributes POSTAdyenPayments201ResponseDataAttributes) *CustomerAddressCreateData {
+func NewCustomerAddressCreateData(type_ interface{}, attributes POSTCustomerAddresses201ResponseDataAttributes) *CustomerAddressCreateData {
 	this := CustomerAddressCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -72,9 +72,9 @@ func (o *CustomerAddressCreateData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerAddressCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
+func (o *CustomerAddressCreateData) GetAttributes() POSTCustomerAddresses201ResponseDataAttributes {
 	if o == nil {
-		var ret POSTAdyenPayments201ResponseDataAttributes
+		var ret POSTCustomerAddresses201ResponseDataAttributes
 		return ret
 	}
 
@@ -83,7 +83,7 @@ func (o *CustomerAddressCreateData) GetAttributes() POSTAdyenPayments201Response
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
+func (o *CustomerAddressCreateData) GetAttributesOk() (*POSTCustomerAddresses201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *CustomerAddressCreateData) GetAttributesOk() (*POSTAdyenPayments201Resp
 }
 
 // SetAttributes sets field value
-func (o *CustomerAddressCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
+func (o *CustomerAddressCreateData) SetAttributes(v POSTCustomerAddresses201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

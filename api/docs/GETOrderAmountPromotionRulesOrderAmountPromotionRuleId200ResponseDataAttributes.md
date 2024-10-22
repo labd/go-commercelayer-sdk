@@ -4,14 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Type** | Pointer to **interface{}** | The promotion rule&#39;s type. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **OrderAmountCents** | Pointer to **interface{}** | Apply the promotion only when order is over this amount, in cents. | [optional] 
 **OrderAmountFloat** | Pointer to **interface{}** | Apply the promotion only when order is over this amount, float. | [optional] 
 **FormattedOrderAmount** | Pointer to **interface{}** | Apply the promotion only when order is over this amount, formatted. | [optional] 
+**UseSubtotal** | Pointer to **interface{}** | Send this attribute if you want to compare the specified amount with order&#39;s subtotal (excluding discounts, if any). | [optional] 
 
 ## Methods
 
@@ -32,6 +34,41 @@ NewGETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttribut
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetType
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) GetType() interface{}`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) SetType(v interface{})`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### SetTypeNil
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) GetCreatedAt() interface{}`
@@ -312,6 +349,41 @@ HasFormattedOrderAmount returns a boolean if a field has been set.
 `func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) UnsetFormattedOrderAmount()`
 
 UnsetFormattedOrderAmount ensures that no value is present for FormattedOrderAmount, not even an explicit nil
+### GetUseSubtotal
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) GetUseSubtotal() interface{}`
+
+GetUseSubtotal returns the UseSubtotal field if non-nil, zero value otherwise.
+
+### GetUseSubtotalOk
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) GetUseSubtotalOk() (*interface{}, bool)`
+
+GetUseSubtotalOk returns a tuple with the UseSubtotal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSubtotal
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) SetUseSubtotal(v interface{})`
+
+SetUseSubtotal sets UseSubtotal field to given value.
+
+### HasUseSubtotal
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) HasUseSubtotal() bool`
+
+HasUseSubtotal returns a boolean if a field has been set.
+
+### SetUseSubtotalNil
+
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) SetUseSubtotalNil(b bool)`
+
+ SetUseSubtotalNil sets the value for UseSubtotal to be an explicit nil
+
+### UnsetUseSubtotal
+`func (o *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) UnsetUseSubtotal()`
+
+UnsetUseSubtotal ensures that no value is present for UseSubtotal, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &POSTParcelLineItems201ResponseDataRelationships{}
 
 // POSTParcelLineItems201ResponseDataRelationships struct for POSTParcelLineItems201ResponseDataRelationships
 type POSTParcelLineItems201ResponseDataRelationships struct {
-	Parcel           *POSTParcelLineItems201ResponseDataRelationshipsParcel           `json:"parcel,omitempty"`
-	StockLineItem    *POSTParcelLineItems201ResponseDataRelationshipsStockLineItem    `json:"stock_line_item,omitempty"`
-	ShipmentLineItem *POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem `json:"shipment_line_item,omitempty"`
+	Parcel        *POSTParcelLineItems201ResponseDataRelationshipsParcel        `json:"parcel,omitempty"`
+	StockLineItem *POSTParcelLineItems201ResponseDataRelationshipsStockLineItem `json:"stock_line_item,omitempty"`
+	Versions      *POSTAddresses201ResponseDataRelationshipsVersions            `json:"versions,omitempty"`
 }
 
 // NewPOSTParcelLineItems201ResponseDataRelationships instantiates a new POSTParcelLineItems201ResponseDataRelationships object
@@ -106,36 +106,36 @@ func (o *POSTParcelLineItems201ResponseDataRelationships) SetStockLineItem(v POS
 	o.StockLineItem = &v
 }
 
-// GetShipmentLineItem returns the ShipmentLineItem field value if set, zero value otherwise.
-func (o *POSTParcelLineItems201ResponseDataRelationships) GetShipmentLineItem() POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem {
-	if o == nil || IsNil(o.ShipmentLineItem) {
-		var ret POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTParcelLineItems201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
 		return ret
 	}
-	return *o.ShipmentLineItem
+	return *o.Versions
 }
 
-// GetShipmentLineItemOk returns a tuple with the ShipmentLineItem field value if set, nil otherwise
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTParcelLineItems201ResponseDataRelationships) GetShipmentLineItemOk() (*POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem, bool) {
-	if o == nil || IsNil(o.ShipmentLineItem) {
+func (o *POSTParcelLineItems201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
 		return nil, false
 	}
-	return o.ShipmentLineItem, true
+	return o.Versions, true
 }
 
-// HasShipmentLineItem returns a boolean if a field has been set.
-func (o *POSTParcelLineItems201ResponseDataRelationships) HasShipmentLineItem() bool {
-	if o != nil && !IsNil(o.ShipmentLineItem) {
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTParcelLineItems201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
 		return true
 	}
 
 	return false
 }
 
-// SetShipmentLineItem gets a reference to the given POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem and assigns it to the ShipmentLineItem field.
-func (o *POSTParcelLineItems201ResponseDataRelationships) SetShipmentLineItem(v POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem) {
-	o.ShipmentLineItem = &v
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTParcelLineItems201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTParcelLineItems201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -154,8 +154,8 @@ func (o POSTParcelLineItems201ResponseDataRelationships) ToMap() (map[string]int
 	if !IsNil(o.StockLineItem) {
 		toSerialize["stock_line_item"] = o.StockLineItem
 	}
-	if !IsNil(o.ShipmentLineItem) {
-		toSerialize["shipment_line_item"] = o.ShipmentLineItem
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

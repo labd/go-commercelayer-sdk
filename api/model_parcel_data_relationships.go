@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.0
 Contact: support@commercelayer.io
 */
 
@@ -20,11 +20,12 @@ var _ MappedNullable = &ParcelDataRelationships{}
 
 // ParcelDataRelationships struct for ParcelDataRelationships
 type ParcelDataRelationships struct {
-	Shipment        *OrderDataRelationshipsShipments            `json:"shipment,omitempty"`
-	Package         *ParcelDataRelationshipsPackage             `json:"package,omitempty"`
-	ParcelLineItems *ParcelDataRelationshipsParcelLineItems     `json:"parcel_line_items,omitempty"`
-	Attachments     *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events          *AuthorizationDataRelationshipsEvents       `json:"events,omitempty"`
+	Shipment        *LineItemDataRelationshipsShipment         `json:"shipment,omitempty"`
+	Package         *ParcelDataRelationshipsPackage            `json:"package,omitempty"`
+	ParcelLineItems *ParcelDataRelationshipsParcelLineItems    `json:"parcel_line_items,omitempty"`
+	Attachments     *AuthorizationDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Events          *AddressDataRelationshipsEvents            `json:"events,omitempty"`
+	Versions        *AddressDataRelationshipsVersions          `json:"versions,omitempty"`
 }
 
 // NewParcelDataRelationships instantiates a new ParcelDataRelationships object
@@ -45,9 +46,9 @@ func NewParcelDataRelationshipsWithDefaults() *ParcelDataRelationships {
 }
 
 // GetShipment returns the Shipment field value if set, zero value otherwise.
-func (o *ParcelDataRelationships) GetShipment() OrderDataRelationshipsShipments {
+func (o *ParcelDataRelationships) GetShipment() LineItemDataRelationshipsShipment {
 	if o == nil || IsNil(o.Shipment) {
-		var ret OrderDataRelationshipsShipments
+		var ret LineItemDataRelationshipsShipment
 		return ret
 	}
 	return *o.Shipment
@@ -55,7 +56,7 @@ func (o *ParcelDataRelationships) GetShipment() OrderDataRelationshipsShipments 
 
 // GetShipmentOk returns a tuple with the Shipment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ParcelDataRelationships) GetShipmentOk() (*OrderDataRelationshipsShipments, bool) {
+func (o *ParcelDataRelationships) GetShipmentOk() (*LineItemDataRelationshipsShipment, bool) {
 	if o == nil || IsNil(o.Shipment) {
 		return nil, false
 	}
@@ -71,8 +72,8 @@ func (o *ParcelDataRelationships) HasShipment() bool {
 	return false
 }
 
-// SetShipment gets a reference to the given OrderDataRelationshipsShipments and assigns it to the Shipment field.
-func (o *ParcelDataRelationships) SetShipment(v OrderDataRelationshipsShipments) {
+// SetShipment gets a reference to the given LineItemDataRelationshipsShipment and assigns it to the Shipment field.
+func (o *ParcelDataRelationships) SetShipment(v LineItemDataRelationshipsShipment) {
 	o.Shipment = &v
 }
 
@@ -141,9 +142,9 @@ func (o *ParcelDataRelationships) SetParcelLineItems(v ParcelDataRelationshipsPa
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *ParcelDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *ParcelDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -151,7 +152,7 @@ func (o *ParcelDataRelationships) GetAttachments() AvalaraAccountDataRelationshi
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ParcelDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *ParcelDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -167,15 +168,15 @@ func (o *ParcelDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *ParcelDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *ParcelDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *ParcelDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *ParcelDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -183,7 +184,7 @@ func (o *ParcelDataRelationships) GetEvents() AuthorizationDataRelationshipsEven
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ParcelDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *ParcelDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -199,9 +200,41 @@ func (o *ParcelDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *ParcelDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *ParcelDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *ParcelDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ParcelDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *ParcelDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *ParcelDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o ParcelDataRelationships) MarshalJSON() ([]byte, error) {
@@ -228,6 +261,9 @@ func (o ParcelDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }
