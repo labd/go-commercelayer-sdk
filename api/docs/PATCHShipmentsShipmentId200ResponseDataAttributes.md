@@ -4,16 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Number** | Pointer to **interface{}** | Unique identifier for the shipment. Cannot be passed by sales channels. | [optional] 
+**Upcoming** | Pointer to **interface{}** | Send this attribute if you want to mark this shipment as upcoming. Cannot be passed by sales channels. | [optional] 
+**Cancel** | Pointer to **interface{}** | Send this attribute if you want to mark this shipment as cancelled (unless already shipped or delivered). Cannot be passed by sales channels. | [optional] 
 **OnHold** | Pointer to **interface{}** | Send this attribute if you want to put this shipment on hold. | [optional] 
 **Picking** | Pointer to **interface{}** | Send this attribute if you want to start picking this shipment. | [optional] 
 **Packing** | Pointer to **interface{}** | Send this attribute if you want to start packing this shipment. | [optional] 
 **ReadyToShip** | Pointer to **interface{}** | Send this attribute if you want to mark this shipment as ready to ship. | [optional] 
 **Ship** | Pointer to **interface{}** | Send this attribute if you want to mark this shipment as shipped. | [optional] 
+**Deliver** | Pointer to **interface{}** | Send this attribute if you want to mark this shipment as delivered. | [optional] 
+**ReserveStock** | Pointer to **interface{}** | Send this attribute if you want to automatically reserve the stock for each of the associated stock line item. Can be done only when fulfillment is in progress. Cannot be passed by sales channels. | [optional] 
+**ReleaseStock** | Pointer to **interface{}** | Send this attribute if you want to automatically destroy the stock reservations for each of the associated stock line item. Can be done only when fulfillment is in progress. Cannot be passed by sales channels. | [optional] 
+**DecrementStock** | Pointer to **interface{}** | Send this attribute if you want to automatically decrement and release the stock for each of the associated stock line item. Can be done only when fulfillment is in progress. Cannot be passed by sales channels. | [optional] 
 **GetRates** | Pointer to **interface{}** | Send this attribute if you want get the shipping rates from the associated carrier accounts. | [optional] 
 **SelectedRateId** | Pointer to **interface{}** | The selected purchase rate from the available shipping rates. | [optional] 
 **Purchase** | Pointer to **interface{}** | Send this attribute if you want to purchase this shipment with the selected rate. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -35,6 +42,111 @@ NewPATCHShipmentsShipmentId200ResponseDataAttributesWithDefaults instantiates a 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetNumber
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetNumber() interface{}`
+
+GetNumber returns the Number field if non-nil, zero value otherwise.
+
+### GetNumberOk
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetNumberOk() (*interface{}, bool)`
+
+GetNumberOk returns a tuple with the Number field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumber
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetNumber(v interface{})`
+
+SetNumber sets Number field to given value.
+
+### HasNumber
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasNumber() bool`
+
+HasNumber returns a boolean if a field has been set.
+
+### SetNumberNil
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetNumberNil(b bool)`
+
+ SetNumberNil sets the value for Number to be an explicit nil
+
+### UnsetNumber
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) UnsetNumber()`
+
+UnsetNumber ensures that no value is present for Number, not even an explicit nil
+### GetUpcoming
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetUpcoming() interface{}`
+
+GetUpcoming returns the Upcoming field if non-nil, zero value otherwise.
+
+### GetUpcomingOk
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetUpcomingOk() (*interface{}, bool)`
+
+GetUpcomingOk returns a tuple with the Upcoming field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpcoming
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetUpcoming(v interface{})`
+
+SetUpcoming sets Upcoming field to given value.
+
+### HasUpcoming
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasUpcoming() bool`
+
+HasUpcoming returns a boolean if a field has been set.
+
+### SetUpcomingNil
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetUpcomingNil(b bool)`
+
+ SetUpcomingNil sets the value for Upcoming to be an explicit nil
+
+### UnsetUpcoming
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) UnsetUpcoming()`
+
+UnsetUpcoming ensures that no value is present for Upcoming, not even an explicit nil
+### GetCancel
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetCancel() interface{}`
+
+GetCancel returns the Cancel field if non-nil, zero value otherwise.
+
+### GetCancelOk
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool)`
+
+GetCancelOk returns a tuple with the Cancel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancel
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetCancel(v interface{})`
+
+SetCancel sets Cancel field to given value.
+
+### HasCancel
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasCancel() bool`
+
+HasCancel returns a boolean if a field has been set.
+
+### SetCancelNil
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetCancelNil(b bool)`
+
+ SetCancelNil sets the value for Cancel to be an explicit nil
+
+### UnsetCancel
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) UnsetCancel()`
+
+UnsetCancel ensures that no value is present for Cancel, not even an explicit nil
 ### GetOnHold
 
 `func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetOnHold() interface{}`
@@ -210,6 +322,146 @@ HasShip returns a boolean if a field has been set.
 `func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) UnsetShip()`
 
 UnsetShip ensures that no value is present for Ship, not even an explicit nil
+### GetDeliver
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetDeliver() interface{}`
+
+GetDeliver returns the Deliver field if non-nil, zero value otherwise.
+
+### GetDeliverOk
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetDeliverOk() (*interface{}, bool)`
+
+GetDeliverOk returns a tuple with the Deliver field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeliver
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetDeliver(v interface{})`
+
+SetDeliver sets Deliver field to given value.
+
+### HasDeliver
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasDeliver() bool`
+
+HasDeliver returns a boolean if a field has been set.
+
+### SetDeliverNil
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetDeliverNil(b bool)`
+
+ SetDeliverNil sets the value for Deliver to be an explicit nil
+
+### UnsetDeliver
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) UnsetDeliver()`
+
+UnsetDeliver ensures that no value is present for Deliver, not even an explicit nil
+### GetReserveStock
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReserveStock() interface{}`
+
+GetReserveStock returns the ReserveStock field if non-nil, zero value otherwise.
+
+### GetReserveStockOk
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReserveStockOk() (*interface{}, bool)`
+
+GetReserveStockOk returns a tuple with the ReserveStock field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReserveStock
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReserveStock(v interface{})`
+
+SetReserveStock sets ReserveStock field to given value.
+
+### HasReserveStock
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasReserveStock() bool`
+
+HasReserveStock returns a boolean if a field has been set.
+
+### SetReserveStockNil
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReserveStockNil(b bool)`
+
+ SetReserveStockNil sets the value for ReserveStock to be an explicit nil
+
+### UnsetReserveStock
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) UnsetReserveStock()`
+
+UnsetReserveStock ensures that no value is present for ReserveStock, not even an explicit nil
+### GetReleaseStock
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReleaseStock() interface{}`
+
+GetReleaseStock returns the ReleaseStock field if non-nil, zero value otherwise.
+
+### GetReleaseStockOk
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReleaseStockOk() (*interface{}, bool)`
+
+GetReleaseStockOk returns a tuple with the ReleaseStock field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseStock
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReleaseStock(v interface{})`
+
+SetReleaseStock sets ReleaseStock field to given value.
+
+### HasReleaseStock
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasReleaseStock() bool`
+
+HasReleaseStock returns a boolean if a field has been set.
+
+### SetReleaseStockNil
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReleaseStockNil(b bool)`
+
+ SetReleaseStockNil sets the value for ReleaseStock to be an explicit nil
+
+### UnsetReleaseStock
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) UnsetReleaseStock()`
+
+UnsetReleaseStock ensures that no value is present for ReleaseStock, not even an explicit nil
+### GetDecrementStock
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetDecrementStock() interface{}`
+
+GetDecrementStock returns the DecrementStock field if non-nil, zero value otherwise.
+
+### GetDecrementStockOk
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetDecrementStockOk() (*interface{}, bool)`
+
+GetDecrementStockOk returns a tuple with the DecrementStock field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDecrementStock
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetDecrementStock(v interface{})`
+
+SetDecrementStock sets DecrementStock field to given value.
+
+### HasDecrementStock
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasDecrementStock() bool`
+
+HasDecrementStock returns a boolean if a field has been set.
+
+### SetDecrementStockNil
+
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetDecrementStockNil(b bool)`
+
+ SetDecrementStockNil sets the value for DecrementStock to be an explicit nil
+
+### UnsetDecrementStock
+`func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) UnsetDecrementStock()`
+
+UnsetDecrementStock ensures that no value is present for DecrementStock, not even an explicit nil
 ### GetGetRates
 
 `func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetGetRates() interface{}`

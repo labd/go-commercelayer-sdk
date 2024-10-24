@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -21,7 +21,9 @@ var _ MappedNullable = &POSTCustomerPaymentSources201ResponseDataRelationships{}
 // POSTCustomerPaymentSources201ResponseDataRelationships struct for POSTCustomerPaymentSources201ResponseDataRelationships
 type POSTCustomerPaymentSources201ResponseDataRelationships struct {
 	Customer      *POSTCouponRecipients201ResponseDataRelationshipsCustomer            `json:"customer,omitempty"`
+	PaymentMethod *POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod `json:"payment_method,omitempty"`
 	PaymentSource *POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	Versions      *POSTAddresses201ResponseDataRelationshipsVersions                   `json:"versions,omitempty"`
 }
 
 // NewPOSTCustomerPaymentSources201ResponseDataRelationships instantiates a new POSTCustomerPaymentSources201ResponseDataRelationships object
@@ -73,6 +75,38 @@ func (o *POSTCustomerPaymentSources201ResponseDataRelationships) SetCustomer(v P
 	o.Customer = &v
 }
 
+// GetPaymentMethod returns the PaymentMethod field value if set, zero value otherwise.
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentMethod() POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod {
+	if o == nil || IsNil(o.PaymentMethod) {
+		var ret POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod
+		return ret
+	}
+	return *o.PaymentMethod
+}
+
+// GetPaymentMethodOk returns a tuple with the PaymentMethod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentMethodOk() (*POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod, bool) {
+	if o == nil || IsNil(o.PaymentMethod) {
+		return nil, false
+	}
+	return o.PaymentMethod, true
+}
+
+// HasPaymentMethod returns a boolean if a field has been set.
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) HasPaymentMethod() bool {
+	if o != nil && !IsNil(o.PaymentMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentMethod gets a reference to the given POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod and assigns it to the PaymentMethod field.
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) SetPaymentMethod(v POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod) {
+	o.PaymentMethod = &v
+}
+
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
 func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSource() POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource {
 	if o == nil || IsNil(o.PaymentSource) {
@@ -105,6 +139,38 @@ func (o *POSTCustomerPaymentSources201ResponseDataRelationships) SetPaymentSourc
 	o.PaymentSource = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 func (o POSTCustomerPaymentSources201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -118,8 +184,14 @@ func (o POSTCustomerPaymentSources201ResponseDataRelationships) ToMap() (map[str
 	if !IsNil(o.Customer) {
 		toSerialize["customer"] = o.Customer
 	}
+	if !IsNil(o.PaymentMethod) {
+		toSerialize["payment_method"] = o.PaymentMethod
+	}
 	if !IsNil(o.PaymentSource) {
 		toSerialize["payment_source"] = o.PaymentSource
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -65,6 +65,98 @@ func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ReturnsApiDELETERetur
 
 	localVarPath := localBasePath + "/returns/{returnId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ReturnsApiGETCaptureIdReturnRequest struct {
+	ctx        context.Context
+	ApiService *ReturnsApiService
+	captureId  interface{}
+}
+
+func (r ReturnsApiGETCaptureIdReturnRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCaptureIdReturnExecute(r)
+}
+
+/*
+GETCaptureIdReturn Retrieve the return associated to the capture
+
+Retrieve the return associated to the capture
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return ReturnsApiGETCaptureIdReturnRequest
+*/
+func (a *ReturnsApiService) GETCaptureIdReturn(ctx context.Context, captureId interface{}) ReturnsApiGETCaptureIdReturnRequest {
+	return ReturnsApiGETCaptureIdReturnRequest{
+		ApiService: a,
+		ctx:        ctx,
+		captureId:  captureId,
+	}
+}
+
+// Execute executes the request
+func (a *ReturnsApiService) GETCaptureIdReturnExecute(r ReturnsApiGETCaptureIdReturnRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.GETCaptureIdReturn")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/captures/{captureId}/return"
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -249,6 +341,98 @@ func (a *ReturnsApiService) GETOrderIdReturnsExecute(r ReturnsApiGETOrderIdRetur
 
 	localVarPath := localBasePath + "/orders/{orderId}/returns"
 	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ReturnsApiGETRefundIdReturnRequest struct {
+	ctx        context.Context
+	ApiService *ReturnsApiService
+	refundId   interface{}
+}
+
+func (r ReturnsApiGETRefundIdReturnRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRefundIdReturnExecute(r)
+}
+
+/*
+GETRefundIdReturn Retrieve the return associated to the refund
+
+Retrieve the return associated to the refund
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param refundId The resource's id
+	@return ReturnsApiGETRefundIdReturnRequest
+*/
+func (a *ReturnsApiService) GETRefundIdReturn(ctx context.Context, refundId interface{}) ReturnsApiGETRefundIdReturnRequest {
+	return ReturnsApiGETRefundIdReturnRequest{
+		ApiService: a,
+		ctx:        ctx,
+		refundId:   refundId,
+	}
+}
+
+// Execute executes the request
+func (a *ReturnsApiService) GETRefundIdReturnExecute(r ReturnsApiGETRefundIdReturnRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.GETRefundIdReturn")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/refunds/{refundId}/return"
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

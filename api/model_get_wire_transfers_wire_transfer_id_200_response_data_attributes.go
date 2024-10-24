@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &GETWireTransfersWireTransferId200ResponseDataAttributes{
 
 // GETWireTransfersWireTransferId200ResponseDataAttributes struct for GETWireTransfersWireTransferId200ResponseDataAttributes
 type GETWireTransfersWireTransferId200ResponseDataAttributes struct {
-	// Information about the payment instrument used in the transaction
+	// Information about the payment instrument used in the transaction.
 	PaymentInstrument interface{} `json:"payment_instrument,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
@@ -28,7 +28,7 @@ type GETWireTransfersWireTransferId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

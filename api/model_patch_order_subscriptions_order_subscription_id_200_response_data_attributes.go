@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,12 @@ var _ MappedNullable = &PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDat
 type PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes struct {
 	// The frequency of the subscription. Use one of the supported within 'hourly', 'daily', 'weekly', 'monthly', 'two-month', 'three-month', 'four-month', 'six-month', 'yearly', or provide your custom crontab expression (min unit is hour). Must be supported by existing associated subscription_model.
 	Frequency interface{} `json:"frequency,omitempty"`
+	// Indicates if the subscription will be activated considering the placed source order as its first run.
+	ActivateBySourceOrder interface{} `json:"activate_by_source_order,omitempty"`
+	// Indicates if the subscription created orders are automatically placed at the end of the copy.
+	PlaceTargetOrder interface{} `json:"place_target_order,omitempty"`
+	// Indicates the number of hours the renewal alert will be triggered before the subscription next run. Must be included between 1 and 720 hours.
+	RenewalAlertPeriod interface{} `json:"renewal_alert_period,omitempty"`
 	// The expiration date/time of this subscription (must be after starts_at).
 	ExpiresAt interface{} `json:"expires_at,omitempty"`
 	// The date/time of the subscription next run. Can be updated but only in the future, to copy with frequency changes.
@@ -32,9 +38,11 @@ type PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes struct 
 	Deactivate interface{} `json:"_deactivate,omitempty"`
 	// Send this attribute if you want to mark this subscription as cancelled.
 	Cancel interface{} `json:"_cancel,omitempty"`
+	// Send this attribute if you want to convert a manual subscription to an automatic one. A subscription model is required before conversion.
+	Convert interface{} `json:"_convert,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -88,6 +96,105 @@ func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) Ha
 // SetFrequency gets a reference to the given interface{} and assigns it to the Frequency field.
 func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetFrequency(v interface{}) {
 	o.Frequency = v
+}
+
+// GetActivateBySourceOrder returns the ActivateBySourceOrder field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetActivateBySourceOrder() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ActivateBySourceOrder
+}
+
+// GetActivateBySourceOrderOk returns a tuple with the ActivateBySourceOrder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetActivateBySourceOrderOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ActivateBySourceOrder) {
+		return nil, false
+	}
+	return &o.ActivateBySourceOrder, true
+}
+
+// HasActivateBySourceOrder returns a boolean if a field has been set.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasActivateBySourceOrder() bool {
+	if o != nil && IsNil(o.ActivateBySourceOrder) {
+		return true
+	}
+
+	return false
+}
+
+// SetActivateBySourceOrder gets a reference to the given interface{} and assigns it to the ActivateBySourceOrder field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetActivateBySourceOrder(v interface{}) {
+	o.ActivateBySourceOrder = v
+}
+
+// GetPlaceTargetOrder returns the PlaceTargetOrder field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetPlaceTargetOrder() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PlaceTargetOrder
+}
+
+// GetPlaceTargetOrderOk returns a tuple with the PlaceTargetOrder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetPlaceTargetOrderOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PlaceTargetOrder) {
+		return nil, false
+	}
+	return &o.PlaceTargetOrder, true
+}
+
+// HasPlaceTargetOrder returns a boolean if a field has been set.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasPlaceTargetOrder() bool {
+	if o != nil && IsNil(o.PlaceTargetOrder) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlaceTargetOrder gets a reference to the given interface{} and assigns it to the PlaceTargetOrder field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetPlaceTargetOrder(v interface{}) {
+	o.PlaceTargetOrder = v
+}
+
+// GetRenewalAlertPeriod returns the RenewalAlertPeriod field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetRenewalAlertPeriod() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.RenewalAlertPeriod
+}
+
+// GetRenewalAlertPeriodOk returns a tuple with the RenewalAlertPeriod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetRenewalAlertPeriodOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RenewalAlertPeriod) {
+		return nil, false
+	}
+	return &o.RenewalAlertPeriod, true
+}
+
+// HasRenewalAlertPeriod returns a boolean if a field has been set.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasRenewalAlertPeriod() bool {
+	if o != nil && IsNil(o.RenewalAlertPeriod) {
+		return true
+	}
+
+	return false
+}
+
+// SetRenewalAlertPeriod gets a reference to the given interface{} and assigns it to the RenewalAlertPeriod field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetRenewalAlertPeriod(v interface{}) {
+	o.RenewalAlertPeriod = v
 }
 
 // GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -255,6 +362,39 @@ func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) Se
 	o.Cancel = v
 }
 
+// GetConvert returns the Convert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetConvert() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Convert
+}
+
+// GetConvertOk returns a tuple with the Convert field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetConvertOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Convert) {
+		return nil, false
+	}
+	return &o.Convert, true
+}
+
+// HasConvert returns a boolean if a field has been set.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasConvert() bool {
+	if o != nil && IsNil(o.Convert) {
+		return true
+	}
+
+	return false
+}
+
+// SetConvert gets a reference to the given interface{} and assigns it to the Convert field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetConvert(v interface{}) {
+	o.Convert = v
+}
+
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReference() interface{} {
 	if o == nil {
@@ -367,6 +507,15 @@ func (o PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) ToM
 	if o.Frequency != nil {
 		toSerialize["frequency"] = o.Frequency
 	}
+	if o.ActivateBySourceOrder != nil {
+		toSerialize["activate_by_source_order"] = o.ActivateBySourceOrder
+	}
+	if o.PlaceTargetOrder != nil {
+		toSerialize["place_target_order"] = o.PlaceTargetOrder
+	}
+	if o.RenewalAlertPeriod != nil {
+		toSerialize["renewal_alert_period"] = o.RenewalAlertPeriod
+	}
 	if o.ExpiresAt != nil {
 		toSerialize["expires_at"] = o.ExpiresAt
 	}
@@ -381,6 +530,9 @@ func (o PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) ToM
 	}
 	if o.Cancel != nil {
 		toSerialize["_cancel"] = o.Cancel
+	}
+	if o.Convert != nil {
+		toSerialize["_convert"] = o.Convert
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

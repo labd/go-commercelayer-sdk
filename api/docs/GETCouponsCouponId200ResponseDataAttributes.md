@@ -9,10 +9,11 @@ Name | Type | Description | Notes
 **UsageLimit** | Pointer to **interface{}** | The total number of times this coupon can be used. | [optional] 
 **UsageCount** | Pointer to **interface{}** | The number of times this coupon has been used. | [optional] 
 **RecipientEmail** | Pointer to **interface{}** | The email address of the associated recipient. When creating or updating a coupon, this is a shortcut to find or create the associated recipient by email. | [optional] 
+**ExpiresAt** | Pointer to **interface{}** | Time at which the coupon will expire. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -209,6 +210,41 @@ HasRecipientEmail returns a boolean if a field has been set.
 `func (o *GETCouponsCouponId200ResponseDataAttributes) UnsetRecipientEmail()`
 
 UnsetRecipientEmail ensures that no value is present for RecipientEmail, not even an explicit nil
+### GetExpiresAt
+
+`func (o *GETCouponsCouponId200ResponseDataAttributes) GetExpiresAt() interface{}`
+
+GetExpiresAt returns the ExpiresAt field if non-nil, zero value otherwise.
+
+### GetExpiresAtOk
+
+`func (o *GETCouponsCouponId200ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool)`
+
+GetExpiresAtOk returns a tuple with the ExpiresAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpiresAt
+
+`func (o *GETCouponsCouponId200ResponseDataAttributes) SetExpiresAt(v interface{})`
+
+SetExpiresAt sets ExpiresAt field to given value.
+
+### HasExpiresAt
+
+`func (o *GETCouponsCouponId200ResponseDataAttributes) HasExpiresAt() bool`
+
+HasExpiresAt returns a boolean if a field has been set.
+
+### SetExpiresAtNil
+
+`func (o *GETCouponsCouponId200ResponseDataAttributes) SetExpiresAtNil(b bool)`
+
+ SetExpiresAtNil sets the value for ExpiresAt to be an explicit nil
+
+### UnsetExpiresAt
+`func (o *GETCouponsCouponId200ResponseDataAttributes) UnsetExpiresAt()`
+
+UnsetExpiresAt ensures that no value is present for ExpiresAt, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETCouponsCouponId200ResponseDataAttributes) GetCreatedAt() interface{}`

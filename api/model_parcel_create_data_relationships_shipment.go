@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,14 +20,14 @@ var _ MappedNullable = &ParcelCreateDataRelationshipsShipment{}
 
 // ParcelCreateDataRelationshipsShipment struct for ParcelCreateDataRelationshipsShipment
 type ParcelCreateDataRelationshipsShipment struct {
-	Data OrderDataRelationshipsShipmentsData `json:"data"`
+	Data LineItemDataRelationshipsShipmentData `json:"data"`
 }
 
 // NewParcelCreateDataRelationshipsShipment instantiates a new ParcelCreateDataRelationshipsShipment object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelCreateDataRelationshipsShipment(data OrderDataRelationshipsShipmentsData) *ParcelCreateDataRelationshipsShipment {
+func NewParcelCreateDataRelationshipsShipment(data LineItemDataRelationshipsShipmentData) *ParcelCreateDataRelationshipsShipment {
 	this := ParcelCreateDataRelationshipsShipment{}
 	this.Data = data
 	return &this
@@ -42,9 +42,9 @@ func NewParcelCreateDataRelationshipsShipmentWithDefaults() *ParcelCreateDataRel
 }
 
 // GetData returns the Data field value
-func (o *ParcelCreateDataRelationshipsShipment) GetData() OrderDataRelationshipsShipmentsData {
+func (o *ParcelCreateDataRelationshipsShipment) GetData() LineItemDataRelationshipsShipmentData {
 	if o == nil {
-		var ret OrderDataRelationshipsShipmentsData
+		var ret LineItemDataRelationshipsShipmentData
 		return ret
 	}
 
@@ -53,7 +53,7 @@ func (o *ParcelCreateDataRelationshipsShipment) GetData() OrderDataRelationships
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ParcelCreateDataRelationshipsShipment) GetDataOk() (*OrderDataRelationshipsShipmentsData, bool) {
+func (o *ParcelCreateDataRelationshipsShipment) GetDataOk() (*LineItemDataRelationshipsShipmentData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *ParcelCreateDataRelationshipsShipment) GetDataOk() (*OrderDataRelations
 }
 
 // SetData sets field value
-func (o *ParcelCreateDataRelationshipsShipment) SetData(v OrderDataRelationshipsShipmentsData) {
+func (o *ParcelCreateDataRelationshipsShipment) SetData(v LineItemDataRelationshipsShipmentData) {
 	o.Data = v
 }
 

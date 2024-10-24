@@ -12,18 +12,33 @@ Name | Type | Description | Notes
 **LogoUrl** | Pointer to **interface{}** | The URL to the organization&#39;s logo. | [optional] 
 **FaviconUrl** | Pointer to **interface{}** | The URL to the organization&#39;s favicon. | [optional] 
 **PrimaryColor** | Pointer to **interface{}** | The organization&#39;s primary color. | [optional] 
-**ContrastColor** | Pointer to **interface{}** | The organization&#39;s contrast color. | [optional] 
 **GtmId** | Pointer to **interface{}** | The organization&#39;s Google Tag Manager ID. | [optional] 
 **GtmIdTest** | Pointer to **interface{}** | The organization&#39;s Google Tag Manager ID for test. | [optional] 
-**DiscountDisabled** | Pointer to **interface{}** | Indicates if organization has discount disabled. | [optional] 
-**AccountDisabled** | Pointer to **interface{}** | Indicates if organization has account disabled. | [optional] 
-**AcceptanceDisabled** | Pointer to **interface{}** | Indicates if organization has acceptance disabled. | [optional] 
-**MaxConcurrentPromotions** | Pointer to **interface{}** | The maximum number of active concurrent promotions allowed for your organization. | [optional] 
-**MaxConcurrentImports** | Pointer to **interface{}** | The maximum number of concurrent imports allowed for your organization. | [optional] 
+**Config** | Pointer to **interface{}** | The organization&#39;s configuration. | [optional] 
+**ApiAuthRedirect** | Pointer to **interface{}** | Enables the redirect on the new Auth API. | [optional] 
+**ApiRulesEngine** | Pointer to **interface{}** | Enables the rules engine for flex promotions and price list rules. | [optional] 
+**AddressesPhoneRequired** | Pointer to **interface{}** | Indicates if the phone attribute is required for addresses, default is true. | [optional] 
+**OrdersAutorefreshCutoffTest** | Pointer to **interface{}** | The maximum number line items allowed for a test order before disabling the autorefresh option. | [optional] 
+**OrdersAutorefreshCutoffLive** | Pointer to **interface{}** | The maximum number line items allowed for a live order before disabling the autorefresh option. | [optional] 
+**OrdersNumberEditableTest** | Pointer to **interface{}** | Enables orders number editing as a string in test (for enterprise plans only). | [optional] 
+**OrdersNumberEditableLive** | Pointer to **interface{}** | Enables orders number editing as a string in live (for enterprise plans only). | [optional] 
+**OrdersNumberAsReference** | Pointer to **interface{}** | Enables to use the order number as payment reference on supported gateways. | [optional] 
+**BundlesMaxItemsCount** | Pointer to **interface{}** | The maximum number of SKUs allowed for bundles, default is 10. | [optional] 
+**CouponsMinCodeLength** | Pointer to **interface{}** | The minimum length for coupon code, default is 8. | [optional] 
+**CouponsMaxCodeLength** | Pointer to **interface{}** | The maximum length for coupon code, default is 40. | [optional] 
+**GiftCardsMinCodeLength** | Pointer to **interface{}** | The minimum length for gift card code, default is 8. | [optional] 
+**GiftCardsMaxCodeLength** | Pointer to **interface{}** | The maximum length for gift card code, default is 40. | [optional] 
+**CleanupsMaxConcurrentCount** | Pointer to **interface{}** | The maximum number of concurrent cleanups allowed for your organization, default is 10. | [optional] 
+**ExportsMaxConcurrentCount** | Pointer to **interface{}** | The maximum number of concurrent exports allowed for your organization, default is 10. | [optional] 
+**ImportsMaxConcurrentCount** | Pointer to **interface{}** | The maximum number of concurrent imports allowed for your organization, default is 10. | [optional] 
+**PromotionsMaxConcurrentCount** | Pointer to **interface{}** | The maximum number of active concurrent promotions allowed for your organization, default is 10. | [optional] 
+**ImportsTriggerWebhooks** | Pointer to **interface{}** | Enables triggering of webhooks during imports, default is false. | [optional] 
+**TaxCalculatorsErrors** | Pointer to **interface{}** | Enables raising of API errors in case of tax calculation failure, default is false. | [optional] 
+**ExternalPromotionsErrors** | Pointer to **interface{}** | Enables raising of API errors in case of external promotion failure, default is false. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -325,41 +340,6 @@ HasPrimaryColor returns a boolean if a field has been set.
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetPrimaryColor()`
 
 UnsetPrimaryColor ensures that no value is present for PrimaryColor, not even an explicit nil
-### GetContrastColor
-
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetContrastColor() interface{}`
-
-GetContrastColor returns the ContrastColor field if non-nil, zero value otherwise.
-
-### GetContrastColorOk
-
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetContrastColorOk() (*interface{}, bool)`
-
-GetContrastColorOk returns a tuple with the ContrastColor field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContrastColor
-
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetContrastColor(v interface{})`
-
-SetContrastColor sets ContrastColor field to given value.
-
-### HasContrastColor
-
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasContrastColor() bool`
-
-HasContrastColor returns a boolean if a field has been set.
-
-### SetContrastColorNil
-
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetContrastColorNil(b bool)`
-
- SetContrastColorNil sets the value for ContrastColor to be an explicit nil
-
-### UnsetContrastColor
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetContrastColor()`
-
-UnsetContrastColor ensures that no value is present for ContrastColor, not even an explicit nil
 ### GetGtmId
 
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmId() interface{}`
@@ -430,181 +410,741 @@ HasGtmIdTest returns a boolean if a field has been set.
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetGtmIdTest()`
 
 UnsetGtmIdTest ensures that no value is present for GtmIdTest, not even an explicit nil
-### GetDiscountDisabled
+### GetConfig
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountDisabled() interface{}`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetConfig() interface{}`
 
-GetDiscountDisabled returns the DiscountDisabled field if non-nil, zero value otherwise.
+GetConfig returns the Config field if non-nil, zero value otherwise.
 
-### GetDiscountDisabledOk
+### GetConfigOk
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountDisabledOk() (*interface{}, bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetConfigOk() (*interface{}, bool)`
 
-GetDiscountDisabledOk returns a tuple with the DiscountDisabled field if it's non-nil, zero value otherwise
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDiscountDisabled
+### SetConfig
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountDisabled(v interface{})`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetConfig(v interface{})`
 
-SetDiscountDisabled sets DiscountDisabled field to given value.
+SetConfig sets Config field to given value.
 
-### HasDiscountDisabled
+### HasConfig
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasDiscountDisabled() bool`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasConfig() bool`
 
-HasDiscountDisabled returns a boolean if a field has been set.
+HasConfig returns a boolean if a field has been set.
 
-### SetDiscountDisabledNil
+### SetConfigNil
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountDisabledNil(b bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetConfigNil(b bool)`
 
- SetDiscountDisabledNil sets the value for DiscountDisabled to be an explicit nil
+ SetConfigNil sets the value for Config to be an explicit nil
 
-### UnsetDiscountDisabled
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetDiscountDisabled()`
+### UnsetConfig
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetConfig()`
 
-UnsetDiscountDisabled ensures that no value is present for DiscountDisabled, not even an explicit nil
-### GetAccountDisabled
+UnsetConfig ensures that no value is present for Config, not even an explicit nil
+### GetApiAuthRedirect
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAccountDisabled() interface{}`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiAuthRedirect() interface{}`
 
-GetAccountDisabled returns the AccountDisabled field if non-nil, zero value otherwise.
+GetApiAuthRedirect returns the ApiAuthRedirect field if non-nil, zero value otherwise.
 
-### GetAccountDisabledOk
+### GetApiAuthRedirectOk
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAccountDisabledOk() (*interface{}, bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiAuthRedirectOk() (*interface{}, bool)`
 
-GetAccountDisabledOk returns a tuple with the AccountDisabled field if it's non-nil, zero value otherwise
+GetApiAuthRedirectOk returns a tuple with the ApiAuthRedirect field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountDisabled
+### SetApiAuthRedirect
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAccountDisabled(v interface{})`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiAuthRedirect(v interface{})`
 
-SetAccountDisabled sets AccountDisabled field to given value.
+SetApiAuthRedirect sets ApiAuthRedirect field to given value.
 
-### HasAccountDisabled
+### HasApiAuthRedirect
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasAccountDisabled() bool`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasApiAuthRedirect() bool`
 
-HasAccountDisabled returns a boolean if a field has been set.
+HasApiAuthRedirect returns a boolean if a field has been set.
 
-### SetAccountDisabledNil
+### SetApiAuthRedirectNil
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAccountDisabledNil(b bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiAuthRedirectNil(b bool)`
 
- SetAccountDisabledNil sets the value for AccountDisabled to be an explicit nil
+ SetApiAuthRedirectNil sets the value for ApiAuthRedirect to be an explicit nil
 
-### UnsetAccountDisabled
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetAccountDisabled()`
+### UnsetApiAuthRedirect
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetApiAuthRedirect()`
 
-UnsetAccountDisabled ensures that no value is present for AccountDisabled, not even an explicit nil
-### GetAcceptanceDisabled
+UnsetApiAuthRedirect ensures that no value is present for ApiAuthRedirect, not even an explicit nil
+### GetApiRulesEngine
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAcceptanceDisabled() interface{}`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiRulesEngine() interface{}`
 
-GetAcceptanceDisabled returns the AcceptanceDisabled field if non-nil, zero value otherwise.
+GetApiRulesEngine returns the ApiRulesEngine field if non-nil, zero value otherwise.
 
-### GetAcceptanceDisabledOk
+### GetApiRulesEngineOk
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAcceptanceDisabledOk() (*interface{}, bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiRulesEngineOk() (*interface{}, bool)`
 
-GetAcceptanceDisabledOk returns a tuple with the AcceptanceDisabled field if it's non-nil, zero value otherwise
+GetApiRulesEngineOk returns a tuple with the ApiRulesEngine field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAcceptanceDisabled
+### SetApiRulesEngine
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAcceptanceDisabled(v interface{})`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiRulesEngine(v interface{})`
 
-SetAcceptanceDisabled sets AcceptanceDisabled field to given value.
+SetApiRulesEngine sets ApiRulesEngine field to given value.
 
-### HasAcceptanceDisabled
+### HasApiRulesEngine
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasAcceptanceDisabled() bool`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasApiRulesEngine() bool`
 
-HasAcceptanceDisabled returns a boolean if a field has been set.
+HasApiRulesEngine returns a boolean if a field has been set.
 
-### SetAcceptanceDisabledNil
+### SetApiRulesEngineNil
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAcceptanceDisabledNil(b bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiRulesEngineNil(b bool)`
 
- SetAcceptanceDisabledNil sets the value for AcceptanceDisabled to be an explicit nil
+ SetApiRulesEngineNil sets the value for ApiRulesEngine to be an explicit nil
 
-### UnsetAcceptanceDisabled
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetAcceptanceDisabled()`
+### UnsetApiRulesEngine
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetApiRulesEngine()`
 
-UnsetAcceptanceDisabled ensures that no value is present for AcceptanceDisabled, not even an explicit nil
-### GetMaxConcurrentPromotions
+UnsetApiRulesEngine ensures that no value is present for ApiRulesEngine, not even an explicit nil
+### GetAddressesPhoneRequired
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentPromotions() interface{}`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAddressesPhoneRequired() interface{}`
 
-GetMaxConcurrentPromotions returns the MaxConcurrentPromotions field if non-nil, zero value otherwise.
+GetAddressesPhoneRequired returns the AddressesPhoneRequired field if non-nil, zero value otherwise.
 
-### GetMaxConcurrentPromotionsOk
+### GetAddressesPhoneRequiredOk
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentPromotionsOk() (*interface{}, bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAddressesPhoneRequiredOk() (*interface{}, bool)`
 
-GetMaxConcurrentPromotionsOk returns a tuple with the MaxConcurrentPromotions field if it's non-nil, zero value otherwise
+GetAddressesPhoneRequiredOk returns a tuple with the AddressesPhoneRequired field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMaxConcurrentPromotions
+### SetAddressesPhoneRequired
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMaxConcurrentPromotions(v interface{})`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAddressesPhoneRequired(v interface{})`
 
-SetMaxConcurrentPromotions sets MaxConcurrentPromotions field to given value.
+SetAddressesPhoneRequired sets AddressesPhoneRequired field to given value.
 
-### HasMaxConcurrentPromotions
+### HasAddressesPhoneRequired
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasMaxConcurrentPromotions() bool`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasAddressesPhoneRequired() bool`
 
-HasMaxConcurrentPromotions returns a boolean if a field has been set.
+HasAddressesPhoneRequired returns a boolean if a field has been set.
 
-### SetMaxConcurrentPromotionsNil
+### SetAddressesPhoneRequiredNil
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMaxConcurrentPromotionsNil(b bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAddressesPhoneRequiredNil(b bool)`
 
- SetMaxConcurrentPromotionsNil sets the value for MaxConcurrentPromotions to be an explicit nil
+ SetAddressesPhoneRequiredNil sets the value for AddressesPhoneRequired to be an explicit nil
 
-### UnsetMaxConcurrentPromotions
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetMaxConcurrentPromotions()`
+### UnsetAddressesPhoneRequired
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetAddressesPhoneRequired()`
 
-UnsetMaxConcurrentPromotions ensures that no value is present for MaxConcurrentPromotions, not even an explicit nil
-### GetMaxConcurrentImports
+UnsetAddressesPhoneRequired ensures that no value is present for AddressesPhoneRequired, not even an explicit nil
+### GetOrdersAutorefreshCutoffTest
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentImports() interface{}`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersAutorefreshCutoffTest() interface{}`
 
-GetMaxConcurrentImports returns the MaxConcurrentImports field if non-nil, zero value otherwise.
+GetOrdersAutorefreshCutoffTest returns the OrdersAutorefreshCutoffTest field if non-nil, zero value otherwise.
 
-### GetMaxConcurrentImportsOk
+### GetOrdersAutorefreshCutoffTestOk
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentImportsOk() (*interface{}, bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersAutorefreshCutoffTestOk() (*interface{}, bool)`
 
-GetMaxConcurrentImportsOk returns a tuple with the MaxConcurrentImports field if it's non-nil, zero value otherwise
+GetOrdersAutorefreshCutoffTestOk returns a tuple with the OrdersAutorefreshCutoffTest field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMaxConcurrentImports
+### SetOrdersAutorefreshCutoffTest
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMaxConcurrentImports(v interface{})`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersAutorefreshCutoffTest(v interface{})`
 
-SetMaxConcurrentImports sets MaxConcurrentImports field to given value.
+SetOrdersAutorefreshCutoffTest sets OrdersAutorefreshCutoffTest field to given value.
 
-### HasMaxConcurrentImports
+### HasOrdersAutorefreshCutoffTest
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasMaxConcurrentImports() bool`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasOrdersAutorefreshCutoffTest() bool`
 
-HasMaxConcurrentImports returns a boolean if a field has been set.
+HasOrdersAutorefreshCutoffTest returns a boolean if a field has been set.
 
-### SetMaxConcurrentImportsNil
+### SetOrdersAutorefreshCutoffTestNil
 
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMaxConcurrentImportsNil(b bool)`
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersAutorefreshCutoffTestNil(b bool)`
 
- SetMaxConcurrentImportsNil sets the value for MaxConcurrentImports to be an explicit nil
+ SetOrdersAutorefreshCutoffTestNil sets the value for OrdersAutorefreshCutoffTest to be an explicit nil
 
-### UnsetMaxConcurrentImports
-`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetMaxConcurrentImports()`
+### UnsetOrdersAutorefreshCutoffTest
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetOrdersAutorefreshCutoffTest()`
 
-UnsetMaxConcurrentImports ensures that no value is present for MaxConcurrentImports, not even an explicit nil
+UnsetOrdersAutorefreshCutoffTest ensures that no value is present for OrdersAutorefreshCutoffTest, not even an explicit nil
+### GetOrdersAutorefreshCutoffLive
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersAutorefreshCutoffLive() interface{}`
+
+GetOrdersAutorefreshCutoffLive returns the OrdersAutorefreshCutoffLive field if non-nil, zero value otherwise.
+
+### GetOrdersAutorefreshCutoffLiveOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersAutorefreshCutoffLiveOk() (*interface{}, bool)`
+
+GetOrdersAutorefreshCutoffLiveOk returns a tuple with the OrdersAutorefreshCutoffLive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrdersAutorefreshCutoffLive
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersAutorefreshCutoffLive(v interface{})`
+
+SetOrdersAutorefreshCutoffLive sets OrdersAutorefreshCutoffLive field to given value.
+
+### HasOrdersAutorefreshCutoffLive
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasOrdersAutorefreshCutoffLive() bool`
+
+HasOrdersAutorefreshCutoffLive returns a boolean if a field has been set.
+
+### SetOrdersAutorefreshCutoffLiveNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersAutorefreshCutoffLiveNil(b bool)`
+
+ SetOrdersAutorefreshCutoffLiveNil sets the value for OrdersAutorefreshCutoffLive to be an explicit nil
+
+### UnsetOrdersAutorefreshCutoffLive
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetOrdersAutorefreshCutoffLive()`
+
+UnsetOrdersAutorefreshCutoffLive ensures that no value is present for OrdersAutorefreshCutoffLive, not even an explicit nil
+### GetOrdersNumberEditableTest
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersNumberEditableTest() interface{}`
+
+GetOrdersNumberEditableTest returns the OrdersNumberEditableTest field if non-nil, zero value otherwise.
+
+### GetOrdersNumberEditableTestOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersNumberEditableTestOk() (*interface{}, bool)`
+
+GetOrdersNumberEditableTestOk returns a tuple with the OrdersNumberEditableTest field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrdersNumberEditableTest
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersNumberEditableTest(v interface{})`
+
+SetOrdersNumberEditableTest sets OrdersNumberEditableTest field to given value.
+
+### HasOrdersNumberEditableTest
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasOrdersNumberEditableTest() bool`
+
+HasOrdersNumberEditableTest returns a boolean if a field has been set.
+
+### SetOrdersNumberEditableTestNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersNumberEditableTestNil(b bool)`
+
+ SetOrdersNumberEditableTestNil sets the value for OrdersNumberEditableTest to be an explicit nil
+
+### UnsetOrdersNumberEditableTest
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetOrdersNumberEditableTest()`
+
+UnsetOrdersNumberEditableTest ensures that no value is present for OrdersNumberEditableTest, not even an explicit nil
+### GetOrdersNumberEditableLive
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersNumberEditableLive() interface{}`
+
+GetOrdersNumberEditableLive returns the OrdersNumberEditableLive field if non-nil, zero value otherwise.
+
+### GetOrdersNumberEditableLiveOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersNumberEditableLiveOk() (*interface{}, bool)`
+
+GetOrdersNumberEditableLiveOk returns a tuple with the OrdersNumberEditableLive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrdersNumberEditableLive
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersNumberEditableLive(v interface{})`
+
+SetOrdersNumberEditableLive sets OrdersNumberEditableLive field to given value.
+
+### HasOrdersNumberEditableLive
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasOrdersNumberEditableLive() bool`
+
+HasOrdersNumberEditableLive returns a boolean if a field has been set.
+
+### SetOrdersNumberEditableLiveNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersNumberEditableLiveNil(b bool)`
+
+ SetOrdersNumberEditableLiveNil sets the value for OrdersNumberEditableLive to be an explicit nil
+
+### UnsetOrdersNumberEditableLive
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetOrdersNumberEditableLive()`
+
+UnsetOrdersNumberEditableLive ensures that no value is present for OrdersNumberEditableLive, not even an explicit nil
+### GetOrdersNumberAsReference
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersNumberAsReference() interface{}`
+
+GetOrdersNumberAsReference returns the OrdersNumberAsReference field if non-nil, zero value otherwise.
+
+### GetOrdersNumberAsReferenceOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetOrdersNumberAsReferenceOk() (*interface{}, bool)`
+
+GetOrdersNumberAsReferenceOk returns a tuple with the OrdersNumberAsReference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrdersNumberAsReference
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersNumberAsReference(v interface{})`
+
+SetOrdersNumberAsReference sets OrdersNumberAsReference field to given value.
+
+### HasOrdersNumberAsReference
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasOrdersNumberAsReference() bool`
+
+HasOrdersNumberAsReference returns a boolean if a field has been set.
+
+### SetOrdersNumberAsReferenceNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetOrdersNumberAsReferenceNil(b bool)`
+
+ SetOrdersNumberAsReferenceNil sets the value for OrdersNumberAsReference to be an explicit nil
+
+### UnsetOrdersNumberAsReference
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetOrdersNumberAsReference()`
+
+UnsetOrdersNumberAsReference ensures that no value is present for OrdersNumberAsReference, not even an explicit nil
+### GetBundlesMaxItemsCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetBundlesMaxItemsCount() interface{}`
+
+GetBundlesMaxItemsCount returns the BundlesMaxItemsCount field if non-nil, zero value otherwise.
+
+### GetBundlesMaxItemsCountOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetBundlesMaxItemsCountOk() (*interface{}, bool)`
+
+GetBundlesMaxItemsCountOk returns a tuple with the BundlesMaxItemsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBundlesMaxItemsCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetBundlesMaxItemsCount(v interface{})`
+
+SetBundlesMaxItemsCount sets BundlesMaxItemsCount field to given value.
+
+### HasBundlesMaxItemsCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasBundlesMaxItemsCount() bool`
+
+HasBundlesMaxItemsCount returns a boolean if a field has been set.
+
+### SetBundlesMaxItemsCountNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetBundlesMaxItemsCountNil(b bool)`
+
+ SetBundlesMaxItemsCountNil sets the value for BundlesMaxItemsCount to be an explicit nil
+
+### UnsetBundlesMaxItemsCount
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetBundlesMaxItemsCount()`
+
+UnsetBundlesMaxItemsCount ensures that no value is present for BundlesMaxItemsCount, not even an explicit nil
+### GetCouponsMinCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCouponsMinCodeLength() interface{}`
+
+GetCouponsMinCodeLength returns the CouponsMinCodeLength field if non-nil, zero value otherwise.
+
+### GetCouponsMinCodeLengthOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCouponsMinCodeLengthOk() (*interface{}, bool)`
+
+GetCouponsMinCodeLengthOk returns a tuple with the CouponsMinCodeLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCouponsMinCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetCouponsMinCodeLength(v interface{})`
+
+SetCouponsMinCodeLength sets CouponsMinCodeLength field to given value.
+
+### HasCouponsMinCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasCouponsMinCodeLength() bool`
+
+HasCouponsMinCodeLength returns a boolean if a field has been set.
+
+### SetCouponsMinCodeLengthNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetCouponsMinCodeLengthNil(b bool)`
+
+ SetCouponsMinCodeLengthNil sets the value for CouponsMinCodeLength to be an explicit nil
+
+### UnsetCouponsMinCodeLength
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetCouponsMinCodeLength()`
+
+UnsetCouponsMinCodeLength ensures that no value is present for CouponsMinCodeLength, not even an explicit nil
+### GetCouponsMaxCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCouponsMaxCodeLength() interface{}`
+
+GetCouponsMaxCodeLength returns the CouponsMaxCodeLength field if non-nil, zero value otherwise.
+
+### GetCouponsMaxCodeLengthOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCouponsMaxCodeLengthOk() (*interface{}, bool)`
+
+GetCouponsMaxCodeLengthOk returns a tuple with the CouponsMaxCodeLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCouponsMaxCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetCouponsMaxCodeLength(v interface{})`
+
+SetCouponsMaxCodeLength sets CouponsMaxCodeLength field to given value.
+
+### HasCouponsMaxCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasCouponsMaxCodeLength() bool`
+
+HasCouponsMaxCodeLength returns a boolean if a field has been set.
+
+### SetCouponsMaxCodeLengthNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetCouponsMaxCodeLengthNil(b bool)`
+
+ SetCouponsMaxCodeLengthNil sets the value for CouponsMaxCodeLength to be an explicit nil
+
+### UnsetCouponsMaxCodeLength
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetCouponsMaxCodeLength()`
+
+UnsetCouponsMaxCodeLength ensures that no value is present for CouponsMaxCodeLength, not even an explicit nil
+### GetGiftCardsMinCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGiftCardsMinCodeLength() interface{}`
+
+GetGiftCardsMinCodeLength returns the GiftCardsMinCodeLength field if non-nil, zero value otherwise.
+
+### GetGiftCardsMinCodeLengthOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGiftCardsMinCodeLengthOk() (*interface{}, bool)`
+
+GetGiftCardsMinCodeLengthOk returns a tuple with the GiftCardsMinCodeLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGiftCardsMinCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetGiftCardsMinCodeLength(v interface{})`
+
+SetGiftCardsMinCodeLength sets GiftCardsMinCodeLength field to given value.
+
+### HasGiftCardsMinCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasGiftCardsMinCodeLength() bool`
+
+HasGiftCardsMinCodeLength returns a boolean if a field has been set.
+
+### SetGiftCardsMinCodeLengthNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetGiftCardsMinCodeLengthNil(b bool)`
+
+ SetGiftCardsMinCodeLengthNil sets the value for GiftCardsMinCodeLength to be an explicit nil
+
+### UnsetGiftCardsMinCodeLength
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetGiftCardsMinCodeLength()`
+
+UnsetGiftCardsMinCodeLength ensures that no value is present for GiftCardsMinCodeLength, not even an explicit nil
+### GetGiftCardsMaxCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGiftCardsMaxCodeLength() interface{}`
+
+GetGiftCardsMaxCodeLength returns the GiftCardsMaxCodeLength field if non-nil, zero value otherwise.
+
+### GetGiftCardsMaxCodeLengthOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGiftCardsMaxCodeLengthOk() (*interface{}, bool)`
+
+GetGiftCardsMaxCodeLengthOk returns a tuple with the GiftCardsMaxCodeLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGiftCardsMaxCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetGiftCardsMaxCodeLength(v interface{})`
+
+SetGiftCardsMaxCodeLength sets GiftCardsMaxCodeLength field to given value.
+
+### HasGiftCardsMaxCodeLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasGiftCardsMaxCodeLength() bool`
+
+HasGiftCardsMaxCodeLength returns a boolean if a field has been set.
+
+### SetGiftCardsMaxCodeLengthNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetGiftCardsMaxCodeLengthNil(b bool)`
+
+ SetGiftCardsMaxCodeLengthNil sets the value for GiftCardsMaxCodeLength to be an explicit nil
+
+### UnsetGiftCardsMaxCodeLength
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetGiftCardsMaxCodeLength()`
+
+UnsetGiftCardsMaxCodeLength ensures that no value is present for GiftCardsMaxCodeLength, not even an explicit nil
+### GetCleanupsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCleanupsMaxConcurrentCount() interface{}`
+
+GetCleanupsMaxConcurrentCount returns the CleanupsMaxConcurrentCount field if non-nil, zero value otherwise.
+
+### GetCleanupsMaxConcurrentCountOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCleanupsMaxConcurrentCountOk() (*interface{}, bool)`
+
+GetCleanupsMaxConcurrentCountOk returns a tuple with the CleanupsMaxConcurrentCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCleanupsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetCleanupsMaxConcurrentCount(v interface{})`
+
+SetCleanupsMaxConcurrentCount sets CleanupsMaxConcurrentCount field to given value.
+
+### HasCleanupsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasCleanupsMaxConcurrentCount() bool`
+
+HasCleanupsMaxConcurrentCount returns a boolean if a field has been set.
+
+### SetCleanupsMaxConcurrentCountNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetCleanupsMaxConcurrentCountNil(b bool)`
+
+ SetCleanupsMaxConcurrentCountNil sets the value for CleanupsMaxConcurrentCount to be an explicit nil
+
+### UnsetCleanupsMaxConcurrentCount
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetCleanupsMaxConcurrentCount()`
+
+UnsetCleanupsMaxConcurrentCount ensures that no value is present for CleanupsMaxConcurrentCount, not even an explicit nil
+### GetExportsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetExportsMaxConcurrentCount() interface{}`
+
+GetExportsMaxConcurrentCount returns the ExportsMaxConcurrentCount field if non-nil, zero value otherwise.
+
+### GetExportsMaxConcurrentCountOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetExportsMaxConcurrentCountOk() (*interface{}, bool)`
+
+GetExportsMaxConcurrentCountOk returns a tuple with the ExportsMaxConcurrentCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExportsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetExportsMaxConcurrentCount(v interface{})`
+
+SetExportsMaxConcurrentCount sets ExportsMaxConcurrentCount field to given value.
+
+### HasExportsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasExportsMaxConcurrentCount() bool`
+
+HasExportsMaxConcurrentCount returns a boolean if a field has been set.
+
+### SetExportsMaxConcurrentCountNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetExportsMaxConcurrentCountNil(b bool)`
+
+ SetExportsMaxConcurrentCountNil sets the value for ExportsMaxConcurrentCount to be an explicit nil
+
+### UnsetExportsMaxConcurrentCount
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetExportsMaxConcurrentCount()`
+
+UnsetExportsMaxConcurrentCount ensures that no value is present for ExportsMaxConcurrentCount, not even an explicit nil
+### GetImportsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsMaxConcurrentCount() interface{}`
+
+GetImportsMaxConcurrentCount returns the ImportsMaxConcurrentCount field if non-nil, zero value otherwise.
+
+### GetImportsMaxConcurrentCountOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsMaxConcurrentCountOk() (*interface{}, bool)`
+
+GetImportsMaxConcurrentCountOk returns a tuple with the ImportsMaxConcurrentCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsMaxConcurrentCount(v interface{})`
+
+SetImportsMaxConcurrentCount sets ImportsMaxConcurrentCount field to given value.
+
+### HasImportsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasImportsMaxConcurrentCount() bool`
+
+HasImportsMaxConcurrentCount returns a boolean if a field has been set.
+
+### SetImportsMaxConcurrentCountNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsMaxConcurrentCountNil(b bool)`
+
+ SetImportsMaxConcurrentCountNil sets the value for ImportsMaxConcurrentCount to be an explicit nil
+
+### UnsetImportsMaxConcurrentCount
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetImportsMaxConcurrentCount()`
+
+UnsetImportsMaxConcurrentCount ensures that no value is present for ImportsMaxConcurrentCount, not even an explicit nil
+### GetPromotionsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPromotionsMaxConcurrentCount() interface{}`
+
+GetPromotionsMaxConcurrentCount returns the PromotionsMaxConcurrentCount field if non-nil, zero value otherwise.
+
+### GetPromotionsMaxConcurrentCountOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPromotionsMaxConcurrentCountOk() (*interface{}, bool)`
+
+GetPromotionsMaxConcurrentCountOk returns a tuple with the PromotionsMaxConcurrentCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromotionsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetPromotionsMaxConcurrentCount(v interface{})`
+
+SetPromotionsMaxConcurrentCount sets PromotionsMaxConcurrentCount field to given value.
+
+### HasPromotionsMaxConcurrentCount
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasPromotionsMaxConcurrentCount() bool`
+
+HasPromotionsMaxConcurrentCount returns a boolean if a field has been set.
+
+### SetPromotionsMaxConcurrentCountNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetPromotionsMaxConcurrentCountNil(b bool)`
+
+ SetPromotionsMaxConcurrentCountNil sets the value for PromotionsMaxConcurrentCount to be an explicit nil
+
+### UnsetPromotionsMaxConcurrentCount
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetPromotionsMaxConcurrentCount()`
+
+UnsetPromotionsMaxConcurrentCount ensures that no value is present for PromotionsMaxConcurrentCount, not even an explicit nil
+### GetImportsTriggerWebhooks
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsTriggerWebhooks() interface{}`
+
+GetImportsTriggerWebhooks returns the ImportsTriggerWebhooks field if non-nil, zero value otherwise.
+
+### GetImportsTriggerWebhooksOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsTriggerWebhooksOk() (*interface{}, bool)`
+
+GetImportsTriggerWebhooksOk returns a tuple with the ImportsTriggerWebhooks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportsTriggerWebhooks
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsTriggerWebhooks(v interface{})`
+
+SetImportsTriggerWebhooks sets ImportsTriggerWebhooks field to given value.
+
+### HasImportsTriggerWebhooks
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasImportsTriggerWebhooks() bool`
+
+HasImportsTriggerWebhooks returns a boolean if a field has been set.
+
+### SetImportsTriggerWebhooksNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsTriggerWebhooksNil(b bool)`
+
+ SetImportsTriggerWebhooksNil sets the value for ImportsTriggerWebhooks to be an explicit nil
+
+### UnsetImportsTriggerWebhooks
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetImportsTriggerWebhooks()`
+
+UnsetImportsTriggerWebhooks ensures that no value is present for ImportsTriggerWebhooks, not even an explicit nil
+### GetTaxCalculatorsErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetTaxCalculatorsErrors() interface{}`
+
+GetTaxCalculatorsErrors returns the TaxCalculatorsErrors field if non-nil, zero value otherwise.
+
+### GetTaxCalculatorsErrorsOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetTaxCalculatorsErrorsOk() (*interface{}, bool)`
+
+GetTaxCalculatorsErrorsOk returns a tuple with the TaxCalculatorsErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxCalculatorsErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetTaxCalculatorsErrors(v interface{})`
+
+SetTaxCalculatorsErrors sets TaxCalculatorsErrors field to given value.
+
+### HasTaxCalculatorsErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasTaxCalculatorsErrors() bool`
+
+HasTaxCalculatorsErrors returns a boolean if a field has been set.
+
+### SetTaxCalculatorsErrorsNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetTaxCalculatorsErrorsNil(b bool)`
+
+ SetTaxCalculatorsErrorsNil sets the value for TaxCalculatorsErrors to be an explicit nil
+
+### UnsetTaxCalculatorsErrors
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetTaxCalculatorsErrors()`
+
+UnsetTaxCalculatorsErrors ensures that no value is present for TaxCalculatorsErrors, not even an explicit nil
+### GetExternalPromotionsErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetExternalPromotionsErrors() interface{}`
+
+GetExternalPromotionsErrors returns the ExternalPromotionsErrors field if non-nil, zero value otherwise.
+
+### GetExternalPromotionsErrorsOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetExternalPromotionsErrorsOk() (*interface{}, bool)`
+
+GetExternalPromotionsErrorsOk returns a tuple with the ExternalPromotionsErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalPromotionsErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetExternalPromotionsErrors(v interface{})`
+
+SetExternalPromotionsErrors sets ExternalPromotionsErrors field to given value.
+
+### HasExternalPromotionsErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasExternalPromotionsErrors() bool`
+
+HasExternalPromotionsErrors returns a boolean if a field has been set.
+
+### SetExternalPromotionsErrorsNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetExternalPromotionsErrorsNil(b bool)`
+
+ SetExternalPromotionsErrorsNil sets the value for ExternalPromotionsErrors to be an explicit nil
+
+### UnsetExternalPromotionsErrors
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetExternalPromotionsErrors()`
+
+UnsetExternalPromotionsErrors ensures that no value is present for ExternalPromotionsErrors, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCreatedAt() interface{}`

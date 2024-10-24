@@ -4,19 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SessionId** | Pointer to **interface{}** | The identifier of the payment session, useful to updated it. | [optional] 
+**SessionId** | Pointer to **interface{}** | The identifier of the payment session. | [optional] 
 **ClientToken** | Pointer to **interface{}** | The public token linked to your API credential. Available upon session creation. | [optional] 
 **PaymentMethods** | Pointer to **interface{}** | The merchant available payment methods for the assoiated order. Available upon session creation. | [optional] 
 **AuthToken** | Pointer to **interface{}** | The token returned by a successful client authorization, mandatory to place the order. | [optional] 
 **MismatchedAmounts** | Pointer to **interface{}** | Indicates if the order current amount differs form the one of the created payment intent. | [optional] 
-**IntentAmountCents** | Pointer to **interface{}** | The amount of the associated payment intent, in cents. | [optional] 
-**IntentAmountFloat** | Pointer to **interface{}** | The amount of the associated payment intent, float. | [optional] 
-**FormattedIntentAmount** | Pointer to **interface{}** | The amount of the associated payment intent, formatted. | [optional] 
-**PaymentInstrument** | Pointer to **interface{}** | Information about the payment instrument used in the transaction | [optional] 
+**PaymentInstrument** | Pointer to **interface{}** | Information about the payment instrument used in the transaction. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -213,111 +210,6 @@ HasMismatchedAmounts returns a boolean if a field has been set.
 `func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) UnsetMismatchedAmounts()`
 
 UnsetMismatchedAmounts ensures that no value is present for MismatchedAmounts, not even an explicit nil
-### GetIntentAmountCents
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetIntentAmountCents() interface{}`
-
-GetIntentAmountCents returns the IntentAmountCents field if non-nil, zero value otherwise.
-
-### GetIntentAmountCentsOk
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetIntentAmountCentsOk() (*interface{}, bool)`
-
-GetIntentAmountCentsOk returns a tuple with the IntentAmountCents field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntentAmountCents
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) SetIntentAmountCents(v interface{})`
-
-SetIntentAmountCents sets IntentAmountCents field to given value.
-
-### HasIntentAmountCents
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) HasIntentAmountCents() bool`
-
-HasIntentAmountCents returns a boolean if a field has been set.
-
-### SetIntentAmountCentsNil
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) SetIntentAmountCentsNil(b bool)`
-
- SetIntentAmountCentsNil sets the value for IntentAmountCents to be an explicit nil
-
-### UnsetIntentAmountCents
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) UnsetIntentAmountCents()`
-
-UnsetIntentAmountCents ensures that no value is present for IntentAmountCents, not even an explicit nil
-### GetIntentAmountFloat
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetIntentAmountFloat() interface{}`
-
-GetIntentAmountFloat returns the IntentAmountFloat field if non-nil, zero value otherwise.
-
-### GetIntentAmountFloatOk
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetIntentAmountFloatOk() (*interface{}, bool)`
-
-GetIntentAmountFloatOk returns a tuple with the IntentAmountFloat field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIntentAmountFloat
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) SetIntentAmountFloat(v interface{})`
-
-SetIntentAmountFloat sets IntentAmountFloat field to given value.
-
-### HasIntentAmountFloat
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) HasIntentAmountFloat() bool`
-
-HasIntentAmountFloat returns a boolean if a field has been set.
-
-### SetIntentAmountFloatNil
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) SetIntentAmountFloatNil(b bool)`
-
- SetIntentAmountFloatNil sets the value for IntentAmountFloat to be an explicit nil
-
-### UnsetIntentAmountFloat
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) UnsetIntentAmountFloat()`
-
-UnsetIntentAmountFloat ensures that no value is present for IntentAmountFloat, not even an explicit nil
-### GetFormattedIntentAmount
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetFormattedIntentAmount() interface{}`
-
-GetFormattedIntentAmount returns the FormattedIntentAmount field if non-nil, zero value otherwise.
-
-### GetFormattedIntentAmountOk
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetFormattedIntentAmountOk() (*interface{}, bool)`
-
-GetFormattedIntentAmountOk returns a tuple with the FormattedIntentAmount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormattedIntentAmount
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) SetFormattedIntentAmount(v interface{})`
-
-SetFormattedIntentAmount sets FormattedIntentAmount field to given value.
-
-### HasFormattedIntentAmount
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) HasFormattedIntentAmount() bool`
-
-HasFormattedIntentAmount returns a boolean if a field has been set.
-
-### SetFormattedIntentAmountNil
-
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) SetFormattedIntentAmountNil(b bool)`
-
- SetFormattedIntentAmountNil sets the value for FormattedIntentAmount to be an explicit nil
-
-### UnsetFormattedIntentAmount
-`func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) UnsetFormattedIntentAmount()`
-
-UnsetFormattedIntentAmount ensures that no value is present for FormattedIntentAmount, not even an explicit nil
 ### GetPaymentInstrument
 
 `func (o *GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetPaymentInstrument() interface{}`

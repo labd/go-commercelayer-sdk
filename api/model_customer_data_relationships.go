@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -26,10 +26,11 @@ type CustomerDataRelationships struct {
 	CustomerSubscriptions  *CustomerDataRelationshipsCustomerSubscriptions  `json:"customer_subscriptions,omitempty"`
 	Orders                 *AdyenPaymentDataRelationshipsOrder              `json:"orders,omitempty"`
 	OrderSubscriptions     *CustomerDataRelationshipsOrderSubscriptions     `json:"order_subscriptions,omitempty"`
-	Returns                *CustomerDataRelationshipsReturns                `json:"returns,omitempty"`
+	Returns                *CaptureDataRelationshipsReturn                  `json:"returns,omitempty"`
 	SkuLists               *BundleDataRelationshipsSkuList                  `json:"sku_lists,omitempty"`
-	Attachments            *AvalaraAccountDataRelationshipsAttachments      `json:"attachments,omitempty"`
-	Events                 *AuthorizationDataRelationshipsEvents            `json:"events,omitempty"`
+	Attachments            *AuthorizationDataRelationshipsAttachments       `json:"attachments,omitempty"`
+	Events                 *AddressDataRelationshipsEvents                  `json:"events,omitempty"`
+	Tags                   *AddressDataRelationshipsTags                    `json:"tags,omitempty"`
 }
 
 // NewCustomerDataRelationships instantiates a new CustomerDataRelationships object
@@ -242,9 +243,9 @@ func (o *CustomerDataRelationships) SetOrderSubscriptions(v CustomerDataRelation
 }
 
 // GetReturns returns the Returns field value if set, zero value otherwise.
-func (o *CustomerDataRelationships) GetReturns() CustomerDataRelationshipsReturns {
+func (o *CustomerDataRelationships) GetReturns() CaptureDataRelationshipsReturn {
 	if o == nil || IsNil(o.Returns) {
-		var ret CustomerDataRelationshipsReturns
+		var ret CaptureDataRelationshipsReturn
 		return ret
 	}
 	return *o.Returns
@@ -252,7 +253,7 @@ func (o *CustomerDataRelationships) GetReturns() CustomerDataRelationshipsReturn
 
 // GetReturnsOk returns a tuple with the Returns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDataRelationships) GetReturnsOk() (*CustomerDataRelationshipsReturns, bool) {
+func (o *CustomerDataRelationships) GetReturnsOk() (*CaptureDataRelationshipsReturn, bool) {
 	if o == nil || IsNil(o.Returns) {
 		return nil, false
 	}
@@ -268,8 +269,8 @@ func (o *CustomerDataRelationships) HasReturns() bool {
 	return false
 }
 
-// SetReturns gets a reference to the given CustomerDataRelationshipsReturns and assigns it to the Returns field.
-func (o *CustomerDataRelationships) SetReturns(v CustomerDataRelationshipsReturns) {
+// SetReturns gets a reference to the given CaptureDataRelationshipsReturn and assigns it to the Returns field.
+func (o *CustomerDataRelationships) SetReturns(v CaptureDataRelationshipsReturn) {
 	o.Returns = &v
 }
 
@@ -306,9 +307,9 @@ func (o *CustomerDataRelationships) SetSkuLists(v BundleDataRelationshipsSkuList
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *CustomerDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *CustomerDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -316,7 +317,7 @@ func (o *CustomerDataRelationships) GetAttachments() AvalaraAccountDataRelations
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *CustomerDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -332,15 +333,15 @@ func (o *CustomerDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *CustomerDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *CustomerDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *CustomerDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *CustomerDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -348,7 +349,7 @@ func (o *CustomerDataRelationships) GetEvents() AuthorizationDataRelationshipsEv
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *CustomerDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -364,9 +365,41 @@ func (o *CustomerDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *CustomerDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *CustomerDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *CustomerDataRelationships) GetTags() AddressDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomerDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *CustomerDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressDataRelationshipsTags and assigns it to the Tags field.
+func (o *CustomerDataRelationships) SetTags(v AddressDataRelationshipsTags) {
+	o.Tags = &v
 }
 
 func (o CustomerDataRelationships) MarshalJSON() ([]byte, error) {
@@ -408,6 +441,9 @@ func (o CustomerDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

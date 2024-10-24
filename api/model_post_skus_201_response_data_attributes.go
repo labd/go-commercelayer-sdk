@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -32,7 +32,7 @@ type POSTSkus201ResponseDataAttributes struct {
 	PiecesPerPack interface{} `json:"pieces_per_pack,omitempty"`
 	// The weight of the SKU. If present, it will be used to calculate the shipping rates.
 	Weight interface{} `json:"weight,omitempty"`
-	// Can be one of 'gr', 'lb', or 'oz'
+	// The unit of weight. One of 'gr', 'oz', or 'lb'.
 	UnitOfWeight interface{} `json:"unit_of_weight,omitempty"`
 	// The Harmonized System Code used by customs to identify the products shipped across international borders.
 	HsTariffNumber interface{} `json:"hs_tariff_number,omitempty"`
@@ -42,7 +42,7 @@ type POSTSkus201ResponseDataAttributes struct {
 	DoNotTrack interface{} `json:"do_not_track,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

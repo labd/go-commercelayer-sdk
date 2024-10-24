@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTAdjustments201ResponseDataAttributes**](POSTAdjustments201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to **interface{}** |  | [optional] 
+**Relationships** | Pointer to [**POSTAdjustments201ResponseDataRelationships**](POSTAdjustments201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTAdjustments201ResponseData) GetRelationships() interface{}`
+`func (o *POSTAdjustments201ResponseData) GetRelationships() POSTAdjustments201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTAdjustments201ResponseData) GetRelationshipsOk() (*interface{}, bool)`
+`func (o *POSTAdjustments201ResponseData) GetRelationshipsOk() (*POSTAdjustments201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTAdjustments201ResponseData) SetRelationships(v interface{})`
+`func (o *POSTAdjustments201ResponseData) SetRelationships(v POSTAdjustments201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 
@@ -174,16 +174,6 @@ SetRelationships sets Relationships field to given value.
 
 HasRelationships returns a boolean if a field has been set.
 
-### SetRelationshipsNil
-
-`func (o *POSTAdjustments201ResponseData) SetRelationshipsNil(b bool)`
-
- SetRelationshipsNil sets the value for Relationships to be an explicit nil
-
-### UnsetRelationships
-`func (o *POSTAdjustments201ResponseData) UnsetRelationships()`
-
-UnsetRelationships ensures that no value is present for Relationships, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

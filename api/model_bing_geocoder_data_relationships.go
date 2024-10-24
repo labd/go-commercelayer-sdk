@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,9 @@ var _ MappedNullable = &BingGeocoderDataRelationships{}
 
 // BingGeocoderDataRelationships struct for BingGeocoderDataRelationships
 type BingGeocoderDataRelationships struct {
-	Addresses   *BingGeocoderDataRelationshipsAddresses     `json:"addresses,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Markets     *AvalaraAccountDataRelationshipsMarkets    `json:"markets,omitempty"`
+	Addresses   *BingGeocoderDataRelationshipsAddresses    `json:"addresses,omitempty"`
+	Attachments *AuthorizationDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewBingGeocoderDataRelationships instantiates a new BingGeocoderDataRelationships object
@@ -39,6 +40,38 @@ func NewBingGeocoderDataRelationships() *BingGeocoderDataRelationships {
 func NewBingGeocoderDataRelationshipsWithDefaults() *BingGeocoderDataRelationships {
 	this := BingGeocoderDataRelationships{}
 	return &this
+}
+
+// GetMarkets returns the Markets field value if set, zero value otherwise.
+func (o *BingGeocoderDataRelationships) GetMarkets() AvalaraAccountDataRelationshipsMarkets {
+	if o == nil || IsNil(o.Markets) {
+		var ret AvalaraAccountDataRelationshipsMarkets
+		return ret
+	}
+	return *o.Markets
+}
+
+// GetMarketsOk returns a tuple with the Markets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BingGeocoderDataRelationships) GetMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+	if o == nil || IsNil(o.Markets) {
+		return nil, false
+	}
+	return o.Markets, true
+}
+
+// HasMarkets returns a boolean if a field has been set.
+func (o *BingGeocoderDataRelationships) HasMarkets() bool {
+	if o != nil && !IsNil(o.Markets) {
+		return true
+	}
+
+	return false
+}
+
+// SetMarkets gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the Markets field.
+func (o *BingGeocoderDataRelationships) SetMarkets(v AvalaraAccountDataRelationshipsMarkets) {
+	o.Markets = &v
 }
 
 // GetAddresses returns the Addresses field value if set, zero value otherwise.
@@ -74,9 +107,9 @@ func (o *BingGeocoderDataRelationships) SetAddresses(v BingGeocoderDataRelations
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *BingGeocoderDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *BingGeocoderDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -84,7 +117,7 @@ func (o *BingGeocoderDataRelationships) GetAttachments() AvalaraAccountDataRelat
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BingGeocoderDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *BingGeocoderDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -100,8 +133,8 @@ func (o *BingGeocoderDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *BingGeocoderDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *BingGeocoderDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
@@ -115,6 +148,9 @@ func (o BingGeocoderDataRelationships) MarshalJSON() ([]byte, error) {
 
 func (o BingGeocoderDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Markets) {
+		toSerialize["markets"] = o.Markets
+	}
 	if !IsNil(o.Addresses) {
 		toSerialize["addresses"] = o.Addresses
 	}

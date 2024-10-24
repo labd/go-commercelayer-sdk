@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,7 @@ type TaxjarAccountData struct {
 	// The resource's type
 	Type          interface{}                                                           `json:"type"`
 	Attributes    GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AvalaraAccountDataRelationships                                      `json:"relationships,omitempty"`
+	Relationships *TaxjarAccountDataRelationships                                       `json:"relationships,omitempty"`
 }
 
 // NewTaxjarAccountData instantiates a new TaxjarAccountData object
@@ -96,9 +96,9 @@ func (o *TaxjarAccountData) SetAttributes(v GETManualTaxCalculatorsManualTaxCalc
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxjarAccountData) GetRelationships() AvalaraAccountDataRelationships {
+func (o *TaxjarAccountData) GetRelationships() TaxjarAccountDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret AvalaraAccountDataRelationships
+		var ret TaxjarAccountDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -106,7 +106,7 @@ func (o *TaxjarAccountData) GetRelationships() AvalaraAccountDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxjarAccountData) GetRelationshipsOk() (*AvalaraAccountDataRelationships, bool) {
+func (o *TaxjarAccountData) GetRelationshipsOk() (*TaxjarAccountDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -122,8 +122,8 @@ func (o *TaxjarAccountData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AvalaraAccountDataRelationships and assigns it to the Relationships field.
-func (o *TaxjarAccountData) SetRelationships(v AvalaraAccountDataRelationships) {
+// SetRelationships gets a reference to the given TaxjarAccountDataRelationships and assigns it to the Relationships field.
+func (o *TaxjarAccountData) SetRelationships(v TaxjarAccountDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &POSTSkuListPromotionRules201ResponseDataRelationships{}
 // POSTSkuListPromotionRules201ResponseDataRelationships struct for POSTSkuListPromotionRules201ResponseDataRelationships
 type POSTSkuListPromotionRules201ResponseDataRelationships struct {
 	Promotion *POSTCouponCodesPromotionRules201ResponseDataRelationshipsPromotion `json:"promotion,omitempty"`
+	Versions  *POSTAddresses201ResponseDataRelationshipsVersions                  `json:"versions,omitempty"`
 	SkuList   *POSTBundles201ResponseDataRelationshipsSkuList                     `json:"sku_list,omitempty"`
 	Skus      *POSTBundles201ResponseDataRelationshipsSkus                        `json:"skus,omitempty"`
 }
@@ -72,6 +73,38 @@ func (o *POSTSkuListPromotionRules201ResponseDataRelationships) HasPromotion() b
 // SetPromotion gets a reference to the given POSTCouponCodesPromotionRules201ResponseDataRelationshipsPromotion and assigns it to the Promotion field.
 func (o *POSTSkuListPromotionRules201ResponseDataRelationships) SetPromotion(v POSTCouponCodesPromotionRules201ResponseDataRelationshipsPromotion) {
 	o.Promotion = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTSkuListPromotionRules201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkuListPromotionRules201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTSkuListPromotionRules201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTSkuListPromotionRules201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 // GetSkuList returns the SkuList field value if set, zero value otherwise.
@@ -150,6 +183,9 @@ func (o POSTSkuListPromotionRules201ResponseDataRelationships) ToMap() (map[stri
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Promotion) {
 		toSerialize["promotion"] = o.Promotion
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	if !IsNil(o.SkuList) {
 		toSerialize["sku_list"] = o.SkuList

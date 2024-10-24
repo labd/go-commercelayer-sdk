@@ -6,12 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Market** | Pointer to [**POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket**](POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket.md) |  | [optional] 
 **ShippingZone** | Pointer to [**POSTShippingMethods201ResponseDataRelationshipsShippingZone**](POSTShippingMethods201ResponseDataRelationshipsShippingZone.md) |  | [optional] 
-**ShippingCategory** | Pointer to [**GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory**](GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory.md) |  | [optional] 
+**ShippingCategory** | Pointer to [**POSTShipments201ResponseDataRelationshipsShippingCategory**](POSTShipments201ResponseDataRelationshipsShippingCategory.md) |  | [optional] 
 **StockLocation** | Pointer to [**POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation**](POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation.md) |  | [optional] 
 **DeliveryLeadTimeForShipment** | Pointer to [**POSTShippingMethods201ResponseDataRelationshipsDeliveryLeadTimeForShipment**](POSTShippingMethods201ResponseDataRelationshipsDeliveryLeadTimeForShipment.md) |  | [optional] 
 **ShippingMethodTiers** | Pointer to [**POSTShippingMethods201ResponseDataRelationshipsShippingMethodTiers**](POSTShippingMethods201ResponseDataRelationshipsShippingMethodTiers.md) |  | [optional] 
 **ShippingWeightTiers** | Pointer to [**POSTShippingMethods201ResponseDataRelationshipsShippingWeightTiers**](POSTShippingMethods201ResponseDataRelationshipsShippingWeightTiers.md) |  | [optional] 
-**Attachments** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsAttachments**](POSTAvalaraAccounts201ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -84,20 +85,20 @@ HasShippingZone returns a boolean if a field has been set.
 
 ### GetShippingCategory
 
-`func (o *POSTShippingMethods201ResponseDataRelationships) GetShippingCategory() GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory`
+`func (o *POSTShippingMethods201ResponseDataRelationships) GetShippingCategory() POSTShipments201ResponseDataRelationshipsShippingCategory`
 
 GetShippingCategory returns the ShippingCategory field if non-nil, zero value otherwise.
 
 ### GetShippingCategoryOk
 
-`func (o *POSTShippingMethods201ResponseDataRelationships) GetShippingCategoryOk() (*GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory, bool)`
+`func (o *POSTShippingMethods201ResponseDataRelationships) GetShippingCategoryOk() (*POSTShipments201ResponseDataRelationshipsShippingCategory, bool)`
 
 GetShippingCategoryOk returns a tuple with the ShippingCategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingCategory
 
-`func (o *POSTShippingMethods201ResponseDataRelationships) SetShippingCategory(v GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory)`
+`func (o *POSTShippingMethods201ResponseDataRelationships) SetShippingCategory(v POSTShipments201ResponseDataRelationshipsShippingCategory)`
 
 SetShippingCategory sets ShippingCategory field to given value.
 
@@ -209,20 +210,20 @@ HasShippingWeightTiers returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *POSTShippingMethods201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments`
+`func (o *POSTShippingMethods201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *POSTShippingMethods201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool)`
+`func (o *POSTShippingMethods201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *POSTShippingMethods201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments)`
+`func (o *POSTShippingMethods201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -231,6 +232,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *POSTShippingMethods201ResponseDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *POSTShippingMethods201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTShippingMethods201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTShippingMethods201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTShippingMethods201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

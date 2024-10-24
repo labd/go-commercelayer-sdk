@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,6 +23,7 @@ type POSTExternalPayments201ResponseDataRelationships struct {
 	Order          *POSTAdyenPayments201ResponseDataRelationshipsOrder          `json:"order,omitempty"`
 	PaymentGateway *POSTAdyenPayments201ResponseDataRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
 	Wallet         *POSTExternalPayments201ResponseDataRelationshipsWallet      `json:"wallet,omitempty"`
+	Versions       *POSTAddresses201ResponseDataRelationshipsVersions           `json:"versions,omitempty"`
 }
 
 // NewPOSTExternalPayments201ResponseDataRelationships instantiates a new POSTExternalPayments201ResponseDataRelationships object
@@ -138,6 +139,38 @@ func (o *POSTExternalPayments201ResponseDataRelationships) SetWallet(v POSTExter
 	o.Wallet = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTExternalPayments201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTExternalPayments201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTExternalPayments201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTExternalPayments201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 func (o POSTExternalPayments201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -156,6 +189,9 @@ func (o POSTExternalPayments201ResponseDataRelationships) ToMap() (map[string]in
 	}
 	if !IsNil(o.Wallet) {
 		toSerialize["wallet"] = o.Wallet
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

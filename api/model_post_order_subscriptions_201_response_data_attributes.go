@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -24,15 +24,17 @@ type POSTOrderSubscriptions201ResponseDataAttributes struct {
 	Frequency interface{} `json:"frequency"`
 	// Indicates if the subscription will be activated considering the placed source order as its first run.
 	ActivateBySourceOrder interface{} `json:"activate_by_source_order,omitempty"`
+	// Indicates if the subscription created orders are automatically placed at the end of the copy.
+	PlaceTargetOrder interface{} `json:"place_target_order,omitempty"`
+	// Indicates the number of hours the renewal alert will be triggered before the subscription next run. Must be included between 1 and 720 hours.
+	RenewalAlertPeriod interface{} `json:"renewal_alert_period,omitempty"`
 	// The activation date/time of this subscription.
 	StartsAt interface{} `json:"starts_at,omitempty"`
 	// The expiration date/time of this subscription (must be after starts_at).
 	ExpiresAt interface{} `json:"expires_at,omitempty"`
-	// The subscription options used to create the order (check order_factories for more information). For subscriptions the `place_target_order` is enabled by default, specify custom options to overwrite it.
-	Options interface{} `json:"options,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -115,6 +117,72 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetActivateBySourceOrd
 	o.ActivateBySourceOrder = v
 }
 
+// GetPlaceTargetOrder returns the PlaceTargetOrder field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetPlaceTargetOrder() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PlaceTargetOrder
+}
+
+// GetPlaceTargetOrderOk returns a tuple with the PlaceTargetOrder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetPlaceTargetOrderOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PlaceTargetOrder) {
+		return nil, false
+	}
+	return &o.PlaceTargetOrder, true
+}
+
+// HasPlaceTargetOrder returns a boolean if a field has been set.
+func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasPlaceTargetOrder() bool {
+	if o != nil && IsNil(o.PlaceTargetOrder) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlaceTargetOrder gets a reference to the given interface{} and assigns it to the PlaceTargetOrder field.
+func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetPlaceTargetOrder(v interface{}) {
+	o.PlaceTargetOrder = v
+}
+
+// GetRenewalAlertPeriod returns the RenewalAlertPeriod field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetRenewalAlertPeriod() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.RenewalAlertPeriod
+}
+
+// GetRenewalAlertPeriodOk returns a tuple with the RenewalAlertPeriod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetRenewalAlertPeriodOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RenewalAlertPeriod) {
+		return nil, false
+	}
+	return &o.RenewalAlertPeriod, true
+}
+
+// HasRenewalAlertPeriod returns a boolean if a field has been set.
+func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasRenewalAlertPeriod() bool {
+	if o != nil && IsNil(o.RenewalAlertPeriod) {
+		return true
+	}
+
+	return false
+}
+
+// SetRenewalAlertPeriod gets a reference to the given interface{} and assigns it to the RenewalAlertPeriod field.
+func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetRenewalAlertPeriod(v interface{}) {
+	o.RenewalAlertPeriod = v
+}
+
 // GetStartsAt returns the StartsAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetStartsAt() interface{} {
 	if o == nil {
@@ -179,39 +247,6 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasExpiresAt() bool {
 // SetExpiresAt gets a reference to the given interface{} and assigns it to the ExpiresAt field.
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetExpiresAt(v interface{}) {
 	o.ExpiresAt = v
-}
-
-// GetOptions returns the Options field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetOptions() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Options
-}
-
-// GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetOptionsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Options) {
-		return nil, false
-	}
-	return &o.Options, true
-}
-
-// HasOptions returns a boolean if a field has been set.
-func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasOptions() bool {
-	if o != nil && IsNil(o.Options) {
-		return true
-	}
-
-	return false
-}
-
-// SetOptions gets a reference to the given interface{} and assigns it to the Options field.
-func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetOptions(v interface{}) {
-	o.Options = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -329,14 +364,17 @@ func (o POSTOrderSubscriptions201ResponseDataAttributes) ToMap() (map[string]int
 	if o.ActivateBySourceOrder != nil {
 		toSerialize["activate_by_source_order"] = o.ActivateBySourceOrder
 	}
+	if o.PlaceTargetOrder != nil {
+		toSerialize["place_target_order"] = o.PlaceTargetOrder
+	}
+	if o.RenewalAlertPeriod != nil {
+		toSerialize["renewal_alert_period"] = o.RenewalAlertPeriod
+	}
 	if o.StartsAt != nil {
 		toSerialize["starts_at"] = o.StartsAt
 	}
 	if o.ExpiresAt != nil {
 		toSerialize["expires_at"] = o.ExpiresAt
-	}
-	if o.Options != nil {
-		toSerialize["options"] = o.Options
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

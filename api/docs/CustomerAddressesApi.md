@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    customerAddressCreate := *openapiclient.NewCustomerAddressCreate(*openapiclient.NewCustomerAddressCreateData(interface{}(123), *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerAddressCreate | 
+    customerAddressCreate := *openapiclient.NewCustomerAddressCreate(*openapiclient.NewCustomerAddressCreateData(interface{}(123), *openapiclient.NewPOSTCustomerAddresses201ResponseDataAttributes(interface{}(john@example.com)))) // CustomerAddressCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

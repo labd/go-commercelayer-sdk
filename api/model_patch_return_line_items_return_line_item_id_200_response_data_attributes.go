@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &PATCHReturnLineItemsReturnLineItemId200ResponseDataAttri
 
 // PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes struct for PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes
 type PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes struct {
-	// The line item quantity.
+	// The return line item quantity.
 	Quantity interface{} `json:"quantity,omitempty"`
 	// Send this attribute if you want to restock the line item.
 	Restock interface{} `json:"_restock,omitempty"`
@@ -28,7 +28,7 @@ type PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes struct {
 	ReturnReason interface{} `json:"return_reason,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

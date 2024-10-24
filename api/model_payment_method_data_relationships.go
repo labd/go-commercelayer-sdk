@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,8 @@ var _ MappedNullable = &PaymentMethodDataRelationships{}
 type PaymentMethodDataRelationships struct {
 	Market         *AvalaraAccountDataRelationshipsMarkets      `json:"market,omitempty"`
 	PaymentGateway *AdyenPaymentDataRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
-	Attachments    *AvalaraAccountDataRelationshipsAttachments  `json:"attachments,omitempty"`
+	Attachments    *AuthorizationDataRelationshipsAttachments   `json:"attachments,omitempty"`
+	Versions       *AddressDataRelationshipsVersions            `json:"versions,omitempty"`
 }
 
 // NewPaymentMethodDataRelationships instantiates a new PaymentMethodDataRelationships object
@@ -107,9 +108,9 @@ func (o *PaymentMethodDataRelationships) SetPaymentGateway(v AdyenPaymentDataRel
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *PaymentMethodDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *PaymentMethodDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -117,7 +118,7 @@ func (o *PaymentMethodDataRelationships) GetAttachments() AvalaraAccountDataRela
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *PaymentMethodDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -133,9 +134,41 @@ func (o *PaymentMethodDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *PaymentMethodDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *PaymentMethodDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *PaymentMethodDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PaymentMethodDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *PaymentMethodDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *PaymentMethodDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o PaymentMethodDataRelationships) MarshalJSON() ([]byte, error) {
@@ -156,6 +189,9 @@ func (o PaymentMethodDataRelationships) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

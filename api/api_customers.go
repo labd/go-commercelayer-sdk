@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -1239,6 +1239,98 @@ func (a *CustomersApiService) GETOrderSubscriptionIdCustomerExecute(r CustomersA
 	return localVarHTTPResponse, nil
 }
 
+type CustomersApiGETPriceIdJwtCustomerRequest struct {
+	ctx        context.Context
+	ApiService *CustomersApiService
+	priceId    interface{}
+}
+
+func (r CustomersApiGETPriceIdJwtCustomerRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceIdJwtCustomerExecute(r)
+}
+
+/*
+GETPriceIdJwtCustomer Retrieve the jwt customer associated to the price
+
+Retrieve the jwt customer associated to the price
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return CustomersApiGETPriceIdJwtCustomerRequest
+*/
+func (a *CustomersApiService) GETPriceIdJwtCustomer(ctx context.Context, priceId interface{}) CustomersApiGETPriceIdJwtCustomerRequest {
+	return CustomersApiGETPriceIdJwtCustomerRequest{
+		ApiService: a,
+		ctx:        ctx,
+		priceId:    priceId,
+	}
+}
+
+// Execute executes the request
+func (a *CustomersApiService) GETPriceIdJwtCustomerExecute(r CustomersApiGETPriceIdJwtCustomerRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETPriceIdJwtCustomer")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/prices/{priceId}/jwt_customer"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type CustomersApiGETReturnIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService *CustomersApiService
@@ -1281,6 +1373,98 @@ func (a *CustomersApiService) GETReturnIdCustomerExecute(r CustomersApiGETReturn
 
 	localVarPath := localBasePath + "/returns/{returnId}/customer"
 	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CustomersApiGETSkuIdJwtCustomerRequest struct {
+	ctx        context.Context
+	ApiService *CustomersApiService
+	skuId      interface{}
+}
+
+func (r CustomersApiGETSkuIdJwtCustomerRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdJwtCustomerExecute(r)
+}
+
+/*
+GETSkuIdJwtCustomer Retrieve the jwt customer associated to the SKU
+
+Retrieve the jwt customer associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return CustomersApiGETSkuIdJwtCustomerRequest
+*/
+func (a *CustomersApiService) GETSkuIdJwtCustomer(ctx context.Context, skuId interface{}) CustomersApiGETSkuIdJwtCustomerRequest {
+	return CustomersApiGETSkuIdJwtCustomerRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *CustomersApiService) GETSkuIdJwtCustomerExecute(r CustomersApiGETSkuIdJwtCustomerRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETSkuIdJwtCustomer")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/jwt_customer"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

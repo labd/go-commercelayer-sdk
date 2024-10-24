@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,12 +22,14 @@ var _ MappedNullable = &POSTOrderAmountPromotionRules201ResponseDataAttributes{}
 type POSTOrderAmountPromotionRules201ResponseDataAttributes struct {
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
 	// Apply the promotion only when order is over this amount, in cents.
 	OrderAmountCents interface{} `json:"order_amount_cents,omitempty"`
+	// Send this attribute if you want to compare the specified amount with order's subtotal (excluding discounts, if any).
+	UseSubtotal interface{} `json:"use_subtotal,omitempty"`
 }
 
 // NewPOSTOrderAmountPromotionRules201ResponseDataAttributes instantiates a new POSTOrderAmountPromotionRules201ResponseDataAttributes object
@@ -179,6 +181,39 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) SetOrderAmountC
 	o.OrderAmountCents = v
 }
 
+// GetUseSubtotal returns the UseSubtotal field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetUseSubtotal() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.UseSubtotal
+}
+
+// GetUseSubtotalOk returns a tuple with the UseSubtotal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetUseSubtotalOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UseSubtotal) {
+		return nil, false
+	}
+	return &o.UseSubtotal, true
+}
+
+// HasUseSubtotal returns a boolean if a field has been set.
+func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) HasUseSubtotal() bool {
+	if o != nil && IsNil(o.UseSubtotal) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSubtotal gets a reference to the given interface{} and assigns it to the UseSubtotal field.
+func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) SetUseSubtotal(v interface{}) {
+	o.UseSubtotal = v
+}
+
 func (o POSTOrderAmountPromotionRules201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -200,6 +235,9 @@ func (o POSTOrderAmountPromotionRules201ResponseDataAttributes) ToMap() (map[str
 	}
 	if o.OrderAmountCents != nil {
 		toSerialize["order_amount_cents"] = o.OrderAmountCents
+	}
+	if o.UseSubtotal != nil {
+		toSerialize["use_subtotal"] = o.UseSubtotal
 	}
 	return toSerialize, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,22 @@ var _ MappedNullable = &SkuDataRelationships{}
 
 // SkuDataRelationships struct for SkuDataRelationships
 type SkuDataRelationships struct {
-	ShippingCategory  *ShipmentDataRelationshipsShippingCategory  `json:"shipping_category,omitempty"`
-	Prices            *PriceFrequencyTierDataRelationshipsPrice   `json:"prices,omitempty"`
-	StockItems        *SkuDataRelationshipsStockItems             `json:"stock_items,omitempty"`
-	DeliveryLeadTimes *ShipmentDataRelationshipsDeliveryLeadTime  `json:"delivery_lead_times,omitempty"`
-	SkuOptions        *LineItemOptionDataRelationshipsSkuOption   `json:"sku_options,omitempty"`
-	Attachments       *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	ShippingCategory  *ShipmentDataRelationshipsShippingCategory      `json:"shipping_category,omitempty"`
+	Prices            *PriceFrequencyTierDataRelationshipsPrice       `json:"prices,omitempty"`
+	StockItems        *ReservedStockDataRelationshipsStockItem        `json:"stock_items,omitempty"`
+	StockReservations *LineItemDataRelationshipsStockReservations     `json:"stock_reservations,omitempty"`
+	DeliveryLeadTimes *ShipmentDataRelationshipsDeliveryLeadTime      `json:"delivery_lead_times,omitempty"`
+	SkuOptions        *LineItemOptionDataRelationshipsSkuOption       `json:"sku_options,omitempty"`
+	SkuListItems      *SkuListDataRelationshipsSkuListItems           `json:"sku_list_items,omitempty"`
+	SkuLists          *BundleDataRelationshipsSkuList                 `json:"sku_lists,omitempty"`
+	Attachments       *AuthorizationDataRelationshipsAttachments      `json:"attachments,omitempty"`
+	Links             *OrderDataRelationshipsLinks                    `json:"links,omitempty"`
+	Events            *AddressDataRelationshipsEvents                 `json:"events,omitempty"`
+	Tags              *AddressDataRelationshipsTags                   `json:"tags,omitempty"`
+	Versions          *AddressDataRelationshipsVersions               `json:"versions,omitempty"`
+	JwtCustomer       *CouponRecipientDataRelationshipsCustomer       `json:"jwt_customer,omitempty"`
+	JwtMarkets        *AvalaraAccountDataRelationshipsMarkets         `json:"jwt_markets,omitempty"`
+	JwtStockLocations *DeliveryLeadTimeDataRelationshipsStockLocation `json:"jwt_stock_locations,omitempty"`
 }
 
 // NewSkuDataRelationships instantiates a new SkuDataRelationships object
@@ -110,9 +120,9 @@ func (o *SkuDataRelationships) SetPrices(v PriceFrequencyTierDataRelationshipsPr
 }
 
 // GetStockItems returns the StockItems field value if set, zero value otherwise.
-func (o *SkuDataRelationships) GetStockItems() SkuDataRelationshipsStockItems {
+func (o *SkuDataRelationships) GetStockItems() ReservedStockDataRelationshipsStockItem {
 	if o == nil || IsNil(o.StockItems) {
-		var ret SkuDataRelationshipsStockItems
+		var ret ReservedStockDataRelationshipsStockItem
 		return ret
 	}
 	return *o.StockItems
@@ -120,7 +130,7 @@ func (o *SkuDataRelationships) GetStockItems() SkuDataRelationshipsStockItems {
 
 // GetStockItemsOk returns a tuple with the StockItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuDataRelationships) GetStockItemsOk() (*SkuDataRelationshipsStockItems, bool) {
+func (o *SkuDataRelationships) GetStockItemsOk() (*ReservedStockDataRelationshipsStockItem, bool) {
 	if o == nil || IsNil(o.StockItems) {
 		return nil, false
 	}
@@ -136,9 +146,41 @@ func (o *SkuDataRelationships) HasStockItems() bool {
 	return false
 }
 
-// SetStockItems gets a reference to the given SkuDataRelationshipsStockItems and assigns it to the StockItems field.
-func (o *SkuDataRelationships) SetStockItems(v SkuDataRelationshipsStockItems) {
+// SetStockItems gets a reference to the given ReservedStockDataRelationshipsStockItem and assigns it to the StockItems field.
+func (o *SkuDataRelationships) SetStockItems(v ReservedStockDataRelationshipsStockItem) {
 	o.StockItems = &v
+}
+
+// GetStockReservations returns the StockReservations field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetStockReservations() LineItemDataRelationshipsStockReservations {
+	if o == nil || IsNil(o.StockReservations) {
+		var ret LineItemDataRelationshipsStockReservations
+		return ret
+	}
+	return *o.StockReservations
+}
+
+// GetStockReservationsOk returns a tuple with the StockReservations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetStockReservationsOk() (*LineItemDataRelationshipsStockReservations, bool) {
+	if o == nil || IsNil(o.StockReservations) {
+		return nil, false
+	}
+	return o.StockReservations, true
+}
+
+// HasStockReservations returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasStockReservations() bool {
+	if o != nil && !IsNil(o.StockReservations) {
+		return true
+	}
+
+	return false
+}
+
+// SetStockReservations gets a reference to the given LineItemDataRelationshipsStockReservations and assigns it to the StockReservations field.
+func (o *SkuDataRelationships) SetStockReservations(v LineItemDataRelationshipsStockReservations) {
+	o.StockReservations = &v
 }
 
 // GetDeliveryLeadTimes returns the DeliveryLeadTimes field value if set, zero value otherwise.
@@ -205,10 +247,74 @@ func (o *SkuDataRelationships) SetSkuOptions(v LineItemOptionDataRelationshipsSk
 	o.SkuOptions = &v
 }
 
+// GetSkuListItems returns the SkuListItems field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetSkuListItems() SkuListDataRelationshipsSkuListItems {
+	if o == nil || IsNil(o.SkuListItems) {
+		var ret SkuListDataRelationshipsSkuListItems
+		return ret
+	}
+	return *o.SkuListItems
+}
+
+// GetSkuListItemsOk returns a tuple with the SkuListItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetSkuListItemsOk() (*SkuListDataRelationshipsSkuListItems, bool) {
+	if o == nil || IsNil(o.SkuListItems) {
+		return nil, false
+	}
+	return o.SkuListItems, true
+}
+
+// HasSkuListItems returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasSkuListItems() bool {
+	if o != nil && !IsNil(o.SkuListItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkuListItems gets a reference to the given SkuListDataRelationshipsSkuListItems and assigns it to the SkuListItems field.
+func (o *SkuDataRelationships) SetSkuListItems(v SkuListDataRelationshipsSkuListItems) {
+	o.SkuListItems = &v
+}
+
+// GetSkuLists returns the SkuLists field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetSkuLists() BundleDataRelationshipsSkuList {
+	if o == nil || IsNil(o.SkuLists) {
+		var ret BundleDataRelationshipsSkuList
+		return ret
+	}
+	return *o.SkuLists
+}
+
+// GetSkuListsOk returns a tuple with the SkuLists field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetSkuListsOk() (*BundleDataRelationshipsSkuList, bool) {
+	if o == nil || IsNil(o.SkuLists) {
+		return nil, false
+	}
+	return o.SkuLists, true
+}
+
+// HasSkuLists returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasSkuLists() bool {
+	if o != nil && !IsNil(o.SkuLists) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkuLists gets a reference to the given BundleDataRelationshipsSkuList and assigns it to the SkuLists field.
+func (o *SkuDataRelationships) SetSkuLists(v BundleDataRelationshipsSkuList) {
+	o.SkuLists = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *SkuDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *SkuDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -216,7 +322,7 @@ func (o *SkuDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsA
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *SkuDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -232,9 +338,233 @@ func (o *SkuDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *SkuDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *SkuDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetLinks returns the Links field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetLinks() OrderDataRelationshipsLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret OrderDataRelationshipsLinks
+		return ret
+	}
+	return *o.Links
+}
+
+// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetLinksOk() (*OrderDataRelationshipsLinks, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
+	}
+	return o.Links, true
+}
+
+// HasLinks returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasLinks() bool {
+	if o != nil && !IsNil(o.Links) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinks gets a reference to the given OrderDataRelationshipsLinks and assigns it to the Links field.
+func (o *SkuDataRelationships) SetLinks(v OrderDataRelationshipsLinks) {
+	o.Links = &v
+}
+
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetEvents() AddressDataRelationshipsEvents {
+	if o == nil || IsNil(o.Events) {
+		var ret AddressDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
+	if o == nil || IsNil(o.Events) {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasEvents() bool {
+	if o != nil && !IsNil(o.Events) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *SkuDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
+	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetTags() AddressDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressDataRelationshipsTags and assigns it to the Tags field.
+func (o *SkuDataRelationships) SetTags(v AddressDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *SkuDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
+// GetJwtCustomer returns the JwtCustomer field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetJwtCustomer() CouponRecipientDataRelationshipsCustomer {
+	if o == nil || IsNil(o.JwtCustomer) {
+		var ret CouponRecipientDataRelationshipsCustomer
+		return ret
+	}
+	return *o.JwtCustomer
+}
+
+// GetJwtCustomerOk returns a tuple with the JwtCustomer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetJwtCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
+	if o == nil || IsNil(o.JwtCustomer) {
+		return nil, false
+	}
+	return o.JwtCustomer, true
+}
+
+// HasJwtCustomer returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasJwtCustomer() bool {
+	if o != nil && !IsNil(o.JwtCustomer) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtCustomer gets a reference to the given CouponRecipientDataRelationshipsCustomer and assigns it to the JwtCustomer field.
+func (o *SkuDataRelationships) SetJwtCustomer(v CouponRecipientDataRelationshipsCustomer) {
+	o.JwtCustomer = &v
+}
+
+// GetJwtMarkets returns the JwtMarkets field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetJwtMarkets() AvalaraAccountDataRelationshipsMarkets {
+	if o == nil || IsNil(o.JwtMarkets) {
+		var ret AvalaraAccountDataRelationshipsMarkets
+		return ret
+	}
+	return *o.JwtMarkets
+}
+
+// GetJwtMarketsOk returns a tuple with the JwtMarkets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetJwtMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+	if o == nil || IsNil(o.JwtMarkets) {
+		return nil, false
+	}
+	return o.JwtMarkets, true
+}
+
+// HasJwtMarkets returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasJwtMarkets() bool {
+	if o != nil && !IsNil(o.JwtMarkets) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtMarkets gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the JwtMarkets field.
+func (o *SkuDataRelationships) SetJwtMarkets(v AvalaraAccountDataRelationshipsMarkets) {
+	o.JwtMarkets = &v
+}
+
+// GetJwtStockLocations returns the JwtStockLocations field value if set, zero value otherwise.
+func (o *SkuDataRelationships) GetJwtStockLocations() DeliveryLeadTimeDataRelationshipsStockLocation {
+	if o == nil || IsNil(o.JwtStockLocations) {
+		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		return ret
+	}
+	return *o.JwtStockLocations
+}
+
+// GetJwtStockLocationsOk returns a tuple with the JwtStockLocations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuDataRelationships) GetJwtStockLocationsOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+	if o == nil || IsNil(o.JwtStockLocations) {
+		return nil, false
+	}
+	return o.JwtStockLocations, true
+}
+
+// HasJwtStockLocations returns a boolean if a field has been set.
+func (o *SkuDataRelationships) HasJwtStockLocations() bool {
+	if o != nil && !IsNil(o.JwtStockLocations) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtStockLocations gets a reference to the given DeliveryLeadTimeDataRelationshipsStockLocation and assigns it to the JwtStockLocations field.
+func (o *SkuDataRelationships) SetJwtStockLocations(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+	o.JwtStockLocations = &v
 }
 
 func (o SkuDataRelationships) MarshalJSON() ([]byte, error) {
@@ -256,14 +586,44 @@ func (o SkuDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.StockItems) {
 		toSerialize["stock_items"] = o.StockItems
 	}
+	if !IsNil(o.StockReservations) {
+		toSerialize["stock_reservations"] = o.StockReservations
+	}
 	if !IsNil(o.DeliveryLeadTimes) {
 		toSerialize["delivery_lead_times"] = o.DeliveryLeadTimes
 	}
 	if !IsNil(o.SkuOptions) {
 		toSerialize["sku_options"] = o.SkuOptions
 	}
+	if !IsNil(o.SkuListItems) {
+		toSerialize["sku_list_items"] = o.SkuListItems
+	}
+	if !IsNil(o.SkuLists) {
+		toSerialize["sku_lists"] = o.SkuLists
+	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Links) {
+		toSerialize["links"] = o.Links
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
+	}
+	if !IsNil(o.JwtCustomer) {
+		toSerialize["jwt_customer"] = o.JwtCustomer
+	}
+	if !IsNil(o.JwtMarkets) {
+		toSerialize["jwt_markets"] = o.JwtMarkets
+	}
+	if !IsNil(o.JwtStockLocations) {
+		toSerialize["jwt_stock_locations"] = o.JwtStockLocations
 	}
 	return toSerialize, nil
 }

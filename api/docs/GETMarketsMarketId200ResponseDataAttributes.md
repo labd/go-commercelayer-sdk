@@ -4,19 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Number** | Pointer to **interface{}** | Unique identifier for the market (numeric) | [optional] 
-**Name** | Pointer to **interface{}** | The market&#39;s internal name | [optional] 
-**FacebookPixelId** | Pointer to **interface{}** | The Facebook Pixed ID | [optional] 
-**CheckoutUrl** | Pointer to **interface{}** | The checkout URL for this market | [optional] 
+**Number** | Pointer to **interface{}** | Unique identifier for the market (numeric). | [optional] 
+**Name** | Pointer to **interface{}** | The market&#39;s internal name. | [optional] 
+**Code** | Pointer to **interface{}** | A string that you can use to identify the market (must be unique within the environment). | [optional] 
+**FacebookPixelId** | Pointer to **interface{}** | The Facebook Pixed ID. | [optional] 
+**CheckoutUrl** | Pointer to **interface{}** | The checkout URL for this market. | [optional] 
 **ExternalPricesUrl** | Pointer to **interface{}** | The URL used to overwrite prices by an external source. | [optional] 
 **ExternalOrderValidationUrl** | Pointer to **interface{}** | The URL used to validate orders by an external source. | [optional] 
-**SharedSecret** | Pointer to **interface{}** | The shared secret used to sign the external requests payload. | [optional] 
 **Private** | Pointer to **interface{}** | Indicates if market belongs to a customer_group. | [optional] 
-**DisabledAt** | Pointer to **interface{}** | Time at which the market was disabled. | [optional] 
+**ShippingCostCutoff** | Pointer to **interface{}** | When specified indicates the maximum number of shipping line items with cost that will be added to an order. | [optional] 
+**DisabledAt** | Pointer to **interface{}** | Time at which this resource was disabled. | [optional] 
+**SharedSecret** | Pointer to **interface{}** | The shared secret used to sign the external request payload. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -108,6 +110,41 @@ HasName returns a boolean if a field has been set.
 `func (o *GETMarketsMarketId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetCode
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) GetCode() interface{}`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) SetCode(v interface{})`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
+
+### SetCodeNil
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *GETMarketsMarketId200ResponseDataAttributes) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetFacebookPixelId
 
 `func (o *GETMarketsMarketId200ResponseDataAttributes) GetFacebookPixelId() interface{}`
@@ -248,41 +285,6 @@ HasExternalOrderValidationUrl returns a boolean if a field has been set.
 `func (o *GETMarketsMarketId200ResponseDataAttributes) UnsetExternalOrderValidationUrl()`
 
 UnsetExternalOrderValidationUrl ensures that no value is present for ExternalOrderValidationUrl, not even an explicit nil
-### GetSharedSecret
-
-`func (o *GETMarketsMarketId200ResponseDataAttributes) GetSharedSecret() interface{}`
-
-GetSharedSecret returns the SharedSecret field if non-nil, zero value otherwise.
-
-### GetSharedSecretOk
-
-`func (o *GETMarketsMarketId200ResponseDataAttributes) GetSharedSecretOk() (*interface{}, bool)`
-
-GetSharedSecretOk returns a tuple with the SharedSecret field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSharedSecret
-
-`func (o *GETMarketsMarketId200ResponseDataAttributes) SetSharedSecret(v interface{})`
-
-SetSharedSecret sets SharedSecret field to given value.
-
-### HasSharedSecret
-
-`func (o *GETMarketsMarketId200ResponseDataAttributes) HasSharedSecret() bool`
-
-HasSharedSecret returns a boolean if a field has been set.
-
-### SetSharedSecretNil
-
-`func (o *GETMarketsMarketId200ResponseDataAttributes) SetSharedSecretNil(b bool)`
-
- SetSharedSecretNil sets the value for SharedSecret to be an explicit nil
-
-### UnsetSharedSecret
-`func (o *GETMarketsMarketId200ResponseDataAttributes) UnsetSharedSecret()`
-
-UnsetSharedSecret ensures that no value is present for SharedSecret, not even an explicit nil
 ### GetPrivate
 
 `func (o *GETMarketsMarketId200ResponseDataAttributes) GetPrivate() interface{}`
@@ -318,6 +320,41 @@ HasPrivate returns a boolean if a field has been set.
 `func (o *GETMarketsMarketId200ResponseDataAttributes) UnsetPrivate()`
 
 UnsetPrivate ensures that no value is present for Private, not even an explicit nil
+### GetShippingCostCutoff
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) GetShippingCostCutoff() interface{}`
+
+GetShippingCostCutoff returns the ShippingCostCutoff field if non-nil, zero value otherwise.
+
+### GetShippingCostCutoffOk
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) GetShippingCostCutoffOk() (*interface{}, bool)`
+
+GetShippingCostCutoffOk returns a tuple with the ShippingCostCutoff field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingCostCutoff
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) SetShippingCostCutoff(v interface{})`
+
+SetShippingCostCutoff sets ShippingCostCutoff field to given value.
+
+### HasShippingCostCutoff
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) HasShippingCostCutoff() bool`
+
+HasShippingCostCutoff returns a boolean if a field has been set.
+
+### SetShippingCostCutoffNil
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) SetShippingCostCutoffNil(b bool)`
+
+ SetShippingCostCutoffNil sets the value for ShippingCostCutoff to be an explicit nil
+
+### UnsetShippingCostCutoff
+`func (o *GETMarketsMarketId200ResponseDataAttributes) UnsetShippingCostCutoff()`
+
+UnsetShippingCostCutoff ensures that no value is present for ShippingCostCutoff, not even an explicit nil
 ### GetDisabledAt
 
 `func (o *GETMarketsMarketId200ResponseDataAttributes) GetDisabledAt() interface{}`
@@ -353,6 +390,41 @@ HasDisabledAt returns a boolean if a field has been set.
 `func (o *GETMarketsMarketId200ResponseDataAttributes) UnsetDisabledAt()`
 
 UnsetDisabledAt ensures that no value is present for DisabledAt, not even an explicit nil
+### GetSharedSecret
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) GetSharedSecret() interface{}`
+
+GetSharedSecret returns the SharedSecret field if non-nil, zero value otherwise.
+
+### GetSharedSecretOk
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) GetSharedSecretOk() (*interface{}, bool)`
+
+GetSharedSecretOk returns a tuple with the SharedSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSharedSecret
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) SetSharedSecret(v interface{})`
+
+SetSharedSecret sets SharedSecret field to given value.
+
+### HasSharedSecret
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) HasSharedSecret() bool`
+
+HasSharedSecret returns a boolean if a field has been set.
+
+### SetSharedSecretNil
+
+`func (o *GETMarketsMarketId200ResponseDataAttributes) SetSharedSecretNil(b bool)`
+
+ SetSharedSecretNil sets the value for SharedSecret to be an explicit nil
+
+### UnsetSharedSecret
+`func (o *GETMarketsMarketId200ResponseDataAttributes) UnsetSharedSecret()`
+
+UnsetSharedSecret ensures that no value is present for SharedSecret, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETMarketsMarketId200ResponseDataAttributes) GetCreatedAt() interface{}`

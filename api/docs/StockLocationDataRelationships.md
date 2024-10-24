@@ -7,9 +7,10 @@ Name | Type | Description | Notes
 **Address** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
 **InventoryStockLocations** | Pointer to [**InventoryModelDataRelationshipsInventoryStockLocations**](InventoryModelDataRelationshipsInventoryStockLocations.md) |  | [optional] 
 **InventoryReturnLocations** | Pointer to [**InventoryModelDataRelationshipsInventoryReturnLocations**](InventoryModelDataRelationshipsInventoryReturnLocations.md) |  | [optional] 
-**StockItems** | Pointer to [**SkuDataRelationshipsStockItems**](SkuDataRelationshipsStockItems.md) |  | [optional] 
+**StockItems** | Pointer to [**ReservedStockDataRelationshipsStockItem**](ReservedStockDataRelationshipsStockItem.md) |  | [optional] 
 **StockTransfers** | Pointer to [**LineItemDataRelationshipsStockTransfers**](LineItemDataRelationshipsStockTransfers.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -107,20 +108,20 @@ HasInventoryReturnLocations returns a boolean if a field has been set.
 
 ### GetStockItems
 
-`func (o *StockLocationDataRelationships) GetStockItems() SkuDataRelationshipsStockItems`
+`func (o *StockLocationDataRelationships) GetStockItems() ReservedStockDataRelationshipsStockItem`
 
 GetStockItems returns the StockItems field if non-nil, zero value otherwise.
 
 ### GetStockItemsOk
 
-`func (o *StockLocationDataRelationships) GetStockItemsOk() (*SkuDataRelationshipsStockItems, bool)`
+`func (o *StockLocationDataRelationships) GetStockItemsOk() (*ReservedStockDataRelationshipsStockItem, bool)`
 
 GetStockItemsOk returns a tuple with the StockItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockItems
 
-`func (o *StockLocationDataRelationships) SetStockItems(v SkuDataRelationshipsStockItems)`
+`func (o *StockLocationDataRelationships) SetStockItems(v ReservedStockDataRelationshipsStockItem)`
 
 SetStockItems sets StockItems field to given value.
 
@@ -157,20 +158,20 @@ HasStockTransfers returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *StockLocationDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *StockLocationDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *StockLocationDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *StockLocationDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *StockLocationDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *StockLocationDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -179,6 +180,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *StockLocationDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *StockLocationDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *StockLocationDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *StockLocationDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *StockLocationDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

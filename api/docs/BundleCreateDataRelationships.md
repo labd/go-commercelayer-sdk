@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
 **SkuList** | [**BundleCreateDataRelationshipsSkuList**](BundleCreateDataRelationshipsSkuList.md) |  | 
+**Tags** | Pointer to [**AddressCreateDataRelationshipsTags**](AddressCreateDataRelationshipsTags.md) |  | [optional] 
 
 ## Methods
 
@@ -70,6 +71,31 @@ and a boolean to check if the value has been set.
 
 SetSkuList sets SkuList field to given value.
 
+
+### GetTags
+
+`func (o *BundleCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *BundleCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *BundleCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *BundleCreateDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

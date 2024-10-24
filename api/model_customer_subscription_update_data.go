@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,16 +23,16 @@ type CustomerSubscriptionUpdateData struct {
 	// The resource's type
 	Type interface{} `json:"type"`
 	// The resource's id
-	Id            interface{}                                                                         `json:"id"`
-	Attributes    PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes"`
-	Relationships interface{}                                                                         `json:"relationships,omitempty"`
+	Id            interface{}                                                               `json:"id"`
+	Attributes    PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes `json:"attributes"`
+	Relationships interface{}                                                               `json:"relationships,omitempty"`
 }
 
 // NewCustomerSubscriptionUpdateData instantiates a new CustomerSubscriptionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerSubscriptionUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) *CustomerSubscriptionUpdateData {
+func NewCustomerSubscriptionUpdateData(type_ interface{}, id interface{}, attributes PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) *CustomerSubscriptionUpdateData {
 	this := CustomerSubscriptionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -101,9 +101,9 @@ func (o *CustomerSubscriptionUpdateData) SetId(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerSubscriptionUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+func (o *CustomerSubscriptionUpdateData) GetAttributes() PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes {
 	if o == nil {
-		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
+		var ret PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -112,7 +112,7 @@ func (o *CustomerSubscriptionUpdateData) GetAttributes() PATCHBillingInfoValidat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+func (o *CustomerSubscriptionUpdateData) GetAttributesOk() (*PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,7 +120,7 @@ func (o *CustomerSubscriptionUpdateData) GetAttributesOk() (*PATCHBillingInfoVal
 }
 
 // SetAttributes sets field value
-func (o *CustomerSubscriptionUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
+func (o *CustomerSubscriptionUpdateData) SetAttributes(v PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

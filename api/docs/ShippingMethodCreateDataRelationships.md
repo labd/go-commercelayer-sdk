@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
 **ShippingZone** | Pointer to [**ShippingMethodCreateDataRelationshipsShippingZone**](ShippingMethodCreateDataRelationshipsShippingZone.md) |  | [optional] 
-**ShippingCategory** | Pointer to [**ShippingMethodCreateDataRelationshipsShippingCategory**](ShippingMethodCreateDataRelationshipsShippingCategory.md) |  | [optional] 
+**ShippingCategory** | Pointer to [**ShipmentCreateDataRelationshipsShippingCategory**](ShipmentCreateDataRelationshipsShippingCategory.md) |  | [optional] 
 **StockLocation** | Pointer to [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | [optional] 
 **ShippingMethodTiers** | Pointer to [**ShippingMethodCreateDataRelationshipsShippingMethodTiers**](ShippingMethodCreateDataRelationshipsShippingMethodTiers.md) |  | [optional] 
 
@@ -81,20 +81,20 @@ HasShippingZone returns a boolean if a field has been set.
 
 ### GetShippingCategory
 
-`func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory`
+`func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShipmentCreateDataRelationshipsShippingCategory`
 
 GetShippingCategory returns the ShippingCategory field if non-nil, zero value otherwise.
 
 ### GetShippingCategoryOk
 
-`func (o *ShippingMethodCreateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool)`
+`func (o *ShippingMethodCreateDataRelationships) GetShippingCategoryOk() (*ShipmentCreateDataRelationshipsShippingCategory, bool)`
 
 GetShippingCategoryOk returns a tuple with the ShippingCategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingCategory
 
-`func (o *ShippingMethodCreateDataRelationships) SetShippingCategory(v ShippingMethodCreateDataRelationshipsShippingCategory)`
+`func (o *ShippingMethodCreateDataRelationships) SetShippingCategory(v ShipmentCreateDataRelationshipsShippingCategory)`
 
 SetShippingCategory sets ShippingCategory field to given value.
 

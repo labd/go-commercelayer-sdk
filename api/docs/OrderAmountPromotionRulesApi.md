@@ -5,6 +5,7 @@ All URIs are relative to *https://.commercelayer.io/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId**](OrderAmountPromotionRulesApi.md#DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId) | **Delete** /order_amount_promotion_rules/{orderAmountPromotionRuleId} | Delete an order amount promotion rule
+[**GETBuyXPayYPromotionIdOrderAmountPromotionRule**](OrderAmountPromotionRulesApi.md#GETBuyXPayYPromotionIdOrderAmountPromotionRule) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the buy x pay y promotion
 [**GETExternalPromotionIdOrderAmountPromotionRule**](OrderAmountPromotionRulesApi.md#GETExternalPromotionIdOrderAmountPromotionRule) | **Get** /external_promotions/{externalPromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the external promotion
 [**GETFixedAmountPromotionIdOrderAmountPromotionRule**](OrderAmountPromotionRulesApi.md#GETFixedAmountPromotionIdOrderAmountPromotionRule) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the fixed amount promotion
 [**GETFixedPricePromotionIdOrderAmountPromotionRule**](OrderAmountPromotionRulesApi.md#GETFixedPricePromotionIdOrderAmountPromotionRule) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the fixed price promotion
@@ -63,6 +64,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdOrderAmountPromotionRule
+
+> GETBuyXPayYPromotionIdOrderAmountPromotionRule(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the order amount promotion rule associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrderAmountPromotionRulesApi.GETBuyXPayYPromotionIdOrderAmountPromotionRule(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.GETBuyXPayYPromotionIdOrderAmountPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdOrderAmountPromotionRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

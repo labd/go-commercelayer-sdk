@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,11 @@ var _ MappedNullable = &POSTCoupons201ResponseDataRelationships{}
 
 // POSTCoupons201ResponseDataRelationships struct for POSTCoupons201ResponseDataRelationships
 type POSTCoupons201ResponseDataRelationships struct {
-	PromotionRule *POSTCoupons201ResponseDataRelationshipsPromotionRule `json:"promotion_rule,omitempty"`
+	PromotionRule   *POSTCoupons201ResponseDataRelationshipsPromotionRule   `json:"promotion_rule,omitempty"`
+	CouponRecipient *POSTCoupons201ResponseDataRelationshipsCouponRecipient `json:"coupon_recipient,omitempty"`
+	Events          *POSTAddresses201ResponseDataRelationshipsEvents        `json:"events,omitempty"`
+	Tags            *POSTAddresses201ResponseDataRelationshipsTags          `json:"tags,omitempty"`
+	Versions        *POSTAddresses201ResponseDataRelationshipsVersions      `json:"versions,omitempty"`
 }
 
 // NewPOSTCoupons201ResponseDataRelationships instantiates a new POSTCoupons201ResponseDataRelationships object
@@ -72,6 +76,134 @@ func (o *POSTCoupons201ResponseDataRelationships) SetPromotionRule(v POSTCoupons
 	o.PromotionRule = &v
 }
 
+// GetCouponRecipient returns the CouponRecipient field value if set, zero value otherwise.
+func (o *POSTCoupons201ResponseDataRelationships) GetCouponRecipient() POSTCoupons201ResponseDataRelationshipsCouponRecipient {
+	if o == nil || IsNil(o.CouponRecipient) {
+		var ret POSTCoupons201ResponseDataRelationshipsCouponRecipient
+		return ret
+	}
+	return *o.CouponRecipient
+}
+
+// GetCouponRecipientOk returns a tuple with the CouponRecipient field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTCoupons201ResponseDataRelationships) GetCouponRecipientOk() (*POSTCoupons201ResponseDataRelationshipsCouponRecipient, bool) {
+	if o == nil || IsNil(o.CouponRecipient) {
+		return nil, false
+	}
+	return o.CouponRecipient, true
+}
+
+// HasCouponRecipient returns a boolean if a field has been set.
+func (o *POSTCoupons201ResponseDataRelationships) HasCouponRecipient() bool {
+	if o != nil && !IsNil(o.CouponRecipient) {
+		return true
+	}
+
+	return false
+}
+
+// SetCouponRecipient gets a reference to the given POSTCoupons201ResponseDataRelationshipsCouponRecipient and assigns it to the CouponRecipient field.
+func (o *POSTCoupons201ResponseDataRelationships) SetCouponRecipient(v POSTCoupons201ResponseDataRelationshipsCouponRecipient) {
+	o.CouponRecipient = &v
+}
+
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *POSTCoupons201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
+	if o == nil || IsNil(o.Events) {
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTCoupons201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
+	if o == nil || IsNil(o.Events) {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *POSTCoupons201ResponseDataRelationships) HasEvents() bool {
+	if o != nil && !IsNil(o.Events) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *POSTCoupons201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
+	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *POSTCoupons201ResponseDataRelationships) GetTags() POSTAddresses201ResponseDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret POSTAddresses201ResponseDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTCoupons201ResponseDataRelationships) GetTagsOk() (*POSTAddresses201ResponseDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *POSTCoupons201ResponseDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given POSTAddresses201ResponseDataRelationshipsTags and assigns it to the Tags field.
+func (o *POSTCoupons201ResponseDataRelationships) SetTags(v POSTAddresses201ResponseDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTCoupons201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTCoupons201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTCoupons201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTCoupons201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 func (o POSTCoupons201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -84,6 +216,18 @@ func (o POSTCoupons201ResponseDataRelationships) ToMap() (map[string]interface{}
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.PromotionRule) {
 		toSerialize["promotion_rule"] = o.PromotionRule
+	}
+	if !IsNil(o.CouponRecipient) {
+		toSerialize["coupon_recipient"] = o.CouponRecipient
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

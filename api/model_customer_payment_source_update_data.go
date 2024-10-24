@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,16 +23,16 @@ type CustomerPaymentSourceUpdateData struct {
 	// The resource's type
 	Type interface{} `json:"type"`
 	// The resource's id
-	Id            interface{}                                                                         `json:"id"`
-	Attributes    PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes"`
-	Relationships *CustomerPaymentSourceUpdateDataRelationships                                       `json:"relationships,omitempty"`
+	Id            interface{}                                                                 `json:"id"`
+	Attributes    PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerPaymentSourceUpdateDataRelationships                               `json:"relationships,omitempty"`
 }
 
 // NewCustomerPaymentSourceUpdateData instantiates a new CustomerPaymentSourceUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) *CustomerPaymentSourceUpdateData {
+func NewCustomerPaymentSourceUpdateData(type_ interface{}, id interface{}, attributes PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes) *CustomerPaymentSourceUpdateData {
 	this := CustomerPaymentSourceUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -101,9 +101,9 @@ func (o *CustomerPaymentSourceUpdateData) SetId(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPaymentSourceUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+func (o *CustomerPaymentSourceUpdateData) GetAttributes() PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes {
 	if o == nil {
-		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
+		var ret PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes
 		return ret
 	}
 
@@ -112,7 +112,7 @@ func (o *CustomerPaymentSourceUpdateData) GetAttributes() PATCHBillingInfoValida
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,7 +120,7 @@ func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*PATCHBillingInfoVa
 }
 
 // SetAttributes sets field value
-func (o *CustomerPaymentSourceUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
+func (o *CustomerPaymentSourceUpdateData) SetAttributes(v PATCHCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

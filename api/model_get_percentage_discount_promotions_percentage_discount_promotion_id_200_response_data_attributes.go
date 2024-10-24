@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,25 +22,35 @@ var _ MappedNullable = &GETPercentageDiscountPromotionsPercentageDiscountPromoti
 type GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes struct {
 	// The promotion's internal name.
 	Name interface{} `json:"name,omitempty"`
+	// The promotion's type.
+	Type interface{} `json:"type,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
+	// Indicates if the promotion will be applied exclusively, based on its priority score.
+	Exclusive interface{} `json:"exclusive,omitempty"`
+	// The priority assigned to the promotion (lower means higher priority).
+	Priority interface{} `json:"priority,omitempty"`
 	// The activation date/time of this promotion.
 	StartsAt interface{} `json:"starts_at,omitempty"`
 	// The expiration date/time of this promotion (must be after starts_at).
 	ExpiresAt interface{} `json:"expires_at,omitempty"`
-	// The total number of times this promotion can be applied.
+	// The total number of times this promotion can be applied. When 'null' it means promotion can be applied infinite times.
 	TotalUsageLimit interface{} `json:"total_usage_limit,omitempty"`
 	// The number of times this promotion has been applied.
 	TotalUsageCount interface{} `json:"total_usage_count,omitempty"`
-	// Indicates if the promotion is active.
+	// Indicates if the promotion is active (enabled and not expired).
 	Active interface{} `json:"active,omitempty"`
+	// The promotion status. One of 'disabled', 'expired', 'pending', 'active', or 'inactive'.
+	Status interface{} `json:"status,omitempty"`
+	// Time at which this resource was disabled.
+	DisabledAt interface{} `json:"disabled_at,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -98,6 +108,39 @@ func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 	o.Name = v
 }
 
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasType() bool {
+	if o != nil && IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetType(v interface{}) {
+	o.Type = v
+}
+
 // GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetCurrencyCode() interface{} {
 	if o == nil {
@@ -129,6 +172,72 @@ func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 // SetCurrencyCode gets a reference to the given interface{} and assigns it to the CurrencyCode field.
 func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetCurrencyCode(v interface{}) {
 	o.CurrencyCode = v
+}
+
+// GetExclusive returns the Exclusive field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetExclusive() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Exclusive
+}
+
+// GetExclusiveOk returns a tuple with the Exclusive field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetExclusiveOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Exclusive) {
+		return nil, false
+	}
+	return &o.Exclusive, true
+}
+
+// HasExclusive returns a boolean if a field has been set.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasExclusive() bool {
+	if o != nil && IsNil(o.Exclusive) {
+		return true
+	}
+
+	return false
+}
+
+// SetExclusive gets a reference to the given interface{} and assigns it to the Exclusive field.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetExclusive(v interface{}) {
+	o.Exclusive = v
+}
+
+// GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetPriority() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Priority
+}
+
+// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetPriorityOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Priority) {
+		return nil, false
+	}
+	return &o.Priority, true
+}
+
+// HasPriority returns a boolean if a field has been set.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasPriority() bool {
+	if o != nil && IsNil(o.Priority) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriority gets a reference to the given interface{} and assigns it to the Priority field.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetPriority(v interface{}) {
+	o.Priority = v
 }
 
 // GetStartsAt returns the StartsAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -294,6 +403,72 @@ func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 // SetActive gets a reference to the given interface{} and assigns it to the Active field.
 func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetActive(v interface{}) {
 	o.Active = v
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetStatus() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetStatusOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Status) {
+		return nil, false
+	}
+	return &o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasStatus() bool {
+	if o != nil && IsNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given interface{} and assigns it to the Status field.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetStatus(v interface{}) {
+	o.Status = v
+}
+
+// GetDisabledAt returns the DisabledAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetDisabledAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DisabledAt
+}
+
+// GetDisabledAtOk returns a tuple with the DisabledAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DisabledAt) {
+		return nil, false
+	}
+	return &o.DisabledAt, true
+}
+
+// HasDisabledAt returns a boolean if a field has been set.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasDisabledAt() bool {
+	if o != nil && IsNil(o.DisabledAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisabledAt gets a reference to the given interface{} and assigns it to the DisabledAt field.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) SetDisabledAt(v interface{}) {
+	o.DisabledAt = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -507,8 +682,17 @@ func (o GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseD
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
+	}
+	if o.Exclusive != nil {
+		toSerialize["exclusive"] = o.Exclusive
+	}
+	if o.Priority != nil {
+		toSerialize["priority"] = o.Priority
 	}
 	if o.StartsAt != nil {
 		toSerialize["starts_at"] = o.StartsAt
@@ -524,6 +708,12 @@ func (o GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseD
 	}
 	if o.Active != nil {
 		toSerialize["active"] = o.Active
+	}
+	if o.Status != nil {
+		toSerialize["status"] = o.Status
+	}
+	if o.DisabledAt != nil {
+		toSerialize["disabled_at"] = o.DisabledAt
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

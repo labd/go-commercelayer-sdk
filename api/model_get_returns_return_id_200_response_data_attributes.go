@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &GETReturnsReturnId200ResponseDataAttributes{}
 
 // GETReturnsReturnId200ResponseDataAttributes struct for GETReturnsReturnId200ResponseDataAttributes
 type GETReturnsReturnId200ResponseDataAttributes struct {
-	// Unique identifier for the return
+	// Unique identifier for the return.
 	Number interface{} `json:"number,omitempty"`
-	// The return status, one of 'draft', 'requested', 'approved', 'cancelled', 'shipped', 'rejected' or 'received'
+	// The return status. One of 'draft' (default), 'requested', 'approved', 'cancelled', 'shipped', 'rejected', 'received', or 'refunded'.
 	Status interface{} `json:"status,omitempty"`
 	// The email address of the associated customer.
 	CustomerEmail interface{} `json:"customer_email,omitempty"`
@@ -38,15 +38,23 @@ type GETReturnsReturnId200ResponseDataAttributes struct {
 	RejectedAt interface{} `json:"rejected_at,omitempty"`
 	// Time at which the return was received.
 	ReceivedAt interface{} `json:"received_at,omitempty"`
+	// Time at which the return was refunded.
+	RefundedAt interface{} `json:"refunded_at,omitempty"`
 	// Time at which the resource has been archived.
 	ArchivedAt interface{} `json:"archived_at,omitempty"`
+	// The amount to be refunded, estimated by associated return line items, in cents.
+	EstimatedRefundAmountCents interface{} `json:"estimated_refund_amount_cents,omitempty"`
+	// The amount to be refunded, estimated by associated return line items, float.
+	EstimatedRefundAmountFloat interface{} `json:"estimated_refund_amount_float,omitempty"`
+	// The amount to be refunded, estimated by associated return line items, formatted.
+	FormattedEstimatedRefundAmount interface{} `json:"formatted_estimated_refund_amount,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -366,6 +374,39 @@ func (o *GETReturnsReturnId200ResponseDataAttributes) SetReceivedAt(v interface{
 	o.ReceivedAt = v
 }
 
+// GetRefundedAt returns the RefundedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETReturnsReturnId200ResponseDataAttributes) GetRefundedAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.RefundedAt
+}
+
+// GetRefundedAtOk returns a tuple with the RefundedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETReturnsReturnId200ResponseDataAttributes) GetRefundedAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RefundedAt) {
+		return nil, false
+	}
+	return &o.RefundedAt, true
+}
+
+// HasRefundedAt returns a boolean if a field has been set.
+func (o *GETReturnsReturnId200ResponseDataAttributes) HasRefundedAt() bool {
+	if o != nil && IsNil(o.RefundedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetRefundedAt gets a reference to the given interface{} and assigns it to the RefundedAt field.
+func (o *GETReturnsReturnId200ResponseDataAttributes) SetRefundedAt(v interface{}) {
+	o.RefundedAt = v
+}
+
 // GetArchivedAt returns the ArchivedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETReturnsReturnId200ResponseDataAttributes) GetArchivedAt() interface{} {
 	if o == nil {
@@ -397,6 +438,105 @@ func (o *GETReturnsReturnId200ResponseDataAttributes) HasArchivedAt() bool {
 // SetArchivedAt gets a reference to the given interface{} and assigns it to the ArchivedAt field.
 func (o *GETReturnsReturnId200ResponseDataAttributes) SetArchivedAt(v interface{}) {
 	o.ArchivedAt = v
+}
+
+// GetEstimatedRefundAmountCents returns the EstimatedRefundAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETReturnsReturnId200ResponseDataAttributes) GetEstimatedRefundAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.EstimatedRefundAmountCents
+}
+
+// GetEstimatedRefundAmountCentsOk returns a tuple with the EstimatedRefundAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETReturnsReturnId200ResponseDataAttributes) GetEstimatedRefundAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.EstimatedRefundAmountCents) {
+		return nil, false
+	}
+	return &o.EstimatedRefundAmountCents, true
+}
+
+// HasEstimatedRefundAmountCents returns a boolean if a field has been set.
+func (o *GETReturnsReturnId200ResponseDataAttributes) HasEstimatedRefundAmountCents() bool {
+	if o != nil && IsNil(o.EstimatedRefundAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetEstimatedRefundAmountCents gets a reference to the given interface{} and assigns it to the EstimatedRefundAmountCents field.
+func (o *GETReturnsReturnId200ResponseDataAttributes) SetEstimatedRefundAmountCents(v interface{}) {
+	o.EstimatedRefundAmountCents = v
+}
+
+// GetEstimatedRefundAmountFloat returns the EstimatedRefundAmountFloat field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETReturnsReturnId200ResponseDataAttributes) GetEstimatedRefundAmountFloat() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.EstimatedRefundAmountFloat
+}
+
+// GetEstimatedRefundAmountFloatOk returns a tuple with the EstimatedRefundAmountFloat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETReturnsReturnId200ResponseDataAttributes) GetEstimatedRefundAmountFloatOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.EstimatedRefundAmountFloat) {
+		return nil, false
+	}
+	return &o.EstimatedRefundAmountFloat, true
+}
+
+// HasEstimatedRefundAmountFloat returns a boolean if a field has been set.
+func (o *GETReturnsReturnId200ResponseDataAttributes) HasEstimatedRefundAmountFloat() bool {
+	if o != nil && IsNil(o.EstimatedRefundAmountFloat) {
+		return true
+	}
+
+	return false
+}
+
+// SetEstimatedRefundAmountFloat gets a reference to the given interface{} and assigns it to the EstimatedRefundAmountFloat field.
+func (o *GETReturnsReturnId200ResponseDataAttributes) SetEstimatedRefundAmountFloat(v interface{}) {
+	o.EstimatedRefundAmountFloat = v
+}
+
+// GetFormattedEstimatedRefundAmount returns the FormattedEstimatedRefundAmount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETReturnsReturnId200ResponseDataAttributes) GetFormattedEstimatedRefundAmount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.FormattedEstimatedRefundAmount
+}
+
+// GetFormattedEstimatedRefundAmountOk returns a tuple with the FormattedEstimatedRefundAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETReturnsReturnId200ResponseDataAttributes) GetFormattedEstimatedRefundAmountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FormattedEstimatedRefundAmount) {
+		return nil, false
+	}
+	return &o.FormattedEstimatedRefundAmount, true
+}
+
+// HasFormattedEstimatedRefundAmount returns a boolean if a field has been set.
+func (o *GETReturnsReturnId200ResponseDataAttributes) HasFormattedEstimatedRefundAmount() bool {
+	if o != nil && IsNil(o.FormattedEstimatedRefundAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormattedEstimatedRefundAmount gets a reference to the given interface{} and assigns it to the FormattedEstimatedRefundAmount field.
+func (o *GETReturnsReturnId200ResponseDataAttributes) SetFormattedEstimatedRefundAmount(v interface{}) {
+	o.FormattedEstimatedRefundAmount = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -601,8 +741,20 @@ func (o GETReturnsReturnId200ResponseDataAttributes) ToMap() (map[string]interfa
 	if o.ReceivedAt != nil {
 		toSerialize["received_at"] = o.ReceivedAt
 	}
+	if o.RefundedAt != nil {
+		toSerialize["refunded_at"] = o.RefundedAt
+	}
 	if o.ArchivedAt != nil {
 		toSerialize["archived_at"] = o.ArchivedAt
+	}
+	if o.EstimatedRefundAmountCents != nil {
+		toSerialize["estimated_refund_amount_cents"] = o.EstimatedRefundAmountCents
+	}
+	if o.EstimatedRefundAmountFloat != nil {
+		toSerialize["estimated_refund_amount_float"] = o.EstimatedRefundAmountFloat
+	}
+	if o.FormattedEstimatedRefundAmount != nil {
+		toSerialize["formatted_estimated_refund_amount"] = o.FormattedEstimatedRefundAmount
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

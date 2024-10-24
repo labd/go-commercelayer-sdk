@@ -4,21 +4,27 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Number** | Pointer to **interface{}** | The order identifier. Can be specified if unique within the organization (for enterprise plans only), default to numeric ID otherwise. Cannot be passed by sales channels. | [optional] 
+**AffiliateCode** | Pointer to **interface{}** | The affiliate code, if any, the seller will transfer commission on shop by link transactions. | [optional] 
 **Autorefresh** | Pointer to **interface{}** | Save this attribute as &#39;false&#39; if you want prevent the order to be refreshed automatically at each change (much faster). | [optional] 
+**PlaceAsync** | Pointer to **interface{}** | Save this attribute as &#39;true&#39; if you want perform the place asynchronously. Payment errors, if any, will be collected afterwards. | [optional] 
 **Guest** | Pointer to **interface{}** | Indicates if the order has been placed as guest. | [optional] 
 **CustomerEmail** | Pointer to **interface{}** | The email address of the associated customer. When creating or updating an order, this is a shortcut to find or create the associated customer by email. | [optional] 
 **CustomerPassword** | Pointer to **interface{}** | The password of the associated customer. When creating or updating an order, this is a shortcut to sign up the associated customer. | [optional] 
 **LanguageCode** | Pointer to **interface{}** | The preferred language code (ISO 639-1) to be used when communicating with the customer. This can be useful when sending the order to 3rd party marketing tools and CRMs. If the language is supported, the hosted checkout will be localized accordingly. | [optional] 
-**ShippingCountryCodeLock** | Pointer to **interface{}** | The country code that you want the shipping address to be locked to. This can be useful to make sure the shipping address belongs to a given shipping country, e.g. the one selected in a country selector page. | [optional] 
+**FreightTaxable** | Pointer to **interface{}** | Indicates if taxes are applied to shipping costs. | [optional] 
+**PaymentMethodTaxable** | Pointer to **interface{}** | Indicates if taxes are applied to payment methods costs. | [optional] 
+**AdjustmentTaxable** | Pointer to **interface{}** | Indicates if taxes are applied to positive adjustments. | [optional] 
+**GiftCardTaxable** | Pointer to **interface{}** | Indicates if taxes are applied to purchased gift cards. | [optional] 
+**ShippingCountryCodeLock** | Pointer to **interface{}** | The country code that you want the shipping address to be locked to. This can be useful to make sure the shipping address belongs to a given shipping country, e.g. the one selected in a country selector page. Not relevant if order contains only digital products. | [optional] 
 **CouponCode** | Pointer to **interface{}** | The coupon code to be used for the order. If valid, it triggers a promotion adding a discount line item to the order. | [optional] 
 **GiftCardCode** | Pointer to **interface{}** | The gift card code (at least the first 8 characters) to be used for the order. If valid, it uses the gift card balance to pay for the order. | [optional] 
-**GiftCardOrCouponCode** | Pointer to **interface{}** | The gift card or coupon code (at least the first 8 characters) to be used for the order. If a gift card mathes, it uses the gift card balance to pay for the order. Otherwise it tries to find a valid coupon code and applies the associated discount. | [optional] 
 **CartUrl** | Pointer to **interface{}** | The cart url on your site. If present, it will be used on our hosted checkout application. | [optional] 
 **ReturnUrl** | Pointer to **interface{}** | The return url on your site. If present, it will be used on our hosted checkout application. | [optional] 
 **TermsUrl** | Pointer to **interface{}** | The terms and conditions url on your site. If present, it will be used on our hosted checkout application. | [optional] 
 **PrivacyUrl** | Pointer to **interface{}** | The privacy policy url on your site. If present, it will be used on our hosted checkout application. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -40,6 +46,76 @@ NewPOSTOrders201ResponseDataAttributesWithDefaults instantiates a new POSTOrders
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetNumber
+
+`func (o *POSTOrders201ResponseDataAttributes) GetNumber() interface{}`
+
+GetNumber returns the Number field if non-nil, zero value otherwise.
+
+### GetNumberOk
+
+`func (o *POSTOrders201ResponseDataAttributes) GetNumberOk() (*interface{}, bool)`
+
+GetNumberOk returns a tuple with the Number field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNumber
+
+`func (o *POSTOrders201ResponseDataAttributes) SetNumber(v interface{})`
+
+SetNumber sets Number field to given value.
+
+### HasNumber
+
+`func (o *POSTOrders201ResponseDataAttributes) HasNumber() bool`
+
+HasNumber returns a boolean if a field has been set.
+
+### SetNumberNil
+
+`func (o *POSTOrders201ResponseDataAttributes) SetNumberNil(b bool)`
+
+ SetNumberNil sets the value for Number to be an explicit nil
+
+### UnsetNumber
+`func (o *POSTOrders201ResponseDataAttributes) UnsetNumber()`
+
+UnsetNumber ensures that no value is present for Number, not even an explicit nil
+### GetAffiliateCode
+
+`func (o *POSTOrders201ResponseDataAttributes) GetAffiliateCode() interface{}`
+
+GetAffiliateCode returns the AffiliateCode field if non-nil, zero value otherwise.
+
+### GetAffiliateCodeOk
+
+`func (o *POSTOrders201ResponseDataAttributes) GetAffiliateCodeOk() (*interface{}, bool)`
+
+GetAffiliateCodeOk returns a tuple with the AffiliateCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAffiliateCode
+
+`func (o *POSTOrders201ResponseDataAttributes) SetAffiliateCode(v interface{})`
+
+SetAffiliateCode sets AffiliateCode field to given value.
+
+### HasAffiliateCode
+
+`func (o *POSTOrders201ResponseDataAttributes) HasAffiliateCode() bool`
+
+HasAffiliateCode returns a boolean if a field has been set.
+
+### SetAffiliateCodeNil
+
+`func (o *POSTOrders201ResponseDataAttributes) SetAffiliateCodeNil(b bool)`
+
+ SetAffiliateCodeNil sets the value for AffiliateCode to be an explicit nil
+
+### UnsetAffiliateCode
+`func (o *POSTOrders201ResponseDataAttributes) UnsetAffiliateCode()`
+
+UnsetAffiliateCode ensures that no value is present for AffiliateCode, not even an explicit nil
 ### GetAutorefresh
 
 `func (o *POSTOrders201ResponseDataAttributes) GetAutorefresh() interface{}`
@@ -75,6 +151,41 @@ HasAutorefresh returns a boolean if a field has been set.
 `func (o *POSTOrders201ResponseDataAttributes) UnsetAutorefresh()`
 
 UnsetAutorefresh ensures that no value is present for Autorefresh, not even an explicit nil
+### GetPlaceAsync
+
+`func (o *POSTOrders201ResponseDataAttributes) GetPlaceAsync() interface{}`
+
+GetPlaceAsync returns the PlaceAsync field if non-nil, zero value otherwise.
+
+### GetPlaceAsyncOk
+
+`func (o *POSTOrders201ResponseDataAttributes) GetPlaceAsyncOk() (*interface{}, bool)`
+
+GetPlaceAsyncOk returns a tuple with the PlaceAsync field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlaceAsync
+
+`func (o *POSTOrders201ResponseDataAttributes) SetPlaceAsync(v interface{})`
+
+SetPlaceAsync sets PlaceAsync field to given value.
+
+### HasPlaceAsync
+
+`func (o *POSTOrders201ResponseDataAttributes) HasPlaceAsync() bool`
+
+HasPlaceAsync returns a boolean if a field has been set.
+
+### SetPlaceAsyncNil
+
+`func (o *POSTOrders201ResponseDataAttributes) SetPlaceAsyncNil(b bool)`
+
+ SetPlaceAsyncNil sets the value for PlaceAsync to be an explicit nil
+
+### UnsetPlaceAsync
+`func (o *POSTOrders201ResponseDataAttributes) UnsetPlaceAsync()`
+
+UnsetPlaceAsync ensures that no value is present for PlaceAsync, not even an explicit nil
 ### GetGuest
 
 `func (o *POSTOrders201ResponseDataAttributes) GetGuest() interface{}`
@@ -215,6 +326,146 @@ HasLanguageCode returns a boolean if a field has been set.
 `func (o *POSTOrders201ResponseDataAttributes) UnsetLanguageCode()`
 
 UnsetLanguageCode ensures that no value is present for LanguageCode, not even an explicit nil
+### GetFreightTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) GetFreightTaxable() interface{}`
+
+GetFreightTaxable returns the FreightTaxable field if non-nil, zero value otherwise.
+
+### GetFreightTaxableOk
+
+`func (o *POSTOrders201ResponseDataAttributes) GetFreightTaxableOk() (*interface{}, bool)`
+
+GetFreightTaxableOk returns a tuple with the FreightTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFreightTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) SetFreightTaxable(v interface{})`
+
+SetFreightTaxable sets FreightTaxable field to given value.
+
+### HasFreightTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) HasFreightTaxable() bool`
+
+HasFreightTaxable returns a boolean if a field has been set.
+
+### SetFreightTaxableNil
+
+`func (o *POSTOrders201ResponseDataAttributes) SetFreightTaxableNil(b bool)`
+
+ SetFreightTaxableNil sets the value for FreightTaxable to be an explicit nil
+
+### UnsetFreightTaxable
+`func (o *POSTOrders201ResponseDataAttributes) UnsetFreightTaxable()`
+
+UnsetFreightTaxable ensures that no value is present for FreightTaxable, not even an explicit nil
+### GetPaymentMethodTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) GetPaymentMethodTaxable() interface{}`
+
+GetPaymentMethodTaxable returns the PaymentMethodTaxable field if non-nil, zero value otherwise.
+
+### GetPaymentMethodTaxableOk
+
+`func (o *POSTOrders201ResponseDataAttributes) GetPaymentMethodTaxableOk() (*interface{}, bool)`
+
+GetPaymentMethodTaxableOk returns a tuple with the PaymentMethodTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentMethodTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) SetPaymentMethodTaxable(v interface{})`
+
+SetPaymentMethodTaxable sets PaymentMethodTaxable field to given value.
+
+### HasPaymentMethodTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) HasPaymentMethodTaxable() bool`
+
+HasPaymentMethodTaxable returns a boolean if a field has been set.
+
+### SetPaymentMethodTaxableNil
+
+`func (o *POSTOrders201ResponseDataAttributes) SetPaymentMethodTaxableNil(b bool)`
+
+ SetPaymentMethodTaxableNil sets the value for PaymentMethodTaxable to be an explicit nil
+
+### UnsetPaymentMethodTaxable
+`func (o *POSTOrders201ResponseDataAttributes) UnsetPaymentMethodTaxable()`
+
+UnsetPaymentMethodTaxable ensures that no value is present for PaymentMethodTaxable, not even an explicit nil
+### GetAdjustmentTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) GetAdjustmentTaxable() interface{}`
+
+GetAdjustmentTaxable returns the AdjustmentTaxable field if non-nil, zero value otherwise.
+
+### GetAdjustmentTaxableOk
+
+`func (o *POSTOrders201ResponseDataAttributes) GetAdjustmentTaxableOk() (*interface{}, bool)`
+
+GetAdjustmentTaxableOk returns a tuple with the AdjustmentTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdjustmentTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) SetAdjustmentTaxable(v interface{})`
+
+SetAdjustmentTaxable sets AdjustmentTaxable field to given value.
+
+### HasAdjustmentTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) HasAdjustmentTaxable() bool`
+
+HasAdjustmentTaxable returns a boolean if a field has been set.
+
+### SetAdjustmentTaxableNil
+
+`func (o *POSTOrders201ResponseDataAttributes) SetAdjustmentTaxableNil(b bool)`
+
+ SetAdjustmentTaxableNil sets the value for AdjustmentTaxable to be an explicit nil
+
+### UnsetAdjustmentTaxable
+`func (o *POSTOrders201ResponseDataAttributes) UnsetAdjustmentTaxable()`
+
+UnsetAdjustmentTaxable ensures that no value is present for AdjustmentTaxable, not even an explicit nil
+### GetGiftCardTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) GetGiftCardTaxable() interface{}`
+
+GetGiftCardTaxable returns the GiftCardTaxable field if non-nil, zero value otherwise.
+
+### GetGiftCardTaxableOk
+
+`func (o *POSTOrders201ResponseDataAttributes) GetGiftCardTaxableOk() (*interface{}, bool)`
+
+GetGiftCardTaxableOk returns a tuple with the GiftCardTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGiftCardTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) SetGiftCardTaxable(v interface{})`
+
+SetGiftCardTaxable sets GiftCardTaxable field to given value.
+
+### HasGiftCardTaxable
+
+`func (o *POSTOrders201ResponseDataAttributes) HasGiftCardTaxable() bool`
+
+HasGiftCardTaxable returns a boolean if a field has been set.
+
+### SetGiftCardTaxableNil
+
+`func (o *POSTOrders201ResponseDataAttributes) SetGiftCardTaxableNil(b bool)`
+
+ SetGiftCardTaxableNil sets the value for GiftCardTaxable to be an explicit nil
+
+### UnsetGiftCardTaxable
+`func (o *POSTOrders201ResponseDataAttributes) UnsetGiftCardTaxable()`
+
+UnsetGiftCardTaxable ensures that no value is present for GiftCardTaxable, not even an explicit nil
 ### GetShippingCountryCodeLock
 
 `func (o *POSTOrders201ResponseDataAttributes) GetShippingCountryCodeLock() interface{}`
@@ -320,41 +571,6 @@ HasGiftCardCode returns a boolean if a field has been set.
 `func (o *POSTOrders201ResponseDataAttributes) UnsetGiftCardCode()`
 
 UnsetGiftCardCode ensures that no value is present for GiftCardCode, not even an explicit nil
-### GetGiftCardOrCouponCode
-
-`func (o *POSTOrders201ResponseDataAttributes) GetGiftCardOrCouponCode() interface{}`
-
-GetGiftCardOrCouponCode returns the GiftCardOrCouponCode field if non-nil, zero value otherwise.
-
-### GetGiftCardOrCouponCodeOk
-
-`func (o *POSTOrders201ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*interface{}, bool)`
-
-GetGiftCardOrCouponCodeOk returns a tuple with the GiftCardOrCouponCode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGiftCardOrCouponCode
-
-`func (o *POSTOrders201ResponseDataAttributes) SetGiftCardOrCouponCode(v interface{})`
-
-SetGiftCardOrCouponCode sets GiftCardOrCouponCode field to given value.
-
-### HasGiftCardOrCouponCode
-
-`func (o *POSTOrders201ResponseDataAttributes) HasGiftCardOrCouponCode() bool`
-
-HasGiftCardOrCouponCode returns a boolean if a field has been set.
-
-### SetGiftCardOrCouponCodeNil
-
-`func (o *POSTOrders201ResponseDataAttributes) SetGiftCardOrCouponCodeNil(b bool)`
-
- SetGiftCardOrCouponCodeNil sets the value for GiftCardOrCouponCode to be an explicit nil
-
-### UnsetGiftCardOrCouponCode
-`func (o *POSTOrders201ResponseDataAttributes) UnsetGiftCardOrCouponCode()`
-
-UnsetGiftCardOrCouponCode ensures that no value is present for GiftCardOrCouponCode, not even an explicit nil
 ### GetCartUrl
 
 `func (o *POSTOrders201ResponseDataAttributes) GetCartUrl() interface{}`

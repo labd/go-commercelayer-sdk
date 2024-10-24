@@ -9,7 +9,11 @@ Name | Type | Description | Notes
 **PriceTiers** | Pointer to [**POSTPrices201ResponseDataRelationshipsPriceTiers**](POSTPrices201ResponseDataRelationshipsPriceTiers.md) |  | [optional] 
 **PriceVolumeTiers** | Pointer to [**POSTPrices201ResponseDataRelationshipsPriceVolumeTiers**](POSTPrices201ResponseDataRelationshipsPriceVolumeTiers.md) |  | [optional] 
 **PriceFrequencyTiers** | Pointer to [**POSTPrices201ResponseDataRelationshipsPriceFrequencyTiers**](POSTPrices201ResponseDataRelationshipsPriceFrequencyTiers.md) |  | [optional] 
-**Attachments** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsAttachments**](POSTAvalaraAccounts201ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
+**JwtCustomer** | Pointer to [**POSTPrices201ResponseDataRelationshipsJwtCustomer**](POSTPrices201ResponseDataRelationshipsJwtCustomer.md) |  | [optional] 
+**JwtMarkets** | Pointer to [**POSTPrices201ResponseDataRelationshipsJwtMarkets**](POSTPrices201ResponseDataRelationshipsJwtMarkets.md) |  | [optional] 
+**JwtStockLocations** | Pointer to [**POSTPrices201ResponseDataRelationshipsJwtStockLocations**](POSTPrices201ResponseDataRelationshipsJwtStockLocations.md) |  | [optional] 
 
 ## Methods
 
@@ -157,20 +161,20 @@ HasPriceFrequencyTiers returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *POSTPrices201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments`
+`func (o *POSTPrices201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *POSTPrices201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool)`
+`func (o *POSTPrices201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *POSTPrices201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments)`
+`func (o *POSTPrices201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -179,6 +183,106 @@ SetAttachments sets Attachments field to given value.
 `func (o *POSTPrices201ResponseDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *POSTPrices201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTPrices201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTPrices201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTPrices201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
+
+### GetJwtCustomer
+
+`func (o *POSTPrices201ResponseDataRelationships) GetJwtCustomer() POSTPrices201ResponseDataRelationshipsJwtCustomer`
+
+GetJwtCustomer returns the JwtCustomer field if non-nil, zero value otherwise.
+
+### GetJwtCustomerOk
+
+`func (o *POSTPrices201ResponseDataRelationships) GetJwtCustomerOk() (*POSTPrices201ResponseDataRelationshipsJwtCustomer, bool)`
+
+GetJwtCustomerOk returns a tuple with the JwtCustomer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtCustomer
+
+`func (o *POSTPrices201ResponseDataRelationships) SetJwtCustomer(v POSTPrices201ResponseDataRelationshipsJwtCustomer)`
+
+SetJwtCustomer sets JwtCustomer field to given value.
+
+### HasJwtCustomer
+
+`func (o *POSTPrices201ResponseDataRelationships) HasJwtCustomer() bool`
+
+HasJwtCustomer returns a boolean if a field has been set.
+
+### GetJwtMarkets
+
+`func (o *POSTPrices201ResponseDataRelationships) GetJwtMarkets() POSTPrices201ResponseDataRelationshipsJwtMarkets`
+
+GetJwtMarkets returns the JwtMarkets field if non-nil, zero value otherwise.
+
+### GetJwtMarketsOk
+
+`func (o *POSTPrices201ResponseDataRelationships) GetJwtMarketsOk() (*POSTPrices201ResponseDataRelationshipsJwtMarkets, bool)`
+
+GetJwtMarketsOk returns a tuple with the JwtMarkets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtMarkets
+
+`func (o *POSTPrices201ResponseDataRelationships) SetJwtMarkets(v POSTPrices201ResponseDataRelationshipsJwtMarkets)`
+
+SetJwtMarkets sets JwtMarkets field to given value.
+
+### HasJwtMarkets
+
+`func (o *POSTPrices201ResponseDataRelationships) HasJwtMarkets() bool`
+
+HasJwtMarkets returns a boolean if a field has been set.
+
+### GetJwtStockLocations
+
+`func (o *POSTPrices201ResponseDataRelationships) GetJwtStockLocations() POSTPrices201ResponseDataRelationshipsJwtStockLocations`
+
+GetJwtStockLocations returns the JwtStockLocations field if non-nil, zero value otherwise.
+
+### GetJwtStockLocationsOk
+
+`func (o *POSTPrices201ResponseDataRelationships) GetJwtStockLocationsOk() (*POSTPrices201ResponseDataRelationshipsJwtStockLocations, bool)`
+
+GetJwtStockLocationsOk returns a tuple with the JwtStockLocations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtStockLocations
+
+`func (o *POSTPrices201ResponseDataRelationships) SetJwtStockLocations(v POSTPrices201ResponseDataRelationshipsJwtStockLocations)`
+
+SetJwtStockLocations sets JwtStockLocations field to given value.
+
+### HasJwtStockLocations
+
+`func (o *POSTPrices201ResponseDataRelationships) HasJwtStockLocations() bool`
+
+HasJwtStockLocations returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

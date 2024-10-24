@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**OrderAmountPromotionRuleDataRelationships**](OrderAmountPromotionRuleDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes**](GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**CustomPromotionRuleDataRelationships**](CustomPromotionRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPromotionRuleData
 
-`func NewPromotionRuleData(type_ interface{}, attributes GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, ) *PromotionRuleData`
+`func NewPromotionRuleData(type_ interface{}, attributes GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, ) *PromotionRuleData`
 
 NewPromotionRuleData instantiates a new PromotionRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -59,40 +59,40 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PromotionRuleData) GetAttributes() GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
+`func (o *PromotionRuleData) GetAttributes() GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PromotionRuleData) GetAttributesOk() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
+`func (o *PromotionRuleData) GetAttributesOk() (*GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PromotionRuleData) SetAttributes(v GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
+`func (o *PromotionRuleData) SetAttributes(v GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PromotionRuleData) GetRelationships() OrderAmountPromotionRuleDataRelationships`
+`func (o *PromotionRuleData) GetRelationships() CustomPromotionRuleDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PromotionRuleData) GetRelationshipsOk() (*OrderAmountPromotionRuleDataRelationships, bool)`
+`func (o *PromotionRuleData) GetRelationshipsOk() (*CustomPromotionRuleDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PromotionRuleData) SetRelationships(v OrderAmountPromotionRuleDataRelationships)`
+`func (o *PromotionRuleData) SetRelationships(v CustomPromotionRuleDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

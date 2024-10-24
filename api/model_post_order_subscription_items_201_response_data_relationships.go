@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,12 @@ var _ MappedNullable = &POSTOrderSubscriptionItems201ResponseDataRelationships{}
 
 // POSTOrderSubscriptionItems201ResponseDataRelationships struct for POSTOrderSubscriptionItems201ResponseDataRelationships
 type POSTOrderSubscriptionItems201ResponseDataRelationships struct {
-	OrderSubscription *POSTOrderCopies201ResponseDataRelationshipsOrderSubscription `json:"order_subscription,omitempty"`
-	Item              *POSTLineItems201ResponseDataRelationshipsItem                `json:"item,omitempty"`
+	OrderSubscription *POSTOrderCopies201ResponseDataRelationshipsOrderSubscription         `json:"order_subscription,omitempty"`
+	Item              *POSTLineItems201ResponseDataRelationshipsItem                        `json:"item,omitempty"`
+	Sku               *POSTInStockSubscriptions201ResponseDataRelationshipsSku              `json:"sku,omitempty"`
+	Bundle            *POSTLineItems201ResponseDataRelationshipsBundle                      `json:"bundle,omitempty"`
+	Adjustment        *POSTLineItems201ResponseDataRelationshipsAdjustment                  `json:"adjustment,omitempty"`
+	SourceLineItem    *POSTOrderSubscriptionItems201ResponseDataRelationshipsSourceLineItem `json:"source_line_item,omitempty"`
 }
 
 // NewPOSTOrderSubscriptionItems201ResponseDataRelationships instantiates a new POSTOrderSubscriptionItems201ResponseDataRelationships object
@@ -105,6 +109,134 @@ func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) SetItem(v POSTL
 	o.Item = &v
 }
 
+// GetSku returns the Sku field value if set, zero value otherwise.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) GetSku() POSTInStockSubscriptions201ResponseDataRelationshipsSku {
+	if o == nil || IsNil(o.Sku) {
+		var ret POSTInStockSubscriptions201ResponseDataRelationshipsSku
+		return ret
+	}
+	return *o.Sku
+}
+
+// GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) GetSkuOk() (*POSTInStockSubscriptions201ResponseDataRelationshipsSku, bool) {
+	if o == nil || IsNil(o.Sku) {
+		return nil, false
+	}
+	return o.Sku, true
+}
+
+// HasSku returns a boolean if a field has been set.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) HasSku() bool {
+	if o != nil && !IsNil(o.Sku) {
+		return true
+	}
+
+	return false
+}
+
+// SetSku gets a reference to the given POSTInStockSubscriptions201ResponseDataRelationshipsSku and assigns it to the Sku field.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) SetSku(v POSTInStockSubscriptions201ResponseDataRelationshipsSku) {
+	o.Sku = &v
+}
+
+// GetBundle returns the Bundle field value if set, zero value otherwise.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) GetBundle() POSTLineItems201ResponseDataRelationshipsBundle {
+	if o == nil || IsNil(o.Bundle) {
+		var ret POSTLineItems201ResponseDataRelationshipsBundle
+		return ret
+	}
+	return *o.Bundle
+}
+
+// GetBundleOk returns a tuple with the Bundle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) GetBundleOk() (*POSTLineItems201ResponseDataRelationshipsBundle, bool) {
+	if o == nil || IsNil(o.Bundle) {
+		return nil, false
+	}
+	return o.Bundle, true
+}
+
+// HasBundle returns a boolean if a field has been set.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) HasBundle() bool {
+	if o != nil && !IsNil(o.Bundle) {
+		return true
+	}
+
+	return false
+}
+
+// SetBundle gets a reference to the given POSTLineItems201ResponseDataRelationshipsBundle and assigns it to the Bundle field.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) SetBundle(v POSTLineItems201ResponseDataRelationshipsBundle) {
+	o.Bundle = &v
+}
+
+// GetAdjustment returns the Adjustment field value if set, zero value otherwise.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) GetAdjustment() POSTLineItems201ResponseDataRelationshipsAdjustment {
+	if o == nil || IsNil(o.Adjustment) {
+		var ret POSTLineItems201ResponseDataRelationshipsAdjustment
+		return ret
+	}
+	return *o.Adjustment
+}
+
+// GetAdjustmentOk returns a tuple with the Adjustment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) GetAdjustmentOk() (*POSTLineItems201ResponseDataRelationshipsAdjustment, bool) {
+	if o == nil || IsNil(o.Adjustment) {
+		return nil, false
+	}
+	return o.Adjustment, true
+}
+
+// HasAdjustment returns a boolean if a field has been set.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) HasAdjustment() bool {
+	if o != nil && !IsNil(o.Adjustment) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdjustment gets a reference to the given POSTLineItems201ResponseDataRelationshipsAdjustment and assigns it to the Adjustment field.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) SetAdjustment(v POSTLineItems201ResponseDataRelationshipsAdjustment) {
+	o.Adjustment = &v
+}
+
+// GetSourceLineItem returns the SourceLineItem field value if set, zero value otherwise.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) GetSourceLineItem() POSTOrderSubscriptionItems201ResponseDataRelationshipsSourceLineItem {
+	if o == nil || IsNil(o.SourceLineItem) {
+		var ret POSTOrderSubscriptionItems201ResponseDataRelationshipsSourceLineItem
+		return ret
+	}
+	return *o.SourceLineItem
+}
+
+// GetSourceLineItemOk returns a tuple with the SourceLineItem field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) GetSourceLineItemOk() (*POSTOrderSubscriptionItems201ResponseDataRelationshipsSourceLineItem, bool) {
+	if o == nil || IsNil(o.SourceLineItem) {
+		return nil, false
+	}
+	return o.SourceLineItem, true
+}
+
+// HasSourceLineItem returns a boolean if a field has been set.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) HasSourceLineItem() bool {
+	if o != nil && !IsNil(o.SourceLineItem) {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceLineItem gets a reference to the given POSTOrderSubscriptionItems201ResponseDataRelationshipsSourceLineItem and assigns it to the SourceLineItem field.
+func (o *POSTOrderSubscriptionItems201ResponseDataRelationships) SetSourceLineItem(v POSTOrderSubscriptionItems201ResponseDataRelationshipsSourceLineItem) {
+	o.SourceLineItem = &v
+}
+
 func (o POSTOrderSubscriptionItems201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -120,6 +252,18 @@ func (o POSTOrderSubscriptionItems201ResponseDataRelationships) ToMap() (map[str
 	}
 	if !IsNil(o.Item) {
 		toSerialize["item"] = o.Item
+	}
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.Bundle) {
+		toSerialize["bundle"] = o.Bundle
+	}
+	if !IsNil(o.Adjustment) {
+		toSerialize["adjustment"] = o.Adjustment
+	}
+	if !IsNil(o.SourceLineItem) {
+		toSerialize["source_line_item"] = o.SourceLineItem
 	}
 	return toSerialize, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -30,6 +30,8 @@ type PATCHGiftCardsGiftCardId200ResponseDataAttributes struct {
 	SingleUse interface{} `json:"single_use,omitempty"`
 	// Indicates if the gift card can be recharged.
 	Rechargeable interface{} `json:"rechargeable,omitempty"`
+	// Indicates if redeemed gift card amount is distributed for tax calculation.
+	DistributeDiscount interface{} `json:"distribute_discount,omitempty"`
 	// The URL of an image that represents the gift card.
 	ImageUrl interface{} `json:"image_url,omitempty"`
 	// Time at which the gift card will expire.
@@ -46,7 +48,7 @@ type PATCHGiftCardsGiftCardId200ResponseDataAttributes struct {
 	BalanceChangeCents interface{} `json:"_balance_change_cents,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -232,6 +234,39 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasRechargeable() bo
 // SetRechargeable gets a reference to the given interface{} and assigns it to the Rechargeable field.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetRechargeable(v interface{}) {
 	o.Rechargeable = v
+}
+
+// GetDistributeDiscount returns the DistributeDiscount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDistributeDiscount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DistributeDiscount
+}
+
+// GetDistributeDiscountOk returns a tuple with the DistributeDiscount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDistributeDiscountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DistributeDiscount) {
+		return nil, false
+	}
+	return &o.DistributeDiscount, true
+}
+
+// HasDistributeDiscount returns a boolean if a field has been set.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasDistributeDiscount() bool {
+	if o != nil && IsNil(o.DistributeDiscount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDistributeDiscount gets a reference to the given interface{} and assigns it to the DistributeDiscount field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetDistributeDiscount(v interface{}) {
+	o.DistributeDiscount = v
 }
 
 // GetImageUrl returns the ImageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -588,6 +623,9 @@ func (o PATCHGiftCardsGiftCardId200ResponseDataAttributes) ToMap() (map[string]i
 	}
 	if o.Rechargeable != nil {
 		toSerialize["rechargeable"] = o.Rechargeable
+	}
+	if o.DistributeDiscount != nil {
+		toSerialize["distribute_discount"] = o.DistributeDiscount
 	}
 	if o.ImageUrl != nil {
 		toSerialize["image_url"] = o.ImageUrl

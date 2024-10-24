@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -28,23 +28,17 @@ type GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes struct {
 	NoteToPayer interface{} `json:"note_to_payer,omitempty"`
 	// The id of the payer that PayPal passes in the return_url.
 	PaypalPayerId interface{} `json:"paypal_payer_id,omitempty"`
-	// The PayPal payer id (if present)
+	// The PayPal payer id (if present).
 	Name interface{} `json:"name,omitempty"`
 	// The id of the PayPal payment object.
 	PaypalId interface{} `json:"paypal_id,omitempty"`
-	// The PayPal payment status. One of 'created' (default) or 'approved'.
+	// The PayPal payment status. One of 'created', or 'approved'.
 	Status interface{} `json:"status,omitempty"`
 	// The URL the customer should be redirected to approve the payment.
 	ApprovalUrl interface{} `json:"approval_url,omitempty"`
 	// Indicates if the order current amount differs form the one of the created payment intent.
 	MismatchedAmounts interface{} `json:"mismatched_amounts,omitempty"`
-	// The amount of the associated payment intent, in cents.
-	IntentAmountCents interface{} `json:"intent_amount_cents,omitempty"`
-	// The amount of the associated payment intent, float.
-	IntentAmountFloat interface{} `json:"intent_amount_float,omitempty"`
-	// The amount of the associated payment intent, formatted.
-	FormattedIntentAmount interface{} `json:"formatted_intent_amount,omitempty"`
-	// Information about the payment instrument used in the transaction
+	// Information about the payment instrument used in the transaction.
 	PaymentInstrument interface{} `json:"payment_instrument,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
@@ -52,7 +46,7 @@ type GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -372,105 +366,6 @@ func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) SetMismatche
 	o.MismatchedAmounts = v
 }
 
-// GetIntentAmountCents returns the IntentAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetIntentAmountCents() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.IntentAmountCents
-}
-
-// GetIntentAmountCentsOk returns a tuple with the IntentAmountCents field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetIntentAmountCentsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.IntentAmountCents) {
-		return nil, false
-	}
-	return &o.IntentAmountCents, true
-}
-
-// HasIntentAmountCents returns a boolean if a field has been set.
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) HasIntentAmountCents() bool {
-	if o != nil && IsNil(o.IntentAmountCents) {
-		return true
-	}
-
-	return false
-}
-
-// SetIntentAmountCents gets a reference to the given interface{} and assigns it to the IntentAmountCents field.
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) SetIntentAmountCents(v interface{}) {
-	o.IntentAmountCents = v
-}
-
-// GetIntentAmountFloat returns the IntentAmountFloat field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetIntentAmountFloat() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.IntentAmountFloat
-}
-
-// GetIntentAmountFloatOk returns a tuple with the IntentAmountFloat field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetIntentAmountFloatOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.IntentAmountFloat) {
-		return nil, false
-	}
-	return &o.IntentAmountFloat, true
-}
-
-// HasIntentAmountFloat returns a boolean if a field has been set.
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) HasIntentAmountFloat() bool {
-	if o != nil && IsNil(o.IntentAmountFloat) {
-		return true
-	}
-
-	return false
-}
-
-// SetIntentAmountFloat gets a reference to the given interface{} and assigns it to the IntentAmountFloat field.
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) SetIntentAmountFloat(v interface{}) {
-	o.IntentAmountFloat = v
-}
-
-// GetFormattedIntentAmount returns the FormattedIntentAmount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetFormattedIntentAmount() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.FormattedIntentAmount
-}
-
-// GetFormattedIntentAmountOk returns a tuple with the FormattedIntentAmount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetFormattedIntentAmountOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.FormattedIntentAmount) {
-		return nil, false
-	}
-	return &o.FormattedIntentAmount, true
-}
-
-// HasFormattedIntentAmount returns a boolean if a field has been set.
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) HasFormattedIntentAmount() bool {
-	if o != nil && IsNil(o.FormattedIntentAmount) {
-		return true
-	}
-
-	return false
-}
-
-// SetFormattedIntentAmount gets a reference to the given interface{} and assigns it to the FormattedIntentAmount field.
-func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) SetFormattedIntentAmount(v interface{}) {
-	o.FormattedIntentAmount = v
-}
-
 // GetPaymentInstrument returns the PaymentInstrument field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetPaymentInstrument() interface{} {
 	if o == nil {
@@ -705,15 +600,6 @@ func (o GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) ToMap() (map[
 	}
 	if o.MismatchedAmounts != nil {
 		toSerialize["mismatched_amounts"] = o.MismatchedAmounts
-	}
-	if o.IntentAmountCents != nil {
-		toSerialize["intent_amount_cents"] = o.IntentAmountCents
-	}
-	if o.IntentAmountFloat != nil {
-		toSerialize["intent_amount_float"] = o.IntentAmountFloat
-	}
-	if o.FormattedIntentAmount != nil {
-		toSerialize["formatted_intent_amount"] = o.FormattedIntentAmount
 	}
 	if o.PaymentInstrument != nil {
 		toSerialize["payment_instrument"] = o.PaymentInstrument

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,6 +23,7 @@ type ExternalPaymentDataRelationships struct {
 	Order          *AdyenPaymentDataRelationshipsOrder              `json:"order,omitempty"`
 	PaymentGateway *AdyenPaymentDataRelationshipsPaymentGateway     `json:"payment_gateway,omitempty"`
 	Wallet         *CustomerDataRelationshipsCustomerPaymentSources `json:"wallet,omitempty"`
+	Versions       *AddressDataRelationshipsVersions                `json:"versions,omitempty"`
 }
 
 // NewExternalPaymentDataRelationships instantiates a new ExternalPaymentDataRelationships object
@@ -138,6 +139,38 @@ func (o *ExternalPaymentDataRelationships) SetWallet(v CustomerDataRelationships
 	o.Wallet = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *ExternalPaymentDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExternalPaymentDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *ExternalPaymentDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *ExternalPaymentDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 func (o ExternalPaymentDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -156,6 +189,9 @@ func (o ExternalPaymentDataRelationships) ToMap() (map[string]interface{}, error
 	}
 	if !IsNil(o.Wallet) {
 		toSerialize["wallet"] = o.Wallet
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

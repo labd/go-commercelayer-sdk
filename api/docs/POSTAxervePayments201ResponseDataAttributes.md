@@ -5,8 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ReturnUrl** | **interface{}** | The URL where the payer is redirected after they approve the payment. | 
+**ClientIp** | Pointer to **interface{}** | The IP adress of the client creating the payment. | [optional] 
+**BuyerDetails** | Pointer to **interface{}** | The details of the buyer creating the payment. | [optional] 
+**RequestToken** | Pointer to **interface{}** | Requires the creation of a token to represent this payment, mandatory to use customer&#39;s wallet and order subscriptions. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -58,6 +61,111 @@ SetReturnUrl sets ReturnUrl field to given value.
 `func (o *POSTAxervePayments201ResponseDataAttributes) UnsetReturnUrl()`
 
 UnsetReturnUrl ensures that no value is present for ReturnUrl, not even an explicit nil
+### GetClientIp
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) GetClientIp() interface{}`
+
+GetClientIp returns the ClientIp field if non-nil, zero value otherwise.
+
+### GetClientIpOk
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) GetClientIpOk() (*interface{}, bool)`
+
+GetClientIpOk returns a tuple with the ClientIp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientIp
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) SetClientIp(v interface{})`
+
+SetClientIp sets ClientIp field to given value.
+
+### HasClientIp
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) HasClientIp() bool`
+
+HasClientIp returns a boolean if a field has been set.
+
+### SetClientIpNil
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) SetClientIpNil(b bool)`
+
+ SetClientIpNil sets the value for ClientIp to be an explicit nil
+
+### UnsetClientIp
+`func (o *POSTAxervePayments201ResponseDataAttributes) UnsetClientIp()`
+
+UnsetClientIp ensures that no value is present for ClientIp, not even an explicit nil
+### GetBuyerDetails
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) GetBuyerDetails() interface{}`
+
+GetBuyerDetails returns the BuyerDetails field if non-nil, zero value otherwise.
+
+### GetBuyerDetailsOk
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) GetBuyerDetailsOk() (*interface{}, bool)`
+
+GetBuyerDetailsOk returns a tuple with the BuyerDetails field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBuyerDetails
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) SetBuyerDetails(v interface{})`
+
+SetBuyerDetails sets BuyerDetails field to given value.
+
+### HasBuyerDetails
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) HasBuyerDetails() bool`
+
+HasBuyerDetails returns a boolean if a field has been set.
+
+### SetBuyerDetailsNil
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) SetBuyerDetailsNil(b bool)`
+
+ SetBuyerDetailsNil sets the value for BuyerDetails to be an explicit nil
+
+### UnsetBuyerDetails
+`func (o *POSTAxervePayments201ResponseDataAttributes) UnsetBuyerDetails()`
+
+UnsetBuyerDetails ensures that no value is present for BuyerDetails, not even an explicit nil
+### GetRequestToken
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) GetRequestToken() interface{}`
+
+GetRequestToken returns the RequestToken field if non-nil, zero value otherwise.
+
+### GetRequestTokenOk
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) GetRequestTokenOk() (*interface{}, bool)`
+
+GetRequestTokenOk returns a tuple with the RequestToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestToken
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) SetRequestToken(v interface{})`
+
+SetRequestToken sets RequestToken field to given value.
+
+### HasRequestToken
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) HasRequestToken() bool`
+
+HasRequestToken returns a boolean if a field has been set.
+
+### SetRequestTokenNil
+
+`func (o *POSTAxervePayments201ResponseDataAttributes) SetRequestTokenNil(b bool)`
+
+ SetRequestTokenNil sets the value for RequestToken to be an explicit nil
+
+### UnsetRequestToken
+`func (o *POSTAxervePayments201ResponseDataAttributes) UnsetRequestToken()`
+
+UnsetRequestToken ensures that no value is present for RequestToken, not even an explicit nil
 ### GetReference
 
 `func (o *POSTAxervePayments201ResponseDataAttributes) GetReference() interface{}`

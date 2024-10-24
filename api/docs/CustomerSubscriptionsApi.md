@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    customerSubscriptionUpdate := *openapiclient.NewCustomerSubscriptionUpdate(*openapiclient.NewCustomerSubscriptionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // CustomerSubscriptionUpdate | 
+    customerSubscriptionUpdate := *openapiclient.NewCustomerSubscriptionUpdate(*openapiclient.NewCustomerSubscriptionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes())) // CustomerSubscriptionUpdate | 
     customerSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    customerSubscriptionCreate := *openapiclient.NewCustomerSubscriptionCreate(*openapiclient.NewCustomerSubscriptionCreateData(interface{}(123), *openapiclient.NewPOSTCustomerSubscriptions201ResponseDataAttributes(interface{}(john@example.com)))) // CustomerSubscriptionCreate | 
+    customerSubscriptionCreate := *openapiclient.NewCustomerSubscriptionCreate(*openapiclient.NewCustomerSubscriptionCreateData(interface{}(123), *openapiclient.NewPOSTCustomerSubscriptions201ResponseDataAttributes(interface{}(john@example.com), interface{}(ANY-EXTERNAL-REFEFERNCE)))) // CustomerSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

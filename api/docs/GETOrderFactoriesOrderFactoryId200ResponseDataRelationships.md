@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SourceOrder** | Pointer to [**POSTOrderCopies201ResponseDataRelationshipsSourceOrder**](POSTOrderCopies201ResponseDataRelationshipsSourceOrder.md) |  | [optional] 
 **TargetOrder** | Pointer to [**POSTOrderCopies201ResponseDataRelationshipsTargetOrder**](POSTOrderCopies201ResponseDataRelationshipsTargetOrder.md) |  | [optional] 
-**Events** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**POSTAddresses201ResponseDataRelationshipsEvents**](POSTAddresses201ResponseDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasTargetOrder returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents`
+`func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool)`
+`func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents)`
+`func (o *GETOrderFactoriesOrderFactoryId200ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

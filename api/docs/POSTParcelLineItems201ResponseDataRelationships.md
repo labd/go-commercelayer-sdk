@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Parcel** | Pointer to [**POSTParcelLineItems201ResponseDataRelationshipsParcel**](POSTParcelLineItems201ResponseDataRelationshipsParcel.md) |  | [optional] 
 **StockLineItem** | Pointer to [**POSTParcelLineItems201ResponseDataRelationshipsStockLineItem**](POSTParcelLineItems201ResponseDataRelationshipsStockLineItem.md) |  | [optional] 
-**ShipmentLineItem** | Pointer to [**POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem**](POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -77,30 +77,30 @@ SetStockLineItem sets StockLineItem field to given value.
 
 HasStockLineItem returns a boolean if a field has been set.
 
-### GetShipmentLineItem
+### GetVersions
 
-`func (o *POSTParcelLineItems201ResponseDataRelationships) GetShipmentLineItem() POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem`
+`func (o *POSTParcelLineItems201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
 
-GetShipmentLineItem returns the ShipmentLineItem field if non-nil, zero value otherwise.
+GetVersions returns the Versions field if non-nil, zero value otherwise.
 
-### GetShipmentLineItemOk
+### GetVersionsOk
 
-`func (o *POSTParcelLineItems201ResponseDataRelationships) GetShipmentLineItemOk() (*POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem, bool)`
+`func (o *POSTParcelLineItems201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
 
-GetShipmentLineItemOk returns a tuple with the ShipmentLineItem field if it's non-nil, zero value otherwise
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetShipmentLineItem
+### SetVersions
 
-`func (o *POSTParcelLineItems201ResponseDataRelationships) SetShipmentLineItem(v POSTParcelLineItems201ResponseDataRelationshipsShipmentLineItem)`
+`func (o *POSTParcelLineItems201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
 
-SetShipmentLineItem sets ShipmentLineItem field to given value.
+SetVersions sets Versions field to given value.
 
-### HasShipmentLineItem
+### HasVersions
 
-`func (o *POSTParcelLineItems201ResponseDataRelationships) HasShipmentLineItem() bool`
+`func (o *POSTParcelLineItems201ResponseDataRelationships) HasVersions() bool`
 
-HasShipmentLineItem returns a boolean if a field has been set.
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

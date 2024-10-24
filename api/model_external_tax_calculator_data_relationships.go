@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,9 @@ var _ MappedNullable = &ExternalTaxCalculatorDataRelationships{}
 
 // ExternalTaxCalculatorDataRelationships struct for ExternalTaxCalculatorDataRelationships
 type ExternalTaxCalculatorDataRelationships struct {
-	Markets     *AvalaraAccountDataRelationshipsMarkets     `json:"markets,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Markets     *AvalaraAccountDataRelationshipsMarkets    `json:"markets,omitempty"`
+	Attachments *AuthorizationDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Versions    *AddressDataRelationshipsVersions          `json:"versions,omitempty"`
 }
 
 // NewExternalTaxCalculatorDataRelationships instantiates a new ExternalTaxCalculatorDataRelationships object
@@ -74,9 +75,9 @@ func (o *ExternalTaxCalculatorDataRelationships) SetMarkets(v AvalaraAccountData
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *ExternalTaxCalculatorDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *ExternalTaxCalculatorDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -84,7 +85,7 @@ func (o *ExternalTaxCalculatorDataRelationships) GetAttachments() AvalaraAccount
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalTaxCalculatorDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *ExternalTaxCalculatorDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -100,9 +101,41 @@ func (o *ExternalTaxCalculatorDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *ExternalTaxCalculatorDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *ExternalTaxCalculatorDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *ExternalTaxCalculatorDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExternalTaxCalculatorDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *ExternalTaxCalculatorDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *ExternalTaxCalculatorDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o ExternalTaxCalculatorDataRelationships) MarshalJSON() ([]byte, error) {
@@ -120,6 +153,9 @@ func (o ExternalTaxCalculatorDataRelationships) ToMap() (map[string]interface{},
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

@@ -8,8 +8,10 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
+**Token** | Pointer to **interface{}** | Activation code generated from the Satispay Dashboard. | [optional] 
+**KeyId** | Pointer to **interface{}** | The Satispay API key auto generated basing on activation code. | [optional] 
 **WebhookEndpointUrl** | Pointer to **interface{}** | The gateway webhook URL, generated automatically. | [optional] 
 
 ## Methods
@@ -241,6 +243,76 @@ HasMetadata returns a boolean if a field has been set.
 `func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) UnsetMetadata()`
 
 UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetToken
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) GetToken() interface{}`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) GetTokenOk() (*interface{}, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) SetToken(v interface{})`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
+
+### SetTokenNil
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) SetTokenNil(b bool)`
+
+ SetTokenNil sets the value for Token to be an explicit nil
+
+### UnsetToken
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) UnsetToken()`
+
+UnsetToken ensures that no value is present for Token, not even an explicit nil
+### GetKeyId
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) GetKeyId() interface{}`
+
+GetKeyId returns the KeyId field if non-nil, zero value otherwise.
+
+### GetKeyIdOk
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) GetKeyIdOk() (*interface{}, bool)`
+
+GetKeyIdOk returns a tuple with the KeyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyId
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) SetKeyId(v interface{})`
+
+SetKeyId sets KeyId field to given value.
+
+### HasKeyId
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) HasKeyId() bool`
+
+HasKeyId returns a boolean if a field has been set.
+
+### SetKeyIdNil
+
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) SetKeyIdNil(b bool)`
+
+ SetKeyIdNil sets the value for KeyId to be an explicit nil
+
+### UnsetKeyId
+`func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) UnsetKeyId()`
+
+UnsetKeyId ensures that no value is present for KeyId, not even an explicit nil
 ### GetWebhookEndpointUrl
 
 `func (o *GETSatispayGatewaysSatispayGatewayId200ResponseDataAttributes) GetWebhookEndpointUrl() interface{}`

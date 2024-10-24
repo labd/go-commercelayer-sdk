@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Id** | **interface{}** | The resource&#39;s id | 
-**Attributes** | [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes**](PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewCustomerSubscriptionUpdateData
 
-`func NewCustomerSubscriptionUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, ) *CustomerSubscriptionUpdateData`
+`func NewCustomerSubscriptionUpdateData(type_ interface{}, id interface{}, attributes PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes, ) *CustomerSubscriptionUpdateData`
 
 NewCustomerSubscriptionUpdateData instantiates a new CustomerSubscriptionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -90,20 +90,20 @@ SetId sets Id field to given value.
 UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerSubscriptionUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
+`func (o *CustomerSubscriptionUpdateData) GetAttributes() PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerSubscriptionUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
+`func (o *CustomerSubscriptionUpdateData) GetAttributesOk() (*PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerSubscriptionUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
+`func (o *CustomerSubscriptionUpdateData) SetAttributes(v PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

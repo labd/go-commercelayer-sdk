@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTCustomerPaymentSources201ResponseDataAttributes**](POSTCustomerPaymentSources201ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**POSTCustomerPaymentSources201ResponseDataRelationships**](POSTCustomerPaymentSources201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTCustomerPaymentSources201ResponseData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
+`func (o *POSTCustomerPaymentSources201ResponseData) GetAttributes() POSTCustomerPaymentSources201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTCustomerPaymentSources201ResponseData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
+`func (o *POSTCustomerPaymentSources201ResponseData) GetAttributesOk() (*POSTCustomerPaymentSources201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTCustomerPaymentSources201ResponseData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
+`func (o *POSTCustomerPaymentSources201ResponseData) SetAttributes(v POSTCustomerPaymentSources201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

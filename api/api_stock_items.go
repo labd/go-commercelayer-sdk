@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -65,6 +65,98 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r StockItemsAp
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type StockItemsApiGETReservedStockIdStockItemRequest struct {
+	ctx             context.Context
+	ApiService      *StockItemsApiService
+	reservedStockId interface{}
+}
+
+func (r StockItemsApiGETReservedStockIdStockItemRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETReservedStockIdStockItemExecute(r)
+}
+
+/*
+GETReservedStockIdStockItem Retrieve the stock item associated to the reserved stock
+
+Retrieve the stock item associated to the reserved stock
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param reservedStockId The resource's id
+	@return StockItemsApiGETReservedStockIdStockItemRequest
+*/
+func (a *StockItemsApiService) GETReservedStockIdStockItem(ctx context.Context, reservedStockId interface{}) StockItemsApiGETReservedStockIdStockItemRequest {
+	return StockItemsApiGETReservedStockIdStockItemRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		reservedStockId: reservedStockId,
+	}
+}
+
+// Execute executes the request
+func (a *StockItemsApiService) GETReservedStockIdStockItemExecute(r StockItemsApiGETReservedStockIdStockItemRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETReservedStockIdStockItem")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/reserved_stocks/{reservedStockId}/stock_item"
+	localVarPath = strings.Replace(localVarPath, "{"+"reservedStockId"+"}", url.PathEscape(parameterValueToString(r.reservedStockId, "reservedStockId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -545,6 +637,98 @@ func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r StockItemsA
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/stock_items"
 	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type StockItemsApiGETStockReservationIdStockItemRequest struct {
+	ctx                context.Context
+	ApiService         *StockItemsApiService
+	stockReservationId interface{}
+}
+
+func (r StockItemsApiGETStockReservationIdStockItemRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockReservationIdStockItemExecute(r)
+}
+
+/*
+GETStockReservationIdStockItem Retrieve the stock item associated to the stock reservation
+
+Retrieve the stock item associated to the stock reservation
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockReservationId The resource's id
+	@return StockItemsApiGETStockReservationIdStockItemRequest
+*/
+func (a *StockItemsApiService) GETStockReservationIdStockItem(ctx context.Context, stockReservationId interface{}) StockItemsApiGETStockReservationIdStockItemRequest {
+	return StockItemsApiGETStockReservationIdStockItemRequest{
+		ApiService:         a,
+		ctx:                ctx,
+		stockReservationId: stockReservationId,
+	}
+}
+
+// Execute executes the request
+func (a *StockItemsApiService) GETStockReservationIdStockItemExecute(r StockItemsApiGETStockReservationIdStockItemRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETStockReservationIdStockItem")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_reservations/{stockReservationId}/stock_item"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockReservationId"+"}", url.PathEscape(parameterValueToString(r.stockReservationId, "stockReservationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

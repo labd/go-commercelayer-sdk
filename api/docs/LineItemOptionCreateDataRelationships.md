@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LineItem** | [**LineItemOptionCreateDataRelationshipsLineItem**](LineItemOptionCreateDataRelationshipsLineItem.md) |  | 
 **SkuOption** | [**LineItemOptionCreateDataRelationshipsSkuOption**](LineItemOptionCreateDataRelationshipsSkuOption.md) |  | 
+**Tags** | Pointer to [**AddressCreateDataRelationshipsTags**](AddressCreateDataRelationshipsTags.md) |  | [optional] 
 
 ## Methods
 
@@ -65,6 +66,31 @@ and a boolean to check if the value has been set.
 
 SetSkuOption sets SkuOption field to given value.
 
+
+### GetTags
+
+`func (o *LineItemOptionCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *LineItemOptionCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *LineItemOptionCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *LineItemOptionCreateDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

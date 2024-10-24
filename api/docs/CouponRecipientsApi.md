@@ -5,6 +5,7 @@ All URIs are relative to *https://.commercelayer.io/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETECouponRecipientsCouponRecipientId**](CouponRecipientsApi.md#DELETECouponRecipientsCouponRecipientId) | **Delete** /coupon_recipients/{couponRecipientId} | Delete a coupon recipient
+[**GETCouponIdCouponRecipient**](CouponRecipientsApi.md#GETCouponIdCouponRecipient) | **Get** /coupons/{couponId}/coupon_recipient | Retrieve the coupon recipient associated to the coupon
 [**GETCouponRecipients**](CouponRecipientsApi.md#GETCouponRecipients) | **Get** /coupon_recipients | List all coupon recipients
 [**GETCouponRecipientsCouponRecipientId**](CouponRecipientsApi.md#GETCouponRecipientsCouponRecipientId) | **Get** /coupon_recipients/{couponRecipientId} | Retrieve a coupon recipient
 [**PATCHCouponRecipientsCouponRecipientId**](CouponRecipientsApi.md#PATCHCouponRecipientsCouponRecipientId) | **Patch** /coupon_recipients/{couponRecipientId} | Update a coupon recipient
@@ -56,6 +57,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDELETECouponRecipientsCouponRecipientIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCouponIdCouponRecipient
+
+> GETCouponIdCouponRecipient(ctx, couponId).Execute()
+
+Retrieve the coupon recipient associated to the coupon
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    couponId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.CouponRecipientsApi.GETCouponIdCouponRecipient(context.Background(), couponId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CouponRecipientsApi.GETCouponIdCouponRecipient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**couponId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCouponIdCouponRecipientRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

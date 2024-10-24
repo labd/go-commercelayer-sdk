@@ -7,15 +7,17 @@ Name | Type | Description | Notes
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
 **BundleCode** | Pointer to **interface{}** | The code of the associated bundle. | [optional] 
 **Quantity** | **interface{}** | The line item quantity. | 
-**ExternalPrice** | Pointer to **interface{}** | When creating or updating a new line item, set this attribute to &#39;1&#39; if you want to inject the unit_amount_cents price from an external source. | [optional] 
+**ExternalPrice** | Pointer to **interface{}** | When creating or updating a new line item, set this attribute to &#39;1&#39; if you want to inject the unit_amount_cents price from an external source. Any successive price computation will be done externally, until the attribute is reset to &#39;0&#39;. | [optional] 
 **UpdateQuantity** | Pointer to **interface{}** | When creating a new line item, set this attribute to &#39;1&#39; if you want to update the line item quantity (if present) instead of creating a new line item for the same SKU. | [optional] 
-**UnitAmountCents** | Pointer to **interface{}** | The unit amount of the line item, in cents. Can be specified without an item, otherwise is automatically populated from the price list associated to the order&#39;s market. | [optional] 
+**ReserveStock** | Pointer to **interface{}** | Send this attribute if you want to reserve the stock for the line item&#39;s SKUs quantity. Stock reservations expiration depends on the inventory model&#39;s cutoff. When used on update the existing active stock reservations are renewed. Cannot be passed by sales channels. | [optional] 
+**UnitAmountCents** | Pointer to **interface{}** | The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods. | [optional] 
+**CompareAtAmountCents** | Pointer to **interface{}** | The compared price amount, in cents. Useful to display a percentage discount. | [optional] 
 **Name** | Pointer to **interface{}** | The name of the line item. When blank, it gets populated with the name of the associated item (if present). | [optional] 
 **ImageUrl** | Pointer to **interface{}** | The image_url of the line item. When blank, it gets populated with the image_url of the associated item (if present, SKU only). | [optional] 
-**ItemType** | Pointer to **interface{}** | The type of the associate item. Can be one of &#39;skus&#39;, &#39;bundles&#39;, &#39;shipments&#39;, &#39;payment_methods&#39;, &#39;adjustments&#39;, &#39;gift_cards&#39;, or a valid promotion type. | [optional] 
+**ItemType** | Pointer to **interface{}** | The type of the associated item. One of &#39;skus&#39;, &#39;bundles&#39;, &#39;gift_cards&#39;, &#39;shipments&#39;, &#39;payment_methods&#39;, &#39;adjustments&#39;, &#39;percentage_discount_promotions&#39;, &#39;free_shipping_promotions&#39;, &#39;buy_x_pay_y_promotions&#39;, &#39;free_gift_promotions&#39;, &#39;fixed_price_promotions&#39;, &#39;external_promotions&#39;, &#39;fixed_amount_promotions&#39;, or &#39;flex_promotions&#39;. | [optional] 
 **Frequency** | Pointer to **interface{}** | The frequency which generates a subscription. Must be supported by existing associated subscription_model. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -207,6 +209,41 @@ HasUpdateQuantity returns a boolean if a field has been set.
 `func (o *POSTLineItems201ResponseDataAttributes) UnsetUpdateQuantity()`
 
 UnsetUpdateQuantity ensures that no value is present for UpdateQuantity, not even an explicit nil
+### GetReserveStock
+
+`func (o *POSTLineItems201ResponseDataAttributes) GetReserveStock() interface{}`
+
+GetReserveStock returns the ReserveStock field if non-nil, zero value otherwise.
+
+### GetReserveStockOk
+
+`func (o *POSTLineItems201ResponseDataAttributes) GetReserveStockOk() (*interface{}, bool)`
+
+GetReserveStockOk returns a tuple with the ReserveStock field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReserveStock
+
+`func (o *POSTLineItems201ResponseDataAttributes) SetReserveStock(v interface{})`
+
+SetReserveStock sets ReserveStock field to given value.
+
+### HasReserveStock
+
+`func (o *POSTLineItems201ResponseDataAttributes) HasReserveStock() bool`
+
+HasReserveStock returns a boolean if a field has been set.
+
+### SetReserveStockNil
+
+`func (o *POSTLineItems201ResponseDataAttributes) SetReserveStockNil(b bool)`
+
+ SetReserveStockNil sets the value for ReserveStock to be an explicit nil
+
+### UnsetReserveStock
+`func (o *POSTLineItems201ResponseDataAttributes) UnsetReserveStock()`
+
+UnsetReserveStock ensures that no value is present for ReserveStock, not even an explicit nil
 ### GetUnitAmountCents
 
 `func (o *POSTLineItems201ResponseDataAttributes) GetUnitAmountCents() interface{}`
@@ -242,6 +279,41 @@ HasUnitAmountCents returns a boolean if a field has been set.
 `func (o *POSTLineItems201ResponseDataAttributes) UnsetUnitAmountCents()`
 
 UnsetUnitAmountCents ensures that no value is present for UnitAmountCents, not even an explicit nil
+### GetCompareAtAmountCents
+
+`func (o *POSTLineItems201ResponseDataAttributes) GetCompareAtAmountCents() interface{}`
+
+GetCompareAtAmountCents returns the CompareAtAmountCents field if non-nil, zero value otherwise.
+
+### GetCompareAtAmountCentsOk
+
+`func (o *POSTLineItems201ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool)`
+
+GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompareAtAmountCents
+
+`func (o *POSTLineItems201ResponseDataAttributes) SetCompareAtAmountCents(v interface{})`
+
+SetCompareAtAmountCents sets CompareAtAmountCents field to given value.
+
+### HasCompareAtAmountCents
+
+`func (o *POSTLineItems201ResponseDataAttributes) HasCompareAtAmountCents() bool`
+
+HasCompareAtAmountCents returns a boolean if a field has been set.
+
+### SetCompareAtAmountCentsNil
+
+`func (o *POSTLineItems201ResponseDataAttributes) SetCompareAtAmountCentsNil(b bool)`
+
+ SetCompareAtAmountCentsNil sets the value for CompareAtAmountCents to be an explicit nil
+
+### UnsetCompareAtAmountCents
+`func (o *POSTLineItems201ResponseDataAttributes) UnsetCompareAtAmountCents()`
+
+UnsetCompareAtAmountCents ensures that no value is present for CompareAtAmountCents, not even an explicit nil
 ### GetName
 
 `func (o *POSTLineItems201ResponseDataAttributes) GetName() interface{}`

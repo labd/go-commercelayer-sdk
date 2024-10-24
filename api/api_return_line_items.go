@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -65,6 +65,98 @@ func (a *ReturnLineItemsApiService) DELETEReturnLineItemsReturnLineItemIdExecute
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ReturnLineItemsApiGETLineItemIdReturnLineItemsRequest struct {
+	ctx        context.Context
+	ApiService *ReturnLineItemsApiService
+	lineItemId interface{}
+}
+
+func (r ReturnLineItemsApiGETLineItemIdReturnLineItemsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETLineItemIdReturnLineItemsExecute(r)
+}
+
+/*
+GETLineItemIdReturnLineItems Retrieve the return line items associated to the line item
+
+Retrieve the return line items associated to the line item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return ReturnLineItemsApiGETLineItemIdReturnLineItemsRequest
+*/
+func (a *ReturnLineItemsApiService) GETLineItemIdReturnLineItems(ctx context.Context, lineItemId interface{}) ReturnLineItemsApiGETLineItemIdReturnLineItemsRequest {
+	return ReturnLineItemsApiGETLineItemIdReturnLineItemsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		lineItemId: lineItemId,
+	}
+}
+
+// Execute executes the request
+func (a *ReturnLineItemsApiService) GETLineItemIdReturnLineItemsExecute(r ReturnLineItemsApiGETLineItemIdReturnLineItemsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnLineItemsApiService.GETLineItemIdReturnLineItems")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/line_items/{lineItemId}/return_line_items"
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

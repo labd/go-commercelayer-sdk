@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,7 @@ type SkuOptionData struct {
 	// The resource's type
 	Type          interface{}                                       `json:"type"`
 	Attributes    GETSkuOptionsSkuOptionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships       `json:"relationships,omitempty"`
+	Relationships *SkuOptionDataRelationships                       `json:"relationships,omitempty"`
 }
 
 // NewSkuOptionData instantiates a new SkuOptionData object
@@ -96,9 +96,9 @@ func (o *SkuOptionData) SetAttributes(v GETSkuOptionsSkuOptionId200ResponseDataA
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuOptionData) GetRelationships() BillingInfoValidationRuleDataRelationships {
+func (o *SkuOptionData) GetRelationships() SkuOptionDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret BillingInfoValidationRuleDataRelationships
+		var ret SkuOptionDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -106,7 +106,7 @@ func (o *SkuOptionData) GetRelationships() BillingInfoValidationRuleDataRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuOptionData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool) {
+func (o *SkuOptionData) GetRelationshipsOk() (*SkuOptionDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -122,8 +122,8 @@ func (o *SkuOptionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given BillingInfoValidationRuleDataRelationships and assigns it to the Relationships field.
-func (o *SkuOptionData) SetRelationships(v BillingInfoValidationRuleDataRelationships) {
+// SetRelationships gets a reference to the given SkuOptionDataRelationships and assigns it to the Relationships field.
+func (o *SkuOptionData) SetRelationships(v SkuOptionDataRelationships) {
 	o.Relationships = &v
 }
 

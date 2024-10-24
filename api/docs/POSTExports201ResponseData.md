@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTExports201ResponseDataAttributes**](POSTExports201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTCleanups201ResponseDataRelationships**](POSTCleanups201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTExports201ResponseDataRelationships**](POSTExports201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTExports201ResponseData) GetRelationships() POSTCleanups201ResponseDataRelationships`
+`func (o *POSTExports201ResponseData) GetRelationships() POSTExports201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTExports201ResponseData) GetRelationshipsOk() (*POSTCleanups201ResponseDataRelationships, bool)`
+`func (o *POSTExports201ResponseData) GetRelationshipsOk() (*POSTExports201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTExports201ResponseData) SetRelationships(v POSTCleanups201ResponseDataRelationships)`
+`func (o *POSTExports201ResponseData) SetRelationships(v POSTExports201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

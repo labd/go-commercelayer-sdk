@@ -4,15 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **interface{}** | The market&#39;s internal name | [optional] 
-**FacebookPixelId** | Pointer to **interface{}** | The Facebook Pixed ID | [optional] 
-**CheckoutUrl** | Pointer to **interface{}** | The checkout URL for this market | [optional] 
+**Name** | Pointer to **interface{}** | The market&#39;s internal name. | [optional] 
+**Code** | Pointer to **interface{}** | A string that you can use to identify the market (must be unique within the environment). | [optional] 
+**FacebookPixelId** | Pointer to **interface{}** | The Facebook Pixed ID. | [optional] 
+**CheckoutUrl** | Pointer to **interface{}** | The checkout URL for this market. | [optional] 
 **ExternalPricesUrl** | Pointer to **interface{}** | The URL used to overwrite prices by an external source. | [optional] 
 **ExternalOrderValidationUrl** | Pointer to **interface{}** | The URL used to validate orders by an external source. | [optional] 
-**Disable** | Pointer to **interface{}** | Send this attribute if you want to mark the market as disabled. | [optional] 
-**Enable** | Pointer to **interface{}** | Send this attribute if you want to mark the market as enabled. | [optional] 
+**ShippingCostCutoff** | Pointer to **interface{}** | When specified indicates the maximum number of shipping line items with cost that will be added to an order. | [optional] 
+**Disable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as disabled. | [optional] 
+**Enable** | Pointer to **interface{}** | Send this attribute if you want to mark this resource as enabled. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -69,6 +71,41 @@ HasName returns a boolean if a field has been set.
 `func (o *PATCHMarketsMarketId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetCode
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCode() interface{}`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetCode(v interface{})`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
+
+### SetCodeNil
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetFacebookPixelId
 
 `func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetFacebookPixelId() interface{}`
@@ -209,6 +246,41 @@ HasExternalOrderValidationUrl returns a boolean if a field has been set.
 `func (o *PATCHMarketsMarketId200ResponseDataAttributes) UnsetExternalOrderValidationUrl()`
 
 UnsetExternalOrderValidationUrl ensures that no value is present for ExternalOrderValidationUrl, not even an explicit nil
+### GetShippingCostCutoff
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetShippingCostCutoff() interface{}`
+
+GetShippingCostCutoff returns the ShippingCostCutoff field if non-nil, zero value otherwise.
+
+### GetShippingCostCutoffOk
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetShippingCostCutoffOk() (*interface{}, bool)`
+
+GetShippingCostCutoffOk returns a tuple with the ShippingCostCutoff field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingCostCutoff
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetShippingCostCutoff(v interface{})`
+
+SetShippingCostCutoff sets ShippingCostCutoff field to given value.
+
+### HasShippingCostCutoff
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasShippingCostCutoff() bool`
+
+HasShippingCostCutoff returns a boolean if a field has been set.
+
+### SetShippingCostCutoffNil
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetShippingCostCutoffNil(b bool)`
+
+ SetShippingCostCutoffNil sets the value for ShippingCostCutoff to be an explicit nil
+
+### UnsetShippingCostCutoff
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) UnsetShippingCostCutoff()`
+
+UnsetShippingCostCutoff ensures that no value is present for ShippingCostCutoff, not even an explicit nil
 ### GetDisable
 
 `func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisable() interface{}`

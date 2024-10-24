@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -28,9 +28,11 @@ type GETWebhooksWebhookId200ResponseDataAttributes struct {
 	CallbackUrl interface{} `json:"callback_url,omitempty"`
 	// List of related resources that should be included in the webhook body.
 	IncludeResources interface{} `json:"include_resources,omitempty"`
+	// Time at which this resource was disabled.
+	DisabledAt interface{} `json:"disabled_at,omitempty"`
 	// The circuit breaker state, by default it is 'closed'. It can become 'open' once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made.
 	CircuitState interface{} `json:"circuit_state,omitempty"`
-	// The number of consecutive failures recorded by the circuit breaker associated to this webhook, will be reset on first successful call to callback.
+	// The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback.
 	CircuitFailureCount interface{} `json:"circuit_failure_count,omitempty"`
 	// The shared secret used to sign the external request payload.
 	SharedSecret interface{} `json:"shared_secret,omitempty"`
@@ -40,7 +42,7 @@ type GETWebhooksWebhookId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -193,6 +195,39 @@ func (o *GETWebhooksWebhookId200ResponseDataAttributes) HasIncludeResources() bo
 // SetIncludeResources gets a reference to the given interface{} and assigns it to the IncludeResources field.
 func (o *GETWebhooksWebhookId200ResponseDataAttributes) SetIncludeResources(v interface{}) {
 	o.IncludeResources = v
+}
+
+// GetDisabledAt returns the DisabledAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETWebhooksWebhookId200ResponseDataAttributes) GetDisabledAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DisabledAt
+}
+
+// GetDisabledAtOk returns a tuple with the DisabledAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETWebhooksWebhookId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DisabledAt) {
+		return nil, false
+	}
+	return &o.DisabledAt, true
+}
+
+// HasDisabledAt returns a boolean if a field has been set.
+func (o *GETWebhooksWebhookId200ResponseDataAttributes) HasDisabledAt() bool {
+	if o != nil && IsNil(o.DisabledAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisabledAt gets a reference to the given interface{} and assigns it to the DisabledAt field.
+func (o *GETWebhooksWebhookId200ResponseDataAttributes) SetDisabledAt(v interface{}) {
+	o.DisabledAt = v
 }
 
 // GetCircuitState returns the CircuitState field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -480,6 +515,9 @@ func (o GETWebhooksWebhookId200ResponseDataAttributes) ToMap() (map[string]inter
 	}
 	if o.IncludeResources != nil {
 		toSerialize["include_resources"] = o.IncludeResources
+	}
+	if o.DisabledAt != nil {
+		toSerialize["disabled_at"] = o.DisabledAt
 	}
 	if o.CircuitState != nil {
 		toSerialize["circuit_state"] = o.CircuitState

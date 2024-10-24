@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Manual** | Pointer to **interface{}** | Indicates if the SKU list is populated manually. | [optional] 
 **SkuCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the SKU codes. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,15 +20,19 @@ var _ MappedNullable = &GETOrdersOrderId200ResponseDataAttributes{}
 
 // GETOrdersOrderId200ResponseDataAttributes struct for GETOrdersOrderId200ResponseDataAttributes
 type GETOrdersOrderId200ResponseDataAttributes struct {
-	// Unique identifier for the order (numeric).
+	// The order identifier. Can be specified if unique within the organization (for enterprise plans only), default to numeric ID otherwise. Cannot be passed by sales channels.
 	Number interface{} `json:"number,omitempty"`
+	// The affiliate code, if any, the seller will transfer commission on shop by link transactions.
+	AffiliateCode interface{} `json:"affiliate_code,omitempty"`
 	// Save this attribute as 'false' if you want prevent the order to be refreshed automatically at each change (much faster).
 	Autorefresh interface{} `json:"autorefresh,omitempty"`
-	// The order status. One of 'draft' (default), 'pending', 'placed', 'approved', or 'cancelled'.
+	// Save this attribute as 'true' if you want perform the place asynchronously. Payment errors, if any, will be collected afterwards.
+	PlaceAsync interface{} `json:"place_async,omitempty"`
+	// The order status. One of 'draft' (default), 'pending', 'editing', 'placing', 'placed', 'approved', or 'cancelled'.
 	Status interface{} `json:"status,omitempty"`
-	// The order's payment status. One of 'unpaid' (default), 'authorized', 'partially_authorized', 'paid', 'partially_paid', 'voided', 'partially_voided', 'refunded', 'partially_refunded' or 'free'.
+	// The order payment status. One of 'unpaid' (default), 'authorized', 'partially_authorized', 'paid', 'partially_paid', 'voided', 'partially_voided', 'refunded', 'partially_refunded', or 'free'.
 	PaymentStatus interface{} `json:"payment_status,omitempty"`
-	// The order's fulfillment status. One of 'unfulfilled' (default), 'in_progress', 'fulfilled', or 'not_required'.
+	// The order fulfillment status. One of 'unfulfilled' (default), 'in_progress', 'fulfilled', or 'not_required'.
 	FulfillmentStatus interface{} `json:"fulfillment_status,omitempty"`
 	// Indicates if the order has been placed as guest.
 	Guest interface{} `json:"guest,omitempty"`
@@ -46,18 +50,22 @@ type GETOrdersOrderId200ResponseDataAttributes struct {
 	TaxRate interface{} `json:"tax_rate,omitempty"`
 	// Indicates if taxes are applied to shipping costs.
 	FreightTaxable interface{} `json:"freight_taxable,omitempty"`
+	// Indicates if taxes are applied to payment methods costs.
+	PaymentMethodTaxable interface{} `json:"payment_method_taxable,omitempty"`
+	// Indicates if taxes are applied to positive adjustments.
+	AdjustmentTaxable interface{} `json:"adjustment_taxable,omitempty"`
+	// Indicates if taxes are applied to purchased gift cards.
+	GiftCardTaxable interface{} `json:"gift_card_taxable,omitempty"`
 	// Indicates if the billing address associated to this order requires billing info to be present.
 	RequiresBillingInfo interface{} `json:"requires_billing_info,omitempty"`
-	// The international 2-letter country code as defined by the ISO 3166-1 standard, automatically inherited from the order's shipping address.
+	// The international 2-letter country code as defined by the ISO 3166-1 standard, automatically inherited from the order's shipping or billing addresses.
 	CountryCode interface{} `json:"country_code,omitempty"`
-	// The country code that you want the shipping address to be locked to. This can be useful to make sure the shipping address belongs to a given shipping country, e.g. the one selected in a country selector page.
+	// The country code that you want the shipping address to be locked to. This can be useful to make sure the shipping address belongs to a given shipping country, e.g. the one selected in a country selector page. Not relevant if order contains only digital products.
 	ShippingCountryCodeLock interface{} `json:"shipping_country_code_lock,omitempty"`
 	// The coupon code to be used for the order. If valid, it triggers a promotion adding a discount line item to the order.
 	CouponCode interface{} `json:"coupon_code,omitempty"`
 	// The gift card code (at least the first 8 characters) to be used for the order. If valid, it uses the gift card balance to pay for the order.
 	GiftCardCode interface{} `json:"gift_card_code,omitempty"`
-	// The gift card or coupon code (at least the first 8 characters) to be used for the order. If a gift card mathes, it uses the gift card balance to pay for the order. Otherwise it tries to find a valid coupon code and applies the associated discount.
-	GiftCardOrCouponCode interface{} `json:"gift_card_or_coupon_code,omitempty"`
 	// The sum of all the SKU line items total amounts, in cents.
 	SubtotalAmountCents interface{} `json:"subtotal_amount_cents,omitempty"`
 	// The sum of all the SKU line items total amounts, float.
@@ -178,6 +186,12 @@ type GETOrdersOrderId200ResponseDataAttributes struct {
 	DutyAmountFloat interface{} `json:"duty_amount_float,omitempty"`
 	// The duty amount that is calculated by external services, formatted.
 	FormattedDutyAmount interface{} `json:"formatted_duty_amount,omitempty"`
+	// The total amount at place time, in cents, which is used internally for editing.
+	PlaceTotalAmountCents interface{} `json:"place_total_amount_cents,omitempty"`
+	// The total amount at place time, float.
+	PlaceTotalAmountFloat interface{} `json:"place_total_amount_float,omitempty"`
+	// The total amount at place time, formatted.
+	FormattedPlaceTotalAmount interface{} `json:"formatted_place_total_amount,omitempty"`
 	// The total number of SKUs in the order's line items. This can be useful to display a preview of the customer shopping cart content.
 	SkusCount interface{} `json:"skus_count,omitempty"`
 	// The total number of line item options. This can be useful to display a preview of the customer shopping cart content.
@@ -186,6 +200,10 @@ type GETOrdersOrderId200ResponseDataAttributes struct {
 	ShipmentsCount interface{} `json:"shipments_count,omitempty"`
 	// The total number of tax calculations. This can be useful to monitor external tax service usage.
 	TaxCalculationsCount interface{} `json:"tax_calculations_count,omitempty"`
+	// The total number of external validation performed. This can be useful to monitor if external validation has been triggered.
+	ValidationsCount interface{} `json:"validations_count,omitempty"`
+	// The total number of resource errors.
+	ErrorsCount interface{} `json:"errors_count,omitempty"`
 	// An object that contains the shareable details of the order's payment source.
 	PaymentSourceDetails interface{} `json:"payment_source_details,omitempty"`
 	// A unique token that can be shared more securely instead of the order's id.
@@ -214,17 +232,19 @@ type GETOrdersOrderId200ResponseDataAttributes struct {
 	RefreshedAt interface{} `json:"refreshed_at,omitempty"`
 	// Time at which the resource has been archived.
 	ArchivedAt interface{} `json:"archived_at,omitempty"`
-	// Time at which an order is marked for cleanup. Any order will start with a default expire time of 2 months. Expiration is reset once a line item is added to the order.
-	ExpiresAt interface{} `json:"expires_at,omitempty"`
 	// Time at which the order has been marked to create a subscription from its recurring line items.
 	SubscriptionCreatedAt interface{} `json:"subscription_created_at,omitempty"`
+	// The circuit breaker state, by default it is 'closed'. It can become 'open' once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made.
+	CircuitState interface{} `json:"circuit_state,omitempty"`
+	// The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback.
+	CircuitFailureCount interface{} `json:"circuit_failure_count,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -280,6 +300,39 @@ func (o *GETOrdersOrderId200ResponseDataAttributes) SetNumber(v interface{}) {
 	o.Number = v
 }
 
+// GetAffiliateCode returns the AffiliateCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetAffiliateCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.AffiliateCode
+}
+
+// GetAffiliateCodeOk returns a tuple with the AffiliateCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetAffiliateCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AffiliateCode) {
+		return nil, false
+	}
+	return &o.AffiliateCode, true
+}
+
+// HasAffiliateCode returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasAffiliateCode() bool {
+	if o != nil && IsNil(o.AffiliateCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetAffiliateCode gets a reference to the given interface{} and assigns it to the AffiliateCode field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetAffiliateCode(v interface{}) {
+	o.AffiliateCode = v
+}
+
 // GetAutorefresh returns the Autorefresh field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETOrdersOrderId200ResponseDataAttributes) GetAutorefresh() interface{} {
 	if o == nil {
@@ -311,6 +364,39 @@ func (o *GETOrdersOrderId200ResponseDataAttributes) HasAutorefresh() bool {
 // SetAutorefresh gets a reference to the given interface{} and assigns it to the Autorefresh field.
 func (o *GETOrdersOrderId200ResponseDataAttributes) SetAutorefresh(v interface{}) {
 	o.Autorefresh = v
+}
+
+// GetPlaceAsync returns the PlaceAsync field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceAsync() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PlaceAsync
+}
+
+// GetPlaceAsyncOk returns a tuple with the PlaceAsync field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceAsyncOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PlaceAsync) {
+		return nil, false
+	}
+	return &o.PlaceAsync, true
+}
+
+// HasPlaceAsync returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasPlaceAsync() bool {
+	if o != nil && IsNil(o.PlaceAsync) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlaceAsync gets a reference to the given interface{} and assigns it to the PlaceAsync field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetPlaceAsync(v interface{}) {
+	o.PlaceAsync = v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -676,6 +762,105 @@ func (o *GETOrdersOrderId200ResponseDataAttributes) SetFreightTaxable(v interfac
 	o.FreightTaxable = v
 }
 
+// GetPaymentMethodTaxable returns the PaymentMethodTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetPaymentMethodTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PaymentMethodTaxable
+}
+
+// GetPaymentMethodTaxableOk returns a tuple with the PaymentMethodTaxable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetPaymentMethodTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentMethodTaxable) {
+		return nil, false
+	}
+	return &o.PaymentMethodTaxable, true
+}
+
+// HasPaymentMethodTaxable returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasPaymentMethodTaxable() bool {
+	if o != nil && IsNil(o.PaymentMethodTaxable) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentMethodTaxable gets a reference to the given interface{} and assigns it to the PaymentMethodTaxable field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetPaymentMethodTaxable(v interface{}) {
+	o.PaymentMethodTaxable = v
+}
+
+// GetAdjustmentTaxable returns the AdjustmentTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetAdjustmentTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.AdjustmentTaxable
+}
+
+// GetAdjustmentTaxableOk returns a tuple with the AdjustmentTaxable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetAdjustmentTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AdjustmentTaxable) {
+		return nil, false
+	}
+	return &o.AdjustmentTaxable, true
+}
+
+// HasAdjustmentTaxable returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasAdjustmentTaxable() bool {
+	if o != nil && IsNil(o.AdjustmentTaxable) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdjustmentTaxable gets a reference to the given interface{} and assigns it to the AdjustmentTaxable field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetAdjustmentTaxable(v interface{}) {
+	o.AdjustmentTaxable = v
+}
+
+// GetGiftCardTaxable returns the GiftCardTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetGiftCardTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.GiftCardTaxable
+}
+
+// GetGiftCardTaxableOk returns a tuple with the GiftCardTaxable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetGiftCardTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GiftCardTaxable) {
+		return nil, false
+	}
+	return &o.GiftCardTaxable, true
+}
+
+// HasGiftCardTaxable returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasGiftCardTaxable() bool {
+	if o != nil && IsNil(o.GiftCardTaxable) {
+		return true
+	}
+
+	return false
+}
+
+// SetGiftCardTaxable gets a reference to the given interface{} and assigns it to the GiftCardTaxable field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetGiftCardTaxable(v interface{}) {
+	o.GiftCardTaxable = v
+}
+
 // GetRequiresBillingInfo returns the RequiresBillingInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETOrdersOrderId200ResponseDataAttributes) GetRequiresBillingInfo() interface{} {
 	if o == nil {
@@ -839,39 +1024,6 @@ func (o *GETOrdersOrderId200ResponseDataAttributes) HasGiftCardCode() bool {
 // SetGiftCardCode gets a reference to the given interface{} and assigns it to the GiftCardCode field.
 func (o *GETOrdersOrderId200ResponseDataAttributes) SetGiftCardCode(v interface{}) {
 	o.GiftCardCode = v
-}
-
-// GetGiftCardOrCouponCode returns the GiftCardOrCouponCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCode() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.GiftCardOrCouponCode
-}
-
-// GetGiftCardOrCouponCodeOk returns a tuple with the GiftCardOrCouponCode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.GiftCardOrCouponCode) {
-		return nil, false
-	}
-	return &o.GiftCardOrCouponCode, true
-}
-
-// HasGiftCardOrCouponCode returns a boolean if a field has been set.
-func (o *GETOrdersOrderId200ResponseDataAttributes) HasGiftCardOrCouponCode() bool {
-	if o != nil && IsNil(o.GiftCardOrCouponCode) {
-		return true
-	}
-
-	return false
-}
-
-// SetGiftCardOrCouponCode gets a reference to the given interface{} and assigns it to the GiftCardOrCouponCode field.
-func (o *GETOrdersOrderId200ResponseDataAttributes) SetGiftCardOrCouponCode(v interface{}) {
-	o.GiftCardOrCouponCode = v
 }
 
 // GetSubtotalAmountCents returns the SubtotalAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2854,6 +3006,105 @@ func (o *GETOrdersOrderId200ResponseDataAttributes) SetFormattedDutyAmount(v int
 	o.FormattedDutyAmount = v
 }
 
+// GetPlaceTotalAmountCents returns the PlaceTotalAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceTotalAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PlaceTotalAmountCents
+}
+
+// GetPlaceTotalAmountCentsOk returns a tuple with the PlaceTotalAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceTotalAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PlaceTotalAmountCents) {
+		return nil, false
+	}
+	return &o.PlaceTotalAmountCents, true
+}
+
+// HasPlaceTotalAmountCents returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasPlaceTotalAmountCents() bool {
+	if o != nil && IsNil(o.PlaceTotalAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlaceTotalAmountCents gets a reference to the given interface{} and assigns it to the PlaceTotalAmountCents field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetPlaceTotalAmountCents(v interface{}) {
+	o.PlaceTotalAmountCents = v
+}
+
+// GetPlaceTotalAmountFloat returns the PlaceTotalAmountFloat field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceTotalAmountFloat() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PlaceTotalAmountFloat
+}
+
+// GetPlaceTotalAmountFloatOk returns a tuple with the PlaceTotalAmountFloat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetPlaceTotalAmountFloatOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PlaceTotalAmountFloat) {
+		return nil, false
+	}
+	return &o.PlaceTotalAmountFloat, true
+}
+
+// HasPlaceTotalAmountFloat returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasPlaceTotalAmountFloat() bool {
+	if o != nil && IsNil(o.PlaceTotalAmountFloat) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlaceTotalAmountFloat gets a reference to the given interface{} and assigns it to the PlaceTotalAmountFloat field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetPlaceTotalAmountFloat(v interface{}) {
+	o.PlaceTotalAmountFloat = v
+}
+
+// GetFormattedPlaceTotalAmount returns the FormattedPlaceTotalAmount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetFormattedPlaceTotalAmount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.FormattedPlaceTotalAmount
+}
+
+// GetFormattedPlaceTotalAmountOk returns a tuple with the FormattedPlaceTotalAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetFormattedPlaceTotalAmountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FormattedPlaceTotalAmount) {
+		return nil, false
+	}
+	return &o.FormattedPlaceTotalAmount, true
+}
+
+// HasFormattedPlaceTotalAmount returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasFormattedPlaceTotalAmount() bool {
+	if o != nil && IsNil(o.FormattedPlaceTotalAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormattedPlaceTotalAmount gets a reference to the given interface{} and assigns it to the FormattedPlaceTotalAmount field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetFormattedPlaceTotalAmount(v interface{}) {
+	o.FormattedPlaceTotalAmount = v
+}
+
 // GetSkusCount returns the SkusCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETOrdersOrderId200ResponseDataAttributes) GetSkusCount() interface{} {
 	if o == nil {
@@ -2984,6 +3235,72 @@ func (o *GETOrdersOrderId200ResponseDataAttributes) HasTaxCalculationsCount() bo
 // SetTaxCalculationsCount gets a reference to the given interface{} and assigns it to the TaxCalculationsCount field.
 func (o *GETOrdersOrderId200ResponseDataAttributes) SetTaxCalculationsCount(v interface{}) {
 	o.TaxCalculationsCount = v
+}
+
+// GetValidationsCount returns the ValidationsCount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetValidationsCount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ValidationsCount
+}
+
+// GetValidationsCountOk returns a tuple with the ValidationsCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetValidationsCountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ValidationsCount) {
+		return nil, false
+	}
+	return &o.ValidationsCount, true
+}
+
+// HasValidationsCount returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasValidationsCount() bool {
+	if o != nil && IsNil(o.ValidationsCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetValidationsCount gets a reference to the given interface{} and assigns it to the ValidationsCount field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetValidationsCount(v interface{}) {
+	o.ValidationsCount = v
+}
+
+// GetErrorsCount returns the ErrorsCount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetErrorsCount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ErrorsCount
+}
+
+// GetErrorsCountOk returns a tuple with the ErrorsCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetErrorsCountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ErrorsCount) {
+		return nil, false
+	}
+	return &o.ErrorsCount, true
+}
+
+// HasErrorsCount returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasErrorsCount() bool {
+	if o != nil && IsNil(o.ErrorsCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetErrorsCount gets a reference to the given interface{} and assigns it to the ErrorsCount field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetErrorsCount(v interface{}) {
+	o.ErrorsCount = v
 }
 
 // GetPaymentSourceDetails returns the PaymentSourceDetails field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -3448,39 +3765,6 @@ func (o *GETOrdersOrderId200ResponseDataAttributes) SetArchivedAt(v interface{})
 	o.ArchivedAt = v
 }
 
-// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETOrdersOrderId200ResponseDataAttributes) GetExpiresAt() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.ExpiresAt
-}
-
-// GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETOrdersOrderId200ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ExpiresAt) {
-		return nil, false
-	}
-	return &o.ExpiresAt, true
-}
-
-// HasExpiresAt returns a boolean if a field has been set.
-func (o *GETOrdersOrderId200ResponseDataAttributes) HasExpiresAt() bool {
-	if o != nil && IsNil(o.ExpiresAt) {
-		return true
-	}
-
-	return false
-}
-
-// SetExpiresAt gets a reference to the given interface{} and assigns it to the ExpiresAt field.
-func (o *GETOrdersOrderId200ResponseDataAttributes) SetExpiresAt(v interface{}) {
-	o.ExpiresAt = v
-}
-
 // GetSubscriptionCreatedAt returns the SubscriptionCreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETOrdersOrderId200ResponseDataAttributes) GetSubscriptionCreatedAt() interface{} {
 	if o == nil {
@@ -3512,6 +3796,72 @@ func (o *GETOrdersOrderId200ResponseDataAttributes) HasSubscriptionCreatedAt() b
 // SetSubscriptionCreatedAt gets a reference to the given interface{} and assigns it to the SubscriptionCreatedAt field.
 func (o *GETOrdersOrderId200ResponseDataAttributes) SetSubscriptionCreatedAt(v interface{}) {
 	o.SubscriptionCreatedAt = v
+}
+
+// GetCircuitState returns the CircuitState field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetCircuitState() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitState
+}
+
+// GetCircuitStateOk returns a tuple with the CircuitState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitState) {
+		return nil, false
+	}
+	return &o.CircuitState, true
+}
+
+// HasCircuitState returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasCircuitState() bool {
+	if o != nil && IsNil(o.CircuitState) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitState gets a reference to the given interface{} and assigns it to the CircuitState field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetCircuitState(v interface{}) {
+	o.CircuitState = v
+}
+
+// GetCircuitFailureCount returns the CircuitFailureCount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetCircuitFailureCount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitFailureCount
+}
+
+// GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrdersOrderId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitFailureCount) {
+		return nil, false
+	}
+	return &o.CircuitFailureCount, true
+}
+
+// HasCircuitFailureCount returns a boolean if a field has been set.
+func (o *GETOrdersOrderId200ResponseDataAttributes) HasCircuitFailureCount() bool {
+	if o != nil && IsNil(o.CircuitFailureCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitFailureCount gets a reference to the given interface{} and assigns it to the CircuitFailureCount field.
+func (o *GETOrdersOrderId200ResponseDataAttributes) SetCircuitFailureCount(v interface{}) {
+	o.CircuitFailureCount = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -3692,8 +4042,14 @@ func (o GETOrdersOrderId200ResponseDataAttributes) ToMap() (map[string]interface
 	if o.Number != nil {
 		toSerialize["number"] = o.Number
 	}
+	if o.AffiliateCode != nil {
+		toSerialize["affiliate_code"] = o.AffiliateCode
+	}
 	if o.Autorefresh != nil {
 		toSerialize["autorefresh"] = o.Autorefresh
+	}
+	if o.PlaceAsync != nil {
+		toSerialize["place_async"] = o.PlaceAsync
 	}
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
@@ -3728,6 +4084,15 @@ func (o GETOrdersOrderId200ResponseDataAttributes) ToMap() (map[string]interface
 	if o.FreightTaxable != nil {
 		toSerialize["freight_taxable"] = o.FreightTaxable
 	}
+	if o.PaymentMethodTaxable != nil {
+		toSerialize["payment_method_taxable"] = o.PaymentMethodTaxable
+	}
+	if o.AdjustmentTaxable != nil {
+		toSerialize["adjustment_taxable"] = o.AdjustmentTaxable
+	}
+	if o.GiftCardTaxable != nil {
+		toSerialize["gift_card_taxable"] = o.GiftCardTaxable
+	}
 	if o.RequiresBillingInfo != nil {
 		toSerialize["requires_billing_info"] = o.RequiresBillingInfo
 	}
@@ -3742,9 +4107,6 @@ func (o GETOrdersOrderId200ResponseDataAttributes) ToMap() (map[string]interface
 	}
 	if o.GiftCardCode != nil {
 		toSerialize["gift_card_code"] = o.GiftCardCode
-	}
-	if o.GiftCardOrCouponCode != nil {
-		toSerialize["gift_card_or_coupon_code"] = o.GiftCardOrCouponCode
 	}
 	if o.SubtotalAmountCents != nil {
 		toSerialize["subtotal_amount_cents"] = o.SubtotalAmountCents
@@ -3926,6 +4288,15 @@ func (o GETOrdersOrderId200ResponseDataAttributes) ToMap() (map[string]interface
 	if o.FormattedDutyAmount != nil {
 		toSerialize["formatted_duty_amount"] = o.FormattedDutyAmount
 	}
+	if o.PlaceTotalAmountCents != nil {
+		toSerialize["place_total_amount_cents"] = o.PlaceTotalAmountCents
+	}
+	if o.PlaceTotalAmountFloat != nil {
+		toSerialize["place_total_amount_float"] = o.PlaceTotalAmountFloat
+	}
+	if o.FormattedPlaceTotalAmount != nil {
+		toSerialize["formatted_place_total_amount"] = o.FormattedPlaceTotalAmount
+	}
 	if o.SkusCount != nil {
 		toSerialize["skus_count"] = o.SkusCount
 	}
@@ -3937,6 +4308,12 @@ func (o GETOrdersOrderId200ResponseDataAttributes) ToMap() (map[string]interface
 	}
 	if o.TaxCalculationsCount != nil {
 		toSerialize["tax_calculations_count"] = o.TaxCalculationsCount
+	}
+	if o.ValidationsCount != nil {
+		toSerialize["validations_count"] = o.ValidationsCount
+	}
+	if o.ErrorsCount != nil {
+		toSerialize["errors_count"] = o.ErrorsCount
 	}
 	if o.PaymentSourceDetails != nil {
 		toSerialize["payment_source_details"] = o.PaymentSourceDetails
@@ -3980,11 +4357,14 @@ func (o GETOrdersOrderId200ResponseDataAttributes) ToMap() (map[string]interface
 	if o.ArchivedAt != nil {
 		toSerialize["archived_at"] = o.ArchivedAt
 	}
-	if o.ExpiresAt != nil {
-		toSerialize["expires_at"] = o.ExpiresAt
-	}
 	if o.SubscriptionCreatedAt != nil {
 		toSerialize["subscription_created_at"] = o.SubscriptionCreatedAt
+	}
+	if o.CircuitState != nil {
+		toSerialize["circuit_state"] = o.CircuitState
+	}
+	if o.CircuitFailureCount != nil {
+		toSerialize["circuit_failure_count"] = o.CircuitFailureCount
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &POSTPaypalGateways201ResponseDataRelationships{}
 // POSTPaypalGateways201ResponseDataRelationships struct for POSTPaypalGateways201ResponseDataRelationships
 type POSTPaypalGateways201ResponseDataRelationships struct {
 	PaymentMethods *POSTAdyenGateways201ResponseDataRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
+	Versions       *POSTAddresses201ResponseDataRelationshipsVersions            `json:"versions,omitempty"`
 	PaypalPayments *POSTPaypalGateways201ResponseDataRelationshipsPaypalPayments `json:"paypal_payments,omitempty"`
 }
 
@@ -73,6 +74,38 @@ func (o *POSTPaypalGateways201ResponseDataRelationships) SetPaymentMethods(v POS
 	o.PaymentMethods = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTPaypalGateways201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTPaypalGateways201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTPaypalGateways201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTPaypalGateways201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 // GetPaypalPayments returns the PaypalPayments field value if set, zero value otherwise.
 func (o *POSTPaypalGateways201ResponseDataRelationships) GetPaypalPayments() POSTPaypalGateways201ResponseDataRelationshipsPaypalPayments {
 	if o == nil || IsNil(o.PaypalPayments) {
@@ -117,6 +150,9 @@ func (o POSTPaypalGateways201ResponseDataRelationships) ToMap() (map[string]inte
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.PaymentMethods) {
 		toSerialize["payment_methods"] = o.PaymentMethods
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	if !IsNil(o.PaypalPayments) {
 		toSerialize["paypal_payments"] = o.PaypalPayments

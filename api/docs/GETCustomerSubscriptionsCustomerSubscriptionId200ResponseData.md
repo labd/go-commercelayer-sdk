@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes**](GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTCustomerPasswordResets201ResponseDataRelationships**](POSTCustomerPasswordResets201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTCustomerSubscriptions201ResponseDataRelationships**](POSTCustomerSubscriptions201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationships() POSTCustomerPasswordResets201ResponseDataRelationships`
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationships() POSTCustomerSubscriptions201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationshipsOk() (*POSTCustomerPasswordResets201ResponseDataRelationships, bool)`
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationshipsOk() (*POSTCustomerSubscriptions201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetRelationships(v POSTCustomerPasswordResets201ResponseDataRelationships)`
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetRelationships(v POSTCustomerSubscriptions201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,10 +23,10 @@ type PATCHSkuOptionsSkuOptionId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                                 `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                          `json:"links,omitempty"`
-	Attributes    *PATCHSkuOptionsSkuOptionId200ResponseDataAttributes        `json:"attributes,omitempty"`
-	Relationships *POSTBillingInfoValidationRules201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type          interface{}                                          `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                   `json:"links,omitempty"`
+	Attributes    *PATCHSkuOptionsSkuOptionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTSkuOptions201ResponseDataRelationships          `json:"relationships,omitempty"`
 }
 
 // NewPATCHSkuOptionsSkuOptionId200ResponseData instantiates a new PATCHSkuOptionsSkuOptionId200ResponseData object
@@ -177,9 +177,9 @@ func (o *PATCHSkuOptionsSkuOptionId200ResponseData) SetAttributes(v PATCHSkuOpti
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationships() POSTBillingInfoValidationRules201ResponseDataRelationships {
+func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationships() POSTSkuOptions201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret POSTBillingInfoValidationRules201ResponseDataRelationships
+		var ret POSTSkuOptions201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationships() POSTBilli
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationshipsOk() (*POSTBillingInfoValidationRules201ResponseDataRelationships, bool) {
+func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationshipsOk() (*POSTSkuOptions201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *PATCHSkuOptionsSkuOptionId200ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTBillingInfoValidationRules201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHSkuOptionsSkuOptionId200ResponseData) SetRelationships(v POSTBillingInfoValidationRules201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTSkuOptions201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHSkuOptionsSkuOptionId200ResponseData) SetRelationships(v POSTSkuOptions201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

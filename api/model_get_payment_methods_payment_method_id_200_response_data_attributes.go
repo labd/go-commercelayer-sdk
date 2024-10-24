@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,39 +20,41 @@ var _ MappedNullable = &GETPaymentMethodsPaymentMethodId200ResponseDataAttribute
 
 // GETPaymentMethodsPaymentMethodId200ResponseDataAttributes struct for GETPaymentMethodsPaymentMethodId200ResponseDataAttributes
 type GETPaymentMethodsPaymentMethodId200ResponseDataAttributes struct {
-	// The payment source type, can be one of: 'AdyenPayment', 'AxervePayment', 'BraintreePayment', 'CheckoutComPayment', 'CreditCard', 'ExternalPayment', 'KlarnaPayment', 'PaypalPayment', 'SatispayPayment', 'StripePayment', or 'WireTransfer'.
-	PaymentSourceType interface{} `json:"payment_source_type,omitempty"`
-	// Payment source type, titleized
+	// The payment method's internal name.
 	Name interface{} `json:"name,omitempty"`
+	// The payment source type. One of 'adyen_payments', 'axerve_payments', 'braintree_payments', 'checkout_com_payments', 'credit_cards', 'external_payments', 'klarna_payments', 'paypal_payments', 'satispay_payments', 'stripe_payments', or 'wire_transfers'.
+	PaymentSourceType interface{} `json:"payment_source_type,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
 	// Send this attribute if you want to mark the payment as MOTO, must be supported by payment gateway.
 	Moto interface{} `json:"moto,omitempty"`
 	// Send this attribute if you want to require the payment capture before fulfillment.
 	RequireCapture interface{} `json:"require_capture,omitempty"`
+	// Send this attribute if you want to automatically place the order upon authorization performed asynchronously.
+	AutoPlace interface{} `json:"auto_place,omitempty"`
 	// Send this attribute if you want to automatically capture the payment upon authorization.
 	AutoCapture interface{} `json:"auto_capture,omitempty"`
-	// Time at which the payment method was disabled.
-	DisabledAt interface{} `json:"disabled_at,omitempty"`
-	// The payment method's price, in cents
+	// The payment method's price, in cents.
 	PriceAmountCents interface{} `json:"price_amount_cents,omitempty"`
-	// The payment method's price, float
+	// The payment method's price, float.
 	PriceAmountFloat interface{} `json:"price_amount_float,omitempty"`
-	// The payment method's price, formatted
+	// The payment method's price, formatted.
 	FormattedPriceAmount interface{} `json:"formatted_price_amount,omitempty"`
 	// Send this attribute if you want to limit automatic capture to orders for which the total amount is equal or less than the specified value, in cents.
 	AutoCaptureMaxAmountCents interface{} `json:"auto_capture_max_amount_cents,omitempty"`
-	// The automatic capture max amount, float
+	// The automatic capture max amount, float.
 	AutoCaptureMaxAmountFloat interface{} `json:"auto_capture_max_amount_float,omitempty"`
-	// The automatic capture max amount, formatted
+	// The automatic capture max amount, formatted.
 	FormattedAutoCaptureMaxAmount interface{} `json:"formatted_auto_capture_max_amount,omitempty"`
+	// Time at which this resource was disabled.
+	DisabledAt interface{} `json:"disabled_at,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -73,39 +75,6 @@ func NewGETPaymentMethodsPaymentMethodId200ResponseDataAttributes() *GETPaymentM
 func NewGETPaymentMethodsPaymentMethodId200ResponseDataAttributesWithDefaults() *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes {
 	this := GETPaymentMethodsPaymentMethodId200ResponseDataAttributes{}
 	return &this
-}
-
-// GetPaymentSourceType returns the PaymentSourceType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPaymentSourceType() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.PaymentSourceType
-}
-
-// GetPaymentSourceTypeOk returns a tuple with the PaymentSourceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPaymentSourceTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.PaymentSourceType) {
-		return nil, false
-	}
-	return &o.PaymentSourceType, true
-}
-
-// HasPaymentSourceType returns a boolean if a field has been set.
-func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasPaymentSourceType() bool {
-	if o != nil && IsNil(o.PaymentSourceType) {
-		return true
-	}
-
-	return false
-}
-
-// SetPaymentSourceType gets a reference to the given interface{} and assigns it to the PaymentSourceType field.
-func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetPaymentSourceType(v interface{}) {
-	o.PaymentSourceType = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -139,6 +108,39 @@ func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasName() bo
 // SetName gets a reference to the given interface{} and assigns it to the Name field.
 func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetPaymentSourceType returns the PaymentSourceType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPaymentSourceType() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PaymentSourceType
+}
+
+// GetPaymentSourceTypeOk returns a tuple with the PaymentSourceType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPaymentSourceTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentSourceType) {
+		return nil, false
+	}
+	return &o.PaymentSourceType, true
+}
+
+// HasPaymentSourceType returns a boolean if a field has been set.
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasPaymentSourceType() bool {
+	if o != nil && IsNil(o.PaymentSourceType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentSourceType gets a reference to the given interface{} and assigns it to the PaymentSourceType field.
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetPaymentSourceType(v interface{}) {
+	o.PaymentSourceType = v
 }
 
 // GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -240,6 +242,39 @@ func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetRequireCa
 	o.RequireCapture = v
 }
 
+// GetAutoPlace returns the AutoPlace field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoPlace() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.AutoPlace
+}
+
+// GetAutoPlaceOk returns a tuple with the AutoPlace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoPlaceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AutoPlace) {
+		return nil, false
+	}
+	return &o.AutoPlace, true
+}
+
+// HasAutoPlace returns a boolean if a field has been set.
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasAutoPlace() bool {
+	if o != nil && IsNil(o.AutoPlace) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoPlace gets a reference to the given interface{} and assigns it to the AutoPlace field.
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetAutoPlace(v interface{}) {
+	o.AutoPlace = v
+}
+
 // GetAutoCapture returns the AutoCapture field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoCapture() interface{} {
 	if o == nil {
@@ -271,39 +306,6 @@ func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasAutoCaptu
 // SetAutoCapture gets a reference to the given interface{} and assigns it to the AutoCapture field.
 func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetAutoCapture(v interface{}) {
 	o.AutoCapture = v
-}
-
-// GetDisabledAt returns the DisabledAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisabledAt() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.DisabledAt
-}
-
-// GetDisabledAtOk returns a tuple with the DisabledAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.DisabledAt) {
-		return nil, false
-	}
-	return &o.DisabledAt, true
-}
-
-// HasDisabledAt returns a boolean if a field has been set.
-func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasDisabledAt() bool {
-	if o != nil && IsNil(o.DisabledAt) {
-		return true
-	}
-
-	return false
-}
-
-// SetDisabledAt gets a reference to the given interface{} and assigns it to the DisabledAt field.
-func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetDisabledAt(v interface{}) {
-	o.DisabledAt = v
 }
 
 // GetPriceAmountCents returns the PriceAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -504,6 +506,39 @@ func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetFormatted
 	o.FormattedAutoCaptureMaxAmount = v
 }
 
+// GetDisabledAt returns the DisabledAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisabledAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DisabledAt
+}
+
+// GetDisabledAtOk returns a tuple with the DisabledAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DisabledAt) {
+		return nil, false
+	}
+	return &o.DisabledAt, true
+}
+
+// HasDisabledAt returns a boolean if a field has been set.
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasDisabledAt() bool {
+	if o != nil && IsNil(o.DisabledAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisabledAt gets a reference to the given interface{} and assigns it to the DisabledAt field.
+func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetDisabledAt(v interface{}) {
+	o.DisabledAt = v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetCreatedAt() interface{} {
 	if o == nil {
@@ -679,11 +714,11 @@ func (o GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) MarshalJSON()
 
 func (o GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.PaymentSourceType != nil {
-		toSerialize["payment_source_type"] = o.PaymentSourceType
-	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.PaymentSourceType != nil {
+		toSerialize["payment_source_type"] = o.PaymentSourceType
 	}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
@@ -694,11 +729,11 @@ func (o GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) ToMap() (map[
 	if o.RequireCapture != nil {
 		toSerialize["require_capture"] = o.RequireCapture
 	}
+	if o.AutoPlace != nil {
+		toSerialize["auto_place"] = o.AutoPlace
+	}
 	if o.AutoCapture != nil {
 		toSerialize["auto_capture"] = o.AutoCapture
-	}
-	if o.DisabledAt != nil {
-		toSerialize["disabled_at"] = o.DisabledAt
 	}
 	if o.PriceAmountCents != nil {
 		toSerialize["price_amount_cents"] = o.PriceAmountCents
@@ -717,6 +752,9 @@ func (o GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) ToMap() (map[
 	}
 	if o.FormattedAutoCaptureMaxAmount != nil {
 		toSerialize["formatted_auto_capture_max_amount"] = o.FormattedAutoCaptureMaxAmount
+	}
+	if o.DisabledAt != nil {
+		toSerialize["disabled_at"] = o.DisabledAt
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

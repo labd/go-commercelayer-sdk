@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -26,7 +26,7 @@ type GETTaxjarAccountsTaxjarAccountId200ResponseData struct {
 	Type          interface{}                                                            `json:"type,omitempty"`
 	Links         *POSTAddresses201ResponseDataLinks                                     `json:"links,omitempty"`
 	Attributes    *GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTAvalaraAccounts201ResponseDataRelationships                       `json:"relationships,omitempty"`
+	Relationships *POSTTaxjarAccounts201ResponseDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewGETTaxjarAccountsTaxjarAccountId200ResponseData instantiates a new GETTaxjarAccountsTaxjarAccountId200ResponseData object
@@ -177,9 +177,9 @@ func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) SetAttributes(v GETMan
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships {
+func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationships() POSTTaxjarAccounts201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationships
+		var ret POSTTaxjarAccounts201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationships() POS
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool) {
+func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationshipsOk() (*POSTTaxjarAccounts201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) HasRelationships() boo
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTTaxjarAccounts201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) SetRelationships(v POSTTaxjarAccounts201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

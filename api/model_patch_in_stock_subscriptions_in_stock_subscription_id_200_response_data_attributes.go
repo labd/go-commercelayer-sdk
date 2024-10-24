@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &PATCHInStockSubscriptionsInStockSubscriptionId200Respons
 
 // PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes struct for PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes
 type PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes struct {
-	// The code of the associated SKU, replace the relationship
+	// The code of the associated SKU, replace the relationship.
 	SkuCode interface{} `json:"sku_code,omitempty"`
 	// The threshold at which to trigger the back in stock notification.
 	StockThreshold interface{} `json:"stock_threshold,omitempty"`
@@ -30,7 +30,7 @@ type PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes str
 	Deactivate interface{} `json:"_deactivate,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

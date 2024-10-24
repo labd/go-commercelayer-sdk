@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    fixedPricePromotionCreate := *openapiclient.NewFixedPricePromotionCreate(*openapiclient.NewFixedPricePromotionCreateData(interface{}(123), *openapiclient.NewPOSTFixedPricePromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5), interface{}(1000)))) // FixedPricePromotionCreate | 
+    fixedPricePromotionCreate := *openapiclient.NewFixedPricePromotionCreate(*openapiclient.NewFixedPricePromotionCreateData(interface{}(123), *openapiclient.NewPOSTFixedPricePromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(1000)))) // FixedPricePromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

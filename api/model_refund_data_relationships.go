@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,12 @@ var _ MappedNullable = &RefundDataRelationships{}
 
 // RefundDataRelationships struct for RefundDataRelationships
 type RefundDataRelationships struct {
-	Order            *AdyenPaymentDataRelationshipsOrder     `json:"order,omitempty"`
-	ReferenceCapture *AuthorizationDataRelationshipsCaptures `json:"reference_capture,omitempty"`
-	Events           *AuthorizationDataRelationshipsEvents   `json:"events,omitempty"`
+	Order            *AdyenPaymentDataRelationshipsOrder        `json:"order,omitempty"`
+	Attachments      *AuthorizationDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Events           *AddressDataRelationshipsEvents            `json:"events,omitempty"`
+	Versions         *AddressDataRelationshipsVersions          `json:"versions,omitempty"`
+	ReferenceCapture *AuthorizationDataRelationshipsCaptures    `json:"reference_capture,omitempty"`
+	Return           *CaptureDataRelationshipsReturn            `json:"return,omitempty"`
 }
 
 // NewRefundDataRelationships instantiates a new RefundDataRelationships object
@@ -74,6 +77,102 @@ func (o *RefundDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder)
 	o.Order = &v
 }
 
+// GetAttachments returns the Attachments field value if set, zero value otherwise.
+func (o *RefundDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
+	if o == nil || IsNil(o.Attachments) {
+		var ret AuthorizationDataRelationshipsAttachments
+		return ret
+	}
+	return *o.Attachments
+}
+
+// GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RefundDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
+	if o == nil || IsNil(o.Attachments) {
+		return nil, false
+	}
+	return o.Attachments, true
+}
+
+// HasAttachments returns a boolean if a field has been set.
+func (o *RefundDataRelationships) HasAttachments() bool {
+	if o != nil && !IsNil(o.Attachments) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *RefundDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
+	o.Attachments = &v
+}
+
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *RefundDataRelationships) GetEvents() AddressDataRelationshipsEvents {
+	if o == nil || IsNil(o.Events) {
+		var ret AddressDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RefundDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
+	if o == nil || IsNil(o.Events) {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *RefundDataRelationships) HasEvents() bool {
+	if o != nil && !IsNil(o.Events) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *RefundDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
+	o.Events = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *RefundDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RefundDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *RefundDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *RefundDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 // GetReferenceCapture returns the ReferenceCapture field value if set, zero value otherwise.
 func (o *RefundDataRelationships) GetReferenceCapture() AuthorizationDataRelationshipsCaptures {
 	if o == nil || IsNil(o.ReferenceCapture) {
@@ -106,36 +205,36 @@ func (o *RefundDataRelationships) SetReferenceCapture(v AuthorizationDataRelatio
 	o.ReferenceCapture = &v
 }
 
-// GetEvents returns the Events field value if set, zero value otherwise.
-func (o *RefundDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+// GetReturn returns the Return field value if set, zero value otherwise.
+func (o *RefundDataRelationships) GetReturn() CaptureDataRelationshipsReturn {
+	if o == nil || IsNil(o.Return) {
+		var ret CaptureDataRelationshipsReturn
 		return ret
 	}
-	return *o.Events
+	return *o.Return
 }
 
-// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// GetReturnOk returns a tuple with the Return field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RefundDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+func (o *RefundDataRelationships) GetReturnOk() (*CaptureDataRelationshipsReturn, bool) {
+	if o == nil || IsNil(o.Return) {
 		return nil, false
 	}
-	return o.Events, true
+	return o.Return, true
 }
 
-// HasEvents returns a boolean if a field has been set.
-func (o *RefundDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+// HasReturn returns a boolean if a field has been set.
+func (o *RefundDataRelationships) HasReturn() bool {
+	if o != nil && !IsNil(o.Return) {
 		return true
 	}
 
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *RefundDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
-	o.Events = &v
+// SetReturn gets a reference to the given CaptureDataRelationshipsReturn and assigns it to the Return field.
+func (o *RefundDataRelationships) SetReturn(v CaptureDataRelationshipsReturn) {
+	o.Return = &v
 }
 
 func (o RefundDataRelationships) MarshalJSON() ([]byte, error) {
@@ -151,11 +250,20 @@ func (o RefundDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
-	if !IsNil(o.ReferenceCapture) {
-		toSerialize["reference_capture"] = o.ReferenceCapture
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
+	}
+	if !IsNil(o.ReferenceCapture) {
+		toSerialize["reference_capture"] = o.ReferenceCapture
+	}
+	if !IsNil(o.Return) {
+		toSerialize["return"] = o.Return
 	}
 	return toSerialize, nil
 }

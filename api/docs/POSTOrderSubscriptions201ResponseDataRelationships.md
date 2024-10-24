@@ -11,10 +11,11 @@ Name | Type | Description | Notes
 **CustomerPaymentSource** | Pointer to [**POSTOrderSubscriptions201ResponseDataRelationshipsCustomerPaymentSource**](POSTOrderSubscriptions201ResponseDataRelationshipsCustomerPaymentSource.md) |  | [optional] 
 **OrderSubscriptionItems** | Pointer to [**POSTOrderSubscriptions201ResponseDataRelationshipsOrderSubscriptionItems**](POSTOrderSubscriptions201ResponseDataRelationshipsOrderSubscriptionItems.md) |  | [optional] 
 **OrderFactories** | Pointer to [**POSTOrderSubscriptions201ResponseDataRelationshipsOrderFactories**](POSTOrderSubscriptions201ResponseDataRelationshipsOrderFactories.md) |  | [optional] 
-**OrderCopies** | Pointer to [**POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies**](POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies.md) |  | [optional] 
 **RecurringOrderCopies** | Pointer to [**POSTOrderSubscriptions201ResponseDataRelationshipsRecurringOrderCopies**](POSTOrderSubscriptions201ResponseDataRelationshipsRecurringOrderCopies.md) |  | [optional] 
 **Orders** | Pointer to [**POSTCustomers201ResponseDataRelationshipsOrders**](POSTCustomers201ResponseDataRelationshipsOrders.md) |  | [optional] 
-**Events** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**POSTAddresses201ResponseDataRelationshipsEvents**](POSTAddresses201ResponseDataRelationshipsEvents.md) |  | [optional] 
+**Tags** | Pointer to [**POSTAddresses201ResponseDataRelationshipsTags**](POSTAddresses201ResponseDataRelationshipsTags.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -210,31 +211,6 @@ SetOrderFactories sets OrderFactories field to given value.
 
 HasOrderFactories returns a boolean if a field has been set.
 
-### GetOrderCopies
-
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetOrderCopies() POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies`
-
-GetOrderCopies returns the OrderCopies field if non-nil, zero value otherwise.
-
-### GetOrderCopiesOk
-
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetOrderCopiesOk() (*POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies, bool)`
-
-GetOrderCopiesOk returns a tuple with the OrderCopies field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOrderCopies
-
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetOrderCopies(v POSTOrderSubscriptions201ResponseDataRelationshipsOrderCopies)`
-
-SetOrderCopies sets OrderCopies field to given value.
-
-### HasOrderCopies
-
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) HasOrderCopies() bool`
-
-HasOrderCopies returns a boolean if a field has been set.
-
 ### GetRecurringOrderCopies
 
 `func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetRecurringOrderCopies() POSTOrderSubscriptions201ResponseDataRelationshipsRecurringOrderCopies`
@@ -287,20 +263,20 @@ HasOrders returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents`
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool)`
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents)`
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 
@@ -309,6 +285,56 @@ SetEvents sets Events field to given value.
 `func (o *POSTOrderSubscriptions201ResponseDataRelationships) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetTags() POSTAddresses201ResponseDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetTagsOk() (*POSTAddresses201ResponseDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetTags(v POSTAddresses201ResponseDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

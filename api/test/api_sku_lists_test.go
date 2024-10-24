@@ -48,6 +48,19 @@ func Test_api_SkuListsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test SkuListsApiService GETBuyXPayYPromotionIdSkuList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var buyXPayYPromotionId interface{}
+
+		httpRes, err := apiClient.SkuListsApi.GETBuyXPayYPromotionIdSkuList(context.Background(), buyXPayYPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SkuListsApiService GETCustomerIdSkuLists", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -55,6 +68,32 @@ func Test_api_SkuListsApiService(t *testing.T) {
 		var customerId interface{}
 
 		httpRes, err := apiClient.SkuListsApi.GETCustomerIdSkuLists(context.Background(), customerId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SkuListsApiService GETExternalPromotionIdSkuList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var externalPromotionId interface{}
+
+		httpRes, err := apiClient.SkuListsApi.GETExternalPromotionIdSkuList(context.Background(), externalPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SkuListsApiService GETFixedAmountPromotionIdSkuList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var fixedAmountPromotionId interface{}
+
+		httpRes, err := apiClient.SkuListsApi.GETFixedAmountPromotionIdSkuList(context.Background(), fixedAmountPromotionId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -87,6 +126,19 @@ func Test_api_SkuListsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test SkuListsApiService GETFreeShippingPromotionIdSkuList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var freeShippingPromotionId interface{}
+
+		httpRes, err := apiClient.SkuListsApi.GETFreeShippingPromotionIdSkuList(context.Background(), freeShippingPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SkuListsApiService GETPercentageDiscountPromotionIdSkuList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -94,6 +146,32 @@ func Test_api_SkuListsApiService(t *testing.T) {
 		var percentageDiscountPromotionId interface{}
 
 		httpRes, err := apiClient.SkuListsApi.GETPercentageDiscountPromotionIdSkuList(context.Background(), percentageDiscountPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SkuListsApiService GETPromotionIdSkuList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var promotionId interface{}
+
+		httpRes, err := apiClient.SkuListsApi.GETPromotionIdSkuList(context.Background(), promotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SkuListsApiService GETSkuIdSkuLists", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var skuId interface{}
+
+		httpRes, err := apiClient.SkuListsApi.GETSkuIdSkuLists(context.Background(), skuId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &PATCHPackagesPackageId200ResponseDataAttributes{}
 
 // PATCHPackagesPackageId200ResponseDataAttributes struct for PATCHPackagesPackageId200ResponseDataAttributes
 type PATCHPackagesPackageId200ResponseDataAttributes struct {
-	// Unique name for the package
+	// Unique name for the package.
 	Name interface{} `json:"name,omitempty"`
-	// The package identifying code
+	// The package identifying code.
 	Code interface{} `json:"code,omitempty"`
 	// The package length, used to automatically calculate the tax rates from the available carrier accounts.
 	Length interface{} `json:"length,omitempty"`
@@ -34,7 +34,7 @@ type PATCHPackagesPackageId200ResponseDataAttributes struct {
 	UnitOfLength interface{} `json:"unit_of_length,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

@@ -35,6 +35,19 @@ func Test_api_ReturnsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test ReturnsApiService GETCaptureIdReturn", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var captureId interface{}
+
+		httpRes, err := apiClient.ReturnsApi.GETCaptureIdReturn(context.Background(), captureId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ReturnsApiService GETCustomerIdReturns", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -55,6 +68,19 @@ func Test_api_ReturnsApiService(t *testing.T) {
 		var orderId interface{}
 
 		httpRes, err := apiClient.ReturnsApi.GETOrderIdReturns(context.Background(), orderId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ReturnsApiService GETRefundIdReturn", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var refundId interface{}
+
+		httpRes, err := apiClient.ReturnsApi.GETRefundIdReturn(context.Background(), refundId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

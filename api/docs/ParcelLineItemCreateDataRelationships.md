@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Parcel** | [**ParcelLineItemCreateDataRelationshipsParcel**](ParcelLineItemCreateDataRelationshipsParcel.md) |  | 
 **StockLineItem** | [**ParcelLineItemCreateDataRelationshipsStockLineItem**](ParcelLineItemCreateDataRelationshipsStockLineItem.md) |  | 
-**ShipmentLineItem** | Pointer to [**ParcelLineItemCreateDataRelationshipsShipmentLineItem**](ParcelLineItemCreateDataRelationshipsShipmentLineItem.md) |  | [optional] 
 
 ## Methods
 
@@ -66,31 +65,6 @@ and a boolean to check if the value has been set.
 
 SetStockLineItem sets StockLineItem field to given value.
 
-
-### GetShipmentLineItem
-
-`func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItem() ParcelLineItemCreateDataRelationshipsShipmentLineItem`
-
-GetShipmentLineItem returns the ShipmentLineItem field if non-nil, zero value otherwise.
-
-### GetShipmentLineItemOk
-
-`func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItemOk() (*ParcelLineItemCreateDataRelationshipsShipmentLineItem, bool)`
-
-GetShipmentLineItemOk returns a tuple with the ShipmentLineItem field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetShipmentLineItem
-
-`func (o *ParcelLineItemCreateDataRelationships) SetShipmentLineItem(v ParcelLineItemCreateDataRelationshipsShipmentLineItem)`
-
-SetShipmentLineItem sets ShipmentLineItem field to given value.
-
-### HasShipmentLineItem
-
-`func (o *ParcelLineItemCreateDataRelationships) HasShipmentLineItem() bool`
-
-HasShipmentLineItem returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

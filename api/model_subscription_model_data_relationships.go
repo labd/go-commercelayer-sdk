@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &SubscriptionModelDataRelationships{}
 type SubscriptionModelDataRelationships struct {
 	Markets            *AvalaraAccountDataRelationshipsMarkets      `json:"markets,omitempty"`
 	OrderSubscriptions *CustomerDataRelationshipsOrderSubscriptions `json:"order_subscriptions,omitempty"`
-	Attachments        *AvalaraAccountDataRelationshipsAttachments  `json:"attachments,omitempty"`
+	Attachments        *AuthorizationDataRelationshipsAttachments   `json:"attachments,omitempty"`
 }
 
 // NewSubscriptionModelDataRelationships instantiates a new SubscriptionModelDataRelationships object
@@ -107,9 +107,9 @@ func (o *SubscriptionModelDataRelationships) SetOrderSubscriptions(v CustomerDat
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *SubscriptionModelDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *SubscriptionModelDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -117,7 +117,7 @@ func (o *SubscriptionModelDataRelationships) GetAttachments() AvalaraAccountData
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SubscriptionModelDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *SubscriptionModelDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *SubscriptionModelDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *SubscriptionModelDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *SubscriptionModelDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 

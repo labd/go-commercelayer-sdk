@@ -5,18 +5,25 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **interface{}** | The promotion&#39;s internal name. | [optional] 
+**Type** | Pointer to **interface{}** | The promotion&#39;s type. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
+**Exclusive** | Pointer to **interface{}** | Indicates if the promotion will be applied exclusively, based on its priority score. | [optional] 
+**Priority** | Pointer to **interface{}** | The priority assigned to the promotion (lower means higher priority). | [optional] 
 **StartsAt** | Pointer to **interface{}** | The activation date/time of this promotion. | [optional] 
 **ExpiresAt** | Pointer to **interface{}** | The expiration date/time of this promotion (must be after starts_at). | [optional] 
-**TotalUsageLimit** | Pointer to **interface{}** | The total number of times this promotion can be applied. | [optional] 
+**TotalUsageLimit** | Pointer to **interface{}** | The total number of times this promotion can be applied. When &#39;null&#39; it means promotion can be applied infinite times. | [optional] 
 **TotalUsageCount** | Pointer to **interface{}** | The number of times this promotion has been applied. | [optional] 
-**Active** | Pointer to **interface{}** | Indicates if the promotion is active. | [optional] 
+**Active** | Pointer to **interface{}** | Indicates if the promotion is active (enabled and not expired). | [optional] 
+**Status** | Pointer to **interface{}** | The promotion status. One of &#39;disabled&#39;, &#39;expired&#39;, &#39;pending&#39;, &#39;active&#39;, or &#39;inactive&#39;. | [optional] 
+**DisabledAt** | Pointer to **interface{}** | Time at which this resource was disabled. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **PromotionUrl** | Pointer to **interface{}** | The URL to the service that will compute the discount. | [optional] 
+**CircuitState** | Pointer to **interface{}** | The circuit breaker state, by default it is &#39;closed&#39;. It can become &#39;open&#39; once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made. | [optional] 
+**CircuitFailureCount** | Pointer to **interface{}** | The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback. | [optional] 
 **SharedSecret** | Pointer to **interface{}** | The shared secret used to sign the external request payload. | [optional] 
 
 ## Methods
@@ -73,6 +80,41 @@ HasName returns a boolean if a field has been set.
 `func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetType
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetType() interface{}`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetType(v interface{})`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### SetTypeNil
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetCurrencyCode
 
 `func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetCurrencyCode() interface{}`
@@ -108,6 +150,76 @@ HasCurrencyCode returns a boolean if a field has been set.
 `func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetCurrencyCode()`
 
 UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
+### GetExclusive
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetExclusive() interface{}`
+
+GetExclusive returns the Exclusive field if non-nil, zero value otherwise.
+
+### GetExclusiveOk
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetExclusiveOk() (*interface{}, bool)`
+
+GetExclusiveOk returns a tuple with the Exclusive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExclusive
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetExclusive(v interface{})`
+
+SetExclusive sets Exclusive field to given value.
+
+### HasExclusive
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) HasExclusive() bool`
+
+HasExclusive returns a boolean if a field has been set.
+
+### SetExclusiveNil
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetExclusiveNil(b bool)`
+
+ SetExclusiveNil sets the value for Exclusive to be an explicit nil
+
+### UnsetExclusive
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetExclusive()`
+
+UnsetExclusive ensures that no value is present for Exclusive, not even an explicit nil
+### GetPriority
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetPriority() interface{}`
+
+GetPriority returns the Priority field if non-nil, zero value otherwise.
+
+### GetPriorityOk
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetPriorityOk() (*interface{}, bool)`
+
+GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriority
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetPriority(v interface{})`
+
+SetPriority sets Priority field to given value.
+
+### HasPriority
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) HasPriority() bool`
+
+HasPriority returns a boolean if a field has been set.
+
+### SetPriorityNil
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetPriorityNil(b bool)`
+
+ SetPriorityNil sets the value for Priority to be an explicit nil
+
+### UnsetPriority
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetPriority()`
+
+UnsetPriority ensures that no value is present for Priority, not even an explicit nil
 ### GetStartsAt
 
 `func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetStartsAt() interface{}`
@@ -283,6 +395,76 @@ HasActive returns a boolean if a field has been set.
 `func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetActive()`
 
 UnsetActive ensures that no value is present for Active, not even an explicit nil
+### GetStatus
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetStatus() interface{}`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetStatusOk() (*interface{}, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetStatus(v interface{})`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+### SetStatusNil
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
+### GetDisabledAt
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetDisabledAt() interface{}`
+
+GetDisabledAt returns the DisabledAt field if non-nil, zero value otherwise.
+
+### GetDisabledAtOk
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool)`
+
+GetDisabledAtOk returns a tuple with the DisabledAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisabledAt
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetDisabledAt(v interface{})`
+
+SetDisabledAt sets DisabledAt field to given value.
+
+### HasDisabledAt
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) HasDisabledAt() bool`
+
+HasDisabledAt returns a boolean if a field has been set.
+
+### SetDisabledAtNil
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetDisabledAtNil(b bool)`
+
+ SetDisabledAtNil sets the value for DisabledAt to be an explicit nil
+
+### UnsetDisabledAt
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetDisabledAt()`
+
+UnsetDisabledAt ensures that no value is present for DisabledAt, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetCreatedAt() interface{}`
@@ -493,6 +675,76 @@ HasPromotionUrl returns a boolean if a field has been set.
 `func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetPromotionUrl()`
 
 UnsetPromotionUrl ensures that no value is present for PromotionUrl, not even an explicit nil
+### GetCircuitState
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetCircuitState() interface{}`
+
+GetCircuitState returns the CircuitState field if non-nil, zero value otherwise.
+
+### GetCircuitStateOk
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool)`
+
+GetCircuitStateOk returns a tuple with the CircuitState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitState
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetCircuitState(v interface{})`
+
+SetCircuitState sets CircuitState field to given value.
+
+### HasCircuitState
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) HasCircuitState() bool`
+
+HasCircuitState returns a boolean if a field has been set.
+
+### SetCircuitStateNil
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetCircuitStateNil(b bool)`
+
+ SetCircuitStateNil sets the value for CircuitState to be an explicit nil
+
+### UnsetCircuitState
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetCircuitState()`
+
+UnsetCircuitState ensures that no value is present for CircuitState, not even an explicit nil
+### GetCircuitFailureCount
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetCircuitFailureCount() interface{}`
+
+GetCircuitFailureCount returns the CircuitFailureCount field if non-nil, zero value otherwise.
+
+### GetCircuitFailureCountOk
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool)`
+
+GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitFailureCount
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetCircuitFailureCount(v interface{})`
+
+SetCircuitFailureCount sets CircuitFailureCount field to given value.
+
+### HasCircuitFailureCount
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) HasCircuitFailureCount() bool`
+
+HasCircuitFailureCount returns a boolean if a field has been set.
+
+### SetCircuitFailureCountNil
+
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) SetCircuitFailureCountNil(b bool)`
+
+ SetCircuitFailureCountNil sets the value for CircuitFailureCount to be an explicit nil
+
+### UnsetCircuitFailureCount
+`func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) UnsetCircuitFailureCount()`
+
+UnsetCircuitFailureCount ensures that no value is present for CircuitFailureCount, not even an explicit nil
 ### GetSharedSecret
 
 `func (o *GETExternalPromotionsExternalPromotionId200ResponseDataAttributes) GetSharedSecret() interface{}`

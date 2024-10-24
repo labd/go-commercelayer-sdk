@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | [optional] 
+**Attributes** | Pointer to [**GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes**](GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**POSTCouponCodesPromotionRules201ResponseDataRelationships**](POSTCouponCodesPromotionRules201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributes() GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
+`func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributes() GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributesOk() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
+`func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributesOk() (*GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetAttributes(v GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
+`func (o *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetAttributes(v GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

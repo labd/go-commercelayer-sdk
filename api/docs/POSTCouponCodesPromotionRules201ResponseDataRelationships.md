@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Promotion** | Pointer to [**POSTCouponCodesPromotionRules201ResponseDataRelationshipsPromotion**](POSTCouponCodesPromotionRules201ResponseDataRelationshipsPromotion.md) |  | [optional] 
-**Coupons** | Pointer to [**POSTCouponCodesPromotionRules201ResponseDataRelationshipsCoupons**](POSTCouponCodesPromotionRules201ResponseDataRelationshipsCoupons.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
+**Coupons** | Pointer to [**POSTBuyXPayYPromotions201ResponseDataRelationshipsCoupons**](POSTBuyXPayYPromotions201ResponseDataRelationshipsCoupons.md) |  | [optional] 
 
 ## Methods
 
@@ -51,22 +52,47 @@ SetPromotion sets Promotion field to given value.
 
 HasPromotion returns a boolean if a field has been set.
 
+### GetVersions
+
+`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
+
 ### GetCoupons
 
-`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) GetCoupons() POSTCouponCodesPromotionRules201ResponseDataRelationshipsCoupons`
+`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) GetCoupons() POSTBuyXPayYPromotions201ResponseDataRelationshipsCoupons`
 
 GetCoupons returns the Coupons field if non-nil, zero value otherwise.
 
 ### GetCouponsOk
 
-`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) GetCouponsOk() (*POSTCouponCodesPromotionRules201ResponseDataRelationshipsCoupons, bool)`
+`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) GetCouponsOk() (*POSTBuyXPayYPromotions201ResponseDataRelationshipsCoupons, bool)`
 
 GetCouponsOk returns a tuple with the Coupons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCoupons
 
-`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) SetCoupons(v POSTCouponCodesPromotionRules201ResponseDataRelationshipsCoupons)`
+`func (o *POSTCouponCodesPromotionRules201ResponseDataRelationships) SetCoupons(v POSTBuyXPayYPromotions201ResponseDataRelationshipsCoupons)`
 
 SetCoupons sets Coupons field to given value.
 

@@ -6,8 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETEStockTransfersStockTransferId**](StockTransfersApi.md#DELETEStockTransfersStockTransferId) | **Delete** /stock_transfers/{stockTransferId} | Delete a stock transfer
 [**GETLineItemIdStockTransfers**](StockTransfersApi.md#GETLineItemIdStockTransfers) | **Get** /line_items/{lineItemId}/stock_transfers | Retrieve the stock transfers associated to the line item
+[**GETOrderIdStockTransfers**](StockTransfersApi.md#GETOrderIdStockTransfers) | **Get** /orders/{orderId}/stock_transfers | Retrieve the stock transfers associated to the order
 [**GETShipmentIdStockTransfers**](StockTransfersApi.md#GETShipmentIdStockTransfers) | **Get** /shipments/{shipmentId}/stock_transfers | Retrieve the stock transfers associated to the shipment
 [**GETStockLocationIdStockTransfers**](StockTransfersApi.md#GETStockLocationIdStockTransfers) | **Get** /stock_locations/{stockLocationId}/stock_transfers | Retrieve the stock transfers associated to the stock location
+[**GETStockReservationIdStockTransfer**](StockTransfersApi.md#GETStockReservationIdStockTransfer) | **Get** /stock_reservations/{stockReservationId}/stock_transfer | Retrieve the stock transfer associated to the stock reservation
 [**GETStockTransfers**](StockTransfersApi.md#GETStockTransfers) | **Get** /stock_transfers | List all stock transfers
 [**GETStockTransfersStockTransferId**](StockTransfersApi.md#GETStockTransfersStockTransferId) | **Get** /stock_transfers/{stockTransferId} | Retrieve a stock transfer
 [**PATCHStockTransfersStockTransferId**](StockTransfersApi.md#PATCHStockTransfersStockTransferId) | **Patch** /stock_transfers/{stockTransferId} | Update a stock transfer
@@ -151,6 +153,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETOrderIdStockTransfers
+
+> GETOrderIdStockTransfers(ctx, orderId).Execute()
+
+Retrieve the stock transfers associated to the order
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    orderId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.StockTransfersApi.GETOrderIdStockTransfers(context.Background(), orderId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.GETOrderIdStockTransfers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderIdStockTransfersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETShipmentIdStockTransfers
 
 > GETShipmentIdStockTransfers(ctx, shipmentId).Execute()
@@ -263,6 +333,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockLocationIdStockTransfersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockReservationIdStockTransfer
+
+> GETStockReservationIdStockTransfer(ctx, stockReservationId).Execute()
+
+Retrieve the stock transfer associated to the stock reservation
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    stockReservationId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.StockTransfersApi.GETStockReservationIdStockTransfer(context.Background(), stockReservationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.GETStockReservationIdStockTransfer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockReservationId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockReservationIdStockTransferRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

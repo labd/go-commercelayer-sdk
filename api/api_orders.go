@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -1791,6 +1791,98 @@ func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type OrdersApiGETPaymentOptionIdOrderRequest struct {
+	ctx             context.Context
+	ApiService      *OrdersApiService
+	paymentOptionId interface{}
+}
+
+func (r OrdersApiGETPaymentOptionIdOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPaymentOptionIdOrderExecute(r)
+}
+
+/*
+GETPaymentOptionIdOrder Retrieve the order associated to the payment option
+
+Retrieve the order associated to the payment option
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paymentOptionId The resource's id
+	@return OrdersApiGETPaymentOptionIdOrderRequest
+*/
+func (a *OrdersApiService) GETPaymentOptionIdOrder(ctx context.Context, paymentOptionId interface{}) OrdersApiGETPaymentOptionIdOrderRequest {
+	return OrdersApiGETPaymentOptionIdOrderRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		paymentOptionId: paymentOptionId,
+	}
+}
+
+// Execute executes the request
+func (a *OrdersApiService) GETPaymentOptionIdOrderExecute(r OrdersApiGETPaymentOptionIdOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETPaymentOptionIdOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/payment_options/{paymentOptionId}/order"
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentOptionId"+"}", url.PathEscape(parameterValueToString(r.paymentOptionId, "paymentOptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type OrdersApiGETPaypalPaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *OrdersApiService
@@ -2385,6 +2477,98 @@ func (a *OrdersApiService) GETShipmentIdOrderExecute(r OrdersApiGETShipmentIdOrd
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/order"
 	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type OrdersApiGETStockReservationIdOrderRequest struct {
+	ctx                context.Context
+	ApiService         *OrdersApiService
+	stockReservationId interface{}
+}
+
+func (r OrdersApiGETStockReservationIdOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockReservationIdOrderExecute(r)
+}
+
+/*
+GETStockReservationIdOrder Retrieve the order associated to the stock reservation
+
+Retrieve the order associated to the stock reservation
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockReservationId The resource's id
+	@return OrdersApiGETStockReservationIdOrderRequest
+*/
+func (a *OrdersApiService) GETStockReservationIdOrder(ctx context.Context, stockReservationId interface{}) OrdersApiGETStockReservationIdOrderRequest {
+	return OrdersApiGETStockReservationIdOrderRequest{
+		ApiService:         a,
+		ctx:                ctx,
+		stockReservationId: stockReservationId,
+	}
+}
+
+// Execute executes the request
+func (a *OrdersApiService) GETStockReservationIdOrderExecute(r OrdersApiGETStockReservationIdOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETStockReservationIdOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_reservations/{stockReservationId}/order"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockReservationId"+"}", url.PathEscape(parameterValueToString(r.stockReservationId, "stockReservationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

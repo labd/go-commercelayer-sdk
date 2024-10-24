@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **AmountCents** | Pointer to **interface{}** | The SKU price amount for the associated price list, in cents. | [optional] 
 **CompareAtAmountCents** | Pointer to **interface{}** | The compared price amount, in cents. Useful to display a percentage discount. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
+**Rules** | Pointer to **interface{}** | The rules (using Rules Engine) to be applied. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -205,6 +206,41 @@ HasReferenceOrigin returns a boolean if a field has been set.
 `func (o *PATCHPricesPriceId200ResponseDataAttributes) UnsetReferenceOrigin()`
 
 UnsetReferenceOrigin ensures that no value is present for ReferenceOrigin, not even an explicit nil
+### GetRules
+
+`func (o *PATCHPricesPriceId200ResponseDataAttributes) GetRules() interface{}`
+
+GetRules returns the Rules field if non-nil, zero value otherwise.
+
+### GetRulesOk
+
+`func (o *PATCHPricesPriceId200ResponseDataAttributes) GetRulesOk() (*interface{}, bool)`
+
+GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRules
+
+`func (o *PATCHPricesPriceId200ResponseDataAttributes) SetRules(v interface{})`
+
+SetRules sets Rules field to given value.
+
+### HasRules
+
+`func (o *PATCHPricesPriceId200ResponseDataAttributes) HasRules() bool`
+
+HasRules returns a boolean if a field has been set.
+
+### SetRulesNil
+
+`func (o *PATCHPricesPriceId200ResponseDataAttributes) SetRulesNil(b bool)`
+
+ SetRulesNil sets the value for Rules to be an explicit nil
+
+### UnsetRules
+`func (o *PATCHPricesPriceId200ResponseDataAttributes) UnsetRules()`
+
+UnsetRules ensures that no value is present for Rules, not even an explicit nil
 ### GetMetadata
 
 `func (o *PATCHPricesPriceId200ResponseDataAttributes) GetMetadata() interface{}`

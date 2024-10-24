@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,9 @@ var _ MappedNullable = &POSTSkuListItems201ResponseDataRelationships{}
 
 // POSTSkuListItems201ResponseDataRelationships struct for POSTSkuListItems201ResponseDataRelationships
 type POSTSkuListItems201ResponseDataRelationships struct {
-	SkuList *POSTBundles201ResponseDataRelationshipsSkuList          `json:"sku_list,omitempty"`
-	Sku     *POSTInStockSubscriptions201ResponseDataRelationshipsSku `json:"sku,omitempty"`
+	SkuList  *POSTBundles201ResponseDataRelationshipsSkuList          `json:"sku_list,omitempty"`
+	Sku      *POSTInStockSubscriptions201ResponseDataRelationshipsSku `json:"sku,omitempty"`
+	Versions *POSTAddresses201ResponseDataRelationshipsVersions       `json:"versions,omitempty"`
 }
 
 // NewPOSTSkuListItems201ResponseDataRelationships instantiates a new POSTSkuListItems201ResponseDataRelationships object
@@ -105,6 +106,38 @@ func (o *POSTSkuListItems201ResponseDataRelationships) SetSku(v POSTInStockSubsc
 	o.Sku = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTSkuListItems201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkuListItems201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTSkuListItems201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTSkuListItems201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 func (o POSTSkuListItems201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o POSTSkuListItems201ResponseDataRelationships) ToMap() (map[string]interf
 	}
 	if !IsNil(o.Sku) {
 		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

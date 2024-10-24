@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,6 +20,10 @@ var _ MappedNullable = &GETOrderSubscriptionItemsOrderSubscriptionItemId200Respo
 
 // GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes struct for GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes
 type GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes struct {
+	// The code of the associated SKU.
+	SkuCode interface{} `json:"sku_code,omitempty"`
+	// The code of the associated bundle.
+	BundleCode interface{} `json:"bundle_code,omitempty"`
 	// The subscription item quantity.
 	Quantity interface{} `json:"quantity,omitempty"`
 	// The unit amount of the subscription item, in cents.
@@ -40,7 +44,7 @@ type GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes s
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -61,6 +65,72 @@ func NewGETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttribute
 func NewGETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributesWithDefaults() *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes {
 	this := GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes{}
 	return &this
+}
+
+// GetSkuCode returns the SkuCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) GetSkuCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.SkuCode
+}
+
+// GetSkuCodeOk returns a tuple with the SkuCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SkuCode) {
+		return nil, false
+	}
+	return &o.SkuCode, true
+}
+
+// HasSkuCode returns a boolean if a field has been set.
+func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) HasSkuCode() bool {
+	if o != nil && IsNil(o.SkuCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkuCode gets a reference to the given interface{} and assigns it to the SkuCode field.
+func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) SetSkuCode(v interface{}) {
+	o.SkuCode = v
+}
+
+// GetBundleCode returns the BundleCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) GetBundleCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.BundleCode
+}
+
+// GetBundleCodeOk returns a tuple with the BundleCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) GetBundleCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.BundleCode) {
+		return nil, false
+	}
+	return &o.BundleCode, true
+}
+
+// HasBundleCode returns a boolean if a field has been set.
+func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) HasBundleCode() bool {
+	if o != nil && IsNil(o.BundleCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetBundleCode gets a reference to the given interface{} and assigns it to the BundleCode field.
+func (o *GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) SetBundleCode(v interface{}) {
+	o.BundleCode = v
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -469,6 +539,12 @@ func (o GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttribute
 
 func (o GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.SkuCode != nil {
+		toSerialize["sku_code"] = o.SkuCode
+	}
+	if o.BundleCode != nil {
+		toSerialize["bundle_code"] = o.BundleCode
+	}
 	if o.Quantity != nil {
 		toSerialize["quantity"] = o.Quantity
 	}

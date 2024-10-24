@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,22 @@ var _ MappedNullable = &PATCHCapturesCaptureId200ResponseDataAttributes{}
 
 // PATCHCapturesCaptureId200ResponseDataAttributes struct for PATCHCapturesCaptureId200ResponseDataAttributes
 type PATCHCapturesCaptureId200ResponseDataAttributes struct {
+	// Indicates if the transaction is successful.
+	Succeeded interface{} `json:"succeeded,omitempty"`
+	// Send this attribute if you want to forward a stuck transaction to succeeded and update associated order states accordingly.
+	Forward interface{} `json:"_forward,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
 	// Send this attribute if you want to create a refund for this capture.
 	Refund interface{} `json:"_refund,omitempty"`
-	// The associated refund amount, in cents.
+	// Send this attribute as a value in cents if you want to overwrite the amount to be refunded.
 	RefundAmountCents interface{} `json:"_refund_amount_cents,omitempty"`
+	// Send this attribute if you want to refund a succeeded capture of a pending order (which is left unpaid).
+	Cancel interface{} `json:"_cancel,omitempty"`
 }
 
 // NewPATCHCapturesCaptureId200ResponseDataAttributes instantiates a new PATCHCapturesCaptureId200ResponseDataAttributes object
@@ -47,6 +53,72 @@ func NewPATCHCapturesCaptureId200ResponseDataAttributes() *PATCHCapturesCaptureI
 func NewPATCHCapturesCaptureId200ResponseDataAttributesWithDefaults() *PATCHCapturesCaptureId200ResponseDataAttributes {
 	this := PATCHCapturesCaptureId200ResponseDataAttributes{}
 	return &this
+}
+
+// GetSucceeded returns the Succeeded field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetSucceeded() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Succeeded
+}
+
+// GetSucceededOk returns a tuple with the Succeeded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetSucceededOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Succeeded) {
+		return nil, false
+	}
+	return &o.Succeeded, true
+}
+
+// HasSucceeded returns a boolean if a field has been set.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasSucceeded() bool {
+	if o != nil && IsNil(o.Succeeded) {
+		return true
+	}
+
+	return false
+}
+
+// SetSucceeded gets a reference to the given interface{} and assigns it to the Succeeded field.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetSucceeded(v interface{}) {
+	o.Succeeded = v
+}
+
+// GetForward returns the Forward field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetForward() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Forward
+}
+
+// GetForwardOk returns a tuple with the Forward field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetForwardOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Forward) {
+		return nil, false
+	}
+	return &o.Forward, true
+}
+
+// HasForward returns a boolean if a field has been set.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasForward() bool {
+	if o != nil && IsNil(o.Forward) {
+		return true
+	}
+
+	return false
+}
+
+// SetForward gets a reference to the given interface{} and assigns it to the Forward field.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetForward(v interface{}) {
+	o.Forward = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -214,6 +286,39 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetRefundAmountCents(v
 	o.RefundAmountCents = v
 }
 
+// GetCancel returns the Cancel field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetCancel() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Cancel
+}
+
+// GetCancelOk returns a tuple with the Cancel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Cancel) {
+		return nil, false
+	}
+	return &o.Cancel, true
+}
+
+// HasCancel returns a boolean if a field has been set.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasCancel() bool {
+	if o != nil && IsNil(o.Cancel) {
+		return true
+	}
+
+	return false
+}
+
+// SetCancel gets a reference to the given interface{} and assigns it to the Cancel field.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetCancel(v interface{}) {
+	o.Cancel = v
+}
+
 func (o PATCHCapturesCaptureId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -224,6 +329,12 @@ func (o PATCHCapturesCaptureId200ResponseDataAttributes) MarshalJSON() ([]byte, 
 
 func (o PATCHCapturesCaptureId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Succeeded != nil {
+		toSerialize["succeeded"] = o.Succeeded
+	}
+	if o.Forward != nil {
+		toSerialize["_forward"] = o.Forward
+	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
 	}
@@ -238,6 +349,9 @@ func (o PATCHCapturesCaptureId200ResponseDataAttributes) ToMap() (map[string]int
 	}
 	if o.RefundAmountCents != nil {
 		toSerialize["_refund_amount_cents"] = o.RefundAmountCents
+	}
+	if o.Cancel != nil {
+		toSerialize["_cancel"] = o.Cancel
 	}
 	return toSerialize, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -28,10 +28,12 @@ type GETStripeGatewaysStripeGatewayId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
+	// The account (if any) for which the funds of the PaymentIntent are intended.
+	ConnectedAccount interface{} `json:"connected_account,omitempty"`
 	// Indicates if the gateway will accept payment methods enabled in the Stripe dashboard.
 	AutoPayments interface{} `json:"auto_payments,omitempty"`
 	// The gateway webhook endpoint ID, generated automatically.
@@ -257,6 +259,39 @@ func (o *GETStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetMetadata(
 	o.Metadata = v
 }
 
+// GetConnectedAccount returns the ConnectedAccount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetConnectedAccount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ConnectedAccount
+}
+
+// GetConnectedAccountOk returns a tuple with the ConnectedAccount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetConnectedAccountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ConnectedAccount) {
+		return nil, false
+	}
+	return &o.ConnectedAccount, true
+}
+
+// HasConnectedAccount returns a boolean if a field has been set.
+func (o *GETStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasConnectedAccount() bool {
+	if o != nil && IsNil(o.ConnectedAccount) {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectedAccount gets a reference to the given interface{} and assigns it to the ConnectedAccount field.
+func (o *GETStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetConnectedAccount(v interface{}) {
+	o.ConnectedAccount = v
+}
+
 // GetAutoPayments returns the AutoPayments field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPayments() interface{} {
 	if o == nil {
@@ -416,6 +451,9 @@ func (o GETStripeGatewaysStripeGatewayId200ResponseDataAttributes) ToMap() (map[
 	}
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
+	}
+	if o.ConnectedAccount != nil {
+		toSerialize["connected_account"] = o.ConnectedAccount
 	}
 	if o.AutoPayments != nil {
 		toSerialize["auto_payments"] = o.AutoPayments

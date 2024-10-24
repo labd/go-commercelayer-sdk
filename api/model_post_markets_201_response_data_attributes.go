@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,19 +20,27 @@ var _ MappedNullable = &POSTMarkets201ResponseDataAttributes{}
 
 // POSTMarkets201ResponseDataAttributes struct for POSTMarkets201ResponseDataAttributes
 type POSTMarkets201ResponseDataAttributes struct {
-	// The market's internal name
+	// The market's internal name.
 	Name interface{} `json:"name"`
-	// The Facebook Pixed ID
+	// A string that you can use to identify the market (must be unique within the environment).
+	Code interface{} `json:"code,omitempty"`
+	// The Facebook Pixed ID.
 	FacebookPixelId interface{} `json:"facebook_pixel_id,omitempty"`
-	// The checkout URL for this market
+	// The checkout URL for this market.
 	CheckoutUrl interface{} `json:"checkout_url,omitempty"`
 	// The URL used to overwrite prices by an external source.
 	ExternalPricesUrl interface{} `json:"external_prices_url,omitempty"`
 	// The URL used to validate orders by an external source.
 	ExternalOrderValidationUrl interface{} `json:"external_order_validation_url,omitempty"`
+	// When specified indicates the maximum number of shipping line items with cost that will be added to an order.
+	ShippingCostCutoff interface{} `json:"shipping_cost_cutoff,omitempty"`
+	// Send this attribute if you want to mark this resource as disabled.
+	Disable interface{} `json:"_disable,omitempty"`
+	// Send this attribute if you want to mark this resource as enabled.
+	Enable interface{} `json:"_enable,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -80,6 +88,39 @@ func (o *POSTMarkets201ResponseDataAttributes) GetNameOk() (*interface{}, bool) 
 // SetName sets field value
 func (o *POSTMarkets201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTMarkets201ResponseDataAttributes) GetCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Code
+}
+
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTMarkets201ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
+	}
+	return &o.Code, true
+}
+
+// HasCode returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataAttributes) HasCode() bool {
+	if o != nil && IsNil(o.Code) {
+		return true
+	}
+
+	return false
+}
+
+// SetCode gets a reference to the given interface{} and assigns it to the Code field.
+func (o *POSTMarkets201ResponseDataAttributes) SetCode(v interface{}) {
+	o.Code = v
 }
 
 // GetFacebookPixelId returns the FacebookPixelId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -214,6 +255,105 @@ func (o *POSTMarkets201ResponseDataAttributes) SetExternalOrderValidationUrl(v i
 	o.ExternalOrderValidationUrl = v
 }
 
+// GetShippingCostCutoff returns the ShippingCostCutoff field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTMarkets201ResponseDataAttributes) GetShippingCostCutoff() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ShippingCostCutoff
+}
+
+// GetShippingCostCutoffOk returns a tuple with the ShippingCostCutoff field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTMarkets201ResponseDataAttributes) GetShippingCostCutoffOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingCostCutoff) {
+		return nil, false
+	}
+	return &o.ShippingCostCutoff, true
+}
+
+// HasShippingCostCutoff returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataAttributes) HasShippingCostCutoff() bool {
+	if o != nil && IsNil(o.ShippingCostCutoff) {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingCostCutoff gets a reference to the given interface{} and assigns it to the ShippingCostCutoff field.
+func (o *POSTMarkets201ResponseDataAttributes) SetShippingCostCutoff(v interface{}) {
+	o.ShippingCostCutoff = v
+}
+
+// GetDisable returns the Disable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTMarkets201ResponseDataAttributes) GetDisable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Disable
+}
+
+// GetDisableOk returns a tuple with the Disable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTMarkets201ResponseDataAttributes) GetDisableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Disable) {
+		return nil, false
+	}
+	return &o.Disable, true
+}
+
+// HasDisable returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataAttributes) HasDisable() bool {
+	if o != nil && IsNil(o.Disable) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisable gets a reference to the given interface{} and assigns it to the Disable field.
+func (o *POSTMarkets201ResponseDataAttributes) SetDisable(v interface{}) {
+	o.Disable = v
+}
+
+// GetEnable returns the Enable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTMarkets201ResponseDataAttributes) GetEnable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Enable
+}
+
+// GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTMarkets201ResponseDataAttributes) GetEnableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Enable) {
+		return nil, false
+	}
+	return &o.Enable, true
+}
+
+// HasEnable returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataAttributes) HasEnable() bool {
+	if o != nil && IsNil(o.Enable) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnable gets a reference to the given interface{} and assigns it to the Enable field.
+func (o *POSTMarkets201ResponseDataAttributes) SetEnable(v interface{}) {
+	o.Enable = v
+}
+
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTMarkets201ResponseDataAttributes) GetReference() interface{} {
 	if o == nil {
@@ -326,6 +466,9 @@ func (o POSTMarkets201ResponseDataAttributes) ToMap() (map[string]interface{}, e
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.Code != nil {
+		toSerialize["code"] = o.Code
+	}
 	if o.FacebookPixelId != nil {
 		toSerialize["facebook_pixel_id"] = o.FacebookPixelId
 	}
@@ -337,6 +480,15 @@ func (o POSTMarkets201ResponseDataAttributes) ToMap() (map[string]interface{}, e
 	}
 	if o.ExternalOrderValidationUrl != nil {
 		toSerialize["external_order_validation_url"] = o.ExternalOrderValidationUrl
+	}
+	if o.ShippingCostCutoff != nil {
+		toSerialize["shipping_cost_cutoff"] = o.ShippingCostCutoff
+	}
+	if o.Disable != nil {
+		toSerialize["_disable"] = o.Disable
+	}
+	if o.Enable != nil {
+		toSerialize["_enable"] = o.Enable
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

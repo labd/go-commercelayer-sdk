@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,10 @@ var _ MappedNullable = &POSTPriceLists201ResponseDataRelationships{}
 
 // POSTPriceLists201ResponseDataRelationships struct for POSTPriceLists201ResponseDataRelationships
 type POSTPriceLists201ResponseDataRelationships struct {
-	Prices      *POSTPriceLists201ResponseDataRelationshipsPrices           `json:"prices,omitempty"`
-	Attachments *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Prices              *POSTPriceLists201ResponseDataRelationshipsPrices                        `json:"prices,omitempty"`
+	PriceListSchedulers *POSTMarkets201ResponseDataRelationshipsPriceListSchedulers              `json:"price_list_schedulers,omitempty"`
+	Attachments         *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Versions            *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewPOSTPriceLists201ResponseDataRelationships instantiates a new POSTPriceLists201ResponseDataRelationships object
@@ -73,10 +75,42 @@ func (o *POSTPriceLists201ResponseDataRelationships) SetPrices(v POSTPriceLists2
 	o.Prices = &v
 }
 
+// GetPriceListSchedulers returns the PriceListSchedulers field value if set, zero value otherwise.
+func (o *POSTPriceLists201ResponseDataRelationships) GetPriceListSchedulers() POSTMarkets201ResponseDataRelationshipsPriceListSchedulers {
+	if o == nil || IsNil(o.PriceListSchedulers) {
+		var ret POSTMarkets201ResponseDataRelationshipsPriceListSchedulers
+		return ret
+	}
+	return *o.PriceListSchedulers
+}
+
+// GetPriceListSchedulersOk returns a tuple with the PriceListSchedulers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTPriceLists201ResponseDataRelationships) GetPriceListSchedulersOk() (*POSTMarkets201ResponseDataRelationshipsPriceListSchedulers, bool) {
+	if o == nil || IsNil(o.PriceListSchedulers) {
+		return nil, false
+	}
+	return o.PriceListSchedulers, true
+}
+
+// HasPriceListSchedulers returns a boolean if a field has been set.
+func (o *POSTPriceLists201ResponseDataRelationships) HasPriceListSchedulers() bool {
+	if o != nil && !IsNil(o.PriceListSchedulers) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceListSchedulers gets a reference to the given POSTMarkets201ResponseDataRelationshipsPriceListSchedulers and assigns it to the PriceListSchedulers field.
+func (o *POSTPriceLists201ResponseDataRelationships) SetPriceListSchedulers(v POSTMarkets201ResponseDataRelationshipsPriceListSchedulers) {
+	o.PriceListSchedulers = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTPriceLists201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTPriceLists201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -84,7 +118,7 @@ func (o *POSTPriceLists201ResponseDataRelationships) GetAttachments() POSTAvalar
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPriceLists201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTPriceLists201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -100,9 +134,41 @@ func (o *POSTPriceLists201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTPriceLists201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTPriceLists201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTPriceLists201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTPriceLists201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTPriceLists201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTPriceLists201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTPriceLists201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -118,8 +184,14 @@ func (o POSTPriceLists201ResponseDataRelationships) ToMap() (map[string]interfac
 	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
+	if !IsNil(o.PriceListSchedulers) {
+		toSerialize["price_list_schedulers"] = o.PriceListSchedulers
+	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

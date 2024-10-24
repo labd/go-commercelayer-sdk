@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Weight** | Pointer to **interface{}** | The parcel weight, used to automatically calculate the tax rates from the available carrier accounts. | [optional] 
-**UnitOfWeight** | Pointer to **interface{}** | Can be one of &#39;gr&#39;, &#39;lb&#39;, or &#39;oz&#39; | [optional] 
+**UnitOfWeight** | Pointer to **interface{}** | The unit of weight. One of &#39;gr&#39;, &#39;oz&#39;, or &#39;lb&#39;. | [optional] 
 **EelPfc** | Pointer to **interface{}** | When shipping outside the US, you need to provide either an Exemption and Exclusion Legend (EEL) code or a Proof of Filing Citation (PFC). Which you need is based on the value of the goods being shipped. Value can be one of \&quot;EEL\&quot; o \&quot;PFC\&quot;. | [optional] 
-**ContentsType** | Pointer to **interface{}** | The type of item you are sending. Can be one of &#39;merchandise&#39;, &#39;gift&#39;, &#39;documents&#39;, &#39;returned_goods&#39;, &#39;sample&#39;, or &#39;other&#39;. | [optional] 
+**ContentsType** | Pointer to **interface{}** | The type of item you are sending. | [optional] 
 **ContentsExplanation** | Pointer to **interface{}** | If you specify &#39;other&#39; in the &#39;contents_type&#39; attribute, you must supply a brief description in this attribute. | [optional] 
-**CustomsCertify** | Pointer to **interface{}** | Indicates if the provided information is accurate | [optional] 
+**CustomsCertify** | Pointer to **interface{}** | Indicates if the provided information is accurate. | [optional] 
 **CustomsSigner** | Pointer to **interface{}** | This is the name of the person who is certifying that the information provided on the customs form is accurate. Use a name of the person in your organization who is responsible for this. | [optional] 
 **NonDeliveryOption** | Pointer to **interface{}** | In case the shipment cannot be delivered, this option tells the carrier what you want to happen to the parcel. You can pass either &#39;return&#39;, or &#39;abandon&#39;. The value defaults to &#39;return&#39;. If you pass &#39;abandon&#39;, you will not receive the parcel back if it cannot be delivered. | [optional] 
 **RestrictionType** | Pointer to **interface{}** | Describes if your parcel requires any special treatment or quarantine when entering the country. Can be one of &#39;none&#39;, &#39;other&#39;, &#39;quarantine&#39;, or &#39;sanitary_phytosanitary_inspection&#39;. | [optional] 
@@ -24,11 +24,12 @@ Name | Type | Description | Notes
 **TrackingStatusDetail** | Pointer to **interface{}** | Additional information about the tracking status, automatically updated in real time by the shipping carrier. | [optional] 
 **TrackingStatusUpdatedAt** | Pointer to **interface{}** | Time at which the parcel&#39;s tracking status was last updated. | [optional] 
 **TrackingDetails** | Pointer to **interface{}** | The parcel&#39;s full tracking history, automatically updated in real time by the shipping carrier. | [optional] 
-**CarrierWeightOz** | Pointer to **interface{}** | The weight of the parcel as measured by the carrier in ounces (if available) | [optional] 
-**SignedBy** | Pointer to **interface{}** | The name of the person who signed for the parcel (if available) | [optional] 
+**CarrierWeightOz** | Pointer to **interface{}** | The weight of the parcel as measured by the carrier in ounces (if available). | [optional] 
+**SignedBy** | Pointer to **interface{}** | The name of the person who signed for the parcel (if available). | [optional] 
 **Incoterm** | Pointer to **interface{}** | The type of Incoterm (if available). | [optional] 
+**DeliveryConfirmation** | Pointer to **interface{}** | The type of delivery confirmation option upon delivery. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -855,6 +856,41 @@ HasIncoterm returns a boolean if a field has been set.
 `func (o *PATCHParcelsParcelId200ResponseDataAttributes) UnsetIncoterm()`
 
 UnsetIncoterm ensures that no value is present for Incoterm, not even an explicit nil
+### GetDeliveryConfirmation
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetDeliveryConfirmation() interface{}`
+
+GetDeliveryConfirmation returns the DeliveryConfirmation field if non-nil, zero value otherwise.
+
+### GetDeliveryConfirmationOk
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetDeliveryConfirmationOk() (*interface{}, bool)`
+
+GetDeliveryConfirmationOk returns a tuple with the DeliveryConfirmation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeliveryConfirmation
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetDeliveryConfirmation(v interface{})`
+
+SetDeliveryConfirmation sets DeliveryConfirmation field to given value.
+
+### HasDeliveryConfirmation
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasDeliveryConfirmation() bool`
+
+HasDeliveryConfirmation returns a boolean if a field has been set.
+
+### SetDeliveryConfirmationNil
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetDeliveryConfirmationNil(b bool)`
+
+ SetDeliveryConfirmationNil sets the value for DeliveryConfirmation to be an explicit nil
+
+### UnsetDeliveryConfirmation
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) UnsetDeliveryConfirmation()`
+
+UnsetDeliveryConfirmation ensures that no value is present for DeliveryConfirmation, not even an explicit nil
 ### GetReference
 
 `func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReference() interface{}`

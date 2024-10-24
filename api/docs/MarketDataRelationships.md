@@ -6,11 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Merchant** | Pointer to [**MarketDataRelationshipsMerchant**](MarketDataRelationshipsMerchant.md) |  | [optional] 
 **PriceList** | Pointer to [**MarketDataRelationshipsPriceList**](MarketDataRelationshipsPriceList.md) |  | [optional] 
+**BasePriceList** | Pointer to [**MarketDataRelationshipsPriceList**](MarketDataRelationshipsPriceList.md) |  | [optional] 
 **InventoryModel** | Pointer to [**InventoryReturnLocationDataRelationshipsInventoryModel**](InventoryReturnLocationDataRelationshipsInventoryModel.md) |  | [optional] 
 **SubscriptionModel** | Pointer to [**MarketDataRelationshipsSubscriptionModel**](MarketDataRelationshipsSubscriptionModel.md) |  | [optional] 
 **TaxCalculator** | Pointer to [**MarketDataRelationshipsTaxCalculator**](MarketDataRelationshipsTaxCalculator.md) |  | [optional] 
 **CustomerGroup** | Pointer to [**CustomerDataRelationshipsCustomerGroup**](CustomerDataRelationshipsCustomerGroup.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**Geocoder** | Pointer to [**AddressDataRelationshipsGeocoder**](AddressDataRelationshipsGeocoder.md) |  | [optional] 
+**PriceListSchedulers** | Pointer to [**MarketDataRelationshipsPriceListSchedulers**](MarketDataRelationshipsPriceListSchedulers.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -80,6 +84,31 @@ SetPriceList sets PriceList field to given value.
 `func (o *MarketDataRelationships) HasPriceList() bool`
 
 HasPriceList returns a boolean if a field has been set.
+
+### GetBasePriceList
+
+`func (o *MarketDataRelationships) GetBasePriceList() MarketDataRelationshipsPriceList`
+
+GetBasePriceList returns the BasePriceList field if non-nil, zero value otherwise.
+
+### GetBasePriceListOk
+
+`func (o *MarketDataRelationships) GetBasePriceListOk() (*MarketDataRelationshipsPriceList, bool)`
+
+GetBasePriceListOk returns a tuple with the BasePriceList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBasePriceList
+
+`func (o *MarketDataRelationships) SetBasePriceList(v MarketDataRelationshipsPriceList)`
+
+SetBasePriceList sets BasePriceList field to given value.
+
+### HasBasePriceList
+
+`func (o *MarketDataRelationships) HasBasePriceList() bool`
+
+HasBasePriceList returns a boolean if a field has been set.
 
 ### GetInventoryModel
 
@@ -181,22 +210,72 @@ SetCustomerGroup sets CustomerGroup field to given value.
 
 HasCustomerGroup returns a boolean if a field has been set.
 
+### GetGeocoder
+
+`func (o *MarketDataRelationships) GetGeocoder() AddressDataRelationshipsGeocoder`
+
+GetGeocoder returns the Geocoder field if non-nil, zero value otherwise.
+
+### GetGeocoderOk
+
+`func (o *MarketDataRelationships) GetGeocoderOk() (*AddressDataRelationshipsGeocoder, bool)`
+
+GetGeocoderOk returns a tuple with the Geocoder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGeocoder
+
+`func (o *MarketDataRelationships) SetGeocoder(v AddressDataRelationshipsGeocoder)`
+
+SetGeocoder sets Geocoder field to given value.
+
+### HasGeocoder
+
+`func (o *MarketDataRelationships) HasGeocoder() bool`
+
+HasGeocoder returns a boolean if a field has been set.
+
+### GetPriceListSchedulers
+
+`func (o *MarketDataRelationships) GetPriceListSchedulers() MarketDataRelationshipsPriceListSchedulers`
+
+GetPriceListSchedulers returns the PriceListSchedulers field if non-nil, zero value otherwise.
+
+### GetPriceListSchedulersOk
+
+`func (o *MarketDataRelationships) GetPriceListSchedulersOk() (*MarketDataRelationshipsPriceListSchedulers, bool)`
+
+GetPriceListSchedulersOk returns a tuple with the PriceListSchedulers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceListSchedulers
+
+`func (o *MarketDataRelationships) SetPriceListSchedulers(v MarketDataRelationshipsPriceListSchedulers)`
+
+SetPriceListSchedulers sets PriceListSchedulers field to given value.
+
+### HasPriceListSchedulers
+
+`func (o *MarketDataRelationships) HasPriceListSchedulers() bool`
+
+HasPriceListSchedulers returns a boolean if a field has been set.
+
 ### GetAttachments
 
-`func (o *MarketDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *MarketDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *MarketDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *MarketDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *MarketDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *MarketDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -205,6 +284,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *MarketDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *MarketDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *MarketDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *MarketDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *MarketDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

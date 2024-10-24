@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,12 @@ var _ MappedNullable = &StockLineItemDataRelationships{}
 
 // StockLineItemDataRelationships struct for StockLineItemDataRelationships
 type StockLineItemDataRelationships struct {
-	Shipment  *OrderDataRelationshipsShipments         `json:"shipment,omitempty"`
-	LineItem  *LineItemOptionDataRelationshipsLineItem `json:"line_item,omitempty"`
-	StockItem *SkuDataRelationshipsStockItems          `json:"stock_item,omitempty"`
+	Shipment         *LineItemDataRelationshipsShipment          `json:"shipment,omitempty"`
+	LineItem         *LineItemOptionDataRelationshipsLineItem    `json:"line_item,omitempty"`
+	StockItem        *ReservedStockDataRelationshipsStockItem    `json:"stock_item,omitempty"`
+	Sku              *BundleDataRelationshipsSkus                `json:"sku,omitempty"`
+	StockReservation *LineItemDataRelationshipsStockReservations `json:"stock_reservation,omitempty"`
+	Versions         *AddressDataRelationshipsVersions           `json:"versions,omitempty"`
 }
 
 // NewStockLineItemDataRelationships instantiates a new StockLineItemDataRelationships object
@@ -43,9 +46,9 @@ func NewStockLineItemDataRelationshipsWithDefaults() *StockLineItemDataRelations
 }
 
 // GetShipment returns the Shipment field value if set, zero value otherwise.
-func (o *StockLineItemDataRelationships) GetShipment() OrderDataRelationshipsShipments {
+func (o *StockLineItemDataRelationships) GetShipment() LineItemDataRelationshipsShipment {
 	if o == nil || IsNil(o.Shipment) {
-		var ret OrderDataRelationshipsShipments
+		var ret LineItemDataRelationshipsShipment
 		return ret
 	}
 	return *o.Shipment
@@ -53,7 +56,7 @@ func (o *StockLineItemDataRelationships) GetShipment() OrderDataRelationshipsShi
 
 // GetShipmentOk returns a tuple with the Shipment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockLineItemDataRelationships) GetShipmentOk() (*OrderDataRelationshipsShipments, bool) {
+func (o *StockLineItemDataRelationships) GetShipmentOk() (*LineItemDataRelationshipsShipment, bool) {
 	if o == nil || IsNil(o.Shipment) {
 		return nil, false
 	}
@@ -69,8 +72,8 @@ func (o *StockLineItemDataRelationships) HasShipment() bool {
 	return false
 }
 
-// SetShipment gets a reference to the given OrderDataRelationshipsShipments and assigns it to the Shipment field.
-func (o *StockLineItemDataRelationships) SetShipment(v OrderDataRelationshipsShipments) {
+// SetShipment gets a reference to the given LineItemDataRelationshipsShipment and assigns it to the Shipment field.
+func (o *StockLineItemDataRelationships) SetShipment(v LineItemDataRelationshipsShipment) {
 	o.Shipment = &v
 }
 
@@ -107,9 +110,9 @@ func (o *StockLineItemDataRelationships) SetLineItem(v LineItemOptionDataRelatio
 }
 
 // GetStockItem returns the StockItem field value if set, zero value otherwise.
-func (o *StockLineItemDataRelationships) GetStockItem() SkuDataRelationshipsStockItems {
+func (o *StockLineItemDataRelationships) GetStockItem() ReservedStockDataRelationshipsStockItem {
 	if o == nil || IsNil(o.StockItem) {
-		var ret SkuDataRelationshipsStockItems
+		var ret ReservedStockDataRelationshipsStockItem
 		return ret
 	}
 	return *o.StockItem
@@ -117,7 +120,7 @@ func (o *StockLineItemDataRelationships) GetStockItem() SkuDataRelationshipsStoc
 
 // GetStockItemOk returns a tuple with the StockItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockLineItemDataRelationships) GetStockItemOk() (*SkuDataRelationshipsStockItems, bool) {
+func (o *StockLineItemDataRelationships) GetStockItemOk() (*ReservedStockDataRelationshipsStockItem, bool) {
 	if o == nil || IsNil(o.StockItem) {
 		return nil, false
 	}
@@ -133,9 +136,105 @@ func (o *StockLineItemDataRelationships) HasStockItem() bool {
 	return false
 }
 
-// SetStockItem gets a reference to the given SkuDataRelationshipsStockItems and assigns it to the StockItem field.
-func (o *StockLineItemDataRelationships) SetStockItem(v SkuDataRelationshipsStockItems) {
+// SetStockItem gets a reference to the given ReservedStockDataRelationshipsStockItem and assigns it to the StockItem field.
+func (o *StockLineItemDataRelationships) SetStockItem(v ReservedStockDataRelationshipsStockItem) {
 	o.StockItem = &v
+}
+
+// GetSku returns the Sku field value if set, zero value otherwise.
+func (o *StockLineItemDataRelationships) GetSku() BundleDataRelationshipsSkus {
+	if o == nil || IsNil(o.Sku) {
+		var ret BundleDataRelationshipsSkus
+		return ret
+	}
+	return *o.Sku
+}
+
+// GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StockLineItemDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+	if o == nil || IsNil(o.Sku) {
+		return nil, false
+	}
+	return o.Sku, true
+}
+
+// HasSku returns a boolean if a field has been set.
+func (o *StockLineItemDataRelationships) HasSku() bool {
+	if o != nil && !IsNil(o.Sku) {
+		return true
+	}
+
+	return false
+}
+
+// SetSku gets a reference to the given BundleDataRelationshipsSkus and assigns it to the Sku field.
+func (o *StockLineItemDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+	o.Sku = &v
+}
+
+// GetStockReservation returns the StockReservation field value if set, zero value otherwise.
+func (o *StockLineItemDataRelationships) GetStockReservation() LineItemDataRelationshipsStockReservations {
+	if o == nil || IsNil(o.StockReservation) {
+		var ret LineItemDataRelationshipsStockReservations
+		return ret
+	}
+	return *o.StockReservation
+}
+
+// GetStockReservationOk returns a tuple with the StockReservation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StockLineItemDataRelationships) GetStockReservationOk() (*LineItemDataRelationshipsStockReservations, bool) {
+	if o == nil || IsNil(o.StockReservation) {
+		return nil, false
+	}
+	return o.StockReservation, true
+}
+
+// HasStockReservation returns a boolean if a field has been set.
+func (o *StockLineItemDataRelationships) HasStockReservation() bool {
+	if o != nil && !IsNil(o.StockReservation) {
+		return true
+	}
+
+	return false
+}
+
+// SetStockReservation gets a reference to the given LineItemDataRelationshipsStockReservations and assigns it to the StockReservation field.
+func (o *StockLineItemDataRelationships) SetStockReservation(v LineItemDataRelationshipsStockReservations) {
+	o.StockReservation = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *StockLineItemDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StockLineItemDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *StockLineItemDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *StockLineItemDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o StockLineItemDataRelationships) MarshalJSON() ([]byte, error) {
@@ -156,6 +255,15 @@ func (o StockLineItemDataRelationships) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.StockItem) {
 		toSerialize["stock_item"] = o.StockItem
+	}
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.StockReservation) {
+		toSerialize["stock_reservation"] = o.StockReservation
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

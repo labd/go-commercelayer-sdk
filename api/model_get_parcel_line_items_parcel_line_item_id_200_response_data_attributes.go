@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,10 @@ var _ MappedNullable = &GETParcelLineItemsParcelLineItemId200ResponseDataAttribu
 
 // GETParcelLineItemsParcelLineItemId200ResponseDataAttributes struct for GETParcelLineItemsParcelLineItemId200ResponseDataAttributes
 type GETParcelLineItemsParcelLineItemId200ResponseDataAttributes struct {
-	// The code of the SKU of the associated shipment_line_item.
+	// The code of the associated SKU.
 	SkuCode interface{} `json:"sku_code,omitempty"`
+	// The code of the associated bundle.
+	BundleCode interface{} `json:"bundle_code,omitempty"`
 	// The parcel line item quantity.
 	Quantity interface{} `json:"quantity,omitempty"`
 	// The internal name of the associated line item.
@@ -34,7 +36,7 @@ type GETParcelLineItemsParcelLineItemId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -88,6 +90,39 @@ func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) HasSkuCode
 // SetSkuCode gets a reference to the given interface{} and assigns it to the SkuCode field.
 func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) SetSkuCode(v interface{}) {
 	o.SkuCode = v
+}
+
+// GetBundleCode returns the BundleCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) GetBundleCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.BundleCode
+}
+
+// GetBundleCodeOk returns a tuple with the BundleCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) GetBundleCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.BundleCode) {
+		return nil, false
+	}
+	return &o.BundleCode, true
+}
+
+// HasBundleCode returns a boolean if a field has been set.
+func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) HasBundleCode() bool {
+	if o != nil && IsNil(o.BundleCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetBundleCode gets a reference to the given interface{} and assigns it to the BundleCode field.
+func (o *GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) SetBundleCode(v interface{}) {
+	o.BundleCode = v
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -366,6 +401,9 @@ func (o GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) ToMap() (ma
 	toSerialize := map[string]interface{}{}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
+	}
+	if o.BundleCode != nil {
+		toSerialize["bundle_code"] = o.BundleCode
 	}
 	if o.Quantity != nil {
 		toSerialize["quantity"] = o.Quantity

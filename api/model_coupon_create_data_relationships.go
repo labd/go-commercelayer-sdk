@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,14 +20,16 @@ var _ MappedNullable = &CouponCreateDataRelationships{}
 
 // CouponCreateDataRelationships struct for CouponCreateDataRelationships
 type CouponCreateDataRelationships struct {
-	PromotionRule CouponCreateDataRelationshipsPromotionRule `json:"promotion_rule"`
+	PromotionRule   BuyXPayYPromotionCreateDataRelationshipsCouponCodesPromotionRule `json:"promotion_rule"`
+	CouponRecipient *CouponCreateDataRelationshipsCouponRecipient                    `json:"coupon_recipient,omitempty"`
+	Tags            *AddressCreateDataRelationshipsTags                              `json:"tags,omitempty"`
 }
 
 // NewCouponCreateDataRelationships instantiates a new CouponCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponCreateDataRelationships(promotionRule CouponCreateDataRelationshipsPromotionRule) *CouponCreateDataRelationships {
+func NewCouponCreateDataRelationships(promotionRule BuyXPayYPromotionCreateDataRelationshipsCouponCodesPromotionRule) *CouponCreateDataRelationships {
 	this := CouponCreateDataRelationships{}
 	this.PromotionRule = promotionRule
 	return &this
@@ -42,9 +44,9 @@ func NewCouponCreateDataRelationshipsWithDefaults() *CouponCreateDataRelationshi
 }
 
 // GetPromotionRule returns the PromotionRule field value
-func (o *CouponCreateDataRelationships) GetPromotionRule() CouponCreateDataRelationshipsPromotionRule {
+func (o *CouponCreateDataRelationships) GetPromotionRule() BuyXPayYPromotionCreateDataRelationshipsCouponCodesPromotionRule {
 	if o == nil {
-		var ret CouponCreateDataRelationshipsPromotionRule
+		var ret BuyXPayYPromotionCreateDataRelationshipsCouponCodesPromotionRule
 		return ret
 	}
 
@@ -53,7 +55,7 @@ func (o *CouponCreateDataRelationships) GetPromotionRule() CouponCreateDataRelat
 
 // GetPromotionRuleOk returns a tuple with the PromotionRule field value
 // and a boolean to check if the value has been set.
-func (o *CouponCreateDataRelationships) GetPromotionRuleOk() (*CouponCreateDataRelationshipsPromotionRule, bool) {
+func (o *CouponCreateDataRelationships) GetPromotionRuleOk() (*BuyXPayYPromotionCreateDataRelationshipsCouponCodesPromotionRule, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,8 +63,72 @@ func (o *CouponCreateDataRelationships) GetPromotionRuleOk() (*CouponCreateDataR
 }
 
 // SetPromotionRule sets field value
-func (o *CouponCreateDataRelationships) SetPromotionRule(v CouponCreateDataRelationshipsPromotionRule) {
+func (o *CouponCreateDataRelationships) SetPromotionRule(v BuyXPayYPromotionCreateDataRelationshipsCouponCodesPromotionRule) {
 	o.PromotionRule = v
+}
+
+// GetCouponRecipient returns the CouponRecipient field value if set, zero value otherwise.
+func (o *CouponCreateDataRelationships) GetCouponRecipient() CouponCreateDataRelationshipsCouponRecipient {
+	if o == nil || IsNil(o.CouponRecipient) {
+		var ret CouponCreateDataRelationshipsCouponRecipient
+		return ret
+	}
+	return *o.CouponRecipient
+}
+
+// GetCouponRecipientOk returns a tuple with the CouponRecipient field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CouponCreateDataRelationships) GetCouponRecipientOk() (*CouponCreateDataRelationshipsCouponRecipient, bool) {
+	if o == nil || IsNil(o.CouponRecipient) {
+		return nil, false
+	}
+	return o.CouponRecipient, true
+}
+
+// HasCouponRecipient returns a boolean if a field has been set.
+func (o *CouponCreateDataRelationships) HasCouponRecipient() bool {
+	if o != nil && !IsNil(o.CouponRecipient) {
+		return true
+	}
+
+	return false
+}
+
+// SetCouponRecipient gets a reference to the given CouponCreateDataRelationshipsCouponRecipient and assigns it to the CouponRecipient field.
+func (o *CouponCreateDataRelationships) SetCouponRecipient(v CouponCreateDataRelationshipsCouponRecipient) {
+	o.CouponRecipient = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *CouponCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CouponCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *CouponCreateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *CouponCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
 }
 
 func (o CouponCreateDataRelationships) MarshalJSON() ([]byte, error) {
@@ -76,6 +142,12 @@ func (o CouponCreateDataRelationships) MarshalJSON() ([]byte, error) {
 func (o CouponCreateDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["promotion_rule"] = o.PromotionRule
+	if !IsNil(o.CouponRecipient) {
+		toSerialize["coupon_recipient"] = o.CouponRecipient
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
 	return toSerialize, nil
 }
 

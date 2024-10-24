@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,98 @@ import (
 
 // ShipmentsApiService ShipmentsApi service
 type ShipmentsApiService service
+
+type ShipmentsApiDELETEShipmentsShipmentIdRequest struct {
+	ctx        context.Context
+	ApiService *ShipmentsApiService
+	shipmentId interface{}
+}
+
+func (r ShipmentsApiDELETEShipmentsShipmentIdRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DELETEShipmentsShipmentIdExecute(r)
+}
+
+/*
+DELETEShipmentsShipmentId Delete a shipment
+
+Delete a shipment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return ShipmentsApiDELETEShipmentsShipmentIdRequest
+*/
+func (a *ShipmentsApiService) DELETEShipmentsShipmentId(ctx context.Context, shipmentId interface{}) ShipmentsApiDELETEShipmentsShipmentIdRequest {
+	return ShipmentsApiDELETEShipmentsShipmentIdRequest{
+		ApiService: a,
+		ctx:        ctx,
+		shipmentId: shipmentId,
+	}
+}
+
+// Execute executes the request
+func (a *ShipmentsApiService) DELETEShipmentsShipmentIdExecute(r ShipmentsApiDELETEShipmentsShipmentIdRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShipmentsApiService.DELETEShipmentsShipmentId")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipments/{shipmentId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
 
 type ShipmentsApiGETOrderIdShipmentsRequest struct {
 	ctx        context.Context
@@ -673,6 +765,117 @@ func (a *ShipmentsApiService) PATCHShipmentsShipmentIdExecute(r ShipmentsApiPATC
 	}
 	// body params
 	localVarPostBody = r.shipmentUpdate
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ShipmentsApiPOSTShipmentsRequest struct {
+	ctx            context.Context
+	ApiService     *ShipmentsApiService
+	shipmentCreate *ShipmentCreate
+}
+
+func (r ShipmentsApiPOSTShipmentsRequest) ShipmentCreate(shipmentCreate ShipmentCreate) ShipmentsApiPOSTShipmentsRequest {
+	r.shipmentCreate = &shipmentCreate
+	return r
+}
+
+func (r ShipmentsApiPOSTShipmentsRequest) Execute() (*POSTShipments201Response, *http.Response, error) {
+	return r.ApiService.POSTShipmentsExecute(r)
+}
+
+/*
+POSTShipments Create a shipment
+
+Create a shipment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ShipmentsApiPOSTShipmentsRequest
+*/
+func (a *ShipmentsApiService) POSTShipments(ctx context.Context) ShipmentsApiPOSTShipmentsRequest {
+	return ShipmentsApiPOSTShipmentsRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return POSTShipments201Response
+func (a *ShipmentsApiService) POSTShipmentsExecute(r ShipmentsApiPOSTShipmentsRequest) (*POSTShipments201Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTShipments201Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShipmentsApiService.POSTShipments")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipments"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.shipmentCreate == nil {
+		return localVarReturnValue, nil, reportError("shipmentCreate is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/vnd.api+json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.shipmentCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

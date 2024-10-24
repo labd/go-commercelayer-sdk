@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Succeeded** | Pointer to **interface{}** | Indicates if the transaction is successful. | [optional] 
+**Forward** | Pointer to **interface{}** | Send this attribute if you want to forward a stuck transaction to succeeded and update associated order states accordingly. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **Refund** | Pointer to **interface{}** | Send this attribute if you want to create a refund for this capture. | [optional] 
-**RefundAmountCents** | Pointer to **interface{}** | The associated refund amount, in cents. | [optional] 
+**RefundAmountCents** | Pointer to **interface{}** | Send this attribute as a value in cents if you want to overwrite the amount to be refunded. | [optional] 
+**Cancel** | Pointer to **interface{}** | Send this attribute if you want to refund a succeeded capture of a pending order (which is left unpaid). | [optional] 
 
 ## Methods
 
@@ -29,6 +32,76 @@ NewPATCHCapturesCaptureId200ResponseDataAttributesWithDefaults instantiates a ne
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetSucceeded
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetSucceeded() interface{}`
+
+GetSucceeded returns the Succeeded field if non-nil, zero value otherwise.
+
+### GetSucceededOk
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetSucceededOk() (*interface{}, bool)`
+
+GetSucceededOk returns a tuple with the Succeeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSucceeded
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetSucceeded(v interface{})`
+
+SetSucceeded sets Succeeded field to given value.
+
+### HasSucceeded
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasSucceeded() bool`
+
+HasSucceeded returns a boolean if a field has been set.
+
+### SetSucceededNil
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetSucceededNil(b bool)`
+
+ SetSucceededNil sets the value for Succeeded to be an explicit nil
+
+### UnsetSucceeded
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) UnsetSucceeded()`
+
+UnsetSucceeded ensures that no value is present for Succeeded, not even an explicit nil
+### GetForward
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetForward() interface{}`
+
+GetForward returns the Forward field if non-nil, zero value otherwise.
+
+### GetForwardOk
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetForwardOk() (*interface{}, bool)`
+
+GetForwardOk returns a tuple with the Forward field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForward
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetForward(v interface{})`
+
+SetForward sets Forward field to given value.
+
+### HasForward
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasForward() bool`
+
+HasForward returns a boolean if a field has been set.
+
+### SetForwardNil
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetForwardNil(b bool)`
+
+ SetForwardNil sets the value for Forward to be an explicit nil
+
+### UnsetForward
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) UnsetForward()`
+
+UnsetForward ensures that no value is present for Forward, not even an explicit nil
 ### GetReference
 
 `func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReference() interface{}`
@@ -204,6 +277,41 @@ HasRefundAmountCents returns a boolean if a field has been set.
 `func (o *PATCHCapturesCaptureId200ResponseDataAttributes) UnsetRefundAmountCents()`
 
 UnsetRefundAmountCents ensures that no value is present for RefundAmountCents, not even an explicit nil
+### GetCancel
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetCancel() interface{}`
+
+GetCancel returns the Cancel field if non-nil, zero value otherwise.
+
+### GetCancelOk
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool)`
+
+GetCancelOk returns a tuple with the Cancel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancel
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetCancel(v interface{})`
+
+SetCancel sets Cancel field to given value.
+
+### HasCancel
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasCancel() bool`
+
+HasCancel returns a boolean if a field has been set.
+
+### SetCancelNil
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetCancelNil(b bool)`
+
+ SetCancelNil sets the value for Cancel to be an explicit nil
+
+### UnsetCancel
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) UnsetCancel()`
+
+UnsetCancel ensures that no value is present for Cancel, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

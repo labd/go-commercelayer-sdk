@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,7 @@ type FixedPricePromotionData struct {
 	// The resource's type
 	Type          interface{}                                                           `json:"type"`
 	Attributes    GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionDataRelationships                                 `json:"relationships,omitempty"`
+	Relationships *BuyXPayYPromotionDataRelationships                                   `json:"relationships,omitempty"`
 }
 
 // NewFixedPricePromotionData instantiates a new FixedPricePromotionData object
@@ -96,9 +96,9 @@ func (o *FixedPricePromotionData) SetAttributes(v GETFixedPricePromotionsFixedPr
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *FixedPricePromotionData) GetRelationships() FixedPricePromotionDataRelationships {
+func (o *FixedPricePromotionData) GetRelationships() BuyXPayYPromotionDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret FixedPricePromotionDataRelationships
+		var ret BuyXPayYPromotionDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -106,7 +106,7 @@ func (o *FixedPricePromotionData) GetRelationships() FixedPricePromotionDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionData) GetRelationshipsOk() (*FixedPricePromotionDataRelationships, bool) {
+func (o *FixedPricePromotionData) GetRelationshipsOk() (*BuyXPayYPromotionDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -122,8 +122,8 @@ func (o *FixedPricePromotionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given FixedPricePromotionDataRelationships and assigns it to the Relationships field.
-func (o *FixedPricePromotionData) SetRelationships(v FixedPricePromotionDataRelationships) {
+// SetRelationships gets a reference to the given BuyXPayYPromotionDataRelationships and assigns it to the Relationships field.
+func (o *FixedPricePromotionData) SetRelationships(v BuyXPayYPromotionDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,17 @@ var _ MappedNullable = &POSTMarkets201ResponseDataRelationships{}
 
 // POSTMarkets201ResponseDataRelationships struct for POSTMarkets201ResponseDataRelationships
 type POSTMarkets201ResponseDataRelationships struct {
-	Merchant          *POSTMarkets201ResponseDataRelationshipsMerchant                        `json:"merchant,omitempty"`
-	PriceList         *POSTMarkets201ResponseDataRelationshipsPriceList                       `json:"price_list,omitempty"`
-	InventoryModel    *POSTInventoryReturnLocations201ResponseDataRelationshipsInventoryModel `json:"inventory_model,omitempty"`
-	SubscriptionModel *POSTMarkets201ResponseDataRelationshipsSubscriptionModel               `json:"subscription_model,omitempty"`
-	TaxCalculator     *POSTMarkets201ResponseDataRelationshipsTaxCalculator                   `json:"tax_calculator,omitempty"`
-	CustomerGroup     *POSTCustomers201ResponseDataRelationshipsCustomerGroup                 `json:"customer_group,omitempty"`
-	Attachments       *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments             `json:"attachments,omitempty"`
+	Merchant            *POSTMarkets201ResponseDataRelationshipsMerchant                         `json:"merchant,omitempty"`
+	PriceList           *POSTMarkets201ResponseDataRelationshipsPriceList                        `json:"price_list,omitempty"`
+	BasePriceList       *POSTMarkets201ResponseDataRelationshipsBasePriceList                    `json:"base_price_list,omitempty"`
+	InventoryModel      *POSTInventoryReturnLocations201ResponseDataRelationshipsInventoryModel  `json:"inventory_model,omitempty"`
+	SubscriptionModel   *POSTMarkets201ResponseDataRelationshipsSubscriptionModel                `json:"subscription_model,omitempty"`
+	TaxCalculator       *POSTMarkets201ResponseDataRelationshipsTaxCalculator                    `json:"tax_calculator,omitempty"`
+	CustomerGroup       *POSTCustomers201ResponseDataRelationshipsCustomerGroup                  `json:"customer_group,omitempty"`
+	Geocoder            *POSTAddresses201ResponseDataRelationshipsGeocoder                       `json:"geocoder,omitempty"`
+	PriceListSchedulers *POSTMarkets201ResponseDataRelationshipsPriceListSchedulers              `json:"price_list_schedulers,omitempty"`
+	Attachments         *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Versions            *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewPOSTMarkets201ResponseDataRelationships instantiates a new POSTMarkets201ResponseDataRelationships object
@@ -108,6 +112,38 @@ func (o *POSTMarkets201ResponseDataRelationships) HasPriceList() bool {
 // SetPriceList gets a reference to the given POSTMarkets201ResponseDataRelationshipsPriceList and assigns it to the PriceList field.
 func (o *POSTMarkets201ResponseDataRelationships) SetPriceList(v POSTMarkets201ResponseDataRelationshipsPriceList) {
 	o.PriceList = &v
+}
+
+// GetBasePriceList returns the BasePriceList field value if set, zero value otherwise.
+func (o *POSTMarkets201ResponseDataRelationships) GetBasePriceList() POSTMarkets201ResponseDataRelationshipsBasePriceList {
+	if o == nil || IsNil(o.BasePriceList) {
+		var ret POSTMarkets201ResponseDataRelationshipsBasePriceList
+		return ret
+	}
+	return *o.BasePriceList
+}
+
+// GetBasePriceListOk returns a tuple with the BasePriceList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTMarkets201ResponseDataRelationships) GetBasePriceListOk() (*POSTMarkets201ResponseDataRelationshipsBasePriceList, bool) {
+	if o == nil || IsNil(o.BasePriceList) {
+		return nil, false
+	}
+	return o.BasePriceList, true
+}
+
+// HasBasePriceList returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataRelationships) HasBasePriceList() bool {
+	if o != nil && !IsNil(o.BasePriceList) {
+		return true
+	}
+
+	return false
+}
+
+// SetBasePriceList gets a reference to the given POSTMarkets201ResponseDataRelationshipsBasePriceList and assigns it to the BasePriceList field.
+func (o *POSTMarkets201ResponseDataRelationships) SetBasePriceList(v POSTMarkets201ResponseDataRelationshipsBasePriceList) {
+	o.BasePriceList = &v
 }
 
 // GetInventoryModel returns the InventoryModel field value if set, zero value otherwise.
@@ -238,10 +274,74 @@ func (o *POSTMarkets201ResponseDataRelationships) SetCustomerGroup(v POSTCustome
 	o.CustomerGroup = &v
 }
 
+// GetGeocoder returns the Geocoder field value if set, zero value otherwise.
+func (o *POSTMarkets201ResponseDataRelationships) GetGeocoder() POSTAddresses201ResponseDataRelationshipsGeocoder {
+	if o == nil || IsNil(o.Geocoder) {
+		var ret POSTAddresses201ResponseDataRelationshipsGeocoder
+		return ret
+	}
+	return *o.Geocoder
+}
+
+// GetGeocoderOk returns a tuple with the Geocoder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTMarkets201ResponseDataRelationships) GetGeocoderOk() (*POSTAddresses201ResponseDataRelationshipsGeocoder, bool) {
+	if o == nil || IsNil(o.Geocoder) {
+		return nil, false
+	}
+	return o.Geocoder, true
+}
+
+// HasGeocoder returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataRelationships) HasGeocoder() bool {
+	if o != nil && !IsNil(o.Geocoder) {
+		return true
+	}
+
+	return false
+}
+
+// SetGeocoder gets a reference to the given POSTAddresses201ResponseDataRelationshipsGeocoder and assigns it to the Geocoder field.
+func (o *POSTMarkets201ResponseDataRelationships) SetGeocoder(v POSTAddresses201ResponseDataRelationshipsGeocoder) {
+	o.Geocoder = &v
+}
+
+// GetPriceListSchedulers returns the PriceListSchedulers field value if set, zero value otherwise.
+func (o *POSTMarkets201ResponseDataRelationships) GetPriceListSchedulers() POSTMarkets201ResponseDataRelationshipsPriceListSchedulers {
+	if o == nil || IsNil(o.PriceListSchedulers) {
+		var ret POSTMarkets201ResponseDataRelationshipsPriceListSchedulers
+		return ret
+	}
+	return *o.PriceListSchedulers
+}
+
+// GetPriceListSchedulersOk returns a tuple with the PriceListSchedulers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTMarkets201ResponseDataRelationships) GetPriceListSchedulersOk() (*POSTMarkets201ResponseDataRelationshipsPriceListSchedulers, bool) {
+	if o == nil || IsNil(o.PriceListSchedulers) {
+		return nil, false
+	}
+	return o.PriceListSchedulers, true
+}
+
+// HasPriceListSchedulers returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataRelationships) HasPriceListSchedulers() bool {
+	if o != nil && !IsNil(o.PriceListSchedulers) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceListSchedulers gets a reference to the given POSTMarkets201ResponseDataRelationshipsPriceListSchedulers and assigns it to the PriceListSchedulers field.
+func (o *POSTMarkets201ResponseDataRelationships) SetPriceListSchedulers(v POSTMarkets201ResponseDataRelationshipsPriceListSchedulers) {
+	o.PriceListSchedulers = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTMarkets201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTMarkets201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -249,7 +349,7 @@ func (o *POSTMarkets201ResponseDataRelationships) GetAttachments() POSTAvalaraAc
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTMarkets201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTMarkets201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -265,9 +365,41 @@ func (o *POSTMarkets201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTMarkets201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTMarkets201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTMarkets201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTMarkets201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTMarkets201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o POSTMarkets201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -286,6 +418,9 @@ func (o POSTMarkets201ResponseDataRelationships) ToMap() (map[string]interface{}
 	if !IsNil(o.PriceList) {
 		toSerialize["price_list"] = o.PriceList
 	}
+	if !IsNil(o.BasePriceList) {
+		toSerialize["base_price_list"] = o.BasePriceList
+	}
 	if !IsNil(o.InventoryModel) {
 		toSerialize["inventory_model"] = o.InventoryModel
 	}
@@ -298,8 +433,17 @@ func (o POSTMarkets201ResponseDataRelationships) ToMap() (map[string]interface{}
 	if !IsNil(o.CustomerGroup) {
 		toSerialize["customer_group"] = o.CustomerGroup
 	}
+	if !IsNil(o.Geocoder) {
+		toSerialize["geocoder"] = o.Geocoder
+	}
+	if !IsNil(o.PriceListSchedulers) {
+		toSerialize["price_list_schedulers"] = o.PriceListSchedulers
+	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

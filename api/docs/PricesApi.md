@@ -649,7 +649,7 @@ import (
 )
 
 func main() {
-    priceCreate := *openapiclient.NewPriceCreate(*openapiclient.NewPriceCreateData(interface{}(123), *openapiclient.NewPOSTPrices201ResponseDataAttributes(interface{}(10000), interface{}(13000)))) // PriceCreate | 
+    priceCreate := *openapiclient.NewPriceCreate(*openapiclient.NewPriceCreateData(interface{}(123), *openapiclient.NewPOSTPrices201ResponseDataAttributes(interface{}(10000)))) // PriceCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

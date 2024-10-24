@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**DELETEImportsImportId**](ImportsApi.md#DELETEImportsImportId) | **Delete** /imports/{importId} | Delete an import
 [**GETImports**](ImportsApi.md#GETImports) | **Get** /imports | List all imports
 [**GETImportsImportId**](ImportsApi.md#GETImportsImportId) | **Get** /imports/{importId} | Retrieve an import
+[**PATCHImportsImportId**](ImportsApi.md#PATCHImportsImportId) | **Patch** /imports/{importId} | Update an import
 [**POSTImports**](ImportsApi.md#POSTImports) | **Post** /imports | Create an import
 
 
@@ -203,6 +204,78 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/vnd.api+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PATCHImportsImportId
+
+> PATCHImportsImportId200Response PATCHImportsImportId(ctx, importId).ImportUpdate(importUpdate).Execute()
+
+Update an import
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    importUpdate := *openapiclient.NewImportUpdate(*openapiclient.NewImportUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // ImportUpdate | 
+    importId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportsApi.PATCHImportsImportId(context.Background(), importId).ImportUpdate(importUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportsApi.PATCHImportsImportId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PATCHImportsImportId`: PATCHImportsImportId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ImportsApi.PATCHImportsImportId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**importId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPATCHImportsImportIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importUpdate** | [**ImportUpdate**](ImportUpdate.md) |  | 
+
+
+### Return type
+
+[**PATCHImportsImportId200Response**](PATCHImportsImportId200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/vnd.api+json
 - **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -7,10 +7,11 @@ Name | Type | Description | Notes
 **Name** | Pointer to **interface{}** | The carrier account internal name. | [optional] 
 **EasypostType** | Pointer to **interface{}** | The Easypost service carrier type. | [optional] 
 **EasypostId** | Pointer to **interface{}** | The Easypost internal reference ID. | [optional] 
+**Credentials** | Pointer to **interface{}** | The Easypost carrier accounts credentials fields. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -137,6 +138,41 @@ HasEasypostId returns a boolean if a field has been set.
 `func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) UnsetEasypostId()`
 
 UnsetEasypostId ensures that no value is present for EasypostId, not even an explicit nil
+### GetCredentials
+
+`func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) GetCredentials() interface{}`
+
+GetCredentials returns the Credentials field if non-nil, zero value otherwise.
+
+### GetCredentialsOk
+
+`func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) GetCredentialsOk() (*interface{}, bool)`
+
+GetCredentialsOk returns a tuple with the Credentials field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredentials
+
+`func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) SetCredentials(v interface{})`
+
+SetCredentials sets Credentials field to given value.
+
+### HasCredentials
+
+`func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) HasCredentials() bool`
+
+HasCredentials returns a boolean if a field has been set.
+
+### SetCredentialsNil
+
+`func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) SetCredentialsNil(b bool)`
+
+ SetCredentialsNil sets the value for Credentials to be an explicit nil
+
+### UnsetCredentials
+`func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) UnsetCredentials()`
+
+UnsetCredentials ensures that no value is present for Credentials, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) GetCreatedAt() interface{}`

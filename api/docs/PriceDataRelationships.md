@@ -9,7 +9,11 @@ Name | Type | Description | Notes
 **PriceTiers** | Pointer to [**PriceDataRelationshipsPriceTiers**](PriceDataRelationshipsPriceTiers.md) |  | [optional] 
 **PriceVolumeTiers** | Pointer to [**PriceDataRelationshipsPriceVolumeTiers**](PriceDataRelationshipsPriceVolumeTiers.md) |  | [optional] 
 **PriceFrequencyTiers** | Pointer to [**PriceDataRelationshipsPriceFrequencyTiers**](PriceDataRelationshipsPriceFrequencyTiers.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
+**JwtCustomer** | Pointer to [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | [optional] 
+**JwtMarkets** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
+**JwtStockLocations** | Pointer to [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | [optional] 
 
 ## Methods
 
@@ -157,20 +161,20 @@ HasPriceFrequencyTiers returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *PriceDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *PriceDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *PriceDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *PriceDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *PriceDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *PriceDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -179,6 +183,106 @@ SetAttachments sets Attachments field to given value.
 `func (o *PriceDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *PriceDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *PriceDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *PriceDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *PriceDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
+
+### GetJwtCustomer
+
+`func (o *PriceDataRelationships) GetJwtCustomer() CouponRecipientDataRelationshipsCustomer`
+
+GetJwtCustomer returns the JwtCustomer field if non-nil, zero value otherwise.
+
+### GetJwtCustomerOk
+
+`func (o *PriceDataRelationships) GetJwtCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool)`
+
+GetJwtCustomerOk returns a tuple with the JwtCustomer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtCustomer
+
+`func (o *PriceDataRelationships) SetJwtCustomer(v CouponRecipientDataRelationshipsCustomer)`
+
+SetJwtCustomer sets JwtCustomer field to given value.
+
+### HasJwtCustomer
+
+`func (o *PriceDataRelationships) HasJwtCustomer() bool`
+
+HasJwtCustomer returns a boolean if a field has been set.
+
+### GetJwtMarkets
+
+`func (o *PriceDataRelationships) GetJwtMarkets() AvalaraAccountDataRelationshipsMarkets`
+
+GetJwtMarkets returns the JwtMarkets field if non-nil, zero value otherwise.
+
+### GetJwtMarketsOk
+
+`func (o *PriceDataRelationships) GetJwtMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool)`
+
+GetJwtMarketsOk returns a tuple with the JwtMarkets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtMarkets
+
+`func (o *PriceDataRelationships) SetJwtMarkets(v AvalaraAccountDataRelationshipsMarkets)`
+
+SetJwtMarkets sets JwtMarkets field to given value.
+
+### HasJwtMarkets
+
+`func (o *PriceDataRelationships) HasJwtMarkets() bool`
+
+HasJwtMarkets returns a boolean if a field has been set.
+
+### GetJwtStockLocations
+
+`func (o *PriceDataRelationships) GetJwtStockLocations() DeliveryLeadTimeDataRelationshipsStockLocation`
+
+GetJwtStockLocations returns the JwtStockLocations field if non-nil, zero value otherwise.
+
+### GetJwtStockLocationsOk
+
+`func (o *PriceDataRelationships) GetJwtStockLocationsOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+
+GetJwtStockLocationsOk returns a tuple with the JwtStockLocations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtStockLocations
+
+`func (o *PriceDataRelationships) SetJwtStockLocations(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+
+SetJwtStockLocations sets JwtStockLocations field to given value.
+
+### HasJwtStockLocations
+
+`func (o *PriceDataRelationships) HasJwtStockLocations() bool`
+
+HasJwtStockLocations returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

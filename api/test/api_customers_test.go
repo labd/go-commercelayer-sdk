@@ -191,6 +191,19 @@ func Test_api_CustomersApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test CustomersApiService GETPriceIdJwtCustomer", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var priceId interface{}
+
+		httpRes, err := apiClient.CustomersApi.GETPriceIdJwtCustomer(context.Background(), priceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CustomersApiService GETReturnIdCustomer", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -198,6 +211,19 @@ func Test_api_CustomersApiService(t *testing.T) {
 		var returnId interface{}
 
 		httpRes, err := apiClient.CustomersApi.GETReturnIdCustomer(context.Background(), returnId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CustomersApiService GETSkuIdJwtCustomer", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var skuId interface{}
+
+		httpRes, err := apiClient.CustomersApi.GETSkuIdJwtCustomer(context.Background(), skuId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -5,6 +5,7 @@ All URIs are relative to *https://.commercelayer.io/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETEReturnLineItemsReturnLineItemId**](ReturnLineItemsApi.md#DELETEReturnLineItemsReturnLineItemId) | **Delete** /return_line_items/{returnLineItemId} | Delete a return line item
+[**GETLineItemIdReturnLineItems**](ReturnLineItemsApi.md#GETLineItemIdReturnLineItems) | **Get** /line_items/{lineItemId}/return_line_items | Retrieve the return line items associated to the line item
 [**GETReturnIdReturnLineItems**](ReturnLineItemsApi.md#GETReturnIdReturnLineItems) | **Get** /returns/{returnId}/return_line_items | Retrieve the return line items associated to the return
 [**GETReturnLineItems**](ReturnLineItemsApi.md#GETReturnLineItems) | **Get** /return_line_items | List all return line items
 [**GETReturnLineItemsReturnLineItemId**](ReturnLineItemsApi.md#GETReturnLineItemsReturnLineItemId) | **Get** /return_line_items/{returnLineItemId} | Retrieve a return line item
@@ -57,6 +58,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDELETEReturnLineItemsReturnLineItemIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETLineItemIdReturnLineItems
+
+> GETLineItemIdReturnLineItems(ctx, lineItemId).Execute()
+
+Retrieve the return line items associated to the line item
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    lineItemId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.ReturnLineItemsApi.GETLineItemIdReturnLineItems(context.Background(), lineItemId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.GETLineItemIdReturnLineItems``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**lineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETLineItemIdReturnLineItemsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

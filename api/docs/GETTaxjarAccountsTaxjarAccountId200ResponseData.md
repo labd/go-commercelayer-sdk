@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes**](GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationships**](POSTAvalaraAccounts201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTTaxjarAccounts201ResponseDataRelationships**](POSTTaxjarAccounts201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships`
+`func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationships() POSTTaxjarAccounts201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool)`
+`func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationshipsOk() (*POSTTaxjarAccounts201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships)`
+`func (o *GETTaxjarAccountsTaxjarAccountId200ResponseData) SetRelationships(v POSTTaxjarAccounts201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

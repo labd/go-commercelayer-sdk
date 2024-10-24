@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -27,23 +27,33 @@ type OrderDataRelationships struct {
 	AvailablePaymentMethods         *AdyenGatewayDataRelationshipsPaymentMethods            `json:"available_payment_methods,omitempty"`
 	AvailableCustomerPaymentSources *CustomerDataRelationshipsCustomerPaymentSources        `json:"available_customer_payment_sources,omitempty"`
 	AvailableFreeSkus               *BundleDataRelationshipsSkus                            `json:"available_free_skus,omitempty"`
-	AvailableFreeBundles            *OrderDataRelationshipsAvailableFreeBundles             `json:"available_free_bundles,omitempty"`
+	AvailableFreeBundles            *LineItemDataRelationshipsBundle                        `json:"available_free_bundles,omitempty"`
 	PaymentMethod                   *AdyenGatewayDataRelationshipsPaymentMethods            `json:"payment_method,omitempty"`
 	PaymentSource                   *CustomerPaymentSourceDataRelationshipsPaymentSource    `json:"payment_source,omitempty"`
 	LineItems                       *LineItemOptionDataRelationshipsLineItem                `json:"line_items,omitempty"`
-	Shipments                       *OrderDataRelationshipsShipments                        `json:"shipments,omitempty"`
+	LineItemOptions                 *LineItemDataRelationshipsLineItemOptions               `json:"line_item_options,omitempty"`
+	StockReservations               *LineItemDataRelationshipsStockReservations             `json:"stock_reservations,omitempty"`
+	StockLineItems                  *LineItemDataRelationshipsStockLineItems                `json:"stock_line_items,omitempty"`
+	StockTransfers                  *LineItemDataRelationshipsStockTransfers                `json:"stock_transfers,omitempty"`
+	Shipments                       *LineItemDataRelationshipsShipment                      `json:"shipments,omitempty"`
+	PaymentOptions                  *OrderDataRelationshipsPaymentOptions                   `json:"payment_options,omitempty"`
 	Transactions                    *OrderDataRelationshipsTransactions                     `json:"transactions,omitempty"`
 	Authorizations                  *CaptureDataRelationshipsReferenceAuthorization         `json:"authorizations,omitempty"`
 	Captures                        *AuthorizationDataRelationshipsCaptures                 `json:"captures,omitempty"`
 	Voids                           *AuthorizationDataRelationshipsVoids                    `json:"voids,omitempty"`
 	Refunds                         *CaptureDataRelationshipsRefunds                        `json:"refunds,omitempty"`
-	Returns                         *CustomerDataRelationshipsReturns                       `json:"returns,omitempty"`
+	Returns                         *CaptureDataRelationshipsReturn                         `json:"returns,omitempty"`
+	OrderSubscription               *CustomerDataRelationshipsOrderSubscriptions            `json:"order_subscription,omitempty"`
 	OrderSubscriptions              *CustomerDataRelationshipsOrderSubscriptions            `json:"order_subscriptions,omitempty"`
 	OrderFactories                  *OrderSubscriptionDataRelationshipsOrderFactories       `json:"order_factories,omitempty"`
 	OrderCopies                     *OrderDataRelationshipsOrderCopies                      `json:"order_copies,omitempty"`
 	RecurringOrderCopies            *OrderSubscriptionDataRelationshipsRecurringOrderCopies `json:"recurring_order_copies,omitempty"`
-	Attachments                     *AvalaraAccountDataRelationshipsAttachments             `json:"attachments,omitempty"`
-	Events                          *AuthorizationDataRelationshipsEvents                   `json:"events,omitempty"`
+	Attachments                     *AuthorizationDataRelationshipsAttachments              `json:"attachments,omitempty"`
+	Links                           *OrderDataRelationshipsLinks                            `json:"links,omitempty"`
+	ResourceErrors                  *OrderDataRelationshipsResourceErrors                   `json:"resource_errors,omitempty"`
+	Events                          *AddressDataRelationshipsEvents                         `json:"events,omitempty"`
+	Tags                            *AddressDataRelationshipsTags                           `json:"tags,omitempty"`
+	Versions                        *AddressDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewOrderDataRelationships instantiates a new OrderDataRelationships object
@@ -288,9 +298,9 @@ func (o *OrderDataRelationships) SetAvailableFreeSkus(v BundleDataRelationshipsS
 }
 
 // GetAvailableFreeBundles returns the AvailableFreeBundles field value if set, zero value otherwise.
-func (o *OrderDataRelationships) GetAvailableFreeBundles() OrderDataRelationshipsAvailableFreeBundles {
+func (o *OrderDataRelationships) GetAvailableFreeBundles() LineItemDataRelationshipsBundle {
 	if o == nil || IsNil(o.AvailableFreeBundles) {
-		var ret OrderDataRelationshipsAvailableFreeBundles
+		var ret LineItemDataRelationshipsBundle
 		return ret
 	}
 	return *o.AvailableFreeBundles
@@ -298,7 +308,7 @@ func (o *OrderDataRelationships) GetAvailableFreeBundles() OrderDataRelationship
 
 // GetAvailableFreeBundlesOk returns a tuple with the AvailableFreeBundles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDataRelationships) GetAvailableFreeBundlesOk() (*OrderDataRelationshipsAvailableFreeBundles, bool) {
+func (o *OrderDataRelationships) GetAvailableFreeBundlesOk() (*LineItemDataRelationshipsBundle, bool) {
 	if o == nil || IsNil(o.AvailableFreeBundles) {
 		return nil, false
 	}
@@ -314,8 +324,8 @@ func (o *OrderDataRelationships) HasAvailableFreeBundles() bool {
 	return false
 }
 
-// SetAvailableFreeBundles gets a reference to the given OrderDataRelationshipsAvailableFreeBundles and assigns it to the AvailableFreeBundles field.
-func (o *OrderDataRelationships) SetAvailableFreeBundles(v OrderDataRelationshipsAvailableFreeBundles) {
+// SetAvailableFreeBundles gets a reference to the given LineItemDataRelationshipsBundle and assigns it to the AvailableFreeBundles field.
+func (o *OrderDataRelationships) SetAvailableFreeBundles(v LineItemDataRelationshipsBundle) {
 	o.AvailableFreeBundles = &v
 }
 
@@ -415,10 +425,138 @@ func (o *OrderDataRelationships) SetLineItems(v LineItemOptionDataRelationshipsL
 	o.LineItems = &v
 }
 
+// GetLineItemOptions returns the LineItemOptions field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetLineItemOptions() LineItemDataRelationshipsLineItemOptions {
+	if o == nil || IsNil(o.LineItemOptions) {
+		var ret LineItemDataRelationshipsLineItemOptions
+		return ret
+	}
+	return *o.LineItemOptions
+}
+
+// GetLineItemOptionsOk returns a tuple with the LineItemOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetLineItemOptionsOk() (*LineItemDataRelationshipsLineItemOptions, bool) {
+	if o == nil || IsNil(o.LineItemOptions) {
+		return nil, false
+	}
+	return o.LineItemOptions, true
+}
+
+// HasLineItemOptions returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasLineItemOptions() bool {
+	if o != nil && !IsNil(o.LineItemOptions) {
+		return true
+	}
+
+	return false
+}
+
+// SetLineItemOptions gets a reference to the given LineItemDataRelationshipsLineItemOptions and assigns it to the LineItemOptions field.
+func (o *OrderDataRelationships) SetLineItemOptions(v LineItemDataRelationshipsLineItemOptions) {
+	o.LineItemOptions = &v
+}
+
+// GetStockReservations returns the StockReservations field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetStockReservations() LineItemDataRelationshipsStockReservations {
+	if o == nil || IsNil(o.StockReservations) {
+		var ret LineItemDataRelationshipsStockReservations
+		return ret
+	}
+	return *o.StockReservations
+}
+
+// GetStockReservationsOk returns a tuple with the StockReservations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetStockReservationsOk() (*LineItemDataRelationshipsStockReservations, bool) {
+	if o == nil || IsNil(o.StockReservations) {
+		return nil, false
+	}
+	return o.StockReservations, true
+}
+
+// HasStockReservations returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasStockReservations() bool {
+	if o != nil && !IsNil(o.StockReservations) {
+		return true
+	}
+
+	return false
+}
+
+// SetStockReservations gets a reference to the given LineItemDataRelationshipsStockReservations and assigns it to the StockReservations field.
+func (o *OrderDataRelationships) SetStockReservations(v LineItemDataRelationshipsStockReservations) {
+	o.StockReservations = &v
+}
+
+// GetStockLineItems returns the StockLineItems field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetStockLineItems() LineItemDataRelationshipsStockLineItems {
+	if o == nil || IsNil(o.StockLineItems) {
+		var ret LineItemDataRelationshipsStockLineItems
+		return ret
+	}
+	return *o.StockLineItems
+}
+
+// GetStockLineItemsOk returns a tuple with the StockLineItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetStockLineItemsOk() (*LineItemDataRelationshipsStockLineItems, bool) {
+	if o == nil || IsNil(o.StockLineItems) {
+		return nil, false
+	}
+	return o.StockLineItems, true
+}
+
+// HasStockLineItems returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasStockLineItems() bool {
+	if o != nil && !IsNil(o.StockLineItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetStockLineItems gets a reference to the given LineItemDataRelationshipsStockLineItems and assigns it to the StockLineItems field.
+func (o *OrderDataRelationships) SetStockLineItems(v LineItemDataRelationshipsStockLineItems) {
+	o.StockLineItems = &v
+}
+
+// GetStockTransfers returns the StockTransfers field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetStockTransfers() LineItemDataRelationshipsStockTransfers {
+	if o == nil || IsNil(o.StockTransfers) {
+		var ret LineItemDataRelationshipsStockTransfers
+		return ret
+	}
+	return *o.StockTransfers
+}
+
+// GetStockTransfersOk returns a tuple with the StockTransfers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetStockTransfersOk() (*LineItemDataRelationshipsStockTransfers, bool) {
+	if o == nil || IsNil(o.StockTransfers) {
+		return nil, false
+	}
+	return o.StockTransfers, true
+}
+
+// HasStockTransfers returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasStockTransfers() bool {
+	if o != nil && !IsNil(o.StockTransfers) {
+		return true
+	}
+
+	return false
+}
+
+// SetStockTransfers gets a reference to the given LineItemDataRelationshipsStockTransfers and assigns it to the StockTransfers field.
+func (o *OrderDataRelationships) SetStockTransfers(v LineItemDataRelationshipsStockTransfers) {
+	o.StockTransfers = &v
+}
+
 // GetShipments returns the Shipments field value if set, zero value otherwise.
-func (o *OrderDataRelationships) GetShipments() OrderDataRelationshipsShipments {
+func (o *OrderDataRelationships) GetShipments() LineItemDataRelationshipsShipment {
 	if o == nil || IsNil(o.Shipments) {
-		var ret OrderDataRelationshipsShipments
+		var ret LineItemDataRelationshipsShipment
 		return ret
 	}
 	return *o.Shipments
@@ -426,7 +564,7 @@ func (o *OrderDataRelationships) GetShipments() OrderDataRelationshipsShipments 
 
 // GetShipmentsOk returns a tuple with the Shipments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDataRelationships) GetShipmentsOk() (*OrderDataRelationshipsShipments, bool) {
+func (o *OrderDataRelationships) GetShipmentsOk() (*LineItemDataRelationshipsShipment, bool) {
 	if o == nil || IsNil(o.Shipments) {
 		return nil, false
 	}
@@ -442,9 +580,41 @@ func (o *OrderDataRelationships) HasShipments() bool {
 	return false
 }
 
-// SetShipments gets a reference to the given OrderDataRelationshipsShipments and assigns it to the Shipments field.
-func (o *OrderDataRelationships) SetShipments(v OrderDataRelationshipsShipments) {
+// SetShipments gets a reference to the given LineItemDataRelationshipsShipment and assigns it to the Shipments field.
+func (o *OrderDataRelationships) SetShipments(v LineItemDataRelationshipsShipment) {
 	o.Shipments = &v
+}
+
+// GetPaymentOptions returns the PaymentOptions field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetPaymentOptions() OrderDataRelationshipsPaymentOptions {
+	if o == nil || IsNil(o.PaymentOptions) {
+		var ret OrderDataRelationshipsPaymentOptions
+		return ret
+	}
+	return *o.PaymentOptions
+}
+
+// GetPaymentOptionsOk returns a tuple with the PaymentOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetPaymentOptionsOk() (*OrderDataRelationshipsPaymentOptions, bool) {
+	if o == nil || IsNil(o.PaymentOptions) {
+		return nil, false
+	}
+	return o.PaymentOptions, true
+}
+
+// HasPaymentOptions returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasPaymentOptions() bool {
+	if o != nil && !IsNil(o.PaymentOptions) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentOptions gets a reference to the given OrderDataRelationshipsPaymentOptions and assigns it to the PaymentOptions field.
+func (o *OrderDataRelationships) SetPaymentOptions(v OrderDataRelationshipsPaymentOptions) {
+	o.PaymentOptions = &v
 }
 
 // GetTransactions returns the Transactions field value if set, zero value otherwise.
@@ -608,9 +778,9 @@ func (o *OrderDataRelationships) SetRefunds(v CaptureDataRelationshipsRefunds) {
 }
 
 // GetReturns returns the Returns field value if set, zero value otherwise.
-func (o *OrderDataRelationships) GetReturns() CustomerDataRelationshipsReturns {
+func (o *OrderDataRelationships) GetReturns() CaptureDataRelationshipsReturn {
 	if o == nil || IsNil(o.Returns) {
-		var ret CustomerDataRelationshipsReturns
+		var ret CaptureDataRelationshipsReturn
 		return ret
 	}
 	return *o.Returns
@@ -618,7 +788,7 @@ func (o *OrderDataRelationships) GetReturns() CustomerDataRelationshipsReturns {
 
 // GetReturnsOk returns a tuple with the Returns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDataRelationships) GetReturnsOk() (*CustomerDataRelationshipsReturns, bool) {
+func (o *OrderDataRelationships) GetReturnsOk() (*CaptureDataRelationshipsReturn, bool) {
 	if o == nil || IsNil(o.Returns) {
 		return nil, false
 	}
@@ -634,9 +804,41 @@ func (o *OrderDataRelationships) HasReturns() bool {
 	return false
 }
 
-// SetReturns gets a reference to the given CustomerDataRelationshipsReturns and assigns it to the Returns field.
-func (o *OrderDataRelationships) SetReturns(v CustomerDataRelationshipsReturns) {
+// SetReturns gets a reference to the given CaptureDataRelationshipsReturn and assigns it to the Returns field.
+func (o *OrderDataRelationships) SetReturns(v CaptureDataRelationshipsReturn) {
 	o.Returns = &v
+}
+
+// GetOrderSubscription returns the OrderSubscription field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetOrderSubscription() CustomerDataRelationshipsOrderSubscriptions {
+	if o == nil || IsNil(o.OrderSubscription) {
+		var ret CustomerDataRelationshipsOrderSubscriptions
+		return ret
+	}
+	return *o.OrderSubscription
+}
+
+// GetOrderSubscriptionOk returns a tuple with the OrderSubscription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetOrderSubscriptionOk() (*CustomerDataRelationshipsOrderSubscriptions, bool) {
+	if o == nil || IsNil(o.OrderSubscription) {
+		return nil, false
+	}
+	return o.OrderSubscription, true
+}
+
+// HasOrderSubscription returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasOrderSubscription() bool {
+	if o != nil && !IsNil(o.OrderSubscription) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrderSubscription gets a reference to the given CustomerDataRelationshipsOrderSubscriptions and assigns it to the OrderSubscription field.
+func (o *OrderDataRelationships) SetOrderSubscription(v CustomerDataRelationshipsOrderSubscriptions) {
+	o.OrderSubscription = &v
 }
 
 // GetOrderSubscriptions returns the OrderSubscriptions field value if set, zero value otherwise.
@@ -768,9 +970,9 @@ func (o *OrderDataRelationships) SetRecurringOrderCopies(v OrderSubscriptionData
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *OrderDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *OrderDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -778,7 +980,7 @@ func (o *OrderDataRelationships) GetAttachments() AvalaraAccountDataRelationship
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *OrderDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -794,15 +996,79 @@ func (o *OrderDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *OrderDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *OrderDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
+// GetLinks returns the Links field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetLinks() OrderDataRelationshipsLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret OrderDataRelationshipsLinks
+		return ret
+	}
+	return *o.Links
+}
+
+// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetLinksOk() (*OrderDataRelationshipsLinks, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
+	}
+	return o.Links, true
+}
+
+// HasLinks returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasLinks() bool {
+	if o != nil && !IsNil(o.Links) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinks gets a reference to the given OrderDataRelationshipsLinks and assigns it to the Links field.
+func (o *OrderDataRelationships) SetLinks(v OrderDataRelationshipsLinks) {
+	o.Links = &v
+}
+
+// GetResourceErrors returns the ResourceErrors field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetResourceErrors() OrderDataRelationshipsResourceErrors {
+	if o == nil || IsNil(o.ResourceErrors) {
+		var ret OrderDataRelationshipsResourceErrors
+		return ret
+	}
+	return *o.ResourceErrors
+}
+
+// GetResourceErrorsOk returns a tuple with the ResourceErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetResourceErrorsOk() (*OrderDataRelationshipsResourceErrors, bool) {
+	if o == nil || IsNil(o.ResourceErrors) {
+		return nil, false
+	}
+	return o.ResourceErrors, true
+}
+
+// HasResourceErrors returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasResourceErrors() bool {
+	if o != nil && !IsNil(o.ResourceErrors) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceErrors gets a reference to the given OrderDataRelationshipsResourceErrors and assigns it to the ResourceErrors field.
+func (o *OrderDataRelationships) SetResourceErrors(v OrderDataRelationshipsResourceErrors) {
+	o.ResourceErrors = &v
+}
+
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *OrderDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *OrderDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -810,7 +1076,7 @@ func (o *OrderDataRelationships) GetEvents() AuthorizationDataRelationshipsEvent
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *OrderDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -826,9 +1092,73 @@ func (o *OrderDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *OrderDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *OrderDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetTags() AddressDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressDataRelationshipsTags and assigns it to the Tags field.
+func (o *OrderDataRelationships) SetTags(v AddressDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *OrderDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o OrderDataRelationships) MarshalJSON() ([]byte, error) {
@@ -874,8 +1204,23 @@ func (o OrderDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.LineItems) {
 		toSerialize["line_items"] = o.LineItems
 	}
+	if !IsNil(o.LineItemOptions) {
+		toSerialize["line_item_options"] = o.LineItemOptions
+	}
+	if !IsNil(o.StockReservations) {
+		toSerialize["stock_reservations"] = o.StockReservations
+	}
+	if !IsNil(o.StockLineItems) {
+		toSerialize["stock_line_items"] = o.StockLineItems
+	}
+	if !IsNil(o.StockTransfers) {
+		toSerialize["stock_transfers"] = o.StockTransfers
+	}
 	if !IsNil(o.Shipments) {
 		toSerialize["shipments"] = o.Shipments
+	}
+	if !IsNil(o.PaymentOptions) {
+		toSerialize["payment_options"] = o.PaymentOptions
 	}
 	if !IsNil(o.Transactions) {
 		toSerialize["transactions"] = o.Transactions
@@ -895,6 +1240,9 @@ func (o OrderDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Returns) {
 		toSerialize["returns"] = o.Returns
 	}
+	if !IsNil(o.OrderSubscription) {
+		toSerialize["order_subscription"] = o.OrderSubscription
+	}
 	if !IsNil(o.OrderSubscriptions) {
 		toSerialize["order_subscriptions"] = o.OrderSubscriptions
 	}
@@ -910,8 +1258,20 @@ func (o OrderDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
 	}
+	if !IsNil(o.Links) {
+		toSerialize["links"] = o.Links
+	}
+	if !IsNil(o.ResourceErrors) {
+		toSerialize["resource_errors"] = o.ResourceErrors
+	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

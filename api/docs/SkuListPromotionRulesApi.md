@@ -5,6 +5,7 @@ All URIs are relative to *https://.commercelayer.io/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETESkuListPromotionRulesSkuListPromotionRuleId**](SkuListPromotionRulesApi.md#DELETESkuListPromotionRulesSkuListPromotionRuleId) | **Delete** /sku_list_promotion_rules/{skuListPromotionRuleId} | Delete a SKU list promotion rule
+[**GETBuyXPayYPromotionIdSkuListPromotionRule**](SkuListPromotionRulesApi.md#GETBuyXPayYPromotionIdSkuListPromotionRule) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the buy x pay y promotion
 [**GETExternalPromotionIdSkuListPromotionRule**](SkuListPromotionRulesApi.md#GETExternalPromotionIdSkuListPromotionRule) | **Get** /external_promotions/{externalPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the external promotion
 [**GETFixedAmountPromotionIdSkuListPromotionRule**](SkuListPromotionRulesApi.md#GETFixedAmountPromotionIdSkuListPromotionRule) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the fixed amount promotion
 [**GETFixedPricePromotionIdSkuListPromotionRule**](SkuListPromotionRulesApi.md#GETFixedPricePromotionIdSkuListPromotionRule) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the fixed price promotion
@@ -63,6 +64,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETBuyXPayYPromotionIdSkuListPromotionRule
+
+> GETBuyXPayYPromotionIdSkuListPromotionRule(ctx, buyXPayYPromotionId).Execute()
+
+Retrieve the sku list promotion rule associated to the buy x pay y promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    buyXPayYPromotionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.SkuListPromotionRulesApi.GETBuyXPayYPromotionIdSkuListPromotionRule(context.Background(), buyXPayYPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETBuyXPayYPromotionIdSkuListPromotionRule``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**buyXPayYPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETBuyXPayYPromotionIdSkuListPromotionRuleRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

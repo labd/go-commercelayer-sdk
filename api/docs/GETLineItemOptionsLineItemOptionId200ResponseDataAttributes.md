@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **interface{}** | The name of the line item option. When blank, it gets populated with the name of the associated SKU option. | [optional] 
-**Quantity** | Pointer to **interface{}** | The line item option&#39;s quantity | [optional] 
+**Quantity** | Pointer to **interface{}** | The line item option&#39;s quantity. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard, automatically inherited from the order&#39;s market. | [optional] 
-**UnitAmountCents** | Pointer to **interface{}** | The unit amount of the line item option, in cents. When you add a line item option to an order, this is automatically populated from associated SKU option&#39;s price. | [optional] 
+**UnitAmountCents** | Pointer to **interface{}** | The unit amount of the line item option, in cents. When you add a line item option to an order, this is automatically populated from associated SKU option&#39;s price. Cannot be passed by sales channels. | [optional] 
 **UnitAmountFloat** | Pointer to **interface{}** | The unit amount of the line item option, float. This can be useful to track the purchase on thrid party systems, e.g Google Analyitcs Enhanced Ecommerce. | [optional] 
 **FormattedUnitAmount** | Pointer to **interface{}** | The unit amount of the line item option, formatted. This can be useful to display the amount with currency in you views. | [optional] 
 **TotalAmountCents** | Pointer to **interface{}** | The unit amount x quantity, in cents. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods

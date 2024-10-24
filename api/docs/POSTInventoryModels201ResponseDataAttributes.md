@@ -6,9 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **interface{}** | The inventory model&#39;s internal name. | 
 **Strategy** | Pointer to **interface{}** | The inventory model&#39;s shipping strategy: one between &#39;no_split&#39; (default), &#39;split_shipments&#39;, &#39;ship_from_primary&#39; and &#39;ship_from_first_available_or_primary&#39;. | [optional] 
-**StockLocationsCutoff** | Pointer to **interface{}** | The maximum number of stock locations used for inventory computation | [optional] 
+**StockLocationsCutoff** | Pointer to **interface{}** | The maximum number of stock locations used for inventory computation. | [optional] 
+**StockReservationCutoff** | Pointer to **interface{}** | The duration in seconds of the generated stock reservations. | [optional] 
+**PutStockTransfersOnHold** | Pointer to **interface{}** | Indicates if the the stock transfers must be put on hold automatically with the associated shipment. | [optional] 
+**ManualStockDecrement** | Pointer to **interface{}** | Indicates if the the stock will be decremented manually after the order approval. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -130,6 +133,111 @@ HasStockLocationsCutoff returns a boolean if a field has been set.
 `func (o *POSTInventoryModels201ResponseDataAttributes) UnsetStockLocationsCutoff()`
 
 UnsetStockLocationsCutoff ensures that no value is present for StockLocationsCutoff, not even an explicit nil
+### GetStockReservationCutoff
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) GetStockReservationCutoff() interface{}`
+
+GetStockReservationCutoff returns the StockReservationCutoff field if non-nil, zero value otherwise.
+
+### GetStockReservationCutoffOk
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) GetStockReservationCutoffOk() (*interface{}, bool)`
+
+GetStockReservationCutoffOk returns a tuple with the StockReservationCutoff field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStockReservationCutoff
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) SetStockReservationCutoff(v interface{})`
+
+SetStockReservationCutoff sets StockReservationCutoff field to given value.
+
+### HasStockReservationCutoff
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) HasStockReservationCutoff() bool`
+
+HasStockReservationCutoff returns a boolean if a field has been set.
+
+### SetStockReservationCutoffNil
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) SetStockReservationCutoffNil(b bool)`
+
+ SetStockReservationCutoffNil sets the value for StockReservationCutoff to be an explicit nil
+
+### UnsetStockReservationCutoff
+`func (o *POSTInventoryModels201ResponseDataAttributes) UnsetStockReservationCutoff()`
+
+UnsetStockReservationCutoff ensures that no value is present for StockReservationCutoff, not even an explicit nil
+### GetPutStockTransfersOnHold
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) GetPutStockTransfersOnHold() interface{}`
+
+GetPutStockTransfersOnHold returns the PutStockTransfersOnHold field if non-nil, zero value otherwise.
+
+### GetPutStockTransfersOnHoldOk
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) GetPutStockTransfersOnHoldOk() (*interface{}, bool)`
+
+GetPutStockTransfersOnHoldOk returns a tuple with the PutStockTransfersOnHold field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPutStockTransfersOnHold
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) SetPutStockTransfersOnHold(v interface{})`
+
+SetPutStockTransfersOnHold sets PutStockTransfersOnHold field to given value.
+
+### HasPutStockTransfersOnHold
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) HasPutStockTransfersOnHold() bool`
+
+HasPutStockTransfersOnHold returns a boolean if a field has been set.
+
+### SetPutStockTransfersOnHoldNil
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) SetPutStockTransfersOnHoldNil(b bool)`
+
+ SetPutStockTransfersOnHoldNil sets the value for PutStockTransfersOnHold to be an explicit nil
+
+### UnsetPutStockTransfersOnHold
+`func (o *POSTInventoryModels201ResponseDataAttributes) UnsetPutStockTransfersOnHold()`
+
+UnsetPutStockTransfersOnHold ensures that no value is present for PutStockTransfersOnHold, not even an explicit nil
+### GetManualStockDecrement
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) GetManualStockDecrement() interface{}`
+
+GetManualStockDecrement returns the ManualStockDecrement field if non-nil, zero value otherwise.
+
+### GetManualStockDecrementOk
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) GetManualStockDecrementOk() (*interface{}, bool)`
+
+GetManualStockDecrementOk returns a tuple with the ManualStockDecrement field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManualStockDecrement
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) SetManualStockDecrement(v interface{})`
+
+SetManualStockDecrement sets ManualStockDecrement field to given value.
+
+### HasManualStockDecrement
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) HasManualStockDecrement() bool`
+
+HasManualStockDecrement returns a boolean if a field has been set.
+
+### SetManualStockDecrementNil
+
+`func (o *POSTInventoryModels201ResponseDataAttributes) SetManualStockDecrementNil(b bool)`
+
+ SetManualStockDecrementNil sets the value for ManualStockDecrement to be an explicit nil
+
+### UnsetManualStockDecrement
+`func (o *POSTInventoryModels201ResponseDataAttributes) UnsetManualStockDecrement()`
+
+UnsetManualStockDecrement ensures that no value is present for ManualStockDecrement, not even an explicit nil
 ### GetReference
 
 `func (o *POSTInventoryModels201ResponseDataAttributes) GetReference() interface{}`

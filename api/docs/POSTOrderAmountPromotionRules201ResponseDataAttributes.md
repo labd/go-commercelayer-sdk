@@ -5,9 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **OrderAmountCents** | Pointer to **interface{}** | Apply the promotion only when order is over this amount, in cents. | [optional] 
+**UseSubtotal** | Pointer to **interface{}** | Send this attribute if you want to compare the specified amount with order&#39;s subtotal (excluding discounts, if any). | [optional] 
 
 ## Methods
 
@@ -168,6 +169,41 @@ HasOrderAmountCents returns a boolean if a field has been set.
 `func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) UnsetOrderAmountCents()`
 
 UnsetOrderAmountCents ensures that no value is present for OrderAmountCents, not even an explicit nil
+### GetUseSubtotal
+
+`func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetUseSubtotal() interface{}`
+
+GetUseSubtotal returns the UseSubtotal field if non-nil, zero value otherwise.
+
+### GetUseSubtotalOk
+
+`func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetUseSubtotalOk() (*interface{}, bool)`
+
+GetUseSubtotalOk returns a tuple with the UseSubtotal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSubtotal
+
+`func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) SetUseSubtotal(v interface{})`
+
+SetUseSubtotal sets UseSubtotal field to given value.
+
+### HasUseSubtotal
+
+`func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) HasUseSubtotal() bool`
+
+HasUseSubtotal returns a boolean if a field has been set.
+
+### SetUseSubtotalNil
+
+`func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) SetUseSubtotalNil(b bool)`
+
+ SetUseSubtotalNil sets the value for UseSubtotal to be an explicit nil
+
+### UnsetUseSubtotal
+`func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) UnsetUseSubtotal()`
+
+UnsetUseSubtotal ensures that no value is present for UseSubtotal, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

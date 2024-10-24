@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Markets** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsMarkets**](POSTAvalaraAccounts201ResponseDataRelationshipsMarkets.md) |  | [optional] 
 **Addresses** | Pointer to [**POSTBingGeocoders201ResponseDataRelationshipsAddresses**](POSTBingGeocoders201ResponseDataRelationshipsAddresses.md) |  | [optional] 
-**Attachments** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsAttachments**](POSTAvalaraAccounts201ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewPOSTBingGeocoders201ResponseDataRelationshipsWithDefaults instantiates a new POSTBingGeocoders201ResponseDataRelationships object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMarkets
+
+`func (o *POSTBingGeocoders201ResponseDataRelationships) GetMarkets() POSTAvalaraAccounts201ResponseDataRelationshipsMarkets`
+
+GetMarkets returns the Markets field if non-nil, zero value otherwise.
+
+### GetMarketsOk
+
+`func (o *POSTBingGeocoders201ResponseDataRelationships) GetMarketsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsMarkets, bool)`
+
+GetMarketsOk returns a tuple with the Markets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMarkets
+
+`func (o *POSTBingGeocoders201ResponseDataRelationships) SetMarkets(v POSTAvalaraAccounts201ResponseDataRelationshipsMarkets)`
+
+SetMarkets sets Markets field to given value.
+
+### HasMarkets
+
+`func (o *POSTBingGeocoders201ResponseDataRelationships) HasMarkets() bool`
+
+HasMarkets returns a boolean if a field has been set.
 
 ### GetAddresses
 
@@ -53,20 +79,20 @@ HasAddresses returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *POSTBingGeocoders201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments`
+`func (o *POSTBingGeocoders201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *POSTBingGeocoders201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool)`
+`func (o *POSTBingGeocoders201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *POSTBingGeocoders201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments)`
+`func (o *POSTBingGeocoders201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 

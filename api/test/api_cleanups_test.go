@@ -61,6 +61,20 @@ func Test_api_CleanupsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test CleanupsApiService PATCHCleanupsCleanupId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var cleanupId interface{}
+
+		resp, httpRes, err := apiClient.CleanupsApi.PATCHCleanupsCleanupId(context.Background(), cleanupId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CleanupsApiService POSTCleanups", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

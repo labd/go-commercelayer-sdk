@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,17 @@ var _ MappedNullable = &MarketDataRelationships{}
 
 // MarketDataRelationships struct for MarketDataRelationships
 type MarketDataRelationships struct {
-	Merchant          *MarketDataRelationshipsMerchant                        `json:"merchant,omitempty"`
-	PriceList         *MarketDataRelationshipsPriceList                       `json:"price_list,omitempty"`
-	InventoryModel    *InventoryReturnLocationDataRelationshipsInventoryModel `json:"inventory_model,omitempty"`
-	SubscriptionModel *MarketDataRelationshipsSubscriptionModel               `json:"subscription_model,omitempty"`
-	TaxCalculator     *MarketDataRelationshipsTaxCalculator                   `json:"tax_calculator,omitempty"`
-	CustomerGroup     *CustomerDataRelationshipsCustomerGroup                 `json:"customer_group,omitempty"`
-	Attachments       *AvalaraAccountDataRelationshipsAttachments             `json:"attachments,omitempty"`
+	Merchant            *MarketDataRelationshipsMerchant                        `json:"merchant,omitempty"`
+	PriceList           *MarketDataRelationshipsPriceList                       `json:"price_list,omitempty"`
+	BasePriceList       *MarketDataRelationshipsPriceList                       `json:"base_price_list,omitempty"`
+	InventoryModel      *InventoryReturnLocationDataRelationshipsInventoryModel `json:"inventory_model,omitempty"`
+	SubscriptionModel   *MarketDataRelationshipsSubscriptionModel               `json:"subscription_model,omitempty"`
+	TaxCalculator       *MarketDataRelationshipsTaxCalculator                   `json:"tax_calculator,omitempty"`
+	CustomerGroup       *CustomerDataRelationshipsCustomerGroup                 `json:"customer_group,omitempty"`
+	Geocoder            *AddressDataRelationshipsGeocoder                       `json:"geocoder,omitempty"`
+	PriceListSchedulers *MarketDataRelationshipsPriceListSchedulers             `json:"price_list_schedulers,omitempty"`
+	Attachments         *AuthorizationDataRelationshipsAttachments              `json:"attachments,omitempty"`
+	Versions            *AddressDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewMarketDataRelationships instantiates a new MarketDataRelationships object
@@ -108,6 +112,38 @@ func (o *MarketDataRelationships) HasPriceList() bool {
 // SetPriceList gets a reference to the given MarketDataRelationshipsPriceList and assigns it to the PriceList field.
 func (o *MarketDataRelationships) SetPriceList(v MarketDataRelationshipsPriceList) {
 	o.PriceList = &v
+}
+
+// GetBasePriceList returns the BasePriceList field value if set, zero value otherwise.
+func (o *MarketDataRelationships) GetBasePriceList() MarketDataRelationshipsPriceList {
+	if o == nil || IsNil(o.BasePriceList) {
+		var ret MarketDataRelationshipsPriceList
+		return ret
+	}
+	return *o.BasePriceList
+}
+
+// GetBasePriceListOk returns a tuple with the BasePriceList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MarketDataRelationships) GetBasePriceListOk() (*MarketDataRelationshipsPriceList, bool) {
+	if o == nil || IsNil(o.BasePriceList) {
+		return nil, false
+	}
+	return o.BasePriceList, true
+}
+
+// HasBasePriceList returns a boolean if a field has been set.
+func (o *MarketDataRelationships) HasBasePriceList() bool {
+	if o != nil && !IsNil(o.BasePriceList) {
+		return true
+	}
+
+	return false
+}
+
+// SetBasePriceList gets a reference to the given MarketDataRelationshipsPriceList and assigns it to the BasePriceList field.
+func (o *MarketDataRelationships) SetBasePriceList(v MarketDataRelationshipsPriceList) {
+	o.BasePriceList = &v
 }
 
 // GetInventoryModel returns the InventoryModel field value if set, zero value otherwise.
@@ -238,10 +274,74 @@ func (o *MarketDataRelationships) SetCustomerGroup(v CustomerDataRelationshipsCu
 	o.CustomerGroup = &v
 }
 
+// GetGeocoder returns the Geocoder field value if set, zero value otherwise.
+func (o *MarketDataRelationships) GetGeocoder() AddressDataRelationshipsGeocoder {
+	if o == nil || IsNil(o.Geocoder) {
+		var ret AddressDataRelationshipsGeocoder
+		return ret
+	}
+	return *o.Geocoder
+}
+
+// GetGeocoderOk returns a tuple with the Geocoder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MarketDataRelationships) GetGeocoderOk() (*AddressDataRelationshipsGeocoder, bool) {
+	if o == nil || IsNil(o.Geocoder) {
+		return nil, false
+	}
+	return o.Geocoder, true
+}
+
+// HasGeocoder returns a boolean if a field has been set.
+func (o *MarketDataRelationships) HasGeocoder() bool {
+	if o != nil && !IsNil(o.Geocoder) {
+		return true
+	}
+
+	return false
+}
+
+// SetGeocoder gets a reference to the given AddressDataRelationshipsGeocoder and assigns it to the Geocoder field.
+func (o *MarketDataRelationships) SetGeocoder(v AddressDataRelationshipsGeocoder) {
+	o.Geocoder = &v
+}
+
+// GetPriceListSchedulers returns the PriceListSchedulers field value if set, zero value otherwise.
+func (o *MarketDataRelationships) GetPriceListSchedulers() MarketDataRelationshipsPriceListSchedulers {
+	if o == nil || IsNil(o.PriceListSchedulers) {
+		var ret MarketDataRelationshipsPriceListSchedulers
+		return ret
+	}
+	return *o.PriceListSchedulers
+}
+
+// GetPriceListSchedulersOk returns a tuple with the PriceListSchedulers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MarketDataRelationships) GetPriceListSchedulersOk() (*MarketDataRelationshipsPriceListSchedulers, bool) {
+	if o == nil || IsNil(o.PriceListSchedulers) {
+		return nil, false
+	}
+	return o.PriceListSchedulers, true
+}
+
+// HasPriceListSchedulers returns a boolean if a field has been set.
+func (o *MarketDataRelationships) HasPriceListSchedulers() bool {
+	if o != nil && !IsNil(o.PriceListSchedulers) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceListSchedulers gets a reference to the given MarketDataRelationshipsPriceListSchedulers and assigns it to the PriceListSchedulers field.
+func (o *MarketDataRelationships) SetPriceListSchedulers(v MarketDataRelationshipsPriceListSchedulers) {
+	o.PriceListSchedulers = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *MarketDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *MarketDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -249,7 +349,7 @@ func (o *MarketDataRelationships) GetAttachments() AvalaraAccountDataRelationshi
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *MarketDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -265,9 +365,41 @@ func (o *MarketDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *MarketDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *MarketDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *MarketDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MarketDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *MarketDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *MarketDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o MarketDataRelationships) MarshalJSON() ([]byte, error) {
@@ -286,6 +418,9 @@ func (o MarketDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.PriceList) {
 		toSerialize["price_list"] = o.PriceList
 	}
+	if !IsNil(o.BasePriceList) {
+		toSerialize["base_price_list"] = o.BasePriceList
+	}
 	if !IsNil(o.InventoryModel) {
 		toSerialize["inventory_model"] = o.InventoryModel
 	}
@@ -298,8 +433,17 @@ func (o MarketDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomerGroup) {
 		toSerialize["customer_group"] = o.CustomerGroup
 	}
+	if !IsNil(o.Geocoder) {
+		toSerialize["geocoder"] = o.Geocoder
+	}
+	if !IsNil(o.PriceListSchedulers) {
+		toSerialize["price_list_schedulers"] = o.PriceListSchedulers
+	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -21,8 +21,10 @@ var _ MappedNullable = &AvalaraAccountDataRelationships{}
 // AvalaraAccountDataRelationships struct for AvalaraAccountDataRelationships
 type AvalaraAccountDataRelationships struct {
 	Markets       *AvalaraAccountDataRelationshipsMarkets       `json:"markets,omitempty"`
-	Attachments   *AvalaraAccountDataRelationshipsAttachments   `json:"attachments,omitempty"`
+	Attachments   *AuthorizationDataRelationshipsAttachments    `json:"attachments,omitempty"`
+	Versions      *AddressDataRelationshipsVersions             `json:"versions,omitempty"`
 	TaxCategories *AvalaraAccountDataRelationshipsTaxCategories `json:"tax_categories,omitempty"`
+	Events        *AddressDataRelationshipsEvents               `json:"events,omitempty"`
 }
 
 // NewAvalaraAccountDataRelationships instantiates a new AvalaraAccountDataRelationships object
@@ -75,9 +77,9 @@ func (o *AvalaraAccountDataRelationships) SetMarkets(v AvalaraAccountDataRelatio
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *AvalaraAccountDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *AvalaraAccountDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -85,7 +87,7 @@ func (o *AvalaraAccountDataRelationships) GetAttachments() AvalaraAccountDataRel
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *AvalaraAccountDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -101,9 +103,41 @@ func (o *AvalaraAccountDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *AvalaraAccountDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *AvalaraAccountDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *AvalaraAccountDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AvalaraAccountDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *AvalaraAccountDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *AvalaraAccountDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 // GetTaxCategories returns the TaxCategories field value if set, zero value otherwise.
@@ -138,6 +172,38 @@ func (o *AvalaraAccountDataRelationships) SetTaxCategories(v AvalaraAccountDataR
 	o.TaxCategories = &v
 }
 
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *AvalaraAccountDataRelationships) GetEvents() AddressDataRelationshipsEvents {
+	if o == nil || IsNil(o.Events) {
+		var ret AddressDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AvalaraAccountDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
+	if o == nil || IsNil(o.Events) {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *AvalaraAccountDataRelationships) HasEvents() bool {
+	if o != nil && !IsNil(o.Events) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *AvalaraAccountDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
+	o.Events = &v
+}
+
 func (o AvalaraAccountDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -154,8 +220,14 @@ func (o AvalaraAccountDataRelationships) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
 	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
+	}
 	if !IsNil(o.TaxCategories) {
 		toSerialize["tax_categories"] = o.TaxCategories
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
 	}
 	return toSerialize, nil
 }

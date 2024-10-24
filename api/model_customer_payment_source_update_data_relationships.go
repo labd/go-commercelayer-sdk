@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &CustomerPaymentSourceUpdateDataRelationships{}
 // CustomerPaymentSourceUpdateDataRelationships struct for CustomerPaymentSourceUpdateDataRelationships
 type CustomerPaymentSourceUpdateDataRelationships struct {
 	Customer      *CouponRecipientCreateDataRelationshipsCustomer            `json:"customer,omitempty"`
+	PaymentMethod *CustomerPaymentSourceCreateDataRelationshipsPaymentMethod `json:"payment_method,omitempty"`
 	PaymentSource *CustomerPaymentSourceCreateDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
 }
 
@@ -73,6 +74,38 @@ func (o *CustomerPaymentSourceUpdateDataRelationships) SetCustomer(v CouponRecip
 	o.Customer = &v
 }
 
+// GetPaymentMethod returns the PaymentMethod field value if set, zero value otherwise.
+func (o *CustomerPaymentSourceUpdateDataRelationships) GetPaymentMethod() CustomerPaymentSourceCreateDataRelationshipsPaymentMethod {
+	if o == nil || IsNil(o.PaymentMethod) {
+		var ret CustomerPaymentSourceCreateDataRelationshipsPaymentMethod
+		return ret
+	}
+	return *o.PaymentMethod
+}
+
+// GetPaymentMethodOk returns a tuple with the PaymentMethod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomerPaymentSourceUpdateDataRelationships) GetPaymentMethodOk() (*CustomerPaymentSourceCreateDataRelationshipsPaymentMethod, bool) {
+	if o == nil || IsNil(o.PaymentMethod) {
+		return nil, false
+	}
+	return o.PaymentMethod, true
+}
+
+// HasPaymentMethod returns a boolean if a field has been set.
+func (o *CustomerPaymentSourceUpdateDataRelationships) HasPaymentMethod() bool {
+	if o != nil && !IsNil(o.PaymentMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentMethod gets a reference to the given CustomerPaymentSourceCreateDataRelationshipsPaymentMethod and assigns it to the PaymentMethod field.
+func (o *CustomerPaymentSourceUpdateDataRelationships) SetPaymentMethod(v CustomerPaymentSourceCreateDataRelationshipsPaymentMethod) {
+	o.PaymentMethod = &v
+}
+
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
 func (o *CustomerPaymentSourceUpdateDataRelationships) GetPaymentSource() CustomerPaymentSourceCreateDataRelationshipsPaymentSource {
 	if o == nil || IsNil(o.PaymentSource) {
@@ -117,6 +150,9 @@ func (o CustomerPaymentSourceUpdateDataRelationships) ToMap() (map[string]interf
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Customer) {
 		toSerialize["customer"] = o.Customer
+	}
+	if !IsNil(o.PaymentMethod) {
+		toSerialize["payment_method"] = o.PaymentMethod
 	}
 	if !IsNil(o.PaymentSource) {
 		toSerialize["payment_source"] = o.PaymentSource

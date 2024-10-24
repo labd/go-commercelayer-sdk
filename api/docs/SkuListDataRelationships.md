@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 **Customer** | Pointer to [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | [optional] 
 **Skus** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
 **SkuListItems** | Pointer to [**SkuListDataRelationshipsSkuListItems**](SkuListDataRelationshipsSkuListItems.md) |  | [optional] 
-**Bundles** | Pointer to [**OrderDataRelationshipsAvailableFreeBundles**](OrderDataRelationshipsAvailableFreeBundles.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**Bundles** | Pointer to [**LineItemDataRelationshipsBundle**](LineItemDataRelationshipsBundle.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Links** | Pointer to [**OrderDataRelationshipsLinks**](OrderDataRelationshipsLinks.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -106,20 +108,20 @@ HasSkuListItems returns a boolean if a field has been set.
 
 ### GetBundles
 
-`func (o *SkuListDataRelationships) GetBundles() OrderDataRelationshipsAvailableFreeBundles`
+`func (o *SkuListDataRelationships) GetBundles() LineItemDataRelationshipsBundle`
 
 GetBundles returns the Bundles field if non-nil, zero value otherwise.
 
 ### GetBundlesOk
 
-`func (o *SkuListDataRelationships) GetBundlesOk() (*OrderDataRelationshipsAvailableFreeBundles, bool)`
+`func (o *SkuListDataRelationships) GetBundlesOk() (*LineItemDataRelationshipsBundle, bool)`
 
 GetBundlesOk returns a tuple with the Bundles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBundles
 
-`func (o *SkuListDataRelationships) SetBundles(v OrderDataRelationshipsAvailableFreeBundles)`
+`func (o *SkuListDataRelationships) SetBundles(v LineItemDataRelationshipsBundle)`
 
 SetBundles sets Bundles field to given value.
 
@@ -131,20 +133,20 @@ HasBundles returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *SkuListDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *SkuListDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *SkuListDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *SkuListDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *SkuListDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *SkuListDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -153,6 +155,56 @@ SetAttachments sets Attachments field to given value.
 `func (o *SkuListDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetLinks
+
+`func (o *SkuListDataRelationships) GetLinks() OrderDataRelationshipsLinks`
+
+GetLinks returns the Links field if non-nil, zero value otherwise.
+
+### GetLinksOk
+
+`func (o *SkuListDataRelationships) GetLinksOk() (*OrderDataRelationshipsLinks, bool)`
+
+GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinks
+
+`func (o *SkuListDataRelationships) SetLinks(v OrderDataRelationshipsLinks)`
+
+SetLinks sets Links field to given value.
+
+### HasLinks
+
+`func (o *SkuListDataRelationships) HasLinks() bool`
+
+HasLinks returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *SkuListDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *SkuListDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *SkuListDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *SkuListDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &OrderDataRelationshipsOrderCopies{}
 
 // OrderDataRelationshipsOrderCopies struct for OrderDataRelationshipsOrderCopies
 type OrderDataRelationshipsOrderCopies struct {
-	Data *OrderSubscriptionDataRelationshipsOrderCopiesData `json:"data,omitempty"`
+	Data *OrderDataRelationshipsOrderCopiesData `json:"data,omitempty"`
 }
 
 // NewOrderDataRelationshipsOrderCopies instantiates a new OrderDataRelationshipsOrderCopies object
@@ -41,9 +41,9 @@ func NewOrderDataRelationshipsOrderCopiesWithDefaults() *OrderDataRelationshipsO
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *OrderDataRelationshipsOrderCopies) GetData() OrderSubscriptionDataRelationshipsOrderCopiesData {
+func (o *OrderDataRelationshipsOrderCopies) GetData() OrderDataRelationshipsOrderCopiesData {
 	if o == nil || IsNil(o.Data) {
-		var ret OrderSubscriptionDataRelationshipsOrderCopiesData
+		var ret OrderDataRelationshipsOrderCopiesData
 		return ret
 	}
 	return *o.Data
@@ -51,7 +51,7 @@ func (o *OrderDataRelationshipsOrderCopies) GetData() OrderSubscriptionDataRelat
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDataRelationshipsOrderCopies) GetDataOk() (*OrderSubscriptionDataRelationshipsOrderCopiesData, bool) {
+func (o *OrderDataRelationshipsOrderCopies) GetDataOk() (*OrderDataRelationshipsOrderCopiesData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *OrderDataRelationshipsOrderCopies) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given OrderSubscriptionDataRelationshipsOrderCopiesData and assigns it to the Data field.
-func (o *OrderDataRelationshipsOrderCopies) SetData(v OrderSubscriptionDataRelationshipsOrderCopiesData) {
+// SetData gets a reference to the given OrderDataRelationshipsOrderCopiesData and assigns it to the Data field.
+func (o *OrderDataRelationshipsOrderCopies) SetData(v OrderDataRelationshipsOrderCopiesData) {
 	o.Data = &v
 }
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CustomerDataRelationshipsReturnsData**](CustomerDataRelationshipsReturnsData.md) |  | 
+**Data** | [**CaptureDataRelationshipsReturnData**](CaptureDataRelationshipsReturnData.md) |  | 
 
 ## Methods
 
 ### NewReturnLineItemCreateDataRelationshipsReturn
 
-`func NewReturnLineItemCreateDataRelationshipsReturn(data CustomerDataRelationshipsReturnsData, ) *ReturnLineItemCreateDataRelationshipsReturn`
+`func NewReturnLineItemCreateDataRelationshipsReturn(data CaptureDataRelationshipsReturnData, ) *ReturnLineItemCreateDataRelationshipsReturn`
 
 NewReturnLineItemCreateDataRelationshipsReturn instantiates a new ReturnLineItemCreateDataRelationshipsReturn object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ReturnLineItemCreateDataRelationshipsReturn) GetData() CustomerDataRelationshipsReturnsData`
+`func (o *ReturnLineItemCreateDataRelationshipsReturn) GetData() CaptureDataRelationshipsReturnData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ReturnLineItemCreateDataRelationshipsReturn) GetDataOk() (*CustomerDataRelationshipsReturnsData, bool)`
+`func (o *ReturnLineItemCreateDataRelationshipsReturn) GetDataOk() (*CaptureDataRelationshipsReturnData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ReturnLineItemCreateDataRelationshipsReturn) SetData(v CustomerDataRelationshipsReturnsData)`
+`func (o *ReturnLineItemCreateDataRelationshipsReturn) SetData(v CaptureDataRelationshipsReturnData)`
 
 SetData sets Data field to given value.
 

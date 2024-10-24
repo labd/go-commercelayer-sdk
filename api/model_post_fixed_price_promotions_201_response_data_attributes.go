@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -24,19 +24,27 @@ type POSTFixedPricePromotions201ResponseDataAttributes struct {
 	Name interface{} `json:"name"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
+	// Indicates if the promotion will be applied exclusively, based on its priority score.
+	Exclusive interface{} `json:"exclusive,omitempty"`
+	// The priority assigned to the promotion (lower means higher priority).
+	Priority interface{} `json:"priority,omitempty"`
 	// The activation date/time of this promotion.
 	StartsAt interface{} `json:"starts_at"`
 	// The expiration date/time of this promotion (must be after starts_at).
 	ExpiresAt interface{} `json:"expires_at"`
-	// The total number of times this promotion can be applied.
-	TotalUsageLimit interface{} `json:"total_usage_limit"`
+	// The total number of times this promotion can be applied. When 'null' it means promotion can be applied infinite times.
+	TotalUsageLimit interface{} `json:"total_usage_limit,omitempty"`
+	// Send this attribute if you want to mark this resource as disabled.
+	Disable interface{} `json:"_disable,omitempty"`
+	// Send this attribute if you want to mark this resource as enabled.
+	Enable interface{} `json:"_enable,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
-	// The price fixed amount to be applied on matching SKUs, in cents
+	// The price fixed amount to be applied on matching SKUs, in cents.
 	FixedAmountCents interface{} `json:"fixed_amount_cents"`
 }
 
@@ -44,12 +52,11 @@ type POSTFixedPricePromotions201ResponseDataAttributes struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTFixedPricePromotions201ResponseDataAttributes(name interface{}, startsAt interface{}, expiresAt interface{}, totalUsageLimit interface{}, fixedAmountCents interface{}) *POSTFixedPricePromotions201ResponseDataAttributes {
+func NewPOSTFixedPricePromotions201ResponseDataAttributes(name interface{}, startsAt interface{}, expiresAt interface{}, fixedAmountCents interface{}) *POSTFixedPricePromotions201ResponseDataAttributes {
 	this := POSTFixedPricePromotions201ResponseDataAttributes{}
 	this.Name = name
 	this.StartsAt = startsAt
 	this.ExpiresAt = expiresAt
-	this.TotalUsageLimit = totalUsageLimit
 	this.FixedAmountCents = fixedAmountCents
 	return &this
 }
@@ -121,6 +128,72 @@ func (o *POSTFixedPricePromotions201ResponseDataAttributes) SetCurrencyCode(v in
 	o.CurrencyCode = v
 }
 
+// GetExclusive returns the Exclusive field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetExclusive() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Exclusive
+}
+
+// GetExclusiveOk returns a tuple with the Exclusive field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetExclusiveOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Exclusive) {
+		return nil, false
+	}
+	return &o.Exclusive, true
+}
+
+// HasExclusive returns a boolean if a field has been set.
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) HasExclusive() bool {
+	if o != nil && IsNil(o.Exclusive) {
+		return true
+	}
+
+	return false
+}
+
+// SetExclusive gets a reference to the given interface{} and assigns it to the Exclusive field.
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) SetExclusive(v interface{}) {
+	o.Exclusive = v
+}
+
+// GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetPriority() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Priority
+}
+
+// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetPriorityOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Priority) {
+		return nil, false
+	}
+	return &o.Priority, true
+}
+
+// HasPriority returns a boolean if a field has been set.
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) HasPriority() bool {
+	if o != nil && IsNil(o.Priority) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriority gets a reference to the given interface{} and assigns it to the Priority field.
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) SetPriority(v interface{}) {
+	o.Priority = v
+}
+
 // GetStartsAt returns the StartsAt field value
 // If the value is explicit nil, the zero value for interface{} will be returned
 func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetStartsAt() interface{} {
@@ -173,18 +246,16 @@ func (o *POSTFixedPricePromotions201ResponseDataAttributes) SetExpiresAt(v inter
 	o.ExpiresAt = v
 }
 
-// GetTotalUsageLimit returns the TotalUsageLimit field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetTotalUsageLimit returns the TotalUsageLimit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetTotalUsageLimit() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.TotalUsageLimit
 }
 
-// GetTotalUsageLimitOk returns a tuple with the TotalUsageLimit field value
+// GetTotalUsageLimitOk returns a tuple with the TotalUsageLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetTotalUsageLimitOk() (*interface{}, bool) {
@@ -194,9 +265,84 @@ func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetTotalUsageLimitOk
 	return &o.TotalUsageLimit, true
 }
 
-// SetTotalUsageLimit sets field value
+// HasTotalUsageLimit returns a boolean if a field has been set.
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) HasTotalUsageLimit() bool {
+	if o != nil && IsNil(o.TotalUsageLimit) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalUsageLimit gets a reference to the given interface{} and assigns it to the TotalUsageLimit field.
 func (o *POSTFixedPricePromotions201ResponseDataAttributes) SetTotalUsageLimit(v interface{}) {
 	o.TotalUsageLimit = v
+}
+
+// GetDisable returns the Disable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetDisable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Disable
+}
+
+// GetDisableOk returns a tuple with the Disable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetDisableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Disable) {
+		return nil, false
+	}
+	return &o.Disable, true
+}
+
+// HasDisable returns a boolean if a field has been set.
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) HasDisable() bool {
+	if o != nil && IsNil(o.Disable) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisable gets a reference to the given interface{} and assigns it to the Disable field.
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) SetDisable(v interface{}) {
+	o.Disable = v
+}
+
+// GetEnable returns the Enable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetEnable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Enable
+}
+
+// GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) GetEnableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Enable) {
+		return nil, false
+	}
+	return &o.Enable, true
+}
+
+// HasEnable returns a boolean if a field has been set.
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) HasEnable() bool {
+	if o != nil && IsNil(o.Enable) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnable gets a reference to the given interface{} and assigns it to the Enable field.
+func (o *POSTFixedPricePromotions201ResponseDataAttributes) SetEnable(v interface{}) {
+	o.Enable = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -340,6 +486,12 @@ func (o POSTFixedPricePromotions201ResponseDataAttributes) ToMap() (map[string]i
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
 	}
+	if o.Exclusive != nil {
+		toSerialize["exclusive"] = o.Exclusive
+	}
+	if o.Priority != nil {
+		toSerialize["priority"] = o.Priority
+	}
 	if o.StartsAt != nil {
 		toSerialize["starts_at"] = o.StartsAt
 	}
@@ -348,6 +500,12 @@ func (o POSTFixedPricePromotions201ResponseDataAttributes) ToMap() (map[string]i
 	}
 	if o.TotalUsageLimit != nil {
 		toSerialize["total_usage_limit"] = o.TotalUsageLimit
+	}
+	if o.Disable != nil {
+		toSerialize["_disable"] = o.Disable
+	}
+	if o.Enable != nil {
+		toSerialize["_enable"] = o.Enable
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

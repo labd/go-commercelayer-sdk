@@ -61,6 +61,19 @@ func Test_api_MarketsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test MarketsApiService GETBingGeocoderIdMarkets", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var bingGeocoderId interface{}
+
+		httpRes, err := apiClient.MarketsApi.GETBingGeocoderIdMarkets(context.Background(), bingGeocoderId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MarketsApiService GETBundleIdMarket", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -68,6 +81,19 @@ func Test_api_MarketsApiService(t *testing.T) {
 		var bundleId interface{}
 
 		httpRes, err := apiClient.MarketsApi.GETBundleIdMarket(context.Background(), bundleId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MarketsApiService GETBuyXPayYPromotionIdMarket", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var buyXPayYPromotionId interface{}
+
+		httpRes, err := apiClient.MarketsApi.GETBuyXPayYPromotionIdMarket(context.Background(), buyXPayYPromotionId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -178,6 +204,19 @@ func Test_api_MarketsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test MarketsApiService GETGeocoderIdMarkets", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var geocoderId interface{}
+
+		httpRes, err := apiClient.MarketsApi.GETGeocoderIdMarkets(context.Background(), geocoderId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MarketsApiService GETGiftCardIdMarket", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -185,6 +224,19 @@ func Test_api_MarketsApiService(t *testing.T) {
 		var giftCardId interface{}
 
 		httpRes, err := apiClient.MarketsApi.GETGiftCardIdMarket(context.Background(), giftCardId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MarketsApiService GETGoogleGeocoderIdMarkets", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var googleGeocoderId interface{}
+
+		httpRes, err := apiClient.MarketsApi.GETGoogleGeocoderIdMarkets(context.Background(), googleGeocoderId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -269,19 +321,6 @@ func Test_api_MarketsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test MarketsApiService GETOrderValidationRuleIdMarket", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var orderValidationRuleId interface{}
-
-		httpRes, err := apiClient.MarketsApi.GETOrderValidationRuleIdMarket(context.Background(), orderValidationRuleId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test MarketsApiService GETPaymentMethodIdMarket", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -308,6 +347,32 @@ func Test_api_MarketsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test MarketsApiService GETPriceIdJwtMarkets", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var priceId interface{}
+
+		httpRes, err := apiClient.MarketsApi.GETPriceIdJwtMarkets(context.Background(), priceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MarketsApiService GETPriceListSchedulerIdMarket", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var priceListSchedulerId interface{}
+
+		httpRes, err := apiClient.MarketsApi.GETPriceListSchedulerIdMarket(context.Background(), priceListSchedulerId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MarketsApiService GETPromotionIdMarket", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -328,6 +393,19 @@ func Test_api_MarketsApiService(t *testing.T) {
 		var shippingMethodId interface{}
 
 		httpRes, err := apiClient.MarketsApi.GETShippingMethodIdMarket(context.Background(), shippingMethodId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MarketsApiService GETSkuIdJwtMarkets", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var skuId interface{}
+
+		httpRes, err := apiClient.MarketsApi.GETSkuIdJwtMarkets(context.Background(), skuId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

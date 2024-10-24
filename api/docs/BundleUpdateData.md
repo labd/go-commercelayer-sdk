@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **interface{}** | The resource&#39;s type | 
 **Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHBundlesBundleId200ResponseDataAttributes**](PATCHBundlesBundleId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to **interface{}** |  | [optional] 
+**Relationships** | Pointer to [**BundleUpdateDataRelationships**](BundleUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -110,20 +110,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *BundleUpdateData) GetRelationships() interface{}`
+`func (o *BundleUpdateData) GetRelationships() BundleUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BundleUpdateData) GetRelationshipsOk() (*interface{}, bool)`
+`func (o *BundleUpdateData) GetRelationshipsOk() (*BundleUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BundleUpdateData) SetRelationships(v interface{})`
+`func (o *BundleUpdateData) SetRelationships(v BundleUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 
@@ -133,16 +133,6 @@ SetRelationships sets Relationships field to given value.
 
 HasRelationships returns a boolean if a field has been set.
 
-### SetRelationshipsNil
-
-`func (o *BundleUpdateData) SetRelationshipsNil(b bool)`
-
- SetRelationshipsNil sets the value for Relationships to be an explicit nil
-
-### UnsetRelationships
-`func (o *BundleUpdateData) UnsetRelationships()`
-
-UnsetRelationships ensures that no value is present for Relationships, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

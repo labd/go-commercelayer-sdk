@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,13 @@ type PATCHReturnsReturnId200ResponseDataAttributes struct {
 	Archive interface{} `json:"_archive,omitempty"`
 	// Send this attribute if you want to unarchive the return.
 	Unarchive interface{} `json:"_unarchive,omitempty"`
+	// Send this attribute if you want to create a refund for this return.
+	Refund interface{} `json:"_refund,omitempty"`
+	// Send this attribute as a value in cents to specify the amount to be refunded.
+	RefundAmountCents interface{} `json:"_refund_amount_cents,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -360,6 +364,72 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) SetUnarchive(v interface
 	o.Unarchive = v
 }
 
+// GetRefund returns the Refund field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRefund() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Refund
+}
+
+// GetRefundOk returns a tuple with the Refund field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRefundOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Refund) {
+		return nil, false
+	}
+	return &o.Refund, true
+}
+
+// HasRefund returns a boolean if a field has been set.
+func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasRefund() bool {
+	if o != nil && IsNil(o.Refund) {
+		return true
+	}
+
+	return false
+}
+
+// SetRefund gets a reference to the given interface{} and assigns it to the Refund field.
+func (o *PATCHReturnsReturnId200ResponseDataAttributes) SetRefund(v interface{}) {
+	o.Refund = v
+}
+
+// GetRefundAmountCents returns the RefundAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRefundAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.RefundAmountCents
+}
+
+// GetRefundAmountCentsOk returns a tuple with the RefundAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRefundAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RefundAmountCents) {
+		return nil, false
+	}
+	return &o.RefundAmountCents, true
+}
+
+// HasRefundAmountCents returns a boolean if a field has been set.
+func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasRefundAmountCents() bool {
+	if o != nil && IsNil(o.RefundAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetRefundAmountCents gets a reference to the given interface{} and assigns it to the RefundAmountCents field.
+func (o *PATCHReturnsReturnId200ResponseDataAttributes) SetRefundAmountCents(v interface{}) {
+	o.RefundAmountCents = v
+}
+
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReference() interface{} {
 	if o == nil {
@@ -495,6 +565,12 @@ func (o PATCHReturnsReturnId200ResponseDataAttributes) ToMap() (map[string]inter
 	}
 	if o.Unarchive != nil {
 		toSerialize["_unarchive"] = o.Unarchive
+	}
+	if o.Refund != nil {
+		toSerialize["_refund"] = o.Refund
+	}
+	if o.RefundAmountCents != nil {
+		toSerialize["_refund_amount_cents"] = o.RefundAmountCents
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

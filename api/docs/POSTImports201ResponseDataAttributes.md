@@ -8,9 +8,8 @@ Name | Type | Description | Notes
 **Format** | Pointer to **interface{}** | The format of the import inputs one of &#39;json&#39; (default) or &#39;csv&#39;. | [optional] 
 **ParentResourceId** | Pointer to **interface{}** | The ID of the parent resource to be associated with imported data. | [optional] 
 **Inputs** | **interface{}** | Array of objects representing the resources that are being imported. | 
-**CleanupRecords** | Pointer to **interface{}** | Indicates if the import should cleanup records that are not included in the inputs array. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -162,41 +161,6 @@ SetInputs sets Inputs field to given value.
 `func (o *POSTImports201ResponseDataAttributes) UnsetInputs()`
 
 UnsetInputs ensures that no value is present for Inputs, not even an explicit nil
-### GetCleanupRecords
-
-`func (o *POSTImports201ResponseDataAttributes) GetCleanupRecords() interface{}`
-
-GetCleanupRecords returns the CleanupRecords field if non-nil, zero value otherwise.
-
-### GetCleanupRecordsOk
-
-`func (o *POSTImports201ResponseDataAttributes) GetCleanupRecordsOk() (*interface{}, bool)`
-
-GetCleanupRecordsOk returns a tuple with the CleanupRecords field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCleanupRecords
-
-`func (o *POSTImports201ResponseDataAttributes) SetCleanupRecords(v interface{})`
-
-SetCleanupRecords sets CleanupRecords field to given value.
-
-### HasCleanupRecords
-
-`func (o *POSTImports201ResponseDataAttributes) HasCleanupRecords() bool`
-
-HasCleanupRecords returns a boolean if a field has been set.
-
-### SetCleanupRecordsNil
-
-`func (o *POSTImports201ResponseDataAttributes) SetCleanupRecordsNil(b bool)`
-
- SetCleanupRecordsNil sets the value for CleanupRecords to be an explicit nil
-
-### UnsetCleanupRecords
-`func (o *POSTImports201ResponseDataAttributes) UnsetCleanupRecords()`
-
-UnsetCleanupRecords ensures that no value is present for CleanupRecords, not even an explicit nil
 ### GetReference
 
 `func (o *POSTImports201ResponseDataAttributes) GetReference() interface{}`

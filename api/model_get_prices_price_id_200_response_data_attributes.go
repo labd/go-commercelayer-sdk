@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -30,6 +30,10 @@ type GETPricesPriceId200ResponseDataAttributes struct {
 	AmountFloat interface{} `json:"amount_float,omitempty"`
 	// The SKU price amount for the associated price list, formatted.
 	FormattedAmount interface{} `json:"formatted_amount,omitempty"`
+	// The SKU price amount for the associated price list, in cents before any applied rule.
+	OriginalAmountCents interface{} `json:"original_amount_cents,omitempty"`
+	// The SKU price amount for the associated price list, in cents before any applied rule, formatted.
+	FormattedOriginalAmount interface{} `json:"formatted_original_amount,omitempty"`
 	// The compared price amount, in cents. Useful to display a percentage discount.
 	CompareAtAmountCents interface{} `json:"compare_at_amount_cents,omitempty"`
 	// The compared price amount, float.
@@ -42,8 +46,14 @@ type GETPricesPriceId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
+	// The rules (using Rules Engine) to be applied.
+	Rules interface{} `json:"rules,omitempty"`
+	// The rule outcomes.
+	RuleOutcomes interface{} `json:"rule_outcomes,omitempty"`
+	// The custom_claim attached to the current JWT (if any).
+	JwtCustomClaim interface{} `json:"jwt_custom_claim,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
 }
@@ -228,6 +238,72 @@ func (o *GETPricesPriceId200ResponseDataAttributes) HasFormattedAmount() bool {
 // SetFormattedAmount gets a reference to the given interface{} and assigns it to the FormattedAmount field.
 func (o *GETPricesPriceId200ResponseDataAttributes) SetFormattedAmount(v interface{}) {
 	o.FormattedAmount = v
+}
+
+// GetOriginalAmountCents returns the OriginalAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPricesPriceId200ResponseDataAttributes) GetOriginalAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.OriginalAmountCents
+}
+
+// GetOriginalAmountCentsOk returns a tuple with the OriginalAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPricesPriceId200ResponseDataAttributes) GetOriginalAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.OriginalAmountCents) {
+		return nil, false
+	}
+	return &o.OriginalAmountCents, true
+}
+
+// HasOriginalAmountCents returns a boolean if a field has been set.
+func (o *GETPricesPriceId200ResponseDataAttributes) HasOriginalAmountCents() bool {
+	if o != nil && IsNil(o.OriginalAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetOriginalAmountCents gets a reference to the given interface{} and assigns it to the OriginalAmountCents field.
+func (o *GETPricesPriceId200ResponseDataAttributes) SetOriginalAmountCents(v interface{}) {
+	o.OriginalAmountCents = v
+}
+
+// GetFormattedOriginalAmount returns the FormattedOriginalAmount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPricesPriceId200ResponseDataAttributes) GetFormattedOriginalAmount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.FormattedOriginalAmount
+}
+
+// GetFormattedOriginalAmountOk returns a tuple with the FormattedOriginalAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPricesPriceId200ResponseDataAttributes) GetFormattedOriginalAmountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FormattedOriginalAmount) {
+		return nil, false
+	}
+	return &o.FormattedOriginalAmount, true
+}
+
+// HasFormattedOriginalAmount returns a boolean if a field has been set.
+func (o *GETPricesPriceId200ResponseDataAttributes) HasFormattedOriginalAmount() bool {
+	if o != nil && IsNil(o.FormattedOriginalAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormattedOriginalAmount gets a reference to the given interface{} and assigns it to the FormattedOriginalAmount field.
+func (o *GETPricesPriceId200ResponseDataAttributes) SetFormattedOriginalAmount(v interface{}) {
+	o.FormattedOriginalAmount = v
 }
 
 // GetCompareAtAmountCents returns the CompareAtAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -461,6 +537,105 @@ func (o *GETPricesPriceId200ResponseDataAttributes) SetReferenceOrigin(v interfa
 	o.ReferenceOrigin = v
 }
 
+// GetRules returns the Rules field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPricesPriceId200ResponseDataAttributes) GetRules() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Rules
+}
+
+// GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPricesPriceId200ResponseDataAttributes) GetRulesOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Rules) {
+		return nil, false
+	}
+	return &o.Rules, true
+}
+
+// HasRules returns a boolean if a field has been set.
+func (o *GETPricesPriceId200ResponseDataAttributes) HasRules() bool {
+	if o != nil && IsNil(o.Rules) {
+		return true
+	}
+
+	return false
+}
+
+// SetRules gets a reference to the given interface{} and assigns it to the Rules field.
+func (o *GETPricesPriceId200ResponseDataAttributes) SetRules(v interface{}) {
+	o.Rules = v
+}
+
+// GetRuleOutcomes returns the RuleOutcomes field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPricesPriceId200ResponseDataAttributes) GetRuleOutcomes() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.RuleOutcomes
+}
+
+// GetRuleOutcomesOk returns a tuple with the RuleOutcomes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPricesPriceId200ResponseDataAttributes) GetRuleOutcomesOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RuleOutcomes) {
+		return nil, false
+	}
+	return &o.RuleOutcomes, true
+}
+
+// HasRuleOutcomes returns a boolean if a field has been set.
+func (o *GETPricesPriceId200ResponseDataAttributes) HasRuleOutcomes() bool {
+	if o != nil && IsNil(o.RuleOutcomes) {
+		return true
+	}
+
+	return false
+}
+
+// SetRuleOutcomes gets a reference to the given interface{} and assigns it to the RuleOutcomes field.
+func (o *GETPricesPriceId200ResponseDataAttributes) SetRuleOutcomes(v interface{}) {
+	o.RuleOutcomes = v
+}
+
+// GetJwtCustomClaim returns the JwtCustomClaim field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPricesPriceId200ResponseDataAttributes) GetJwtCustomClaim() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.JwtCustomClaim
+}
+
+// GetJwtCustomClaimOk returns a tuple with the JwtCustomClaim field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPricesPriceId200ResponseDataAttributes) GetJwtCustomClaimOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.JwtCustomClaim) {
+		return nil, false
+	}
+	return &o.JwtCustomClaim, true
+}
+
+// HasJwtCustomClaim returns a boolean if a field has been set.
+func (o *GETPricesPriceId200ResponseDataAttributes) HasJwtCustomClaim() bool {
+	if o != nil && IsNil(o.JwtCustomClaim) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtCustomClaim gets a reference to the given interface{} and assigns it to the JwtCustomClaim field.
+func (o *GETPricesPriceId200ResponseDataAttributes) SetJwtCustomClaim(v interface{}) {
+	o.JwtCustomClaim = v
+}
+
 // GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETPricesPriceId200ResponseDataAttributes) GetMetadata() interface{} {
 	if o == nil {
@@ -519,6 +694,12 @@ func (o GETPricesPriceId200ResponseDataAttributes) ToMap() (map[string]interface
 	if o.FormattedAmount != nil {
 		toSerialize["formatted_amount"] = o.FormattedAmount
 	}
+	if o.OriginalAmountCents != nil {
+		toSerialize["original_amount_cents"] = o.OriginalAmountCents
+	}
+	if o.FormattedOriginalAmount != nil {
+		toSerialize["formatted_original_amount"] = o.FormattedOriginalAmount
+	}
 	if o.CompareAtAmountCents != nil {
 		toSerialize["compare_at_amount_cents"] = o.CompareAtAmountCents
 	}
@@ -539,6 +720,15 @@ func (o GETPricesPriceId200ResponseDataAttributes) ToMap() (map[string]interface
 	}
 	if o.ReferenceOrigin != nil {
 		toSerialize["reference_origin"] = o.ReferenceOrigin
+	}
+	if o.Rules != nil {
+		toSerialize["rules"] = o.Rules
+	}
+	if o.RuleOutcomes != nil {
+		toSerialize["rule_outcomes"] = o.RuleOutcomes
+	}
+	if o.JwtCustomClaim != nil {
+		toSerialize["jwt_custom_claim"] = o.JwtCustomClaim
 	}
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata

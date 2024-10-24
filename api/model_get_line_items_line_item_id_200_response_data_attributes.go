@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -26,15 +26,23 @@ type GETLineItemsLineItemId200ResponseDataAttributes struct {
 	BundleCode interface{} `json:"bundle_code,omitempty"`
 	// The line item quantity.
 	Quantity interface{} `json:"quantity,omitempty"`
+	// When creating or updating a new line item, set this attribute to '1' if you want to inject the unit_amount_cents price from an external source. Any successive price computation will be done externally, until the attribute is reset to '0'.
+	ExternalPrice interface{} `json:"_external_price,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard, automatically inherited from the order's market.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
-	// The unit amount of the line item, in cents. Can be specified without an item, otherwise is automatically populated from the price list associated to the order's market.
+	// The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods.
 	UnitAmountCents interface{} `json:"unit_amount_cents,omitempty"`
 	// The unit amount of the line item, float. This can be useful to track the purchase on thrid party systems, e.g Google Analyitcs Enhanced Ecommerce.
 	UnitAmountFloat interface{} `json:"unit_amount_float,omitempty"`
 	// The unit amount of the line item, formatted. This can be useful to display the amount with currency in you views.
 	FormattedUnitAmount interface{} `json:"formatted_unit_amount,omitempty"`
-	// The options amount of the line item, in cents.
+	// The compared price amount, in cents. Useful to display a percentage discount.
+	CompareAtAmountCents interface{} `json:"compare_at_amount_cents,omitempty"`
+	// The compared price amount, float.
+	CompareAtAmountFloat interface{} `json:"compare_at_amount_float,omitempty"`
+	// The compared price amount, formatted.
+	FormattedCompareAtAmount interface{} `json:"formatted_compare_at_amount,omitempty"`
+	// The options amount of the line item, in cents. Cannot be passed by sales channels.
 	OptionsAmountCents interface{} `json:"options_amount_cents,omitempty"`
 	// The options amount of the line item, float.
 	OptionsAmountFloat interface{} `json:"options_amount_float,omitempty"`
@@ -68,17 +76,23 @@ type GETLineItemsLineItemId200ResponseDataAttributes struct {
 	TaxRate interface{} `json:"tax_rate,omitempty"`
 	// The tax breakdown for this line item (if calculated).
 	TaxBreakdown interface{} `json:"tax_breakdown,omitempty"`
-	// The type of the associate item. Can be one of 'skus', 'bundles', 'shipments', 'payment_methods', 'adjustments', 'gift_cards', or a valid promotion type.
+	// The type of the associated item. One of 'skus', 'bundles', 'gift_cards', 'shipments', 'payment_methods', 'adjustments', 'percentage_discount_promotions', 'free_shipping_promotions', 'buy_x_pay_y_promotions', 'free_gift_promotions', 'fixed_price_promotions', 'external_promotions', 'fixed_amount_promotions', or 'flex_promotions'.
 	ItemType interface{} `json:"item_type,omitempty"`
 	// The frequency which generates a subscription. Must be supported by existing associated subscription_model.
 	Frequency interface{} `json:"frequency,omitempty"`
+	// The coupon code, if any, used to trigger this promotion line item. null for other line item types or if the promotion line item wasn't triggered by a coupon.
+	CouponCode interface{} `json:"coupon_code,omitempty"`
+	// The circuit breaker state, by default it is 'closed'. It can become 'open' once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made.
+	CircuitState interface{} `json:"circuit_state,omitempty"`
+	// The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback.
+	CircuitFailureCount interface{} `json:"circuit_failure_count,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -198,6 +212,39 @@ func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasQuantity() bool {
 // SetQuantity gets a reference to the given interface{} and assigns it to the Quantity field.
 func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetQuantity(v interface{}) {
 	o.Quantity = v
+}
+
+// GetExternalPrice returns the ExternalPrice field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetExternalPrice() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ExternalPrice
+}
+
+// GetExternalPriceOk returns a tuple with the ExternalPrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetExternalPriceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ExternalPrice) {
+		return nil, false
+	}
+	return &o.ExternalPrice, true
+}
+
+// HasExternalPrice returns a boolean if a field has been set.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasExternalPrice() bool {
+	if o != nil && IsNil(o.ExternalPrice) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalPrice gets a reference to the given interface{} and assigns it to the ExternalPrice field.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetExternalPrice(v interface{}) {
+	o.ExternalPrice = v
 }
 
 // GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -330,6 +377,105 @@ func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasFormattedUnitAmount
 // SetFormattedUnitAmount gets a reference to the given interface{} and assigns it to the FormattedUnitAmount field.
 func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetFormattedUnitAmount(v interface{}) {
 	o.FormattedUnitAmount = v
+}
+
+// GetCompareAtAmountCents returns the CompareAtAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CompareAtAmountCents
+}
+
+// GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CompareAtAmountCents) {
+		return nil, false
+	}
+	return &o.CompareAtAmountCents, true
+}
+
+// HasCompareAtAmountCents returns a boolean if a field has been set.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCompareAtAmountCents() bool {
+	if o != nil && IsNil(o.CompareAtAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetCompareAtAmountCents gets a reference to the given interface{} and assigns it to the CompareAtAmountCents field.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCompareAtAmountCents(v interface{}) {
+	o.CompareAtAmountCents = v
+}
+
+// GetCompareAtAmountFloat returns the CompareAtAmountFloat field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountFloat() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CompareAtAmountFloat
+}
+
+// GetCompareAtAmountFloatOk returns a tuple with the CompareAtAmountFloat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCompareAtAmountFloatOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CompareAtAmountFloat) {
+		return nil, false
+	}
+	return &o.CompareAtAmountFloat, true
+}
+
+// HasCompareAtAmountFloat returns a boolean if a field has been set.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCompareAtAmountFloat() bool {
+	if o != nil && IsNil(o.CompareAtAmountFloat) {
+		return true
+	}
+
+	return false
+}
+
+// SetCompareAtAmountFloat gets a reference to the given interface{} and assigns it to the CompareAtAmountFloat field.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCompareAtAmountFloat(v interface{}) {
+	o.CompareAtAmountFloat = v
+}
+
+// GetFormattedCompareAtAmount returns the FormattedCompareAtAmount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetFormattedCompareAtAmount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.FormattedCompareAtAmount
+}
+
+// GetFormattedCompareAtAmountOk returns a tuple with the FormattedCompareAtAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetFormattedCompareAtAmountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FormattedCompareAtAmount) {
+		return nil, false
+	}
+	return &o.FormattedCompareAtAmount, true
+}
+
+// HasFormattedCompareAtAmount returns a boolean if a field has been set.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasFormattedCompareAtAmount() bool {
+	if o != nil && IsNil(o.FormattedCompareAtAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormattedCompareAtAmount gets a reference to the given interface{} and assigns it to the FormattedCompareAtAmount field.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetFormattedCompareAtAmount(v interface{}) {
+	o.FormattedCompareAtAmount = v
 }
 
 // GetOptionsAmountCents returns the OptionsAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -959,6 +1105,105 @@ func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetFrequency(v interfa
 	o.Frequency = v
 }
 
+// GetCouponCode returns the CouponCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCouponCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CouponCode
+}
+
+// GetCouponCodeOk returns a tuple with the CouponCode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCouponCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CouponCode) {
+		return nil, false
+	}
+	return &o.CouponCode, true
+}
+
+// HasCouponCode returns a boolean if a field has been set.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCouponCode() bool {
+	if o != nil && IsNil(o.CouponCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetCouponCode gets a reference to the given interface{} and assigns it to the CouponCode field.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCouponCode(v interface{}) {
+	o.CouponCode = v
+}
+
+// GetCircuitState returns the CircuitState field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCircuitState() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitState
+}
+
+// GetCircuitStateOk returns a tuple with the CircuitState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitState) {
+		return nil, false
+	}
+	return &o.CircuitState, true
+}
+
+// HasCircuitState returns a boolean if a field has been set.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCircuitState() bool {
+	if o != nil && IsNil(o.CircuitState) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitState gets a reference to the given interface{} and assigns it to the CircuitState field.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCircuitState(v interface{}) {
+	o.CircuitState = v
+}
+
+// GetCircuitFailureCount returns the CircuitFailureCount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCircuitFailureCount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitFailureCount
+}
+
+// GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitFailureCount) {
+		return nil, false
+	}
+	return &o.CircuitFailureCount, true
+}
+
+// HasCircuitFailureCount returns a boolean if a field has been set.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) HasCircuitFailureCount() bool {
+	if o != nil && IsNil(o.CircuitFailureCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitFailureCount gets a reference to the given interface{} and assigns it to the CircuitFailureCount field.
+func (o *GETLineItemsLineItemId200ResponseDataAttributes) SetCircuitFailureCount(v interface{}) {
+	o.CircuitFailureCount = v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETLineItemsLineItemId200ResponseDataAttributes) GetCreatedAt() interface{} {
 	if o == nil {
@@ -1143,6 +1388,9 @@ func (o GETLineItemsLineItemId200ResponseDataAttributes) ToMap() (map[string]int
 	if o.Quantity != nil {
 		toSerialize["quantity"] = o.Quantity
 	}
+	if o.ExternalPrice != nil {
+		toSerialize["_external_price"] = o.ExternalPrice
+	}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
 	}
@@ -1154,6 +1402,15 @@ func (o GETLineItemsLineItemId200ResponseDataAttributes) ToMap() (map[string]int
 	}
 	if o.FormattedUnitAmount != nil {
 		toSerialize["formatted_unit_amount"] = o.FormattedUnitAmount
+	}
+	if o.CompareAtAmountCents != nil {
+		toSerialize["compare_at_amount_cents"] = o.CompareAtAmountCents
+	}
+	if o.CompareAtAmountFloat != nil {
+		toSerialize["compare_at_amount_float"] = o.CompareAtAmountFloat
+	}
+	if o.FormattedCompareAtAmount != nil {
+		toSerialize["formatted_compare_at_amount"] = o.FormattedCompareAtAmount
 	}
 	if o.OptionsAmountCents != nil {
 		toSerialize["options_amount_cents"] = o.OptionsAmountCents
@@ -1211,6 +1468,15 @@ func (o GETLineItemsLineItemId200ResponseDataAttributes) ToMap() (map[string]int
 	}
 	if o.Frequency != nil {
 		toSerialize["frequency"] = o.Frequency
+	}
+	if o.CouponCode != nil {
+		toSerialize["coupon_code"] = o.CouponCode
+	}
+	if o.CircuitState != nil {
+		toSerialize["circuit_state"] = o.CircuitState
+	}
+	if o.CircuitFailureCount != nil {
+		toSerialize["circuit_failure_count"] = o.CircuitFailureCount
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes**](PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTOrderAmountPromotionRules201ResponseDataRelationships**](POSTOrderAmountPromotionRules201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTCustomPromotionRules201ResponseDataRelationships**](POSTCustomPromotionRules201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetRelationships() POSTOrderAmountPromotionRules201ResponseDataRelationships`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetRelationships() POSTCustomPromotionRules201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetRelationshipsOk() (*POSTOrderAmountPromotionRules201ResponseDataRelationships, bool)`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetRelationshipsOk() (*POSTCustomPromotionRules201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) SetRelationships(v POSTOrderAmountPromotionRules201ResponseDataRelationships)`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) SetRelationships(v POSTCustomPromotionRules201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

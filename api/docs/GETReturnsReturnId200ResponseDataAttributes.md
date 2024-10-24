@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Number** | Pointer to **interface{}** | Unique identifier for the return | [optional] 
-**Status** | Pointer to **interface{}** | The return status, one of &#39;draft&#39;, &#39;requested&#39;, &#39;approved&#39;, &#39;cancelled&#39;, &#39;shipped&#39;, &#39;rejected&#39; or &#39;received&#39; | [optional] 
+**Number** | Pointer to **interface{}** | Unique identifier for the return. | [optional] 
+**Status** | Pointer to **interface{}** | The return status. One of &#39;draft&#39; (default), &#39;requested&#39;, &#39;approved&#39;, &#39;cancelled&#39;, &#39;shipped&#39;, &#39;rejected&#39;, &#39;received&#39;, or &#39;refunded&#39;. | [optional] 
 **CustomerEmail** | Pointer to **interface{}** | The email address of the associated customer. | [optional] 
 **SkusCount** | Pointer to **interface{}** | The total number of SKUs in the return&#39;s line items. This can be useful to display a preview of the return content. | [optional] 
 **ApprovedAt** | Pointer to **interface{}** | Time at which the return was approved. | [optional] 
@@ -13,11 +13,15 @@ Name | Type | Description | Notes
 **ShippedAt** | Pointer to **interface{}** | Time at which the return was shipped. | [optional] 
 **RejectedAt** | Pointer to **interface{}** | Time at which the return was rejected. | [optional] 
 **ReceivedAt** | Pointer to **interface{}** | Time at which the return was received. | [optional] 
+**RefundedAt** | Pointer to **interface{}** | Time at which the return was refunded. | [optional] 
 **ArchivedAt** | Pointer to **interface{}** | Time at which the resource has been archived. | [optional] 
+**EstimatedRefundAmountCents** | Pointer to **interface{}** | The amount to be refunded, estimated by associated return line items, in cents. | [optional] 
+**EstimatedRefundAmountFloat** | Pointer to **interface{}** | The amount to be refunded, estimated by associated return line items, float. | [optional] 
+**FormattedEstimatedRefundAmount** | Pointer to **interface{}** | The amount to be refunded, estimated by associated return line items, formatted. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -354,6 +358,41 @@ HasReceivedAt returns a boolean if a field has been set.
 `func (o *GETReturnsReturnId200ResponseDataAttributes) UnsetReceivedAt()`
 
 UnsetReceivedAt ensures that no value is present for ReceivedAt, not even an explicit nil
+### GetRefundedAt
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) GetRefundedAt() interface{}`
+
+GetRefundedAt returns the RefundedAt field if non-nil, zero value otherwise.
+
+### GetRefundedAtOk
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) GetRefundedAtOk() (*interface{}, bool)`
+
+GetRefundedAtOk returns a tuple with the RefundedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefundedAt
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) SetRefundedAt(v interface{})`
+
+SetRefundedAt sets RefundedAt field to given value.
+
+### HasRefundedAt
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) HasRefundedAt() bool`
+
+HasRefundedAt returns a boolean if a field has been set.
+
+### SetRefundedAtNil
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) SetRefundedAtNil(b bool)`
+
+ SetRefundedAtNil sets the value for RefundedAt to be an explicit nil
+
+### UnsetRefundedAt
+`func (o *GETReturnsReturnId200ResponseDataAttributes) UnsetRefundedAt()`
+
+UnsetRefundedAt ensures that no value is present for RefundedAt, not even an explicit nil
 ### GetArchivedAt
 
 `func (o *GETReturnsReturnId200ResponseDataAttributes) GetArchivedAt() interface{}`
@@ -389,6 +428,111 @@ HasArchivedAt returns a boolean if a field has been set.
 `func (o *GETReturnsReturnId200ResponseDataAttributes) UnsetArchivedAt()`
 
 UnsetArchivedAt ensures that no value is present for ArchivedAt, not even an explicit nil
+### GetEstimatedRefundAmountCents
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) GetEstimatedRefundAmountCents() interface{}`
+
+GetEstimatedRefundAmountCents returns the EstimatedRefundAmountCents field if non-nil, zero value otherwise.
+
+### GetEstimatedRefundAmountCentsOk
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) GetEstimatedRefundAmountCentsOk() (*interface{}, bool)`
+
+GetEstimatedRefundAmountCentsOk returns a tuple with the EstimatedRefundAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEstimatedRefundAmountCents
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) SetEstimatedRefundAmountCents(v interface{})`
+
+SetEstimatedRefundAmountCents sets EstimatedRefundAmountCents field to given value.
+
+### HasEstimatedRefundAmountCents
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) HasEstimatedRefundAmountCents() bool`
+
+HasEstimatedRefundAmountCents returns a boolean if a field has been set.
+
+### SetEstimatedRefundAmountCentsNil
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) SetEstimatedRefundAmountCentsNil(b bool)`
+
+ SetEstimatedRefundAmountCentsNil sets the value for EstimatedRefundAmountCents to be an explicit nil
+
+### UnsetEstimatedRefundAmountCents
+`func (o *GETReturnsReturnId200ResponseDataAttributes) UnsetEstimatedRefundAmountCents()`
+
+UnsetEstimatedRefundAmountCents ensures that no value is present for EstimatedRefundAmountCents, not even an explicit nil
+### GetEstimatedRefundAmountFloat
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) GetEstimatedRefundAmountFloat() interface{}`
+
+GetEstimatedRefundAmountFloat returns the EstimatedRefundAmountFloat field if non-nil, zero value otherwise.
+
+### GetEstimatedRefundAmountFloatOk
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) GetEstimatedRefundAmountFloatOk() (*interface{}, bool)`
+
+GetEstimatedRefundAmountFloatOk returns a tuple with the EstimatedRefundAmountFloat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEstimatedRefundAmountFloat
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) SetEstimatedRefundAmountFloat(v interface{})`
+
+SetEstimatedRefundAmountFloat sets EstimatedRefundAmountFloat field to given value.
+
+### HasEstimatedRefundAmountFloat
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) HasEstimatedRefundAmountFloat() bool`
+
+HasEstimatedRefundAmountFloat returns a boolean if a field has been set.
+
+### SetEstimatedRefundAmountFloatNil
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) SetEstimatedRefundAmountFloatNil(b bool)`
+
+ SetEstimatedRefundAmountFloatNil sets the value for EstimatedRefundAmountFloat to be an explicit nil
+
+### UnsetEstimatedRefundAmountFloat
+`func (o *GETReturnsReturnId200ResponseDataAttributes) UnsetEstimatedRefundAmountFloat()`
+
+UnsetEstimatedRefundAmountFloat ensures that no value is present for EstimatedRefundAmountFloat, not even an explicit nil
+### GetFormattedEstimatedRefundAmount
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) GetFormattedEstimatedRefundAmount() interface{}`
+
+GetFormattedEstimatedRefundAmount returns the FormattedEstimatedRefundAmount field if non-nil, zero value otherwise.
+
+### GetFormattedEstimatedRefundAmountOk
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) GetFormattedEstimatedRefundAmountOk() (*interface{}, bool)`
+
+GetFormattedEstimatedRefundAmountOk returns a tuple with the FormattedEstimatedRefundAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormattedEstimatedRefundAmount
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) SetFormattedEstimatedRefundAmount(v interface{})`
+
+SetFormattedEstimatedRefundAmount sets FormattedEstimatedRefundAmount field to given value.
+
+### HasFormattedEstimatedRefundAmount
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) HasFormattedEstimatedRefundAmount() bool`
+
+HasFormattedEstimatedRefundAmount returns a boolean if a field has been set.
+
+### SetFormattedEstimatedRefundAmountNil
+
+`func (o *GETReturnsReturnId200ResponseDataAttributes) SetFormattedEstimatedRefundAmountNil(b bool)`
+
+ SetFormattedEstimatedRefundAmountNil sets the value for FormattedEstimatedRefundAmount to be an explicit nil
+
+### UnsetFormattedEstimatedRefundAmount
+`func (o *GETReturnsReturnId200ResponseDataAttributes) UnsetFormattedEstimatedRefundAmount()`
+
+UnsetFormattedEstimatedRefundAmount ensures that no value is present for FormattedEstimatedRefundAmount, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETReturnsReturnId200ResponseDataAttributes) GetCreatedAt() interface{}`

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,15 +20,15 @@ var _ MappedNullable = &PATCHCouponRecipientsCouponRecipientId200ResponseDataAtt
 
 // PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes struct for PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes
 type PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes struct {
-	// The recipient email address
+	// The recipient email address.
 	Email interface{} `json:"email,omitempty"`
-	// The recipient first name
+	// The recipient first name.
 	FirstName interface{} `json:"first_name,omitempty"`
-	// The recipient last name
+	// The recipient last name.
 	LastName interface{} `json:"last_name,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

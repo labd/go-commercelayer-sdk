@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,18 +22,24 @@ var _ MappedNullable = &GETExternalTaxCalculatorsExternalTaxCalculatorId200Respo
 type GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes struct {
 	// The tax calculator's internal name.
 	Name interface{} `json:"name,omitempty"`
+	// The tax calculator's type.
+	Type interface{} `json:"type,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
 	// The URL to the service that will compute the taxes.
 	TaxCalculatorUrl interface{} `json:"tax_calculator_url,omitempty"`
+	// The circuit breaker state, by default it is 'closed'. It can become 'open' once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made.
+	CircuitState interface{} `json:"circuit_state,omitempty"`
+	// The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback.
+	CircuitFailureCount interface{} `json:"circuit_failure_count,omitempty"`
 	// The shared secret used to sign the external request payload.
 	SharedSecret interface{} `json:"shared_secret,omitempty"`
 }
@@ -86,6 +92,39 @@ func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttribut
 // SetName gets a reference to the given interface{} and assigns it to the Name field.
 func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasType() bool {
+	if o != nil && IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -286,6 +325,72 @@ func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttribut
 	o.TaxCalculatorUrl = v
 }
 
+// GetCircuitState returns the CircuitState field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetCircuitState() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitState
+}
+
+// GetCircuitStateOk returns a tuple with the CircuitState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitState) {
+		return nil, false
+	}
+	return &o.CircuitState, true
+}
+
+// HasCircuitState returns a boolean if a field has been set.
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasCircuitState() bool {
+	if o != nil && IsNil(o.CircuitState) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitState gets a reference to the given interface{} and assigns it to the CircuitState field.
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetCircuitState(v interface{}) {
+	o.CircuitState = v
+}
+
+// GetCircuitFailureCount returns the CircuitFailureCount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetCircuitFailureCount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.CircuitFailureCount
+}
+
+// GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CircuitFailureCount) {
+		return nil, false
+	}
+	return &o.CircuitFailureCount, true
+}
+
+// HasCircuitFailureCount returns a boolean if a field has been set.
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasCircuitFailureCount() bool {
+	if o != nil && IsNil(o.CircuitFailureCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitFailureCount gets a reference to the given interface{} and assigns it to the CircuitFailureCount field.
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetCircuitFailureCount(v interface{}) {
+	o.CircuitFailureCount = v
+}
+
 // GetSharedSecret returns the SharedSecret field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetSharedSecret() interface{} {
 	if o == nil {
@@ -332,6 +437,9 @@ func (o GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttribute
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt
 	}
@@ -349,6 +457,12 @@ func (o GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttribute
 	}
 	if o.TaxCalculatorUrl != nil {
 		toSerialize["tax_calculator_url"] = o.TaxCalculatorUrl
+	}
+	if o.CircuitState != nil {
+		toSerialize["circuit_state"] = o.CircuitState
+	}
+	if o.CircuitFailureCount != nil {
+		toSerialize["circuit_failure_count"] = o.CircuitFailureCount
 	}
 	if o.SharedSecret != nil {
 		toSerialize["shared_secret"] = o.SharedSecret

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -207,6 +207,98 @@ func (a *SkuListsApiService) GETBundleIdSkuListExecute(r SkuListsApiGETBundleIdS
 	return localVarHTTPResponse, nil
 }
 
+type SkuListsApiGETBuyXPayYPromotionIdSkuListRequest struct {
+	ctx                 context.Context
+	ApiService          *SkuListsApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r SkuListsApiGETBuyXPayYPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdSkuListExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdSkuList Retrieve the sku list associated to the buy x pay y promotion
+
+Retrieve the sku list associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return SkuListsApiGETBuyXPayYPromotionIdSkuListRequest
+*/
+func (a *SkuListsApiService) GETBuyXPayYPromotionIdSkuList(ctx context.Context, buyXPayYPromotionId interface{}) SkuListsApiGETBuyXPayYPromotionIdSkuListRequest {
+	return SkuListsApiGETBuyXPayYPromotionIdSkuListRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *SkuListsApiService) GETBuyXPayYPromotionIdSkuListExecute(r SkuListsApiGETBuyXPayYPromotionIdSkuListRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETBuyXPayYPromotionIdSkuList")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/sku_list"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type SkuListsApiGETCustomerIdSkuListsRequest struct {
 	ctx        context.Context
 	ApiService *SkuListsApiService
@@ -249,6 +341,190 @@ func (a *SkuListsApiService) GETCustomerIdSkuListsExecute(r SkuListsApiGETCustom
 
 	localVarPath := localBasePath + "/customers/{customerId}/sku_lists"
 	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type SkuListsApiGETExternalPromotionIdSkuListRequest struct {
+	ctx                 context.Context
+	ApiService          *SkuListsApiService
+	externalPromotionId interface{}
+}
+
+func (r SkuListsApiGETExternalPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExternalPromotionIdSkuListExecute(r)
+}
+
+/*
+GETExternalPromotionIdSkuList Retrieve the sku list associated to the external promotion
+
+Retrieve the sku list associated to the external promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return SkuListsApiGETExternalPromotionIdSkuListRequest
+*/
+func (a *SkuListsApiService) GETExternalPromotionIdSkuList(ctx context.Context, externalPromotionId interface{}) SkuListsApiGETExternalPromotionIdSkuListRequest {
+	return SkuListsApiGETExternalPromotionIdSkuListRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		externalPromotionId: externalPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *SkuListsApiService) GETExternalPromotionIdSkuListExecute(r SkuListsApiGETExternalPromotionIdSkuListRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETExternalPromotionIdSkuList")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/sku_list"
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type SkuListsApiGETFixedAmountPromotionIdSkuListRequest struct {
+	ctx                    context.Context
+	ApiService             *SkuListsApiService
+	fixedAmountPromotionId interface{}
+}
+
+func (r SkuListsApiGETFixedAmountPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFixedAmountPromotionIdSkuListExecute(r)
+}
+
+/*
+GETFixedAmountPromotionIdSkuList Retrieve the sku list associated to the fixed amount promotion
+
+Retrieve the sku list associated to the fixed amount promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return SkuListsApiGETFixedAmountPromotionIdSkuListRequest
+*/
+func (a *SkuListsApiService) GETFixedAmountPromotionIdSkuList(ctx context.Context, fixedAmountPromotionId interface{}) SkuListsApiGETFixedAmountPromotionIdSkuListRequest {
+	return SkuListsApiGETFixedAmountPromotionIdSkuListRequest{
+		ApiService:             a,
+		ctx:                    ctx,
+		fixedAmountPromotionId: fixedAmountPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *SkuListsApiService) GETFixedAmountPromotionIdSkuListExecute(r SkuListsApiGETFixedAmountPromotionIdSkuListRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETFixedAmountPromotionIdSkuList")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/sku_list"
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -483,6 +759,98 @@ func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuListExecute(r SkuListsApiG
 	return localVarHTTPResponse, nil
 }
 
+type SkuListsApiGETFreeShippingPromotionIdSkuListRequest struct {
+	ctx                     context.Context
+	ApiService              *SkuListsApiService
+	freeShippingPromotionId interface{}
+}
+
+func (r SkuListsApiGETFreeShippingPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeShippingPromotionIdSkuListExecute(r)
+}
+
+/*
+GETFreeShippingPromotionIdSkuList Retrieve the sku list associated to the free shipping promotion
+
+Retrieve the sku list associated to the free shipping promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return SkuListsApiGETFreeShippingPromotionIdSkuListRequest
+*/
+func (a *SkuListsApiService) GETFreeShippingPromotionIdSkuList(ctx context.Context, freeShippingPromotionId interface{}) SkuListsApiGETFreeShippingPromotionIdSkuListRequest {
+	return SkuListsApiGETFreeShippingPromotionIdSkuListRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		freeShippingPromotionId: freeShippingPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *SkuListsApiService) GETFreeShippingPromotionIdSkuListExecute(r SkuListsApiGETFreeShippingPromotionIdSkuListRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETFreeShippingPromotionIdSkuList")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/sku_list"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest struct {
 	ctx                           context.Context
 	ApiService                    *SkuListsApiService
@@ -525,6 +893,190 @@ func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuListExecute(r Sk
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list"
 	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type SkuListsApiGETPromotionIdSkuListRequest struct {
+	ctx         context.Context
+	ApiService  *SkuListsApiService
+	promotionId interface{}
+}
+
+func (r SkuListsApiGETPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPromotionIdSkuListExecute(r)
+}
+
+/*
+GETPromotionIdSkuList Retrieve the sku list associated to the promotion
+
+Retrieve the sku list associated to the promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return SkuListsApiGETPromotionIdSkuListRequest
+*/
+func (a *SkuListsApiService) GETPromotionIdSkuList(ctx context.Context, promotionId interface{}) SkuListsApiGETPromotionIdSkuListRequest {
+	return SkuListsApiGETPromotionIdSkuListRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		promotionId: promotionId,
+	}
+}
+
+// Execute executes the request
+func (a *SkuListsApiService) GETPromotionIdSkuListExecute(r SkuListsApiGETPromotionIdSkuListRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETPromotionIdSkuList")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/promotions/{promotionId}/sku_list"
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type SkuListsApiGETSkuIdSkuListsRequest struct {
+	ctx        context.Context
+	ApiService *SkuListsApiService
+	skuId      interface{}
+}
+
+func (r SkuListsApiGETSkuIdSkuListsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuIdSkuListsExecute(r)
+}
+
+/*
+GETSkuIdSkuLists Retrieve the sku lists associated to the SKU
+
+Retrieve the sku lists associated to the SKU
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return SkuListsApiGETSkuIdSkuListsRequest
+*/
+func (a *SkuListsApiService) GETSkuIdSkuLists(ctx context.Context, skuId interface{}) SkuListsApiGETSkuIdSkuListsRequest {
+	return SkuListsApiGETSkuIdSkuListsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuId:      skuId,
+	}
+}
+
+// Execute executes the request
+func (a *SkuListsApiService) GETSkuIdSkuListsExecute(r SkuListsApiGETSkuIdSkuListsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETSkuIdSkuLists")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/skus/{skuId}/sku_lists"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

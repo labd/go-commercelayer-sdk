@@ -74,4 +74,18 @@ func Test_api_VoidsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test VoidsApiService PATCHVoidsVoidId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var voidId interface{}
+
+		resp, httpRes, err := apiClient.VoidsApi.PATCHVoidsVoidId(context.Background(), voidId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 }

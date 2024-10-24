@@ -22,6 +22,19 @@ func Test_api_ShipmentsApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test ShipmentsApiService DELETEShipmentsShipmentId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var shipmentId interface{}
+
+		httpRes, err := apiClient.ShipmentsApi.DELETEShipmentsShipmentId(context.Background(), shipmentId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ShipmentsApiService GETOrderIdShipments", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -107,6 +120,18 @@ func Test_api_ShipmentsApiService(t *testing.T) {
 		var shipmentId interface{}
 
 		resp, httpRes, err := apiClient.ShipmentsApi.PATCHShipmentsShipmentId(context.Background(), shipmentId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ShipmentsApiService POSTShipments", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ShipmentsApi.POSTShipments(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &GETOrderSubscriptionsOrderSubscriptionId200ResponseDataA
 
 // GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes struct for GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes
 type GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes struct {
-	// Unique identifier for the subscription (numeric)
+	// Unique identifier for the subscription (numeric).
 	Number interface{} `json:"number,omitempty"`
 	// The subscription status. One of 'draft' (default), 'inactive', 'active', or 'cancelled'.
 	Status interface{} `json:"status,omitempty"`
@@ -28,12 +28,18 @@ type GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes struct {
 	Frequency interface{} `json:"frequency,omitempty"`
 	// Indicates if the subscription will be activated considering the placed source order as its first run.
 	ActivateBySourceOrder interface{} `json:"activate_by_source_order,omitempty"`
+	// Indicates if the subscription created orders are automatically placed at the end of the copy.
+	PlaceTargetOrder interface{} `json:"place_target_order,omitempty"`
+	// Indicates the number of hours the renewal alert will be triggered before the subscription next run. Must be included between 1 and 720 hours.
+	RenewalAlertPeriod interface{} `json:"renewal_alert_period,omitempty"`
 	// The email address of the customer, if any, associated to the source order.
 	CustomerEmail interface{} `json:"customer_email,omitempty"`
 	// The activation date/time of this subscription.
 	StartsAt interface{} `json:"starts_at,omitempty"`
 	// The expiration date/time of this subscription (must be after starts_at).
 	ExpiresAt interface{} `json:"expires_at,omitempty"`
+	// The date/time of the subscription last run.
+	LastRunAt interface{} `json:"last_run_at,omitempty"`
 	// The date/time of the subscription next run. Can be updated but only in the future, to copy with frequency changes.
 	NextRunAt interface{} `json:"next_run_at,omitempty"`
 	// The number of times this subscription has run.
@@ -42,15 +48,13 @@ type GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes struct {
 	ErrorsCount interface{} `json:"errors_count,omitempty"`
 	// Indicates if the subscription has succeeded on its last run.
 	SucceededOnLastRun interface{} `json:"succeeded_on_last_run,omitempty"`
-	// The subscription options used to create the order (check order_factories for more information). For subscriptions the `place_target_order` is enabled by default, specify custom options to overwrite it.
-	Options interface{} `json:"options,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -205,6 +209,72 @@ func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetA
 	o.ActivateBySourceOrder = v
 }
 
+// GetPlaceTargetOrder returns the PlaceTargetOrder field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetPlaceTargetOrder() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PlaceTargetOrder
+}
+
+// GetPlaceTargetOrderOk returns a tuple with the PlaceTargetOrder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetPlaceTargetOrderOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PlaceTargetOrder) {
+		return nil, false
+	}
+	return &o.PlaceTargetOrder, true
+}
+
+// HasPlaceTargetOrder returns a boolean if a field has been set.
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasPlaceTargetOrder() bool {
+	if o != nil && IsNil(o.PlaceTargetOrder) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlaceTargetOrder gets a reference to the given interface{} and assigns it to the PlaceTargetOrder field.
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetPlaceTargetOrder(v interface{}) {
+	o.PlaceTargetOrder = v
+}
+
+// GetRenewalAlertPeriod returns the RenewalAlertPeriod field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetRenewalAlertPeriod() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.RenewalAlertPeriod
+}
+
+// GetRenewalAlertPeriodOk returns a tuple with the RenewalAlertPeriod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetRenewalAlertPeriodOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RenewalAlertPeriod) {
+		return nil, false
+	}
+	return &o.RenewalAlertPeriod, true
+}
+
+// HasRenewalAlertPeriod returns a boolean if a field has been set.
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasRenewalAlertPeriod() bool {
+	if o != nil && IsNil(o.RenewalAlertPeriod) {
+		return true
+	}
+
+	return false
+}
+
+// SetRenewalAlertPeriod gets a reference to the given interface{} and assigns it to the RenewalAlertPeriod field.
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetRenewalAlertPeriod(v interface{}) {
+	o.RenewalAlertPeriod = v
+}
+
 // GetCustomerEmail returns the CustomerEmail field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetCustomerEmail() interface{} {
 	if o == nil {
@@ -302,6 +372,39 @@ func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasE
 // SetExpiresAt gets a reference to the given interface{} and assigns it to the ExpiresAt field.
 func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetExpiresAt(v interface{}) {
 	o.ExpiresAt = v
+}
+
+// GetLastRunAt returns the LastRunAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetLastRunAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.LastRunAt
+}
+
+// GetLastRunAtOk returns a tuple with the LastRunAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetLastRunAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.LastRunAt) {
+		return nil, false
+	}
+	return &o.LastRunAt, true
+}
+
+// HasLastRunAt returns a boolean if a field has been set.
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasLastRunAt() bool {
+	if o != nil && IsNil(o.LastRunAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastRunAt gets a reference to the given interface{} and assigns it to the LastRunAt field.
+func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetLastRunAt(v interface{}) {
+	o.LastRunAt = v
 }
 
 // GetNextRunAt returns the NextRunAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -434,39 +537,6 @@ func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasS
 // SetSucceededOnLastRun gets a reference to the given interface{} and assigns it to the SucceededOnLastRun field.
 func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetSucceededOnLastRun(v interface{}) {
 	o.SucceededOnLastRun = v
-}
-
-// GetOptions returns the Options field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetOptions() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Options
-}
-
-// GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetOptionsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Options) {
-		return nil, false
-	}
-	return &o.Options, true
-}
-
-// HasOptions returns a boolean if a field has been set.
-func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasOptions() bool {
-	if o != nil && IsNil(o.Options) {
-		return true
-	}
-
-	return false
-}
-
-// SetOptions gets a reference to the given interface{} and assigns it to the Options field.
-func (o *GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetOptions(v interface{}) {
-	o.Options = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -656,6 +726,12 @@ func (o GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) ToMap
 	if o.ActivateBySourceOrder != nil {
 		toSerialize["activate_by_source_order"] = o.ActivateBySourceOrder
 	}
+	if o.PlaceTargetOrder != nil {
+		toSerialize["place_target_order"] = o.PlaceTargetOrder
+	}
+	if o.RenewalAlertPeriod != nil {
+		toSerialize["renewal_alert_period"] = o.RenewalAlertPeriod
+	}
 	if o.CustomerEmail != nil {
 		toSerialize["customer_email"] = o.CustomerEmail
 	}
@@ -664,6 +740,9 @@ func (o GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) ToMap
 	}
 	if o.ExpiresAt != nil {
 		toSerialize["expires_at"] = o.ExpiresAt
+	}
+	if o.LastRunAt != nil {
+		toSerialize["last_run_at"] = o.LastRunAt
 	}
 	if o.NextRunAt != nil {
 		toSerialize["next_run_at"] = o.NextRunAt
@@ -676,9 +755,6 @@ func (o GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) ToMap
 	}
 	if o.SucceededOnLastRun != nil {
 		toSerialize["succeeded_on_last_run"] = o.SucceededOnLastRun
-	}
-	if o.Options != nil {
-		toSerialize["options"] = o.Options
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

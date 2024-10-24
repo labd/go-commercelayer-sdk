@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTOrderAmountPromotionRules201ResponseDataRelationships**](POSTOrderAmountPromotionRules201ResponseDataRelationships.md) |  | [optional] 
+**Attributes** | Pointer to [**GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes**](GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTCustomPromotionRules201ResponseDataRelationships**](POSTCustomPromotionRules201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetAttributes() GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
+`func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetAttributes() GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetAttributesOk() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
+`func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetAttributesOk() (*GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GETPromotionRulesPromotionRuleId200ResponseData) SetAttributes(v GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
+`func (o *GETPromotionRulesPromotionRuleId200ResponseData) SetAttributes(v GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetRelationships() POSTOrderAmountPromotionRules201ResponseDataRelationships`
+`func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetRelationships() POSTCustomPromotionRules201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetRelationshipsOk() (*POSTOrderAmountPromotionRules201ResponseDataRelationships, bool)`
+`func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetRelationshipsOk() (*POSTCustomPromotionRules201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *GETPromotionRulesPromotionRuleId200ResponseData) SetRelationships(v POSTOrderAmountPromotionRules201ResponseDataRelationships)`
+`func (o *GETPromotionRulesPromotionRuleId200ResponseData) SetRelationships(v POSTCustomPromotionRules201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

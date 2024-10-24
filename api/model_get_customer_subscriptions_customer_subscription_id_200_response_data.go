@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -26,7 +26,7 @@ type GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData struct {
 	Type          interface{}                                                              `json:"type,omitempty"`
 	Links         *POSTAddresses201ResponseDataLinks                                       `json:"links,omitempty"`
 	Attributes    *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTCustomerPasswordResets201ResponseDataRelationships                  `json:"relationships,omitempty"`
+	Relationships *POSTCustomerSubscriptions201ResponseDataRelationships                   `json:"relationships,omitempty"`
 }
 
 // NewGETCustomerSubscriptionsCustomerSubscriptionId200ResponseData instantiates a new GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData object
@@ -177,9 +177,9 @@ func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetAttri
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationships() POSTCustomerPasswordResets201ResponseDataRelationships {
+func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationships() POSTCustomerSubscriptions201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret POSTCustomerPasswordResets201ResponseDataRelationships
+		var ret POSTCustomerSubscriptions201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationshipsOk() (*POSTCustomerPasswordResets201ResponseDataRelationships, bool) {
+func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationshipsOk() (*POSTCustomerSubscriptions201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) HasRelat
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTCustomerPasswordResets201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetRelationships(v POSTCustomerPasswordResets201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTCustomerSubscriptions201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetRelationships(v POSTCustomerSubscriptions201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

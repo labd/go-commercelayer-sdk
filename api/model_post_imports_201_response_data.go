@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,10 +23,10 @@ type POSTImports201ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                               `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks        `json:"links,omitempty"`
-	Attributes    *POSTImports201ResponseDataAttributes     `json:"attributes,omitempty"`
-	Relationships *POSTCleanups201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type          interface{}                              `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks       `json:"links,omitempty"`
+	Attributes    *POSTImports201ResponseDataAttributes    `json:"attributes,omitempty"`
+	Relationships *POSTExports201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTImports201ResponseData instantiates a new POSTImports201ResponseData object
@@ -177,9 +177,9 @@ func (o *POSTImports201ResponseData) SetAttributes(v POSTImports201ResponseDataA
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTImports201ResponseData) GetRelationships() POSTCleanups201ResponseDataRelationships {
+func (o *POSTImports201ResponseData) GetRelationships() POSTExports201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret POSTCleanups201ResponseDataRelationships
+		var ret POSTExports201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *POSTImports201ResponseData) GetRelationships() POSTCleanups201ResponseD
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTImports201ResponseData) GetRelationshipsOk() (*POSTCleanups201ResponseDataRelationships, bool) {
+func (o *POSTImports201ResponseData) GetRelationshipsOk() (*POSTExports201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *POSTImports201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTCleanups201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTImports201ResponseData) SetRelationships(v POSTCleanups201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTExports201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *POSTImports201ResponseData) SetRelationships(v POSTExports201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

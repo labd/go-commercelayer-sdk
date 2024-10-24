@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -65,6 +65,98 @@ func (a *PriceListsApiService) DELETEPriceListsPriceListIdExecute(r PriceListsAp
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type PriceListsApiGETMarketIdBasePriceListRequest struct {
+	ctx        context.Context
+	ApiService *PriceListsApiService
+	marketId   interface{}
+}
+
+func (r PriceListsApiGETMarketIdBasePriceListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETMarketIdBasePriceListExecute(r)
+}
+
+/*
+GETMarketIdBasePriceList Retrieve the base price list associated to the market
+
+Retrieve the base price list associated to the market
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return PriceListsApiGETMarketIdBasePriceListRequest
+*/
+func (a *PriceListsApiService) GETMarketIdBasePriceList(ctx context.Context, marketId interface{}) PriceListsApiGETMarketIdBasePriceListRequest {
+	return PriceListsApiGETMarketIdBasePriceListRequest{
+		ApiService: a,
+		ctx:        ctx,
+		marketId:   marketId,
+	}
+}
+
+// Execute executes the request
+func (a *PriceListsApiService) GETMarketIdBasePriceListExecute(r PriceListsApiGETMarketIdBasePriceListRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListsApiService.GETMarketIdBasePriceList")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/markets/{marketId}/base_price_list"
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -249,6 +341,98 @@ func (a *PriceListsApiService) GETPriceIdPriceListExecute(r PriceListsApiGETPric
 
 	localVarPath := localBasePath + "/prices/{priceId}/price_list"
 	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type PriceListsApiGETPriceListSchedulerIdPriceListRequest struct {
+	ctx                  context.Context
+	ApiService           *PriceListsApiService
+	priceListSchedulerId interface{}
+}
+
+func (r PriceListsApiGETPriceListSchedulerIdPriceListRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceListSchedulerIdPriceListExecute(r)
+}
+
+/*
+GETPriceListSchedulerIdPriceList Retrieve the price list associated to the price list scheduler
+
+Retrieve the price list associated to the price list scheduler
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceListSchedulerId The resource's id
+	@return PriceListsApiGETPriceListSchedulerIdPriceListRequest
+*/
+func (a *PriceListsApiService) GETPriceListSchedulerIdPriceList(ctx context.Context, priceListSchedulerId interface{}) PriceListsApiGETPriceListSchedulerIdPriceListRequest {
+	return PriceListsApiGETPriceListSchedulerIdPriceListRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceListSchedulerId: priceListSchedulerId,
+	}
+}
+
+// Execute executes the request
+func (a *PriceListsApiService) GETPriceListSchedulerIdPriceListExecute(r PriceListsApiGETPriceListSchedulerIdPriceListRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListsApiService.GETPriceListSchedulerIdPriceList")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_list_schedulers/{priceListSchedulerId}/price_list"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListSchedulerId"+"}", url.PathEscape(parameterValueToString(r.priceListSchedulerId, "priceListSchedulerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

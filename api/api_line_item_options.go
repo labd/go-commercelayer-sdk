@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -409,6 +409,98 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r 
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type LineItemOptionsApiGETOrderIdLineItemOptionsRequest struct {
+	ctx        context.Context
+	ApiService *LineItemOptionsApiService
+	orderId    interface{}
+}
+
+func (r LineItemOptionsApiGETOrderIdLineItemOptionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdLineItemOptionsExecute(r)
+}
+
+/*
+GETOrderIdLineItemOptions Retrieve the line item options associated to the order
+
+Retrieve the line item options associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return LineItemOptionsApiGETOrderIdLineItemOptionsRequest
+*/
+func (a *LineItemOptionsApiService) GETOrderIdLineItemOptions(ctx context.Context, orderId interface{}) LineItemOptionsApiGETOrderIdLineItemOptionsRequest {
+	return LineItemOptionsApiGETOrderIdLineItemOptionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *LineItemOptionsApiService) GETOrderIdLineItemOptionsExecute(r LineItemOptionsApiGETOrderIdLineItemOptionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemOptionsApiService.GETOrderIdLineItemOptions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/line_item_options"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 type LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest struct {

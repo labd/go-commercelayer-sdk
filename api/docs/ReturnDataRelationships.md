@@ -9,9 +9,14 @@ Name | Type | Description | Notes
 **StockLocation** | Pointer to [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | [optional] 
 **OriginAddress** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
 **DestinationAddress** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
-**ReturnLineItems** | Pointer to [**ReturnDataRelationshipsReturnLineItems**](ReturnDataRelationshipsReturnLineItems.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**ReferenceCapture** | Pointer to [**AuthorizationDataRelationshipsCaptures**](AuthorizationDataRelationshipsCaptures.md) |  | [optional] 
+**ReferenceRefund** | Pointer to [**CaptureDataRelationshipsRefunds**](CaptureDataRelationshipsRefunds.md) |  | [optional] 
+**ReturnLineItems** | Pointer to [**LineItemDataRelationshipsReturnLineItems**](LineItemDataRelationshipsReturnLineItems.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**ResourceErrors** | Pointer to [**OrderDataRelationshipsResourceErrors**](OrderDataRelationshipsResourceErrors.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
+**Tags** | Pointer to [**AddressDataRelationshipsTags**](AddressDataRelationshipsTags.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -157,22 +162,72 @@ SetDestinationAddress sets DestinationAddress field to given value.
 
 HasDestinationAddress returns a boolean if a field has been set.
 
+### GetReferenceCapture
+
+`func (o *ReturnDataRelationships) GetReferenceCapture() AuthorizationDataRelationshipsCaptures`
+
+GetReferenceCapture returns the ReferenceCapture field if non-nil, zero value otherwise.
+
+### GetReferenceCaptureOk
+
+`func (o *ReturnDataRelationships) GetReferenceCaptureOk() (*AuthorizationDataRelationshipsCaptures, bool)`
+
+GetReferenceCaptureOk returns a tuple with the ReferenceCapture field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferenceCapture
+
+`func (o *ReturnDataRelationships) SetReferenceCapture(v AuthorizationDataRelationshipsCaptures)`
+
+SetReferenceCapture sets ReferenceCapture field to given value.
+
+### HasReferenceCapture
+
+`func (o *ReturnDataRelationships) HasReferenceCapture() bool`
+
+HasReferenceCapture returns a boolean if a field has been set.
+
+### GetReferenceRefund
+
+`func (o *ReturnDataRelationships) GetReferenceRefund() CaptureDataRelationshipsRefunds`
+
+GetReferenceRefund returns the ReferenceRefund field if non-nil, zero value otherwise.
+
+### GetReferenceRefundOk
+
+`func (o *ReturnDataRelationships) GetReferenceRefundOk() (*CaptureDataRelationshipsRefunds, bool)`
+
+GetReferenceRefundOk returns a tuple with the ReferenceRefund field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferenceRefund
+
+`func (o *ReturnDataRelationships) SetReferenceRefund(v CaptureDataRelationshipsRefunds)`
+
+SetReferenceRefund sets ReferenceRefund field to given value.
+
+### HasReferenceRefund
+
+`func (o *ReturnDataRelationships) HasReferenceRefund() bool`
+
+HasReferenceRefund returns a boolean if a field has been set.
+
 ### GetReturnLineItems
 
-`func (o *ReturnDataRelationships) GetReturnLineItems() ReturnDataRelationshipsReturnLineItems`
+`func (o *ReturnDataRelationships) GetReturnLineItems() LineItemDataRelationshipsReturnLineItems`
 
 GetReturnLineItems returns the ReturnLineItems field if non-nil, zero value otherwise.
 
 ### GetReturnLineItemsOk
 
-`func (o *ReturnDataRelationships) GetReturnLineItemsOk() (*ReturnDataRelationshipsReturnLineItems, bool)`
+`func (o *ReturnDataRelationships) GetReturnLineItemsOk() (*LineItemDataRelationshipsReturnLineItems, bool)`
 
 GetReturnLineItemsOk returns a tuple with the ReturnLineItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReturnLineItems
 
-`func (o *ReturnDataRelationships) SetReturnLineItems(v ReturnDataRelationshipsReturnLineItems)`
+`func (o *ReturnDataRelationships) SetReturnLineItems(v LineItemDataRelationshipsReturnLineItems)`
 
 SetReturnLineItems sets ReturnLineItems field to given value.
 
@@ -184,20 +239,20 @@ HasReturnLineItems returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *ReturnDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *ReturnDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *ReturnDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *ReturnDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *ReturnDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *ReturnDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -207,22 +262,47 @@ SetAttachments sets Attachments field to given value.
 
 HasAttachments returns a boolean if a field has been set.
 
+### GetResourceErrors
+
+`func (o *ReturnDataRelationships) GetResourceErrors() OrderDataRelationshipsResourceErrors`
+
+GetResourceErrors returns the ResourceErrors field if non-nil, zero value otherwise.
+
+### GetResourceErrorsOk
+
+`func (o *ReturnDataRelationships) GetResourceErrorsOk() (*OrderDataRelationshipsResourceErrors, bool)`
+
+GetResourceErrorsOk returns a tuple with the ResourceErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceErrors
+
+`func (o *ReturnDataRelationships) SetResourceErrors(v OrderDataRelationshipsResourceErrors)`
+
+SetResourceErrors sets ResourceErrors field to given value.
+
+### HasResourceErrors
+
+`func (o *ReturnDataRelationships) HasResourceErrors() bool`
+
+HasResourceErrors returns a boolean if a field has been set.
+
 ### GetEvents
 
-`func (o *ReturnDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *ReturnDataRelationships) GetEvents() AddressDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *ReturnDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *ReturnDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *ReturnDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *ReturnDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 
@@ -231,6 +311,56 @@ SetEvents sets Events field to given value.
 `func (o *ReturnDataRelationships) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *ReturnDataRelationships) GetTags() AddressDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *ReturnDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *ReturnDataRelationships) SetTags(v AddressDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *ReturnDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *ReturnDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *ReturnDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *ReturnDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *ReturnDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

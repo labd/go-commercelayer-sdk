@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -24,10 +24,18 @@ type GETReturnLineItemsReturnLineItemId200ResponseDataAttributes struct {
 	SkuCode interface{} `json:"sku_code,omitempty"`
 	// The code of the associated bundle.
 	BundleCode interface{} `json:"bundle_code,omitempty"`
+	// The return line item quantity.
+	Quantity interface{} `json:"quantity,omitempty"`
 	// The name of the line item.
 	Name interface{} `json:"name,omitempty"`
-	// The line item quantity.
-	Quantity interface{} `json:"quantity,omitempty"`
+	// The image_url of the associated line item.
+	ImageUrl interface{} `json:"image_url,omitempty"`
+	// Calculated as line item unit amount x returned quantity and applied discounts, if any.
+	TotalAmountCents interface{} `json:"total_amount_cents,omitempty"`
+	// The return line item total amount, float. This can be useful to track the purchase on thrid party systems, e.g Google Analyitcs Enhanced Ecommerce.
+	TotalAmountFloat interface{} `json:"total_amount_float,omitempty"`
+	// The return line item total amount, formatted. This can be useful to display the amount with currency in you views.
+	FormattedTotalAmount interface{} `json:"formatted_total_amount,omitempty"`
 	// Set of key-value pairs that you can use to add details about return reason.
 	ReturnReason interface{} `json:"return_reason,omitempty"`
 	// Time at which the return line item was restocked.
@@ -38,7 +46,7 @@ type GETReturnLineItemsReturnLineItemId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -127,6 +135,39 @@ func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetBundleC
 	o.BundleCode = v
 }
 
+// GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetQuantity() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Quantity
+}
+
+// GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetQuantityOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Quantity) {
+		return nil, false
+	}
+	return &o.Quantity, true
+}
+
+// HasQuantity returns a boolean if a field has been set.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasQuantity() bool {
+	if o != nil && IsNil(o.Quantity) {
+		return true
+	}
+
+	return false
+}
+
+// SetQuantity gets a reference to the given interface{} and assigns it to the Quantity field.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetQuantity(v interface{}) {
+	o.Quantity = v
+}
+
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
@@ -160,37 +201,136 @@ func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetName(v 
 	o.Name = v
 }
 
-// GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetQuantity() interface{} {
+// GetImageUrl returns the ImageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetImageUrl() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-	return o.Quantity
+	return o.ImageUrl
 }
 
-// GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
+// GetImageUrlOk returns a tuple with the ImageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetQuantityOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Quantity) {
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
-	return &o.Quantity, true
+	return &o.ImageUrl, true
 }
 
-// HasQuantity returns a boolean if a field has been set.
-func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasQuantity() bool {
-	if o != nil && IsNil(o.Quantity) {
+// HasImageUrl returns a boolean if a field has been set.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasImageUrl() bool {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantity gets a reference to the given interface{} and assigns it to the Quantity field.
-func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetQuantity(v interface{}) {
-	o.Quantity = v
+// SetImageUrl gets a reference to the given interface{} and assigns it to the ImageUrl field.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetImageUrl(v interface{}) {
+	o.ImageUrl = v
+}
+
+// GetTotalAmountCents returns the TotalAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetTotalAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.TotalAmountCents
+}
+
+// GetTotalAmountCentsOk returns a tuple with the TotalAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetTotalAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TotalAmountCents) {
+		return nil, false
+	}
+	return &o.TotalAmountCents, true
+}
+
+// HasTotalAmountCents returns a boolean if a field has been set.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasTotalAmountCents() bool {
+	if o != nil && IsNil(o.TotalAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalAmountCents gets a reference to the given interface{} and assigns it to the TotalAmountCents field.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetTotalAmountCents(v interface{}) {
+	o.TotalAmountCents = v
+}
+
+// GetTotalAmountFloat returns the TotalAmountFloat field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetTotalAmountFloat() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.TotalAmountFloat
+}
+
+// GetTotalAmountFloatOk returns a tuple with the TotalAmountFloat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetTotalAmountFloatOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TotalAmountFloat) {
+		return nil, false
+	}
+	return &o.TotalAmountFloat, true
+}
+
+// HasTotalAmountFloat returns a boolean if a field has been set.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasTotalAmountFloat() bool {
+	if o != nil && IsNil(o.TotalAmountFloat) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalAmountFloat gets a reference to the given interface{} and assigns it to the TotalAmountFloat field.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetTotalAmountFloat(v interface{}) {
+	o.TotalAmountFloat = v
+}
+
+// GetFormattedTotalAmount returns the FormattedTotalAmount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetFormattedTotalAmount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.FormattedTotalAmount
+}
+
+// GetFormattedTotalAmountOk returns a tuple with the FormattedTotalAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) GetFormattedTotalAmountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FormattedTotalAmount) {
+		return nil, false
+	}
+	return &o.FormattedTotalAmount, true
+}
+
+// HasFormattedTotalAmount returns a boolean if a field has been set.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) HasFormattedTotalAmount() bool {
+	if o != nil && IsNil(o.FormattedTotalAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormattedTotalAmount gets a reference to the given interface{} and assigns it to the FormattedTotalAmount field.
+func (o *GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) SetFormattedTotalAmount(v interface{}) {
+	o.FormattedTotalAmount = v
 }
 
 // GetReturnReason returns the ReturnReason field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -440,11 +580,23 @@ func (o GETReturnLineItemsReturnLineItemId200ResponseDataAttributes) ToMap() (ma
 	if o.BundleCode != nil {
 		toSerialize["bundle_code"] = o.BundleCode
 	}
+	if o.Quantity != nil {
+		toSerialize["quantity"] = o.Quantity
+	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.Quantity != nil {
-		toSerialize["quantity"] = o.Quantity
+	if o.ImageUrl != nil {
+		toSerialize["image_url"] = o.ImageUrl
+	}
+	if o.TotalAmountCents != nil {
+		toSerialize["total_amount_cents"] = o.TotalAmountCents
+	}
+	if o.TotalAmountFloat != nil {
+		toSerialize["total_amount_float"] = o.TotalAmountFloat
+	}
+	if o.FormattedTotalAmount != nil {
+		toSerialize["formatted_total_amount"] = o.FormattedTotalAmount
 	}
 	if o.ReturnReason != nil {
 		toSerialize["return_reason"] = o.ReturnReason

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,21 @@ var _ MappedNullable = &LineItemDataRelationships{}
 
 // LineItemDataRelationships struct for LineItemDataRelationships
 type LineItemDataRelationships struct {
-	Order           *AdyenPaymentDataRelationshipsOrder       `json:"order,omitempty"`
-	Item            *LineItemDataRelationshipsItem            `json:"item,omitempty"`
-	LineItemOptions *LineItemDataRelationshipsLineItemOptions `json:"line_item_options,omitempty"`
-	// Deprecated
-	ShipmentLineItems *LineItemDataRelationshipsShipmentLineItems `json:"shipment_line_items,omitempty"`
-	StockLineItems    *LineItemDataRelationshipsStockLineItems    `json:"stock_line_items,omitempty"`
-	StockTransfers    *LineItemDataRelationshipsStockTransfers    `json:"stock_transfers,omitempty"`
+	Order             *AdyenPaymentDataRelationshipsOrder          `json:"order,omitempty"`
+	Item              *LineItemDataRelationshipsItem               `json:"item,omitempty"`
+	Sku               *BundleDataRelationshipsSkus                 `json:"sku,omitempty"`
+	Bundle            *LineItemDataRelationshipsBundle             `json:"bundle,omitempty"`
+	Adjustment        *LineItemDataRelationshipsAdjustment         `json:"adjustment,omitempty"`
+	GiftCard          *LineItemDataRelationshipsGiftCard           `json:"gift_card,omitempty"`
+	Shipment          *LineItemDataRelationshipsShipment           `json:"shipment,omitempty"`
+	PaymentMethod     *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_method,omitempty"`
+	LineItemOptions   *LineItemDataRelationshipsLineItemOptions    `json:"line_item_options,omitempty"`
+	ReturnLineItems   *LineItemDataRelationshipsReturnLineItems    `json:"return_line_items,omitempty"`
+	StockReservations *LineItemDataRelationshipsStockReservations  `json:"stock_reservations,omitempty"`
+	StockLineItems    *LineItemDataRelationshipsStockLineItems     `json:"stock_line_items,omitempty"`
+	StockTransfers    *LineItemDataRelationshipsStockTransfers     `json:"stock_transfers,omitempty"`
+	Events            *AddressDataRelationshipsEvents              `json:"events,omitempty"`
+	Tags              *AddressDataRelationshipsTags                `json:"tags,omitempty"`
 }
 
 // NewLineItemDataRelationships instantiates a new LineItemDataRelationships object
@@ -110,6 +118,198 @@ func (o *LineItemDataRelationships) SetItem(v LineItemDataRelationshipsItem) {
 	o.Item = &v
 }
 
+// GetSku returns the Sku field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetSku() BundleDataRelationshipsSkus {
+	if o == nil || IsNil(o.Sku) {
+		var ret BundleDataRelationshipsSkus
+		return ret
+	}
+	return *o.Sku
+}
+
+// GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+	if o == nil || IsNil(o.Sku) {
+		return nil, false
+	}
+	return o.Sku, true
+}
+
+// HasSku returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasSku() bool {
+	if o != nil && !IsNil(o.Sku) {
+		return true
+	}
+
+	return false
+}
+
+// SetSku gets a reference to the given BundleDataRelationshipsSkus and assigns it to the Sku field.
+func (o *LineItemDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+	o.Sku = &v
+}
+
+// GetBundle returns the Bundle field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetBundle() LineItemDataRelationshipsBundle {
+	if o == nil || IsNil(o.Bundle) {
+		var ret LineItemDataRelationshipsBundle
+		return ret
+	}
+	return *o.Bundle
+}
+
+// GetBundleOk returns a tuple with the Bundle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetBundleOk() (*LineItemDataRelationshipsBundle, bool) {
+	if o == nil || IsNil(o.Bundle) {
+		return nil, false
+	}
+	return o.Bundle, true
+}
+
+// HasBundle returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasBundle() bool {
+	if o != nil && !IsNil(o.Bundle) {
+		return true
+	}
+
+	return false
+}
+
+// SetBundle gets a reference to the given LineItemDataRelationshipsBundle and assigns it to the Bundle field.
+func (o *LineItemDataRelationships) SetBundle(v LineItemDataRelationshipsBundle) {
+	o.Bundle = &v
+}
+
+// GetAdjustment returns the Adjustment field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetAdjustment() LineItemDataRelationshipsAdjustment {
+	if o == nil || IsNil(o.Adjustment) {
+		var ret LineItemDataRelationshipsAdjustment
+		return ret
+	}
+	return *o.Adjustment
+}
+
+// GetAdjustmentOk returns a tuple with the Adjustment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetAdjustmentOk() (*LineItemDataRelationshipsAdjustment, bool) {
+	if o == nil || IsNil(o.Adjustment) {
+		return nil, false
+	}
+	return o.Adjustment, true
+}
+
+// HasAdjustment returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasAdjustment() bool {
+	if o != nil && !IsNil(o.Adjustment) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdjustment gets a reference to the given LineItemDataRelationshipsAdjustment and assigns it to the Adjustment field.
+func (o *LineItemDataRelationships) SetAdjustment(v LineItemDataRelationshipsAdjustment) {
+	o.Adjustment = &v
+}
+
+// GetGiftCard returns the GiftCard field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetGiftCard() LineItemDataRelationshipsGiftCard {
+	if o == nil || IsNil(o.GiftCard) {
+		var ret LineItemDataRelationshipsGiftCard
+		return ret
+	}
+	return *o.GiftCard
+}
+
+// GetGiftCardOk returns a tuple with the GiftCard field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetGiftCardOk() (*LineItemDataRelationshipsGiftCard, bool) {
+	if o == nil || IsNil(o.GiftCard) {
+		return nil, false
+	}
+	return o.GiftCard, true
+}
+
+// HasGiftCard returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasGiftCard() bool {
+	if o != nil && !IsNil(o.GiftCard) {
+		return true
+	}
+
+	return false
+}
+
+// SetGiftCard gets a reference to the given LineItemDataRelationshipsGiftCard and assigns it to the GiftCard field.
+func (o *LineItemDataRelationships) SetGiftCard(v LineItemDataRelationshipsGiftCard) {
+	o.GiftCard = &v
+}
+
+// GetShipment returns the Shipment field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetShipment() LineItemDataRelationshipsShipment {
+	if o == nil || IsNil(o.Shipment) {
+		var ret LineItemDataRelationshipsShipment
+		return ret
+	}
+	return *o.Shipment
+}
+
+// GetShipmentOk returns a tuple with the Shipment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetShipmentOk() (*LineItemDataRelationshipsShipment, bool) {
+	if o == nil || IsNil(o.Shipment) {
+		return nil, false
+	}
+	return o.Shipment, true
+}
+
+// HasShipment returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasShipment() bool {
+	if o != nil && !IsNil(o.Shipment) {
+		return true
+	}
+
+	return false
+}
+
+// SetShipment gets a reference to the given LineItemDataRelationshipsShipment and assigns it to the Shipment field.
+func (o *LineItemDataRelationships) SetShipment(v LineItemDataRelationshipsShipment) {
+	o.Shipment = &v
+}
+
+// GetPaymentMethod returns the PaymentMethod field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetPaymentMethod() AdyenGatewayDataRelationshipsPaymentMethods {
+	if o == nil || IsNil(o.PaymentMethod) {
+		var ret AdyenGatewayDataRelationshipsPaymentMethods
+		return ret
+	}
+	return *o.PaymentMethod
+}
+
+// GetPaymentMethodOk returns a tuple with the PaymentMethod field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetPaymentMethodOk() (*AdyenGatewayDataRelationshipsPaymentMethods, bool) {
+	if o == nil || IsNil(o.PaymentMethod) {
+		return nil, false
+	}
+	return o.PaymentMethod, true
+}
+
+// HasPaymentMethod returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasPaymentMethod() bool {
+	if o != nil && !IsNil(o.PaymentMethod) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentMethod gets a reference to the given AdyenGatewayDataRelationshipsPaymentMethods and assigns it to the PaymentMethod field.
+func (o *LineItemDataRelationships) SetPaymentMethod(v AdyenGatewayDataRelationshipsPaymentMethods) {
+	o.PaymentMethod = &v
+}
+
 // GetLineItemOptions returns the LineItemOptions field value if set, zero value otherwise.
 func (o *LineItemDataRelationships) GetLineItemOptions() LineItemDataRelationshipsLineItemOptions {
 	if o == nil || IsNil(o.LineItemOptions) {
@@ -142,39 +342,68 @@ func (o *LineItemDataRelationships) SetLineItemOptions(v LineItemDataRelationshi
 	o.LineItemOptions = &v
 }
 
-// GetShipmentLineItems returns the ShipmentLineItems field value if set, zero value otherwise.
-// Deprecated
-func (o *LineItemDataRelationships) GetShipmentLineItems() LineItemDataRelationshipsShipmentLineItems {
-	if o == nil || IsNil(o.ShipmentLineItems) {
-		var ret LineItemDataRelationshipsShipmentLineItems
+// GetReturnLineItems returns the ReturnLineItems field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetReturnLineItems() LineItemDataRelationshipsReturnLineItems {
+	if o == nil || IsNil(o.ReturnLineItems) {
+		var ret LineItemDataRelationshipsReturnLineItems
 		return ret
 	}
-	return *o.ShipmentLineItems
+	return *o.ReturnLineItems
 }
 
-// GetShipmentLineItemsOk returns a tuple with the ShipmentLineItems field value if set, nil otherwise
+// GetReturnLineItemsOk returns a tuple with the ReturnLineItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// Deprecated
-func (o *LineItemDataRelationships) GetShipmentLineItemsOk() (*LineItemDataRelationshipsShipmentLineItems, bool) {
-	if o == nil || IsNil(o.ShipmentLineItems) {
+func (o *LineItemDataRelationships) GetReturnLineItemsOk() (*LineItemDataRelationshipsReturnLineItems, bool) {
+	if o == nil || IsNil(o.ReturnLineItems) {
 		return nil, false
 	}
-	return o.ShipmentLineItems, true
+	return o.ReturnLineItems, true
 }
 
-// HasShipmentLineItems returns a boolean if a field has been set.
-func (o *LineItemDataRelationships) HasShipmentLineItems() bool {
-	if o != nil && !IsNil(o.ShipmentLineItems) {
+// HasReturnLineItems returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasReturnLineItems() bool {
+	if o != nil && !IsNil(o.ReturnLineItems) {
 		return true
 	}
 
 	return false
 }
 
-// SetShipmentLineItems gets a reference to the given LineItemDataRelationshipsShipmentLineItems and assigns it to the ShipmentLineItems field.
-// Deprecated
-func (o *LineItemDataRelationships) SetShipmentLineItems(v LineItemDataRelationshipsShipmentLineItems) {
-	o.ShipmentLineItems = &v
+// SetReturnLineItems gets a reference to the given LineItemDataRelationshipsReturnLineItems and assigns it to the ReturnLineItems field.
+func (o *LineItemDataRelationships) SetReturnLineItems(v LineItemDataRelationshipsReturnLineItems) {
+	o.ReturnLineItems = &v
+}
+
+// GetStockReservations returns the StockReservations field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetStockReservations() LineItemDataRelationshipsStockReservations {
+	if o == nil || IsNil(o.StockReservations) {
+		var ret LineItemDataRelationshipsStockReservations
+		return ret
+	}
+	return *o.StockReservations
+}
+
+// GetStockReservationsOk returns a tuple with the StockReservations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetStockReservationsOk() (*LineItemDataRelationshipsStockReservations, bool) {
+	if o == nil || IsNil(o.StockReservations) {
+		return nil, false
+	}
+	return o.StockReservations, true
+}
+
+// HasStockReservations returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasStockReservations() bool {
+	if o != nil && !IsNil(o.StockReservations) {
+		return true
+	}
+
+	return false
+}
+
+// SetStockReservations gets a reference to the given LineItemDataRelationshipsStockReservations and assigns it to the StockReservations field.
+func (o *LineItemDataRelationships) SetStockReservations(v LineItemDataRelationshipsStockReservations) {
+	o.StockReservations = &v
 }
 
 // GetStockLineItems returns the StockLineItems field value if set, zero value otherwise.
@@ -241,6 +470,70 @@ func (o *LineItemDataRelationships) SetStockTransfers(v LineItemDataRelationship
 	o.StockTransfers = &v
 }
 
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetEvents() AddressDataRelationshipsEvents {
+	if o == nil || IsNil(o.Events) {
+		var ret AddressDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
+	if o == nil || IsNil(o.Events) {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasEvents() bool {
+	if o != nil && !IsNil(o.Events) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *LineItemDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
+	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetTags() AddressDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressDataRelationshipsTags and assigns it to the Tags field.
+func (o *LineItemDataRelationships) SetTags(v AddressDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o LineItemDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -257,17 +550,44 @@ func (o LineItemDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Item) {
 		toSerialize["item"] = o.Item
 	}
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.Bundle) {
+		toSerialize["bundle"] = o.Bundle
+	}
+	if !IsNil(o.Adjustment) {
+		toSerialize["adjustment"] = o.Adjustment
+	}
+	if !IsNil(o.GiftCard) {
+		toSerialize["gift_card"] = o.GiftCard
+	}
+	if !IsNil(o.Shipment) {
+		toSerialize["shipment"] = o.Shipment
+	}
+	if !IsNil(o.PaymentMethod) {
+		toSerialize["payment_method"] = o.PaymentMethod
+	}
 	if !IsNil(o.LineItemOptions) {
 		toSerialize["line_item_options"] = o.LineItemOptions
 	}
-	if !IsNil(o.ShipmentLineItems) {
-		toSerialize["shipment_line_items"] = o.ShipmentLineItems
+	if !IsNil(o.ReturnLineItems) {
+		toSerialize["return_line_items"] = o.ReturnLineItems
+	}
+	if !IsNil(o.StockReservations) {
+		toSerialize["stock_reservations"] = o.StockReservations
 	}
 	if !IsNil(o.StockLineItems) {
 		toSerialize["stock_line_items"] = o.StockLineItems
 	}
 	if !IsNil(o.StockTransfers) {
 		toSerialize["stock_transfers"] = o.StockTransfers
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

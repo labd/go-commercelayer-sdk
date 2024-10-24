@@ -8,7 +8,9 @@ Name | Type | Description | Notes
 **Skus** | Pointer to [**POSTBundles201ResponseDataRelationshipsSkus**](POSTBundles201ResponseDataRelationshipsSkus.md) |  | [optional] 
 **SkuListItems** | Pointer to [**POSTSkuLists201ResponseDataRelationshipsSkuListItems**](POSTSkuLists201ResponseDataRelationshipsSkuListItems.md) |  | [optional] 
 **Bundles** | Pointer to [**POSTSkuLists201ResponseDataRelationshipsBundles**](POSTSkuLists201ResponseDataRelationshipsBundles.md) |  | [optional] 
-**Attachments** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsAttachments**](POSTAvalaraAccounts201ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Links** | Pointer to [**POSTOrders201ResponseDataRelationshipsLinks**](POSTOrders201ResponseDataRelationshipsLinks.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +133,20 @@ HasBundles returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *POSTSkuLists201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments`
+`func (o *POSTSkuLists201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *POSTSkuLists201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool)`
+`func (o *POSTSkuLists201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *POSTSkuLists201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments)`
+`func (o *POSTSkuLists201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -153,6 +155,56 @@ SetAttachments sets Attachments field to given value.
 `func (o *POSTSkuLists201ResponseDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetLinks
+
+`func (o *POSTSkuLists201ResponseDataRelationships) GetLinks() POSTOrders201ResponseDataRelationshipsLinks`
+
+GetLinks returns the Links field if non-nil, zero value otherwise.
+
+### GetLinksOk
+
+`func (o *POSTSkuLists201ResponseDataRelationships) GetLinksOk() (*POSTOrders201ResponseDataRelationshipsLinks, bool)`
+
+GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLinks
+
+`func (o *POSTSkuLists201ResponseDataRelationships) SetLinks(v POSTOrders201ResponseDataRelationshipsLinks)`
+
+SetLinks sets Links field to given value.
+
+### HasLinks
+
+`func (o *POSTSkuLists201ResponseDataRelationships) HasLinks() bool`
+
+HasLinks returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *POSTSkuLists201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTSkuLists201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTSkuLists201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTSkuLists201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

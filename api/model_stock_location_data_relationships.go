@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,9 +23,10 @@ type StockLocationDataRelationships struct {
 	Address                  *BingGeocoderDataRelationshipsAddresses                  `json:"address,omitempty"`
 	InventoryStockLocations  *InventoryModelDataRelationshipsInventoryStockLocations  `json:"inventory_stock_locations,omitempty"`
 	InventoryReturnLocations *InventoryModelDataRelationshipsInventoryReturnLocations `json:"inventory_return_locations,omitempty"`
-	StockItems               *SkuDataRelationshipsStockItems                          `json:"stock_items,omitempty"`
+	StockItems               *ReservedStockDataRelationshipsStockItem                 `json:"stock_items,omitempty"`
 	StockTransfers           *LineItemDataRelationshipsStockTransfers                 `json:"stock_transfers,omitempty"`
-	Attachments              *AvalaraAccountDataRelationshipsAttachments              `json:"attachments,omitempty"`
+	Attachments              *AuthorizationDataRelationshipsAttachments               `json:"attachments,omitempty"`
+	Versions                 *AddressDataRelationshipsVersions                        `json:"versions,omitempty"`
 }
 
 // NewStockLocationDataRelationships instantiates a new StockLocationDataRelationships object
@@ -142,9 +143,9 @@ func (o *StockLocationDataRelationships) SetInventoryReturnLocations(v Inventory
 }
 
 // GetStockItems returns the StockItems field value if set, zero value otherwise.
-func (o *StockLocationDataRelationships) GetStockItems() SkuDataRelationshipsStockItems {
+func (o *StockLocationDataRelationships) GetStockItems() ReservedStockDataRelationshipsStockItem {
 	if o == nil || IsNil(o.StockItems) {
-		var ret SkuDataRelationshipsStockItems
+		var ret ReservedStockDataRelationshipsStockItem
 		return ret
 	}
 	return *o.StockItems
@@ -152,7 +153,7 @@ func (o *StockLocationDataRelationships) GetStockItems() SkuDataRelationshipsSto
 
 // GetStockItemsOk returns a tuple with the StockItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockLocationDataRelationships) GetStockItemsOk() (*SkuDataRelationshipsStockItems, bool) {
+func (o *StockLocationDataRelationships) GetStockItemsOk() (*ReservedStockDataRelationshipsStockItem, bool) {
 	if o == nil || IsNil(o.StockItems) {
 		return nil, false
 	}
@@ -168,8 +169,8 @@ func (o *StockLocationDataRelationships) HasStockItems() bool {
 	return false
 }
 
-// SetStockItems gets a reference to the given SkuDataRelationshipsStockItems and assigns it to the StockItems field.
-func (o *StockLocationDataRelationships) SetStockItems(v SkuDataRelationshipsStockItems) {
+// SetStockItems gets a reference to the given ReservedStockDataRelationshipsStockItem and assigns it to the StockItems field.
+func (o *StockLocationDataRelationships) SetStockItems(v ReservedStockDataRelationshipsStockItem) {
 	o.StockItems = &v
 }
 
@@ -206,9 +207,9 @@ func (o *StockLocationDataRelationships) SetStockTransfers(v LineItemDataRelatio
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *StockLocationDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *StockLocationDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -216,7 +217,7 @@ func (o *StockLocationDataRelationships) GetAttachments() AvalaraAccountDataRela
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockLocationDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *StockLocationDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -232,9 +233,41 @@ func (o *StockLocationDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *StockLocationDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *StockLocationDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *StockLocationDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StockLocationDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *StockLocationDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *StockLocationDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o StockLocationDataRelationships) MarshalJSON() ([]byte, error) {
@@ -264,6 +297,9 @@ func (o StockLocationDataRelationships) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

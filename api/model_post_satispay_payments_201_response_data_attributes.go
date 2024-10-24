@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,13 @@ var _ MappedNullable = &POSTSatispayPayments201ResponseDataAttributes{}
 
 // POSTSatispayPayments201ResponseDataAttributes struct for POSTSatispayPayments201ResponseDataAttributes
 type POSTSatispayPayments201ResponseDataAttributes struct {
-	// Activation code generated from the Satispay Dashboard.
-	Token interface{} `json:"token,omitempty"`
+	// The Satispay payment flow, inspect gateway API details for more information.
+	Flow interface{} `json:"flow,omitempty"`
 	// The url to redirect the customer after the payment flow is completed.
 	RedirectUrl interface{} `json:"redirect_url,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -49,37 +49,37 @@ func NewPOSTSatispayPayments201ResponseDataAttributesWithDefaults() *POSTSatispa
 	return &this
 }
 
-// GetToken returns the Token field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *POSTSatispayPayments201ResponseDataAttributes) GetToken() interface{} {
+// GetFlow returns the Flow field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSatispayPayments201ResponseDataAttributes) GetFlow() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-	return o.Token
+	return o.Flow
 }
 
-// GetTokenOk returns a tuple with the Token field value if set, nil otherwise
+// GetFlowOk returns a tuple with the Flow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *POSTSatispayPayments201ResponseDataAttributes) GetTokenOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Token) {
+func (o *POSTSatispayPayments201ResponseDataAttributes) GetFlowOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Flow) {
 		return nil, false
 	}
-	return &o.Token, true
+	return &o.Flow, true
 }
 
-// HasToken returns a boolean if a field has been set.
-func (o *POSTSatispayPayments201ResponseDataAttributes) HasToken() bool {
-	if o != nil && IsNil(o.Token) {
+// HasFlow returns a boolean if a field has been set.
+func (o *POSTSatispayPayments201ResponseDataAttributes) HasFlow() bool {
+	if o != nil && IsNil(o.Flow) {
 		return true
 	}
 
 	return false
 }
 
-// SetToken gets a reference to the given interface{} and assigns it to the Token field.
-func (o *POSTSatispayPayments201ResponseDataAttributes) SetToken(v interface{}) {
-	o.Token = v
+// SetFlow gets a reference to the given interface{} and assigns it to the Flow field.
+func (o *POSTSatispayPayments201ResponseDataAttributes) SetFlow(v interface{}) {
+	o.Flow = v
 }
 
 // GetRedirectUrl returns the RedirectUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -224,8 +224,8 @@ func (o POSTSatispayPayments201ResponseDataAttributes) MarshalJSON() ([]byte, er
 
 func (o POSTSatispayPayments201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
+	if o.Flow != nil {
+		toSerialize["flow"] = o.Flow
 	}
 	if o.RedirectUrl != nil {
 		toSerialize["redirect_url"] = o.RedirectUrl

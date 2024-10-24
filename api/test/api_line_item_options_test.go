@@ -74,6 +74,19 @@ func Test_api_LineItemOptionsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test LineItemOptionsApiService GETOrderIdLineItemOptions", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var orderId interface{}
+
+		httpRes, err := apiClient.LineItemOptionsApi.GETOrderIdLineItemOptions(context.Background(), orderId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test LineItemOptionsApiService PATCHLineItemOptionsLineItemOptionId", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

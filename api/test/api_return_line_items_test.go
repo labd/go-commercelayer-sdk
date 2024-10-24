@@ -35,6 +35,19 @@ func Test_api_ReturnLineItemsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test ReturnLineItemsApiService GETLineItemIdReturnLineItems", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var lineItemId interface{}
+
+		httpRes, err := apiClient.ReturnLineItemsApi.GETLineItemIdReturnLineItems(context.Background(), lineItemId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ReturnLineItemsApiService GETReturnIdReturnLineItems", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

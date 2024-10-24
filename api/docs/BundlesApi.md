@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData(interface{}(123), *openapiclient.NewPOSTBundles201ResponseDataAttributes(interface{}(BUNDMM000000FFFFFFXLXX), interface{}(Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo), interface{}(10000), interface{}(13000)))) // BundleCreate | 
+    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData(interface{}(123), *openapiclient.NewPOSTBundles201ResponseDataAttributes(interface{}(BUNDMM000000FFFFFFXLXX), interface{}(Men's Black T-shirt (XL) with Black Cap and Socks, all with White Logo)))) // BundleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

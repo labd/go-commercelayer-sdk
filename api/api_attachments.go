@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -317,6 +317,98 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsA
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETAuthorizationIdAttachmentsRequest struct {
+	ctx             context.Context
+	ApiService      *AttachmentsApiService
+	authorizationId interface{}
+}
+
+func (r AttachmentsApiGETAuthorizationIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAuthorizationIdAttachmentsExecute(r)
+}
+
+/*
+GETAuthorizationIdAttachments Retrieve the attachments associated to the authorization
+
+Retrieve the attachments associated to the authorization
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authorizationId The resource's id
+	@return AttachmentsApiGETAuthorizationIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETAuthorizationIdAttachments(ctx context.Context, authorizationId interface{}) AttachmentsApiGETAuthorizationIdAttachmentsRequest {
+	return AttachmentsApiGETAuthorizationIdAttachmentsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		authorizationId: authorizationId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETAuthorizationIdAttachmentsExecute(r AttachmentsApiGETAuthorizationIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETAuthorizationIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/authorizations/{authorizationId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 type AttachmentsApiGETAvalaraAccountIdAttachmentsRequest struct {
@@ -637,6 +729,190 @@ func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGE
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETBuyXPayYPromotionIdAttachmentsRequest struct {
+	ctx                 context.Context
+	ApiService          *AttachmentsApiService
+	buyXPayYPromotionId interface{}
+}
+
+func (r AttachmentsApiGETBuyXPayYPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBuyXPayYPromotionIdAttachmentsExecute(r)
+}
+
+/*
+GETBuyXPayYPromotionIdAttachments Retrieve the attachments associated to the buy x pay y promotion
+
+Retrieve the attachments associated to the buy x pay y promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param buyXPayYPromotionId The resource's id
+	@return AttachmentsApiGETBuyXPayYPromotionIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETBuyXPayYPromotionIdAttachments(ctx context.Context, buyXPayYPromotionId interface{}) AttachmentsApiGETBuyXPayYPromotionIdAttachmentsRequest {
+	return AttachmentsApiGETBuyXPayYPromotionIdAttachmentsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		buyXPayYPromotionId: buyXPayYPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETBuyXPayYPromotionIdAttachmentsExecute(r AttachmentsApiGETBuyXPayYPromotionIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETBuyXPayYPromotionIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/buy_x_pay_y_promotions/{buyXPayYPromotionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"buyXPayYPromotionId"+"}", url.PathEscape(parameterValueToString(r.buyXPayYPromotionId, "buyXPayYPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETCaptureIdAttachmentsRequest struct {
+	ctx        context.Context
+	ApiService *AttachmentsApiService
+	captureId  interface{}
+}
+
+func (r AttachmentsApiGETCaptureIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCaptureIdAttachmentsExecute(r)
+}
+
+/*
+GETCaptureIdAttachments Retrieve the attachments associated to the capture
+
+Retrieve the attachments associated to the capture
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return AttachmentsApiGETCaptureIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETCaptureIdAttachments(ctx context.Context, captureId interface{}) AttachmentsApiGETCaptureIdAttachmentsRequest {
+	return AttachmentsApiGETCaptureIdAttachmentsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		captureId:  captureId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETCaptureIdAttachmentsExecute(r AttachmentsApiGETCaptureIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETCaptureIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/captures/{captureId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1465,6 +1741,98 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r Att
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETFlexPromotionIdAttachmentsRequest struct {
+	ctx             context.Context
+	ApiService      *AttachmentsApiService
+	flexPromotionId interface{}
+}
+
+func (r AttachmentsApiGETFlexPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFlexPromotionIdAttachmentsExecute(r)
+}
+
+/*
+GETFlexPromotionIdAttachments Retrieve the attachments associated to the flex promotion
+
+Retrieve the attachments associated to the flex promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param flexPromotionId The resource's id
+	@return AttachmentsApiGETFlexPromotionIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETFlexPromotionIdAttachments(ctx context.Context, flexPromotionId interface{}) AttachmentsApiGETFlexPromotionIdAttachmentsRequest {
+	return AttachmentsApiGETFlexPromotionIdAttachmentsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		flexPromotionId: flexPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETFlexPromotionIdAttachmentsExecute(r AttachmentsApiGETFlexPromotionIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETFlexPromotionIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/flex_promotions/{flexPromotionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"flexPromotionId"+"}", url.PathEscape(parameterValueToString(r.flexPromotionId, "flexPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2527,98 +2895,6 @@ func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGET
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest struct {
-	ctx                   context.Context
-	ApiService            *AttachmentsApiService
-	orderValidationRuleId interface{}
-}
-
-func (r AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GETOrderValidationRuleIdAttachmentsExecute(r)
-}
-
-/*
-GETOrderValidationRuleIdAttachments Retrieve the attachments associated to the order validation rule
-
-Retrieve the attachments associated to the order validation rule
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param orderValidationRuleId The resource's id
-	@return AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest
-*/
-func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachments(ctx context.Context, orderValidationRuleId interface{}) AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest {
-	return AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest{
-		ApiService:            a,
-		ctx:                   ctx,
-		orderValidationRuleId: orderValidationRuleId,
-	}
-}
-
-// Execute executes the request
-func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachmentsExecute(r AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETOrderValidationRuleIdAttachments")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
 type AttachmentsApiGETPackageIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
@@ -2845,6 +3121,98 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r Attachmen
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETPaymentOptionIdAttachmentsRequest struct {
+	ctx             context.Context
+	ApiService      *AttachmentsApiService
+	paymentOptionId interface{}
+}
+
+func (r AttachmentsApiGETPaymentOptionIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPaymentOptionIdAttachmentsExecute(r)
+}
+
+/*
+GETPaymentOptionIdAttachments Retrieve the attachments associated to the payment option
+
+Retrieve the attachments associated to the payment option
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paymentOptionId The resource's id
+	@return AttachmentsApiGETPaymentOptionIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETPaymentOptionIdAttachments(ctx context.Context, paymentOptionId interface{}) AttachmentsApiGETPaymentOptionIdAttachmentsRequest {
+	return AttachmentsApiGETPaymentOptionIdAttachmentsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		paymentOptionId: paymentOptionId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETPaymentOptionIdAttachmentsExecute(r AttachmentsApiGETPaymentOptionIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPaymentOptionIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/payment_options/{paymentOptionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentOptionId"+"}", url.PathEscape(parameterValueToString(r.paymentOptionId, "paymentOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3489,6 +3857,98 @@ func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsAp
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETRefundIdAttachmentsRequest struct {
+	ctx        context.Context
+	ApiService *AttachmentsApiService
+	refundId   interface{}
+}
+
+func (r AttachmentsApiGETRefundIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRefundIdAttachmentsExecute(r)
+}
+
+/*
+GETRefundIdAttachments Retrieve the attachments associated to the refund
+
+Retrieve the attachments associated to the refund
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param refundId The resource's id
+	@return AttachmentsApiGETRefundIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETRefundIdAttachments(ctx context.Context, refundId interface{}) AttachmentsApiGETRefundIdAttachmentsRequest {
+	return AttachmentsApiGETRefundIdAttachmentsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		refundId:   refundId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETRefundIdAttachmentsExecute(r AttachmentsApiGETRefundIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETRefundIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/refunds/{refundId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4643,6 +5103,98 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r Attachmen
 	return localVarHTTPResponse, nil
 }
 
+type AttachmentsApiGETStockTransferIdAttachmentsRequest struct {
+	ctx             context.Context
+	ApiService      *AttachmentsApiService
+	stockTransferId interface{}
+}
+
+func (r AttachmentsApiGETStockTransferIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockTransferIdAttachmentsExecute(r)
+}
+
+/*
+GETStockTransferIdAttachments Retrieve the attachments associated to the stock transfer
+
+Retrieve the attachments associated to the stock transfer
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return AttachmentsApiGETStockTransferIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETStockTransferIdAttachments(ctx context.Context, stockTransferId interface{}) AttachmentsApiGETStockTransferIdAttachmentsRequest {
+	return AttachmentsApiGETStockTransferIdAttachmentsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		stockTransferId: stockTransferId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETStockTransferIdAttachmentsExecute(r AttachmentsApiGETStockTransferIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETStockTransferIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type AttachmentsApiGETSubscriptionModelIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *AttachmentsApiService
@@ -4961,6 +5513,190 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r Attachmen
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETTransactionIdAttachmentsRequest struct {
+	ctx           context.Context
+	ApiService    *AttachmentsApiService
+	transactionId interface{}
+}
+
+func (r AttachmentsApiGETTransactionIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETTransactionIdAttachmentsExecute(r)
+}
+
+/*
+GETTransactionIdAttachments Retrieve the attachments associated to the transaction
+
+Retrieve the attachments associated to the transaction
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param transactionId The resource's id
+	@return AttachmentsApiGETTransactionIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETTransactionIdAttachments(ctx context.Context, transactionId interface{}) AttachmentsApiGETTransactionIdAttachmentsRequest {
+	return AttachmentsApiGETTransactionIdAttachmentsRequest{
+		ApiService:    a,
+		ctx:           ctx,
+		transactionId: transactionId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETTransactionIdAttachmentsExecute(r AttachmentsApiGETTransactionIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETTransactionIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/transactions/{transactionId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterValueToString(r.transactionId, "transactionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETVoidIdAttachmentsRequest struct {
+	ctx        context.Context
+	ApiService *AttachmentsApiService
+	voidId     interface{}
+}
+
+func (r AttachmentsApiGETVoidIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETVoidIdAttachmentsExecute(r)
+}
+
+/*
+GETVoidIdAttachments Retrieve the attachments associated to the void
+
+Retrieve the attachments associated to the void
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param voidId The resource's id
+	@return AttachmentsApiGETVoidIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETVoidIdAttachments(ctx context.Context, voidId interface{}) AttachmentsApiGETVoidIdAttachmentsRequest {
+	return AttachmentsApiGETVoidIdAttachmentsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		voidId:     voidId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETVoidIdAttachmentsExecute(r AttachmentsApiGETVoidIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETVoidIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/voids/{voidId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

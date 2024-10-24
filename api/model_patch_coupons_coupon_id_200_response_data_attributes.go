@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -28,9 +28,11 @@ type PATCHCouponsCouponId200ResponseDataAttributes struct {
 	UsageLimit interface{} `json:"usage_limit,omitempty"`
 	// The email address of the associated recipient. When creating or updating a coupon, this is a shortcut to find or create the associated recipient by email.
 	RecipientEmail interface{} `json:"recipient_email,omitempty"`
+	// Time at which the coupon will expire.
+	ExpiresAt interface{} `json:"expires_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -185,6 +187,39 @@ func (o *PATCHCouponsCouponId200ResponseDataAttributes) SetRecipientEmail(v inte
 	o.RecipientEmail = v
 }
 
+// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCouponsCouponId200ResponseDataAttributes) GetExpiresAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ExpiresAt
+}
+
+// GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCouponsCouponId200ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ExpiresAt) {
+		return nil, false
+	}
+	return &o.ExpiresAt, true
+}
+
+// HasExpiresAt returns a boolean if a field has been set.
+func (o *PATCHCouponsCouponId200ResponseDataAttributes) HasExpiresAt() bool {
+	if o != nil && IsNil(o.ExpiresAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpiresAt gets a reference to the given interface{} and assigns it to the ExpiresAt field.
+func (o *PATCHCouponsCouponId200ResponseDataAttributes) SetExpiresAt(v interface{}) {
+	o.ExpiresAt = v
+}
+
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PATCHCouponsCouponId200ResponseDataAttributes) GetReference() interface{} {
 	if o == nil {
@@ -305,6 +340,9 @@ func (o PATCHCouponsCouponId200ResponseDataAttributes) ToMap() (map[string]inter
 	}
 	if o.RecipientEmail != nil {
 		toSerialize["recipient_email"] = o.RecipientEmail
+	}
+	if o.ExpiresAt != nil {
+		toSerialize["expires_at"] = o.ExpiresAt
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

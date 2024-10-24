@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,8 @@ type InStockSubscriptionDataRelationships struct {
 	Market   *AvalaraAccountDataRelationshipsMarkets   `json:"market,omitempty"`
 	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
 	Sku      *BundleDataRelationshipsSkus              `json:"sku,omitempty"`
-	Events   *AuthorizationDataRelationshipsEvents     `json:"events,omitempty"`
+	Events   *AddressDataRelationshipsEvents           `json:"events,omitempty"`
+	Versions *AddressDataRelationshipsVersions         `json:"versions,omitempty"`
 }
 
 // NewInStockSubscriptionDataRelationships instantiates a new InStockSubscriptionDataRelationships object
@@ -140,9 +141,9 @@ func (o *InStockSubscriptionDataRelationships) SetSku(v BundleDataRelationshipsS
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *InStockSubscriptionDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *InStockSubscriptionDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -150,7 +151,7 @@ func (o *InStockSubscriptionDataRelationships) GetEvents() AuthorizationDataRela
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *InStockSubscriptionDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -166,9 +167,41 @@ func (o *InStockSubscriptionDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *InStockSubscriptionDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *InStockSubscriptionDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *InStockSubscriptionDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InStockSubscriptionDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *InStockSubscriptionDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *InStockSubscriptionDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o InStockSubscriptionDataRelationships) MarshalJSON() ([]byte, error) {
@@ -192,6 +225,9 @@ func (o InStockSubscriptionDataRelationships) ToMap() (map[string]interface{}, e
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

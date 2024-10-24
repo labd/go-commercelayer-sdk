@@ -4,23 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PaymentSourceType** | Pointer to **interface{}** | The payment source type, can be one of: &#39;AdyenPayment&#39;, &#39;AxervePayment&#39;, &#39;BraintreePayment&#39;, &#39;CheckoutComPayment&#39;, &#39;CreditCard&#39;, &#39;ExternalPayment&#39;, &#39;KlarnaPayment&#39;, &#39;PaypalPayment&#39;, &#39;SatispayPayment&#39;, &#39;StripePayment&#39;, or &#39;WireTransfer&#39;. | [optional] 
-**Name** | Pointer to **interface{}** | Payment source type, titleized | [optional] 
+**Name** | Pointer to **interface{}** | The payment method&#39;s internal name. | [optional] 
+**PaymentSourceType** | Pointer to **interface{}** | The payment source type. One of &#39;adyen_payments&#39;, &#39;axerve_payments&#39;, &#39;braintree_payments&#39;, &#39;checkout_com_payments&#39;, &#39;credit_cards&#39;, &#39;external_payments&#39;, &#39;klarna_payments&#39;, &#39;paypal_payments&#39;, &#39;satispay_payments&#39;, &#39;stripe_payments&#39;, or &#39;wire_transfers&#39;. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
 **Moto** | Pointer to **interface{}** | Send this attribute if you want to mark the payment as MOTO, must be supported by payment gateway. | [optional] 
 **RequireCapture** | Pointer to **interface{}** | Send this attribute if you want to require the payment capture before fulfillment. | [optional] 
+**AutoPlace** | Pointer to **interface{}** | Send this attribute if you want to automatically place the order upon authorization performed asynchronously. | [optional] 
 **AutoCapture** | Pointer to **interface{}** | Send this attribute if you want to automatically capture the payment upon authorization. | [optional] 
-**DisabledAt** | Pointer to **interface{}** | Time at which the payment method was disabled. | [optional] 
-**PriceAmountCents** | Pointer to **interface{}** | The payment method&#39;s price, in cents | [optional] 
-**PriceAmountFloat** | Pointer to **interface{}** | The payment method&#39;s price, float | [optional] 
-**FormattedPriceAmount** | Pointer to **interface{}** | The payment method&#39;s price, formatted | [optional] 
+**PriceAmountCents** | Pointer to **interface{}** | The payment method&#39;s price, in cents. | [optional] 
+**PriceAmountFloat** | Pointer to **interface{}** | The payment method&#39;s price, float. | [optional] 
+**FormattedPriceAmount** | Pointer to **interface{}** | The payment method&#39;s price, formatted. | [optional] 
 **AutoCaptureMaxAmountCents** | Pointer to **interface{}** | Send this attribute if you want to limit automatic capture to orders for which the total amount is equal or less than the specified value, in cents. | [optional] 
-**AutoCaptureMaxAmountFloat** | Pointer to **interface{}** | The automatic capture max amount, float | [optional] 
-**FormattedAutoCaptureMaxAmount** | Pointer to **interface{}** | The automatic capture max amount, formatted | [optional] 
+**AutoCaptureMaxAmountFloat** | Pointer to **interface{}** | The automatic capture max amount, float. | [optional] 
+**FormattedAutoCaptureMaxAmount** | Pointer to **interface{}** | The automatic capture max amount, formatted. | [optional] 
+**DisabledAt** | Pointer to **interface{}** | Time at which this resource was disabled. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -42,41 +43,6 @@ NewGETPaymentMethodsPaymentMethodId200ResponseDataAttributesWithDefaults instant
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetPaymentSourceType
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPaymentSourceType() interface{}`
-
-GetPaymentSourceType returns the PaymentSourceType field if non-nil, zero value otherwise.
-
-### GetPaymentSourceTypeOk
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPaymentSourceTypeOk() (*interface{}, bool)`
-
-GetPaymentSourceTypeOk returns a tuple with the PaymentSourceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPaymentSourceType
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetPaymentSourceType(v interface{})`
-
-SetPaymentSourceType sets PaymentSourceType field to given value.
-
-### HasPaymentSourceType
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasPaymentSourceType() bool`
-
-HasPaymentSourceType returns a boolean if a field has been set.
-
-### SetPaymentSourceTypeNil
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetPaymentSourceTypeNil(b bool)`
-
- SetPaymentSourceTypeNil sets the value for PaymentSourceType to be an explicit nil
-
-### UnsetPaymentSourceType
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) UnsetPaymentSourceType()`
-
-UnsetPaymentSourceType ensures that no value is present for PaymentSourceType, not even an explicit nil
 ### GetName
 
 `func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetName() interface{}`
@@ -112,6 +78,41 @@ HasName returns a boolean if a field has been set.
 `func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetPaymentSourceType
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPaymentSourceType() interface{}`
+
+GetPaymentSourceType returns the PaymentSourceType field if non-nil, zero value otherwise.
+
+### GetPaymentSourceTypeOk
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPaymentSourceTypeOk() (*interface{}, bool)`
+
+GetPaymentSourceTypeOk returns a tuple with the PaymentSourceType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentSourceType
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetPaymentSourceType(v interface{})`
+
+SetPaymentSourceType sets PaymentSourceType field to given value.
+
+### HasPaymentSourceType
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasPaymentSourceType() bool`
+
+HasPaymentSourceType returns a boolean if a field has been set.
+
+### SetPaymentSourceTypeNil
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetPaymentSourceTypeNil(b bool)`
+
+ SetPaymentSourceTypeNil sets the value for PaymentSourceType to be an explicit nil
+
+### UnsetPaymentSourceType
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) UnsetPaymentSourceType()`
+
+UnsetPaymentSourceType ensures that no value is present for PaymentSourceType, not even an explicit nil
 ### GetCurrencyCode
 
 `func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetCurrencyCode() interface{}`
@@ -217,6 +218,41 @@ HasRequireCapture returns a boolean if a field has been set.
 `func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) UnsetRequireCapture()`
 
 UnsetRequireCapture ensures that no value is present for RequireCapture, not even an explicit nil
+### GetAutoPlace
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoPlace() interface{}`
+
+GetAutoPlace returns the AutoPlace field if non-nil, zero value otherwise.
+
+### GetAutoPlaceOk
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoPlaceOk() (*interface{}, bool)`
+
+GetAutoPlaceOk returns a tuple with the AutoPlace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoPlace
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetAutoPlace(v interface{})`
+
+SetAutoPlace sets AutoPlace field to given value.
+
+### HasAutoPlace
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasAutoPlace() bool`
+
+HasAutoPlace returns a boolean if a field has been set.
+
+### SetAutoPlaceNil
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetAutoPlaceNil(b bool)`
+
+ SetAutoPlaceNil sets the value for AutoPlace to be an explicit nil
+
+### UnsetAutoPlace
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) UnsetAutoPlace()`
+
+UnsetAutoPlace ensures that no value is present for AutoPlace, not even an explicit nil
 ### GetAutoCapture
 
 `func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoCapture() interface{}`
@@ -252,41 +288,6 @@ HasAutoCapture returns a boolean if a field has been set.
 `func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) UnsetAutoCapture()`
 
 UnsetAutoCapture ensures that no value is present for AutoCapture, not even an explicit nil
-### GetDisabledAt
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisabledAt() interface{}`
-
-GetDisabledAt returns the DisabledAt field if non-nil, zero value otherwise.
-
-### GetDisabledAtOk
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool)`
-
-GetDisabledAtOk returns a tuple with the DisabledAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisabledAt
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetDisabledAt(v interface{})`
-
-SetDisabledAt sets DisabledAt field to given value.
-
-### HasDisabledAt
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasDisabledAt() bool`
-
-HasDisabledAt returns a boolean if a field has been set.
-
-### SetDisabledAtNil
-
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetDisabledAtNil(b bool)`
-
- SetDisabledAtNil sets the value for DisabledAt to be an explicit nil
-
-### UnsetDisabledAt
-`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) UnsetDisabledAt()`
-
-UnsetDisabledAt ensures that no value is present for DisabledAt, not even an explicit nil
 ### GetPriceAmountCents
 
 `func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPriceAmountCents() interface{}`
@@ -497,6 +498,41 @@ HasFormattedAutoCaptureMaxAmount returns a boolean if a field has been set.
 `func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) UnsetFormattedAutoCaptureMaxAmount()`
 
 UnsetFormattedAutoCaptureMaxAmount ensures that no value is present for FormattedAutoCaptureMaxAmount, not even an explicit nil
+### GetDisabledAt
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisabledAt() interface{}`
+
+GetDisabledAt returns the DisabledAt field if non-nil, zero value otherwise.
+
+### GetDisabledAtOk
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool)`
+
+GetDisabledAtOk returns a tuple with the DisabledAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisabledAt
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetDisabledAt(v interface{})`
+
+SetDisabledAt sets DisabledAt field to given value.
+
+### HasDisabledAt
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasDisabledAt() bool`
+
+HasDisabledAt returns a boolean if a field has been set.
+
+### SetDisabledAtNil
+
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetDisabledAtNil(b bool)`
+
+ SetDisabledAtNil sets the value for DisabledAt to be an explicit nil
+
+### UnsetDisabledAt
+`func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) UnsetDisabledAt()`
+
+UnsetDisabledAt ensures that no value is present for DisabledAt, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetCreatedAt() interface{}`

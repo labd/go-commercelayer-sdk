@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,15 +22,15 @@ var _ MappedNullable = &PATCHParcelsParcelId200ResponseDataAttributes{}
 type PATCHParcelsParcelId200ResponseDataAttributes struct {
 	// The parcel weight, used to automatically calculate the tax rates from the available carrier accounts.
 	Weight interface{} `json:"weight,omitempty"`
-	// Can be one of 'gr', 'lb', or 'oz'
+	// The unit of weight. One of 'gr', 'oz', or 'lb'.
 	UnitOfWeight interface{} `json:"unit_of_weight,omitempty"`
 	// When shipping outside the US, you need to provide either an Exemption and Exclusion Legend (EEL) code or a Proof of Filing Citation (PFC). Which you need is based on the value of the goods being shipped. Value can be one of \"EEL\" o \"PFC\".
 	EelPfc interface{} `json:"eel_pfc,omitempty"`
-	// The type of item you are sending. Can be one of 'merchandise', 'gift', 'documents', 'returned_goods', 'sample', or 'other'.
+	// The type of item you are sending.
 	ContentsType interface{} `json:"contents_type,omitempty"`
 	// If you specify 'other' in the 'contents_type' attribute, you must supply a brief description in this attribute.
 	ContentsExplanation interface{} `json:"contents_explanation,omitempty"`
-	// Indicates if the provided information is accurate
+	// Indicates if the provided information is accurate.
 	CustomsCertify interface{} `json:"customs_certify,omitempty"`
 	// This is the name of the person who is certifying that the information provided on the customs form is accurate. Use a name of the person in your organization who is responsible for this.
 	CustomsSigner interface{} `json:"customs_signer,omitempty"`
@@ -60,15 +60,17 @@ type PATCHParcelsParcelId200ResponseDataAttributes struct {
 	TrackingStatusUpdatedAt interface{} `json:"tracking_status_updated_at,omitempty"`
 	// The parcel's full tracking history, automatically updated in real time by the shipping carrier.
 	TrackingDetails interface{} `json:"tracking_details,omitempty"`
-	// The weight of the parcel as measured by the carrier in ounces (if available)
+	// The weight of the parcel as measured by the carrier in ounces (if available).
 	CarrierWeightOz interface{} `json:"carrier_weight_oz,omitempty"`
-	// The name of the person who signed for the parcel (if available)
+	// The name of the person who signed for the parcel (if available).
 	SignedBy interface{} `json:"signed_by,omitempty"`
 	// The type of Incoterm (if available).
 	Incoterm interface{} `json:"incoterm,omitempty"`
+	// The type of delivery confirmation option upon delivery.
+	DeliveryConfirmation interface{} `json:"delivery_confirmation,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -850,6 +852,39 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetIncoterm(v interface{
 	o.Incoterm = v
 }
 
+// GetDeliveryConfirmation returns the DeliveryConfirmation field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetDeliveryConfirmation() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DeliveryConfirmation
+}
+
+// GetDeliveryConfirmationOk returns a tuple with the DeliveryConfirmation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetDeliveryConfirmationOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DeliveryConfirmation) {
+		return nil, false
+	}
+	return &o.DeliveryConfirmation, true
+}
+
+// HasDeliveryConfirmation returns a boolean if a field has been set.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasDeliveryConfirmation() bool {
+	if o != nil && IsNil(o.DeliveryConfirmation) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeliveryConfirmation gets a reference to the given interface{} and assigns it to the DeliveryConfirmation field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetDeliveryConfirmation(v interface{}) {
+	o.DeliveryConfirmation = v
+}
+
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReference() interface{} {
 	if o == nil {
@@ -1027,6 +1062,9 @@ func (o PATCHParcelsParcelId200ResponseDataAttributes) ToMap() (map[string]inter
 	}
 	if o.Incoterm != nil {
 		toSerialize["incoterm"] = o.Incoterm
+	}
+	if o.DeliveryConfirmation != nil {
+		toSerialize["delivery_confirmation"] = o.DeliveryConfirmation
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

@@ -6,7 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **StockLocation** | Pointer to [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | [optional] 
 **Sku** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**ReservedStock** | Pointer to [**StockItemDataRelationshipsReservedStock**](StockItemDataRelationshipsReservedStock.md) |  | [optional] 
+**StockReservations** | Pointer to [**LineItemDataRelationshipsStockReservations**](LineItemDataRelationshipsStockReservations.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -77,22 +80,72 @@ SetSku sets Sku field to given value.
 
 HasSku returns a boolean if a field has been set.
 
+### GetReservedStock
+
+`func (o *StockItemDataRelationships) GetReservedStock() StockItemDataRelationshipsReservedStock`
+
+GetReservedStock returns the ReservedStock field if non-nil, zero value otherwise.
+
+### GetReservedStockOk
+
+`func (o *StockItemDataRelationships) GetReservedStockOk() (*StockItemDataRelationshipsReservedStock, bool)`
+
+GetReservedStockOk returns a tuple with the ReservedStock field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReservedStock
+
+`func (o *StockItemDataRelationships) SetReservedStock(v StockItemDataRelationshipsReservedStock)`
+
+SetReservedStock sets ReservedStock field to given value.
+
+### HasReservedStock
+
+`func (o *StockItemDataRelationships) HasReservedStock() bool`
+
+HasReservedStock returns a boolean if a field has been set.
+
+### GetStockReservations
+
+`func (o *StockItemDataRelationships) GetStockReservations() LineItemDataRelationshipsStockReservations`
+
+GetStockReservations returns the StockReservations field if non-nil, zero value otherwise.
+
+### GetStockReservationsOk
+
+`func (o *StockItemDataRelationships) GetStockReservationsOk() (*LineItemDataRelationshipsStockReservations, bool)`
+
+GetStockReservationsOk returns a tuple with the StockReservations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStockReservations
+
+`func (o *StockItemDataRelationships) SetStockReservations(v LineItemDataRelationshipsStockReservations)`
+
+SetStockReservations sets StockReservations field to given value.
+
+### HasStockReservations
+
+`func (o *StockItemDataRelationships) HasStockReservations() bool`
+
+HasStockReservations returns a boolean if a field has been set.
+
 ### GetAttachments
 
-`func (o *StockItemDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *StockItemDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *StockItemDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *StockItemDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *StockItemDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *StockItemDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -101,6 +154,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *StockItemDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *StockItemDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *StockItemDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *StockItemDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *StockItemDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

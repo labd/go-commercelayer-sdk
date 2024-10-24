@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CouponCodesPromotionRuleDataRelationshipsCouponsData**](CouponCodesPromotionRuleDataRelationshipsCouponsData.md) |  | 
+**Data** | [**BuyXPayYPromotionDataRelationshipsCouponsData**](BuyXPayYPromotionDataRelationshipsCouponsData.md) |  | 
 
 ## Methods
 
 ### NewCouponCodesPromotionRuleCreateDataRelationshipsCoupons
 
-`func NewCouponCodesPromotionRuleCreateDataRelationshipsCoupons(data CouponCodesPromotionRuleDataRelationshipsCouponsData, ) *CouponCodesPromotionRuleCreateDataRelationshipsCoupons`
+`func NewCouponCodesPromotionRuleCreateDataRelationshipsCoupons(data BuyXPayYPromotionDataRelationshipsCouponsData, ) *CouponCodesPromotionRuleCreateDataRelationshipsCoupons`
 
 NewCouponCodesPromotionRuleCreateDataRelationshipsCoupons instantiates a new CouponCodesPromotionRuleCreateDataRelationshipsCoupons object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetData() CouponCodesPromotionRuleDataRelationshipsCouponsData`
+`func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetData() BuyXPayYPromotionDataRelationshipsCouponsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetDataOk() (*CouponCodesPromotionRuleDataRelationshipsCouponsData, bool)`
+`func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetDataOk() (*BuyXPayYPromotionDataRelationshipsCouponsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) SetData(v CouponCodesPromotionRuleDataRelationshipsCouponsData)`
+`func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) SetData(v BuyXPayYPromotionDataRelationshipsCouponsData)`
 
 SetData sets Data field to given value.
 

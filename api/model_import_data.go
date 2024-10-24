@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,7 @@ type ImportData struct {
 	// The resource's type
 	Type          interface{}                                 `json:"type"`
 	Attributes    GETImportsImportId200ResponseDataAttributes `json:"attributes"`
-	Relationships *CleanupDataRelationships                   `json:"relationships,omitempty"`
+	Relationships *ExportDataRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewImportData instantiates a new ImportData object
@@ -96,9 +96,9 @@ func (o *ImportData) SetAttributes(v GETImportsImportId200ResponseDataAttributes
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ImportData) GetRelationships() CleanupDataRelationships {
+func (o *ImportData) GetRelationships() ExportDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret CleanupDataRelationships
+		var ret ExportDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -106,7 +106,7 @@ func (o *ImportData) GetRelationships() CleanupDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImportData) GetRelationshipsOk() (*CleanupDataRelationships, bool) {
+func (o *ImportData) GetRelationshipsOk() (*ExportDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -122,8 +122,8 @@ func (o *ImportData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CleanupDataRelationships and assigns it to the Relationships field.
-func (o *ImportData) SetRelationships(v CleanupDataRelationships) {
+// SetRelationships gets a reference to the given ExportDataRelationships and assigns it to the Relationships field.
+func (o *ImportData) SetRelationships(v ExportDataRelationships) {
 	o.Relationships = &v
 }
 

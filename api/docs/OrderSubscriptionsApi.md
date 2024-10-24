@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**DELETEOrderSubscriptionsOrderSubscriptionId**](OrderSubscriptionsApi.md#DELETEOrderSubscriptionsOrderSubscriptionId) | **Delete** /order_subscriptions/{orderSubscriptionId} | Delete an order subscription
 [**GETCustomerIdOrderSubscriptions**](OrderSubscriptionsApi.md#GETCustomerIdOrderSubscriptions) | **Get** /customers/{customerId}/order_subscriptions | Retrieve the order subscriptions associated to the customer
 [**GETOrderCopyIdOrderSubscription**](OrderSubscriptionsApi.md#GETOrderCopyIdOrderSubscription) | **Get** /order_copies/{orderCopyId}/order_subscription | Retrieve the order subscription associated to the order copy
+[**GETOrderIdOrderSubscription**](OrderSubscriptionsApi.md#GETOrderIdOrderSubscription) | **Get** /orders/{orderId}/order_subscription | Retrieve the order subscription associated to the order
 [**GETOrderIdOrderSubscriptions**](OrderSubscriptionsApi.md#GETOrderIdOrderSubscriptions) | **Get** /orders/{orderId}/order_subscriptions | Retrieve the order subscriptions associated to the order
 [**GETOrderSubscriptionItemIdOrderSubscription**](OrderSubscriptionsApi.md#GETOrderSubscriptionItemIdOrderSubscription) | **Get** /order_subscription_items/{orderSubscriptionItemId}/order_subscription | Retrieve the order subscription associated to the order subscription item
 [**GETOrderSubscriptions**](OrderSubscriptionsApi.md#GETOrderSubscriptions) | **Get** /order_subscriptions | List all order subscriptions
@@ -198,6 +199,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETOrderCopyIdOrderSubscriptionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETOrderIdOrderSubscription
+
+> GETOrderIdOrderSubscription(ctx, orderId).Execute()
+
+Retrieve the order subscription associated to the order
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    orderId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrderSubscriptionsApi.GETOrderIdOrderSubscription(context.Background(), orderId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderIdOrderSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderIdOrderSubscriptionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,25 +20,33 @@ var _ MappedNullable = &POSTShippingMethods201ResponseDataAttributes{}
 
 // POSTShippingMethods201ResponseDataAttributes struct for POSTShippingMethods201ResponseDataAttributes
 type POSTShippingMethods201ResponseDataAttributes struct {
-	// The shipping method's name
+	// The shipping method's name.
 	Name interface{} `json:"name"`
-	// The shipping method's scheme, one of 'flat' or 'weight_tiered'.
+	// The shipping method's scheme. One of 'flat', 'weight_tiered', or 'external'.
 	Scheme interface{} `json:"scheme,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
+	// The URL used to overwrite prices by an external source.
+	ExternalPricesUrl interface{} `json:"external_prices_url,omitempty"`
 	// The price of this shipping method, in cents.
 	PriceAmountCents interface{} `json:"price_amount_cents"`
 	// Apply free shipping if the order amount is over this value, in cents.
 	FreeOverAmountCents interface{} `json:"free_over_amount_cents,omitempty"`
+	// Send this attribute if you want to compare the free over amount with order's subtotal (excluding discounts, if any).
+	UseSubtotal interface{} `json:"use_subtotal,omitempty"`
 	// The minimum weight for which this shipping method is available.
 	MinWeight interface{} `json:"min_weight,omitempty"`
 	// The maximum weight for which this shipping method is available.
 	MaxWeight interface{} `json:"max_weight,omitempty"`
-	// Can be one of 'gr', 'lb', or 'oz'
+	// The unit of weight. One of 'gr', 'oz', or 'lb'.
 	UnitOfWeight interface{} `json:"unit_of_weight,omitempty"`
+	// Send this attribute if you want to mark this resource as disabled.
+	Disable interface{} `json:"_disable,omitempty"`
+	// Send this attribute if you want to mark this resource as enabled.
+	Enable interface{} `json:"_enable,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -155,6 +163,39 @@ func (o *POSTShippingMethods201ResponseDataAttributes) SetCurrencyCode(v interfa
 	o.CurrencyCode = v
 }
 
+// GetExternalPricesUrl returns the ExternalPricesUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetExternalPricesUrl() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ExternalPricesUrl
+}
+
+// GetExternalPricesUrlOk returns a tuple with the ExternalPricesUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetExternalPricesUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ExternalPricesUrl) {
+		return nil, false
+	}
+	return &o.ExternalPricesUrl, true
+}
+
+// HasExternalPricesUrl returns a boolean if a field has been set.
+func (o *POSTShippingMethods201ResponseDataAttributes) HasExternalPricesUrl() bool {
+	if o != nil && IsNil(o.ExternalPricesUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalPricesUrl gets a reference to the given interface{} and assigns it to the ExternalPricesUrl field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetExternalPricesUrl(v interface{}) {
+	o.ExternalPricesUrl = v
+}
+
 // GetPriceAmountCents returns the PriceAmountCents field value
 // If the value is explicit nil, the zero value for interface{} will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetPriceAmountCents() interface{} {
@@ -212,6 +253,39 @@ func (o *POSTShippingMethods201ResponseDataAttributes) HasFreeOverAmountCents() 
 // SetFreeOverAmountCents gets a reference to the given interface{} and assigns it to the FreeOverAmountCents field.
 func (o *POSTShippingMethods201ResponseDataAttributes) SetFreeOverAmountCents(v interface{}) {
 	o.FreeOverAmountCents = v
+}
+
+// GetUseSubtotal returns the UseSubtotal field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetUseSubtotal() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.UseSubtotal
+}
+
+// GetUseSubtotalOk returns a tuple with the UseSubtotal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetUseSubtotalOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UseSubtotal) {
+		return nil, false
+	}
+	return &o.UseSubtotal, true
+}
+
+// HasUseSubtotal returns a boolean if a field has been set.
+func (o *POSTShippingMethods201ResponseDataAttributes) HasUseSubtotal() bool {
+	if o != nil && IsNil(o.UseSubtotal) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseSubtotal gets a reference to the given interface{} and assigns it to the UseSubtotal field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetUseSubtotal(v interface{}) {
+	o.UseSubtotal = v
 }
 
 // GetMinWeight returns the MinWeight field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -311,6 +385,72 @@ func (o *POSTShippingMethods201ResponseDataAttributes) HasUnitOfWeight() bool {
 // SetUnitOfWeight gets a reference to the given interface{} and assigns it to the UnitOfWeight field.
 func (o *POSTShippingMethods201ResponseDataAttributes) SetUnitOfWeight(v interface{}) {
 	o.UnitOfWeight = v
+}
+
+// GetDisable returns the Disable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetDisable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Disable
+}
+
+// GetDisableOk returns a tuple with the Disable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetDisableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Disable) {
+		return nil, false
+	}
+	return &o.Disable, true
+}
+
+// HasDisable returns a boolean if a field has been set.
+func (o *POSTShippingMethods201ResponseDataAttributes) HasDisable() bool {
+	if o != nil && IsNil(o.Disable) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisable gets a reference to the given interface{} and assigns it to the Disable field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetDisable(v interface{}) {
+	o.Disable = v
+}
+
+// GetEnable returns the Enable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetEnable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Enable
+}
+
+// GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetEnableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Enable) {
+		return nil, false
+	}
+	return &o.Enable, true
+}
+
+// HasEnable returns a boolean if a field has been set.
+func (o *POSTShippingMethods201ResponseDataAttributes) HasEnable() bool {
+	if o != nil && IsNil(o.Enable) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnable gets a reference to the given interface{} and assigns it to the Enable field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetEnable(v interface{}) {
+	o.Enable = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -431,11 +571,17 @@ func (o POSTShippingMethods201ResponseDataAttributes) ToMap() (map[string]interf
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
 	}
+	if o.ExternalPricesUrl != nil {
+		toSerialize["external_prices_url"] = o.ExternalPricesUrl
+	}
 	if o.PriceAmountCents != nil {
 		toSerialize["price_amount_cents"] = o.PriceAmountCents
 	}
 	if o.FreeOverAmountCents != nil {
 		toSerialize["free_over_amount_cents"] = o.FreeOverAmountCents
+	}
+	if o.UseSubtotal != nil {
+		toSerialize["use_subtotal"] = o.UseSubtotal
 	}
 	if o.MinWeight != nil {
 		toSerialize["min_weight"] = o.MinWeight
@@ -445,6 +591,12 @@ func (o POSTShippingMethods201ResponseDataAttributes) ToMap() (map[string]interf
 	}
 	if o.UnitOfWeight != nil {
 		toSerialize["unit_of_weight"] = o.UnitOfWeight
+	}
+	if o.Disable != nil {
+		toSerialize["_disable"] = o.Disable
+	}
+	if o.Enable != nil {
+		toSerialize["_enable"] = o.Enable
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

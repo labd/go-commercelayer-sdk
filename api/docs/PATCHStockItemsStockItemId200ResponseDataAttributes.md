@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
 **Quantity** | Pointer to **interface{}** | The stock item quantity. | [optional] 
+**Validate** | Pointer to **interface{}** | Send this attribute if you want to validate the stock item quantity against the existing reserved stock one, returns an error in case the former is smaller. Cannot be passed by sales channels. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -99,6 +100,41 @@ HasQuantity returns a boolean if a field has been set.
 `func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) UnsetQuantity()`
 
 UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+### GetValidate
+
+`func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) GetValidate() interface{}`
+
+GetValidate returns the Validate field if non-nil, zero value otherwise.
+
+### GetValidateOk
+
+`func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) GetValidateOk() (*interface{}, bool)`
+
+GetValidateOk returns a tuple with the Validate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidate
+
+`func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) SetValidate(v interface{})`
+
+SetValidate sets Validate field to given value.
+
+### HasValidate
+
+`func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) HasValidate() bool`
+
+HasValidate returns a boolean if a field has been set.
+
+### SetValidateNil
+
+`func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) SetValidateNil(b bool)`
+
+ SetValidateNil sets the value for Validate to be an explicit nil
+
+### UnsetValidate
+`func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) UnsetValidate()`
+
+UnsetValidate ensures that no value is present for Validate, not even an explicit nil
 ### GetReference
 
 `func (o *PATCHStockItemsStockItemId200ResponseDataAttributes) GetReference() interface{}`

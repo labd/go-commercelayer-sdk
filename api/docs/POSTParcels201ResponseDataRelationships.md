@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Shipment** | Pointer to [**POSTParcels201ResponseDataRelationshipsShipment**](POSTParcels201ResponseDataRelationshipsShipment.md) |  | [optional] 
+**Shipment** | Pointer to [**POSTLineItems201ResponseDataRelationshipsShipment**](POSTLineItems201ResponseDataRelationshipsShipment.md) |  | [optional] 
 **Package** | Pointer to [**POSTParcels201ResponseDataRelationshipsPackage**](POSTParcels201ResponseDataRelationshipsPackage.md) |  | [optional] 
 **ParcelLineItems** | Pointer to [**POSTParcels201ResponseDataRelationshipsParcelLineItems**](POSTParcels201ResponseDataRelationshipsParcelLineItems.md) |  | [optional] 
-**Attachments** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsAttachments**](POSTAvalaraAccounts201ResponseDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Events** | Pointer to [**POSTAddresses201ResponseDataRelationshipsEvents**](POSTAddresses201ResponseDataRelationshipsEvents.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetShipment
 
-`func (o *POSTParcels201ResponseDataRelationships) GetShipment() POSTParcels201ResponseDataRelationshipsShipment`
+`func (o *POSTParcels201ResponseDataRelationships) GetShipment() POSTLineItems201ResponseDataRelationshipsShipment`
 
 GetShipment returns the Shipment field if non-nil, zero value otherwise.
 
 ### GetShipmentOk
 
-`func (o *POSTParcels201ResponseDataRelationships) GetShipmentOk() (*POSTParcels201ResponseDataRelationshipsShipment, bool)`
+`func (o *POSTParcels201ResponseDataRelationships) GetShipmentOk() (*POSTLineItems201ResponseDataRelationshipsShipment, bool)`
 
 GetShipmentOk returns a tuple with the Shipment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShipment
 
-`func (o *POSTParcels201ResponseDataRelationships) SetShipment(v POSTParcels201ResponseDataRelationshipsShipment)`
+`func (o *POSTParcels201ResponseDataRelationships) SetShipment(v POSTLineItems201ResponseDataRelationshipsShipment)`
 
 SetShipment sets Shipment field to given value.
 
@@ -106,20 +107,20 @@ HasParcelLineItems returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *POSTParcels201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments`
+`func (o *POSTParcels201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *POSTParcels201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool)`
+`func (o *POSTParcels201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *POSTParcels201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments)`
+`func (o *POSTParcels201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -131,20 +132,20 @@ HasAttachments returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *POSTParcels201ResponseDataRelationships) GetEvents() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents`
+`func (o *POSTParcels201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *POSTParcels201ResponseDataRelationships) GetEventsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents, bool)`
+`func (o *POSTParcels201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *POSTParcels201ResponseDataRelationships) SetEvents(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsEvents)`
+`func (o *POSTParcels201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 
@@ -153,6 +154,31 @@ SetEvents sets Events field to given value.
 `func (o *POSTParcels201ResponseDataRelationships) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *POSTParcels201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTParcels201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTParcels201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTParcels201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

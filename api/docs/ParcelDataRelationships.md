@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Shipment** | Pointer to [**OrderDataRelationshipsShipments**](OrderDataRelationshipsShipments.md) |  | [optional] 
+**Shipment** | Pointer to [**LineItemDataRelationshipsShipment**](LineItemDataRelationshipsShipment.md) |  | [optional] 
 **Package** | Pointer to [**ParcelDataRelationshipsPackage**](ParcelDataRelationshipsPackage.md) |  | [optional] 
 **ParcelLineItems** | Pointer to [**ParcelDataRelationshipsParcelLineItems**](ParcelDataRelationshipsParcelLineItems.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetShipment
 
-`func (o *ParcelDataRelationships) GetShipment() OrderDataRelationshipsShipments`
+`func (o *ParcelDataRelationships) GetShipment() LineItemDataRelationshipsShipment`
 
 GetShipment returns the Shipment field if non-nil, zero value otherwise.
 
 ### GetShipmentOk
 
-`func (o *ParcelDataRelationships) GetShipmentOk() (*OrderDataRelationshipsShipments, bool)`
+`func (o *ParcelDataRelationships) GetShipmentOk() (*LineItemDataRelationshipsShipment, bool)`
 
 GetShipmentOk returns a tuple with the Shipment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShipment
 
-`func (o *ParcelDataRelationships) SetShipment(v OrderDataRelationshipsShipments)`
+`func (o *ParcelDataRelationships) SetShipment(v LineItemDataRelationshipsShipment)`
 
 SetShipment sets Shipment field to given value.
 
@@ -106,20 +107,20 @@ HasParcelLineItems returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *ParcelDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *ParcelDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *ParcelDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *ParcelDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *ParcelDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *ParcelDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -131,20 +132,20 @@ HasAttachments returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *ParcelDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *ParcelDataRelationships) GetEvents() AddressDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *ParcelDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *ParcelDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *ParcelDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *ParcelDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 
@@ -153,6 +154,31 @@ SetEvents sets Events field to given value.
 `func (o *ParcelDataRelationships) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *ParcelDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *ParcelDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *ParcelDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *ParcelDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

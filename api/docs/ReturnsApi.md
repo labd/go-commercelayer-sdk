@@ -5,8 +5,10 @@ All URIs are relative to *https://.commercelayer.io/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETEReturnsReturnId**](ReturnsApi.md#DELETEReturnsReturnId) | **Delete** /returns/{returnId} | Delete a return
+[**GETCaptureIdReturn**](ReturnsApi.md#GETCaptureIdReturn) | **Get** /captures/{captureId}/return | Retrieve the return associated to the capture
 [**GETCustomerIdReturns**](ReturnsApi.md#GETCustomerIdReturns) | **Get** /customers/{customerId}/returns | Retrieve the returns associated to the customer
 [**GETOrderIdReturns**](ReturnsApi.md#GETOrderIdReturns) | **Get** /orders/{orderId}/returns | Retrieve the returns associated to the order
+[**GETRefundIdReturn**](ReturnsApi.md#GETRefundIdReturn) | **Get** /refunds/{refundId}/return | Retrieve the return associated to the refund
 [**GETReturnLineItemIdReturn**](ReturnsApi.md#GETReturnLineItemIdReturn) | **Get** /return_line_items/{returnLineItemId}/return | Retrieve the return associated to the return line item
 [**GETReturns**](ReturnsApi.md#GETReturns) | **Get** /returns | List all returns
 [**GETReturnsReturnId**](ReturnsApi.md#GETReturnsReturnId) | **Get** /returns/{returnId} | Retrieve a return
@@ -59,6 +61,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDELETEReturnsReturnIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCaptureIdReturn
+
+> GETCaptureIdReturn(ctx, captureId).Execute()
+
+Retrieve the return associated to the capture
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    captureId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.ReturnsApi.GETCaptureIdReturn(context.Background(), captureId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETCaptureIdReturn``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**captureId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCaptureIdReturnRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -195,6 +265,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETOrderIdReturnsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETRefundIdReturn
+
+> GETRefundIdReturn(ctx, refundId).Execute()
+
+Retrieve the return associated to the refund
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    refundId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.ReturnsApi.GETRefundIdReturn(context.Background(), refundId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETRefundIdReturn``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**refundId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETRefundIdReturnRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

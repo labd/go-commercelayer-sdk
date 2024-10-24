@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTCustomerPasswordResets201ResponseDataRelationships**](POSTCustomerPasswordResets201ResponseDataRelationships.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes**](PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTCustomerSubscriptions201ResponseDataRelationships**](POSTCustomerSubscriptions201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
+`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAttributes() PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
+`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAttributesOk() (*PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
+`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetAttributes(v PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationships() POSTCustomerPasswordResets201ResponseDataRelationships`
+`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationships() POSTCustomerSubscriptions201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationshipsOk() (*POSTCustomerPasswordResets201ResponseDataRelationships, bool)`
+`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationshipsOk() (*POSTCustomerSubscriptions201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetRelationships(v POSTCustomerPasswordResets201ResponseDataRelationships)`
+`func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetRelationships(v POSTCustomerSubscriptions201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

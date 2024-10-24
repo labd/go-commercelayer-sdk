@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,7 @@ var _ MappedNullable = &POSTAdyenPayments201ResponseDataRelationships{}
 type POSTAdyenPayments201ResponseDataRelationships struct {
 	Order          *POSTAdyenPayments201ResponseDataRelationshipsOrder          `json:"order,omitempty"`
 	PaymentGateway *POSTAdyenPayments201ResponseDataRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
+	Versions       *POSTAddresses201ResponseDataRelationshipsVersions           `json:"versions,omitempty"`
 }
 
 // NewPOSTAdyenPayments201ResponseDataRelationships instantiates a new POSTAdyenPayments201ResponseDataRelationships object
@@ -105,6 +106,38 @@ func (o *POSTAdyenPayments201ResponseDataRelationships) SetPaymentGateway(v POST
 	o.PaymentGateway = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTAdyenPayments201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTAdyenPayments201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTAdyenPayments201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTAdyenPayments201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 func (o POSTAdyenPayments201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o POSTAdyenPayments201ResponseDataRelationships) ToMap() (map[string]inter
 	}
 	if !IsNil(o.PaymentGateway) {
 		toSerialize["payment_gateway"] = o.PaymentGateway
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

@@ -5,13 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Frequency** | Pointer to **interface{}** | The frequency of the subscription. Use one of the supported within &#39;hourly&#39;, &#39;daily&#39;, &#39;weekly&#39;, &#39;monthly&#39;, &#39;two-month&#39;, &#39;three-month&#39;, &#39;four-month&#39;, &#39;six-month&#39;, &#39;yearly&#39;, or provide your custom crontab expression (min unit is hour). Must be supported by existing associated subscription_model. | [optional] 
+**ActivateBySourceOrder** | Pointer to **interface{}** | Indicates if the subscription will be activated considering the placed source order as its first run. | [optional] 
+**PlaceTargetOrder** | Pointer to **interface{}** | Indicates if the subscription created orders are automatically placed at the end of the copy. | [optional] 
+**RenewalAlertPeriod** | Pointer to **interface{}** | Indicates the number of hours the renewal alert will be triggered before the subscription next run. Must be included between 1 and 720 hours. | [optional] 
 **ExpiresAt** | Pointer to **interface{}** | The expiration date/time of this subscription (must be after starts_at). | [optional] 
 **NextRunAt** | Pointer to **interface{}** | The date/time of the subscription next run. Can be updated but only in the future, to copy with frequency changes. | [optional] 
 **Activate** | Pointer to **interface{}** | Send this attribute if you want to mark this subscription as active. | [optional] 
 **Deactivate** | Pointer to **interface{}** | Send this attribute if you want to mark this subscription as inactive. | [optional] 
 **Cancel** | Pointer to **interface{}** | Send this attribute if you want to mark this subscription as cancelled. | [optional] 
+**Convert** | Pointer to **interface{}** | Send this attribute if you want to convert a manual subscription to an automatic one. A subscription model is required before conversion. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -68,6 +72,111 @@ HasFrequency returns a boolean if a field has been set.
 `func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetFrequency()`
 
 UnsetFrequency ensures that no value is present for Frequency, not even an explicit nil
+### GetActivateBySourceOrder
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetActivateBySourceOrder() interface{}`
+
+GetActivateBySourceOrder returns the ActivateBySourceOrder field if non-nil, zero value otherwise.
+
+### GetActivateBySourceOrderOk
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetActivateBySourceOrderOk() (*interface{}, bool)`
+
+GetActivateBySourceOrderOk returns a tuple with the ActivateBySourceOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActivateBySourceOrder
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetActivateBySourceOrder(v interface{})`
+
+SetActivateBySourceOrder sets ActivateBySourceOrder field to given value.
+
+### HasActivateBySourceOrder
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasActivateBySourceOrder() bool`
+
+HasActivateBySourceOrder returns a boolean if a field has been set.
+
+### SetActivateBySourceOrderNil
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetActivateBySourceOrderNil(b bool)`
+
+ SetActivateBySourceOrderNil sets the value for ActivateBySourceOrder to be an explicit nil
+
+### UnsetActivateBySourceOrder
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetActivateBySourceOrder()`
+
+UnsetActivateBySourceOrder ensures that no value is present for ActivateBySourceOrder, not even an explicit nil
+### GetPlaceTargetOrder
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetPlaceTargetOrder() interface{}`
+
+GetPlaceTargetOrder returns the PlaceTargetOrder field if non-nil, zero value otherwise.
+
+### GetPlaceTargetOrderOk
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetPlaceTargetOrderOk() (*interface{}, bool)`
+
+GetPlaceTargetOrderOk returns a tuple with the PlaceTargetOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlaceTargetOrder
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetPlaceTargetOrder(v interface{})`
+
+SetPlaceTargetOrder sets PlaceTargetOrder field to given value.
+
+### HasPlaceTargetOrder
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasPlaceTargetOrder() bool`
+
+HasPlaceTargetOrder returns a boolean if a field has been set.
+
+### SetPlaceTargetOrderNil
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetPlaceTargetOrderNil(b bool)`
+
+ SetPlaceTargetOrderNil sets the value for PlaceTargetOrder to be an explicit nil
+
+### UnsetPlaceTargetOrder
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetPlaceTargetOrder()`
+
+UnsetPlaceTargetOrder ensures that no value is present for PlaceTargetOrder, not even an explicit nil
+### GetRenewalAlertPeriod
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetRenewalAlertPeriod() interface{}`
+
+GetRenewalAlertPeriod returns the RenewalAlertPeriod field if non-nil, zero value otherwise.
+
+### GetRenewalAlertPeriodOk
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetRenewalAlertPeriodOk() (*interface{}, bool)`
+
+GetRenewalAlertPeriodOk returns a tuple with the RenewalAlertPeriod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRenewalAlertPeriod
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetRenewalAlertPeriod(v interface{})`
+
+SetRenewalAlertPeriod sets RenewalAlertPeriod field to given value.
+
+### HasRenewalAlertPeriod
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasRenewalAlertPeriod() bool`
+
+HasRenewalAlertPeriod returns a boolean if a field has been set.
+
+### SetRenewalAlertPeriodNil
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetRenewalAlertPeriodNil(b bool)`
+
+ SetRenewalAlertPeriodNil sets the value for RenewalAlertPeriod to be an explicit nil
+
+### UnsetRenewalAlertPeriod
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetRenewalAlertPeriod()`
+
+UnsetRenewalAlertPeriod ensures that no value is present for RenewalAlertPeriod, not even an explicit nil
 ### GetExpiresAt
 
 `func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetExpiresAt() interface{}`
@@ -243,6 +352,41 @@ HasCancel returns a boolean if a field has been set.
 `func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetCancel()`
 
 UnsetCancel ensures that no value is present for Cancel, not even an explicit nil
+### GetConvert
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetConvert() interface{}`
+
+GetConvert returns the Convert field if non-nil, zero value otherwise.
+
+### GetConvertOk
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetConvertOk() (*interface{}, bool)`
+
+GetConvertOk returns a tuple with the Convert field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConvert
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetConvert(v interface{})`
+
+SetConvert sets Convert field to given value.
+
+### HasConvert
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasConvert() bool`
+
+HasConvert returns a boolean if a field has been set.
+
+### SetConvertNil
+
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetConvertNil(b bool)`
+
+ SetConvertNil sets the value for Convert to be an explicit nil
+
+### UnsetConvert
+`func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) UnsetConvert()`
+
+UnsetConvert ensures that no value is present for Convert, not even an explicit nil
 ### GetReference
 
 `func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReference() interface{}`

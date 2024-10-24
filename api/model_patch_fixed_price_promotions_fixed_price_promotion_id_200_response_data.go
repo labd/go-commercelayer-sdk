@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -26,7 +26,7 @@ type PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData struct {
 	Type          interface{}                                                              `json:"type,omitempty"`
 	Links         *POSTAddresses201ResponseDataLinks                                       `json:"links,omitempty"`
 	Attributes    *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTFixedPricePromotions201ResponseDataRelationships                    `json:"relationships,omitempty"`
+	Relationships *POSTBuyXPayYPromotions201ResponseDataRelationships                      `json:"relationships,omitempty"`
 }
 
 // NewPATCHFixedPricePromotionsFixedPricePromotionId200ResponseData instantiates a new PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData object
@@ -177,9 +177,9 @@ func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) SetAttri
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) GetRelationships() POSTFixedPricePromotions201ResponseDataRelationships {
+func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) GetRelationships() POSTBuyXPayYPromotions201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret POSTFixedPricePromotions201ResponseDataRelationships
+		var ret POSTBuyXPayYPromotions201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) GetRelat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) GetRelationshipsOk() (*POSTFixedPricePromotions201ResponseDataRelationships, bool) {
+func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) GetRelationshipsOk() (*POSTBuyXPayYPromotions201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) HasRelat
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTFixedPricePromotions201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) SetRelationships(v POSTFixedPricePromotions201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTBuyXPayYPromotions201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) SetRelationships(v POSTBuyXPayYPromotions201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

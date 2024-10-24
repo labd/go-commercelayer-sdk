@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -65,6 +65,98 @@ func (a *CouponRecipientsApiService) DELETECouponRecipientsCouponRecipientIdExec
 
 	localVarPath := localBasePath + "/coupon_recipients/{couponRecipientId}"
 	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterValueToString(r.couponRecipientId, "couponRecipientId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type CouponRecipientsApiGETCouponIdCouponRecipientRequest struct {
+	ctx        context.Context
+	ApiService *CouponRecipientsApiService
+	couponId   interface{}
+}
+
+func (r CouponRecipientsApiGETCouponIdCouponRecipientRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCouponIdCouponRecipientExecute(r)
+}
+
+/*
+GETCouponIdCouponRecipient Retrieve the coupon recipient associated to the coupon
+
+Retrieve the coupon recipient associated to the coupon
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponId The resource's id
+	@return CouponRecipientsApiGETCouponIdCouponRecipientRequest
+*/
+func (a *CouponRecipientsApiService) GETCouponIdCouponRecipient(ctx context.Context, couponId interface{}) CouponRecipientsApiGETCouponIdCouponRecipientRequest {
+	return CouponRecipientsApiGETCouponIdCouponRecipientRequest{
+		ApiService: a,
+		ctx:        ctx,
+		couponId:   couponId,
+	}
+}
+
+// Execute executes the request
+func (a *CouponRecipientsApiService) GETCouponIdCouponRecipientExecute(r CouponRecipientsApiGETCouponIdCouponRecipientRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponRecipientsApiService.GETCouponIdCouponRecipient")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/coupons/{couponId}/coupon_recipient"
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

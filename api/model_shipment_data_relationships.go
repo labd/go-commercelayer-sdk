@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,22 +20,24 @@ var _ MappedNullable = &ShipmentDataRelationships{}
 
 // ShipmentDataRelationships struct for ShipmentDataRelationships
 type ShipmentDataRelationships struct {
-	Order            *AdyenPaymentDataRelationshipsOrder              `json:"order,omitempty"`
-	ShippingCategory *ShipmentDataRelationshipsShippingCategory       `json:"shipping_category,omitempty"`
-	StockLocation    *DeliveryLeadTimeDataRelationshipsStockLocation  `json:"stock_location,omitempty"`
-	OriginAddress    *BingGeocoderDataRelationshipsAddresses          `json:"origin_address,omitempty"`
-	ShippingAddress  *BingGeocoderDataRelationshipsAddresses          `json:"shipping_address,omitempty"`
-	ShippingMethod   *DeliveryLeadTimeDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
-	DeliveryLeadTime *ShipmentDataRelationshipsDeliveryLeadTime       `json:"delivery_lead_time,omitempty"`
-	// Deprecated
-	ShipmentLineItems        *LineItemDataRelationshipsShipmentLineItems      `json:"shipment_line_items,omitempty"`
-	StockLineItems           *LineItemDataRelationshipsStockLineItems         `json:"stock_line_items,omitempty"`
-	StockTransfers           *LineItemDataRelationshipsStockTransfers         `json:"stock_transfers,omitempty"`
-	AvailableShippingMethods *DeliveryLeadTimeDataRelationshipsShippingMethod `json:"available_shipping_methods,omitempty"`
-	CarrierAccounts          *ShipmentDataRelationshipsCarrierAccounts        `json:"carrier_accounts,omitempty"`
-	Parcels                  *PackageDataRelationshipsParcels                 `json:"parcels,omitempty"`
-	Attachments              *AvalaraAccountDataRelationshipsAttachments      `json:"attachments,omitempty"`
-	Events                   *AuthorizationDataRelationshipsEvents            `json:"events,omitempty"`
+	Order                    *AdyenPaymentDataRelationshipsOrder                     `json:"order,omitempty"`
+	ShippingCategory         *ShipmentDataRelationshipsShippingCategory              `json:"shipping_category,omitempty"`
+	InventoryStockLocation   *InventoryModelDataRelationshipsInventoryStockLocations `json:"inventory_stock_location,omitempty"`
+	StockLocation            *DeliveryLeadTimeDataRelationshipsStockLocation         `json:"stock_location,omitempty"`
+	OriginAddress            *BingGeocoderDataRelationshipsAddresses                 `json:"origin_address,omitempty"`
+	ShippingAddress          *BingGeocoderDataRelationshipsAddresses                 `json:"shipping_address,omitempty"`
+	ShippingMethod           *DeliveryLeadTimeDataRelationshipsShippingMethod        `json:"shipping_method,omitempty"`
+	DeliveryLeadTime         *ShipmentDataRelationshipsDeliveryLeadTime              `json:"delivery_lead_time,omitempty"`
+	StockLineItems           *LineItemDataRelationshipsStockLineItems                `json:"stock_line_items,omitempty"`
+	StockTransfers           *LineItemDataRelationshipsStockTransfers                `json:"stock_transfers,omitempty"`
+	LineItems                *LineItemOptionDataRelationshipsLineItem                `json:"line_items,omitempty"`
+	AvailableShippingMethods *DeliveryLeadTimeDataRelationshipsShippingMethod        `json:"available_shipping_methods,omitempty"`
+	CarrierAccounts          *ShipmentDataRelationshipsCarrierAccounts               `json:"carrier_accounts,omitempty"`
+	Parcels                  *PackageDataRelationshipsParcels                        `json:"parcels,omitempty"`
+	Attachments              *AuthorizationDataRelationshipsAttachments              `json:"attachments,omitempty"`
+	Events                   *AddressDataRelationshipsEvents                         `json:"events,omitempty"`
+	Tags                     *AddressDataRelationshipsTags                           `json:"tags,omitempty"`
+	Versions                 *AddressDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
 
 // NewShipmentDataRelationships instantiates a new ShipmentDataRelationships object
@@ -117,6 +119,38 @@ func (o *ShipmentDataRelationships) HasShippingCategory() bool {
 // SetShippingCategory gets a reference to the given ShipmentDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
 func (o *ShipmentDataRelationships) SetShippingCategory(v ShipmentDataRelationshipsShippingCategory) {
 	o.ShippingCategory = &v
+}
+
+// GetInventoryStockLocation returns the InventoryStockLocation field value if set, zero value otherwise.
+func (o *ShipmentDataRelationships) GetInventoryStockLocation() InventoryModelDataRelationshipsInventoryStockLocations {
+	if o == nil || IsNil(o.InventoryStockLocation) {
+		var ret InventoryModelDataRelationshipsInventoryStockLocations
+		return ret
+	}
+	return *o.InventoryStockLocation
+}
+
+// GetInventoryStockLocationOk returns a tuple with the InventoryStockLocation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShipmentDataRelationships) GetInventoryStockLocationOk() (*InventoryModelDataRelationshipsInventoryStockLocations, bool) {
+	if o == nil || IsNil(o.InventoryStockLocation) {
+		return nil, false
+	}
+	return o.InventoryStockLocation, true
+}
+
+// HasInventoryStockLocation returns a boolean if a field has been set.
+func (o *ShipmentDataRelationships) HasInventoryStockLocation() bool {
+	if o != nil && !IsNil(o.InventoryStockLocation) {
+		return true
+	}
+
+	return false
+}
+
+// SetInventoryStockLocation gets a reference to the given InventoryModelDataRelationshipsInventoryStockLocations and assigns it to the InventoryStockLocation field.
+func (o *ShipmentDataRelationships) SetInventoryStockLocation(v InventoryModelDataRelationshipsInventoryStockLocations) {
+	o.InventoryStockLocation = &v
 }
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
@@ -279,41 +313,6 @@ func (o *ShipmentDataRelationships) SetDeliveryLeadTime(v ShipmentDataRelationsh
 	o.DeliveryLeadTime = &v
 }
 
-// GetShipmentLineItems returns the ShipmentLineItems field value if set, zero value otherwise.
-// Deprecated
-func (o *ShipmentDataRelationships) GetShipmentLineItems() LineItemDataRelationshipsShipmentLineItems {
-	if o == nil || IsNil(o.ShipmentLineItems) {
-		var ret LineItemDataRelationshipsShipmentLineItems
-		return ret
-	}
-	return *o.ShipmentLineItems
-}
-
-// GetShipmentLineItemsOk returns a tuple with the ShipmentLineItems field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ShipmentDataRelationships) GetShipmentLineItemsOk() (*LineItemDataRelationshipsShipmentLineItems, bool) {
-	if o == nil || IsNil(o.ShipmentLineItems) {
-		return nil, false
-	}
-	return o.ShipmentLineItems, true
-}
-
-// HasShipmentLineItems returns a boolean if a field has been set.
-func (o *ShipmentDataRelationships) HasShipmentLineItems() bool {
-	if o != nil && !IsNil(o.ShipmentLineItems) {
-		return true
-	}
-
-	return false
-}
-
-// SetShipmentLineItems gets a reference to the given LineItemDataRelationshipsShipmentLineItems and assigns it to the ShipmentLineItems field.
-// Deprecated
-func (o *ShipmentDataRelationships) SetShipmentLineItems(v LineItemDataRelationshipsShipmentLineItems) {
-	o.ShipmentLineItems = &v
-}
-
 // GetStockLineItems returns the StockLineItems field value if set, zero value otherwise.
 func (o *ShipmentDataRelationships) GetStockLineItems() LineItemDataRelationshipsStockLineItems {
 	if o == nil || IsNil(o.StockLineItems) {
@@ -376,6 +375,38 @@ func (o *ShipmentDataRelationships) HasStockTransfers() bool {
 // SetStockTransfers gets a reference to the given LineItemDataRelationshipsStockTransfers and assigns it to the StockTransfers field.
 func (o *ShipmentDataRelationships) SetStockTransfers(v LineItemDataRelationshipsStockTransfers) {
 	o.StockTransfers = &v
+}
+
+// GetLineItems returns the LineItems field value if set, zero value otherwise.
+func (o *ShipmentDataRelationships) GetLineItems() LineItemOptionDataRelationshipsLineItem {
+	if o == nil || IsNil(o.LineItems) {
+		var ret LineItemOptionDataRelationshipsLineItem
+		return ret
+	}
+	return *o.LineItems
+}
+
+// GetLineItemsOk returns a tuple with the LineItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShipmentDataRelationships) GetLineItemsOk() (*LineItemOptionDataRelationshipsLineItem, bool) {
+	if o == nil || IsNil(o.LineItems) {
+		return nil, false
+	}
+	return o.LineItems, true
+}
+
+// HasLineItems returns a boolean if a field has been set.
+func (o *ShipmentDataRelationships) HasLineItems() bool {
+	if o != nil && !IsNil(o.LineItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetLineItems gets a reference to the given LineItemOptionDataRelationshipsLineItem and assigns it to the LineItems field.
+func (o *ShipmentDataRelationships) SetLineItems(v LineItemOptionDataRelationshipsLineItem) {
+	o.LineItems = &v
 }
 
 // GetAvailableShippingMethods returns the AvailableShippingMethods field value if set, zero value otherwise.
@@ -475,9 +506,9 @@ func (o *ShipmentDataRelationships) SetParcels(v PackageDataRelationshipsParcels
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *ShipmentDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+func (o *ShipmentDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret AvalaraAccountDataRelationshipsAttachments
+		var ret AuthorizationDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -485,7 +516,7 @@ func (o *ShipmentDataRelationships) GetAttachments() AvalaraAccountDataRelations
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShipmentDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+func (o *ShipmentDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -501,15 +532,15 @@ func (o *ShipmentDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *ShipmentDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *ShipmentDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *ShipmentDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+func (o *ShipmentDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
+		var ret AddressDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -517,7 +548,7 @@ func (o *ShipmentDataRelationships) GetEvents() AuthorizationDataRelationshipsEv
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShipmentDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+func (o *ShipmentDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
 	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
@@ -533,9 +564,73 @@ func (o *ShipmentDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *ShipmentDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *ShipmentDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
 	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *ShipmentDataRelationships) GetTags() AddressDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShipmentDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *ShipmentDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressDataRelationshipsTags and assigns it to the Tags field.
+func (o *ShipmentDataRelationships) SetTags(v AddressDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *ShipmentDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShipmentDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *ShipmentDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *ShipmentDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 func (o ShipmentDataRelationships) MarshalJSON() ([]byte, error) {
@@ -554,6 +649,9 @@ func (o ShipmentDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ShippingCategory) {
 		toSerialize["shipping_category"] = o.ShippingCategory
 	}
+	if !IsNil(o.InventoryStockLocation) {
+		toSerialize["inventory_stock_location"] = o.InventoryStockLocation
+	}
 	if !IsNil(o.StockLocation) {
 		toSerialize["stock_location"] = o.StockLocation
 	}
@@ -569,14 +667,14 @@ func (o ShipmentDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DeliveryLeadTime) {
 		toSerialize["delivery_lead_time"] = o.DeliveryLeadTime
 	}
-	if !IsNil(o.ShipmentLineItems) {
-		toSerialize["shipment_line_items"] = o.ShipmentLineItems
-	}
 	if !IsNil(o.StockLineItems) {
 		toSerialize["stock_line_items"] = o.StockLineItems
 	}
 	if !IsNil(o.StockTransfers) {
 		toSerialize["stock_transfers"] = o.StockTransfers
+	}
+	if !IsNil(o.LineItems) {
+		toSerialize["line_items"] = o.LineItems
 	}
 	if !IsNil(o.AvailableShippingMethods) {
 		toSerialize["available_shipping_methods"] = o.AvailableShippingMethods
@@ -592,6 +690,12 @@ func (o ShipmentDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	return toSerialize, nil
 }

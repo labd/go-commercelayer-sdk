@@ -9,9 +9,11 @@ Method | HTTP request | Description
 [**GETInventoryReturnLocationIdStockLocation**](StockLocationsApi.md#GETInventoryReturnLocationIdStockLocation) | **Get** /inventory_return_locations/{inventoryReturnLocationId}/stock_location | Retrieve the stock location associated to the inventory return location
 [**GETInventoryStockLocationIdStockLocation**](StockLocationsApi.md#GETInventoryStockLocationIdStockLocation) | **Get** /inventory_stock_locations/{inventoryStockLocationId}/stock_location | Retrieve the stock location associated to the inventory stock location
 [**GETPackageIdStockLocation**](StockLocationsApi.md#GETPackageIdStockLocation) | **Get** /packages/{packageId}/stock_location | Retrieve the stock location associated to the package
+[**GETPriceIdJwtStockLocations**](StockLocationsApi.md#GETPriceIdJwtStockLocations) | **Get** /prices/{priceId}/jwt_stock_locations | Retrieve the jwt stock locations associated to the price
 [**GETReturnIdStockLocation**](StockLocationsApi.md#GETReturnIdStockLocation) | **Get** /returns/{returnId}/stock_location | Retrieve the stock location associated to the return
 [**GETShipmentIdStockLocation**](StockLocationsApi.md#GETShipmentIdStockLocation) | **Get** /shipments/{shipmentId}/stock_location | Retrieve the stock location associated to the shipment
 [**GETShippingMethodIdStockLocation**](StockLocationsApi.md#GETShippingMethodIdStockLocation) | **Get** /shipping_methods/{shippingMethodId}/stock_location | Retrieve the stock location associated to the shipping method
+[**GETSkuIdJwtStockLocations**](StockLocationsApi.md#GETSkuIdJwtStockLocations) | **Get** /skus/{skuId}/jwt_stock_locations | Retrieve the jwt stock locations associated to the SKU
 [**GETStockItemIdStockLocation**](StockLocationsApi.md#GETStockItemIdStockLocation) | **Get** /stock_items/{stockItemId}/stock_location | Retrieve the stock location associated to the stock item
 [**GETStockLocations**](StockLocationsApi.md#GETStockLocations) | **Get** /stock_locations | List all stock locations
 [**GETStockLocationsStockLocationId**](StockLocationsApi.md#GETStockLocationsStockLocationId) | **Get** /stock_locations/{stockLocationId} | Retrieve a stock location
@@ -362,6 +364,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPriceIdJwtStockLocations
+
+> GETPriceIdJwtStockLocations(ctx, priceId).Execute()
+
+Retrieve the jwt stock locations associated to the price
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    priceId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.StockLocationsApi.GETPriceIdJwtStockLocations(context.Background(), priceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StockLocationsApi.GETPriceIdJwtStockLocations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceIdJwtStockLocationsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETReturnIdStockLocation
 
 > GETReturnIdStockLocation(ctx, returnId).Execute()
@@ -542,6 +612,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETShippingMethodIdStockLocationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSkuIdJwtStockLocations
+
+> GETSkuIdJwtStockLocations(ctx, skuId).Execute()
+
+Retrieve the jwt stock locations associated to the SKU
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    skuId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.StockLocationsApi.GETSkuIdJwtStockLocations(context.Background(), skuId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `StockLocationsApi.GETSkuIdJwtStockLocations``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**skuId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSkuIdJwtStockLocationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

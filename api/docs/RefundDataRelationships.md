@@ -5,8 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Order** | Pointer to [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 **ReferenceCapture** | Pointer to [**AuthorizationDataRelationshipsCaptures**](AuthorizationDataRelationshipsCaptures.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**Return** | Pointer to [**CaptureDataRelationshipsReturn**](CaptureDataRelationshipsReturn.md) |  | [optional] 
 
 ## Methods
 
@@ -52,6 +55,81 @@ SetOrder sets Order field to given value.
 
 HasOrder returns a boolean if a field has been set.
 
+### GetAttachments
+
+`func (o *RefundDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
+
+GetAttachments returns the Attachments field if non-nil, zero value otherwise.
+
+### GetAttachmentsOk
+
+`func (o *RefundDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
+
+GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttachments
+
+`func (o *RefundDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
+
+SetAttachments sets Attachments field to given value.
+
+### HasAttachments
+
+`func (o *RefundDataRelationships) HasAttachments() bool`
+
+HasAttachments returns a boolean if a field has been set.
+
+### GetEvents
+
+`func (o *RefundDataRelationships) GetEvents() AddressDataRelationshipsEvents`
+
+GetEvents returns the Events field if non-nil, zero value otherwise.
+
+### GetEventsOk
+
+`func (o *RefundDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
+
+GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEvents
+
+`func (o *RefundDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
+
+SetEvents sets Events field to given value.
+
+### HasEvents
+
+`func (o *RefundDataRelationships) HasEvents() bool`
+
+HasEvents returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *RefundDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *RefundDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *RefundDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *RefundDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
+
 ### GetReferenceCapture
 
 `func (o *RefundDataRelationships) GetReferenceCapture() AuthorizationDataRelationshipsCaptures`
@@ -77,30 +155,30 @@ SetReferenceCapture sets ReferenceCapture field to given value.
 
 HasReferenceCapture returns a boolean if a field has been set.
 
-### GetEvents
+### GetReturn
 
-`func (o *RefundDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *RefundDataRelationships) GetReturn() CaptureDataRelationshipsReturn`
 
-GetEvents returns the Events field if non-nil, zero value otherwise.
+GetReturn returns the Return field if non-nil, zero value otherwise.
 
-### GetEventsOk
+### GetReturnOk
 
-`func (o *RefundDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *RefundDataRelationships) GetReturnOk() (*CaptureDataRelationshipsReturn, bool)`
 
-GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
+GetReturnOk returns a tuple with the Return field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEvents
+### SetReturn
 
-`func (o *RefundDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *RefundDataRelationships) SetReturn(v CaptureDataRelationshipsReturn)`
 
-SetEvents sets Events field to given value.
+SetReturn sets Return field to given value.
 
-### HasEvents
+### HasReturn
 
-`func (o *RefundDataRelationships) HasEvents() bool`
+`func (o *RefundDataRelationships) HasReturn() bool`
 
-HasEvents returns a boolean if a field has been set.
+HasReturn returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

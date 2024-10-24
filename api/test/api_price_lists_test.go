@@ -35,6 +35,19 @@ func Test_api_PriceListsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test PriceListsApiService GETMarketIdBasePriceList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var marketId interface{}
+
+		httpRes, err := apiClient.PriceListsApi.GETMarketIdBasePriceList(context.Background(), marketId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test PriceListsApiService GETMarketIdPriceList", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -55,6 +68,19 @@ func Test_api_PriceListsApiService(t *testing.T) {
 		var priceId interface{}
 
 		httpRes, err := apiClient.PriceListsApi.GETPriceIdPriceList(context.Background(), priceId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PriceListsApiService GETPriceListSchedulerIdPriceList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var priceListSchedulerId interface{}
+
+		httpRes, err := apiClient.PriceListsApi.GETPriceListSchedulerIdPriceList(context.Background(), priceListSchedulerId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

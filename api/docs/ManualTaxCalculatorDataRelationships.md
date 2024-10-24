@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Markets** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 **TaxRules** | Pointer to [**ManualTaxCalculatorDataRelationshipsTaxRules**](ManualTaxCalculatorDataRelationshipsTaxRules.md) |  | [optional] 
 
 ## Methods
@@ -54,20 +55,20 @@ HasMarkets returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *ManualTaxCalculatorDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *ManualTaxCalculatorDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *ManualTaxCalculatorDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *ManualTaxCalculatorDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *ManualTaxCalculatorDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *ManualTaxCalculatorDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -76,6 +77,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *ManualTaxCalculatorDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *ManualTaxCalculatorDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *ManualTaxCalculatorDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *ManualTaxCalculatorDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *ManualTaxCalculatorDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 ### GetTaxRules
 

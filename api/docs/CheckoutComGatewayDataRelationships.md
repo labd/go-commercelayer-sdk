@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**AdyenGatewayDataRelationshipsPaymentMethods**](AdyenGatewayDataRelationshipsPaymentMethods.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 **CheckoutComPayments** | Pointer to [**CheckoutComGatewayDataRelationshipsCheckoutComPayments**](CheckoutComGatewayDataRelationshipsCheckoutComPayments.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetPaymentMethods sets PaymentMethods field to given value.
 `func (o *CheckoutComGatewayDataRelationships) HasPaymentMethods() bool`
 
 HasPaymentMethods returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *CheckoutComGatewayDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *CheckoutComGatewayDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *CheckoutComGatewayDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *CheckoutComGatewayDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 ### GetCheckoutComPayments
 

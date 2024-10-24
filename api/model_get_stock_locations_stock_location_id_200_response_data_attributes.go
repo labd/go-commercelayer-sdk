@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,11 +20,13 @@ var _ MappedNullable = &GETStockLocationsStockLocationId200ResponseDataAttribute
 
 // GETStockLocationsStockLocationId200ResponseDataAttributes struct for GETStockLocationsStockLocationId200ResponseDataAttributes
 type GETStockLocationsStockLocationId200ResponseDataAttributes struct {
-	// Unique identifier for the stock location (numeric)
+	// Unique identifier for the stock location (numeric).
 	Number interface{} `json:"number,omitempty"`
 	// The stock location's internal name.
 	Name interface{} `json:"name,omitempty"`
-	// The shipping label format for this stock location. Can be one of 'PDF', 'ZPL', 'EPL2', or 'PNG'
+	// A string that you can use to identify the stock location (must be unique within the environment).
+	Code interface{} `json:"code,omitempty"`
+	// The shipping label format for this stock location. Can be one of 'PDF', 'ZPL', 'EPL2', or 'PNG'.
 	LabelFormat interface{} `json:"label_format,omitempty"`
 	// Flag it if you want to skip the electronic invoice creation when generating the customs info for this stock location shipments.
 	SuppressEtd interface{} `json:"suppress_etd,omitempty"`
@@ -34,7 +36,7 @@ type GETStockLocationsStockLocationId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -121,6 +123,39 @@ func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) HasName() bo
 // SetName gets a reference to the given interface{} and assigns it to the Name field.
 func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) GetCode() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Code
+}
+
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
+	}
+	return &o.Code, true
+}
+
+// HasCode returns a boolean if a field has been set.
+func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) HasCode() bool {
+	if o != nil && IsNil(o.Code) {
+		return true
+	}
+
+	return false
+}
+
+// SetCode gets a reference to the given interface{} and assigns it to the Code field.
+func (o *GETStockLocationsStockLocationId200ResponseDataAttributes) SetCode(v interface{}) {
+	o.Code = v
 }
 
 // GetLabelFormat returns the LabelFormat field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -369,6 +404,9 @@ func (o GETStockLocationsStockLocationId200ResponseDataAttributes) ToMap() (map[
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.Code != nil {
+		toSerialize["code"] = o.Code
 	}
 	if o.LabelFormat != nil {
 		toSerialize["label_format"] = o.LabelFormat

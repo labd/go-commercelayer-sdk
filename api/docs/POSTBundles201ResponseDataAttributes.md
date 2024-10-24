@@ -9,19 +9,19 @@ Name | Type | Description | Notes
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
 **Description** | Pointer to **interface{}** | An internal description of the bundle. | [optional] 
 **ImageUrl** | Pointer to **interface{}** | The URL of an image that represents the bundle. | [optional] 
-**PriceAmountCents** | **interface{}** | The bundle price amount for the associated market, in cents. | 
-**CompareAtAmountCents** | **interface{}** | The compared price amount, in cents. Useful to display a percentage discount. | 
+**PriceAmountCents** | Pointer to **interface{}** | The bundle price amount for the associated market, in cents. | [optional] 
+**CompareAtAmountCents** | Pointer to **interface{}** | The compared price amount, in cents. Useful to display a percentage discount. | [optional] 
 **ComputePriceAmount** | Pointer to **interface{}** | Send this attribute if you want to compute the price_amount_cents as the sum of the prices of the bundle SKUs for the market. | [optional] 
 **ComputeCompareAtAmount** | Pointer to **interface{}** | Send this attribute if you want to compute the compare_at_amount_cents as the sum of the prices of the bundle SKUs for the market. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
 
 ### NewPOSTBundles201ResponseDataAttributes
 
-`func NewPOSTBundles201ResponseDataAttributes(code interface{}, name interface{}, priceAmountCents interface{}, compareAtAmountCents interface{}, ) *POSTBundles201ResponseDataAttributes`
+`func NewPOSTBundles201ResponseDataAttributes(code interface{}, name interface{}, ) *POSTBundles201ResponseDataAttributes`
 
 NewPOSTBundles201ResponseDataAttributes instantiates a new POSTBundles201ResponseDataAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -220,6 +220,11 @@ and a boolean to check if the value has been set.
 
 SetPriceAmountCents sets PriceAmountCents field to given value.
 
+### HasPriceAmountCents
+
+`func (o *POSTBundles201ResponseDataAttributes) HasPriceAmountCents() bool`
+
+HasPriceAmountCents returns a boolean if a field has been set.
 
 ### SetPriceAmountCentsNil
 
@@ -250,6 +255,11 @@ and a boolean to check if the value has been set.
 
 SetCompareAtAmountCents sets CompareAtAmountCents field to given value.
 
+### HasCompareAtAmountCents
+
+`func (o *POSTBundles201ResponseDataAttributes) HasCompareAtAmountCents() bool`
+
+HasCompareAtAmountCents returns a boolean if a field has been set.
 
 ### SetCompareAtAmountCentsNil
 

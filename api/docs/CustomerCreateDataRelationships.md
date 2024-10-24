@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomerGroup** | Pointer to [**CustomerCreateDataRelationshipsCustomerGroup**](CustomerCreateDataRelationshipsCustomerGroup.md) |  | [optional] 
+**Tags** | Pointer to [**AddressCreateDataRelationshipsTags**](AddressCreateDataRelationshipsTags.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetCustomerGroup sets CustomerGroup field to given value.
 `func (o *CustomerCreateDataRelationships) HasCustomerGroup() bool`
 
 HasCustomerGroup returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *CustomerCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *CustomerCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *CustomerCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *CustomerCreateDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

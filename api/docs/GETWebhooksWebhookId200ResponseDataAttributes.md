@@ -8,13 +8,14 @@ Name | Type | Description | Notes
 **Topic** | Pointer to **interface{}** | The identifier of the resource/event that will trigger the webhook. | [optional] 
 **CallbackUrl** | Pointer to **interface{}** | URI where the webhook subscription should send the POST request when the event occurs. | [optional] 
 **IncludeResources** | Pointer to **interface{}** | List of related resources that should be included in the webhook body. | [optional] 
+**DisabledAt** | Pointer to **interface{}** | Time at which this resource was disabled. | [optional] 
 **CircuitState** | Pointer to **interface{}** | The circuit breaker state, by default it is &#39;closed&#39;. It can become &#39;open&#39; once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made. | [optional] 
-**CircuitFailureCount** | Pointer to **interface{}** | The number of consecutive failures recorded by the circuit breaker associated to this webhook, will be reset on first successful call to callback. | [optional] 
+**CircuitFailureCount** | Pointer to **interface{}** | The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback. | [optional] 
 **SharedSecret** | Pointer to **interface{}** | The shared secret used to sign the external request payload. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -176,6 +177,41 @@ HasIncludeResources returns a boolean if a field has been set.
 `func (o *GETWebhooksWebhookId200ResponseDataAttributes) UnsetIncludeResources()`
 
 UnsetIncludeResources ensures that no value is present for IncludeResources, not even an explicit nil
+### GetDisabledAt
+
+`func (o *GETWebhooksWebhookId200ResponseDataAttributes) GetDisabledAt() interface{}`
+
+GetDisabledAt returns the DisabledAt field if non-nil, zero value otherwise.
+
+### GetDisabledAtOk
+
+`func (o *GETWebhooksWebhookId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool)`
+
+GetDisabledAtOk returns a tuple with the DisabledAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisabledAt
+
+`func (o *GETWebhooksWebhookId200ResponseDataAttributes) SetDisabledAt(v interface{})`
+
+SetDisabledAt sets DisabledAt field to given value.
+
+### HasDisabledAt
+
+`func (o *GETWebhooksWebhookId200ResponseDataAttributes) HasDisabledAt() bool`
+
+HasDisabledAt returns a boolean if a field has been set.
+
+### SetDisabledAtNil
+
+`func (o *GETWebhooksWebhookId200ResponseDataAttributes) SetDisabledAtNil(b bool)`
+
+ SetDisabledAtNil sets the value for DisabledAt to be an explicit nil
+
+### UnsetDisabledAt
+`func (o *GETWebhooksWebhookId200ResponseDataAttributes) UnsetDisabledAt()`
+
+UnsetDisabledAt ensures that no value is present for DisabledAt, not even an explicit nil
 ### GetCircuitState
 
 `func (o *GETWebhooksWebhookId200ResponseDataAttributes) GetCircuitState() interface{}`

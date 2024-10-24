@@ -9,13 +9,18 @@ Name | Type | Description | Notes
 **AmountCents** | Pointer to **interface{}** | The SKU price amount for the associated price list, in cents. | [optional] 
 **AmountFloat** | Pointer to **interface{}** | The SKU price amount for the associated price list, float. | [optional] 
 **FormattedAmount** | Pointer to **interface{}** | The SKU price amount for the associated price list, formatted. | [optional] 
+**OriginalAmountCents** | Pointer to **interface{}** | The SKU price amount for the associated price list, in cents before any applied rule. | [optional] 
+**FormattedOriginalAmount** | Pointer to **interface{}** | The SKU price amount for the associated price list, in cents before any applied rule, formatted. | [optional] 
 **CompareAtAmountCents** | Pointer to **interface{}** | The compared price amount, in cents. Useful to display a percentage discount. | [optional] 
 **CompareAtAmountFloat** | Pointer to **interface{}** | The compared price amount, float. | [optional] 
 **FormattedCompareAtAmount** | Pointer to **interface{}** | The compared price amount, formatted. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
+**Rules** | Pointer to **interface{}** | The rules (using Rules Engine) to be applied. | [optional] 
+**RuleOutcomes** | Pointer to **interface{}** | The rule outcomes. | [optional] 
+**JwtCustomClaim** | Pointer to **interface{}** | The custom_claim attached to the current JWT (if any). | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -212,6 +217,76 @@ HasFormattedAmount returns a boolean if a field has been set.
 `func (o *GETPricesPriceId200ResponseDataAttributes) UnsetFormattedAmount()`
 
 UnsetFormattedAmount ensures that no value is present for FormattedAmount, not even an explicit nil
+### GetOriginalAmountCents
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetOriginalAmountCents() interface{}`
+
+GetOriginalAmountCents returns the OriginalAmountCents field if non-nil, zero value otherwise.
+
+### GetOriginalAmountCentsOk
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetOriginalAmountCentsOk() (*interface{}, bool)`
+
+GetOriginalAmountCentsOk returns a tuple with the OriginalAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginalAmountCents
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetOriginalAmountCents(v interface{})`
+
+SetOriginalAmountCents sets OriginalAmountCents field to given value.
+
+### HasOriginalAmountCents
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) HasOriginalAmountCents() bool`
+
+HasOriginalAmountCents returns a boolean if a field has been set.
+
+### SetOriginalAmountCentsNil
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetOriginalAmountCentsNil(b bool)`
+
+ SetOriginalAmountCentsNil sets the value for OriginalAmountCents to be an explicit nil
+
+### UnsetOriginalAmountCents
+`func (o *GETPricesPriceId200ResponseDataAttributes) UnsetOriginalAmountCents()`
+
+UnsetOriginalAmountCents ensures that no value is present for OriginalAmountCents, not even an explicit nil
+### GetFormattedOriginalAmount
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetFormattedOriginalAmount() interface{}`
+
+GetFormattedOriginalAmount returns the FormattedOriginalAmount field if non-nil, zero value otherwise.
+
+### GetFormattedOriginalAmountOk
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetFormattedOriginalAmountOk() (*interface{}, bool)`
+
+GetFormattedOriginalAmountOk returns a tuple with the FormattedOriginalAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormattedOriginalAmount
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetFormattedOriginalAmount(v interface{})`
+
+SetFormattedOriginalAmount sets FormattedOriginalAmount field to given value.
+
+### HasFormattedOriginalAmount
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) HasFormattedOriginalAmount() bool`
+
+HasFormattedOriginalAmount returns a boolean if a field has been set.
+
+### SetFormattedOriginalAmountNil
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetFormattedOriginalAmountNil(b bool)`
+
+ SetFormattedOriginalAmountNil sets the value for FormattedOriginalAmount to be an explicit nil
+
+### UnsetFormattedOriginalAmount
+`func (o *GETPricesPriceId200ResponseDataAttributes) UnsetFormattedOriginalAmount()`
+
+UnsetFormattedOriginalAmount ensures that no value is present for FormattedOriginalAmount, not even an explicit nil
 ### GetCompareAtAmountCents
 
 `func (o *GETPricesPriceId200ResponseDataAttributes) GetCompareAtAmountCents() interface{}`
@@ -457,6 +532,111 @@ HasReferenceOrigin returns a boolean if a field has been set.
 `func (o *GETPricesPriceId200ResponseDataAttributes) UnsetReferenceOrigin()`
 
 UnsetReferenceOrigin ensures that no value is present for ReferenceOrigin, not even an explicit nil
+### GetRules
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetRules() interface{}`
+
+GetRules returns the Rules field if non-nil, zero value otherwise.
+
+### GetRulesOk
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetRulesOk() (*interface{}, bool)`
+
+GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRules
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetRules(v interface{})`
+
+SetRules sets Rules field to given value.
+
+### HasRules
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) HasRules() bool`
+
+HasRules returns a boolean if a field has been set.
+
+### SetRulesNil
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetRulesNil(b bool)`
+
+ SetRulesNil sets the value for Rules to be an explicit nil
+
+### UnsetRules
+`func (o *GETPricesPriceId200ResponseDataAttributes) UnsetRules()`
+
+UnsetRules ensures that no value is present for Rules, not even an explicit nil
+### GetRuleOutcomes
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetRuleOutcomes() interface{}`
+
+GetRuleOutcomes returns the RuleOutcomes field if non-nil, zero value otherwise.
+
+### GetRuleOutcomesOk
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetRuleOutcomesOk() (*interface{}, bool)`
+
+GetRuleOutcomesOk returns a tuple with the RuleOutcomes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRuleOutcomes
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetRuleOutcomes(v interface{})`
+
+SetRuleOutcomes sets RuleOutcomes field to given value.
+
+### HasRuleOutcomes
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) HasRuleOutcomes() bool`
+
+HasRuleOutcomes returns a boolean if a field has been set.
+
+### SetRuleOutcomesNil
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetRuleOutcomesNil(b bool)`
+
+ SetRuleOutcomesNil sets the value for RuleOutcomes to be an explicit nil
+
+### UnsetRuleOutcomes
+`func (o *GETPricesPriceId200ResponseDataAttributes) UnsetRuleOutcomes()`
+
+UnsetRuleOutcomes ensures that no value is present for RuleOutcomes, not even an explicit nil
+### GetJwtCustomClaim
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetJwtCustomClaim() interface{}`
+
+GetJwtCustomClaim returns the JwtCustomClaim field if non-nil, zero value otherwise.
+
+### GetJwtCustomClaimOk
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) GetJwtCustomClaimOk() (*interface{}, bool)`
+
+GetJwtCustomClaimOk returns a tuple with the JwtCustomClaim field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJwtCustomClaim
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetJwtCustomClaim(v interface{})`
+
+SetJwtCustomClaim sets JwtCustomClaim field to given value.
+
+### HasJwtCustomClaim
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) HasJwtCustomClaim() bool`
+
+HasJwtCustomClaim returns a boolean if a field has been set.
+
+### SetJwtCustomClaimNil
+
+`func (o *GETPricesPriceId200ResponseDataAttributes) SetJwtCustomClaimNil(b bool)`
+
+ SetJwtCustomClaimNil sets the value for JwtCustomClaim to be an explicit nil
+
+### UnsetJwtCustomClaim
+`func (o *GETPricesPriceId200ResponseDataAttributes) UnsetJwtCustomClaim()`
+
+UnsetJwtCustomClaim ensures that no value is present for JwtCustomClaim, not even an explicit nil
 ### GetMetadata
 
 `func (o *GETPricesPriceId200ResponseDataAttributes) GetMetadata() interface{}`

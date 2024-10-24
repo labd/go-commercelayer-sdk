@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -24,8 +24,9 @@ type OrderCreateDataRelationships struct {
 	Customer        *CouponRecipientCreateDataRelationshipsCustomer            `json:"customer,omitempty"`
 	ShippingAddress *CustomerAddressCreateDataRelationshipsAddress             `json:"shipping_address,omitempty"`
 	BillingAddress  *CustomerAddressCreateDataRelationshipsAddress             `json:"billing_address,omitempty"`
-	PaymentMethod   *OrderCreateDataRelationshipsPaymentMethod                 `json:"payment_method,omitempty"`
+	PaymentMethod   *CustomerPaymentSourceCreateDataRelationshipsPaymentMethod `json:"payment_method,omitempty"`
 	PaymentSource   *CustomerPaymentSourceCreateDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	Tags            *AddressCreateDataRelationshipsTags                        `json:"tags,omitempty"`
 }
 
 // NewOrderCreateDataRelationships instantiates a new OrderCreateDataRelationships object
@@ -174,9 +175,9 @@ func (o *OrderCreateDataRelationships) SetBillingAddress(v CustomerAddressCreate
 }
 
 // GetPaymentMethod returns the PaymentMethod field value if set, zero value otherwise.
-func (o *OrderCreateDataRelationships) GetPaymentMethod() OrderCreateDataRelationshipsPaymentMethod {
+func (o *OrderCreateDataRelationships) GetPaymentMethod() CustomerPaymentSourceCreateDataRelationshipsPaymentMethod {
 	if o == nil || IsNil(o.PaymentMethod) {
-		var ret OrderCreateDataRelationshipsPaymentMethod
+		var ret CustomerPaymentSourceCreateDataRelationshipsPaymentMethod
 		return ret
 	}
 	return *o.PaymentMethod
@@ -184,7 +185,7 @@ func (o *OrderCreateDataRelationships) GetPaymentMethod() OrderCreateDataRelatio
 
 // GetPaymentMethodOk returns a tuple with the PaymentMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateDataRelationships) GetPaymentMethodOk() (*OrderCreateDataRelationshipsPaymentMethod, bool) {
+func (o *OrderCreateDataRelationships) GetPaymentMethodOk() (*CustomerPaymentSourceCreateDataRelationshipsPaymentMethod, bool) {
 	if o == nil || IsNil(o.PaymentMethod) {
 		return nil, false
 	}
@@ -200,8 +201,8 @@ func (o *OrderCreateDataRelationships) HasPaymentMethod() bool {
 	return false
 }
 
-// SetPaymentMethod gets a reference to the given OrderCreateDataRelationshipsPaymentMethod and assigns it to the PaymentMethod field.
-func (o *OrderCreateDataRelationships) SetPaymentMethod(v OrderCreateDataRelationshipsPaymentMethod) {
+// SetPaymentMethod gets a reference to the given CustomerPaymentSourceCreateDataRelationshipsPaymentMethod and assigns it to the PaymentMethod field.
+func (o *OrderCreateDataRelationships) SetPaymentMethod(v CustomerPaymentSourceCreateDataRelationshipsPaymentMethod) {
 	o.PaymentMethod = &v
 }
 
@@ -237,6 +238,38 @@ func (o *OrderCreateDataRelationships) SetPaymentSource(v CustomerPaymentSourceC
 	o.PaymentSource = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *OrderCreateDataRelationships) GetTags() AddressCreateDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret AddressCreateDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateDataRelationships) GetTagsOk() (*AddressCreateDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *OrderCreateDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given AddressCreateDataRelationshipsTags and assigns it to the Tags field.
+func (o *OrderCreateDataRelationships) SetTags(v AddressCreateDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o OrderCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -264,6 +297,9 @@ func (o OrderCreateDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PaymentSource) {
 		toSerialize["payment_source"] = o.PaymentSource
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

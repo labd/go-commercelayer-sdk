@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -32,7 +32,7 @@ type GETSkusSkuId200ResponseDataAttributes struct {
 	PiecesPerPack interface{} `json:"pieces_per_pack,omitempty"`
 	// The weight of the SKU. If present, it will be used to calculate the shipping rates.
 	Weight interface{} `json:"weight,omitempty"`
-	// Can be one of 'gr', 'lb', or 'oz'
+	// The unit of weight. One of 'gr', 'oz', or 'lb'.
 	UnitOfWeight interface{} `json:"unit_of_weight,omitempty"`
 	// The Harmonized System Code used by customs to identify the products shipped across international borders.
 	HsTariffNumber interface{} `json:"hs_tariff_number,omitempty"`
@@ -48,8 +48,10 @@ type GETSkusSkuId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
+	// The custom_claim attached to the current JWT (if any).
+	JwtCustomClaim interface{} `json:"jwt_custom_claim,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
 }
@@ -566,6 +568,39 @@ func (o *GETSkusSkuId200ResponseDataAttributes) SetReferenceOrigin(v interface{}
 	o.ReferenceOrigin = v
 }
 
+// GetJwtCustomClaim returns the JwtCustomClaim field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETSkusSkuId200ResponseDataAttributes) GetJwtCustomClaim() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.JwtCustomClaim
+}
+
+// GetJwtCustomClaimOk returns a tuple with the JwtCustomClaim field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETSkusSkuId200ResponseDataAttributes) GetJwtCustomClaimOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.JwtCustomClaim) {
+		return nil, false
+	}
+	return &o.JwtCustomClaim, true
+}
+
+// HasJwtCustomClaim returns a boolean if a field has been set.
+func (o *GETSkusSkuId200ResponseDataAttributes) HasJwtCustomClaim() bool {
+	if o != nil && IsNil(o.JwtCustomClaim) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtCustomClaim gets a reference to the given interface{} and assigns it to the JwtCustomClaim field.
+func (o *GETSkusSkuId200ResponseDataAttributes) SetJwtCustomClaim(v interface{}) {
+	o.JwtCustomClaim = v
+}
+
 // GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETSkusSkuId200ResponseDataAttributes) GetMetadata() interface{} {
 	if o == nil {
@@ -653,6 +688,9 @@ func (o GETSkusSkuId200ResponseDataAttributes) ToMap() (map[string]interface{}, 
 	}
 	if o.ReferenceOrigin != nil {
 		toSerialize["reference_origin"] = o.ReferenceOrigin
+	}
+	if o.JwtCustomClaim != nil {
+		toSerialize["jwt_custom_claim"] = o.JwtCustomClaim
 	}
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata

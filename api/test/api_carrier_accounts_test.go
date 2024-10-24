@@ -22,6 +22,19 @@ func Test_api_CarrierAccountsApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test CarrierAccountsApiService DELETECarrierAccountsCarrierAccountId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var carrierAccountId interface{}
+
+		httpRes, err := apiClient.CarrierAccountsApi.DELETECarrierAccountsCarrierAccountId(context.Background(), carrierAccountId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CarrierAccountsApiService GETCarrierAccounts", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -57,6 +70,32 @@ func Test_api_CarrierAccountsApiService(t *testing.T) {
 		httpRes, err := apiClient.CarrierAccountsApi.GETShipmentIdCarrierAccounts(context.Background(), shipmentId).Execute()
 
 		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CarrierAccountsApiService PATCHCarrierAccountsCarrierAccountId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var carrierAccountId interface{}
+
+		resp, httpRes, err := apiClient.CarrierAccountsApi.PATCHCarrierAccountsCarrierAccountId(context.Background(), carrierAccountId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CarrierAccountsApiService POSTCarrierAccounts", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.CarrierAccountsApi.POSTCarrierAccounts(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**OrderDataRelationshipsShipmentsData**](OrderDataRelationshipsShipmentsData.md) |  | 
+**Data** | [**LineItemDataRelationshipsShipmentData**](LineItemDataRelationshipsShipmentData.md) |  | 
 
 ## Methods
 
 ### NewParcelCreateDataRelationshipsShipment
 
-`func NewParcelCreateDataRelationshipsShipment(data OrderDataRelationshipsShipmentsData, ) *ParcelCreateDataRelationshipsShipment`
+`func NewParcelCreateDataRelationshipsShipment(data LineItemDataRelationshipsShipmentData, ) *ParcelCreateDataRelationshipsShipment`
 
 NewParcelCreateDataRelationshipsShipment instantiates a new ParcelCreateDataRelationshipsShipment object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ParcelCreateDataRelationshipsShipment) GetData() OrderDataRelationshipsShipmentsData`
+`func (o *ParcelCreateDataRelationshipsShipment) GetData() LineItemDataRelationshipsShipmentData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ParcelCreateDataRelationshipsShipment) GetDataOk() (*OrderDataRelationshipsShipmentsData, bool)`
+`func (o *ParcelCreateDataRelationshipsShipment) GetDataOk() (*LineItemDataRelationshipsShipmentData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ParcelCreateDataRelationshipsShipment) SetData(v OrderDataRelationshipsShipmentsData)`
+`func (o *ParcelCreateDataRelationshipsShipment) SetData(v LineItemDataRelationshipsShipmentData)`
 
 SetData sets Data field to given value.
 

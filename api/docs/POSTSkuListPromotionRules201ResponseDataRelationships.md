@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Promotion** | Pointer to [**POSTCouponCodesPromotionRules201ResponseDataRelationshipsPromotion**](POSTCouponCodesPromotionRules201ResponseDataRelationshipsPromotion.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 **SkuList** | Pointer to [**POSTBundles201ResponseDataRelationshipsSkuList**](POSTBundles201ResponseDataRelationshipsSkuList.md) |  | [optional] 
 **Skus** | Pointer to [**POSTBundles201ResponseDataRelationshipsSkus**](POSTBundles201ResponseDataRelationshipsSkus.md) |  | [optional] 
 
@@ -51,6 +52,31 @@ SetPromotion sets Promotion field to given value.
 `func (o *POSTSkuListPromotionRules201ResponseDataRelationships) HasPromotion() bool`
 
 HasPromotion returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *POSTSkuListPromotionRules201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTSkuListPromotionRules201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTSkuListPromotionRules201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTSkuListPromotionRules201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 ### GetSkuList
 

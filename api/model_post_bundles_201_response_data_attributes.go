@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -31,16 +31,16 @@ type POSTBundles201ResponseDataAttributes struct {
 	// The URL of an image that represents the bundle.
 	ImageUrl interface{} `json:"image_url,omitempty"`
 	// The bundle price amount for the associated market, in cents.
-	PriceAmountCents interface{} `json:"price_amount_cents"`
+	PriceAmountCents interface{} `json:"price_amount_cents,omitempty"`
 	// The compared price amount, in cents. Useful to display a percentage discount.
-	CompareAtAmountCents interface{} `json:"compare_at_amount_cents"`
+	CompareAtAmountCents interface{} `json:"compare_at_amount_cents,omitempty"`
 	// Send this attribute if you want to compute the price_amount_cents as the sum of the prices of the bundle SKUs for the market.
 	ComputePriceAmount interface{} `json:"_compute_price_amount,omitempty"`
 	// Send this attribute if you want to compute the compare_at_amount_cents as the sum of the prices of the bundle SKUs for the market.
 	ComputeCompareAtAmount interface{} `json:"_compute_compare_at_amount,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -50,12 +50,10 @@ type POSTBundles201ResponseDataAttributes struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTBundles201ResponseDataAttributes(code interface{}, name interface{}, priceAmountCents interface{}, compareAtAmountCents interface{}) *POSTBundles201ResponseDataAttributes {
+func NewPOSTBundles201ResponseDataAttributes(code interface{}, name interface{}) *POSTBundles201ResponseDataAttributes {
 	this := POSTBundles201ResponseDataAttributes{}
 	this.Code = code
 	this.Name = name
-	this.PriceAmountCents = priceAmountCents
-	this.CompareAtAmountCents = compareAtAmountCents
 	return &this
 }
 
@@ -218,18 +216,16 @@ func (o *POSTBundles201ResponseDataAttributes) SetImageUrl(v interface{}) {
 	o.ImageUrl = v
 }
 
-// GetPriceAmountCents returns the PriceAmountCents field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetPriceAmountCents returns the PriceAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCents() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.PriceAmountCents
 }
 
-// GetPriceAmountCentsOk returns a tuple with the PriceAmountCents field value
+// GetPriceAmountCentsOk returns a tuple with the PriceAmountCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
@@ -239,23 +235,30 @@ func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCentsOk() (*interfa
 	return &o.PriceAmountCents, true
 }
 
-// SetPriceAmountCents sets field value
+// HasPriceAmountCents returns a boolean if a field has been set.
+func (o *POSTBundles201ResponseDataAttributes) HasPriceAmountCents() bool {
+	if o != nil && IsNil(o.PriceAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceAmountCents gets a reference to the given interface{} and assigns it to the PriceAmountCents field.
 func (o *POSTBundles201ResponseDataAttributes) SetPriceAmountCents(v interface{}) {
 	o.PriceAmountCents = v
 }
 
-// GetCompareAtAmountCents returns the CompareAtAmountCents field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetCompareAtAmountCents returns the CompareAtAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCents() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.CompareAtAmountCents
 }
 
-// GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field value
+// GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool) {
@@ -265,7 +268,16 @@ func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCentsOk() (*int
 	return &o.CompareAtAmountCents, true
 }
 
-// SetCompareAtAmountCents sets field value
+// HasCompareAtAmountCents returns a boolean if a field has been set.
+func (o *POSTBundles201ResponseDataAttributes) HasCompareAtAmountCents() bool {
+	if o != nil && IsNil(o.CompareAtAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetCompareAtAmountCents gets a reference to the given interface{} and assigns it to the CompareAtAmountCents field.
 func (o *POSTBundles201ResponseDataAttributes) SetCompareAtAmountCents(v interface{}) {
 	o.CompareAtAmountCents = v
 }

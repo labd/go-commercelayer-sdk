@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,12 @@ var _ MappedNullable = &AuthorizationDataRelationships{}
 
 // AuthorizationDataRelationships struct for AuthorizationDataRelationships
 type AuthorizationDataRelationships struct {
-	Order    *AdyenPaymentDataRelationshipsOrder     `json:"order,omitempty"`
-	Captures *AuthorizationDataRelationshipsCaptures `json:"captures,omitempty"`
-	Voids    *AuthorizationDataRelationshipsVoids    `json:"voids,omitempty"`
-	Events   *AuthorizationDataRelationshipsEvents   `json:"events,omitempty"`
+	Order       *AdyenPaymentDataRelationshipsOrder        `json:"order,omitempty"`
+	Attachments *AuthorizationDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Events      *AddressDataRelationshipsEvents            `json:"events,omitempty"`
+	Versions    *AddressDataRelationshipsVersions          `json:"versions,omitempty"`
+	Captures    *AuthorizationDataRelationshipsCaptures    `json:"captures,omitempty"`
+	Voids       *AuthorizationDataRelationshipsVoids       `json:"voids,omitempty"`
 }
 
 // NewAuthorizationDataRelationships instantiates a new AuthorizationDataRelationships object
@@ -73,6 +75,102 @@ func (o *AuthorizationDataRelationships) HasOrder() bool {
 // SetOrder gets a reference to the given AdyenPaymentDataRelationshipsOrder and assigns it to the Order field.
 func (o *AuthorizationDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder) {
 	o.Order = &v
+}
+
+// GetAttachments returns the Attachments field value if set, zero value otherwise.
+func (o *AuthorizationDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
+	if o == nil || IsNil(o.Attachments) {
+		var ret AuthorizationDataRelationshipsAttachments
+		return ret
+	}
+	return *o.Attachments
+}
+
+// GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthorizationDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool) {
+	if o == nil || IsNil(o.Attachments) {
+		return nil, false
+	}
+	return o.Attachments, true
+}
+
+// HasAttachments returns a boolean if a field has been set.
+func (o *AuthorizationDataRelationships) HasAttachments() bool {
+	if o != nil && !IsNil(o.Attachments) {
+		return true
+	}
+
+	return false
+}
+
+// SetAttachments gets a reference to the given AuthorizationDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *AuthorizationDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments) {
+	o.Attachments = &v
+}
+
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *AuthorizationDataRelationships) GetEvents() AddressDataRelationshipsEvents {
+	if o == nil || IsNil(o.Events) {
+		var ret AddressDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthorizationDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool) {
+	if o == nil || IsNil(o.Events) {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *AuthorizationDataRelationships) HasEvents() bool {
+	if o != nil && !IsNil(o.Events) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given AddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *AuthorizationDataRelationships) SetEvents(v AddressDataRelationshipsEvents) {
+	o.Events = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *AuthorizationDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthorizationDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *AuthorizationDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *AuthorizationDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
 }
 
 // GetCaptures returns the Captures field value if set, zero value otherwise.
@@ -139,38 +237,6 @@ func (o *AuthorizationDataRelationships) SetVoids(v AuthorizationDataRelationshi
 	o.Voids = &v
 }
 
-// GetEvents returns the Events field value if set, zero value otherwise.
-func (o *AuthorizationDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
-		var ret AuthorizationDataRelationshipsEvents
-		return ret
-	}
-	return *o.Events
-}
-
-// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AuthorizationDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
-		return nil, false
-	}
-	return o.Events, true
-}
-
-// HasEvents returns a boolean if a field has been set.
-func (o *AuthorizationDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
-		return true
-	}
-
-	return false
-}
-
-// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
-func (o *AuthorizationDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
-	o.Events = &v
-}
-
 func (o AuthorizationDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -184,14 +250,20 @@ func (o AuthorizationDataRelationships) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
+	}
 	if !IsNil(o.Captures) {
 		toSerialize["captures"] = o.Captures
 	}
 	if !IsNil(o.Voids) {
 		toSerialize["voids"] = o.Voids
-	}
-	if !IsNil(o.Events) {
-		toSerialize["events"] = o.Events
 	}
 	return toSerialize, nil
 }

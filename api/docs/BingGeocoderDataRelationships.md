@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Markets** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
 **Addresses** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewBingGeocoderDataRelationshipsWithDefaults instantiates a new BingGeocoderDataRelationships object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMarkets
+
+`func (o *BingGeocoderDataRelationships) GetMarkets() AvalaraAccountDataRelationshipsMarkets`
+
+GetMarkets returns the Markets field if non-nil, zero value otherwise.
+
+### GetMarketsOk
+
+`func (o *BingGeocoderDataRelationships) GetMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool)`
+
+GetMarketsOk returns a tuple with the Markets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMarkets
+
+`func (o *BingGeocoderDataRelationships) SetMarkets(v AvalaraAccountDataRelationshipsMarkets)`
+
+SetMarkets sets Markets field to given value.
+
+### HasMarkets
+
+`func (o *BingGeocoderDataRelationships) HasMarkets() bool`
+
+HasMarkets returns a boolean if a field has been set.
 
 ### GetAddresses
 
@@ -53,20 +79,20 @@ HasAddresses returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *BingGeocoderDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *BingGeocoderDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *BingGeocoderDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *BingGeocoderDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *BingGeocoderDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *BingGeocoderDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 

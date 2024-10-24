@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &EventDataRelationships{}
 
 // EventDataRelationships struct for EventDataRelationships
 type EventDataRelationships struct {
-	LastEventCallbacks *EventDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
 	Webhooks           *EventCallbackDataRelationshipsWebhook    `json:"webhooks,omitempty"`
+	LastEventCallbacks *EventDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
 }
 
 // NewEventDataRelationships instantiates a new EventDataRelationships object
@@ -39,38 +39,6 @@ func NewEventDataRelationships() *EventDataRelationships {
 func NewEventDataRelationshipsWithDefaults() *EventDataRelationships {
 	this := EventDataRelationships{}
 	return &this
-}
-
-// GetLastEventCallbacks returns the LastEventCallbacks field value if set, zero value otherwise.
-func (o *EventDataRelationships) GetLastEventCallbacks() EventDataRelationshipsLastEventCallbacks {
-	if o == nil || IsNil(o.LastEventCallbacks) {
-		var ret EventDataRelationshipsLastEventCallbacks
-		return ret
-	}
-	return *o.LastEventCallbacks
-}
-
-// GetLastEventCallbacksOk returns a tuple with the LastEventCallbacks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *EventDataRelationships) GetLastEventCallbacksOk() (*EventDataRelationshipsLastEventCallbacks, bool) {
-	if o == nil || IsNil(o.LastEventCallbacks) {
-		return nil, false
-	}
-	return o.LastEventCallbacks, true
-}
-
-// HasLastEventCallbacks returns a boolean if a field has been set.
-func (o *EventDataRelationships) HasLastEventCallbacks() bool {
-	if o != nil && !IsNil(o.LastEventCallbacks) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastEventCallbacks gets a reference to the given EventDataRelationshipsLastEventCallbacks and assigns it to the LastEventCallbacks field.
-func (o *EventDataRelationships) SetLastEventCallbacks(v EventDataRelationshipsLastEventCallbacks) {
-	o.LastEventCallbacks = &v
 }
 
 // GetWebhooks returns the Webhooks field value if set, zero value otherwise.
@@ -105,6 +73,38 @@ func (o *EventDataRelationships) SetWebhooks(v EventCallbackDataRelationshipsWeb
 	o.Webhooks = &v
 }
 
+// GetLastEventCallbacks returns the LastEventCallbacks field value if set, zero value otherwise.
+func (o *EventDataRelationships) GetLastEventCallbacks() EventDataRelationshipsLastEventCallbacks {
+	if o == nil || IsNil(o.LastEventCallbacks) {
+		var ret EventDataRelationshipsLastEventCallbacks
+		return ret
+	}
+	return *o.LastEventCallbacks
+}
+
+// GetLastEventCallbacksOk returns a tuple with the LastEventCallbacks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EventDataRelationships) GetLastEventCallbacksOk() (*EventDataRelationshipsLastEventCallbacks, bool) {
+	if o == nil || IsNil(o.LastEventCallbacks) {
+		return nil, false
+	}
+	return o.LastEventCallbacks, true
+}
+
+// HasLastEventCallbacks returns a boolean if a field has been set.
+func (o *EventDataRelationships) HasLastEventCallbacks() bool {
+	if o != nil && !IsNil(o.LastEventCallbacks) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastEventCallbacks gets a reference to the given EventDataRelationshipsLastEventCallbacks and assigns it to the LastEventCallbacks field.
+func (o *EventDataRelationships) SetLastEventCallbacks(v EventDataRelationshipsLastEventCallbacks) {
+	o.LastEventCallbacks = &v
+}
+
 func (o EventDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -115,11 +115,11 @@ func (o EventDataRelationships) MarshalJSON() ([]byte, error) {
 
 func (o EventDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LastEventCallbacks) {
-		toSerialize["last_event_callbacks"] = o.LastEventCallbacks
-	}
 	if !IsNil(o.Webhooks) {
 		toSerialize["webhooks"] = o.Webhooks
+	}
+	if !IsNil(o.LastEventCallbacks) {
+		toSerialize["last_event_callbacks"] = o.LastEventCallbacks
 	}
 	return toSerialize, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,10 +23,10 @@ type GETPromotionRulesPromotionRuleId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                                                        `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                                                 `json:"links,omitempty"`
-	Attributes    *GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTOrderAmountPromotionRules201ResponseDataRelationships                         `json:"relationships,omitempty"`
+	Type          interface{}                                                                      `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                                               `json:"links,omitempty"`
+	Attributes    *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTCustomPromotionRules201ResponseDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewGETPromotionRulesPromotionRuleId200ResponseData instantiates a new GETPromotionRulesPromotionRuleId200ResponseData object
@@ -145,9 +145,9 @@ func (o *GETPromotionRulesPromotionRuleId200ResponseData) SetLinks(v POSTAddress
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetAttributes() GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetAttributes() GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes {
 	if o == nil || IsNil(o.Attributes) {
-		var ret GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
+		var ret GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,7 +155,7 @@ func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetAttributes() GETBil
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetAttributesOk() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetAttributesOk() (*GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, bool) {
 	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
@@ -171,15 +171,15 @@ func (o *GETPromotionRulesPromotionRuleId200ResponseData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes and assigns it to the Attributes field.
-func (o *GETPromotionRulesPromotionRuleId200ResponseData) SetAttributes(v GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
+// SetAttributes gets a reference to the given GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes and assigns it to the Attributes field.
+func (o *GETPromotionRulesPromotionRuleId200ResponseData) SetAttributes(v GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetRelationships() POSTOrderAmountPromotionRules201ResponseDataRelationships {
+func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetRelationships() POSTCustomPromotionRules201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret POSTOrderAmountPromotionRules201ResponseDataRelationships
+		var ret POSTCustomPromotionRules201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetRelationships() POS
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetRelationshipsOk() (*POSTOrderAmountPromotionRules201ResponseDataRelationships, bool) {
+func (o *GETPromotionRulesPromotionRuleId200ResponseData) GetRelationshipsOk() (*POSTCustomPromotionRules201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *GETPromotionRulesPromotionRuleId200ResponseData) HasRelationships() boo
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTOrderAmountPromotionRules201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *GETPromotionRulesPromotionRuleId200ResponseData) SetRelationships(v POSTOrderAmountPromotionRules201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTCustomPromotionRules201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *GETPromotionRulesPromotionRuleId200ResponseData) SetRelationships(v POSTCustomPromotionRules201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

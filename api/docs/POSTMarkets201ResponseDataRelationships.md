@@ -6,11 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Merchant** | Pointer to [**POSTMarkets201ResponseDataRelationshipsMerchant**](POSTMarkets201ResponseDataRelationshipsMerchant.md) |  | [optional] 
 **PriceList** | Pointer to [**POSTMarkets201ResponseDataRelationshipsPriceList**](POSTMarkets201ResponseDataRelationshipsPriceList.md) |  | [optional] 
+**BasePriceList** | Pointer to [**POSTMarkets201ResponseDataRelationshipsBasePriceList**](POSTMarkets201ResponseDataRelationshipsBasePriceList.md) |  | [optional] 
 **InventoryModel** | Pointer to [**POSTInventoryReturnLocations201ResponseDataRelationshipsInventoryModel**](POSTInventoryReturnLocations201ResponseDataRelationshipsInventoryModel.md) |  | [optional] 
 **SubscriptionModel** | Pointer to [**POSTMarkets201ResponseDataRelationshipsSubscriptionModel**](POSTMarkets201ResponseDataRelationshipsSubscriptionModel.md) |  | [optional] 
 **TaxCalculator** | Pointer to [**POSTMarkets201ResponseDataRelationshipsTaxCalculator**](POSTMarkets201ResponseDataRelationshipsTaxCalculator.md) |  | [optional] 
 **CustomerGroup** | Pointer to [**POSTCustomers201ResponseDataRelationshipsCustomerGroup**](POSTCustomers201ResponseDataRelationshipsCustomerGroup.md) |  | [optional] 
-**Attachments** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationshipsAttachments**](POSTAvalaraAccounts201ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Geocoder** | Pointer to [**POSTAddresses201ResponseDataRelationshipsGeocoder**](POSTAddresses201ResponseDataRelationshipsGeocoder.md) |  | [optional] 
+**PriceListSchedulers** | Pointer to [**POSTMarkets201ResponseDataRelationshipsPriceListSchedulers**](POSTMarkets201ResponseDataRelationshipsPriceListSchedulers.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -80,6 +84,31 @@ SetPriceList sets PriceList field to given value.
 `func (o *POSTMarkets201ResponseDataRelationships) HasPriceList() bool`
 
 HasPriceList returns a boolean if a field has been set.
+
+### GetBasePriceList
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetBasePriceList() POSTMarkets201ResponseDataRelationshipsBasePriceList`
+
+GetBasePriceList returns the BasePriceList field if non-nil, zero value otherwise.
+
+### GetBasePriceListOk
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetBasePriceListOk() (*POSTMarkets201ResponseDataRelationshipsBasePriceList, bool)`
+
+GetBasePriceListOk returns a tuple with the BasePriceList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBasePriceList
+
+`func (o *POSTMarkets201ResponseDataRelationships) SetBasePriceList(v POSTMarkets201ResponseDataRelationshipsBasePriceList)`
+
+SetBasePriceList sets BasePriceList field to given value.
+
+### HasBasePriceList
+
+`func (o *POSTMarkets201ResponseDataRelationships) HasBasePriceList() bool`
+
+HasBasePriceList returns a boolean if a field has been set.
 
 ### GetInventoryModel
 
@@ -181,22 +210,72 @@ SetCustomerGroup sets CustomerGroup field to given value.
 
 HasCustomerGroup returns a boolean if a field has been set.
 
+### GetGeocoder
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetGeocoder() POSTAddresses201ResponseDataRelationshipsGeocoder`
+
+GetGeocoder returns the Geocoder field if non-nil, zero value otherwise.
+
+### GetGeocoderOk
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetGeocoderOk() (*POSTAddresses201ResponseDataRelationshipsGeocoder, bool)`
+
+GetGeocoderOk returns a tuple with the Geocoder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGeocoder
+
+`func (o *POSTMarkets201ResponseDataRelationships) SetGeocoder(v POSTAddresses201ResponseDataRelationshipsGeocoder)`
+
+SetGeocoder sets Geocoder field to given value.
+
+### HasGeocoder
+
+`func (o *POSTMarkets201ResponseDataRelationships) HasGeocoder() bool`
+
+HasGeocoder returns a boolean if a field has been set.
+
+### GetPriceListSchedulers
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetPriceListSchedulers() POSTMarkets201ResponseDataRelationshipsPriceListSchedulers`
+
+GetPriceListSchedulers returns the PriceListSchedulers field if non-nil, zero value otherwise.
+
+### GetPriceListSchedulersOk
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetPriceListSchedulersOk() (*POSTMarkets201ResponseDataRelationshipsPriceListSchedulers, bool)`
+
+GetPriceListSchedulersOk returns a tuple with the PriceListSchedulers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceListSchedulers
+
+`func (o *POSTMarkets201ResponseDataRelationships) SetPriceListSchedulers(v POSTMarkets201ResponseDataRelationshipsPriceListSchedulers)`
+
+SetPriceListSchedulers sets PriceListSchedulers field to given value.
+
+### HasPriceListSchedulers
+
+`func (o *POSTMarkets201ResponseDataRelationships) HasPriceListSchedulers() bool`
+
+HasPriceListSchedulers returns a boolean if a field has been set.
+
 ### GetAttachments
 
-`func (o *POSTMarkets201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments`
+`func (o *POSTMarkets201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *POSTMarkets201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool)`
+`func (o *POSTMarkets201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *POSTMarkets201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments)`
+`func (o *POSTMarkets201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -205,6 +284,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *POSTMarkets201ResponseDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *POSTMarkets201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *POSTMarkets201ResponseDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,6 +20,12 @@ var _ MappedNullable = &PATCHShipmentsShipmentId200ResponseDataAttributes{}
 
 // PATCHShipmentsShipmentId200ResponseDataAttributes struct for PATCHShipmentsShipmentId200ResponseDataAttributes
 type PATCHShipmentsShipmentId200ResponseDataAttributes struct {
+	// Unique identifier for the shipment. Cannot be passed by sales channels.
+	Number interface{} `json:"number,omitempty"`
+	// Send this attribute if you want to mark this shipment as upcoming. Cannot be passed by sales channels.
+	Upcoming interface{} `json:"_upcoming,omitempty"`
+	// Send this attribute if you want to mark this shipment as cancelled (unless already shipped or delivered). Cannot be passed by sales channels.
+	Cancel interface{} `json:"_cancel,omitempty"`
 	// Send this attribute if you want to put this shipment on hold.
 	OnHold interface{} `json:"_on_hold,omitempty"`
 	// Send this attribute if you want to start picking this shipment.
@@ -30,6 +36,14 @@ type PATCHShipmentsShipmentId200ResponseDataAttributes struct {
 	ReadyToShip interface{} `json:"_ready_to_ship,omitempty"`
 	// Send this attribute if you want to mark this shipment as shipped.
 	Ship interface{} `json:"_ship,omitempty"`
+	// Send this attribute if you want to mark this shipment as delivered.
+	Deliver interface{} `json:"_deliver,omitempty"`
+	// Send this attribute if you want to automatically reserve the stock for each of the associated stock line item. Can be done only when fulfillment is in progress. Cannot be passed by sales channels.
+	ReserveStock interface{} `json:"_reserve_stock,omitempty"`
+	// Send this attribute if you want to automatically destroy the stock reservations for each of the associated stock line item. Can be done only when fulfillment is in progress. Cannot be passed by sales channels.
+	ReleaseStock interface{} `json:"_release_stock,omitempty"`
+	// Send this attribute if you want to automatically decrement and release the stock for each of the associated stock line item. Can be done only when fulfillment is in progress. Cannot be passed by sales channels.
+	DecrementStock interface{} `json:"_decrement_stock,omitempty"`
 	// Send this attribute if you want get the shipping rates from the associated carrier accounts.
 	GetRates interface{} `json:"_get_rates,omitempty"`
 	// The selected purchase rate from the available shipping rates.
@@ -38,7 +52,7 @@ type PATCHShipmentsShipmentId200ResponseDataAttributes struct {
 	Purchase interface{} `json:"_purchase,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -59,6 +73,105 @@ func NewPATCHShipmentsShipmentId200ResponseDataAttributes() *PATCHShipmentsShipm
 func NewPATCHShipmentsShipmentId200ResponseDataAttributesWithDefaults() *PATCHShipmentsShipmentId200ResponseDataAttributes {
 	this := PATCHShipmentsShipmentId200ResponseDataAttributes{}
 	return &this
+}
+
+// GetNumber returns the Number field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetNumber() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Number
+}
+
+// GetNumberOk returns a tuple with the Number field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetNumberOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Number) {
+		return nil, false
+	}
+	return &o.Number, true
+}
+
+// HasNumber returns a boolean if a field has been set.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasNumber() bool {
+	if o != nil && IsNil(o.Number) {
+		return true
+	}
+
+	return false
+}
+
+// SetNumber gets a reference to the given interface{} and assigns it to the Number field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetNumber(v interface{}) {
+	o.Number = v
+}
+
+// GetUpcoming returns the Upcoming field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetUpcoming() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Upcoming
+}
+
+// GetUpcomingOk returns a tuple with the Upcoming field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetUpcomingOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Upcoming) {
+		return nil, false
+	}
+	return &o.Upcoming, true
+}
+
+// HasUpcoming returns a boolean if a field has been set.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasUpcoming() bool {
+	if o != nil && IsNil(o.Upcoming) {
+		return true
+	}
+
+	return false
+}
+
+// SetUpcoming gets a reference to the given interface{} and assigns it to the Upcoming field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetUpcoming(v interface{}) {
+	o.Upcoming = v
+}
+
+// GetCancel returns the Cancel field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetCancel() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Cancel
+}
+
+// GetCancelOk returns a tuple with the Cancel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Cancel) {
+		return nil, false
+	}
+	return &o.Cancel, true
+}
+
+// HasCancel returns a boolean if a field has been set.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasCancel() bool {
+	if o != nil && IsNil(o.Cancel) {
+		return true
+	}
+
+	return false
+}
+
+// SetCancel gets a reference to the given interface{} and assigns it to the Cancel field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetCancel(v interface{}) {
+	o.Cancel = v
 }
 
 // GetOnHold returns the OnHold field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -224,6 +337,138 @@ func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasShip() bool {
 // SetShip gets a reference to the given interface{} and assigns it to the Ship field.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetShip(v interface{}) {
 	o.Ship = v
+}
+
+// GetDeliver returns the Deliver field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetDeliver() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Deliver
+}
+
+// GetDeliverOk returns a tuple with the Deliver field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetDeliverOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Deliver) {
+		return nil, false
+	}
+	return &o.Deliver, true
+}
+
+// HasDeliver returns a boolean if a field has been set.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasDeliver() bool {
+	if o != nil && IsNil(o.Deliver) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeliver gets a reference to the given interface{} and assigns it to the Deliver field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetDeliver(v interface{}) {
+	o.Deliver = v
+}
+
+// GetReserveStock returns the ReserveStock field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReserveStock() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ReserveStock
+}
+
+// GetReserveStockOk returns a tuple with the ReserveStock field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReserveStockOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReserveStock) {
+		return nil, false
+	}
+	return &o.ReserveStock, true
+}
+
+// HasReserveStock returns a boolean if a field has been set.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasReserveStock() bool {
+	if o != nil && IsNil(o.ReserveStock) {
+		return true
+	}
+
+	return false
+}
+
+// SetReserveStock gets a reference to the given interface{} and assigns it to the ReserveStock field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReserveStock(v interface{}) {
+	o.ReserveStock = v
+}
+
+// GetReleaseStock returns the ReleaseStock field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReleaseStock() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ReleaseStock
+}
+
+// GetReleaseStockOk returns a tuple with the ReleaseStock field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReleaseStockOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReleaseStock) {
+		return nil, false
+	}
+	return &o.ReleaseStock, true
+}
+
+// HasReleaseStock returns a boolean if a field has been set.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasReleaseStock() bool {
+	if o != nil && IsNil(o.ReleaseStock) {
+		return true
+	}
+
+	return false
+}
+
+// SetReleaseStock gets a reference to the given interface{} and assigns it to the ReleaseStock field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReleaseStock(v interface{}) {
+	o.ReleaseStock = v
+}
+
+// GetDecrementStock returns the DecrementStock field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetDecrementStock() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DecrementStock
+}
+
+// GetDecrementStockOk returns a tuple with the DecrementStock field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetDecrementStockOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DecrementStock) {
+		return nil, false
+	}
+	return &o.DecrementStock, true
+}
+
+// HasDecrementStock returns a boolean if a field has been set.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasDecrementStock() bool {
+	if o != nil && IsNil(o.DecrementStock) {
+		return true
+	}
+
+	return false
+}
+
+// SetDecrementStock gets a reference to the given interface{} and assigns it to the DecrementStock field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetDecrementStock(v interface{}) {
+	o.DecrementStock = v
 }
 
 // GetGetRates returns the GetRates field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -434,6 +679,15 @@ func (o PATCHShipmentsShipmentId200ResponseDataAttributes) MarshalJSON() ([]byte
 
 func (o PATCHShipmentsShipmentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Number != nil {
+		toSerialize["number"] = o.Number
+	}
+	if o.Upcoming != nil {
+		toSerialize["_upcoming"] = o.Upcoming
+	}
+	if o.Cancel != nil {
+		toSerialize["_cancel"] = o.Cancel
+	}
 	if o.OnHold != nil {
 		toSerialize["_on_hold"] = o.OnHold
 	}
@@ -448,6 +702,18 @@ func (o PATCHShipmentsShipmentId200ResponseDataAttributes) ToMap() (map[string]i
 	}
 	if o.Ship != nil {
 		toSerialize["_ship"] = o.Ship
+	}
+	if o.Deliver != nil {
+		toSerialize["_deliver"] = o.Deliver
+	}
+	if o.ReserveStock != nil {
+		toSerialize["_reserve_stock"] = o.ReserveStock
+	}
+	if o.ReleaseStock != nil {
+		toSerialize["_release_stock"] = o.ReleaseStock
+	}
+	if o.DecrementStock != nil {
+		toSerialize["_decrement_stock"] = o.DecrementStock
 	}
 	if o.GetRates != nil {
 		toSerialize["_get_rates"] = o.GetRates

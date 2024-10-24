@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,15 @@ var _ MappedNullable = &POSTCustomers201ResponseDataAttributes{}
 
 // POSTCustomers201ResponseDataAttributes struct for POSTCustomers201ResponseDataAttributes
 type POSTCustomers201ResponseDataAttributes struct {
-	// The customer's email address
+	// The customer's email address.
 	Email interface{} `json:"email"`
 	// The customer's password. Initiate a customer password reset flow if you need to change it.
 	Password interface{} `json:"password,omitempty"`
+	// A reference to uniquely identify the shopper during payment sessions.
+	ShopperReference interface{} `json:"shopper_reference,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -107,6 +109,39 @@ func (o *POSTCustomers201ResponseDataAttributes) HasPassword() bool {
 // SetPassword gets a reference to the given interface{} and assigns it to the Password field.
 func (o *POSTCustomers201ResponseDataAttributes) SetPassword(v interface{}) {
 	o.Password = v
+}
+
+// GetShopperReference returns the ShopperReference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCustomers201ResponseDataAttributes) GetShopperReference() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ShopperReference
+}
+
+// GetShopperReferenceOk returns a tuple with the ShopperReference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCustomers201ResponseDataAttributes) GetShopperReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShopperReference) {
+		return nil, false
+	}
+	return &o.ShopperReference, true
+}
+
+// HasShopperReference returns a boolean if a field has been set.
+func (o *POSTCustomers201ResponseDataAttributes) HasShopperReference() bool {
+	if o != nil && IsNil(o.ShopperReference) {
+		return true
+	}
+
+	return false
+}
+
+// SetShopperReference gets a reference to the given interface{} and assigns it to the ShopperReference field.
+func (o *POSTCustomers201ResponseDataAttributes) SetShopperReference(v interface{}) {
+	o.ShopperReference = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -223,6 +258,9 @@ func (o POSTCustomers201ResponseDataAttributes) ToMap() (map[string]interface{},
 	}
 	if o.Password != nil {
 		toSerialize["password"] = o.Password
+	}
+	if o.ShopperReference != nil {
+		toSerialize["shopper_reference"] = o.ShopperReference
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

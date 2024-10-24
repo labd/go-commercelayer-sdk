@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,11 +22,11 @@ var _ MappedNullable = &GETLineItemOptionsLineItemOptionId200ResponseDataAttribu
 type GETLineItemOptionsLineItemOptionId200ResponseDataAttributes struct {
 	// The name of the line item option. When blank, it gets populated with the name of the associated SKU option.
 	Name interface{} `json:"name,omitempty"`
-	// The line item option's quantity
+	// The line item option's quantity.
 	Quantity interface{} `json:"quantity,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard, automatically inherited from the order's market.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
-	// The unit amount of the line item option, in cents. When you add a line item option to an order, this is automatically populated from associated SKU option's price.
+	// The unit amount of the line item option, in cents. When you add a line item option to an order, this is automatically populated from associated SKU option's price. Cannot be passed by sales channels.
 	UnitAmountCents interface{} `json:"unit_amount_cents,omitempty"`
 	// The unit amount of the line item option, float. This can be useful to track the purchase on thrid party systems, e.g Google Analyitcs Enhanced Ecommerce.
 	UnitAmountFloat interface{} `json:"unit_amount_float,omitempty"`
@@ -50,7 +50,7 @@ type GETLineItemOptionsLineItemOptionId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`

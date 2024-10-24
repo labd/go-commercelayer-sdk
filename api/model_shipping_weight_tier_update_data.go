@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -25,7 +25,7 @@ type ShippingWeightTierUpdateData struct {
 	// The resource's id
 	Id            interface{}                                                           `json:"id"`
 	Attributes    PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ShipmentUpdateDataRelationships                                      `json:"relationships,omitempty"`
+	Relationships *ShippingWeightTierUpdateDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewShippingWeightTierUpdateData instantiates a new ShippingWeightTierUpdateData object
@@ -125,9 +125,9 @@ func (o *ShippingWeightTierUpdateData) SetAttributes(v PATCHShippingWeightTiersS
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShippingWeightTierUpdateData) GetRelationships() ShipmentUpdateDataRelationships {
+func (o *ShippingWeightTierUpdateData) GetRelationships() ShippingWeightTierUpdateDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret ShipmentUpdateDataRelationships
+		var ret ShippingWeightTierUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -135,7 +135,7 @@ func (o *ShippingWeightTierUpdateData) GetRelationships() ShipmentUpdateDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierUpdateData) GetRelationshipsOk() (*ShipmentUpdateDataRelationships, bool) {
+func (o *ShippingWeightTierUpdateData) GetRelationshipsOk() (*ShippingWeightTierUpdateDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -151,8 +151,8 @@ func (o *ShippingWeightTierUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ShipmentUpdateDataRelationships and assigns it to the Relationships field.
-func (o *ShippingWeightTierUpdateData) SetRelationships(v ShipmentUpdateDataRelationships) {
+// SetRelationships gets a reference to the given ShippingWeightTierUpdateDataRelationships and assigns it to the Relationships field.
+func (o *ShippingWeightTierUpdateData) SetRelationships(v ShippingWeightTierUpdateDataRelationships) {
 	o.Relationships = &v
 }
 

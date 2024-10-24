@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -23,10 +23,10 @@ type PATCHShipmentsShipmentId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                         `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                  `json:"links,omitempty"`
-	Attributes    *PATCHShipmentsShipmentId200ResponseDataAttributes  `json:"attributes,omitempty"`
-	Relationships *GETShipmentsShipmentId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Type          interface{}                                        `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                 `json:"links,omitempty"`
+	Attributes    *PATCHShipmentsShipmentId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTShipments201ResponseDataRelationships         `json:"relationships,omitempty"`
 }
 
 // NewPATCHShipmentsShipmentId200ResponseData instantiates a new PATCHShipmentsShipmentId200ResponseData object
@@ -177,9 +177,9 @@ func (o *PATCHShipmentsShipmentId200ResponseData) SetAttributes(v PATCHShipments
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseData) GetRelationships() GETShipmentsShipmentId200ResponseDataRelationships {
+func (o *PATCHShipmentsShipmentId200ResponseData) GetRelationships() POSTShipments201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret GETShipmentsShipmentId200ResponseDataRelationships
+		var ret POSTShipments201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *PATCHShipmentsShipmentId200ResponseData) GetRelationships() GETShipment
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseData) GetRelationshipsOk() (*GETShipmentsShipmentId200ResponseDataRelationships, bool) {
+func (o *PATCHShipmentsShipmentId200ResponseData) GetRelationshipsOk() (*POSTShipments201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *PATCHShipmentsShipmentId200ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETShipmentsShipmentId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHShipmentsShipmentId200ResponseData) SetRelationships(v GETShipmentsShipmentId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTShipments201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHShipmentsShipmentId200ResponseData) SetRelationships(v POSTShipments201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

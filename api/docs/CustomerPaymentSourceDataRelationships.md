@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Customer** | Pointer to [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | [optional] 
+**PaymentMethod** | Pointer to [**AdyenGatewayDataRelationshipsPaymentMethods**](AdyenGatewayDataRelationshipsPaymentMethods.md) |  | [optional] 
 **PaymentSource** | Pointer to [**CustomerPaymentSourceDataRelationshipsPaymentSource**](CustomerPaymentSourceDataRelationshipsPaymentSource.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -51,6 +53,31 @@ SetCustomer sets Customer field to given value.
 
 HasCustomer returns a boolean if a field has been set.
 
+### GetPaymentMethod
+
+`func (o *CustomerPaymentSourceDataRelationships) GetPaymentMethod() AdyenGatewayDataRelationshipsPaymentMethods`
+
+GetPaymentMethod returns the PaymentMethod field if non-nil, zero value otherwise.
+
+### GetPaymentMethodOk
+
+`func (o *CustomerPaymentSourceDataRelationships) GetPaymentMethodOk() (*AdyenGatewayDataRelationshipsPaymentMethods, bool)`
+
+GetPaymentMethodOk returns a tuple with the PaymentMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentMethod
+
+`func (o *CustomerPaymentSourceDataRelationships) SetPaymentMethod(v AdyenGatewayDataRelationshipsPaymentMethods)`
+
+SetPaymentMethod sets PaymentMethod field to given value.
+
+### HasPaymentMethod
+
+`func (o *CustomerPaymentSourceDataRelationships) HasPaymentMethod() bool`
+
+HasPaymentMethod returns a boolean if a field has been set.
+
 ### GetPaymentSource
 
 `func (o *CustomerPaymentSourceDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRelationshipsPaymentSource`
@@ -75,6 +102,31 @@ SetPaymentSource sets PaymentSource field to given value.
 `func (o *CustomerPaymentSourceDataRelationships) HasPaymentSource() bool`
 
 HasPaymentSource returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *CustomerPaymentSourceDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *CustomerPaymentSourceDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *CustomerPaymentSourceDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *CustomerPaymentSourceDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &POSTReturnLineItems201ResponseDataRelationships{}
 
 // POSTReturnLineItems201ResponseDataRelationships struct for POSTReturnLineItems201ResponseDataRelationships
 type POSTReturnLineItems201ResponseDataRelationships struct {
-	Return   *POSTReturnLineItems201ResponseDataRelationshipsReturn   `json:"return,omitempty"`
+	Return   *GETCapturesCaptureId200ResponseDataRelationshipsReturn  `json:"return,omitempty"`
 	LineItem *POSTLineItemOptions201ResponseDataRelationshipsLineItem `json:"line_item,omitempty"`
 }
 
@@ -42,9 +42,9 @@ func NewPOSTReturnLineItems201ResponseDataRelationshipsWithDefaults() *POSTRetur
 }
 
 // GetReturn returns the Return field value if set, zero value otherwise.
-func (o *POSTReturnLineItems201ResponseDataRelationships) GetReturn() POSTReturnLineItems201ResponseDataRelationshipsReturn {
+func (o *POSTReturnLineItems201ResponseDataRelationships) GetReturn() GETCapturesCaptureId200ResponseDataRelationshipsReturn {
 	if o == nil || IsNil(o.Return) {
-		var ret POSTReturnLineItems201ResponseDataRelationshipsReturn
+		var ret GETCapturesCaptureId200ResponseDataRelationshipsReturn
 		return ret
 	}
 	return *o.Return
@@ -52,7 +52,7 @@ func (o *POSTReturnLineItems201ResponseDataRelationships) GetReturn() POSTReturn
 
 // GetReturnOk returns a tuple with the Return field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTReturnLineItems201ResponseDataRelationships) GetReturnOk() (*POSTReturnLineItems201ResponseDataRelationshipsReturn, bool) {
+func (o *POSTReturnLineItems201ResponseDataRelationships) GetReturnOk() (*GETCapturesCaptureId200ResponseDataRelationshipsReturn, bool) {
 	if o == nil || IsNil(o.Return) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *POSTReturnLineItems201ResponseDataRelationships) HasReturn() bool {
 	return false
 }
 
-// SetReturn gets a reference to the given POSTReturnLineItems201ResponseDataRelationshipsReturn and assigns it to the Return field.
-func (o *POSTReturnLineItems201ResponseDataRelationships) SetReturn(v POSTReturnLineItems201ResponseDataRelationshipsReturn) {
+// SetReturn gets a reference to the given GETCapturesCaptureId200ResponseDataRelationshipsReturn and assigns it to the Return field.
+func (o *POSTReturnLineItems201ResponseDataRelationships) SetReturn(v GETCapturesCaptureId200ResponseDataRelationshipsReturn) {
 	o.Return = &v
 }
 

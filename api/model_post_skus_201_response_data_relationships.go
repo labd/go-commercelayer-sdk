@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,22 @@ var _ MappedNullable = &POSTSkus201ResponseDataRelationships{}
 
 // POSTSkus201ResponseDataRelationships struct for POSTSkus201ResponseDataRelationships
 type POSTSkus201ResponseDataRelationships struct {
-	ShippingCategory  *GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory `json:"shipping_category,omitempty"`
-	Prices            *POSTPriceLists201ResponseDataRelationshipsPrices                   `json:"prices,omitempty"`
-	StockItems        *POSTSkus201ResponseDataRelationshipsStockItems                     `json:"stock_items,omitempty"`
-	DeliveryLeadTimes *POSTSkus201ResponseDataRelationshipsDeliveryLeadTimes              `json:"delivery_lead_times,omitempty"`
-	SkuOptions        *POSTSkus201ResponseDataRelationshipsSkuOptions                     `json:"sku_options,omitempty"`
-	Attachments       *POSTAvalaraAccounts201ResponseDataRelationshipsAttachments         `json:"attachments,omitempty"`
+	ShippingCategory  *POSTShipments201ResponseDataRelationshipsShippingCategory               `json:"shipping_category,omitempty"`
+	Prices            *POSTPriceLists201ResponseDataRelationshipsPrices                        `json:"prices,omitempty"`
+	StockItems        *POSTSkus201ResponseDataRelationshipsStockItems                          `json:"stock_items,omitempty"`
+	StockReservations *POSTLineItems201ResponseDataRelationshipsStockReservations              `json:"stock_reservations,omitempty"`
+	DeliveryLeadTimes *POSTSkus201ResponseDataRelationshipsDeliveryLeadTimes                   `json:"delivery_lead_times,omitempty"`
+	SkuOptions        *POSTSkus201ResponseDataRelationshipsSkuOptions                          `json:"sku_options,omitempty"`
+	SkuListItems      *POSTSkuLists201ResponseDataRelationshipsSkuListItems                    `json:"sku_list_items,omitempty"`
+	SkuLists          *POSTCustomers201ResponseDataRelationshipsSkuLists                       `json:"sku_lists,omitempty"`
+	Attachments       *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Links             *POSTOrders201ResponseDataRelationshipsLinks                             `json:"links,omitempty"`
+	Events            *POSTAddresses201ResponseDataRelationshipsEvents                         `json:"events,omitempty"`
+	Tags              *POSTAddresses201ResponseDataRelationshipsTags                           `json:"tags,omitempty"`
+	Versions          *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
+	JwtCustomer       *POSTPrices201ResponseDataRelationshipsJwtCustomer                       `json:"jwt_customer,omitempty"`
+	JwtMarkets        *POSTPrices201ResponseDataRelationshipsJwtMarkets                        `json:"jwt_markets,omitempty"`
+	JwtStockLocations *POSTPrices201ResponseDataRelationshipsJwtStockLocations                 `json:"jwt_stock_locations,omitempty"`
 }
 
 // NewPOSTSkus201ResponseDataRelationships instantiates a new POSTSkus201ResponseDataRelationships object
@@ -46,9 +56,9 @@ func NewPOSTSkus201ResponseDataRelationshipsWithDefaults() *POSTSkus201ResponseD
 }
 
 // GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataRelationships) GetShippingCategory() GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory {
+func (o *POSTSkus201ResponseDataRelationships) GetShippingCategory() POSTShipments201ResponseDataRelationshipsShippingCategory {
 	if o == nil || IsNil(o.ShippingCategory) {
-		var ret GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory
+		var ret POSTShipments201ResponseDataRelationshipsShippingCategory
 		return ret
 	}
 	return *o.ShippingCategory
@@ -56,7 +66,7 @@ func (o *POSTSkus201ResponseDataRelationships) GetShippingCategory() GETShipment
 
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataRelationships) GetShippingCategoryOk() (*GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory, bool) {
+func (o *POSTSkus201ResponseDataRelationships) GetShippingCategoryOk() (*POSTShipments201ResponseDataRelationshipsShippingCategory, bool) {
 	if o == nil || IsNil(o.ShippingCategory) {
 		return nil, false
 	}
@@ -72,8 +82,8 @@ func (o *POSTSkus201ResponseDataRelationships) HasShippingCategory() bool {
 	return false
 }
 
-// SetShippingCategory gets a reference to the given GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
-func (o *POSTSkus201ResponseDataRelationships) SetShippingCategory(v GETShipmentsShipmentId200ResponseDataRelationshipsShippingCategory) {
+// SetShippingCategory gets a reference to the given POSTShipments201ResponseDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
+func (o *POSTSkus201ResponseDataRelationships) SetShippingCategory(v POSTShipments201ResponseDataRelationshipsShippingCategory) {
 	o.ShippingCategory = &v
 }
 
@@ -141,6 +151,38 @@ func (o *POSTSkus201ResponseDataRelationships) SetStockItems(v POSTSkus201Respon
 	o.StockItems = &v
 }
 
+// GetStockReservations returns the StockReservations field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetStockReservations() POSTLineItems201ResponseDataRelationshipsStockReservations {
+	if o == nil || IsNil(o.StockReservations) {
+		var ret POSTLineItems201ResponseDataRelationshipsStockReservations
+		return ret
+	}
+	return *o.StockReservations
+}
+
+// GetStockReservationsOk returns a tuple with the StockReservations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetStockReservationsOk() (*POSTLineItems201ResponseDataRelationshipsStockReservations, bool) {
+	if o == nil || IsNil(o.StockReservations) {
+		return nil, false
+	}
+	return o.StockReservations, true
+}
+
+// HasStockReservations returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasStockReservations() bool {
+	if o != nil && !IsNil(o.StockReservations) {
+		return true
+	}
+
+	return false
+}
+
+// SetStockReservations gets a reference to the given POSTLineItems201ResponseDataRelationshipsStockReservations and assigns it to the StockReservations field.
+func (o *POSTSkus201ResponseDataRelationships) SetStockReservations(v POSTLineItems201ResponseDataRelationshipsStockReservations) {
+	o.StockReservations = &v
+}
+
 // GetDeliveryLeadTimes returns the DeliveryLeadTimes field value if set, zero value otherwise.
 func (o *POSTSkus201ResponseDataRelationships) GetDeliveryLeadTimes() POSTSkus201ResponseDataRelationshipsDeliveryLeadTimes {
 	if o == nil || IsNil(o.DeliveryLeadTimes) {
@@ -205,10 +247,74 @@ func (o *POSTSkus201ResponseDataRelationships) SetSkuOptions(v POSTSkus201Respon
 	o.SkuOptions = &v
 }
 
+// GetSkuListItems returns the SkuListItems field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetSkuListItems() POSTSkuLists201ResponseDataRelationshipsSkuListItems {
+	if o == nil || IsNil(o.SkuListItems) {
+		var ret POSTSkuLists201ResponseDataRelationshipsSkuListItems
+		return ret
+	}
+	return *o.SkuListItems
+}
+
+// GetSkuListItemsOk returns a tuple with the SkuListItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetSkuListItemsOk() (*POSTSkuLists201ResponseDataRelationshipsSkuListItems, bool) {
+	if o == nil || IsNil(o.SkuListItems) {
+		return nil, false
+	}
+	return o.SkuListItems, true
+}
+
+// HasSkuListItems returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasSkuListItems() bool {
+	if o != nil && !IsNil(o.SkuListItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkuListItems gets a reference to the given POSTSkuLists201ResponseDataRelationshipsSkuListItems and assigns it to the SkuListItems field.
+func (o *POSTSkus201ResponseDataRelationships) SetSkuListItems(v POSTSkuLists201ResponseDataRelationshipsSkuListItems) {
+	o.SkuListItems = &v
+}
+
+// GetSkuLists returns the SkuLists field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetSkuLists() POSTCustomers201ResponseDataRelationshipsSkuLists {
+	if o == nil || IsNil(o.SkuLists) {
+		var ret POSTCustomers201ResponseDataRelationshipsSkuLists
+		return ret
+	}
+	return *o.SkuLists
+}
+
+// GetSkuListsOk returns a tuple with the SkuLists field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetSkuListsOk() (*POSTCustomers201ResponseDataRelationshipsSkuLists, bool) {
+	if o == nil || IsNil(o.SkuLists) {
+		return nil, false
+	}
+	return o.SkuLists, true
+}
+
+// HasSkuLists returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasSkuLists() bool {
+	if o != nil && !IsNil(o.SkuLists) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkuLists gets a reference to the given POSTCustomers201ResponseDataRelationshipsSkuLists and assigns it to the SkuLists field.
+func (o *POSTSkus201ResponseDataRelationships) SetSkuLists(v POSTCustomers201ResponseDataRelationshipsSkuLists) {
+	o.SkuLists = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataRelationships) GetAttachments() POSTAvalaraAccounts201ResponseDataRelationshipsAttachments {
+func (o *POSTSkus201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
-		var ret POSTAvalaraAccounts201ResponseDataRelationshipsAttachments
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -216,7 +322,7 @@ func (o *POSTSkus201ResponseDataRelationships) GetAttachments() POSTAvalaraAccou
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataRelationships) GetAttachmentsOk() (*POSTAvalaraAccounts201ResponseDataRelationshipsAttachments, bool) {
+func (o *POSTSkus201ResponseDataRelationships) GetAttachmentsOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments, bool) {
 	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
@@ -232,9 +338,233 @@ func (o *POSTSkus201ResponseDataRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
-func (o *POSTSkus201ResponseDataRelationships) SetAttachments(v POSTAvalaraAccounts201ResponseDataRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *POSTSkus201ResponseDataRelationships) SetAttachments(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments) {
 	o.Attachments = &v
+}
+
+// GetLinks returns the Links field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetLinks() POSTOrders201ResponseDataRelationshipsLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTOrders201ResponseDataRelationshipsLinks
+		return ret
+	}
+	return *o.Links
+}
+
+// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetLinksOk() (*POSTOrders201ResponseDataRelationshipsLinks, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
+	}
+	return o.Links, true
+}
+
+// HasLinks returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasLinks() bool {
+	if o != nil && !IsNil(o.Links) {
+		return true
+	}
+
+	return false
+}
+
+// SetLinks gets a reference to the given POSTOrders201ResponseDataRelationshipsLinks and assigns it to the Links field.
+func (o *POSTSkus201ResponseDataRelationships) SetLinks(v POSTOrders201ResponseDataRelationshipsLinks) {
+	o.Links = &v
+}
+
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
+	if o == nil || IsNil(o.Events) {
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
+	if o == nil || IsNil(o.Events) {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasEvents() bool {
+	if o != nil && !IsNil(o.Events) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *POSTSkus201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
+	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetTags() POSTAddresses201ResponseDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret POSTAddresses201ResponseDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetTagsOk() (*POSTAddresses201ResponseDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given POSTAddresses201ResponseDataRelationshipsTags and assigns it to the Tags field.
+func (o *POSTSkus201ResponseDataRelationships) SetTags(v POSTAddresses201ResponseDataRelationshipsTags) {
+	o.Tags = &v
+}
+
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetVersions() POSTAddresses201ResponseDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret POSTAddresses201ResponseDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetVersionsOk() (*POSTAddresses201ResponseDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given POSTAddresses201ResponseDataRelationshipsVersions and assigns it to the Versions field.
+func (o *POSTSkus201ResponseDataRelationships) SetVersions(v POSTAddresses201ResponseDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
+// GetJwtCustomer returns the JwtCustomer field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetJwtCustomer() POSTPrices201ResponseDataRelationshipsJwtCustomer {
+	if o == nil || IsNil(o.JwtCustomer) {
+		var ret POSTPrices201ResponseDataRelationshipsJwtCustomer
+		return ret
+	}
+	return *o.JwtCustomer
+}
+
+// GetJwtCustomerOk returns a tuple with the JwtCustomer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetJwtCustomerOk() (*POSTPrices201ResponseDataRelationshipsJwtCustomer, bool) {
+	if o == nil || IsNil(o.JwtCustomer) {
+		return nil, false
+	}
+	return o.JwtCustomer, true
+}
+
+// HasJwtCustomer returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasJwtCustomer() bool {
+	if o != nil && !IsNil(o.JwtCustomer) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtCustomer gets a reference to the given POSTPrices201ResponseDataRelationshipsJwtCustomer and assigns it to the JwtCustomer field.
+func (o *POSTSkus201ResponseDataRelationships) SetJwtCustomer(v POSTPrices201ResponseDataRelationshipsJwtCustomer) {
+	o.JwtCustomer = &v
+}
+
+// GetJwtMarkets returns the JwtMarkets field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetJwtMarkets() POSTPrices201ResponseDataRelationshipsJwtMarkets {
+	if o == nil || IsNil(o.JwtMarkets) {
+		var ret POSTPrices201ResponseDataRelationshipsJwtMarkets
+		return ret
+	}
+	return *o.JwtMarkets
+}
+
+// GetJwtMarketsOk returns a tuple with the JwtMarkets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetJwtMarketsOk() (*POSTPrices201ResponseDataRelationshipsJwtMarkets, bool) {
+	if o == nil || IsNil(o.JwtMarkets) {
+		return nil, false
+	}
+	return o.JwtMarkets, true
+}
+
+// HasJwtMarkets returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasJwtMarkets() bool {
+	if o != nil && !IsNil(o.JwtMarkets) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtMarkets gets a reference to the given POSTPrices201ResponseDataRelationshipsJwtMarkets and assigns it to the JwtMarkets field.
+func (o *POSTSkus201ResponseDataRelationships) SetJwtMarkets(v POSTPrices201ResponseDataRelationshipsJwtMarkets) {
+	o.JwtMarkets = &v
+}
+
+// GetJwtStockLocations returns the JwtStockLocations field value if set, zero value otherwise.
+func (o *POSTSkus201ResponseDataRelationships) GetJwtStockLocations() POSTPrices201ResponseDataRelationshipsJwtStockLocations {
+	if o == nil || IsNil(o.JwtStockLocations) {
+		var ret POSTPrices201ResponseDataRelationshipsJwtStockLocations
+		return ret
+	}
+	return *o.JwtStockLocations
+}
+
+// GetJwtStockLocationsOk returns a tuple with the JwtStockLocations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTSkus201ResponseDataRelationships) GetJwtStockLocationsOk() (*POSTPrices201ResponseDataRelationshipsJwtStockLocations, bool) {
+	if o == nil || IsNil(o.JwtStockLocations) {
+		return nil, false
+	}
+	return o.JwtStockLocations, true
+}
+
+// HasJwtStockLocations returns a boolean if a field has been set.
+func (o *POSTSkus201ResponseDataRelationships) HasJwtStockLocations() bool {
+	if o != nil && !IsNil(o.JwtStockLocations) {
+		return true
+	}
+
+	return false
+}
+
+// SetJwtStockLocations gets a reference to the given POSTPrices201ResponseDataRelationshipsJwtStockLocations and assigns it to the JwtStockLocations field.
+func (o *POSTSkus201ResponseDataRelationships) SetJwtStockLocations(v POSTPrices201ResponseDataRelationshipsJwtStockLocations) {
+	o.JwtStockLocations = &v
 }
 
 func (o POSTSkus201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
@@ -256,14 +586,44 @@ func (o POSTSkus201ResponseDataRelationships) ToMap() (map[string]interface{}, e
 	if !IsNil(o.StockItems) {
 		toSerialize["stock_items"] = o.StockItems
 	}
+	if !IsNil(o.StockReservations) {
+		toSerialize["stock_reservations"] = o.StockReservations
+	}
 	if !IsNil(o.DeliveryLeadTimes) {
 		toSerialize["delivery_lead_times"] = o.DeliveryLeadTimes
 	}
 	if !IsNil(o.SkuOptions) {
 		toSerialize["sku_options"] = o.SkuOptions
 	}
+	if !IsNil(o.SkuListItems) {
+		toSerialize["sku_list_items"] = o.SkuListItems
+	}
+	if !IsNil(o.SkuLists) {
+		toSerialize["sku_lists"] = o.SkuLists
+	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Links) {
+		toSerialize["links"] = o.Links
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
+	}
+	if !IsNil(o.JwtCustomer) {
+		toSerialize["jwt_customer"] = o.JwtCustomer
+	}
+	if !IsNil(o.JwtMarkets) {
+		toSerialize["jwt_markets"] = o.JwtMarkets
+	}
+	if !IsNil(o.JwtStockLocations) {
+		toSerialize["jwt_stock_locations"] = o.JwtStockLocations
 	}
 	return toSerialize, nil
 }

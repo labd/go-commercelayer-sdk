@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,8 @@ var _ MappedNullable = &POSTLineItemOptions201ResponseDataRelationships{}
 type POSTLineItemOptions201ResponseDataRelationships struct {
 	LineItem  *POSTLineItemOptions201ResponseDataRelationshipsLineItem  `json:"line_item,omitempty"`
 	SkuOption *POSTLineItemOptions201ResponseDataRelationshipsSkuOption `json:"sku_option,omitempty"`
+	Events    *POSTAddresses201ResponseDataRelationshipsEvents          `json:"events,omitempty"`
+	Tags      *POSTAddresses201ResponseDataRelationshipsTags            `json:"tags,omitempty"`
 }
 
 // NewPOSTLineItemOptions201ResponseDataRelationships instantiates a new POSTLineItemOptions201ResponseDataRelationships object
@@ -105,6 +107,70 @@ func (o *POSTLineItemOptions201ResponseDataRelationships) SetSkuOption(v POSTLin
 	o.SkuOption = &v
 }
 
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *POSTLineItemOptions201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
+	if o == nil || IsNil(o.Events) {
+		var ret POSTAddresses201ResponseDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTLineItemOptions201ResponseDataRelationships) GetEventsOk() (*POSTAddresses201ResponseDataRelationshipsEvents, bool) {
+	if o == nil || IsNil(o.Events) {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *POSTLineItemOptions201ResponseDataRelationships) HasEvents() bool {
+	if o != nil && !IsNil(o.Events) {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given POSTAddresses201ResponseDataRelationshipsEvents and assigns it to the Events field.
+func (o *POSTLineItemOptions201ResponseDataRelationships) SetEvents(v POSTAddresses201ResponseDataRelationshipsEvents) {
+	o.Events = &v
+}
+
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *POSTLineItemOptions201ResponseDataRelationships) GetTags() POSTAddresses201ResponseDataRelationshipsTags {
+	if o == nil || IsNil(o.Tags) {
+		var ret POSTAddresses201ResponseDataRelationshipsTags
+		return ret
+	}
+	return *o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTLineItemOptions201ResponseDataRelationships) GetTagsOk() (*POSTAddresses201ResponseDataRelationshipsTags, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *POSTLineItemOptions201ResponseDataRelationships) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given POSTAddresses201ResponseDataRelationshipsTags and assigns it to the Tags field.
+func (o *POSTLineItemOptions201ResponseDataRelationships) SetTags(v POSTAddresses201ResponseDataRelationshipsTags) {
+	o.Tags = &v
+}
+
 func (o POSTLineItemOptions201ResponseDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -120,6 +186,12 @@ func (o POSTLineItemOptions201ResponseDataRelationships) ToMap() (map[string]int
 	}
 	if !IsNil(o.SkuOption) {
 		toSerialize["sku_option"] = o.SkuOption
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	return toSerialize, nil
 }

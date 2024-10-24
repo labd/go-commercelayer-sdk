@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -26,7 +26,7 @@ type GETAdjustmentsAdjustmentId200ResponseData struct {
 	Type          interface{}                                          `json:"type,omitempty"`
 	Links         *POSTAddresses201ResponseDataLinks                   `json:"links,omitempty"`
 	Attributes    *GETAdjustmentsAdjustmentId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships interface{}                                          `json:"relationships,omitempty"`
+	Relationships *POSTAdjustments201ResponseDataRelationships         `json:"relationships,omitempty"`
 }
 
 // NewGETAdjustmentsAdjustmentId200ResponseData instantiates a new GETAdjustmentsAdjustmentId200ResponseData object
@@ -176,37 +176,36 @@ func (o *GETAdjustmentsAdjustmentId200ResponseData) SetAttributes(v GETAdjustmen
 	o.Attributes = &v
 }
 
-// GetRelationships returns the Relationships field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETAdjustmentsAdjustmentId200ResponseData) GetRelationships() interface{} {
-	if o == nil {
-		var ret interface{}
+// GetRelationships returns the Relationships field value if set, zero value otherwise.
+func (o *GETAdjustmentsAdjustmentId200ResponseData) GetRelationships() POSTAdjustments201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTAdjustments201ResponseDataRelationships
 		return ret
 	}
-	return o.Relationships
+	return *o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETAdjustmentsAdjustmentId200ResponseData) GetRelationshipsOk() (*interface{}, bool) {
+func (o *GETAdjustmentsAdjustmentId200ResponseData) GetRelationshipsOk() (*POSTAdjustments201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
-	return &o.Relationships, true
+	return o.Relationships, true
 }
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *GETAdjustmentsAdjustmentId200ResponseData) HasRelationships() bool {
-	if o != nil && IsNil(o.Relationships) {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given interface{} and assigns it to the Relationships field.
-func (o *GETAdjustmentsAdjustmentId200ResponseData) SetRelationships(v interface{}) {
-	o.Relationships = v
+// SetRelationships gets a reference to the given POSTAdjustments201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *GETAdjustmentsAdjustmentId200ResponseData) SetRelationships(v POSTAdjustments201ResponseDataRelationships) {
+	o.Relationships = &v
 }
 
 func (o GETAdjustmentsAdjustmentId200ResponseData) MarshalJSON() ([]byte, error) {
@@ -231,7 +230,7 @@ func (o GETAdjustmentsAdjustmentId200ResponseData) ToMap() (map[string]interface
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
 	return toSerialize, nil

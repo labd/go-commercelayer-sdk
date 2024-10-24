@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &GETGiftCardsGiftCardId200ResponseDataAttributes{}
 
 // GETGiftCardsGiftCardId200ResponseDataAttributes struct for GETGiftCardsGiftCardId200ResponseDataAttributes
 type GETGiftCardsGiftCardId200ResponseDataAttributes struct {
-	// The gift card status, one of 'draft', 'inactive', 'active', or 'redeemed'.
+	// The gift card status. One of 'draft' (default), 'inactive', 'active', or 'redeemed'.
 	Status interface{} `json:"status,omitempty"`
 	// The gift card code UUID. If not set, it's automatically generated.
 	Code interface{} `json:"code,omitempty"`
@@ -46,10 +46,14 @@ type GETGiftCardsGiftCardId200ResponseDataAttributes struct {
 	FormattedBalanceMax interface{} `json:"formatted_balance_max,omitempty"`
 	// The gift card balance log. Tracks all the gift card transactions.
 	BalanceLog interface{} `json:"balance_log,omitempty"`
+	// The gift card usage log. Tracks all the gift card usage actions by orders.
+	UsageLog interface{} `json:"usage_log,omitempty"`
 	// Indicates if the gift card can be used only one.
 	SingleUse interface{} `json:"single_use,omitempty"`
 	// Indicates if the gift card can be recharged.
 	Rechargeable interface{} `json:"rechargeable,omitempty"`
+	// Indicates if redeemed gift card amount is distributed for tax calculation.
+	DistributeDiscount interface{} `json:"distribute_discount,omitempty"`
 	// The URL of an image that represents the gift card.
 	ImageUrl interface{} `json:"image_url,omitempty"`
 	// Time at which the gift card will expire.
@@ -62,7 +66,7 @@ type GETGiftCardsGiftCardId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -514,6 +518,39 @@ func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) SetBalanceLog(v interf
 	o.BalanceLog = v
 }
 
+// GetUsageLog returns the UsageLog field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetUsageLog() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.UsageLog
+}
+
+// GetUsageLogOk returns a tuple with the UsageLog field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetUsageLogOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UsageLog) {
+		return nil, false
+	}
+	return &o.UsageLog, true
+}
+
+// HasUsageLog returns a boolean if a field has been set.
+func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) HasUsageLog() bool {
+	if o != nil && IsNil(o.UsageLog) {
+		return true
+	}
+
+	return false
+}
+
+// SetUsageLog gets a reference to the given interface{} and assigns it to the UsageLog field.
+func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) SetUsageLog(v interface{}) {
+	o.UsageLog = v
+}
+
 // GetSingleUse returns the SingleUse field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetSingleUse() interface{} {
 	if o == nil {
@@ -578,6 +615,39 @@ func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) HasRechargeable() bool
 // SetRechargeable gets a reference to the given interface{} and assigns it to the Rechargeable field.
 func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) SetRechargeable(v interface{}) {
 	o.Rechargeable = v
+}
+
+// GetDistributeDiscount returns the DistributeDiscount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetDistributeDiscount() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DistributeDiscount
+}
+
+// GetDistributeDiscountOk returns a tuple with the DistributeDiscount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) GetDistributeDiscountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DistributeDiscount) {
+		return nil, false
+	}
+	return &o.DistributeDiscount, true
+}
+
+// HasDistributeDiscount returns a boolean if a field has been set.
+func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) HasDistributeDiscount() bool {
+	if o != nil && IsNil(o.DistributeDiscount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDistributeDiscount gets a reference to the given interface{} and assigns it to the DistributeDiscount field.
+func (o *GETGiftCardsGiftCardId200ResponseDataAttributes) SetDistributeDiscount(v interface{}) {
+	o.DistributeDiscount = v
 }
 
 // GetImageUrl returns the ImageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -893,11 +963,17 @@ func (o GETGiftCardsGiftCardId200ResponseDataAttributes) ToMap() (map[string]int
 	if o.BalanceLog != nil {
 		toSerialize["balance_log"] = o.BalanceLog
 	}
+	if o.UsageLog != nil {
+		toSerialize["usage_log"] = o.UsageLog
+	}
 	if o.SingleUse != nil {
 		toSerialize["single_use"] = o.SingleUse
 	}
 	if o.Rechargeable != nil {
 		toSerialize["rechargeable"] = o.Rechargeable
+	}
+	if o.DistributeDiscount != nil {
+		toSerialize["distribute_discount"] = o.DistributeDiscount
 	}
 	if o.ImageUrl != nil {
 		toSerialize["image_url"] = o.ImageUrl

@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Promotion** | Pointer to [**CouponCodesPromotionRuleDataRelationshipsPromotion**](CouponCodesPromotionRuleDataRelationshipsPromotion.md) |  | [optional] 
-**Coupons** | Pointer to [**CouponCodesPromotionRuleDataRelationshipsCoupons**](CouponCodesPromotionRuleDataRelationshipsCoupons.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
+**Coupons** | Pointer to [**BuyXPayYPromotionDataRelationshipsCoupons**](BuyXPayYPromotionDataRelationshipsCoupons.md) |  | [optional] 
 
 ## Methods
 
@@ -51,22 +52,47 @@ SetPromotion sets Promotion field to given value.
 
 HasPromotion returns a boolean if a field has been set.
 
+### GetVersions
+
+`func (o *CouponCodesPromotionRuleDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *CouponCodesPromotionRuleDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *CouponCodesPromotionRuleDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *CouponCodesPromotionRuleDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
+
 ### GetCoupons
 
-`func (o *CouponCodesPromotionRuleDataRelationships) GetCoupons() CouponCodesPromotionRuleDataRelationshipsCoupons`
+`func (o *CouponCodesPromotionRuleDataRelationships) GetCoupons() BuyXPayYPromotionDataRelationshipsCoupons`
 
 GetCoupons returns the Coupons field if non-nil, zero value otherwise.
 
 ### GetCouponsOk
 
-`func (o *CouponCodesPromotionRuleDataRelationships) GetCouponsOk() (*CouponCodesPromotionRuleDataRelationshipsCoupons, bool)`
+`func (o *CouponCodesPromotionRuleDataRelationships) GetCouponsOk() (*BuyXPayYPromotionDataRelationshipsCoupons, bool)`
 
 GetCouponsOk returns a tuple with the Coupons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCoupons
 
-`func (o *CouponCodesPromotionRuleDataRelationships) SetCoupons(v CouponCodesPromotionRuleDataRelationshipsCoupons)`
+`func (o *CouponCodesPromotionRuleDataRelationships) SetCoupons(v BuyXPayYPromotionDataRelationshipsCoupons)`
 
 SetCoupons sets Coupons field to given value.
 

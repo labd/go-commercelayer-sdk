@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,11 +20,19 @@ var _ MappedNullable = &POSTStripePayments201ResponseDataAttributes{}
 
 // POSTStripePayments201ResponseDataAttributes struct for POSTStripePayments201ResponseDataAttributes
 type POSTStripePayments201ResponseDataAttributes struct {
-	// Stripe payment options: 'customer', 'payment_method', etc. Check Stripe payment intent API for more details.
+	// The Stripe payment intent ID. Required to identify a payment session on stripe.
+	StripeId interface{} `json:"stripe_id,omitempty"`
+	// The Stripe payment intent client secret. Required to create a charge through Stripe.js.
+	ClientSecret interface{} `json:"client_secret,omitempty"`
+	// Stripe payment options: 'customer', 'payment_method', 'return_url', etc. Check Stripe payment intent API for more details.
 	Options interface{} `json:"options,omitempty"`
+	// The URL to return to when a redirect payment is completed.
+	ReturnUrl interface{} `json:"return_url,omitempty"`
+	// The email address to send the receipt to.
+	ReceiptEmail interface{} `json:"receipt_email,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -45,6 +53,72 @@ func NewPOSTStripePayments201ResponseDataAttributes() *POSTStripePayments201Resp
 func NewPOSTStripePayments201ResponseDataAttributesWithDefaults() *POSTStripePayments201ResponseDataAttributes {
 	this := POSTStripePayments201ResponseDataAttributes{}
 	return &this
+}
+
+// GetStripeId returns the StripeId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStripePayments201ResponseDataAttributes) GetStripeId() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.StripeId
+}
+
+// GetStripeIdOk returns a tuple with the StripeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripePayments201ResponseDataAttributes) GetStripeIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.StripeId) {
+		return nil, false
+	}
+	return &o.StripeId, true
+}
+
+// HasStripeId returns a boolean if a field has been set.
+func (o *POSTStripePayments201ResponseDataAttributes) HasStripeId() bool {
+	if o != nil && IsNil(o.StripeId) {
+		return true
+	}
+
+	return false
+}
+
+// SetStripeId gets a reference to the given interface{} and assigns it to the StripeId field.
+func (o *POSTStripePayments201ResponseDataAttributes) SetStripeId(v interface{}) {
+	o.StripeId = v
+}
+
+// GetClientSecret returns the ClientSecret field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStripePayments201ResponseDataAttributes) GetClientSecret() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ClientSecret
+}
+
+// GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripePayments201ResponseDataAttributes) GetClientSecretOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ClientSecret) {
+		return nil, false
+	}
+	return &o.ClientSecret, true
+}
+
+// HasClientSecret returns a boolean if a field has been set.
+func (o *POSTStripePayments201ResponseDataAttributes) HasClientSecret() bool {
+	if o != nil && IsNil(o.ClientSecret) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientSecret gets a reference to the given interface{} and assigns it to the ClientSecret field.
+func (o *POSTStripePayments201ResponseDataAttributes) SetClientSecret(v interface{}) {
+	o.ClientSecret = v
 }
 
 // GetOptions returns the Options field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -78,6 +152,72 @@ func (o *POSTStripePayments201ResponseDataAttributes) HasOptions() bool {
 // SetOptions gets a reference to the given interface{} and assigns it to the Options field.
 func (o *POSTStripePayments201ResponseDataAttributes) SetOptions(v interface{}) {
 	o.Options = v
+}
+
+// GetReturnUrl returns the ReturnUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStripePayments201ResponseDataAttributes) GetReturnUrl() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ReturnUrl
+}
+
+// GetReturnUrlOk returns a tuple with the ReturnUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripePayments201ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReturnUrl) {
+		return nil, false
+	}
+	return &o.ReturnUrl, true
+}
+
+// HasReturnUrl returns a boolean if a field has been set.
+func (o *POSTStripePayments201ResponseDataAttributes) HasReturnUrl() bool {
+	if o != nil && IsNil(o.ReturnUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetReturnUrl gets a reference to the given interface{} and assigns it to the ReturnUrl field.
+func (o *POSTStripePayments201ResponseDataAttributes) SetReturnUrl(v interface{}) {
+	o.ReturnUrl = v
+}
+
+// GetReceiptEmail returns the ReceiptEmail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStripePayments201ResponseDataAttributes) GetReceiptEmail() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ReceiptEmail
+}
+
+// GetReceiptEmailOk returns a tuple with the ReceiptEmail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripePayments201ResponseDataAttributes) GetReceiptEmailOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReceiptEmail) {
+		return nil, false
+	}
+	return &o.ReceiptEmail, true
+}
+
+// HasReceiptEmail returns a boolean if a field has been set.
+func (o *POSTStripePayments201ResponseDataAttributes) HasReceiptEmail() bool {
+	if o != nil && IsNil(o.ReceiptEmail) {
+		return true
+	}
+
+	return false
+}
+
+// SetReceiptEmail gets a reference to the given interface{} and assigns it to the ReceiptEmail field.
+func (o *POSTStripePayments201ResponseDataAttributes) SetReceiptEmail(v interface{}) {
+	o.ReceiptEmail = v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -189,8 +329,20 @@ func (o POSTStripePayments201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 
 func (o POSTStripePayments201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.StripeId != nil {
+		toSerialize["stripe_id"] = o.StripeId
+	}
+	if o.ClientSecret != nil {
+		toSerialize["client_secret"] = o.ClientSecret
+	}
 	if o.Options != nil {
 		toSerialize["options"] = o.Options
+	}
+	if o.ReturnUrl != nil {
+		toSerialize["return_url"] = o.ReturnUrl
+	}
+	if o.ReceiptEmail != nil {
+		toSerialize["receipt_email"] = o.ReceiptEmail
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

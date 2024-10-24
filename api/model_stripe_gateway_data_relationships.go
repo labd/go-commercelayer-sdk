@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &StripeGatewayDataRelationships{}
 // StripeGatewayDataRelationships struct for StripeGatewayDataRelationships
 type StripeGatewayDataRelationships struct {
 	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
+	Versions       *AddressDataRelationshipsVersions             `json:"versions,omitempty"`
 	StripePayments *StripeGatewayDataRelationshipsStripePayments `json:"stripe_payments,omitempty"`
 }
 
@@ -73,6 +74,38 @@ func (o *StripeGatewayDataRelationships) SetPaymentMethods(v AdyenGatewayDataRel
 	o.PaymentMethods = &v
 }
 
+// GetVersions returns the Versions field value if set, zero value otherwise.
+func (o *StripeGatewayDataRelationships) GetVersions() AddressDataRelationshipsVersions {
+	if o == nil || IsNil(o.Versions) {
+		var ret AddressDataRelationshipsVersions
+		return ret
+	}
+	return *o.Versions
+}
+
+// GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StripeGatewayDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool) {
+	if o == nil || IsNil(o.Versions) {
+		return nil, false
+	}
+	return o.Versions, true
+}
+
+// HasVersions returns a boolean if a field has been set.
+func (o *StripeGatewayDataRelationships) HasVersions() bool {
+	if o != nil && !IsNil(o.Versions) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersions gets a reference to the given AddressDataRelationshipsVersions and assigns it to the Versions field.
+func (o *StripeGatewayDataRelationships) SetVersions(v AddressDataRelationshipsVersions) {
+	o.Versions = &v
+}
+
 // GetStripePayments returns the StripePayments field value if set, zero value otherwise.
 func (o *StripeGatewayDataRelationships) GetStripePayments() StripeGatewayDataRelationshipsStripePayments {
 	if o == nil || IsNil(o.StripePayments) {
@@ -117,6 +150,9 @@ func (o StripeGatewayDataRelationships) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.PaymentMethods) {
 		toSerialize["payment_methods"] = o.PaymentMethods
+	}
+	if !IsNil(o.Versions) {
+		toSerialize["versions"] = o.Versions
 	}
 	if !IsNil(o.StripePayments) {
 		toSerialize["stripe_payments"] = o.StripePayments

@@ -35,6 +35,19 @@ func Test_api_CouponsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test CouponsApiService GETBuyXPayYPromotionIdCoupons", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var buyXPayYPromotionId interface{}
+
+		httpRes, err := apiClient.CouponsApi.GETBuyXPayYPromotionIdCoupons(context.Background(), buyXPayYPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test CouponsApiService GETCouponCodesPromotionRuleIdCoupons", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -70,6 +83,110 @@ func Test_api_CouponsApiService(t *testing.T) {
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CouponsApiService GETExternalPromotionIdCoupons", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var externalPromotionId interface{}
+
+		httpRes, err := apiClient.CouponsApi.GETExternalPromotionIdCoupons(context.Background(), externalPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CouponsApiService GETFixedAmountPromotionIdCoupons", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var fixedAmountPromotionId interface{}
+
+		httpRes, err := apiClient.CouponsApi.GETFixedAmountPromotionIdCoupons(context.Background(), fixedAmountPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CouponsApiService GETFixedPricePromotionIdCoupons", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var fixedPricePromotionId interface{}
+
+		httpRes, err := apiClient.CouponsApi.GETFixedPricePromotionIdCoupons(context.Background(), fixedPricePromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CouponsApiService GETFlexPromotionIdCoupons", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var flexPromotionId interface{}
+
+		httpRes, err := apiClient.CouponsApi.GETFlexPromotionIdCoupons(context.Background(), flexPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CouponsApiService GETFreeGiftPromotionIdCoupons", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var freeGiftPromotionId interface{}
+
+		httpRes, err := apiClient.CouponsApi.GETFreeGiftPromotionIdCoupons(context.Background(), freeGiftPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CouponsApiService GETFreeShippingPromotionIdCoupons", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var freeShippingPromotionId interface{}
+
+		httpRes, err := apiClient.CouponsApi.GETFreeShippingPromotionIdCoupons(context.Background(), freeShippingPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CouponsApiService GETPercentageDiscountPromotionIdCoupons", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var percentageDiscountPromotionId interface{}
+
+		httpRes, err := apiClient.CouponsApi.GETPercentageDiscountPromotionIdCoupons(context.Background(), percentageDiscountPromotionId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CouponsApiService GETPromotionIdCoupons", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var promotionId interface{}
+
+		httpRes, err := apiClient.CouponsApi.GETPromotionIdCoupons(context.Background(), promotionId).Execute()
+
+		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

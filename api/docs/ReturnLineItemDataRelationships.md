@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Return** | Pointer to [**CustomerDataRelationshipsReturns**](CustomerDataRelationshipsReturns.md) |  | [optional] 
+**Return** | Pointer to [**CaptureDataRelationshipsReturn**](CaptureDataRelationshipsReturn.md) |  | [optional] 
 **LineItem** | Pointer to [**LineItemOptionDataRelationshipsLineItem**](LineItemOptionDataRelationshipsLineItem.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetReturn
 
-`func (o *ReturnLineItemDataRelationships) GetReturn() CustomerDataRelationshipsReturns`
+`func (o *ReturnLineItemDataRelationships) GetReturn() CaptureDataRelationshipsReturn`
 
 GetReturn returns the Return field if non-nil, zero value otherwise.
 
 ### GetReturnOk
 
-`func (o *ReturnLineItemDataRelationships) GetReturnOk() (*CustomerDataRelationshipsReturns, bool)`
+`func (o *ReturnLineItemDataRelationships) GetReturnOk() (*CaptureDataRelationshipsReturn, bool)`
 
 GetReturnOk returns a tuple with the Return field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReturn
 
-`func (o *ReturnLineItemDataRelationships) SetReturn(v CustomerDataRelationshipsReturns)`
+`func (o *ReturnLineItemDataRelationships) SetReturn(v CaptureDataRelationshipsReturn)`
 
 SetReturn sets Return field to given value.
 

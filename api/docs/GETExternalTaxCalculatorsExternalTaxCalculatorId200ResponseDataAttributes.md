@@ -5,12 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **interface{}** | The tax calculator&#39;s internal name. | [optional] 
+**Type** | Pointer to **interface{}** | The tax calculator&#39;s type. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **TaxCalculatorUrl** | Pointer to **interface{}** | The URL to the service that will compute the taxes. | [optional] 
+**CircuitState** | Pointer to **interface{}** | The circuit breaker state, by default it is &#39;closed&#39;. It can become &#39;open&#39; once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made. | [optional] 
+**CircuitFailureCount** | Pointer to **interface{}** | The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback. | [optional] 
 **SharedSecret** | Pointer to **interface{}** | The shared secret used to sign the external request payload. | [optional] 
 
 ## Methods
@@ -67,6 +70,41 @@ HasName returns a boolean if a field has been set.
 `func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) UnsetName()`
 
 UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetType
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetType() interface{}`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetType(v interface{})`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### SetTypeNil
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetCreatedAt() interface{}`
@@ -277,6 +315,76 @@ HasTaxCalculatorUrl returns a boolean if a field has been set.
 `func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) UnsetTaxCalculatorUrl()`
 
 UnsetTaxCalculatorUrl ensures that no value is present for TaxCalculatorUrl, not even an explicit nil
+### GetCircuitState
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetCircuitState() interface{}`
+
+GetCircuitState returns the CircuitState field if non-nil, zero value otherwise.
+
+### GetCircuitStateOk
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool)`
+
+GetCircuitStateOk returns a tuple with the CircuitState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitState
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetCircuitState(v interface{})`
+
+SetCircuitState sets CircuitState field to given value.
+
+### HasCircuitState
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasCircuitState() bool`
+
+HasCircuitState returns a boolean if a field has been set.
+
+### SetCircuitStateNil
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetCircuitStateNil(b bool)`
+
+ SetCircuitStateNil sets the value for CircuitState to be an explicit nil
+
+### UnsetCircuitState
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) UnsetCircuitState()`
+
+UnsetCircuitState ensures that no value is present for CircuitState, not even an explicit nil
+### GetCircuitFailureCount
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetCircuitFailureCount() interface{}`
+
+GetCircuitFailureCount returns the CircuitFailureCount field if non-nil, zero value otherwise.
+
+### GetCircuitFailureCountOk
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool)`
+
+GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitFailureCount
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetCircuitFailureCount(v interface{})`
+
+SetCircuitFailureCount sets CircuitFailureCount field to given value.
+
+### HasCircuitFailureCount
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasCircuitFailureCount() bool`
+
+HasCircuitFailureCount returns a boolean if a field has been set.
+
+### SetCircuitFailureCountNil
+
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) SetCircuitFailureCountNil(b bool)`
+
+ SetCircuitFailureCountNil sets the value for CircuitFailureCount to be an explicit nil
+
+### UnsetCircuitFailureCount
+`func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) UnsetCircuitFailureCount()`
+
+UnsetCircuitFailureCount ensures that no value is present for CircuitFailureCount, not even an explicit nil
 ### GetSharedSecret
 
 `func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetSharedSecret() interface{}`

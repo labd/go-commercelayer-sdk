@@ -4,26 +4,30 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **interface{}** | The shipping method&#39;s name | [optional] 
-**Scheme** | Pointer to **interface{}** | The shipping method&#39;s scheme, one of &#39;flat&#39; or &#39;weight_tiered&#39;. | [optional] 
+**Name** | Pointer to **interface{}** | The shipping method&#39;s name. | [optional] 
+**Scheme** | Pointer to **interface{}** | The shipping method&#39;s scheme. One of &#39;flat&#39;, &#39;weight_tiered&#39;, or &#39;external&#39;. | [optional] 
 **CurrencyCode** | Pointer to **interface{}** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
-**DisabledAt** | Pointer to **interface{}** | Time at which the shipping method was disabled. | [optional] 
+**ExternalPricesUrl** | Pointer to **interface{}** | The URL used to overwrite prices by an external source. | [optional] 
 **PriceAmountCents** | Pointer to **interface{}** | The price of this shipping method, in cents. | [optional] 
 **PriceAmountFloat** | Pointer to **interface{}** | The price of this shipping method, float. | [optional] 
 **FormattedPriceAmount** | Pointer to **interface{}** | The price of this shipping method, formatted. | [optional] 
 **FreeOverAmountCents** | Pointer to **interface{}** | Apply free shipping if the order amount is over this value, in cents. | [optional] 
 **FreeOverAmountFloat** | Pointer to **interface{}** | Apply free shipping if the order amount is over this value, float. | [optional] 
 **FormattedFreeOverAmount** | Pointer to **interface{}** | Apply free shipping if the order amount is over this value, formatted. | [optional] 
+**UseSubtotal** | Pointer to **interface{}** | Send this attribute if you want to compare the free over amount with order&#39;s subtotal (excluding discounts, if any). | [optional] 
 **PriceAmountForShipmentCents** | Pointer to **interface{}** | The calculated price (zero or price amount) when associated to a shipment, in cents. | [optional] 
 **PriceAmountForShipmentFloat** | Pointer to **interface{}** | The calculated price (zero or price amount) when associated to a shipment, float. | [optional] 
 **FormattedPriceAmountForShipment** | Pointer to **interface{}** | The calculated price (zero or price amount) when associated to a shipment, formatted. | [optional] 
 **MinWeight** | Pointer to **interface{}** | The minimum weight for which this shipping method is available. | [optional] 
 **MaxWeight** | Pointer to **interface{}** | The maximum weight for which this shipping method is available. | [optional] 
-**UnitOfWeight** | Pointer to **interface{}** | Can be one of &#39;gr&#39;, &#39;lb&#39;, or &#39;oz&#39; | [optional] 
+**UnitOfWeight** | Pointer to **interface{}** | The unit of weight. One of &#39;gr&#39;, &#39;oz&#39;, or &#39;lb&#39;. | [optional] 
+**DisabledAt** | Pointer to **interface{}** | Time at which this resource was disabled. | [optional] 
+**CircuitState** | Pointer to **interface{}** | The circuit breaker state, by default it is &#39;closed&#39;. It can become &#39;open&#39; once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made. | [optional] 
+**CircuitFailureCount** | Pointer to **interface{}** | The number of consecutive failures recorded by the circuit breaker associated to this resource, will be reset on first successful call to callback. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -150,41 +154,41 @@ HasCurrencyCode returns a boolean if a field has been set.
 `func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetCurrencyCode()`
 
 UnsetCurrencyCode ensures that no value is present for CurrencyCode, not even an explicit nil
-### GetDisabledAt
+### GetExternalPricesUrl
 
-`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisabledAt() interface{}`
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetExternalPricesUrl() interface{}`
 
-GetDisabledAt returns the DisabledAt field if non-nil, zero value otherwise.
+GetExternalPricesUrl returns the ExternalPricesUrl field if non-nil, zero value otherwise.
 
-### GetDisabledAtOk
+### GetExternalPricesUrlOk
 
-`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool)`
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetExternalPricesUrlOk() (*interface{}, bool)`
 
-GetDisabledAtOk returns a tuple with the DisabledAt field if it's non-nil, zero value otherwise
+GetExternalPricesUrlOk returns a tuple with the ExternalPricesUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDisabledAt
+### SetExternalPricesUrl
 
-`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisabledAt(v interface{})`
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetExternalPricesUrl(v interface{})`
 
-SetDisabledAt sets DisabledAt field to given value.
+SetExternalPricesUrl sets ExternalPricesUrl field to given value.
 
-### HasDisabledAt
+### HasExternalPricesUrl
 
-`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasDisabledAt() bool`
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasExternalPricesUrl() bool`
 
-HasDisabledAt returns a boolean if a field has been set.
+HasExternalPricesUrl returns a boolean if a field has been set.
 
-### SetDisabledAtNil
+### SetExternalPricesUrlNil
 
-`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisabledAtNil(b bool)`
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetExternalPricesUrlNil(b bool)`
 
- SetDisabledAtNil sets the value for DisabledAt to be an explicit nil
+ SetExternalPricesUrlNil sets the value for ExternalPricesUrl to be an explicit nil
 
-### UnsetDisabledAt
-`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetDisabledAt()`
+### UnsetExternalPricesUrl
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetExternalPricesUrl()`
 
-UnsetDisabledAt ensures that no value is present for DisabledAt, not even an explicit nil
+UnsetExternalPricesUrl ensures that no value is present for ExternalPricesUrl, not even an explicit nil
 ### GetPriceAmountCents
 
 `func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetPriceAmountCents() interface{}`
@@ -395,6 +399,41 @@ HasFormattedFreeOverAmount returns a boolean if a field has been set.
 `func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetFormattedFreeOverAmount()`
 
 UnsetFormattedFreeOverAmount ensures that no value is present for FormattedFreeOverAmount, not even an explicit nil
+### GetUseSubtotal
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetUseSubtotal() interface{}`
+
+GetUseSubtotal returns the UseSubtotal field if non-nil, zero value otherwise.
+
+### GetUseSubtotalOk
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetUseSubtotalOk() (*interface{}, bool)`
+
+GetUseSubtotalOk returns a tuple with the UseSubtotal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseSubtotal
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetUseSubtotal(v interface{})`
+
+SetUseSubtotal sets UseSubtotal field to given value.
+
+### HasUseSubtotal
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasUseSubtotal() bool`
+
+HasUseSubtotal returns a boolean if a field has been set.
+
+### SetUseSubtotalNil
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetUseSubtotalNil(b bool)`
+
+ SetUseSubtotalNil sets the value for UseSubtotal to be an explicit nil
+
+### UnsetUseSubtotal
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetUseSubtotal()`
+
+UnsetUseSubtotal ensures that no value is present for UseSubtotal, not even an explicit nil
 ### GetPriceAmountForShipmentCents
 
 `func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetPriceAmountForShipmentCents() interface{}`
@@ -605,6 +644,111 @@ HasUnitOfWeight returns a boolean if a field has been set.
 `func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetUnitOfWeight()`
 
 UnsetUnitOfWeight ensures that no value is present for UnitOfWeight, not even an explicit nil
+### GetDisabledAt
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisabledAt() interface{}`
+
+GetDisabledAt returns the DisabledAt field if non-nil, zero value otherwise.
+
+### GetDisabledAtOk
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisabledAtOk() (*interface{}, bool)`
+
+GetDisabledAtOk returns a tuple with the DisabledAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisabledAt
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisabledAt(v interface{})`
+
+SetDisabledAt sets DisabledAt field to given value.
+
+### HasDisabledAt
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasDisabledAt() bool`
+
+HasDisabledAt returns a boolean if a field has been set.
+
+### SetDisabledAtNil
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetDisabledAtNil(b bool)`
+
+ SetDisabledAtNil sets the value for DisabledAt to be an explicit nil
+
+### UnsetDisabledAt
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetDisabledAt()`
+
+UnsetDisabledAt ensures that no value is present for DisabledAt, not even an explicit nil
+### GetCircuitState
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCircuitState() interface{}`
+
+GetCircuitState returns the CircuitState field if non-nil, zero value otherwise.
+
+### GetCircuitStateOk
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCircuitStateOk() (*interface{}, bool)`
+
+GetCircuitStateOk returns a tuple with the CircuitState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitState
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetCircuitState(v interface{})`
+
+SetCircuitState sets CircuitState field to given value.
+
+### HasCircuitState
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasCircuitState() bool`
+
+HasCircuitState returns a boolean if a field has been set.
+
+### SetCircuitStateNil
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetCircuitStateNil(b bool)`
+
+ SetCircuitStateNil sets the value for CircuitState to be an explicit nil
+
+### UnsetCircuitState
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetCircuitState()`
+
+UnsetCircuitState ensures that no value is present for CircuitState, not even an explicit nil
+### GetCircuitFailureCount
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCircuitFailureCount() interface{}`
+
+GetCircuitFailureCount returns the CircuitFailureCount field if non-nil, zero value otherwise.
+
+### GetCircuitFailureCountOk
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCircuitFailureCountOk() (*interface{}, bool)`
+
+GetCircuitFailureCountOk returns a tuple with the CircuitFailureCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCircuitFailureCount
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetCircuitFailureCount(v interface{})`
+
+SetCircuitFailureCount sets CircuitFailureCount field to given value.
+
+### HasCircuitFailureCount
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) HasCircuitFailureCount() bool`
+
+HasCircuitFailureCount returns a boolean if a field has been set.
+
+### SetCircuitFailureCountNil
+
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) SetCircuitFailureCountNil(b bool)`
+
+ SetCircuitFailureCountNil sets the value for CircuitFailureCount to be an explicit nil
+
+### UnsetCircuitFailureCount
+`func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) UnsetCircuitFailureCount()`
+
+UnsetCircuitFailureCount ensures that no value is present for CircuitFailureCount, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETShippingMethodsShippingMethodId200ResponseDataAttributes) GetCreatedAt() interface{}`

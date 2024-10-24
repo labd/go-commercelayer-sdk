@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,14 +20,14 @@ var _ MappedNullable = &CouponCodesPromotionRuleCreateDataRelationshipsCoupons{}
 
 // CouponCodesPromotionRuleCreateDataRelationshipsCoupons struct for CouponCodesPromotionRuleCreateDataRelationshipsCoupons
 type CouponCodesPromotionRuleCreateDataRelationshipsCoupons struct {
-	Data CouponCodesPromotionRuleDataRelationshipsCouponsData `json:"data"`
+	Data BuyXPayYPromotionDataRelationshipsCouponsData `json:"data"`
 }
 
 // NewCouponCodesPromotionRuleCreateDataRelationshipsCoupons instantiates a new CouponCodesPromotionRuleCreateDataRelationshipsCoupons object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponCodesPromotionRuleCreateDataRelationshipsCoupons(data CouponCodesPromotionRuleDataRelationshipsCouponsData) *CouponCodesPromotionRuleCreateDataRelationshipsCoupons {
+func NewCouponCodesPromotionRuleCreateDataRelationshipsCoupons(data BuyXPayYPromotionDataRelationshipsCouponsData) *CouponCodesPromotionRuleCreateDataRelationshipsCoupons {
 	this := CouponCodesPromotionRuleCreateDataRelationshipsCoupons{}
 	this.Data = data
 	return &this
@@ -42,9 +42,9 @@ func NewCouponCodesPromotionRuleCreateDataRelationshipsCouponsWithDefaults() *Co
 }
 
 // GetData returns the Data field value
-func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetData() CouponCodesPromotionRuleDataRelationshipsCouponsData {
+func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetData() BuyXPayYPromotionDataRelationshipsCouponsData {
 	if o == nil {
-		var ret CouponCodesPromotionRuleDataRelationshipsCouponsData
+		var ret BuyXPayYPromotionDataRelationshipsCouponsData
 		return ret
 	}
 
@@ -53,7 +53,7 @@ func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetData() Coupo
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetDataOk() (*CouponCodesPromotionRuleDataRelationshipsCouponsData, bool) {
+func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetDataOk() (*BuyXPayYPromotionDataRelationshipsCouponsData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) GetDataOk() (*C
 }
 
 // SetData sets field value
-func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) SetData(v CouponCodesPromotionRuleDataRelationshipsCouponsData) {
+func (o *CouponCodesPromotionRuleCreateDataRelationshipsCoupons) SetData(v BuyXPayYPromotionDataRelationshipsCouponsData) {
 	o.Data = v
 }
 

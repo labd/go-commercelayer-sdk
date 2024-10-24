@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,15 @@ var _ MappedNullable = &GETBillingInfoValidationRulesBillingInfoValidationRuleId
 
 // GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes struct for GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
 type GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes struct {
+	// The order validation rule's type.
+	Type interface{} `json:"type,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -47,6 +49,39 @@ func NewGETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataA
 func NewGETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributesWithDefaults() *GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
 	this := GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes{}
 	return &this
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) HasType() bool {
+	if o != nil && IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -224,6 +259,9 @@ func (o GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataA
 
 func (o GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt
 	}

@@ -22,6 +22,19 @@ func Test_api_StockLineItemsApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test StockLineItemsApiService DELETEStockLineItemsStockLineItemId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var stockLineItemId interface{}
+
+		httpRes, err := apiClient.StockLineItemsApi.DELETEStockLineItemsStockLineItemId(context.Background(), stockLineItemId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test StockLineItemsApiService GETLineItemIdStockLineItems", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -29,6 +42,19 @@ func Test_api_StockLineItemsApiService(t *testing.T) {
 		var lineItemId interface{}
 
 		httpRes, err := apiClient.StockLineItemsApi.GETLineItemIdStockLineItems(context.Background(), lineItemId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StockLineItemsApiService GETOrderIdStockLineItems", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var orderId interface{}
+
+		httpRes, err := apiClient.StockLineItemsApi.GETOrderIdStockLineItems(context.Background(), orderId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -80,6 +106,45 @@ func Test_api_StockLineItemsApiService(t *testing.T) {
 		var stockLineItemId interface{}
 
 		resp, httpRes, err := apiClient.StockLineItemsApi.GETStockLineItemsStockLineItemId(context.Background(), stockLineItemId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StockLineItemsApiService GETStockReservationIdStockLineItem", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var stockReservationId interface{}
+
+		httpRes, err := apiClient.StockLineItemsApi.GETStockReservationIdStockLineItem(context.Background(), stockReservationId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StockLineItemsApiService PATCHStockLineItemsStockLineItemId", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var stockLineItemId interface{}
+
+		resp, httpRes, err := apiClient.StockLineItemsApi.PATCHStockLineItemsStockLineItemId(context.Background(), stockLineItemId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StockLineItemsApiService POSTStockLineItems", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.StockLineItemsApi.POSTStockLineItems(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

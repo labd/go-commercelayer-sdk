@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -26,15 +26,15 @@ type GETAxervePaymentsAxervePaymentId200ResponseDataAttributes struct {
 	ReturnUrl interface{} `json:"return_url,omitempty"`
 	// The Axerve payment request data, collected by client.
 	PaymentRequestData interface{} `json:"payment_request_data,omitempty"`
+	// The IP adress of the client creating the payment.
+	ClientIp interface{} `json:"client_ip,omitempty"`
+	// The details of the buyer creating the payment.
+	BuyerDetails interface{} `json:"buyer_details,omitempty"`
+	// Requires the creation of a token to represent this payment, mandatory to use customer's wallet and order subscriptions.
+	RequestToken interface{} `json:"request_token,omitempty"`
 	// Indicates if the order current amount differs form the one of the associated authorization.
 	MismatchedAmounts interface{} `json:"mismatched_amounts,omitempty"`
-	// The amount of the associated payment intent, in cents.
-	IntentAmountCents interface{} `json:"intent_amount_cents,omitempty"`
-	// The amount of the associated payment intent, float.
-	IntentAmountFloat interface{} `json:"intent_amount_float,omitempty"`
-	// The amount of the associated payment intent, formatted.
-	FormattedIntentAmount interface{} `json:"formatted_intent_amount,omitempty"`
-	// Information about the payment instrument used in the transaction
+	// Information about the payment instrument used in the transaction.
 	PaymentInstrument interface{} `json:"payment_instrument,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
@@ -42,7 +42,7 @@ type GETAxervePaymentsAxervePaymentId200ResponseDataAttributes struct {
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -164,6 +164,105 @@ func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetPaymentRe
 	o.PaymentRequestData = v
 }
 
+// GetClientIp returns the ClientIp field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetClientIp() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ClientIp
+}
+
+// GetClientIpOk returns a tuple with the ClientIp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetClientIpOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ClientIp) {
+		return nil, false
+	}
+	return &o.ClientIp, true
+}
+
+// HasClientIp returns a boolean if a field has been set.
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasClientIp() bool {
+	if o != nil && IsNil(o.ClientIp) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientIp gets a reference to the given interface{} and assigns it to the ClientIp field.
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetClientIp(v interface{}) {
+	o.ClientIp = v
+}
+
+// GetBuyerDetails returns the BuyerDetails field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetBuyerDetails() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.BuyerDetails
+}
+
+// GetBuyerDetailsOk returns a tuple with the BuyerDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetBuyerDetailsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.BuyerDetails) {
+		return nil, false
+	}
+	return &o.BuyerDetails, true
+}
+
+// HasBuyerDetails returns a boolean if a field has been set.
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasBuyerDetails() bool {
+	if o != nil && IsNil(o.BuyerDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetBuyerDetails gets a reference to the given interface{} and assigns it to the BuyerDetails field.
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetBuyerDetails(v interface{}) {
+	o.BuyerDetails = v
+}
+
+// GetRequestToken returns the RequestToken field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetRequestToken() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.RequestToken
+}
+
+// GetRequestTokenOk returns a tuple with the RequestToken field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetRequestTokenOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RequestToken) {
+		return nil, false
+	}
+	return &o.RequestToken, true
+}
+
+// HasRequestToken returns a boolean if a field has been set.
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasRequestToken() bool {
+	if o != nil && IsNil(o.RequestToken) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestToken gets a reference to the given interface{} and assigns it to the RequestToken field.
+func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetRequestToken(v interface{}) {
+	o.RequestToken = v
+}
+
 // GetMismatchedAmounts returns the MismatchedAmounts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetMismatchedAmounts() interface{} {
 	if o == nil {
@@ -195,105 +294,6 @@ func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasMismatche
 // SetMismatchedAmounts gets a reference to the given interface{} and assigns it to the MismatchedAmounts field.
 func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetMismatchedAmounts(v interface{}) {
 	o.MismatchedAmounts = v
-}
-
-// GetIntentAmountCents returns the IntentAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetIntentAmountCents() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.IntentAmountCents
-}
-
-// GetIntentAmountCentsOk returns a tuple with the IntentAmountCents field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetIntentAmountCentsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.IntentAmountCents) {
-		return nil, false
-	}
-	return &o.IntentAmountCents, true
-}
-
-// HasIntentAmountCents returns a boolean if a field has been set.
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasIntentAmountCents() bool {
-	if o != nil && IsNil(o.IntentAmountCents) {
-		return true
-	}
-
-	return false
-}
-
-// SetIntentAmountCents gets a reference to the given interface{} and assigns it to the IntentAmountCents field.
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetIntentAmountCents(v interface{}) {
-	o.IntentAmountCents = v
-}
-
-// GetIntentAmountFloat returns the IntentAmountFloat field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetIntentAmountFloat() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.IntentAmountFloat
-}
-
-// GetIntentAmountFloatOk returns a tuple with the IntentAmountFloat field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetIntentAmountFloatOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.IntentAmountFloat) {
-		return nil, false
-	}
-	return &o.IntentAmountFloat, true
-}
-
-// HasIntentAmountFloat returns a boolean if a field has been set.
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasIntentAmountFloat() bool {
-	if o != nil && IsNil(o.IntentAmountFloat) {
-		return true
-	}
-
-	return false
-}
-
-// SetIntentAmountFloat gets a reference to the given interface{} and assigns it to the IntentAmountFloat field.
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetIntentAmountFloat(v interface{}) {
-	o.IntentAmountFloat = v
-}
-
-// GetFormattedIntentAmount returns the FormattedIntentAmount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetFormattedIntentAmount() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.FormattedIntentAmount
-}
-
-// GetFormattedIntentAmountOk returns a tuple with the FormattedIntentAmount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetFormattedIntentAmountOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.FormattedIntentAmount) {
-		return nil, false
-	}
-	return &o.FormattedIntentAmount, true
-}
-
-// HasFormattedIntentAmount returns a boolean if a field has been set.
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasFormattedIntentAmount() bool {
-	if o != nil && IsNil(o.FormattedIntentAmount) {
-		return true
-	}
-
-	return false
-}
-
-// SetFormattedIntentAmount gets a reference to the given interface{} and assigns it to the FormattedIntentAmount field.
-func (o *GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetFormattedIntentAmount(v interface{}) {
-	o.FormattedIntentAmount = v
 }
 
 // GetPaymentInstrument returns the PaymentInstrument field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -513,17 +513,17 @@ func (o GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) ToMap() (map[
 	if o.PaymentRequestData != nil {
 		toSerialize["payment_request_data"] = o.PaymentRequestData
 	}
+	if o.ClientIp != nil {
+		toSerialize["client_ip"] = o.ClientIp
+	}
+	if o.BuyerDetails != nil {
+		toSerialize["buyer_details"] = o.BuyerDetails
+	}
+	if o.RequestToken != nil {
+		toSerialize["request_token"] = o.RequestToken
+	}
 	if o.MismatchedAmounts != nil {
 		toSerialize["mismatched_amounts"] = o.MismatchedAmounts
-	}
-	if o.IntentAmountCents != nil {
-		toSerialize["intent_amount_cents"] = o.IntentAmountCents
-	}
-	if o.IntentAmountFloat != nil {
-		toSerialize["intent_amount_float"] = o.IntentAmountFloat
-	}
-	if o.FormattedIntentAmount != nil {
-		toSerialize["formatted_intent_amount"] = o.FormattedIntentAmount
 	}
 	if o.PaymentInstrument != nil {
 		toSerialize["payment_instrument"] = o.PaymentInstrument

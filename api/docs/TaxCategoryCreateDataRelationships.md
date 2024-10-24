@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Sku** | [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | 
-**TaxCalculator** | [**TaxCategoryCreateDataRelationshipsTaxCalculator**](TaxCategoryCreateDataRelationshipsTaxCalculator.md) |  | 
+**TaxCalculator** | [**MarketCreateDataRelationshipsTaxCalculator**](MarketCreateDataRelationshipsTaxCalculator.md) |  | 
 
 ## Methods
 
 ### NewTaxCategoryCreateDataRelationships
 
-`func NewTaxCategoryCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, taxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator, ) *TaxCategoryCreateDataRelationships`
+`func NewTaxCategoryCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, taxCalculator MarketCreateDataRelationshipsTaxCalculator, ) *TaxCategoryCreateDataRelationships`
 
 NewTaxCategoryCreateDataRelationships instantiates a new TaxCategoryCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -48,20 +48,20 @@ SetSku sets Sku field to given value.
 
 ### GetTaxCalculator
 
-`func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() TaxCategoryCreateDataRelationshipsTaxCalculator`
+`func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() MarketCreateDataRelationshipsTaxCalculator`
 
 GetTaxCalculator returns the TaxCalculator field if non-nil, zero value otherwise.
 
 ### GetTaxCalculatorOk
 
-`func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*TaxCategoryCreateDataRelationshipsTaxCalculator, bool)`
+`func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*MarketCreateDataRelationshipsTaxCalculator, bool)`
 
 GetTaxCalculatorOk returns a tuple with the TaxCalculator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaxCalculator
 
-`func (o *TaxCategoryCreateDataRelationships) SetTaxCalculator(v TaxCategoryCreateDataRelationshipsTaxCalculator)`
+`func (o *TaxCategoryCreateDataRelationships) SetTaxCalculator(v MarketCreateDataRelationshipsTaxCalculator)`
 
 SetTaxCalculator sets TaxCalculator field to given value.
 

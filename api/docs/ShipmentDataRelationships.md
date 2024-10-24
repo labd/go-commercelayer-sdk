@@ -6,19 +6,22 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Order** | Pointer to [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | [optional] 
 **ShippingCategory** | Pointer to [**ShipmentDataRelationshipsShippingCategory**](ShipmentDataRelationshipsShippingCategory.md) |  | [optional] 
+**InventoryStockLocation** | Pointer to [**InventoryModelDataRelationshipsInventoryStockLocations**](InventoryModelDataRelationshipsInventoryStockLocations.md) |  | [optional] 
 **StockLocation** | Pointer to [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | [optional] 
 **OriginAddress** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
 **ShippingAddress** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
 **ShippingMethod** | Pointer to [**DeliveryLeadTimeDataRelationshipsShippingMethod**](DeliveryLeadTimeDataRelationshipsShippingMethod.md) |  | [optional] 
 **DeliveryLeadTime** | Pointer to [**ShipmentDataRelationshipsDeliveryLeadTime**](ShipmentDataRelationshipsDeliveryLeadTime.md) |  | [optional] 
-**ShipmentLineItems** | Pointer to [**LineItemDataRelationshipsShipmentLineItems**](LineItemDataRelationshipsShipmentLineItems.md) |  | [optional] 
 **StockLineItems** | Pointer to [**LineItemDataRelationshipsStockLineItems**](LineItemDataRelationshipsStockLineItems.md) |  | [optional] 
 **StockTransfers** | Pointer to [**LineItemDataRelationshipsStockTransfers**](LineItemDataRelationshipsStockTransfers.md) |  | [optional] 
+**LineItems** | Pointer to [**LineItemOptionDataRelationshipsLineItem**](LineItemOptionDataRelationshipsLineItem.md) |  | [optional] 
 **AvailableShippingMethods** | Pointer to [**DeliveryLeadTimeDataRelationshipsShippingMethod**](DeliveryLeadTimeDataRelationshipsShippingMethod.md) |  | [optional] 
 **CarrierAccounts** | Pointer to [**ShipmentDataRelationshipsCarrierAccounts**](ShipmentDataRelationshipsCarrierAccounts.md) |  | [optional] 
 **Parcels** | Pointer to [**PackageDataRelationshipsParcels**](PackageDataRelationshipsParcels.md) |  | [optional] 
-**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
+**Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
+**Tags** | Pointer to [**AddressDataRelationshipsTags**](AddressDataRelationshipsTags.md) |  | [optional] 
+**Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
 
@@ -88,6 +91,31 @@ SetShippingCategory sets ShippingCategory field to given value.
 `func (o *ShipmentDataRelationships) HasShippingCategory() bool`
 
 HasShippingCategory returns a boolean if a field has been set.
+
+### GetInventoryStockLocation
+
+`func (o *ShipmentDataRelationships) GetInventoryStockLocation() InventoryModelDataRelationshipsInventoryStockLocations`
+
+GetInventoryStockLocation returns the InventoryStockLocation field if non-nil, zero value otherwise.
+
+### GetInventoryStockLocationOk
+
+`func (o *ShipmentDataRelationships) GetInventoryStockLocationOk() (*InventoryModelDataRelationshipsInventoryStockLocations, bool)`
+
+GetInventoryStockLocationOk returns a tuple with the InventoryStockLocation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInventoryStockLocation
+
+`func (o *ShipmentDataRelationships) SetInventoryStockLocation(v InventoryModelDataRelationshipsInventoryStockLocations)`
+
+SetInventoryStockLocation sets InventoryStockLocation field to given value.
+
+### HasInventoryStockLocation
+
+`func (o *ShipmentDataRelationships) HasInventoryStockLocation() bool`
+
+HasInventoryStockLocation returns a boolean if a field has been set.
 
 ### GetStockLocation
 
@@ -214,31 +242,6 @@ SetDeliveryLeadTime sets DeliveryLeadTime field to given value.
 
 HasDeliveryLeadTime returns a boolean if a field has been set.
 
-### GetShipmentLineItems
-
-`func (o *ShipmentDataRelationships) GetShipmentLineItems() LineItemDataRelationshipsShipmentLineItems`
-
-GetShipmentLineItems returns the ShipmentLineItems field if non-nil, zero value otherwise.
-
-### GetShipmentLineItemsOk
-
-`func (o *ShipmentDataRelationships) GetShipmentLineItemsOk() (*LineItemDataRelationshipsShipmentLineItems, bool)`
-
-GetShipmentLineItemsOk returns a tuple with the ShipmentLineItems field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetShipmentLineItems
-
-`func (o *ShipmentDataRelationships) SetShipmentLineItems(v LineItemDataRelationshipsShipmentLineItems)`
-
-SetShipmentLineItems sets ShipmentLineItems field to given value.
-
-### HasShipmentLineItems
-
-`func (o *ShipmentDataRelationships) HasShipmentLineItems() bool`
-
-HasShipmentLineItems returns a boolean if a field has been set.
-
 ### GetStockLineItems
 
 `func (o *ShipmentDataRelationships) GetStockLineItems() LineItemDataRelationshipsStockLineItems`
@@ -288,6 +291,31 @@ SetStockTransfers sets StockTransfers field to given value.
 `func (o *ShipmentDataRelationships) HasStockTransfers() bool`
 
 HasStockTransfers returns a boolean if a field has been set.
+
+### GetLineItems
+
+`func (o *ShipmentDataRelationships) GetLineItems() LineItemOptionDataRelationshipsLineItem`
+
+GetLineItems returns the LineItems field if non-nil, zero value otherwise.
+
+### GetLineItemsOk
+
+`func (o *ShipmentDataRelationships) GetLineItemsOk() (*LineItemOptionDataRelationshipsLineItem, bool)`
+
+GetLineItemsOk returns a tuple with the LineItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLineItems
+
+`func (o *ShipmentDataRelationships) SetLineItems(v LineItemOptionDataRelationshipsLineItem)`
+
+SetLineItems sets LineItems field to given value.
+
+### HasLineItems
+
+`func (o *ShipmentDataRelationships) HasLineItems() bool`
+
+HasLineItems returns a boolean if a field has been set.
 
 ### GetAvailableShippingMethods
 
@@ -366,20 +394,20 @@ HasParcels returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *ShipmentDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+`func (o *ShipmentDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *ShipmentDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+`func (o *ShipmentDataRelationships) GetAttachmentsOk() (*AuthorizationDataRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *ShipmentDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+`func (o *ShipmentDataRelationships) SetAttachments(v AuthorizationDataRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 
@@ -391,20 +419,20 @@ HasAttachments returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *ShipmentDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+`func (o *ShipmentDataRelationships) GetEvents() AddressDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *ShipmentDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+`func (o *ShipmentDataRelationships) GetEventsOk() (*AddressDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *ShipmentDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+`func (o *ShipmentDataRelationships) SetEvents(v AddressDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 
@@ -413,6 +441,56 @@ SetEvents sets Events field to given value.
 `func (o *ShipmentDataRelationships) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *ShipmentDataRelationships) GetTags() AddressDataRelationshipsTags`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *ShipmentDataRelationships) GetTagsOk() (*AddressDataRelationshipsTags, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *ShipmentDataRelationships) SetTags(v AddressDataRelationshipsTags)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *ShipmentDataRelationships) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *ShipmentDataRelationships) GetVersions() AddressDataRelationshipsVersions`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *ShipmentDataRelationships) GetVersionsOk() (*AddressDataRelationshipsVersions, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *ShipmentDataRelationships) SetVersions(v AddressDataRelationshipsVersions)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *ShipmentDataRelationships) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

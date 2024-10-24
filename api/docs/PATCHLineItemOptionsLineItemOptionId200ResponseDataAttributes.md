@@ -5,10 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **interface{}** | The name of the line item option. When blank, it gets populated with the name of the associated SKU option. | [optional] 
-**Quantity** | Pointer to **interface{}** | The line item option&#39;s quantity | [optional] 
+**Quantity** | Pointer to **interface{}** | The line item option&#39;s quantity. | [optional] 
+**UnitAmountCents** | Pointer to **interface{}** | The unit amount of the line item option, in cents. When you add a line item option to an order, this is automatically populated from associated SKU option&#39;s price. Cannot be passed by sales channels. | [optional] 
 **Options** | Pointer to **interface{}** | Set of key-value pairs that represent the selected options. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -100,6 +101,41 @@ HasQuantity returns a boolean if a field has been set.
 `func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) UnsetQuantity()`
 
 UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
+### GetUnitAmountCents
+
+`func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetUnitAmountCents() interface{}`
+
+GetUnitAmountCents returns the UnitAmountCents field if non-nil, zero value otherwise.
+
+### GetUnitAmountCentsOk
+
+`func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetUnitAmountCentsOk() (*interface{}, bool)`
+
+GetUnitAmountCentsOk returns a tuple with the UnitAmountCents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnitAmountCents
+
+`func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetUnitAmountCents(v interface{})`
+
+SetUnitAmountCents sets UnitAmountCents field to given value.
+
+### HasUnitAmountCents
+
+`func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasUnitAmountCents() bool`
+
+HasUnitAmountCents returns a boolean if a field has been set.
+
+### SetUnitAmountCentsNil
+
+`func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetUnitAmountCentsNil(b bool)`
+
+ SetUnitAmountCentsNil sets the value for UnitAmountCents to be an explicit nil
+
+### UnsetUnitAmountCents
+`func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) UnsetUnitAmountCents()`
+
+UnsetUnitAmountCents ensures that no value is present for UnitAmountCents, not even an explicit nil
 ### GetOptions
 
 `func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetOptions() interface{}`

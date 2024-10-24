@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 4.1.3
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -22,13 +22,15 @@ var _ MappedNullable = &GETManualTaxCalculatorsManualTaxCalculatorId200ResponseD
 type GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes struct {
 	// The tax calculator's internal name.
 	Name interface{} `json:"name,omitempty"`
+	// The tax calculator's type.
+	Type interface{} `json:"type,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
 	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
-	// Any identifier of the third party system that defines the reference code
+	// Any identifier of the third party system that defines the reference code.
 	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata interface{} `json:"metadata,omitempty"`
@@ -82,6 +84,39 @@ func (o *GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) 
 // SetName gets a reference to the given interface{} and assigns it to the Name field.
 func (o *GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return &o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) HasType() bool {
+	if o != nil && IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -261,6 +296,9 @@ func (o GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) T
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt
