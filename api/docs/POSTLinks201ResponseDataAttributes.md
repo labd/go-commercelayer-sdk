@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Name** | **interface{}** | The link internal name. | 
 **ClientId** | **interface{}** | The link application client id, used to fetch JWT. | 
 **Scope** | **interface{}** | The link application scope, used to fetch JWT. | 
-**StartsAt** | **interface{}** | The activation date/time of this link. | 
-**ExpiresAt** | **interface{}** | The expiration date/time of this link (must be after starts_at). | 
+**StartsAt** | Pointer to **interface{}** | The activation date/time of this link. | [optional] 
+**ExpiresAt** | Pointer to **interface{}** | The expiration date/time of this link (must be after starts_at). | [optional] 
 **Domain** | Pointer to **interface{}** | The link URL second level domain. | [optional] 
 **ItemType** | Pointer to **interface{}** | The type of the associated item. One of &#39;orders&#39;, &#39;skus&#39;, or &#39;sku_lists&#39;. | [optional] 
 **Params** | Pointer to **interface{}** | The link params to be passed in URL the query string. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewPOSTLinks201ResponseDataAttributes
 
-`func NewPOSTLinks201ResponseDataAttributes(name interface{}, clientId interface{}, scope interface{}, startsAt interface{}, expiresAt interface{}, ) *POSTLinks201ResponseDataAttributes`
+`func NewPOSTLinks201ResponseDataAttributes(name interface{}, clientId interface{}, scope interface{}, ) *POSTLinks201ResponseDataAttributes`
 
 NewPOSTLinks201ResponseDataAttributes instantiates a new POSTLinks201ResponseDataAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -146,6 +146,11 @@ and a boolean to check if the value has been set.
 
 SetStartsAt sets StartsAt field to given value.
 
+### HasStartsAt
+
+`func (o *POSTLinks201ResponseDataAttributes) HasStartsAt() bool`
+
+HasStartsAt returns a boolean if a field has been set.
 
 ### SetStartsAtNil
 
@@ -176,6 +181,11 @@ and a boolean to check if the value has been set.
 
 SetExpiresAt sets ExpiresAt field to given value.
 
+### HasExpiresAt
+
+`func (o *POSTLinks201ResponseDataAttributes) HasExpiresAt() bool`
+
+HasExpiresAt returns a boolean if a field has been set.
 
 ### SetExpiresAtNil
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.0
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -36,6 +36,8 @@ type PATCHAuthorizationsAuthorizationId200ResponseDataAttributes struct {
 	CaptureAmountCents interface{} `json:"_capture_amount_cents,omitempty"`
 	// Send this attribute if you want to create a void for this authorization.
 	Void interface{} `json:"_void,omitempty"`
+	// Send this attribute if you want to void a succeeded authorization of a pending order (which is left unpaid).
+	Cancel interface{} `json:"_cancel,omitempty"`
 }
 
 // NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributes instantiates a new PATCHAuthorizationsAuthorizationId200ResponseDataAttributes object
@@ -319,6 +321,39 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetVoid(v 
 	o.Void = v
 }
 
+// GetCancel returns the Cancel field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCancel() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Cancel
+}
+
+// GetCancelOk returns a tuple with the Cancel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Cancel) {
+		return nil, false
+	}
+	return &o.Cancel, true
+}
+
+// HasCancel returns a boolean if a field has been set.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasCancel() bool {
+	if o != nil && IsNil(o.Cancel) {
+		return true
+	}
+
+	return false
+}
+
+// SetCancel gets a reference to the given interface{} and assigns it to the Cancel field.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetCancel(v interface{}) {
+	o.Cancel = v
+}
+
 func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -352,6 +387,9 @@ func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) ToMap() (ma
 	}
 	if o.Void != nil {
 		toSerialize["_void"] = o.Void
+	}
+	if o.Cancel != nil {
+		toSerialize["_cancel"] = o.Cancel
 	}
 	return toSerialize, nil
 }

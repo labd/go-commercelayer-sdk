@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Capture** | Pointer to **interface{}** | Send this attribute if you want to create a capture for this authorization. | [optional] 
 **CaptureAmountCents** | Pointer to **interface{}** | Send this attribute as a value in cents if you want to overwrite the amount to be captured. | [optional] 
 **Void** | Pointer to **interface{}** | Send this attribute if you want to create a void for this authorization. | [optional] 
+**Cancel** | Pointer to **interface{}** | Send this attribute if you want to void a succeeded authorization of a pending order (which is left unpaid). | [optional] 
 
 ## Methods
 
@@ -312,6 +313,41 @@ HasVoid returns a boolean if a field has been set.
 `func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) UnsetVoid()`
 
 UnsetVoid ensures that no value is present for Void, not even an explicit nil
+### GetCancel
+
+`func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCancel() interface{}`
+
+GetCancel returns the Cancel field if non-nil, zero value otherwise.
+
+### GetCancelOk
+
+`func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool)`
+
+GetCancelOk returns a tuple with the Cancel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancel
+
+`func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetCancel(v interface{})`
+
+SetCancel sets Cancel field to given value.
+
+### HasCancel
+
+`func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasCancel() bool`
+
+HasCancel returns a boolean if a field has been set.
+
+### SetCancelNil
+
+`func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetCancelNil(b bool)`
+
+ SetCancelNil sets the value for Cancel to be an explicit nil
+
+### UnsetCancel
+`func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) UnsetCancel()`
+
+UnsetCancel ensures that no value is present for Cancel, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

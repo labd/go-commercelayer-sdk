@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **Refund** | Pointer to **interface{}** | Send this attribute if you want to create a refund for this capture. | [optional] 
 **RefundAmountCents** | Pointer to **interface{}** | Send this attribute as a value in cents if you want to overwrite the amount to be refunded. | [optional] 
+**Cancel** | Pointer to **interface{}** | Send this attribute if you want to refund a succeeded capture of a pending order (which is left unpaid). | [optional] 
 
 ## Methods
 
@@ -276,6 +277,41 @@ HasRefundAmountCents returns a boolean if a field has been set.
 `func (o *PATCHCapturesCaptureId200ResponseDataAttributes) UnsetRefundAmountCents()`
 
 UnsetRefundAmountCents ensures that no value is present for RefundAmountCents, not even an explicit nil
+### GetCancel
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetCancel() interface{}`
+
+GetCancel returns the Cancel field if non-nil, zero value otherwise.
+
+### GetCancelOk
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool)`
+
+GetCancelOk returns a tuple with the Cancel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancel
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetCancel(v interface{})`
+
+SetCancel sets Cancel field to given value.
+
+### HasCancel
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasCancel() bool`
+
+HasCancel returns a boolean if a field has been set.
+
+### SetCancelNil
+
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetCancelNil(b bool)`
+
+ SetCancelNil sets the value for Cancel to be an explicit nil
+
+### UnsetCancel
+`func (o *PATCHCapturesCaptureId200ResponseDataAttributes) UnsetCancel()`
+
+UnsetCancel ensures that no value is present for Cancel, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

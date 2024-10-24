@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.0
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -34,6 +34,8 @@ type PATCHCapturesCaptureId200ResponseDataAttributes struct {
 	Refund interface{} `json:"_refund,omitempty"`
 	// Send this attribute as a value in cents if you want to overwrite the amount to be refunded.
 	RefundAmountCents interface{} `json:"_refund_amount_cents,omitempty"`
+	// Send this attribute if you want to refund a succeeded capture of a pending order (which is left unpaid).
+	Cancel interface{} `json:"_cancel,omitempty"`
 }
 
 // NewPATCHCapturesCaptureId200ResponseDataAttributes instantiates a new PATCHCapturesCaptureId200ResponseDataAttributes object
@@ -284,6 +286,39 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetRefundAmountCents(v
 	o.RefundAmountCents = v
 }
 
+// GetCancel returns the Cancel field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetCancel() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Cancel
+}
+
+// GetCancelOk returns a tuple with the Cancel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Cancel) {
+		return nil, false
+	}
+	return &o.Cancel, true
+}
+
+// HasCancel returns a boolean if a field has been set.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasCancel() bool {
+	if o != nil && IsNil(o.Cancel) {
+		return true
+	}
+
+	return false
+}
+
+// SetCancel gets a reference to the given interface{} and assigns it to the Cancel field.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetCancel(v interface{}) {
+	o.Cancel = v
+}
+
 func (o PATCHCapturesCaptureId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -314,6 +349,9 @@ func (o PATCHCapturesCaptureId200ResponseDataAttributes) ToMap() (map[string]int
 	}
 	if o.RefundAmountCents != nil {
 		toSerialize["_refund_amount_cents"] = o.RefundAmountCents
+	}
+	if o.Cancel != nil {
+		toSerialize["_cancel"] = o.Cancel
 	}
 	return toSerialize, nil
 }

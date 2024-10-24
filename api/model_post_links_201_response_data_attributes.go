@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.0
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
@@ -27,9 +27,9 @@ type POSTLinks201ResponseDataAttributes struct {
 	// The link application scope, used to fetch JWT.
 	Scope interface{} `json:"scope"`
 	// The activation date/time of this link.
-	StartsAt interface{} `json:"starts_at"`
+	StartsAt interface{} `json:"starts_at,omitempty"`
 	// The expiration date/time of this link (must be after starts_at).
-	ExpiresAt interface{} `json:"expires_at"`
+	ExpiresAt interface{} `json:"expires_at,omitempty"`
 	// The link URL second level domain.
 	Domain interface{} `json:"domain,omitempty"`
 	// The type of the associated item. One of 'orders', 'skus', or 'sku_lists'.
@@ -52,13 +52,11 @@ type POSTLinks201ResponseDataAttributes struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTLinks201ResponseDataAttributes(name interface{}, clientId interface{}, scope interface{}, startsAt interface{}, expiresAt interface{}) *POSTLinks201ResponseDataAttributes {
+func NewPOSTLinks201ResponseDataAttributes(name interface{}, clientId interface{}, scope interface{}) *POSTLinks201ResponseDataAttributes {
 	this := POSTLinks201ResponseDataAttributes{}
 	this.Name = name
 	this.ClientId = clientId
 	this.Scope = scope
-	this.StartsAt = startsAt
-	this.ExpiresAt = expiresAt
 	return &this
 }
 
@@ -148,18 +146,16 @@ func (o *POSTLinks201ResponseDataAttributes) SetScope(v interface{}) {
 	o.Scope = v
 }
 
-// GetStartsAt returns the StartsAt field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetStartsAt returns the StartsAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTLinks201ResponseDataAttributes) GetStartsAt() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.StartsAt
 }
 
-// GetStartsAtOk returns a tuple with the StartsAt field value
+// GetStartsAtOk returns a tuple with the StartsAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTLinks201ResponseDataAttributes) GetStartsAtOk() (*interface{}, bool) {
@@ -169,23 +165,30 @@ func (o *POSTLinks201ResponseDataAttributes) GetStartsAtOk() (*interface{}, bool
 	return &o.StartsAt, true
 }
 
-// SetStartsAt sets field value
+// HasStartsAt returns a boolean if a field has been set.
+func (o *POSTLinks201ResponseDataAttributes) HasStartsAt() bool {
+	if o != nil && IsNil(o.StartsAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetStartsAt gets a reference to the given interface{} and assigns it to the StartsAt field.
 func (o *POSTLinks201ResponseDataAttributes) SetStartsAt(v interface{}) {
 	o.StartsAt = v
 }
 
-// GetExpiresAt returns the ExpiresAt field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *POSTLinks201ResponseDataAttributes) GetExpiresAt() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.ExpiresAt
 }
 
-// GetExpiresAtOk returns a tuple with the ExpiresAt field value
+// GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTLinks201ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
@@ -195,7 +198,16 @@ func (o *POSTLinks201ResponseDataAttributes) GetExpiresAtOk() (*interface{}, boo
 	return &o.ExpiresAt, true
 }
 
-// SetExpiresAt sets field value
+// HasExpiresAt returns a boolean if a field has been set.
+func (o *POSTLinks201ResponseDataAttributes) HasExpiresAt() bool {
+	if o != nil && IsNil(o.ExpiresAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetExpiresAt gets a reference to the given interface{} and assigns it to the ExpiresAt field.
 func (o *POSTLinks201ResponseDataAttributes) SetExpiresAt(v interface{}) {
 	o.ExpiresAt = v
 }

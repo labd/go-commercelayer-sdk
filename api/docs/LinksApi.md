@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    linkCreate := *openapiclient.NewLinkCreate(*openapiclient.NewLinkCreateData(interface{}(123), *openapiclient.NewPOSTLinks201ResponseDataAttributes(interface{}(FW SALE 2023), interface{}(xxxx-yyyy-zzzz), interface{}(market:id:GhvCxsElAQ,market:id:kJhgVcxZDr), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z)))) // LinkCreate | 
+    linkCreate := *openapiclient.NewLinkCreate(*openapiclient.NewLinkCreateData(interface{}(123), *openapiclient.NewPOSTLinks201ResponseDataAttributes(interface{}(FW SALE 2023), interface{}(xxxx-yyyy-zzzz), interface{}(market:id:GhvCxsElAQ,market:id:kJhgVcxZDr)))) // LinkCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

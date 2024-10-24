@@ -6,7 +6,7 @@ info:
     url: https://commercelayer.io
   description: Headless Commerce for Global Brands.
   title: Commerce Layer API
-  version: 7.3.0
+  version: 7.3.1
 servers:
 - description: API
   url: "https://{your_organization_slug}.commercelayer.io/api"
@@ -26636,6 +26636,11 @@ components:
           description: Send this attribute if you want to create a void for this authorization.
           example: true
           nullable: false
+        _cancel:
+          description: Send this attribute if you want to void a succeeded authorization
+            of a pending order (which is left unpaid).
+          example: true
+          nullable: false
     PATCH_authorizations_authorizationId_200_response_data:
       properties:
         id:
@@ -30530,6 +30535,11 @@ components:
           description: Send this attribute as a value in cents if you want to overwrite
             the amount to be refunded.
           example: 500
+        _cancel:
+          description: Send this attribute if you want to refund a succeeded capture
+            of a pending order (which is left unpaid).
+          example: true
+          nullable: false
     PATCH_captures_captureId_200_response_data:
       properties:
         id:
@@ -44283,12 +44293,12 @@ components:
                   starts_at:
                     description: The activation date/time of this link.
                     example: 2018-01-01T12:00:00.000Z
-                    nullable: false
+                    nullable: true
                   expires_at:
                     description: The expiration date/time of this link (must be after
                       starts_at).
                     example: 2018-01-02T12:00:00.000Z
-                    nullable: false
+                    nullable: true
                   active:
                     description: Indicates if the link is active (enabled and not
                       expired).
@@ -44448,10 +44458,8 @@ components:
             foo: bar
       required:
       - client_id
-      - expires_at
       - name
       - scope
-      - starts_at
     POST_links_201_response_data_relationships:
       properties:
         item:
@@ -44494,11 +44502,11 @@ components:
         starts_at:
           description: The activation date/time of this link.
           example: 2018-01-01T12:00:00.000Z
-          nullable: false
+          nullable: true
         expires_at:
           description: The expiration date/time of this link (must be after starts_at).
           example: 2018-01-02T12:00:00.000Z
-          nullable: false
+          nullable: true
         active:
           description: Indicates if the link is active (enabled and not expired).
           example: true
@@ -44602,11 +44610,11 @@ components:
         starts_at:
           description: The activation date/time of this link.
           example: 2018-01-01T12:00:00.000Z
-          nullable: false
+          nullable: true
         expires_at:
           description: The expiration date/time of this link (must be after starts_at).
           example: 2018-01-02T12:00:00.000Z
-          nullable: false
+          nullable: true
         domain:
           description: The link URL second level domain.
           example: commercelayer.link

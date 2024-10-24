@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.0
+API version: 7.3.1
 Contact: support@commercelayer.io
 */
 
