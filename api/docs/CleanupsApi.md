@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    cleanupUpdate := *openapiclient.NewCleanupUpdate(*openapiclient.NewCleanupUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // CleanupUpdate | 
+    cleanupUpdate := *openapiclient.NewCleanupUpdate(*openapiclient.NewCleanupUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCleanupsCleanupId200ResponseDataAttributes())) // CleanupUpdate | 
     cleanupId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()

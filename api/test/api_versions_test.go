@@ -126,19 +126,6 @@ func Test_api_VersionsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test VersionsApiService GETBillingInfoValidationRuleIdVersions", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var billingInfoValidationRuleId interface{}
-
-		httpRes, err := apiClient.VersionsApi.GETBillingInfoValidationRuleIdVersions(context.Background(), billingInfoValidationRuleId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test VersionsApiService GETBraintreeGatewayIdVersions", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -1147,6 +1134,19 @@ func Test_api_VersionsApiService(t *testing.T) {
 		var stockTransferId interface{}
 
 		httpRes, err := apiClient.VersionsApi.GETStockTransferIdVersions(context.Background(), stockTransferId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test VersionsApiService GETStoreIdVersions", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var storeId interface{}
+
+		httpRes, err := apiClient.VersionsApi.GETStoreIdVersions(context.Background(), storeId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

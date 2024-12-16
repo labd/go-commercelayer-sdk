@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // ParcelLineItemUpdate | 
+    parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCleanupsCleanupId200ResponseDataAttributes())) // ParcelLineItemUpdate | 
     parcelLineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()

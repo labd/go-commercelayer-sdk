@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // WireTransferUpdate | 
+    wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCleanupsCleanupId200ResponseDataAttributes())) // WireTransferUpdate | 
     wireTransferId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()

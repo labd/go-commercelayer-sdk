@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.5.0
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,9 @@ var _ MappedNullable = &POSTPaymentMethods201ResponseDataRelationships{}
 
 // POSTPaymentMethods201ResponseDataRelationships struct for POSTPaymentMethods201ResponseDataRelationships
 type POSTPaymentMethods201ResponseDataRelationships struct {
-	Market         *POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket        `json:"market,omitempty"`
+	Market         *POSTBundles201ResponseDataRelationshipsMarket                           `json:"market,omitempty"`
 	PaymentGateway *POSTAdyenPayments201ResponseDataRelationshipsPaymentGateway             `json:"payment_gateway,omitempty"`
+	Store          *POSTOrders201ResponseDataRelationshipsStore                             `json:"store,omitempty"`
 	Attachments    *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
 	Versions       *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
@@ -44,9 +45,9 @@ func NewPOSTPaymentMethods201ResponseDataRelationshipsWithDefaults() *POSTPaymen
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *POSTPaymentMethods201ResponseDataRelationships) GetMarket() POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket {
+func (o *POSTPaymentMethods201ResponseDataRelationships) GetMarket() POSTBundles201ResponseDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket
+		var ret POSTBundles201ResponseDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -54,7 +55,7 @@ func (o *POSTPaymentMethods201ResponseDataRelationships) GetMarket() POSTBilling
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPaymentMethods201ResponseDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket, bool) {
+func (o *POSTPaymentMethods201ResponseDataRelationships) GetMarketOk() (*POSTBundles201ResponseDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -70,8 +71,8 @@ func (o *POSTPaymentMethods201ResponseDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket and assigns it to the Market field.
-func (o *POSTPaymentMethods201ResponseDataRelationships) SetMarket(v POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket) {
+// SetMarket gets a reference to the given POSTBundles201ResponseDataRelationshipsMarket and assigns it to the Market field.
+func (o *POSTPaymentMethods201ResponseDataRelationships) SetMarket(v POSTBundles201ResponseDataRelationshipsMarket) {
 	o.Market = &v
 }
 
@@ -105,6 +106,38 @@ func (o *POSTPaymentMethods201ResponseDataRelationships) HasPaymentGateway() boo
 // SetPaymentGateway gets a reference to the given POSTAdyenPayments201ResponseDataRelationshipsPaymentGateway and assigns it to the PaymentGateway field.
 func (o *POSTPaymentMethods201ResponseDataRelationships) SetPaymentGateway(v POSTAdyenPayments201ResponseDataRelationshipsPaymentGateway) {
 	o.PaymentGateway = &v
+}
+
+// GetStore returns the Store field value if set, zero value otherwise.
+func (o *POSTPaymentMethods201ResponseDataRelationships) GetStore() POSTOrders201ResponseDataRelationshipsStore {
+	if o == nil || IsNil(o.Store) {
+		var ret POSTOrders201ResponseDataRelationshipsStore
+		return ret
+	}
+	return *o.Store
+}
+
+// GetStoreOk returns a tuple with the Store field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTPaymentMethods201ResponseDataRelationships) GetStoreOk() (*POSTOrders201ResponseDataRelationshipsStore, bool) {
+	if o == nil || IsNil(o.Store) {
+		return nil, false
+	}
+	return o.Store, true
+}
+
+// HasStore returns a boolean if a field has been set.
+func (o *POSTPaymentMethods201ResponseDataRelationships) HasStore() bool {
+	if o != nil && !IsNil(o.Store) {
+		return true
+	}
+
+	return false
+}
+
+// SetStore gets a reference to the given POSTOrders201ResponseDataRelationshipsStore and assigns it to the Store field.
+func (o *POSTPaymentMethods201ResponseDataRelationships) SetStore(v POSTOrders201ResponseDataRelationshipsStore) {
+	o.Store = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
@@ -186,6 +219,9 @@ func (o POSTPaymentMethods201ResponseDataRelationships) ToMap() (map[string]inte
 	}
 	if !IsNil(o.PaymentGateway) {
 		toSerialize["payment_gateway"] = o.PaymentGateway
+	}
+	if !IsNil(o.Store) {
+		toSerialize["store"] = o.Store
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments

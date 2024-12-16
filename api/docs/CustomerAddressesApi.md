@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    customerAddressUpdate := *openapiclient.NewCustomerAddressUpdate(*openapiclient.NewCustomerAddressUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // CustomerAddressUpdate | 
+    customerAddressUpdate := *openapiclient.NewCustomerAddressUpdate(*openapiclient.NewCustomerAddressUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCleanupsCleanupId200ResponseDataAttributes())) // CustomerAddressUpdate | 
     customerAddressId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()

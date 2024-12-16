@@ -308,32 +308,6 @@ func Test_api_HasManyApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HasManyApiService GETBillingInfoValidationRuleIdAttachments", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var billingInfoValidationRuleId interface{}
-
-		httpRes, err := apiClient.HasManyApi.GETBillingInfoValidationRuleIdAttachments(context.Background(), billingInfoValidationRuleId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test HasManyApiService GETBillingInfoValidationRuleIdVersions", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var billingInfoValidationRuleId interface{}
-
-		httpRes, err := apiClient.HasManyApi.GETBillingInfoValidationRuleIdVersions(context.Background(), billingInfoValidationRuleId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test HasManyApiService GETBingGeocoderIdAddresses", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -2037,6 +2011,19 @@ func Test_api_HasManyApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test HasManyApiService GETLineItemIdNotifications", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var lineItemId interface{}
+
+		httpRes, err := apiClient.HasManyApi.GETLineItemIdNotifications(context.Background(), lineItemId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test HasManyApiService GETLineItemIdReturnLineItems", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -2239,6 +2226,19 @@ func Test_api_HasManyApiService(t *testing.T) {
 		var marketId interface{}
 
 		httpRes, err := apiClient.HasManyApi.GETMarketIdPriceListSchedulers(context.Background(), marketId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasManyApiService GETMarketIdStores", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var marketId interface{}
+
+		httpRes, err := apiClient.HasManyApi.GETMarketIdStores(context.Background(), marketId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -2460,6 +2460,19 @@ func Test_api_HasManyApiService(t *testing.T) {
 		var orderId interface{}
 
 		httpRes, err := apiClient.HasManyApi.GETOrderIdLinks(context.Background(), orderId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasManyApiService GETOrderIdNotifications", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var orderId interface{}
+
+		httpRes, err := apiClient.HasManyApi.GETOrderIdNotifications(context.Background(), orderId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -4377,6 +4390,19 @@ func Test_api_HasManyApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test HasManyApiService GETStockLocationIdStores", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var stockLocationId interface{}
+
+		httpRes, err := apiClient.HasManyApi.GETStockLocationIdStores(context.Background(), stockLocationId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test HasManyApiService GETStockLocationIdVersions", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -4423,6 +4449,58 @@ func Test_api_HasManyApiService(t *testing.T) {
 		var stockTransferId interface{}
 
 		httpRes, err := apiClient.HasManyApi.GETStockTransferIdVersions(context.Background(), stockTransferId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasManyApiService GETStoreIdEvents", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var storeId interface{}
+
+		httpRes, err := apiClient.HasManyApi.GETStoreIdEvents(context.Background(), storeId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasManyApiService GETStoreIdOrders", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var storeId interface{}
+
+		httpRes, err := apiClient.HasManyApi.GETStoreIdOrders(context.Background(), storeId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasManyApiService GETStoreIdPaymentMethods", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var storeId interface{}
+
+		httpRes, err := apiClient.HasManyApi.GETStoreIdPaymentMethods(context.Background(), storeId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasManyApiService GETStoreIdVersions", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var storeId interface{}
+
+		httpRes, err := apiClient.HasManyApi.GETStoreIdVersions(context.Background(), storeId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

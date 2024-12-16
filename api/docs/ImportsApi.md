@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    importUpdate := *openapiclient.NewImportUpdate(*openapiclient.NewImportUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // ImportUpdate | 
+    importUpdate := *openapiclient.NewImportUpdate(*openapiclient.NewImportUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCleanupsCleanupId200ResponseDataAttributes())) // ImportUpdate | 
     importId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()

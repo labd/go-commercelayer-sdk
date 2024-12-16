@@ -922,7 +922,7 @@ import (
 )
 
 func main() {
-    couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // CouponCodesPromotionRuleUpdate | 
+    couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCleanupsCleanupId200ResponseDataAttributes())) // CouponCodesPromotionRuleUpdate | 
     couponCodesPromotionRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()

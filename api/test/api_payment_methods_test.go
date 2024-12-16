@@ -230,6 +230,19 @@ func Test_api_PaymentMethodsApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test PaymentMethodsApiService GETStoreIdPaymentMethods", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var storeId interface{}
+
+		httpRes, err := apiClient.PaymentMethodsApi.GETStoreIdPaymentMethods(context.Background(), storeId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test PaymentMethodsApiService GETStripeGatewayIdPaymentMethods", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

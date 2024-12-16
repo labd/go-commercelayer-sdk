@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    recurringOrderCopyUpdate := *openapiclient.NewRecurringOrderCopyUpdate(*openapiclient.NewRecurringOrderCopyUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // RecurringOrderCopyUpdate | 
+    recurringOrderCopyUpdate := *openapiclient.NewRecurringOrderCopyUpdate(*openapiclient.NewRecurringOrderCopyUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCleanupsCleanupId200ResponseDataAttributes())) // RecurringOrderCopyUpdate | 
     recurringOrderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()

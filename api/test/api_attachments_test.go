@@ -87,19 +87,6 @@ func Test_api_AttachmentsApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test AttachmentsApiService GETBillingInfoValidationRuleIdAttachments", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var billingInfoValidationRuleId interface{}
-
-		httpRes, err := apiClient.AttachmentsApi.GETBillingInfoValidationRuleIdAttachments(context.Background(), billingInfoValidationRuleId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test AttachmentsApiService GETBingGeocoderIdAttachments", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

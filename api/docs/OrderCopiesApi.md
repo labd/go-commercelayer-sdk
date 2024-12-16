@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    orderCopyUpdate := *openapiclient.NewOrderCopyUpdate(*openapiclient.NewOrderCopyUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // OrderCopyUpdate | 
+    orderCopyUpdate := *openapiclient.NewOrderCopyUpdate(*openapiclient.NewOrderCopyUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCleanupsCleanupId200ResponseDataAttributes())) // OrderCopyUpdate | 
     orderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()

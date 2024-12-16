@@ -48,6 +48,7 @@ Method | HTTP request | Description
 [**GETSkuIdEvents**](EventsApi.md#GETSkuIdEvents) | **Get** /skus/{skuId}/events | Retrieve the events associated to the SKU
 [**GETSkuOptionIdEvents**](EventsApi.md#GETSkuOptionIdEvents) | **Get** /sku_options/{skuOptionId}/events | Retrieve the events associated to the SKU option
 [**GETStockTransferIdEvents**](EventsApi.md#GETStockTransferIdEvents) | **Get** /stock_transfers/{stockTransferId}/events | Retrieve the events associated to the stock transfer
+[**GETStoreIdEvents**](EventsApi.md#GETStoreIdEvents) | **Get** /stores/{storeId}/events | Retrieve the events associated to the store
 [**GETTransactionIdEvents**](EventsApi.md#GETTransactionIdEvents) | **Get** /transactions/{transactionId}/events | Retrieve the events associated to the transaction
 [**GETVoidIdEvents**](EventsApi.md#GETVoidIdEvents) | **Get** /voids/{voidId}/events | Retrieve the events associated to the void
 [**PATCHEventsEventId**](EventsApi.md#PATCHEventsEventId) | **Patch** /events/{eventId} | Update an event
@@ -3017,6 +3018,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockTransferIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStoreIdEvents
+
+> GETStoreIdEvents(ctx, storeId).Execute()
+
+Retrieve the events associated to the store
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    storeId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.EventsApi.GETStoreIdEvents(context.Background(), storeId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETStoreIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**storeId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStoreIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

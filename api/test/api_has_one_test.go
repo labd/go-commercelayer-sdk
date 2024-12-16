@@ -100,19 +100,6 @@ func Test_api_HasOneApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test HasOneApiService GETBillingInfoValidationRuleIdMarket", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		var billingInfoValidationRuleId interface{}
-
-		httpRes, err := apiClient.HasOneApi.GETBillingInfoValidationRuleIdMarket(context.Background(), billingInfoValidationRuleId).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test HasOneApiService GETBraintreePaymentIdOrder", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -1387,6 +1374,19 @@ func Test_api_HasOneApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test HasOneApiService GETOrderIdStore", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var orderId interface{}
+
+		httpRes, err := apiClient.HasOneApi.GETOrderIdStore(context.Background(), orderId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test HasOneApiService GETOrderSubscriptionIdCustomer", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -1563,6 +1563,19 @@ func Test_api_HasOneApiService(t *testing.T) {
 		var paymentMethodId interface{}
 
 		httpRes, err := apiClient.HasOneApi.GETPaymentMethodIdPaymentGateway(context.Background(), paymentMethodId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasOneApiService GETPaymentMethodIdStore", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var paymentMethodId interface{}
+
+		httpRes, err := apiClient.HasOneApi.GETPaymentMethodIdStore(context.Background(), paymentMethodId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -2681,6 +2694,45 @@ func Test_api_HasOneApiService(t *testing.T) {
 		var stockTransferId interface{}
 
 		httpRes, err := apiClient.HasOneApi.GETStockTransferIdStockReservation(context.Background(), stockTransferId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasOneApiService GETStoreIdMarket", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var storeId interface{}
+
+		httpRes, err := apiClient.HasOneApi.GETStoreIdMarket(context.Background(), storeId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasOneApiService GETStoreIdMerchant", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var storeId interface{}
+
+		httpRes, err := apiClient.HasOneApi.GETStoreIdMerchant(context.Background(), storeId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test HasOneApiService GETStoreIdStockLocation", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var storeId interface{}
+
+		httpRes, err := apiClient.HasOneApi.GETStoreIdStockLocation(context.Background(), storeId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

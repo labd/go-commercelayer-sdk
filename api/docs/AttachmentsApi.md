@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**GETAttachmentsAttachmentId**](AttachmentsApi.md#GETAttachmentsAttachmentId) | **Get** /attachments/{attachmentId} | Retrieve an attachment
 [**GETAuthorizationIdAttachments**](AttachmentsApi.md#GETAuthorizationIdAttachments) | **Get** /authorizations/{authorizationId}/attachments | Retrieve the attachments associated to the authorization
 [**GETAvalaraAccountIdAttachments**](AttachmentsApi.md#GETAvalaraAccountIdAttachments) | **Get** /avalara_accounts/{avalaraAccountId}/attachments | Retrieve the attachments associated to the avalara account
-[**GETBillingInfoValidationRuleIdAttachments**](AttachmentsApi.md#GETBillingInfoValidationRuleIdAttachments) | **Get** /billing_info_validation_rules/{billingInfoValidationRuleId}/attachments | Retrieve the attachments associated to the billing info validation rule
 [**GETBingGeocoderIdAttachments**](AttachmentsApi.md#GETBingGeocoderIdAttachments) | **Get** /bing_geocoders/{bingGeocoderId}/attachments | Retrieve the attachments associated to the bing geocoder
 [**GETBundleIdAttachments**](AttachmentsApi.md#GETBundleIdAttachments) | **Get** /bundles/{bundleId}/attachments | Retrieve the attachments associated to the bundle
 [**GETBuyXPayYPromotionIdAttachments**](AttachmentsApi.md#GETBuyXPayYPromotionIdAttachments) | **Get** /buy_x_pay_y_promotions/{buyXPayYPromotionId}/attachments | Retrieve the attachments associated to the buy x pay y promotion
@@ -382,74 +381,6 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETAvalaraAccountIdAttachmentsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GETBillingInfoValidationRuleIdAttachments
-
-> GETBillingInfoValidationRuleIdAttachments(ctx, billingInfoValidationRuleId).Execute()
-
-Retrieve the attachments associated to the billing info validation rule
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
-)
-
-func main() {
-    billingInfoValidationRuleId := TODO // interface{} | The resource's id
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AttachmentsApi.GETBillingInfoValidationRuleIdAttachments(context.Background(), billingInfoValidationRuleId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETBillingInfoValidationRuleIdAttachments``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**billingInfoValidationRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGETBillingInfoValidationRuleIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
